@@ -132,3 +132,7 @@ dmypy.json
 
 mkdocs-material/
 overrides/
+js/
+css/
+
+mkdocs.yml
