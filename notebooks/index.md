@@ -8,17 +8,17 @@ Chapters four to ten introduce Ray's high-level libraries and show how to build 
 The last two chapters give you an overview of Ray's ecosystem and show you where to go next.
 Here's what you can expect from each chapter.
 
-![Ray Layers](https://github.com/maxpumperla/learning_ray/blob/main/notebooks/images/chapter_01/ray_layers.png)
+![Ray Layers](https://raw.githubusercontent.com/maxpumperla/learning_ray/main/notebooks/images/chapter_01/ray_layers.png)
 
-* [_Chapter 1, An Overview of Ray_](./ch_01_overview.ipynb)
+* [_Chapter 1, An Overview of Ray_](./ch_01_overview)
   Introduces you at a high level to all of Ray's components, how it can be used in
   machine learning and other tasks, what the Ray ecosystem currently looks like and how
   Ray as a whole fits into the landscape of distributed Python.
-* _Chapter 2, Getting Started with Ray_
+* [_Chapter 2, Getting Started with Ray_](./ch_02_ray_core)
   Walks you through the foundations of the Ray project, namely its low-level API.
   It also discussed how Ray Tasks and Actors naturally extend from Python functions and classes.
   You also learn about all of Ray's system components and how they work together.
-* _Chapter 3, Building Your First Distributed Application with Ray Core_
+* [_Chapter 3, Building Your First Distributed Application with Ray Core_](./ch_03_core_app)
   Gives you an introduction to distributed systems and what makes them hard.
   We'll then build a first application together and discuss how to peak behind the scenes
   and get insights from the Ray toolbox.
