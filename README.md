@@ -8,9 +8,9 @@ Chapters four to ten introduce Ray's high-level libraries and show how to build 
 The last two chapters give you an overview of Ray's ecosystem and show you where to go next.
 Here's what you can expect from each chapter.
 
-![Ray Layers](./images/chapter_01/ray_layers.png)
+![Ray Layers](https://github.com/maxpumperla/learning_ray/blob/main/notebooks/images/chapter_01/ray_layers.png)
 
-* [_Chapter 1, An Overview of Ray_](./notebooks/chapter_01_overview.ipynb)
+* [_Chapter 1, An Overview of Ray_](https://github.com/maxpumperla/learning_ray/blob/main/notebooks/chapter_01_overview.ipynb)
   Introduces you at a high level to all of Ray's components, how it can be used in
   machine learning and other tasks, what the Ray ecosystem currently looks like and how
   Ray as a whole fits into the landscape of distributed Python.
