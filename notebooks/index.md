@@ -22,18 +22,18 @@ Here's what you can expect from each chapter.
   Gives you an introduction to distributed systems and what makes them hard.
   We'll then build a first application together and discuss how to peak behind the scenes
   and get insights from the Ray toolbox.
-* _Chapter 4, Hyperparameter Optimization with Ray Tune_
-  Covers why efficiently tuning hyperparameters is hard, how Ray Tune works conceptually,
-  and how you can use it in practice for your machine learning projects.
-* _Chapter 5, Reinforcement Learning with Ray RLlib_
+* [_Chapter 4, Reinforcement Learning with Ray RLlib_](./ch_04_rllib)
   Gives you a quick introduction to reinforcement learning and shows how Ray implements
   important concepts in RLlib. After building some examples together, we'll also dive into
   more advanced topics like preprocessors, custom models, or working with offline data.
-* _Chapter 6, Distributed Training with RaySGD_
+* [_Chapter 5, Hyperparameter Optimization with Ray Tune_](./ch_05_tune)
+  Covers why efficiently tuning hyperparameters is hard, how Ray Tune works conceptually,
+  and how you can use it in practice for your machine learning projects.
+* [_Chapter 6, Distributed Training with Ray Train_](./ch_06_train)
   Provides you with the basics of distributed model training and shows you how to use
   RaySGD with popular frameworks such as TensorFlow or PyTorch, and how to combine it
   with Ray Tune for hyperparameter optimization.
-* _Chapter 7, Data Processing with Ray_
+* [_Chapter 7, Data Processing with Ray_](./ch_07_data_processing)
   Introduces you to the Dataset abstraction of Ray and how it fits into the landscape
   of other data structures. You will also learn how to bring pandas data frames, Dask
   data structures and Apache Spark workloads to Ray.
