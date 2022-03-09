@@ -2,22 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://maxpumperla.com/learning_ray/</loc>
-         <lastmod>2021-11-18</lastmod>
+         <lastmod>2022-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://maxpumperla.com/learning_ray/ch_01_overview/</loc>
-         <lastmod>2021-11-18</lastmod>
+         <lastmod>2022-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://maxpumperla.com/learning_ray/ch_02_ray_core/</loc>
-         <lastmod>2021-11-18</lastmod>
+         <lastmod>2022-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://maxpumperla.com/learning_ray/ch_03_core_app/</loc>
-         <lastmod>2021-11-18</lastmod>
+         <lastmod>2022-03-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://maxpumperla.com/learning_ray/ch_04_rllib/</loc>
+         <lastmod>2022-03-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://maxpumperla.com/learning_ray/ch_05_tune/</loc>
+         <lastmod>2022-03-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://maxpumperla.com/learning_ray/ch_06_train/</loc>
+         <lastmod>2022-03-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://maxpumperla.com/learning_ray/ch_07_data_processing/</loc>
+         <lastmod>2022-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
