@@ -36,7 +36,7 @@ if __name__ == "__main__":
     for _ in range(100):
         results = trainer.train()
         checkpoint = trainer.save()  # <1>
-        if time_steps >= 10.000:  # <2>
+        if time_steps >= 1000:  # <2>
             break
         time_steps += results["timesteps_total"]
 # end::server_run[]

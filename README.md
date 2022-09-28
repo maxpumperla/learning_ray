@@ -1,4 +1,4 @@
-# Learning Ray - Flexible Distributed Python for Data Science
+# Learning Ray - Flexible Distributed Python for Machine Learning
 
 Jupyter notebooks and other resources for the upcoming book "Learning Ray" (O'Reilly).
 
@@ -29,27 +29,24 @@ Here's what you can expect from each chapter.
 * [_Chapter 5, Hyperparameter Optimization with Ray Tune_](https://github.com/maxpumperla/learning_ray/blob/main/notebooks/ch_05_tune.ipynb)
   Covers why efficiently tuning hyperparameters is hard, how Ray Tune works conceptually,
   and how you can use it in practice for your machine learning projects.
-* [_Chapter 6, Distributed Training with Ray Train_](https://github.com/maxpumperla/learning_ray/blob/main/notebooks/ch_06_train.ipynb)
-  Provides you with the basics of distributed model training and shows you how to use
-  RaySGD with popular frameworks such as TensorFlow or PyTorch, and how to combine it
-  with Ray Tune for hyperparameter optimization.
-* [_Chapter 7, Data Processing with Ray_](https://github.com/maxpumperla/learning_ray/blob/main/notebooks/ch_07_data_processing.ipynb)
+* [_Chapter 6, Data Processing with Ray_](https://github.com/maxpumperla/learning_ray/blob/main/notebooks/ch_06_data_processing.ipynb)
   Introduces you to the Dataset abstraction of Ray and how it fits into the landscape
   of other data structures. You will also learn how to bring pandas data frames, Dask
   data structures and Apache Spark workloads to Ray.
-* _Chapter 8, Working with Ray Clusters_
+* [_Chapter 7, Distributed Training with Ray Train_](https://github.com/maxpumperla/learning_ray/blob/main/notebooks/ch_07_train.ipynb)
+  Provides you with the basics of distributed model training and shows you how to use
+  RaySGD with popular frameworks such as TensorFlow or PyTorch, and how to combine it
+  with Ray Tune for hyperparameter optimization.
+* [_Chapter 9, Serving Models with Ray Serve_](https://github.com/maxpumperla/learning_ray/blob/main/notebooks/ch_08_model_serving.ipynb)
+  Introduces you to model serving with Ray, why it works well within the framework,
+  and how to do single-node and cluster deployment with it.
+* [_Chapter 9, Working with Ray Clusters_](https://github.com/maxpumperla/learning_ray/blob/main/notebooks/ch_09_script.ipynb)
   This chapter is all about how you configure, launch and scale Ray clusters for your applications.
   You'll learn about Ray's cluster launcher CLI and autoscaler, as well as how to set
   up clusters in the cloud and how to deploy on Kubernetes and other cluster managers.
-* _Chapter 9, Serving Models with Ray Serve_
-  Introduces you to model serving with Ray, why it works well within the framework,
-  and how to do single-node and cluster deployment with it.
-* _Chapter 10, Building A Machine Learning Application with Ray_
-  Bringing together many of the previous chapters, in this chapter we'll build a machine
-  learning in Ray end-to-end, from first experimentation to cloud deployment.
-* _Chapter 11, The Ray Ecosystem_
-  Comments on all the interesting extensions and third party integrations that Ray has
-  attracted over the years.
-* _Chapter 12, Conclusion_
-  To conclude, we recap what you've learned in this book, where to go next to learn more
-  about Ray, and what you can expect from Ray in the years to come.
+* [_Chapter 10, Getting Started with the Ray AI Runtime_](https://github.com/maxpumperla/learning_ray/blob/main/notebooks/ch_10_air.ipynb)
+  Introduces you to Ray AIR, a unified toolkit for your ML workloads that offers many
+  third party integrations for model training or accessing custom data sources.
+* [_Chapter 11, Ray's Ecosystem and Beyond_](https://github.com/maxpumperla/learning_ray/blob/main/notebooks/ch_11_ecosystem.ipynb)
+  Gives you an overview of the many interesting extensions and
+  integrations that Ray has attracted over the years. 
