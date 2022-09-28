@@ -20,7 +20,7 @@
     
     
       
-        <title>An Overview of Ray - Learning Ray - Flexible Distributed Python for Data Science</title>
+        <title>Chapter 1: An Overview of Ray - Learning Ray - Flexible Distributed Python for Data Science</title>
       
     
     
@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#an-overview-of-ray" class="md-skip">
+        <a href="#chapter-1-an-overview-of-ray" class="md-skip">
           Skip to content
         </a>
       
@@ -127,7 +127,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              An Overview of Ray
+              Chapter 1: An Overview of Ray
             
           </span>
         </div>
@@ -286,12 +286,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          An Overview of Ray
+          Chapter 1: An Overview of Ray
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        An Overview of Ray
+        Chapter 1: An Overview of Ray
       </a>
       
         
@@ -355,7 +355,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_02_ray_core/" class="md-nav__link">
-        Getting Started with Ray Core
+        Chapter 2: Getting Started with Ray Core
       </a>
     </li>
   
@@ -370,7 +370,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_03_core_app/" class="md-nav__link">
-        Building Your First Distributed Application With Ray Core
+        Chapter 3: Building Your First Distributed Application With Ray Core
       </a>
     </li>
   
@@ -414,7 +414,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch_06_train/" class="md-nav__link">
+      <a href="../ch_06_data_processing/" class="md-nav__link">
+        Data Processing with Ray Data
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch_07_train/" class="md-nav__link">
         Distributed Training with Ray Train
       </a>
     </li>
@@ -429,8 +444,53 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch_07_data_processing/" class="md-nav__link">
-        Data Processing with Ray Data
+      <a href="../ch_08_model_serving/" class="md-nav__link">
+        Serving Models with Ray Serve
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch_09_script/" class="md-nav__link">
+        Working with Ray Clusters
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch_10_air/" class="md-nav__link">
+        Getting Started with the Ray AI Runtime
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch_11_ecosystem/" class="md-nav__link">
+        Ray's Ecosystem and Beyond
       </a>
     </li>
   
@@ -1174,7 +1234,7 @@ all of MD as it is not optimized for dense, information rich UIs.
     <!-- End of mathjax configuration --><div class="jupyter-wrapper">
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="an-overview-of-ray">An Overview of Ray<a class="anchor-link" href="#An-Overview-of-Ray">&#182;</a></h1>
+<h1 id="chapter-1-an-overview-of-ray">Chapter 1: An Overview of Ray<a class="anchor-link" href="#Chapter-1:-An-Overview-of-Ray">&#182;</a></h1>
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
@@ -1470,7 +1530,7 @@ Let's rewrite the last example into a pipeline.</p>
         </div>
         <div class="CodeMirror cm-s-jupyter">
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::ray_data_pipeline[]</span>
-<span class="n">pipe</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">pipeline</span><span class="p">()</span>  <span class="c1"># &lt;1&gt;</span>
+<span class="n">pipe</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">window</span><span class="p">()</span>  <span class="c1"># &lt;1&gt;</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">pipe</span>\
     <span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>\
     <span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>\
@@ -1479,7 +1539,7 @@ Let's rewrite the last example into a pipeline.</p>
 <span class="c1"># end::ray_data_pipeline[]</span>
 </pre></div>
 <div id="cell-4" class="clipboard-copy-txt"># tag::ray_data_pipeline[]
-pipe = ds.pipeline()  # <1>
+pipe = ds.window()  # <1>
 result = pipe\
     .map(lambda x: x["data"] ** 2)\
     .filter(lambda x: x % 2 == 0)\
@@ -1508,7 +1568,7 @@ thereby acting on its environment (manipulating the pendulum) to reach the "upri
 for which it will be rewarded.
 To tackle this problem with Ray RLlib, store the following content in a file called <code>pendulum.yml</code>:</p>
 <div class="codehilite"><pre><code><span class="nt">pendulum-ppo</span><span class="p">:</span>
-  <span class="nt">env</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Pendulum-v0</span>  <span class="c1"># &lt;1&gt;</span>
+  <span class="nt">env</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Pendulum-v1</span>  <span class="c1"># &lt;1&gt;</span>
   <span class="nt">run</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PPO</span>  <span class="c1"># &lt;2&gt;</span>
   <span class="nt">checkpoint_freq</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">5</span>  <span class="c1"># &lt;3&gt;</span>
   <span class="nt">stop</span><span class="p">:</span>
@@ -1519,7 +1579,7 @@ To tackle this problem with Ray RLlib, store the following content in a file cal
     <span class="nt">lr</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.0003</span>
     <span class="nt">num_sgd_iter</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">6</span>
 </code></pre></div><p>The details of this configuration file don't matter much at this point, don't get distracted by them.
-The important part is that you specify the built-in <code>Pendulum-v0</code> environment and sufficient RL-specific
+The important part is that you specify the built-in <code>Pendulum-v1</code> environment and sufficient RL-specific
 configuration to ensure the training procedure works.
 The configuration is a simplified version of one of Ray's
 <a href="https://github.com/ray-project/ray/tree/master/rllib/tuned_examples">tuned examples</a>.
@@ -1536,23 +1596,23 @@ The only other thing you need to figure out is where Ray stored your training pr
 When you run <code>rllib train</code> for an experiment, Ray will create a unique experiment ID for you and stores
 results in a sub-folder of <code>~/ray-results</code> by default.
 For the training configuration we used, you should see a folder with results that looks
-like <code>~/ray_results/pendulum-ppo/PPO_Pendulum-v0_&lt;experiment_id&gt;</code>.
+like <code>~/ray_results/pendulum-ppo/PPO_Pendulum-v1_&lt;experiment_id&gt;</code>.
 During the training procedure intermediate model checkpoints get generated in the same folder.
 For instance, I have a folder on my machine called:</p>
-<div class="codehilite"><pre><code>~/ray_results/pendulum-ppo/PPO_Pendulum-v0_20cbf_00000_0_2021-09-24_15-20-03/<span class="se">\</span>
+<div class="codehilite"><pre><code>~/ray_results/pendulum-ppo/PPO_Pendulum-v1_20cbf_00000_0_2021-09-24_15-20-03/<span class="se">\</span>
   checkpoint_000029/checkpoint-29
 </code></pre></div><p>Once you figured out the experiment ID and chose a checkpoint ID (as a rule of thumb the larger the ID, the
 better the results), you can evaluate the training performance of your pendulum training run like this
-(we'll explain what <code>rollout</code> means in this context in &lt;<chapter_05>&gt;):</p>
+(we'll explain what <code>rollout</code> means in this context in &lt;<chapter_03>&gt; and &lt;<chapter_04>&gt;):</p>
 <div class="codehilite"><pre><code>rllib rollout <span class="se">\</span>
-  ~/ray_results/pendulum-ppo/PPO_Pendulum-v0_&lt;experiment_id&gt; <span class="se">\</span>
+  ~/ray_results/pendulum-ppo/PPO_Pendulum-v1_&lt;experiment_id&gt; <span class="se">\</span>
   /checkpoint_000&lt;cp-id&gt;/checkpoint-&lt;cp-id&gt; <span class="se">\</span>
-  --run PPO --env Pendulum-v0 --steps <span class="m">2000</span>
+  --run PPO --env Pendulum-v1 --steps <span class="m">2000</span>
 </code></pre></div><p>You should see an animation of a pendulum controlled by an agent that looks like the figure of the pendulum
 from earlier.
 Since we opted for a quick training procedure instead of maximizing performance, you should see the agent
 struggle with the pendulum exercise.
-We could have done much better, and if you're interested to scan Ray's tuned examples for the <code>Pendulum-v0</code>
+We could have done much better, and if you're interested to scan Ray's tuned examples for the <code>Pendulum-v1</code>
 environment, you'll find an abundance of solutions to this exercise.
 The point of this example was to show you how simple it can be to train and evaluate
 reinforcement learning tasks with RLlib, using just two command line calls to <code>rllib</code>.</p>
@@ -1561,17 +1621,15 @@ reinforcement learning tasks with RLlib, using just two command line calls to <c
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="distributed-training-with-ray-sgd">Distributed training with Ray SGD<a class="anchor-link" href="#Distributed-training-with-Ray-SGD">&#182;</a></h2><p>Ray RLlib is dedicated to reinforcement learning, but what do you do if you need to train models for
+<h2 id="distributed-training-with-ray-train">Distributed training with Ray Train<a class="anchor-link" href="#Distributed-training-with-Ray-Train">&#182;</a></h2><p>Ray RLlib is dedicated to reinforcement learning, but what do you do if you need to train models for
 other types of machine learning, like supervised learning?
-You can use another Ray library for distributed training in this case, called <em>Ray SGD</em>.
-"SGD" stands for <em>stochastic gradient descent</em>, which is currently the most widely used learning mechanism for a
-subclass of machine learning called <em>deep learning</em>.
+You can use another Ray library for distributed training in this case, called <em>Ray Train</em>.
 At this point, we don't have built up enough knowledge of frameworks such as <code>TensorFlow</code> to give you a
-concrete and informative example for Ray SGD.
-It also doesn't make sense right now to dive into deep learning or explain what SGD is, for that matter.
+concrete and informative example for Ray Train.
+It also doesn't make sense right now to dive into deep learning or explain what Train is, for that matter.
 We'll discuss this in chapter 6, when it's time to.
 But we can at least roughly sketch what a distributed training "wrapper" for an ML model would look like.
-A schematic procedure for running distributed deep learning with Ray SGD looks as follows.</p>
+A schematic procedure for running distributed deep learning with Ray Train looks as follows.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -1592,12 +1650,12 @@ A schematic procedure for running distributed deep learning with Ray SGD looks a
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::ray_sgd_sketch[]</span>
-<span class="kn">from</span> <span class="nn">ray.util.sgd.v2</span> <span class="kn">import</span> <span class="n">Trainer</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::ray_train_sketch[]</span>
+<span class="kn">from</span> <span class="nn">ray.train</span> <span class="kn">import</span> <span class="n">Trainer</span>
 
 
 <span class="k">def</span> <span class="nf">training_function</span><span class="p">():</span>  <span class="c1"># &lt;1&gt;</span>
-    <span class="k">raise</span> <span class="bp">NotImplemented</span>
+    <span class="k">pass</span>
 
 
 <span class="n">trainer</span> <span class="o">=</span> <span class="n">Trainer</span><span class="p">(</span><span class="n">backend</span><span class="o">=</span><span class="s2">&quot;tensorflow&quot;</span><span class="p">,</span> <span class="n">num_workers</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>  <span class="c1"># &lt;2&gt;</span>
@@ -1605,14 +1663,14 @@ A schematic procedure for running distributed deep learning with Ray SGD looks a
 
 <span class="n">results</span> <span class="o">=</span> <span class="n">trainer</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">training_function</span><span class="p">)</span>  <span class="c1"># &lt;3&gt;</span>
 <span class="n">trainer</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span>
-<span class="c1"># end::ray_sgd_sketch[]</span>
+<span class="c1"># end::ray_train_sketch[]</span>
 </pre></div>
-<div id="cell-5" class="clipboard-copy-txt"># tag::ray_sgd_sketch[]
-from ray.util.sgd.v2 import Trainer
+<div id="cell-5" class="clipboard-copy-txt"># tag::ray_train_sketch[]
+from ray.train import Trainer
 
 
 def training_function():  # <1>
-    raise NotImplemented
+    pass
 
 
 trainer = Trainer(backend="tensorflow", num_workers=4)  # <2>
@@ -1620,7 +1678,7 @@ trainer.start()
 
 results = trainer.run(training_function)  # <3>
 trainer.shutdown()
-# end::ray_sgd_sketch[]</div>
+# end::ray_train_sketch[]</div>
     
         </div>
     </div>
@@ -1867,13 +1925,13 @@ print(response.text)
       
       
         
-        <a href="../ch_02_ray_core/" class="md-footer__link md-footer__link--next" aria-label="Next: Getting Started with Ray Core" rel="next">
+        <a href="../ch_02_ray_core/" class="md-footer__link md-footer__link--next" aria-label="Next: Chapter 2: Getting Started with Ray Core" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Getting Started with Ray Core
+              Chapter 2: Getting Started with Ray Core
             </div>
           </div>
           <div class="md-footer__button md-icon">

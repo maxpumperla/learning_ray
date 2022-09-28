@@ -272,7 +272,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_01_overview/" class="md-nav__link">
-        An Overview of Ray
+        Chapter 1: An Overview of Ray
       </a>
     </li>
   
@@ -287,7 +287,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_02_ray_core/" class="md-nav__link">
-        Getting Started with Ray Core
+        Chapter 2: Getting Started with Ray Core
       </a>
     </li>
   
@@ -302,7 +302,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_03_core_app/" class="md-nav__link">
-        Building Your First Distributed Application With Ray Core
+        Chapter 3: Building Your First Distributed Application With Ray Core
       </a>
     </li>
   
@@ -354,7 +354,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch_06_train/" class="md-nav__link">
+      <a href="../ch_06_data_processing/" class="md-nav__link">
+        Data Processing with Ray Data
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch_07_train/" class="md-nav__link">
         Distributed Training with Ray Train
       </a>
     </li>
@@ -369,8 +384,53 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch_07_data_processing/" class="md-nav__link">
-        Data Processing with Ray Data
+      <a href="../ch_08_model_serving/" class="md-nav__link">
+        Serving Models with Ray Serve
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch_09_script/" class="md-nav__link">
+        Working with Ray Clusters
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch_10_air/" class="md-nav__link">
+        Getting Started with the Ray AI Runtime
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch_11_ecosystem/" class="md-nav__link">
+        Ray's Ecosystem and Beyond
       </a>
     </li>
   
@@ -1195,7 +1255,9 @@ class Env:
 
 <span class="c1"># tag::rllib_workers[]</span>
 <span class="n">workers</span> <span class="o">=</span> <span class="n">trainer</span><span class="o">.</span><span class="n">workers</span>
-<span class="n">workers</span><span class="o">.</span><span class="n">foreach_worker</span><span class="p">(</span><span class="k">lambda</span> <span class="n">remote_trainer</span><span class="p">:</span> <span class="n">remote_trainer</span><span class="o">.</span><span class="n">get_policy</span><span class="p">()</span><span class="o">.</span><span class="n">get_weights</span><span class="p">())</span>
+<span class="n">workers</span><span class="o">.</span><span class="n">foreach_worker</span><span class="p">(</span>
+    <span class="k">lambda</span> <span class="n">remote_trainer</span><span class="p">:</span> <span class="n">remote_trainer</span><span class="o">.</span><span class="n">get_policy</span><span class="p">()</span><span class="o">.</span><span class="n">get_weights</span><span class="p">()</span>
+<span class="p">)</span>
 <span class="c1"># end::rllib_workers[]</span>
 
 <span class="c1"># tag::rllib_q_network[]</span>
@@ -1324,8 +1386,12 @@ class Env:
 <span class="n">trainer</span> <span class="o">=</span> <span class="n">DQNTrainer</span><span class="p">(</span><span class="n">env</span><span class="o">=</span><span class="n">MultiAgentMaze</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="p">{</span>
     <span class="s2">&quot;multiagent&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;policies&quot;</span><span class="p">:</span> <span class="p">{</span>  <span class="c1"># &lt;1&gt;</span>
-            <span class="s2">&quot;policy_1&quot;</span><span class="p">:</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">env</span><span class="o">.</span><span class="n">observation_space</span><span class="p">,</span> <span class="n">env</span><span class="o">.</span><span class="n">action_space</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;gamma&quot;</span><span class="p">:</span> <span class="mf">0.80</span><span class="p">}),</span>
-            <span class="s2">&quot;policy_2&quot;</span><span class="p">:</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">env</span><span class="o">.</span><span class="n">observation_space</span><span class="p">,</span> <span class="n">env</span><span class="o">.</span><span class="n">action_space</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;gamma&quot;</span><span class="p">:</span> <span class="mf">0.95</span><span class="p">}),</span>
+            <span class="s2">&quot;policy_1&quot;</span><span class="p">:</span> <span class="p">(</span>
+                <span class="kc">None</span><span class="p">,</span> <span class="n">env</span><span class="o">.</span><span class="n">observation_space</span><span class="p">,</span> <span class="n">env</span><span class="o">.</span><span class="n">action_space</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;gamma&quot;</span><span class="p">:</span> <span class="mf">0.80</span><span class="p">}</span>
+            <span class="p">),</span>
+            <span class="s2">&quot;policy_2&quot;</span><span class="p">:</span> <span class="p">(</span>
+                <span class="kc">None</span><span class="p">,</span> <span class="n">env</span><span class="o">.</span><span class="n">observation_space</span><span class="p">,</span> <span class="n">env</span><span class="o">.</span><span class="n">action_space</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;gamma&quot;</span><span class="p">:</span> <span class="mf">0.95</span><span class="p">}</span>
+            <span class="p">),</span>
         <span class="p">},</span>
         <span class="s2">&quot;policy_mapping_fn&quot;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">agent_id</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;policy_</span><span class="si">{</span><span class="n">agent_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>  <span class="c1"># &lt;2&gt;</span>
     <span class="p">},</span>
@@ -1350,7 +1416,8 @@ class Env:
         <span class="bp">self</span><span class="o">.</span><span class="n">observation_space</span> <span class="o">=</span> <span class="n">Discrete</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">maze_len</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">maze_len</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="n">seeker</span><span class="p">:</span>  <span class="c1"># &lt;1&gt;</span>
-            <span class="k">assert</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">seeker</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">maze_len</span> <span class="ow">and</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">seeker</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">maze_len</span>
+            <span class="k">assert</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">seeker</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">maze_len</span> <span class="ow">and</span> \
+                   <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">seeker</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">maze_len</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">seeker</span> <span class="o">=</span> <span class="n">seeker</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
@@ -1367,7 +1434,10 @@ class Env:
 <span class="c1"># tag::advanced_env_rest[]</span>
     <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Reset seeker position randomly, return observations.&quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">seeker</span> <span class="o">=</span> <span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">maze_len</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">maze_len</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">seeker</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">maze_len</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span>
+            <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">maze_len</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_observation</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">get_observation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -1383,7 +1453,8 @@ class Env:
     <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Render the environment, e.g. by printing its representation.&quot;&quot;&quot;</span>
         <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;cls&#39;</span> <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;nt&#39;</span> <span class="k">else</span> <span class="s1">&#39;clear&#39;</span><span class="p">)</span>
-        <span class="n">grid</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;| &#39;</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">maze_len</span><span class="p">)]</span> <span class="o">+</span> <span class="p">[</span><span class="s2">&quot;|</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">maze_len</span><span class="p">)]</span>
+        <span class="n">grid</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;| &#39;</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">maze_len</span><span class="p">)]</span> <span class="o">+</span>
+                <span class="p">[</span><span class="s2">&quot;|</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">maze_len</span><span class="p">)]</span>
         <span class="k">for</span> <span class="n">punish</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">punish_states</span><span class="p">:</span>
             <span class="n">grid</span><span class="p">[</span><span class="n">punish</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="n">punish</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="s1">&#39;|X&#39;</span>
         <span class="n">grid</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">goal</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="bp">self</span><span class="o">.</span><span class="n">goal</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="s1">&#39;|G&#39;</span>
@@ -1420,6 +1491,7 @@ class Env:
     <span class="k">return</span> <span class="n">difficulty</span>
 <span class="c1"># end::curriculum_fn[]</span>
 
+<span class="c1"># TODO use os independent temp dirs here</span>
 <span class="c1"># tag::curriculum_trainer[]</span>
 <span class="n">config</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;env&quot;</span><span class="p">:</span> <span class="n">CurriculumEnv</span><span class="p">,</span>
@@ -1507,7 +1579,9 @@ model = policy.model
 
 # tag::rllib_workers[]
 workers = trainer.workers
-workers.foreach_worker(lambda remote_trainer: remote_trainer.get_policy().get_weights())
+workers.foreach_worker(
+    lambda remote_trainer: remote_trainer.get_policy().get_weights()
+)
 # end::rllib_workers[]
 
 # tag::rllib_q_network[]
@@ -1636,8 +1710,12 @@ simple_trainer.train()
 trainer = DQNTrainer(env=MultiAgentMaze, config={
     "multiagent": {
         "policies": {  # <1>
-            "policy_1": (None, env.observation_space, env.action_space, {"gamma": 0.80}),
-            "policy_2": (None, env.observation_space, env.action_space, {"gamma": 0.95}),
+            "policy_1": (
+                None, env.observation_space, env.action_space, {"gamma": 0.80}
+            ),
+            "policy_2": (
+                None, env.observation_space, env.action_space, {"gamma": 0.95}
+            ),
         },
         "policy_mapping_fn": lambda agent_id: f"policy_{agent_id}",  # <2>
     },
@@ -1662,7 +1740,8 @@ class AdvancedEnv(GymEnvironment):
         self.observation_space = Discrete(self.maze_len * self.maze_len)
 
         if seeker:  # <1>
-            assert 0 <= seeker[0] < self.maze_len and 0 <= seeker[1] < self.maze_len
+            assert 0 <= seeker[0] < self.maze_len and \
+                   0 <= seeker[1] < self.maze_len
             self.seeker = seeker
         else:
             self.reset()
@@ -1679,7 +1758,10 @@ class AdvancedEnv(GymEnvironment):
 # tag::advanced_env_rest[]
     def reset(self):
         """Reset seeker position randomly, return observations."""
-        self.seeker = (random.randint(0, self.maze_len - 1), random.randint(0, self.maze_len - 1))
+        self.seeker = (
+            random.randint(0, self.maze_len - 1),
+            random.randint(0, self.maze_len - 1)
+        )
         return self.get_observation()
 
     def get_observation(self):
@@ -1695,7 +1777,8 @@ class AdvancedEnv(GymEnvironment):
     def render(self, *args, **kwargs):
         """Render the environment, e.g. by printing its representation."""
         os.system('cls' if os.name == 'nt' else 'clear')
-        grid = [['| ' for _ in range(self.maze_len)] + ["|\n"] for _ in range(self.maze_len)]
+        grid = [['| ' for _ in range(self.maze_len)] +
+                ["|\n"] for _ in range(self.maze_len)]
         for punish in self.punish_states:
             grid[punish[0]][punish[1]] = '|X'
         grid[self.goal[0]][self.goal[1]] = '|G'
@@ -1732,6 +1815,7 @@ def curriculum_fn(train_results, task_settable_env, env_ctx):
     return difficulty
 # end::curriculum_fn[]
 
+# TODO use os independent temp dirs here
 # tag::curriculum_trainer[]
 config = {
     "env": CurriculumEnv,
@@ -1798,7 +1882,7 @@ imitation_trainer.evaluate()
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../ch_03_core_app/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Building Your First Distributed Application With Ray Core" rel="prev">
+        <a href="../ch_03_core_app/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Chapter 3: Building Your First Distributed Application With Ray Core" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1807,7 +1891,7 @@ imitation_trainer.evaluate()
               <span class="md-footer__direction">
                 Previous
               </span>
-              Building Your First Distributed Application With Ray Core
+              Chapter 3: Building Your First Distributed Application With Ray Core
             </div>
           </div>
         </a>

@@ -20,7 +20,7 @@
     
     
       
-        <title>Building Your First Distributed Application With Ray Core - Learning Ray - Flexible Distributed Python for Data Science</title>
+        <title>Chapter 3: Building Your First Distributed Application With Ray Core - Learning Ray - Flexible Distributed Python for Data Science</title>
       
     
     
@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#building-your-first-distributed-application-with-ray-core" class="md-skip">
+        <a href="#chapter-3-building-your-first-distributed-application-with-ray-core" class="md-skip">
           Skip to content
         </a>
       
@@ -127,7 +127,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Building Your First Distributed Application With Ray Core
+              Chapter 3: Building Your First Distributed Application With Ray Core
             
           </span>
         </div>
@@ -277,7 +277,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_01_overview/" class="md-nav__link">
-        An Overview of Ray
+        Chapter 1: An Overview of Ray
       </a>
     </li>
   
@@ -292,7 +292,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_02_ray_core/" class="md-nav__link">
-        Getting Started with Ray Core
+        Chapter 2: Getting Started with Ray Core
       </a>
     </li>
   
@@ -316,7 +316,7 @@
       
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Building Your First Distributed Application With Ray Core
+        Chapter 3: Building Your First Distributed Application With Ray Core
       </a>
       
     </li>
@@ -361,7 +361,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch_06_train/" class="md-nav__link">
+      <a href="../ch_06_data_processing/" class="md-nav__link">
+        Data Processing with Ray Data
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch_07_train/" class="md-nav__link">
         Distributed Training with Ray Train
       </a>
     </li>
@@ -376,8 +391,53 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch_07_data_processing/" class="md-nav__link">
-        Data Processing with Ray Data
+      <a href="../ch_08_model_serving/" class="md-nav__link">
+        Serving Models with Ray Serve
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch_09_script/" class="md-nav__link">
+        Working with Ray Clusters
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch_10_air/" class="md-nav__link">
+        Getting Started with the Ray AI Runtime
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch_11_ecosystem/" class="md-nav__link">
+        Ray's Ecosystem and Beyond
       </a>
     </li>
   
@@ -1085,7 +1145,7 @@ all of MD as it is not optimized for dense, information rich UIs.
     <!-- End of mathjax configuration --><div class="jupyter-wrapper">
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="building-your-first-distributed-application-with-ray-core">Building Your First Distributed Application With Ray Core<a class="anchor-link" href="#Building-Your-First-Distributed-Application-With-Ray-Core">&#182;</a></h1>
+<h1 id="chapter-3-building-your-first-distributed-application-with-ray-core">Chapter 3: Building Your First Distributed Application With Ray Core<a class="anchor-link" href="#Chapter-3:-Building-Your-First-Distributed-Application-With-Ray-Core">&#182;</a></h1>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -1111,7 +1171,10 @@ all of MD as it is not optimized for dense, information rich UIs.
 
 <span class="k">class</span> <span class="nc">Discrete</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num_actions</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; Discrete action space for num_actions.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot; Discrete action space for num_actions.</span>
+<span class="sd">        Discrete(4) can be used as encoding moving in</span>
+<span class="sd">        one of the cardinal directions.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">=</span> <span class="n">num_actions</span>
 
     <span class="k">def</span> <span class="nf">sample</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -1128,7 +1191,10 @@ import random
 
 class Discrete:
     def __init__(self, num_actions: int):
-        """ Discrete action space for num_actions."""
+        """ Discrete action space for num_actions.
+        Discrete(4) can be used as encoding moving in
+        one of the cardinal directions.
+        """
         self.n = num_actions
 
     def sample(self):
@@ -1213,7 +1279,10 @@ print(space.sample())  # <2>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Invalid action&quot;</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_observation</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_reward</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_done</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">info</span>  <span class="c1"># &lt;1&gt;</span>
+        <span class="n">obs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_observation</span><span class="p">()</span>
+        <span class="n">rew</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_reward</span><span class="p">()</span>
+        <span class="n">done</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_done</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">obs</span><span class="p">,</span> <span class="n">rew</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">info</span>  <span class="c1"># &lt;1&gt;</span>
 <span class="c1"># end::env_step[]</span>
 
 <span class="c1"># tag::env_render[]</span>
@@ -1275,7 +1344,10 @@ class Environment:
         else:
             raise ValueError("Invalid action")
 
-        return self.get_observation(), self.get_reward(), self.is_done(), self.info  # <1>
+        obs = self.get_observation()
+        rew = self.get_reward()
+        done = self.is_done()
+        return obs, rew, done, self.info  # <1>
 # end::env_step[]
 
 # tag::env_render[]
@@ -1366,38 +1438,40 @@ while not environment.is_done():
 <span class="k">class</span> <span class="nc">Policy</span><span class="p">:</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">env</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;A Policy suggest actions based on the current state.</span>
+        <span class="sd">&quot;&quot;&quot;A Policy suggests actions based on the current state.</span>
 <span class="sd">        We do this by tracking the value of each state-action pair.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">state_action_table</span> <span class="o">=</span> <span class="p">[</span>
-            <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">action_space</span><span class="o">.</span><span class="n">n</span><span class="p">)]</span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">observation_space</span><span class="o">.</span><span class="n">n</span><span class="p">)</span>  <span class="c1"># &lt;1&gt;</span>
+            <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">action_space</span><span class="o">.</span><span class="n">n</span><span class="p">)]</span>
+            <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">observation_space</span><span class="o">.</span><span class="n">n</span><span class="p">)</span>  <span class="c1"># &lt;1&gt;</span>
         <span class="p">]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">action_space</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">action_space</span>
 
-    <span class="k">def</span> <span class="nf">get_action</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">,</span> <span class="n">explore</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">0.1</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">get_action</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">,</span> <span class="n">explore</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">0.1</span><span class="p">):</span>  <span class="c1"># &lt;2&gt;</span>
         <span class="sd">&quot;&quot;&quot;Explore randomly or exploit the best value currently available.&quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="n">explore</span> <span class="ow">and</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">epsilon</span><span class="p">:</span>  <span class="c1"># &lt;2&gt;</span>
+        <span class="k">if</span> <span class="n">explore</span> <span class="ow">and</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">epsilon</span><span class="p">:</span>  <span class="c1"># &lt;3&gt;</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">action_space</span><span class="o">.</span><span class="n">sample</span><span class="p">()</span>
-        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">state_action_table</span><span class="p">[</span><span class="n">state</span><span class="p">])</span>  <span class="c1"># &lt;3&gt;</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">state_action_table</span><span class="p">[</span><span class="n">state</span><span class="p">])</span>  <span class="c1"># &lt;4&gt;</span>
 <span class="c1"># end::policy[]</span>
 </pre></div>
 <div id="cell-4" class="clipboard-copy-txt"># tag::policy[]
 class Policy:
 
     def __init__(self, env):
-        """A Policy suggest actions based on the current state.
+        """A Policy suggests actions based on the current state.
         We do this by tracking the value of each state-action pair.
         """
         self.state_action_table = [
-            [0 for _ in range(env.action_space.n)]for _ in range(env.observation_space.n)  # <1>
+            [0 for _ in range(env.action_space.n)]
+            for _ in range(env.observation_space.n)  # <1>
         ]
         self.action_space = env.action_space
 
-    def get_action(self, state, explore=True, epsilon=0.1):
+    def get_action(self, state, explore=True, epsilon=0.1):  # <2>
         """Explore randomly or exploit the best value currently available."""
-        if explore and random.uniform(0, 1) < epsilon:  # <2>
+        if explore and random.uniform(0, 1) < epsilon:  # <3>
             return self.action_space.sample()
-        return np.argmax(self.state_action_table[state])  # <3>
+        return np.argmax(self.state_action_table[state])  # <4>
 # end::policy[]</div>
     
         </div>
@@ -1543,14 +1617,14 @@ for row in untrained_policy.state_action_table:
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 
-<span class="k">def</span> <span class="nf">update_policy</span><span class="p">(</span><span class="n">policy</span><span class="p">,</span> <span class="n">experiences</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Updates a given policy with a list of (state, action, reward, state) experiences.&quot;&quot;&quot;</span>
-    <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.1</span>
-    <span class="n">gamma</span> <span class="o">=</span> <span class="mf">0.6</span>
+<span class="k">def</span> <span class="nf">update_policy</span><span class="p">(</span><span class="n">policy</span><span class="p">,</span> <span class="n">experiences</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">discount_factor</span><span class="o">=</span><span class="mf">0.9</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Updates a given policy with a list of (state, action, reward, state)</span>
+<span class="sd">    experiences.&quot;&quot;&quot;</span>
     <span class="k">for</span> <span class="n">state</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">next_state</span> <span class="ow">in</span> <span class="n">experiences</span><span class="p">:</span>  <span class="c1"># &lt;1&gt;</span>
         <span class="n">next_max</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">policy</span><span class="o">.</span><span class="n">state_action_table</span><span class="p">[</span><span class="n">next_state</span><span class="p">])</span>  <span class="c1"># &lt;2&gt;</span>
         <span class="n">value</span> <span class="o">=</span> <span class="n">policy</span><span class="o">.</span><span class="n">state_action_table</span><span class="p">[</span><span class="n">state</span><span class="p">][</span><span class="n">action</span><span class="p">]</span>  <span class="c1"># &lt;3&gt;</span>
-        <span class="n">new_value</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">alpha</span><span class="p">)</span> <span class="o">*</span> <span class="n">value</span> <span class="o">+</span> <span class="n">alpha</span> <span class="o">*</span> <span class="p">(</span><span class="n">reward</span> <span class="o">+</span> <span class="n">gamma</span> <span class="o">*</span> <span class="n">next_max</span><span class="p">)</span>  <span class="c1"># &lt;4&gt;</span>
+        <span class="n">new_value</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">weight</span><span class="p">)</span> <span class="o">*</span> <span class="n">value</span> <span class="o">+</span> <span class="n">weight</span> <span class="o">*</span> \
+                    <span class="p">(</span><span class="n">reward</span> <span class="o">+</span> <span class="n">discount_factor</span> <span class="o">*</span> <span class="n">next_max</span><span class="p">)</span>  <span class="c1"># &lt;4&gt;</span>
         <span class="n">policy</span><span class="o">.</span><span class="n">state_action_table</span><span class="p">[</span><span class="n">state</span><span class="p">][</span><span class="n">action</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_value</span>  <span class="c1"># &lt;5&gt;</span>
 <span class="c1"># end::update_policy[]</span>
 </pre></div>
@@ -1558,14 +1632,14 @@ for row in untrained_policy.state_action_table:
 import numpy as np
 
 
-def update_policy(policy, experiences):
-    """Updates a given policy with a list of (state, action, reward, state) experiences."""
-    alpha = 0.1
-    gamma = 0.6
+def update_policy(policy, experiences, weight=0.1, discount_factor=0.9):
+    """Updates a given policy with a list of (state, action, reward, state)
+    experiences."""
     for state, action, reward, next_state in experiences:  # <1>
         next_max = np.max(policy.state_action_table[next_state])  # <2>
         value = policy.state_action_table[state][action]  # <3>
-        new_value = (1 - alpha) * value + alpha * (reward + gamma * next_max)  # <4>
+        new_value = (1 - weight) * value + weight * \
+                    (reward + discount_factor * next_max)  # <4>
         policy.state_action_table[state][action] = new_value  # <5>
 # end::update_policy[]</div>
     
@@ -1595,34 +1669,58 @@ def update_policy(policy, experiences):
         </div>
         <div class="CodeMirror cm-s-jupyter">
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::train_policy[]</span>
-<span class="k">def</span> <span class="nf">train_policy</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">num_episodes</span><span class="o">=</span><span class="mi">10000</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">train_policy</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">num_episodes</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">discount_factor</span><span class="o">=</span><span class="mf">0.9</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Training a policy by updating it with rollout experiences.&quot;&quot;&quot;</span>
     <span class="n">policy</span> <span class="o">=</span> <span class="n">Policy</span><span class="p">(</span><span class="n">env</span><span class="p">)</span>
     <span class="n">sim</span> <span class="o">=</span> <span class="n">Simulation</span><span class="p">(</span><span class="n">env</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_episodes</span><span class="p">):</span>
         <span class="n">experiences</span> <span class="o">=</span> <span class="n">sim</span><span class="o">.</span><span class="n">rollout</span><span class="p">(</span><span class="n">policy</span><span class="p">)</span>  <span class="c1"># &lt;1&gt;</span>
-        <span class="n">update_policy</span><span class="p">(</span><span class="n">policy</span><span class="p">,</span> <span class="n">experiences</span><span class="p">)</span>  <span class="c1"># &lt;2&gt;</span>
+        <span class="n">update_policy</span><span class="p">(</span><span class="n">policy</span><span class="p">,</span> <span class="n">experiences</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">discount_factor</span><span class="p">)</span>  <span class="c1"># &lt;2&gt;</span>
 
     <span class="k">return</span> <span class="n">policy</span>
 
 
 <span class="n">trained_policy</span> <span class="o">=</span> <span class="n">train_policy</span><span class="p">(</span><span class="n">environment</span><span class="p">)</span>  <span class="c1"># &lt;3&gt;</span>
 <span class="c1"># end::train_policy[]</span>
+
+<span class="c1"># Printing gray-scale heatmaps of the state-action value function</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">PLOT</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="k">if</span> <span class="n">PLOT</span><span class="p">:</span>
+    <span class="n">table</span> <span class="o">=</span> <span class="n">trained_policy</span><span class="o">.</span><span class="n">state_action_table</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">direction</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="s2">&quot;down&quot;</span><span class="p">,</span> <span class="s2">&quot;left&quot;</span><span class="p">,</span> <span class="s2">&quot;up&quot;</span><span class="p">,</span> <span class="s2">&quot;right&quot;</span><span class="p">]):</span>
+        <span class="n">direction_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">table</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">25</span><span class="p">)])</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">direction_matrix</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">direction_matrix</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 <div id="cell-8" class="clipboard-copy-txt"># tag::train_policy[]
-def train_policy(env, num_episodes=10000):
+def train_policy(env, num_episodes=10000, weight=0.1, discount_factor=0.9):
     """Training a policy by updating it with rollout experiences."""
     policy = Policy(env)
     sim = Simulation(env)
     for _ in range(num_episodes):
         experiences = sim.rollout(policy)  # <1>
-        update_policy(policy, experiences)  # <2>
+        update_policy(policy, experiences, weight, discount_factor)  # <2>
 
     return policy
 
 
 trained_policy = train_policy(environment)  # <3>
-# end::train_policy[]</div>
+# end::train_policy[]
+
+# Printing gray-scale heatmaps of the state-action value function
+import matplotlib.pyplot as plt
+
+PLOT = False
+if PLOT:
+    table = trained_policy.state_action_table
+    for i, direction in enumerate(["down", "left", "up", "right"]):
+        direction_matrix = np.array([table[j][i] for j in range(25)]).reshape(5, 5)
+        print(direction_matrix)
+        plt.imshow(direction_matrix, cmap='gray')
+        plt.show()</div>
     
         </div>
     </div>
@@ -1662,6 +1760,8 @@ trained_policy = train_policy(environment)  # <3>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">steps</span> <span class="o">/</span> <span class="n">num_episodes</span><span class="si">}</span><span class="s2"> steps on average &quot;</span>
           <span class="sa">f</span><span class="s2">&quot;for a total of </span><span class="si">{</span><span class="n">num_episodes</span><span class="si">}</span><span class="s2"> episodes.&quot;</span><span class="p">)</span>
 
+    <span class="k">return</span> <span class="n">steps</span> <span class="o">/</span> <span class="n">num_episodes</span>
+
 
 <span class="n">evaluate_policy</span><span class="p">(</span><span class="n">environment</span><span class="p">,</span> <span class="n">trained_policy</span><span class="p">)</span>
 <span class="c1"># end::evaluate_policy[]</span>
@@ -1678,6 +1778,8 @@ def evaluate_policy(env, policy, num_episodes=10):
 
     print(f"{steps / num_episodes} steps on average "
           f"for a total of {num_episodes} episodes.")
+
+    return steps / num_episodes
 
 
 evaluate_policy(environment, trained_policy)
@@ -1785,7 +1887,7 @@ class SimulationActor(Simulation):  # <3>
     <span class="k">return</span> <span class="n">policy_ref</span>
 
 
-<span class="k">def</span> <span class="nf">train_policy_parallel</span><span class="p">(</span><span class="n">num_episodes</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">num_simulations</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">train_policy_parallel</span><span class="p">(</span><span class="n">num_episodes</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">num_simulations</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Parallel policy training function.&quot;&quot;&quot;</span>
     <span class="n">policy</span> <span class="o">=</span> <span class="n">create_policy</span><span class="o">.</span><span class="n">remote</span><span class="p">()</span>  <span class="c1"># &lt;2&gt;</span>
     <span class="n">simulations</span> <span class="o">=</span> <span class="p">[</span><span class="n">SimulationActor</span><span class="o">.</span><span class="n">remote</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_simulations</span><span class="p">)]</span>  <span class="c1"># &lt;3&gt;</span>
@@ -1805,7 +1907,7 @@ def update_policy_task(policy_ref, experiences_list):
     return policy_ref
 
 
-def train_policy_parallel(num_episodes=1000, num_simulations=10):
+def train_policy_parallel(num_episodes=1000, num_simulations=4):
     """Parallel policy training function."""
     policy = create_policy.remote()  # <2>
     simulations = [SimulationActor.remote() for _ in range(num_simulations)]  # <3>
@@ -1822,12 +1924,6 @@ def train_policy_parallel(num_episodes=1000, num_simulations=10):
 
 </div>
 </div>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1><img src="https://raw.githubusercontent.com/maxpumperla/learning_ray/main/notebooks/images/chapter_03/train_policy.png" alt="Task dependency"></h1>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -1865,97 +1961,10 @@ evaluate_policy(environment, parallel_policy)
 </div>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-        
-        
-        <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-13">
-            <div>
-                <span class="notice" hidden>Copied!</span>
-                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
-                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
-                </svg>
-                </div>
-            </clipboard-copy>
-        </div>
-        <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag:: override_env[]</span>
-<span class="kn">import</span> <span class="nn">gym</span>
-<span class="kn">from</span> <span class="nn">gym.spaces</span> <span class="kn">import</span> <span class="n">Discrete</span>
-
-
-<span class="k">class</span> <span class="nc">Environment</span><span class="p">(</span><span class="n">Environment</span><span class="p">,</span> <span class="n">gym</span><span class="o">.</span><span class="n">Env</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Make our original `Environment` a gym `Env`.&quot;&quot;&quot;</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-
-<span class="n">gym_env</span> <span class="o">=</span> <span class="n">Environment</span><span class="p">()</span>
-<span class="c1"># end::override_env[]</span>
-</pre></div>
-<div id="cell-13" class="clipboard-copy-txt">
-# tag:: override_env[]
-import gym
-from gym.spaces import Discrete
-
-
-class Environment(Environment, gym.Env):
-    def __init__(self, *args, **kwargs):
-        """Make our original `Environment` a gym `Env`."""
-        super().__init__(*args, **kwargs)
-
-
-gym_env = Environment()
-# end::override_env[]</div>
-    
-        </div>
-    </div>
-
 </div>
-</div>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-        
-        
-        <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-14">
-            <div>
-                <span class="notice" hidden>Copied!</span>
-                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
-                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
-                </svg>
-                </div>
-            </clipboard-copy>
-        </div>
-        <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::rllib_dqn_simple[]</span>
-<span class="kn">from</span> <span class="nn">ray.rllib.agents.dqn</span> <span class="kn">import</span> <span class="n">DQNTrainer</span>
-
-<span class="n">trainer</span> <span class="o">=</span> <span class="n">DQNTrainer</span><span class="p">(</span><span class="n">env</span><span class="o">=</span><span class="n">Environment</span><span class="p">)</span>
-<span class="n">res</span> <span class="o">=</span> <span class="n">trainer</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
-<span class="c1"># end::rllib_dqn_simple[]</span>
-</pre></div>
-<div id="cell-14" class="clipboard-copy-txt"># tag::rllib_dqn_simple[]
-from ray.rllib.agents.dqn import DQNTrainer
-
-trainer = DQNTrainer(env=Environment)
-res = trainer.train()
-# end::rllib_dqn_simple[]</div>
-    
-        </div>
-    </div>
-
-</div>
-</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1><img src="https://raw.githubusercontent.com/maxpumperla/learning_ray/main/notebooks/images/chapter_03/train_policy.png" alt="Task dependency"></h1>
 
 </div>
 </div>
@@ -1986,7 +1995,7 @@ res = trainer.train()
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../ch_02_ray_core/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Getting Started with Ray Core" rel="prev">
+        <a href="../ch_02_ray_core/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Chapter 2: Getting Started with Ray Core" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1995,7 +2004,7 @@ res = trainer.train()
               <span class="md-footer__direction">
                 Previous
               </span>
-              Getting Started with Ray Core
+              Chapter 2: Getting Started with Ray Core
             </div>
           </div>
         </a>

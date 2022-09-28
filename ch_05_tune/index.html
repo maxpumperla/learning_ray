@@ -272,7 +272,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_01_overview/" class="md-nav__link">
-        An Overview of Ray
+        Chapter 1: An Overview of Ray
       </a>
     </li>
   
@@ -287,7 +287,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_02_ray_core/" class="md-nav__link">
-        Getting Started with Ray Core
+        Chapter 2: Getting Started with Ray Core
       </a>
     </li>
   
@@ -302,7 +302,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_03_core_app/" class="md-nav__link">
-        Building Your First Distributed Application With Ray Core
+        Chapter 3: Building Your First Distributed Application With Ray Core
       </a>
     </li>
   
@@ -354,7 +354,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch_06_train/" class="md-nav__link">
+      <a href="../ch_06_data_processing/" class="md-nav__link">
+        Data Processing with Ray Data
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch_07_train/" class="md-nav__link">
         Distributed Training with Ray Train
       </a>
     </li>
@@ -369,8 +384,53 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch_07_data_processing/" class="md-nav__link">
-        Data Processing with Ray Data
+      <a href="../ch_08_model_serving/" class="md-nav__link">
+        Serving Models with Ray Serve
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch_09_script/" class="md-nav__link">
+        Working with Ray Clusters
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch_10_air/" class="md-nav__link">
+        Getting Started with the Ray AI Runtime
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch_11_ecosystem/" class="md-nav__link">
+        Ray's Ecosystem and Beyond
       </a>
     </li>
   
@@ -1058,7 +1118,1828 @@ all of MD as it is not optimized for dense, information rich UIs.
     }
     init_mathjax();
     </script>
-    <!-- End of mathjax configuration --><div class="jupyter-wrapper">
+    <!-- End of mathjax configuration --><div class="jupyter-wrapper"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-1">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">maze_gym_env</span> <span class="kn">import</span> <span class="n">Environment</span>
+<span class="kn">import</span> <span class="nn">time</span>
+</pre></div>
+<div id="cell-1" class="clipboard-copy-txt">from maze_gym_env import Environment
+import time</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-2">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="k">class</span> <span class="nc">Policy</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">env</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;A Policy suggests actions based on the current state.</span>
+<span class="sd">        We do this by tracking the value of each state-action pair.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">state_action_table</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">action_space</span><span class="o">.</span><span class="n">n</span><span class="p">)]</span>
+            <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">observation_space</span><span class="o">.</span><span class="n">n</span><span class="p">)</span>
+        <span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">action_space</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">action_space</span>
+
+    <span class="k">def</span> <span class="nf">get_action</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">,</span> <span class="n">explore</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">0.1</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Explore randomly or exploit the best value currently available.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">explore</span> <span class="ow">and</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">epsilon</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">action_space</span><span class="o">.</span><span class="n">sample</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">state_action_table</span><span class="p">[</span><span class="n">state</span><span class="p">])</span>
+</pre></div>
+<div id="cell-2" class="clipboard-copy-txt">class Policy:
+
+    def __init__(self, env):
+        """A Policy suggests actions based on the current state.
+        We do this by tracking the value of each state-action pair.
+        """
+        self.state_action_table = [
+            [0 for _ in range(env.action_space.n)]
+            for _ in range(env.observation_space.n)
+        ]
+        self.action_space = env.action_space
+
+    def get_action(self, state, explore=True, epsilon=0.1):
+        """Explore randomly or exploit the best value currently available."""
+        if explore and random.uniform(0, 1) < epsilon:
+            return self.action_space.sample()
+        return np.argmax(self.state_action_table[state])</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-3">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="k">class</span> <span class="nc">Simulation</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">env</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Simulates rollouts of an environment, given a policy to follow.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">env</span> <span class="o">=</span> <span class="n">env</span>
+
+    <span class="k">def</span> <span class="nf">rollout</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">policy</span><span class="p">,</span> <span class="n">render</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">explore</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">0.1</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Returns experiences for a policy rollout.&quot;&quot;&quot;</span>
+        <span class="n">experiences</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">state</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+        <span class="n">done</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">while</span> <span class="ow">not</span> <span class="n">done</span><span class="p">:</span>
+            <span class="n">action</span> <span class="o">=</span> <span class="n">policy</span><span class="o">.</span><span class="n">get_action</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">explore</span><span class="p">,</span> <span class="n">epsilon</span><span class="p">)</span>
+            <span class="n">next_state</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
+            <span class="n">experiences</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">state</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">next_state</span><span class="p">])</span>
+            <span class="n">state</span> <span class="o">=</span> <span class="n">next_state</span>
+            <span class="k">if</span> <span class="n">render</span><span class="p">:</span>
+                <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.05</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">experiences</span>
+</pre></div>
+<div id="cell-3" class="clipboard-copy-txt">class Simulation(object):
+    def __init__(self, env):
+        """Simulates rollouts of an environment, given a policy to follow."""
+        self.env = env
+
+    def rollout(self, policy, render=False, explore=True, epsilon=0.1):
+        """Returns experiences for a policy rollout."""
+        experiences = []
+        state = self.env.reset()
+        done = False
+        while not done:
+            action = policy.get_action(state, explore, epsilon)
+            next_state, reward, done, info = self.env.step(action)
+            experiences.append([state, action, reward, next_state])
+            state = next_state
+            if render:
+                time.sleep(0.05)
+                self.env.render()
+
+        return experiences</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-4">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="k">def</span> <span class="nf">update_policy</span><span class="p">(</span><span class="n">policy</span><span class="p">,</span> <span class="n">experiences</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">discount_factor</span><span class="o">=</span><span class="mf">0.9</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Updates a given policy with a list of (state, action, reward, state)</span>
+<span class="sd">    experiences.&quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">state</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">next_state</span> <span class="ow">in</span> <span class="n">experiences</span><span class="p">:</span>
+        <span class="n">next_max</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">policy</span><span class="o">.</span><span class="n">state_action_table</span><span class="p">[</span><span class="n">next_state</span><span class="p">])</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">policy</span><span class="o">.</span><span class="n">state_action_table</span><span class="p">[</span><span class="n">state</span><span class="p">][</span><span class="n">action</span><span class="p">]</span>
+        <span class="n">new_value</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">weight</span><span class="p">)</span> <span class="o">*</span> <span class="n">value</span> <span class="o">+</span> <span class="n">weight</span> <span class="o">*</span> \
+                    <span class="p">(</span><span class="n">reward</span> <span class="o">+</span> <span class="n">discount_factor</span> <span class="o">*</span> <span class="n">next_max</span><span class="p">)</span>
+        <span class="n">policy</span><span class="o">.</span><span class="n">state_action_table</span><span class="p">[</span><span class="n">state</span><span class="p">][</span><span class="n">action</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_value</span>
+</pre></div>
+<div id="cell-4" class="clipboard-copy-txt">def update_policy(policy, experiences, weight=0.1, discount_factor=0.9):
+    """Updates a given policy with a list of (state, action, reward, state)
+    experiences."""
+    for state, action, reward, next_state in experiences:
+        next_max = np.max(policy.state_action_table[next_state])
+        value = policy.state_action_table[state][action]
+        new_value = (1 - weight) * value + weight * \
+                    (reward + discount_factor * next_max)
+        policy.state_action_table[state][action] = new_value</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-5">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="k">def</span> <span class="nf">train_policy</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">num_episodes</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">discount_factor</span><span class="o">=</span><span class="mf">0.9</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Training a policy by updating it with rollout experiences.&quot;&quot;&quot;</span>
+    <span class="n">policy</span> <span class="o">=</span> <span class="n">Policy</span><span class="p">(</span><span class="n">env</span><span class="p">)</span>
+    <span class="n">sim</span> <span class="o">=</span> <span class="n">Simulation</span><span class="p">(</span><span class="n">env</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_episodes</span><span class="p">):</span>
+        <span class="n">experiences</span> <span class="o">=</span> <span class="n">sim</span><span class="o">.</span><span class="n">rollout</span><span class="p">(</span><span class="n">policy</span><span class="p">)</span>
+        <span class="n">update_policy</span><span class="p">(</span><span class="n">policy</span><span class="p">,</span> <span class="n">experiences</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">discount_factor</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">policy</span>
+</pre></div>
+<div id="cell-5" class="clipboard-copy-txt">def train_policy(env, num_episodes=10000, weight=0.1, discount_factor=0.9):
+    """Training a policy by updating it with rollout experiences."""
+    policy = Policy(env)
+    sim = Simulation(env)
+    for _ in range(num_episodes):
+        experiences = sim.rollout(policy)
+        update_policy(policy, experiences, weight, discount_factor)
+
+    return policy</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-6">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="k">def</span> <span class="nf">evaluate_policy</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">policy</span><span class="p">,</span> <span class="n">num_episodes</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Evaluate a trained policy through rollouts.&quot;&quot;&quot;</span>
+    <span class="n">simulation</span> <span class="o">=</span> <span class="n">Simulation</span><span class="p">(</span><span class="n">env</span><span class="p">)</span>
+    <span class="n">steps</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_episodes</span><span class="p">):</span>
+        <span class="n">experiences</span> <span class="o">=</span> <span class="n">simulation</span><span class="o">.</span><span class="n">rollout</span><span class="p">(</span><span class="n">policy</span><span class="p">,</span> <span class="n">render</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">explore</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">steps</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">experiences</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">steps</span> <span class="o">/</span> <span class="n">num_episodes</span><span class="si">}</span><span class="s2"> steps on average &quot;</span>
+          <span class="sa">f</span><span class="s2">&quot;for a total of </span><span class="si">{</span><span class="n">num_episodes</span><span class="si">}</span><span class="s2"> episodes.&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">steps</span> <span class="o">/</span> <span class="n">num_episodes</span>
+</pre></div>
+<div id="cell-6" class="clipboard-copy-txt">def evaluate_policy(env, policy, num_episodes=10):
+    """Evaluate a trained policy through rollouts."""
+    simulation = Simulation(env)
+    steps = 0
+
+    for _ in range(num_episodes):
+        experiences = simulation.rollout(policy, render=True, explore=False)
+        steps += len(experiences)
+
+    print(f"{steps / num_episodes} steps on average "
+          f"for a total of {num_episodes} episodes.")
+
+    return steps / num_episodes</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-7">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::search_space[]</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="n">search_space</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">random_choice</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;weight&#39;</span><span class="p">:</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+        <span class="s1">&#39;discount_factor&#39;</span><span class="p">:</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="n">search_space</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">random_choice</span><span class="p">)</span>
+<span class="c1"># end::search_space[]</span>
+</pre></div>
+<div id="cell-7" class="clipboard-copy-txt"># tag::search_space[]
+import random
+search_space = []
+for i in range(10):
+    random_choice = {
+        'weight': random.uniform(0, 1),
+        'discount_factor': random.uniform(0, 1)
+    }
+    search_space.append(random_choice)
+# end::search_space[]</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-8">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::objective[]</span>
+<span class="kn">import</span> <span class="nn">ray</span>
+</pre></div>
+<div id="cell-8" class="clipboard-copy-txt"># tag::objective[]
+import ray</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-9">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="nd">@ray</span><span class="o">.</span><span class="n">remote</span>
+<span class="k">def</span> <span class="nf">objective</span><span class="p">(</span><span class="n">config</span><span class="p">):</span>  <span class="c1"># &lt;1&gt;</span>
+    <span class="n">environment</span> <span class="o">=</span> <span class="n">Environment</span><span class="p">()</span>
+    <span class="n">policy</span> <span class="o">=</span> <span class="n">train_policy</span><span class="p">(</span>  <span class="c1"># &lt;2&gt;</span>
+        <span class="n">environment</span><span class="p">,</span>
+        <span class="n">weight</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;weight&quot;</span><span class="p">],</span>
+        <span class="n">discount_factor</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;discount_factor&quot;</span><span class="p">]</span>
+    <span class="p">)</span>
+    <span class="n">score</span> <span class="o">=</span> <span class="n">evaluate_policy</span><span class="p">(</span><span class="n">environment</span><span class="p">,</span> <span class="n">policy</span><span class="p">)</span>  <span class="c1"># &lt;3&gt;</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">score</span><span class="p">,</span> <span class="n">config</span><span class="p">]</span>  <span class="c1"># &lt;4&gt;</span>
+<span class="c1"># end::objective[]</span>
+</pre></div>
+<div id="cell-9" class="clipboard-copy-txt">@ray.remote
+def objective(config):  # <1>
+    environment = Environment()
+    policy = train_policy(  # <2>
+        environment,
+        weight=config["weight"],
+        discount_factor=config["discount_factor"]
+    )
+    score = evaluate_policy(environment, policy)  # <3>
+    return [score, config]  # <4>
+# end::objective[]</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-10">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::random_search[]</span>
+<span class="n">result_objects</span> <span class="o">=</span> <span class="p">[</span><span class="n">objective</span><span class="o">.</span><span class="n">remote</span><span class="p">(</span><span class="n">choice</span><span class="p">)</span> <span class="k">for</span> <span class="n">choice</span> <span class="ow">in</span> <span class="n">search_space</span><span class="p">]</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">result_objects</span><span class="p">)</span>
+</pre></div>
+<div id="cell-10" class="clipboard-copy-txt"># tag::random_search[]
+result_objects = [objective.remote(choice) for choice in search_space]
+results = ray.get(result_objects)</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-11">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">results</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="c1"># end::random_search[]</span>
+</pre></div>
+<div id="cell-11" class="clipboard-copy-txt">results.sort(key=lambda x: x[0])
+print(results[-1])
+# end::random_search[]</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-12">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::tune_search_space[]</span>
+<span class="kn">from</span> <span class="nn">ray</span> <span class="kn">import</span> <span class="n">tune</span>
+</pre></div>
+<div id="cell-12" class="clipboard-copy-txt"># tag::tune_search_space[]
+from ray import tune</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-13">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">search_space</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;weight&quot;</span><span class="p">:</span> <span class="n">tune</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+    <span class="s2">&quot;discount_factor&quot;</span><span class="p">:</span> <span class="n">tune</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+<span class="p">}</span>
+<span class="c1"># end::tune_search_space[]</span>
+</pre></div>
+<div id="cell-13" class="clipboard-copy-txt">search_space = {
+    "weight": tune.uniform(0, 1),
+    "discount_factor": tune.uniform(0, 1),
+}
+# end::tune_search_space[]</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-14">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::tune_objective[]</span>
+<span class="k">def</span> <span class="nf">tune_objective</span><span class="p">(</span><span class="n">config</span><span class="p">):</span>
+    <span class="n">environment</span> <span class="o">=</span> <span class="n">Environment</span><span class="p">()</span>
+    <span class="n">policy</span> <span class="o">=</span> <span class="n">train_policy</span><span class="p">(</span>
+        <span class="n">environment</span><span class="p">,</span>
+        <span class="n">weight</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;weight&quot;</span><span class="p">],</span>
+        <span class="n">discount_factor</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;discount_factor&quot;</span><span class="p">]</span>
+    <span class="p">)</span>
+    <span class="n">score</span> <span class="o">=</span> <span class="n">evaluate_policy</span><span class="p">(</span><span class="n">environment</span><span class="p">,</span> <span class="n">policy</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;score&quot;</span><span class="p">:</span> <span class="n">score</span><span class="p">}</span>
+<span class="c1"># end::tune_objective[]</span>
+</pre></div>
+<div id="cell-14" class="clipboard-copy-txt"># tag::tune_objective[]
+def tune_objective(config):
+    environment = Environment()
+    policy = train_policy(
+        environment,
+        weight=config["weight"],
+        discount_factor=config["discount_factor"]
+    )
+    score = evaluate_policy(environment, policy)
+
+    return {"score": score}
+# end::tune_objective[]</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-15">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::tune_analysis[]</span>
+<span class="n">analysis</span> <span class="o">=</span> <span class="n">tune</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">tune_objective</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">search_space</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">analysis</span><span class="o">.</span><span class="n">get_best_config</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="s2">&quot;score&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;min&quot;</span><span class="p">))</span>
+<span class="c1"># end::tune_analysis[]</span>
+</pre></div>
+<div id="cell-15" class="clipboard-copy-txt"># tag::tune_analysis[]
+analysis = tune.run(tune_objective, config=search_space)
+print(analysis.get_best_config(metric="score", mode="min"))
+# end::tune_analysis[]</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-16">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::tune_bo[]</span>
+<span class="kn">from</span> <span class="nn">ray.tune.suggest.bayesopt</span> <span class="kn">import</span> <span class="n">BayesOptSearch</span>
+</pre></div>
+<div id="cell-16" class="clipboard-copy-txt"># tag::tune_bo[]
+from ray.tune.suggest.bayesopt import BayesOptSearch</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-17">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">algo</span> <span class="o">=</span> <span class="n">BayesOptSearch</span><span class="p">(</span><span class="n">random_search_steps</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+<div id="cell-17" class="clipboard-copy-txt">algo = BayesOptSearch(random_search_steps=4)</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-18">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">tune</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+    <span class="n">tune_objective</span><span class="p">,</span>
+    <span class="n">config</span><span class="o">=</span><span class="n">search_space</span><span class="p">,</span>
+    <span class="n">metric</span><span class="o">=</span><span class="s2">&quot;score&quot;</span><span class="p">,</span>
+    <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;min&quot;</span><span class="p">,</span>
+    <span class="n">search_alg</span><span class="o">=</span><span class="n">algo</span><span class="p">,</span>
+    <span class="n">stop</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;training_iteration&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+<span class="p">)</span>
+<span class="c1"># end::tune_bo[]</span>
+</pre></div>
+<div id="cell-18" class="clipboard-copy-txt">tune.run(
+    tune_objective,
+    config=search_space,
+    metric="score",
+    mode="min",
+    search_alg=algo,
+    stop={"training_iteration": 10},
+)
+# end::tune_bo[]</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>TODO docs say "minimize" but mode is "max" here.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-19">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::scheduler_obj[]</span>
+<span class="k">def</span> <span class="nf">objective</span><span class="p">(</span><span class="n">config</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">30</span><span class="p">):</span>  <span class="c1"># &lt;1&gt;</span>
+        <span class="n">score</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s2">&quot;weight&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">step</span> <span class="o">**</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">+</span> <span class="n">config</span><span class="p">[</span><span class="s2">&quot;bias&quot;</span><span class="p">]</span>
+        <span class="n">tune</span><span class="o">.</span><span class="n">report</span><span class="p">(</span><span class="n">score</span><span class="o">=</span><span class="n">score</span><span class="p">)</span>  <span class="c1"># &lt;2&gt;</span>
+</pre></div>
+<div id="cell-19" class="clipboard-copy-txt"># tag::scheduler_obj[]
+def objective(config):
+    for step in range(30):  # <1>
+        score = config["weight"] * (step ** 0.5) + config["bias"]
+        tune.report(score=score)  # <2></div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-20">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">search_space</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;weight&quot;</span><span class="p">:</span> <span class="n">tune</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="s2">&quot;bias&quot;</span><span class="p">:</span> <span class="n">tune</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)}</span>
+<span class="c1"># end::scheduler_obj[]</span>
+</pre></div>
+<div id="cell-20" class="clipboard-copy-txt">search_space = {"weight": tune.uniform(0, 1), "bias": tune.uniform(0, 1)}
+# end::scheduler_obj[]</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-21">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::tune_scheduler[]</span>
+<span class="kn">from</span> <span class="nn">ray.tune.schedulers</span> <span class="kn">import</span> <span class="n">HyperBandScheduler</span>
+</pre></div>
+<div id="cell-21" class="clipboard-copy-txt"># tag::tune_scheduler[]
+from ray.tune.schedulers import HyperBandScheduler</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-22">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">scheduler</span> <span class="o">=</span> <span class="n">HyperBandScheduler</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="s2">&quot;score&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;min&quot;</span><span class="p">)</span>
+</pre></div>
+<div id="cell-22" class="clipboard-copy-txt">scheduler = HyperBandScheduler(metric="score", mode="min")</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-23">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">analysis</span> <span class="o">=</span> <span class="n">tune</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+    <span class="n">objective</span><span class="p">,</span>
+    <span class="n">config</span><span class="o">=</span><span class="n">search_space</span><span class="p">,</span>
+    <span class="n">scheduler</span><span class="o">=</span><span class="n">scheduler</span><span class="p">,</span>
+    <span class="n">num_samples</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+<div id="cell-23" class="clipboard-copy-txt">analysis = tune.run(
+    objective,
+    config=search_space,
+    scheduler=scheduler,
+    num_samples=10,
+)</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-24">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">analysis</span><span class="o">.</span><span class="n">get_best_config</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="s2">&quot;score&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;min&quot;</span><span class="p">))</span>
+<span class="c1"># end::tune_scheduler[]</span>
+</pre></div>
+<div id="cell-24" class="clipboard-copy-txt">print(analysis.get_best_config(metric="score", mode="min"))
+# end::tune_scheduler[]</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-25">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::tune_metrics_1[]</span>
+<span class="kn">from</span> <span class="nn">ray</span> <span class="kn">import</span> <span class="n">tune</span>
+<span class="kn">from</span> <span class="nn">ray.tune</span> <span class="kn">import</span> <span class="n">Callback</span>
+<span class="kn">from</span> <span class="nn">ray.tune.logger</span> <span class="kn">import</span> <span class="n">pretty_print</span>
+</pre></div>
+<div id="cell-25" class="clipboard-copy-txt"># tag::tune_metrics_1[]
+from ray import tune
+from ray.tune import Callback
+from ray.tune.logger import pretty_print</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-26">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="k">class</span> <span class="nc">PrintResultCallback</span><span class="p">(</span><span class="n">Callback</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">on_trial_result</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">iteration</span><span class="p">,</span> <span class="n">trials</span><span class="p">,</span> <span class="n">trial</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="o">**</span><span class="n">info</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Trial </span><span class="si">{</span><span class="n">trial</span><span class="si">}</span><span class="s2"> in iteration </span><span class="si">{</span><span class="n">iteration</span><span class="si">}</span><span class="s2">, &quot;</span>
+              <span class="sa">f</span><span class="s2">&quot;got result: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;score&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+<div id="cell-26" class="clipboard-copy-txt">class PrintResultCallback(Callback):
+    def on_trial_result(self, iteration, trials, trial, result, **info):
+        print(f"Trial {trial} in iteration {iteration}, "
+              f"got result: {result['score']}")</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-27">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="k">def</span> <span class="nf">objective</span><span class="p">(</span><span class="n">config</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">30</span><span class="p">):</span>
+        <span class="n">score</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s2">&quot;weight&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">step</span> <span class="o">**</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">+</span> <span class="n">config</span><span class="p">[</span><span class="s2">&quot;bias&quot;</span><span class="p">]</span>
+        <span class="n">tune</span><span class="o">.</span><span class="n">report</span><span class="p">(</span><span class="n">score</span><span class="o">=</span><span class="n">score</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="n">step</span><span class="p">,</span> <span class="n">more_metrics</span><span class="o">=</span><span class="p">{})</span>
+<span class="c1"># end::tune_metrics_1[]</span>
+</pre></div>
+<div id="cell-27" class="clipboard-copy-txt">def objective(config):
+    for step in range(30):
+        score = config["weight"] * (step ** 0.5) + config["bias"]
+        tune.report(score=score, step=step, more_metrics={})
+# end::tune_metrics_1[]</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-28">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::tune_metrics_2[]</span>
+<span class="n">search_space</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;weight&quot;</span><span class="p">:</span> <span class="n">tune</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="s2">&quot;bias&quot;</span><span class="p">:</span> <span class="n">tune</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)}</span>
+</pre></div>
+<div id="cell-28" class="clipboard-copy-txt"># tag::tune_metrics_2[]
+search_space = {"weight": tune.uniform(0, 1), "bias": tune.uniform(0, 1)}</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-29">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">analysis</span> <span class="o">=</span> <span class="n">tune</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+    <span class="n">objective</span><span class="p">,</span>
+    <span class="n">config</span><span class="o">=</span><span class="n">search_space</span><span class="p">,</span>
+    <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;min&quot;</span><span class="p">,</span>
+    <span class="n">metric</span><span class="o">=</span><span class="s2">&quot;score&quot;</span><span class="p">,</span>
+    <span class="n">callbacks</span><span class="o">=</span><span class="p">[</span><span class="n">PrintResultCallback</span><span class="p">()])</span>
+</pre></div>
+<div id="cell-29" class="clipboard-copy-txt">analysis = tune.run(
+    objective,
+    config=search_space,
+    mode="min",
+    metric="score",
+    callbacks=[PrintResultCallback()])</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-30">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">best</span> <span class="o">=</span> <span class="n">analysis</span><span class="o">.</span><span class="n">best_trial</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pretty_print</span><span class="p">(</span><span class="n">best</span><span class="o">.</span><span class="n">last_result</span><span class="p">))</span>
+<span class="c1"># end::tune_metrics_2[]</span>
+</pre></div>
+<div id="cell-30" class="clipboard-copy-txt">best = analysis.best_trial
+print(pretty_print(best.last_result))
+# end::tune_metrics_2[]</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-31">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># TODO: don&#39;t make this hardcoded?</span>
+<span class="c1"># tag::tune_resume[]</span>
+<span class="n">analysis</span> <span class="o">=</span> <span class="n">tune</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+    <span class="n">objective</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;/Users/maxpumperla/ray_results/objective_2022-05-23_15-52-01&quot;</span><span class="p">,</span>
+    <span class="n">resume</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">config</span><span class="o">=</span><span class="n">search_space</span><span class="p">)</span>
+<span class="c1"># end::tune_resume[]</span>
+</pre></div>
+<div id="cell-31" class="clipboard-copy-txt"># TODO: don't make this hardcoded?
+# tag::tune_resume[]
+analysis = tune.run(
+    objective,
+    name="/Users/maxpumperla/ray_results/objective_2022-05-23_15-52-01",
+    resume=True,
+    config=search_space)
+# end::tune_resume[]</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-32">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::tune_stop_dict[]</span>
+<span class="n">tune</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+    <span class="n">objective</span><span class="p">,</span>
+    <span class="n">config</span><span class="o">=</span><span class="n">search_space</span><span class="p">,</span>
+    <span class="n">stop</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;training_iteration&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">})</span>
+<span class="c1"># end::tune_stop_dict[]</span>
+</pre></div>
+<div id="cell-32" class="clipboard-copy-txt"># tag::tune_stop_dict[]
+tune.run(
+    objective,
+    config=search_space,
+    stop={"training_iteration": 10})
+# end::tune_stop_dict[]</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-33">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::tune_stop_function[]</span>
+<span class="k">def</span> <span class="nf">stopper</span><span class="p">(</span><span class="n">trial_id</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">result</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">2</span>
+</pre></div>
+<div id="cell-33" class="clipboard-copy-txt"># tag::tune_stop_function[]
+def stopper(trial_id, result):
+    return result["score"] < 2</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-34">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">tune</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+    <span class="n">objective</span><span class="p">,</span>
+    <span class="n">config</span><span class="o">=</span><span class="n">search_space</span><span class="p">,</span>
+    <span class="n">stop</span><span class="o">=</span><span class="n">stopper</span><span class="p">)</span>
+<span class="c1"># end::tune_stop_function[]</span>
+</pre></div>
+<div id="cell-34" class="clipboard-copy-txt">tune.run(
+    objective,
+    config=search_space,
+    stop=stopper)
+# end::tune_stop_function[]</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-35">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::tune_custom_space[]</span>
+<span class="kn">from</span> <span class="nn">ray</span> <span class="kn">import</span> <span class="n">tune</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+<div id="cell-35" class="clipboard-copy-txt"># tag::tune_custom_space[]
+from ray import tune
+import numpy as np</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-36">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">search_space</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;weight&quot;</span><span class="p">:</span> <span class="n">tune</span><span class="o">.</span><span class="n">sample_from</span><span class="p">(</span>
+        <span class="k">lambda</span> <span class="n">context</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+    <span class="p">),</span>
+    <span class="s2">&quot;bias&quot;</span><span class="p">:</span> <span class="n">tune</span><span class="o">.</span><span class="n">sample_from</span><span class="p">(</span>
+        <span class="k">lambda</span> <span class="n">context</span><span class="p">:</span> <span class="n">context</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">weight</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">()</span>
+    <span class="p">)}</span>
+</pre></div>
+<div id="cell-36" class="clipboard-copy-txt">search_space = {
+    "weight": tune.sample_from(
+        lambda context: np.random.uniform(low=0.0, high=1.0)
+    ),
+    "bias": tune.sample_from(
+        lambda context: context.config.weight * np.random.normal()
+    )}</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-37">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">tune</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">objective</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">search_space</span><span class="p">)</span>
+<span class="c1"># end::tune_custom_space[]</span>
+</pre></div>
+<div id="cell-37" class="clipboard-copy-txt">tune.run(objective, config=search_space)
+# end::tune_custom_space[]</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-38">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::tune_rllib[]</span>
+<span class="kn">from</span> <span class="nn">ray</span> <span class="kn">import</span> <span class="n">tune</span>
+</pre></div>
+<div id="cell-38" class="clipboard-copy-txt"># tag::tune_rllib[]
+from ray import tune</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-39">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">analysis</span> <span class="o">=</span> <span class="n">tune</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+    <span class="s2">&quot;DQN&quot;</span><span class="p">,</span>
+    <span class="n">metric</span><span class="o">=</span><span class="s2">&quot;episode_reward_mean&quot;</span><span class="p">,</span>
+    <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;max&quot;</span><span class="p">,</span>
+    <span class="n">config</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;env&quot;</span><span class="p">:</span> <span class="s2">&quot;CartPole-v0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lr&quot;</span><span class="p">:</span> <span class="n">tune</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">1e-5</span><span class="p">,</span> <span class="mf">1e-4</span><span class="p">),</span>
+        <span class="s2">&quot;train_batch_size&quot;</span><span class="p">:</span> <span class="n">tune</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="mi">10000</span><span class="p">,</span> <span class="mi">20000</span><span class="p">,</span> <span class="mi">40000</span><span class="p">]),</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+<span class="c1"># end::tune_rllib[]</span>
+</pre></div>
+<div id="cell-39" class="clipboard-copy-txt">analysis = tune.run(
+    "DQN",
+    metric="episode_reward_mean",
+    mode="max",
+    config={
+        "env": "CartPole-v0",
+        "lr": tune.uniform(1e-5, 1e-4),
+        "train_batch_size": tune.choice([10000, 20000, 40000]),
+    },
+)
+# end::tune_rllib[]</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-40">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::tune_keras_1[]</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.datasets</span> <span class="kn">import</span> <span class="n">mnist</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.utils</span> <span class="kn">import</span> <span class="n">to_categorical</span>
+</pre></div>
+<div id="cell-40" class="clipboard-copy-txt"># tag::tune_keras_1[]
+from tensorflow.keras.datasets import mnist
+from tensorflow.keras.utils import to_categorical</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-41">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="k">def</span> <span class="nf">load_data</span><span class="p">():</span>
+    <span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">),</span> <span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span> <span class="o">=</span> <span class="n">mnist</span><span class="o">.</span><span class="n">load_data</span><span class="p">()</span>
+    <span class="n">num_classes</span> <span class="o">=</span> <span class="mi">10</span>
+    <span class="n">x_train</span><span class="p">,</span> <span class="n">x_test</span> <span class="o">=</span> <span class="n">x_train</span> <span class="o">/</span> <span class="mf">255.0</span><span class="p">,</span> <span class="n">x_test</span> <span class="o">/</span> <span class="mf">255.0</span>
+    <span class="n">y_train</span> <span class="o">=</span> <span class="n">to_categorical</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">num_classes</span><span class="p">)</span>
+    <span class="n">y_test</span> <span class="o">=</span> <span class="n">to_categorical</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">num_classes</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">),</span> <span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+<span class="c1"># end::tune_keras_1[]</span>
+</pre></div>
+<div id="cell-41" class="clipboard-copy-txt">def load_data():
+    (x_train, y_train), (x_test, y_test) = mnist.load_data()
+    num_classes = 10
+    x_train, x_test = x_train / 255.0, x_test / 255.0
+    y_train = to_categorical(y_train, num_classes)
+    y_test = to_categorical(y_test, num_classes)
+    return (x_train, y_train), (x_test, y_test)
+# end::tune_keras_1[]</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-42">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::tune_keras_2[]</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.models</span> <span class="kn">import</span> <span class="n">Sequential</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.layers</span> <span class="kn">import</span> <span class="n">Flatten</span><span class="p">,</span> <span class="n">Dense</span><span class="p">,</span> <span class="n">Dropout</span>
+<span class="kn">from</span> <span class="nn">ray.tune.integration.keras</span> <span class="kn">import</span> <span class="n">TuneReportCallback</span>
+</pre></div>
+<div id="cell-42" class="clipboard-copy-txt"># tag::tune_keras_2[]
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Flatten, Dense, Dropout
+from ray.tune.integration.keras import TuneReportCallback</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-43">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="k">def</span> <span class="nf">objective</span><span class="p">(</span><span class="n">config</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">),</span> <span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span> <span class="o">=</span> <span class="n">load_data</span><span class="p">()</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">()</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Flatten</span><span class="p">(</span><span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">)))</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;hidden&quot;</span><span class="p">],</span> <span class="n">activation</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;activation&quot;</span><span class="p">]))</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dropout</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;rate&quot;</span><span class="p">]))</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s2">&quot;softmax&quot;</span><span class="p">))</span>
+
+    <span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">loss</span><span class="o">=</span><span class="s2">&quot;categorical_crossentropy&quot;</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;accuracy&quot;</span><span class="p">])</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+              <span class="n">validation_data</span><span class="o">=</span><span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">),</span>
+              <span class="n">callbacks</span><span class="o">=</span><span class="p">[</span><span class="n">TuneReportCallback</span><span class="p">({</span><span class="s2">&quot;mean_accuracy&quot;</span><span class="p">:</span> <span class="s2">&quot;accuracy&quot;</span><span class="p">})])</span>
+<span class="c1"># end::tune_keras_2[]</span>
+</pre></div>
+<div id="cell-43" class="clipboard-copy-txt">def objective(config):
+    (x_train, y_train), (x_test, y_test) = load_data()
+    model = Sequential()
+    model.add(Flatten(input_shape=(28, 28)))
+    model.add(Dense(config["hidden"], activation=config["activation"]))
+    model.add(Dropout(config["rate"]))
+    model.add(Dense(10, activation="softmax"))
+
+    model.compile(loss="categorical_crossentropy", metrics=["accuracy"])
+    model.fit(x_train, y_train, batch_size=128, epochs=10,
+              validation_data=(x_test, y_test),
+              callbacks=[TuneReportCallback({"mean_accuracy": "accuracy"})])
+# end::tune_keras_2[]</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-44">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::tune_keras_3[]</span>
+<span class="kn">from</span> <span class="nn">ray</span> <span class="kn">import</span> <span class="n">tune</span>
+<span class="kn">from</span> <span class="nn">ray.tune.suggest.hyperopt</span> <span class="kn">import</span> <span class="n">HyperOptSearch</span>
+</pre></div>
+<div id="cell-44" class="clipboard-copy-txt"># tag::tune_keras_3[]
+from ray import tune
+from ray.tune.suggest.hyperopt import HyperOptSearch</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-45">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">initial_params</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">&quot;rate&quot;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">,</span> <span class="s2">&quot;hidden&quot;</span><span class="p">:</span> <span class="mi">128</span><span class="p">,</span> <span class="s2">&quot;activation&quot;</span><span class="p">:</span> <span class="s2">&quot;relu&quot;</span><span class="p">}]</span>
+<span class="n">algo</span> <span class="o">=</span> <span class="n">HyperOptSearch</span><span class="p">(</span><span class="n">points_to_evaluate</span><span class="o">=</span><span class="n">initial_params</span><span class="p">)</span>
+</pre></div>
+<div id="cell-45" class="clipboard-copy-txt">initial_params = [{"rate": 0.2, "hidden": 128, "activation": "relu"}]
+algo = HyperOptSearch(points_to_evaluate=initial_params)</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-46">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">search_space</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;rate&quot;</span><span class="p">:</span> <span class="n">tune</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span>
+    <span class="s2">&quot;hidden&quot;</span><span class="p">:</span> <span class="n">tune</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">512</span><span class="p">),</span>
+    <span class="s2">&quot;activation&quot;</span><span class="p">:</span> <span class="n">tune</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s2">&quot;relu&quot;</span><span class="p">,</span> <span class="s2">&quot;tanh&quot;</span><span class="p">])</span>
+<span class="p">}</span>
+</pre></div>
+<div id="cell-46" class="clipboard-copy-txt">search_space = {
+    "rate": tune.uniform(0.1, 0.5),
+    "hidden": tune.randint(32, 512),
+    "activation": tune.choice(["relu", "tanh"])
+}</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-47">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">analysis</span> <span class="o">=</span> <span class="n">tune</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+    <span class="n">objective</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;keras_hyperopt_exp&quot;</span><span class="p">,</span>
+    <span class="n">search_alg</span><span class="o">=</span><span class="n">algo</span><span class="p">,</span>
+    <span class="n">metric</span><span class="o">=</span><span class="s2">&quot;mean_accuracy&quot;</span><span class="p">,</span>
+    <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;max&quot;</span><span class="p">,</span>
+    <span class="n">stop</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;mean_accuracy&quot;</span><span class="p">:</span> <span class="mf">0.99</span><span class="p">},</span>
+    <span class="n">num_samples</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+    <span class="n">config</span><span class="o">=</span><span class="n">search_space</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best hyperparameters found were: &quot;</span><span class="p">,</span> <span class="n">analysis</span><span class="o">.</span><span class="n">best_config</span><span class="p">)</span>
+<span class="c1"># end::tune_keras_3[]</span>
+</pre></div>
+<div id="cell-47" class="clipboard-copy-txt">analysis = tune.run(
+    objective,
+    name="keras_hyperopt_exp",
+    search_alg=algo,
+    metric="mean_accuracy",
+    mode="max",
+    stop={"mean_accuracy": 0.99},
+    num_samples=10,
+    config=search_space,
+)
+print("Best hyperparameters found were: ", analysis.best_config)
+# end::tune_keras_3[]</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div>
 </div>
 
 
@@ -1102,13 +2983,13 @@ all of MD as it is not optimized for dense, information rich UIs.
       
       
         
-        <a href="../ch_06_train/" class="md-footer__link md-footer__link--next" aria-label="Next: Distributed Training with Ray Train" rel="next">
+        <a href="../ch_06_data_processing/" class="md-footer__link md-footer__link--next" aria-label="Next: Data Processing with Ray Data" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Distributed Training with Ray Train
+              Data Processing with Ray Data
             </div>
           </div>
           <div class="md-footer__button md-icon">

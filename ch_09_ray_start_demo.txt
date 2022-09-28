@@ -1,0 +1,48 @@
+# tag::start_head[]
+$ ray start --head --port=6379
+...
+Next steps
+To connect to this Ray runtime from another node, run
+  ray start --address='<head-address>:6379'
+
+If connection fails, check your firewall settings and network configuration.
+# end::start_head[]
+
+
+# tag::start_worker[]
+$ ray start --address=<head-address>
+--------------------
+Ray runtime started.
+--------------------
+
+To terminate the Ray runtime, run
+  ray stop
+# end::start_worker[]
+
+# tag::job_submission[]
+Job submission server address: http://127.0.0.1:8265
+2022-05-20 23:35:36,066 INFO dashboard_sdk.py:276
+ -- Uploading package gcs://_ray_pkg_533a957683abeba8.zip.
+2022-05-20 23:35:36,067 INFO packaging.py:416
+ -- Creating a file package for local directory '.'.
+
+-------------------------------------------------------
+Job 'raysubmit_U5hfr1rqJZWwJmLP' submitted successfully
+-------------------------------------------------------
+
+Next steps
+  Query the logs of the job:
+    ray job logs raysubmit_U5hfr1rqJZWwJmLP
+  Query the status of the job:
+    ray job status raysubmit_U5hfr1rqJZWwJmLP
+  Request the job to be stopped:
+    ray job stop raysubmit_U5hfr1rqJZWwJmLP
+
+Tailing logs until the job exits (disable with --no-wait):
+{'memory': 47157884109.0, 'object_store_memory': 2147483648.0,
+ 'CPU': 16.0, 'node:127.0.0.1': 1.0}
+
+------------------------------------------
+Job 'raysubmit_U5hfr1rqJZWwJmLP' succeeded
+------------------------------------------
+# end::job_submission[]
