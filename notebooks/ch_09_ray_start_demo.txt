@@ -1,23 +1,28 @@
 # tag::start_head[]
-$ ray start --head --port=6379
+ray start --head --port=6379
+# end::start_head[]
+
+# tag::start_head_out[]
 ...
 Next steps
 To connect to this Ray runtime from another node, run
   ray start --address='<head-address>:6379'
 
 If connection fails, check your firewall settings and network configuration.
-# end::start_head[]
-
+# end::start_head_out[]
 
 # tag::start_worker[]
-$ ray start --address=<head-address>
+ray start --address=<head-address>
+# end::start_worker[]
+
+# tag::start_worker_out[]
 --------------------
 Ray runtime started.
 --------------------
 
 To terminate the Ray runtime, run
   ray stop
-# end::start_worker[]
+# end::start_worker_out[]
 
 # tag::job_submission[]
 Job submission server address: http://127.0.0.1:8265

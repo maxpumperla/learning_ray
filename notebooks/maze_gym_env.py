@@ -69,7 +69,7 @@ class Environment:
 
 # %%
 # tag::override_env[]
-# Original definition of `Environment` and `Discrete` go here.
+# maze_gym_env.py  | Original definition of `Environment` goes at the top.
 
 import gym
 from gym.spaces import Discrete  # <1>

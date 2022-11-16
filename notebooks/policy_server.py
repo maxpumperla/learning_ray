@@ -2,7 +2,7 @@
 # tag::server_config[]
 # policy_server.py
 import ray
-from ray.rllib.agents.dqn import DQNTrainer
+from ray.rllib.agents.dqn import DQNConfig
 from ray.rllib.env.policy_server_input import PolicyServerInput
 import gym
 
@@ -14,17 +14,19 @@ def policy_input(context):
     return PolicyServerInput(context, "localhost", 9900)  # <1>
 
 
-config = {
-    "env": None,  # <2>
-    "observation_space": gym.spaces.Discrete(5*5),
-    "action_space": gym.spaces.Discrete(4),
-    "input": policy_input,  # <3>
-    "num_workers": 0,
-    "input_evaluation": [],
-    "log_level": "INFO",
-}
+config = DQNConfig()\
+    .environment(
+        env=None,  # <2>
+        action_space=gym.spaces.Discrete(4),  # <3>
+        observation_space=gym.spaces.Discrete(5*5))\
+    .debugging(log_level="INFO")\
+    .rollouts(num_rollout_workers=0)\
+    .offline_data(  # <4>
+        input=policy_input,
+        input_evaluation=[])\
 
-trainer = DQNTrainer(config=config)
+
+algo = config.build()
 
 # end::server_config[]
 
@@ -34,8 +36,8 @@ if __name__ == "__main__":
 
     time_steps = 0
     for _ in range(100):
-        results = trainer.train()
-        checkpoint = trainer.save()  # <1>
+        results = algo.train()
+        checkpoint = algo.save()  # <1>
         if time_steps >= 1000:  # <2>
             break
         time_steps += results["timesteps_total"]

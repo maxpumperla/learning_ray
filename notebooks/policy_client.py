@@ -21,8 +21,6 @@ if __name__ == "__main__":
 
         if done:
             client.end_episode(episode_id, obs)  # <5>
-            obs = env.reset()
-
             exit(0)  # <6>
 
 # end::client[]
