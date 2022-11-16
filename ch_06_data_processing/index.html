@@ -16,11 +16,11 @@
         <link rel="canonical" href="https://maxpumperla.com/learning_ray/ch_06_data_processing/">
       
       <link rel="icon" href="../assets/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-7.3.6">
     
     
       
-        <title>Data Processing with Ray Data - Learning Ray - Flexible Distributed Python for Data Science</title>
+        <title>Chapter 6: Data Processing with Ray - Learning Ray - Flexible Distributed Python for Data Science</title>
       
     
     
@@ -74,6 +74,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#chapter-6-data-processing-with-ray" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -122,7 +127,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Data Processing with Ray Data
+              Chapter 6: Data Processing with Ray
             
           </span>
         </div>
@@ -317,7 +322,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_04_rllib/" class="md-nav__link">
-        Reinforcement Learning with Ray RLlib
+        Chapter 4: Reinforcement Learning with Ray RLlib
       </a>
     </li>
   
@@ -332,7 +337,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_05_tune/" class="md-nav__link">
-        Hyperparameter Optimization with Ray Tune
+        Chapter 5: Hyperparameter Optimization with Ray Tune
       </a>
     </li>
   
@@ -352,9 +357,11 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        
+      
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Data Processing with Ray Data
+        Chapter 6: Data Processing with Ray
       </a>
       
     </li>
@@ -370,7 +377,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_07_train/" class="md-nav__link">
-        Distributed Training with Ray Train
+        Chapter 7: Distributed Training with Ray Train
       </a>
     </li>
   
@@ -385,7 +392,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_08_model_serving/" class="md-nav__link">
-        Serving Models with Ray Serve
+        Chapter 8: Online Inference with Ray Serve
       </a>
     </li>
   
@@ -400,7 +407,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_09_script/" class="md-nav__link">
-        Working with Ray Clusters
+        Chapter 9: Ray Clusters
       </a>
     </li>
   
@@ -415,7 +422,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_10_air/" class="md-nav__link">
-        Getting Started with the Ray AI Runtime
+        Chapter 10: Getting Started with the Ray AI Runtime
       </a>
     </li>
   
@@ -430,7 +437,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_11_ecosystem/" class="md-nav__link">
-        Ray's Ecosystem and Beyond
+        Chapter 11: Ray's Ecosystem and Beyond
       </a>
     </li>
   
@@ -443,6 +450,25 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
@@ -452,8 +478,6 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
-                
-                  <h1>Data Processing with Ray Data</h1>
                 
                 <script>
 (function (global, factory) {
@@ -1107,26 +1131,136 @@ all of MD as it is not optimized for dense, information rich UIs.
                 },
                 displayAlign: 'center',
                 CommonHTML: {
-                    linebreaks: { 
-                    automatic: true 
+                    linebreaks: {
+                    automatic: true
                     }
                 }
             });
-        
+
             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
         }
     }
     init_mathjax();
     </script>
-    <!-- End of mathjax configuration --><div class="jupyter-wrapper"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+    <!-- End of mathjax configuration --><div class="jupyter-wrapper">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="chapter-6-data-processing-with-ray">Chapter 6: Data Processing with Ray<a class="anchor-link" href="#Chapter-6:-Data-Processing-with-Ray">&#182;</a></h1>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>You can run this notebook directly in
+<a href="https://colab.research.google.com/github/maxpumperla/learning_ray/blob/main/notebooks/ch_06_data_processing.ipynb">Colab</a>.</p>
+<p>The book has been written for Ray 2.2.0,which at the time of writing has not
+officially been released yet. If you are reading this and this version is already
+available, you can install it using <code>pip install ray==2.2.0</code>. If not, you can
+use a nightly wheel (here for Python 3.7 on Linux):</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
             <clipboard-copy for="cell-1">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">s3</span><span class="o">-</span><span class="n">us</span><span class="o">-</span><span class="n">west</span><span class="o">-</span><span class="mf">2.</span><span class="n">amazonaws</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ray</span><span class="o">-</span><span class="n">wheels</span><span class="o">/</span><span class="n">latest</span><span class="o">/</span><span class="n">ray</span><span class="o">-</span><span class="mf">3.0.0</span><span class="o">.</span><span class="n">dev0</span><span class="o">-</span><span class="n">cp37</span><span class="o">-</span><span class="n">cp37m</span><span class="o">-</span><span class="n">manylinux2014_x86_64</span><span class="o">.</span><span class="n">whl</span>
+</pre></div>
+<div id="cell-1" class="clipboard-copy-txt">! pip install -U https://s3-us-west-2.amazonaws.com/ray-wheels/latest/ray-3.0.0.dev0-cp37-cp37m-manylinux2014_x86_64.whl</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Should you not run this notebook in Colab and need another type of wheel, please
+refer to Ray's <a href="https://docs.ray.io/en/latest/ray-overview/installation.html#install-nightlies">installation instructions for nightlies</a>.</p>
+<p>For this chapter you will also need to install the following dependencies:</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-2">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="s2">&quot;ray[data]&quot;</span><span class="o">==</span><span class="mf">2.0.0</span>
+<span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">scikit</span><span class="o">-</span><span class="n">learn</span><span class="o">==</span><span class="mf">1.1.2</span>
+<span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">dask</span><span class="o">==</span><span class="mf">2022.8.1</span>
+</pre></div>
+<div id="cell-2" class="clipboard-copy-txt">! pip install "ray[data]"==2.0.0
+! pip install scikit-learn==1.1.2
+! pip install dask==2022.8.1</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-3">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1148,7 +1282,7 @@ all of MD as it is not optimized for dense, information rich UIs.
 <span class="nb">print</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">schema</span><span class="p">())</span>  <span class="c1"># -&gt; &lt;class &#39;int&#39;&gt;</span>
 <span class="c1"># end::ds_create[]</span>
 </pre></div>
-<div id="cell-1" class="clipboard-copy-txt"># tag::ds_create[]
+<div id="cell-3" class="clipboard-copy-txt"># tag::ds_create[]
 import ray
 
 # Create a dataset containing integers in the range [0, 10000).
@@ -1170,12 +1304,14 @@ print(ds.schema())  # -> <class 'int'>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-2">
+            <clipboard-copy for="cell-4">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1192,7 +1328,7 @@ print(ds.schema())  # -> <class 'int'>
 <span class="nb">print</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">count</span><span class="p">())</span>
 <span class="c1"># end::ds_read_write[]</span>
 </pre></div>
-<div id="cell-2" class="clipboard-copy-txt"># tag::ds_read_write[]
+<div id="cell-4" class="clipboard-copy-txt"># tag::ds_read_write[]
 # Save the dataset to a local file and load it back.
 ray.data.range(10000).write_csv("local_dir")
 ds = ray.data.read_csv("local_dir")
@@ -1209,12 +1345,14 @@ print(ds.count())
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-3">
+            <clipboard-copy for="cell-5">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1241,7 +1379,7 @@ print(ds.count())
 <span class="nb">print</span><span class="p">(</span><span class="n">ds3</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>  <span class="c1"># -&gt; [0, 0, 2, 2, 4]</span>
 <span class="c1"># end::ds_transform[]</span>
 </pre></div>
-<div id="cell-3" class="clipboard-copy-txt"># tag::ds_transform[]
+<div id="cell-5" class="clipboard-copy-txt"># tag::ds_transform[]
 # Basic transformations: join two datasets, filter, and sort.
 ds1 = ray.data.range(10000)
 ds2 = ray.data.range(10000)
@@ -1268,12 +1406,14 @@ print(ds3.take(5))  # -> [0, 0, 2, 2, 4]
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-4">
+            <clipboard-copy for="cell-6">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1294,7 +1434,7 @@ print(ds3.take(5))  # -> [0, 0, 2, 2, 4]
 <span class="nb">print</span><span class="p">(</span><span class="n">ds3</span><span class="o">.</span><span class="n">repartition</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span><span class="o">.</span><span class="n">num_blocks</span><span class="p">())</span>  <span class="c1"># -&gt; 200</span>
 <span class="c1"># end::ds_repartition[]</span>
 </pre></div>
-<div id="cell-4" class="clipboard-copy-txt"># tag::ds_repartition[]
+<div id="cell-6" class="clipboard-copy-txt"># tag::ds_repartition[]
 ds1 = ray.data.range(10000)
 print(ds1.num_blocks())  # -> 200
 ds2 = ray.data.range(10000)
@@ -1315,74 +1455,8 @@ print(ds3.repartition(200).num_blocks())  # -> 200
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-        
-        
-        <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-5">
-            <div>
-                <span class="notice" hidden>Copied!</span>
-                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
-                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
-                </svg>
-                </div>
-            </clipboard-copy>
-        </div>
-        <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::ds_schema_1[]</span>
-<span class="n">ds</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">from_items</span><span class="p">([{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;abc&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;def&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">schema</span><span class="p">())</span>  <span class="c1"># -&gt; id: string, value: int64</span>
-<span class="c1"># end::ds_schema_1[]</span>
-</pre></div>
-<div id="cell-5" class="clipboard-copy-txt"># tag::ds_schema_1[]
-ds = ray.data.from_items([{"id": "abc", "value": 1}, {"id": "def", "value": 2}])
-print(ds.schema())  # -> id: string, value: int64
-# end::ds_schema_1[]</div>
-    
-        </div>
-    </div>
-
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-</div>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-        
-        
-        <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-6">
-            <div>
-                <span class="notice" hidden>Copied!</span>
-                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
-                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
-                </svg>
-                </div>
-            </clipboard-copy>
-        </div>
-        <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::ds_schema_2[]</span>
-<span class="n">pandas_df</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>  <span class="c1"># pandas_df will inherit the schema from our Dataset.</span>
-<span class="c1"># end::ds_schema_2[]</span>
-</pre></div>
-<div id="cell-6" class="clipboard-copy-txt"># tag::ds_schema_2[]
-pandas_df = ds.to_pandas()  # pandas_df will inherit the schema from our Dataset.
-# end::ds_schema_2[]</div>
-    
-        </div>
-    </div>
-
-</div>
-</div>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
@@ -1398,12 +1472,84 @@ pandas_df = ds.to_pandas()  # pandas_df will inherit the schema from our Dataset
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::ds_schema_1[]</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">from_items</span><span class="p">([{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;abc&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;def&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">schema</span><span class="p">())</span>  <span class="c1"># -&gt; id: string, value: int64</span>
+<span class="c1"># end::ds_schema_1[]</span>
+</pre></div>
+<div id="cell-7" class="clipboard-copy-txt"># tag::ds_schema_1[]
+ds = ray.data.from_items([{"id": "abc", "value": 1}, {"id": "def", "value": 2}])
+print(ds.schema())  # -> id: string, value: int64
+# end::ds_schema_1[]</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-8">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::ds_schema_2[]</span>
+<span class="n">pandas_df</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>  <span class="c1"># pandas_df will inherit the schema from our Dataset.</span>
+<span class="c1"># end::ds_schema_2[]</span>
+</pre></div>
+<div id="cell-8" class="clipboard-copy-txt"># tag::ds_schema_2[]
+pandas_df = ds.to_pandas()  # pandas_df will inherit the schema from our Dataset.
+# end::ds_schema_2[]</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-9">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::ds_compute_1[]</span>
 <span class="n">ds</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">ds</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># -&gt; [0, 1, 4, 9, 16]</span>
 <span class="c1"># end::ds_compute_1[]</span>
 </pre></div>
-<div id="cell-7" class="clipboard-copy-txt"># tag::ds_compute_1[]
+<div id="cell-9" class="clipboard-copy-txt"># tag::ds_compute_1[]
 ds = ray.data.range(10000).map(lambda x: x ** 2)
 ds.take(5)  # -> [0, 1, 4, 9, 16]
 # end::ds_compute_1[]</div>
@@ -1418,12 +1564,14 @@ ds.take(5)  # -> [0, 1, 4, 9, 16]
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-8">
+            <clipboard-copy for="cell-10">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1441,7 +1589,7 @@ ds.take(5)  # -> [0, 1, 4, 9, 16]
 <span class="n">ds</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># -&gt; [0, 1, 4, 9, 16]</span>
 <span class="c1"># end::ds_compute_2[]</span>
 </pre></div>
-<div id="cell-8" class="clipboard-copy-txt"># tag::ds_compute_2[]
+<div id="cell-10" class="clipboard-copy-txt"># tag::ds_compute_2[]
 import numpy as np
 
 
@@ -1459,12 +1607,14 @@ ds.take(5)  # -> [0, 1, 4, 9, 16]
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-9">
+            <clipboard-copy for="cell-11">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1501,7 +1651,7 @@ ds.take(5)  # -> [0, 1, 4, 9, 16]
 <span class="n">cpu_intensive_preprocessing</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">batch</span><span class="p">:</span> <span class="n">batch</span>
 <span class="n">gpu_intensive_inference</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">batch</span><span class="p">:</span> <span class="n">batch</span>
 </pre></div>
-<div id="cell-9" class="clipboard-copy-txt"># tag::ds_compute_3[]
+<div id="cell-11" class="clipboard-copy-txt"># tag::ds_compute_3[]
 def load_model():
     # Returns a dummy model for this example.
     # In reality, this would likely load some model weights onto a GPU.
@@ -1538,90 +1688,8 @@ gpu_intensive_inference = lambda batch: batch</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-        
-        
-        <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-10">
-            <div>
-                <span class="notice" hidden>Copied!</span>
-                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
-                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
-                </svg>
-                </div>
-            </clipboard-copy>
-        </div>
-        <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::ds_pipeline_1[]</span>
-<span class="n">ds</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="s2">&quot;s3://my_bucket/input_data&quot;</span><span class="p">)</span>\
-        <span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">cpu_intensive_preprocessing</span><span class="p">)</span>\
-        <span class="o">.</span><span class="n">map_batches</span><span class="p">(</span><span class="n">gpu_intensive_inference</span><span class="p">,</span> <span class="n">compute</span><span class="o">=</span><span class="s2">&quot;actors&quot;</span><span class="p">,</span> <span class="n">num_gpus</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>\
-        <span class="o">.</span><span class="n">repartition</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>\
-        <span class="o">.</span><span class="n">write_parquet</span><span class="p">(</span><span class="s2">&quot;s3://my_bucket/output_predictions&quot;</span><span class="p">)</span>
-<span class="c1"># end::ds_pipeline_1[]</span>
-</pre></div>
-<div id="cell-10" class="clipboard-copy-txt"># tag::ds_pipeline_1[]
-ds = ray.data.read_parquet("s3://my_bucket/input_data")\
-        .map(cpu_intensive_preprocessing)\
-        .map_batches(gpu_intensive_inference, compute="actors", num_gpus=1)\
-        .repartition(10)\
-        .write_parquet("s3://my_bucket/output_predictions")
-# end::ds_pipeline_1[]</div>
-    
-        </div>
-    </div>
-
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-</div>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-        
-        
-        <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-11">
-            <div>
-                <span class="notice" hidden>Copied!</span>
-                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
-                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
-                </svg>
-                </div>
-            </clipboard-copy>
-        </div>
-        <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::ds_pipeline_2[]</span>
-<span class="n">ds</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="s2">&quot;s3://my_bucket/input_data&quot;</span><span class="p">)</span>\
-        <span class="o">.</span><span class="n">window</span><span class="p">(</span><span class="n">blocks_per_window</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>\
-        <span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">cpu_intensive_preprocessing</span><span class="p">)</span>\
-        <span class="o">.</span><span class="n">map_batches</span><span class="p">(</span><span class="n">gpu_intensive_inference</span><span class="p">,</span> <span class="n">compute</span><span class="o">=</span><span class="s2">&quot;actors&quot;</span><span class="p">,</span> <span class="n">num_gpus</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>\
-        <span class="o">.</span><span class="n">repartition</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>\
-        <span class="o">.</span><span class="n">write_parquet</span><span class="p">(</span><span class="s2">&quot;s3://my_bucket/output_predictions&quot;</span><span class="p">)</span>
-<span class="c1"># end::ds_pipeline_2[]</span>
-</pre></div>
-<div id="cell-11" class="clipboard-copy-txt"># tag::ds_pipeline_2[]
-ds = ray.data.read_parquet("s3://my_bucket/input_data")\
-        .window(blocks_per_window=5)\
-        .map(cpu_intensive_preprocessing)\
-        .map_batches(gpu_intensive_inference, compute="actors", num_gpus=1)\
-        .repartition(10)\
-        .write_parquet("s3://my_bucket/output_predictions")
-# end::ds_pipeline_2[]</div>
-    
-        </div>
-    </div>
-
-</div>
-</div>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
@@ -1637,10 +1705,99 @@ ds = ray.data.read_parquet("s3://my_bucket/input_data")\
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::ds_pipeline_1[]</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="s2">&quot;s3://my_bucket/input_data&quot;</span><span class="p">)</span>\
+        <span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">cpu_intensive_preprocessing</span><span class="p">)</span>\
+        <span class="o">.</span><span class="n">map_batches</span><span class="p">(</span><span class="n">gpu_intensive_inference</span><span class="p">,</span> <span class="n">compute</span><span class="o">=</span><span class="s2">&quot;actors&quot;</span><span class="p">,</span> <span class="n">num_gpus</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>\
+        <span class="o">.</span><span class="n">repartition</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">write_parquet</span><span class="p">(</span><span class="s2">&quot;s3://my_bucket/output_predictions&quot;</span><span class="p">)</span>
+<span class="c1"># end::ds_pipeline_1[]</span>
+</pre></div>
+<div id="cell-12" class="clipboard-copy-txt"># tag::ds_pipeline_1[]
+ds = ray.data.read_parquet("s3://my_bucket/input_data")\
+        .map(cpu_intensive_preprocessing)\
+        .map_batches(gpu_intensive_inference, compute="actors", num_gpus=1)\
+        .repartition(10)
+ds.write_parquet("s3://my_bucket/output_predictions")
+# end::ds_pipeline_1[]</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-13">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::ds_pipeline_2[]</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="s2">&quot;s3://my_bucket/input_data&quot;</span><span class="p">)</span>\
+        <span class="o">.</span><span class="n">window</span><span class="p">(</span><span class="n">blocks_per_window</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>\
+        <span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">cpu_intensive_preprocessing</span><span class="p">)</span>\
+        <span class="o">.</span><span class="n">map_batches</span><span class="p">(</span><span class="n">gpu_intensive_inference</span><span class="p">,</span> <span class="n">compute</span><span class="o">=</span><span class="s2">&quot;actors&quot;</span><span class="p">,</span> <span class="n">num_gpus</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>\
+        <span class="o">.</span><span class="n">repartition</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">write_parquet</span><span class="p">(</span><span class="s2">&quot;s3://my_bucket/output_predictions&quot;</span><span class="p">)</span>
+<span class="c1"># end::ds_pipeline_2[]</span>
+</pre></div>
+<div id="cell-13" class="clipboard-copy-txt"># tag::ds_pipeline_2[]
+ds = ray.data.read_parquet("s3://my_bucket/input_data")\
+        .window(blocks_per_window=5)\
+        .map(cpu_intensive_preprocessing)\
+        .map_batches(gpu_intensive_inference, compute="actors", num_gpus=1)\
+        .repartition(10)
+ds.write_parquet("s3://my_bucket/output_predictions")
+# end::ds_pipeline_2[]</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-14">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::parallel_sgd_1[]</span>
 <span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span>
 <span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">SGDClassifier</span>
 <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+
 
 <span class="nd">@ray</span><span class="o">.</span><span class="n">remote</span>
 <span class="k">class</span> <span class="nc">TrainingWorker</span><span class="p">:</span>
@@ -1658,10 +1815,11 @@ ds = ray.data.read_parquet("s3://my_bucket/input_data")\
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">Y_test</span><span class="p">)</span>
 <span class="c1"># end::parallel_sgd_1[]</span>
 </pre></div>
-<div id="cell-12" class="clipboard-copy-txt"># tag::parallel_sgd_1[]
+<div id="cell-14" class="clipboard-copy-txt"># tag::parallel_sgd_1[]
 from sklearn import datasets
 from sklearn.linear_model import SGDClassifier
 from sklearn.model_selection import train_test_split
+
 
 @ray.remote
 class TrainingWorker:
@@ -1689,12 +1847,14 @@ class TrainingWorker:
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-13">
+            <clipboard-copy for="cell-15">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1711,7 +1871,7 @@ class TrainingWorker:
 <span class="n">workers</span> <span class="o">=</span> <span class="p">[</span><span class="n">TrainingWorker</span><span class="o">.</span><span class="n">remote</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span> <span class="k">for</span> <span class="n">alpha</span> <span class="ow">in</span> <span class="n">ALPHA_VALS</span><span class="p">]</span>
 <span class="c1"># end::parallel_sgd_2[]</span>
 </pre></div>
-<div id="cell-13" class="clipboard-copy-txt"># tag::parallel_sgd_2[]
+<div id="cell-15" class="clipboard-copy-txt"># tag::parallel_sgd_2[]
 ALPHA_VALS = [0.00008, 0.00009, 0.0001, 0.00011, 0.00012] 
 
 print(f"Starting {len(ALPHA_VALS)} training workers.")
@@ -1728,12 +1888,14 @@ workers = [TrainingWorker.remote(alpha) for alpha in ALPHA_VALS]
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-14">
+            <clipboard-copy for="cell-16">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1744,33 +1906,29 @@ workers = [TrainingWorker.remote(alpha) for alpha in ALPHA_VALS]
         </div>
         <div class="CodeMirror cm-s-jupyter">
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::parallel_sgd_3[]</span>
-<span class="c1"># Generate training &amp; validation data for a classification problem.</span>
-<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">,</span> <span class="n">Y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="o">*</span><span class="n">datasets</span><span class="o">.</span><span class="n">make_classification</span><span class="p">())</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">,</span> <span class="n">Y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>  <span class="c1"># &lt;1&gt;</span>
+    <span class="o">*</span><span class="n">datasets</span><span class="o">.</span><span class="n">make_classification</span><span class="p">()</span>
+<span class="p">)</span>
 
-<span class="c1"># Create a dataset pipeline out of the training data. The data will be randomly</span>
-<span class="c1"># shuffled and split across the workers for 10 iterations.</span>
-<span class="n">train_ds</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">from_items</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">)))</span>
+<span class="n">train_ds</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">from_items</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">)))</span>  <span class="c1"># &lt;2&gt;</span>
 <span class="n">shards</span> <span class="o">=</span> <span class="n">train_ds</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>\
                  <span class="o">.</span><span class="n">random_shuffle_each_window</span><span class="p">()</span>\
                  <span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">workers</span><span class="p">),</span> <span class="n">locality_hints</span><span class="o">=</span><span class="n">workers</span><span class="p">)</span>
 
-<span class="c1"># Wait for training to complete on all of the workers.</span>
-<span class="n">ray</span><span class="o">.</span><span class="n">get</span><span class="p">([</span><span class="n">worker</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">remote</span><span class="p">(</span><span class="n">shard</span><span class="p">)</span> <span class="k">for</span> <span class="n">worker</span><span class="p">,</span> <span class="n">shard</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">workers</span><span class="p">,</span> <span class="n">shards</span><span class="p">)])</span>
+<span class="n">ray</span><span class="o">.</span><span class="n">get</span><span class="p">([</span><span class="n">worker</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">remote</span><span class="p">(</span><span class="n">shard</span><span class="p">)</span> <span class="k">for</span> <span class="n">worker</span><span class="p">,</span> <span class="n">shard</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">workers</span><span class="p">,</span> <span class="n">shards</span><span class="p">)])</span>  <span class="c1"># &lt;3&gt;</span>
 <span class="c1"># end::parallel_sgd_3[]</span>
 </pre></div>
-<div id="cell-14" class="clipboard-copy-txt"># tag::parallel_sgd_3[]
-# Generate training & validation data for a classification problem.
-X_train, X_test, Y_train, Y_test = train_test_split(*datasets.make_classification())
+<div id="cell-16" class="clipboard-copy-txt"># tag::parallel_sgd_3[]
+X_train, X_test, Y_train, Y_test = train_test_split(  # <1>
+    *datasets.make_classification()
+)
 
-# Create a dataset pipeline out of the training data. The data will be randomly
-# shuffled and split across the workers for 10 iterations.
-train_ds = ray.data.from_items(list(zip(X_train, Y_train)))
+train_ds = ray.data.from_items(list(zip(X_train, Y_train)))  # <2>
 shards = train_ds.repeat(10)\
                  .random_shuffle_each_window()\
                  .split(len(workers), locality_hints=workers)
 
-# Wait for training to complete on all of the workers.
-ray.get([worker.train.remote(shard) for worker, shard in zip(workers, shards)])
+ray.get([worker.train.remote(shard) for worker, shard in zip(workers, shards)])  # <3>
 # end::parallel_sgd_3[]</div>
     
         </div>
@@ -1783,12 +1941,14 @@ ray.get([worker.train.remote(shard) for worker, shard in zip(workers, shards)])
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-15">
+            <clipboard-copy for="cell-17">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1803,7 +1963,7 @@ ray.get([worker.train.remote(shard) for worker, shard in zip(workers, shards)])
 <span class="nb">print</span><span class="p">(</span><span class="n">ray</span><span class="o">.</span><span class="n">get</span><span class="p">([</span><span class="n">worker</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">remote</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">Y_test</span><span class="p">)</span> <span class="k">for</span> <span class="n">worker</span> <span class="ow">in</span> <span class="n">workers</span><span class="p">]))</span>
 <span class="c1"># end::parallel_sgd_5[]</span>
 </pre></div>
-<div id="cell-15" class="clipboard-copy-txt"># tag::parallel_sgd_5[]
+<div id="cell-17" class="clipboard-copy-txt"># tag::parallel_sgd_5[]
 # Get validation results from each worker.
 print(ray.get([worker.test.remote(X_test, Y_test) for worker in workers]))
 # end::parallel_sgd_5[]</div>
@@ -1818,12 +1978,14 @@ print(ray.get([worker.test.remote(X_test, Y_test) for worker in workers]))
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-16">
+            <clipboard-copy for="cell-18">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1841,7 +2003,7 @@ print(ray.get([worker.test.remote(X_test, Y_test) for worker in workers]))
 <span class="n">enable_dask_on_ray</span><span class="p">()</span>  <span class="c1"># Enable the Ray scheduler backend for Dask.</span>
 <span class="c1"># end::dask_on_ray_1[]</span>
 </pre></div>
-<div id="cell-16" class="clipboard-copy-txt"># tag::dask_on_ray_1[]
+<div id="cell-18" class="clipboard-copy-txt"># tag::dask_on_ray_1[]
 import ray
 from ray.util.dask import enable_dask_on_ray
 
@@ -1859,12 +2021,14 @@ enable_dask_on_ray()  # Enable the Ray scheduler backend for Dask.
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-17">
+            <clipboard-copy for="cell-19">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1882,7 +2046,7 @@ enable_dask_on_ray()  # Enable the Ray scheduler backend for Dask.
 <span class="n">df</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>  <span class="c1"># Trigger the task graph to be evaluated.</span>
 <span class="c1"># end::dask_on_ray_2[]</span>
 </pre></div>
-<div id="cell-17" class="clipboard-copy-txt"># tag::dask_on_ray_2[]
+<div id="cell-19" class="clipboard-copy-txt"># tag::dask_on_ray_2[]
 import dask
 
 df = dask.datasets.timeseries()
@@ -1900,12 +2064,14 @@ df.compute()  # Trigger the task graph to be evaluated.
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-18">
+            <clipboard-copy for="cell-20">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1928,7 +2094,7 @@ df.compute()  # Trigger the task graph to be evaluated.
 <span class="nb">print</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">std</span><span class="p">())</span>  <span class="c1"># -&gt; 2886.89568</span>
 <span class="c1"># end::dask_on_ray_3[]</span>
 </pre></div>
-<div id="cell-18" class="clipboard-copy-txt"># tag::dask_on_ray_3[]
+<div id="cell-20" class="clipboard-copy-txt"># tag::dask_on_ray_3[]
 import ray
 ds = ray.data.range(10000)
 
@@ -1940,350 +2106,6 @@ print(df.std().compute())  # -> 2886.89568
 ds = ray.data.from_dask(df)
 print(ds.std())  # -> 2886.89568
 # end::dask_on_ray_3[]</div>
-    
-        </div>
-    </div>
-
-</div>
-</div>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-        
-        
-        <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-19">
-            <div>
-                <span class="notice" hidden>Copied!</span>
-                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
-                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
-                </svg>
-                </div>
-            </clipboard-copy>
-        </div>
-        <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::ml_pipeline_preprocess[]</span>
-<span class="kn">import</span> <span class="nn">ray</span>
-<span class="kn">from</span> <span class="nn">ray.util.dask</span> <span class="kn">import</span> <span class="n">enable_dask_on_ray</span>
-
-<span class="kn">import</span> <span class="nn">dask.dataframe</span> <span class="k">as</span> <span class="nn">dd</span>
-
-<span class="n">LABEL_COLUMN</span> <span class="o">=</span> <span class="s2">&quot;is_big_tip&quot;</span>
-<span class="n">FEATURE_COLUMNS</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;passenger_count&quot;</span><span class="p">,</span> <span class="s2">&quot;trip_distance&quot;</span><span class="p">,</span> <span class="s2">&quot;fare_amount&quot;</span><span class="p">,</span>
-                   <span class="s2">&quot;trip_duration&quot;</span><span class="p">,</span> <span class="s2">&quot;hour&quot;</span><span class="p">,</span> <span class="s2">&quot;day_of_week&quot;</span><span class="p">]</span>
-
-<span class="n">enable_dask_on_ray</span><span class="p">()</span>
-
-
-<span class="k">def</span> <span class="nf">load_dataset</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">include_label</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-    <span class="c1"># Load the data and drop unused columns.</span>
-    <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;tpep_pickup_datetime&quot;</span><span class="p">,</span> <span class="s2">&quot;tpep_dropoff_datetime&quot;</span><span class="p">,</span> <span class="s2">&quot;tip_amount&quot;</span><span class="p">,</span>
-               <span class="s2">&quot;passenger_count&quot;</span><span class="p">,</span> <span class="s2">&quot;trip_distance&quot;</span><span class="p">,</span> <span class="s2">&quot;fare_amount&quot;</span><span class="p">]</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">dd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>
-
-    <span class="c1"># Basic cleaning, drop nulls and outliers.</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;passenger_count&quot;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">4</span><span class="p">)</span> <span class="o">&amp;</span>
-            <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;trip_distance&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">)</span> <span class="o">&amp;</span>
-            <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;fare_amount&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">)]</span>
-
-    <span class="c1"># Convert datetime strings to datetime objects.</span>
-    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;tpep_pickup_datetime&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">dd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;tpep_pickup_datetime&quot;</span><span class="p">])</span>
-    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;tpep_dropoff_datetime&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">dd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;tpep_dropoff_datetime&quot;</span><span class="p">])</span>
-
-    <span class="c1"># Add three new features: trip duration, hour the trip started,</span>
-    <span class="c1"># and day of the week.</span>
-    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;trip_duration&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;tpep_dropoff_datetime&quot;</span><span class="p">]</span> <span class="o">-</span>
-                           <span class="n">df</span><span class="p">[</span><span class="s2">&quot;tpep_pickup_datetime&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">seconds</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;trip_duration&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">4</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span><span class="p">]</span> <span class="c1"># 4 hours.</span>
-    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;hour&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;tpep_pickup_datetime&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">hour</span>
-    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;day_of_week&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;tpep_pickup_datetime&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">weekday</span>
-
-    <span class="k">if</span> <span class="n">include_label</span><span class="p">:</span>
-        <span class="c1"># Calculate label column: if tip was more or less than 20% of the fare.</span>
-        <span class="n">df</span><span class="p">[</span><span class="n">LABEL_COLUMN</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;tip_amount&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">0.2</span> <span class="o">*</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;fare_amount&quot;</span><span class="p">]</span>
-
-    <span class="c1"># Drop unused columns.</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span>
-        <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;tpep_pickup_datetime&quot;</span><span class="p">,</span> <span class="s2">&quot;tpep_dropoff_datetime&quot;</span><span class="p">,</span> <span class="s2">&quot;tip_amount&quot;</span><span class="p">]</span>
-    <span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">from_dask</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">repartition</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
-<span class="c1"># end::ml_pipeline_preprocess[]</span>
-</pre></div>
-<div id="cell-19" class="clipboard-copy-txt"># tag::ml_pipeline_preprocess[]
-import ray
-from ray.util.dask import enable_dask_on_ray
-
-import dask.dataframe as dd
-
-LABEL_COLUMN = "is_big_tip"
-FEATURE_COLUMNS = ["passenger_count", "trip_distance", "fare_amount",
-                   "trip_duration", "hour", "day_of_week"]
-
-enable_dask_on_ray()
-
-
-def load_dataset(path: str, *, include_label=True):
-    # Load the data and drop unused columns.
-    columns = ["tpep_pickup_datetime", "tpep_dropoff_datetime", "tip_amount",
-               "passenger_count", "trip_distance", "fare_amount"]
-    df = dd.read_parquet(path, columns=columns)
-
-    # Basic cleaning, drop nulls and outliers.
-    df = df.dropna()
-    df = df[(df["passenger_count"] <= 4) &
-            (df["trip_distance"] < 100) &
-            (df["fare_amount"] < 1000)]
-
-    # Convert datetime strings to datetime objects.
-    df["tpep_pickup_datetime"] = dd.to_datetime(df["tpep_pickup_datetime"])
-    df["tpep_dropoff_datetime"] = dd.to_datetime(df["tpep_dropoff_datetime"])
-
-    # Add three new features: trip duration, hour the trip started,
-    # and day of the week.
-    df["trip_duration"] = (df["tpep_dropoff_datetime"] -
-                           df["tpep_pickup_datetime"]).dt.seconds
-    df = df[df["trip_duration"] < 4 * 60 * 60] # 4 hours.
-    df["hour"] = df["tpep_pickup_datetime"].dt.hour
-    df["day_of_week"] = df["tpep_pickup_datetime"].dt.weekday
-
-    if include_label:
-        # Calculate label column: if tip was more or less than 20% of the fare.
-        df[LABEL_COLUMN] = df["tip_amount"] > 0.2 * df["fare_amount"]
-
-    # Drop unused columns.
-    df = df.drop(
-        columns=["tpep_pickup_datetime", "tpep_dropoff_datetime", "tip_amount"]
-    )
-
-    return ray.data.from_dask(df).repartition(100)
-# end::ml_pipeline_preprocess[]</div>
-    
-        </div>
-    </div>
-
-</div>
-</div>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-        
-        
-        <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-20">
-            <div>
-                <span class="notice" hidden>Copied!</span>
-                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
-                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
-                </svg>
-                </div>
-            </clipboard-copy>
-        </div>
-        <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::ml_pipeline_train_1[]</span>
-<span class="kn">import</span> <span class="nn">torch</span>
-<span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
-
-<span class="kn">from</span> <span class="nn">ray.air</span> <span class="kn">import</span> <span class="n">session</span>
-<span class="kn">from</span> <span class="nn">ray.air.config</span> <span class="kn">import</span> <span class="n">ScalingConfig</span>
-<span class="kn">import</span> <span class="nn">ray.train</span> <span class="k">as</span> <span class="nn">train</span>
-<span class="kn">from</span> <span class="nn">ray.train.torch</span> <span class="kn">import</span> <span class="n">TorchCheckpoint</span><span class="p">,</span> <span class="n">TorchTrainer</span>
-
-<span class="kn">from</span> <span class="nn">fare_predictor</span> <span class="kn">import</span> <span class="n">FarePredictor</span>
-
-
-<span class="k">def</span> <span class="nf">train_loop_per_worker</span><span class="p">(</span><span class="n">config</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
-    <span class="n">batch_size</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;batch_size&quot;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
-    <span class="n">lr</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;lr&quot;</span><span class="p">,</span> <span class="mf">1e-2</span><span class="p">)</span>
-    <span class="n">num_epochs</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;num_epochs&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-
-    <span class="n">dataset_shard</span> <span class="o">=</span> <span class="n">train</span><span class="o">.</span><span class="n">get_dataset_shard</span><span class="p">(</span><span class="s2">&quot;train&quot;</span><span class="p">)</span>
-    <span class="n">model</span> <span class="o">=</span> <span class="n">train</span><span class="o">.</span><span class="n">torch</span><span class="o">.</span><span class="n">prepare_model</span><span class="p">(</span><span class="n">FarePredictor</span><span class="p">())</span>
-
-    <span class="n">loss_fn</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">SmoothL1Loss</span><span class="p">()</span>
-    <span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="n">lr</span><span class="p">)</span>
-    <span class="n">model</span> <span class="o">=</span> <span class="n">train</span><span class="o">.</span><span class="n">torch</span><span class="o">.</span><span class="n">prepare_model</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
-
-    <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_epochs</span><span class="p">):</span>
-        <span class="n">loss</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="n">num_batches</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="k">for</span> <span class="n">batch</span> <span class="ow">in</span> <span class="n">dataset_shard</span><span class="o">.</span><span class="n">iter_torch_batches</span><span class="p">(</span>
-            <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">dtypes</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float</span>
-        <span class="p">):</span>
-            <span class="n">labels</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="n">batch</span><span class="p">[</span><span class="n">LABEL_COLUMN</span><span class="p">],</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-            <span class="n">inputs</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">(</span>
-                <span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="n">batch</span><span class="p">[</span><span class="n">f</span><span class="p">],</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">FEATURE_COLUMNS</span><span class="p">],</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span>
-            <span class="p">)</span>
-            <span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
-            <span class="n">batch_loss</span> <span class="o">=</span> <span class="n">loss_fn</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
-            <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
-            <span class="n">batch_loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
-            <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
-
-            <span class="n">num_batches</span> <span class="o">+=</span> <span class="mi">1</span>
-            <span class="n">loss</span> <span class="o">+=</span> <span class="n">batch_loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
-
-        <span class="c1"># loss /= num_batches</span>
-        <span class="n">session</span><span class="o">.</span><span class="n">report</span><span class="p">(</span>
-            <span class="p">{</span><span class="s2">&quot;epoch&quot;</span><span class="p">:</span> <span class="n">epoch</span><span class="p">,</span> <span class="s2">&quot;loss&quot;</span><span class="p">:</span> <span class="n">loss</span><span class="p">},</span>
-            <span class="n">checkpoint</span><span class="o">=</span><span class="n">TorchCheckpoint</span><span class="o">.</span><span class="n">from_model</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
-        <span class="p">)</span>
-<span class="c1"># end::ml_pipeline_train_1[]</span>
-</pre></div>
-<div id="cell-20" class="clipboard-copy-txt"># tag::ml_pipeline_train_1[]
-import torch
-import torch.nn as nn
-
-from ray.air import session
-from ray.air.config import ScalingConfig
-import ray.train as train
-from ray.train.torch import TorchCheckpoint, TorchTrainer
-
-from fare_predictor import FarePredictor
-
-
-def train_loop_per_worker(config: dict):
-    batch_size = config.get("batch_size", 32)
-    lr = config.get("lr", 1e-2)
-    num_epochs = config.get("num_epochs", 3)
-
-    dataset_shard = train.get_dataset_shard("train")
-    model = train.torch.prepare_model(FarePredictor())
-
-    loss_fn = nn.SmoothL1Loss()
-    optimizer = torch.optim.Adam(model.parameters(), lr=lr)
-    model = train.torch.prepare_model(model)
-
-    for epoch in range(num_epochs):
-        loss = 0
-        num_batches = 0
-        for batch in dataset_shard.iter_torch_batches(
-            batch_size=batch_size, dtypes=torch.float
-        ):
-            labels = torch.unsqueeze(batch[LABEL_COLUMN], dim=1)
-            inputs = torch.cat(
-                [torch.unsqueeze(batch[f], dim=1) for f in FEATURE_COLUMNS], dim=1
-            )
-            output = model(inputs)
-            batch_loss = loss_fn(output, labels)
-            optimizer.zero_grad()
-            batch_loss.backward()
-            optimizer.step()
-
-            num_batches += 1
-            loss += batch_loss.item()
-
-        # loss /= num_batches
-        session.report(
-            {"epoch": epoch, "loss": loss},
-            checkpoint=TorchCheckpoint.from_model(model)
-        )
-# end::ml_pipeline_train_1[]</div>
-    
-        </div>
-    </div>
-
-</div>
-</div>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-        
-        
-        <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-21">
-            <div>
-                <span class="notice" hidden>Copied!</span>
-                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
-                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
-                </svg>
-                </div>
-            </clipboard-copy>
-        </div>
-        <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::ml_pipeline_train_2[]</span>
-<span class="n">trainer</span> <span class="o">=</span> <span class="n">TorchTrainer</span><span class="p">(</span>
-    <span class="n">train_loop_per_worker</span><span class="o">=</span><span class="n">train_loop_per_worker</span><span class="p">,</span>
-    <span class="n">train_loop_config</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;lr&quot;</span><span class="p">:</span> <span class="mf">1e-2</span><span class="p">,</span> <span class="s2">&quot;num_epochs&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;batch_size&quot;</span><span class="p">:</span> <span class="mi">64</span><span class="p">},</span>
-    <span class="n">scaling_config</span><span class="o">=</span><span class="n">ScalingConfig</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="mi">4</span><span class="p">),</span>
-    <span class="n">datasets</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;train&quot;</span><span class="p">:</span> <span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;nyc_tlc_data/yellow_tripdata_2020-01.parquet&quot;</span><span class="p">)},</span>
-<span class="p">)</span>
-
-<span class="n">result</span> <span class="o">=</span> <span class="n">trainer</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
-<span class="n">trained_model</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">checkpoint</span>
-<span class="c1"># end::ml_pipeline_train_2[]</span>
-</pre></div>
-<div id="cell-21" class="clipboard-copy-txt"># tag::ml_pipeline_train_2[]
-trainer = TorchTrainer(
-    train_loop_per_worker=train_loop_per_worker,
-    train_loop_config={"lr": 1e-2, "num_epochs": 3, "batch_size": 64},
-    scaling_config=ScalingConfig(num_workers=4),
-    datasets={"train": load_dataset("nyc_tlc_data/yellow_tripdata_2020-01.parquet")},
-)
-
-result = trainer.fit()
-trained_model = result.checkpoint
-# end::ml_pipeline_train_2[]</div>
-    
-        </div>
-    </div>
-
-</div>
-</div>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-        
-        
-        <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-22">
-            <div>
-                <span class="notice" hidden>Copied!</span>
-                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
-                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
-                </svg>
-                </div>
-            </clipboard-copy>
-        </div>
-        <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::ml_pipeline_inference[]</span>
-<span class="kn">from</span> <span class="nn">ray.train.torch</span> <span class="kn">import</span> <span class="n">TorchPredictor</span>
-<span class="kn">from</span> <span class="nn">ray.train.batch_predictor</span> <span class="kn">import</span> <span class="n">BatchPredictor</span>
-
-<span class="n">batch_predictor</span> <span class="o">=</span> <span class="n">BatchPredictor</span><span class="p">(</span><span class="n">trained_model</span><span class="p">,</span> <span class="n">TorchPredictor</span><span class="p">)</span>
-<span class="n">ds</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span>
-    <span class="s2">&quot;nyc_tlc_data/yellow_tripdata_2021-01.parquet&quot;</span><span class="p">,</span> <span class="n">include_label</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-
-<span class="n">batch_predictor</span><span class="o">.</span><span class="n">predict_pipelined</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">blocks_per_window</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="c1"># end::ml_pipeline_inference[]</span>
-</pre></div>
-<div id="cell-22" class="clipboard-copy-txt"># tag::ml_pipeline_inference[]
-from ray.train.torch import TorchPredictor
-from ray.train.batch_predictor import BatchPredictor
-
-batch_predictor = BatchPredictor(trained_model, TorchPredictor)
-ds = load_dataset(
-    "nyc_tlc_data/yellow_tripdata_2021-01.parquet", include_label=False)
-
-batch_predictor.predict_pipelined(ds, blocks_per_window=10)
-# end::ml_pipeline_inference[]</div>
     
         </div>
     </div>
@@ -2320,7 +2142,7 @@ batch_predictor.predict_pipelined(ds, blocks_per_window=10)
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../ch_05_tune/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Hyperparameter Optimization with Ray Tune" rel="prev">
+        <a href="../ch_05_tune/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Chapter 5: Hyperparameter Optimization with Ray Tune" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -2329,20 +2151,20 @@ batch_predictor.predict_pipelined(ds, blocks_per_window=10)
               <span class="md-footer__direction">
                 Previous
               </span>
-              Hyperparameter Optimization with Ray Tune
+              Chapter 5: Hyperparameter Optimization with Ray Tune
             </div>
           </div>
         </a>
       
       
         
-        <a href="../ch_07_train/" class="md-footer__link md-footer__link--next" aria-label="Next: Distributed Training with Ray Train" rel="next">
+        <a href="../ch_07_train/" class="md-footer__link md-footer__link--next" aria-label="Next: Chapter 7: Distributed Training with Ray Train" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Distributed Training with Ray Train
+              Chapter 7: Distributed Training with Ray Train
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -2403,7 +2225,7 @@ batch_predictor.predict_pipelined(ds, blocks_per_window=10)
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate", "navigation.tracking", "navigation.instant", "navigation.expand", "navigation.sections", "navigation.top", "navigation.indexes"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate", "navigation.tracking", "navigation.instant", "navigation.expand", "navigation.sections", "navigation.top", "navigation.indexes"], "search": "../assets/javascripts/workers/search.fcfe8b6d.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": null}</script>
     
     
 

@@ -16,11 +16,11 @@
         <link rel="canonical" href="https://maxpumperla.com/learning_ray/ch_07_train/">
       
       <link rel="icon" href="../assets/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-7.3.6">
     
     
       
-        <title>Distributed Training with Ray Train - Learning Ray - Flexible Distributed Python for Data Science</title>
+        <title>Chapter 7: Distributed Training with Ray Train - Learning Ray - Flexible Distributed Python for Data Science</title>
       
     
     
@@ -74,6 +74,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#chapter-7-distributed-training-with-ray-train" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -122,7 +127,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Distributed Training with Ray Train
+              Chapter 7: Distributed Training with Ray Train
             
           </span>
         </div>
@@ -317,7 +322,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_04_rllib/" class="md-nav__link">
-        Reinforcement Learning with Ray RLlib
+        Chapter 4: Reinforcement Learning with Ray RLlib
       </a>
     </li>
   
@@ -332,7 +337,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_05_tune/" class="md-nav__link">
-        Hyperparameter Optimization with Ray Tune
+        Chapter 5: Hyperparameter Optimization with Ray Tune
       </a>
     </li>
   
@@ -347,7 +352,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_06_data_processing/" class="md-nav__link">
-        Data Processing with Ray Data
+        Chapter 6: Data Processing with Ray
       </a>
     </li>
   
@@ -367,9 +372,11 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        
+      
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Distributed Training with Ray Train
+        Chapter 7: Distributed Training with Ray Train
       </a>
       
     </li>
@@ -385,7 +392,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_08_model_serving/" class="md-nav__link">
-        Serving Models with Ray Serve
+        Chapter 8: Online Inference with Ray Serve
       </a>
     </li>
   
@@ -400,7 +407,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_09_script/" class="md-nav__link">
-        Working with Ray Clusters
+        Chapter 9: Ray Clusters
       </a>
     </li>
   
@@ -415,7 +422,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_10_air/" class="md-nav__link">
-        Getting Started with the Ray AI Runtime
+        Chapter 10: Getting Started with the Ray AI Runtime
       </a>
     </li>
   
@@ -430,7 +437,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_11_ecosystem/" class="md-nav__link">
-        Ray's Ecosystem and Beyond
+        Chapter 11: Ray's Ecosystem and Beyond
       </a>
     </li>
   
@@ -443,6 +450,25 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
@@ -452,8 +478,6 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
-                
-                  <h1>Distributed Training with Ray Train</h1>
                 
                 <script>
 (function (global, factory) {
@@ -1107,20 +1131,50 @@ all of MD as it is not optimized for dense, information rich UIs.
                 },
                 displayAlign: 'center',
                 CommonHTML: {
-                    linebreaks: { 
-                    automatic: true 
+                    linebreaks: {
+                    automatic: true
                     }
                 }
             });
-        
+
             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
         }
     }
     init_mathjax();
     </script>
-    <!-- End of mathjax configuration --><div class="jupyter-wrapper"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+    <!-- End of mathjax configuration --><div class="jupyter-wrapper">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="chapter-7-distributed-training-with-ray-train">Chapter 7: Distributed Training with Ray Train<a class="anchor-link" href="#Chapter-7:-Distributed-Training-with-Ray-Train">&#182;</a></h1>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>You can run this notebook directly in
+<a href="https://colab.research.google.com/github/maxpumperla/learning_ray/blob/main/notebooks/ch_07_train.ipynb">Colab</a>.</p>
+<p>The book has been written for Ray 2.2.0,which at the time of writing has not
+officially been released yet. If you are reading this and this version is already
+available, you can install it using <code>pip install ray==2.2.0</code>. If not, you can
+use a nightly wheel (here for Python 3.7 on Linux):</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
@@ -1136,33 +1190,9 @@ all of MD as it is not optimized for dense, information rich UIs.
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::ds_create[]</span>
-<span class="kn">from</span> <span class="nn">ray.data</span> <span class="kn">import</span> <span class="n">from_pandas</span>
-<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_breast_cancer</span>
-
-
-<span class="n">data_raw</span> <span class="o">=</span> <span class="n">load_breast_cancer</span><span class="p">(</span><span class="n">as_frame</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># &lt;1&gt;</span>
-
-<span class="n">dataset_df</span> <span class="o">=</span> <span class="n">data_raw</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">]</span>
-<span class="n">predict_ds</span> <span class="o">=</span> <span class="n">from_pandas</span><span class="p">(</span><span class="n">dataset_df</span><span class="p">)</span>  <span class="c1"># &lt;2&gt;</span>
-
-<span class="n">dataset_df</span><span class="p">[</span><span class="s2">&quot;target&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_raw</span><span class="p">[</span><span class="s2">&quot;target&quot;</span><span class="p">]</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">from_pandas</span><span class="p">(</span><span class="n">dataset_df</span><span class="p">)</span>
-<span class="c1"># end::ds_create[]</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">s3</span><span class="o">-</span><span class="n">us</span><span class="o">-</span><span class="n">west</span><span class="o">-</span><span class="mf">2.</span><span class="n">amazonaws</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ray</span><span class="o">-</span><span class="n">wheels</span><span class="o">/</span><span class="n">latest</span><span class="o">/</span><span class="n">ray</span><span class="o">-</span><span class="mf">3.0.0</span><span class="o">.</span><span class="n">dev0</span><span class="o">-</span><span class="n">cp37</span><span class="o">-</span><span class="n">cp37m</span><span class="o">-</span><span class="n">manylinux2014_x86_64</span><span class="o">.</span><span class="n">whl</span>
 </pre></div>
-<div id="cell-1" class="clipboard-copy-txt"># tag::ds_create[]
-from ray.data import from_pandas
-from sklearn.datasets import load_breast_cancer
-
-
-data_raw = load_breast_cancer(as_frame=True)  # <1>
-
-dataset_df = data_raw["data"]
-predict_ds = from_pandas(dataset_df)  # <2>
-
-dataset_df["target"] = data_raw["target"]
-dataset = from_pandas(dataset_df)
-# end::ds_create[]</div>
+<div id="cell-1" class="clipboard-copy-txt">! pip install -U https://s3-us-west-2.amazonaws.com/ray-wheels/latest/ray-3.0.0.dev0-cp37-cp37m-manylinux2014_x86_64.whl</div>
     
         </div>
     </div>
@@ -1171,9 +1201,25 @@ dataset = from_pandas(dataset_df)
 </div>
 
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Should you not run this notebook in Colab and need another type of wheel, please
+refer to Ray's <a href="https://docs.ray.io/en/latest/ray-overview/installation.html#install-nightlies">installation instructions for nightlies</a>.</p>
+<p>For this chapter you will also need to install the following dependencies:</p>
+
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
@@ -1189,29 +1235,9 @@ dataset = from_pandas(dataset_df)
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::preprocessor_create[]</span>
-<span class="c1"># TODO this doesn&#39;t exist. Can we use another preprocessor that need less explanation</span>
-<span class="c1">#  (we don&#39;t really cover repartitioning) and exists somewhere?</span>
-<span class="kn">from</span> <span class="nn">ray.data.preprocessors</span> <span class="kn">import</span> <span class="n">Chain</span><span class="p">,</span> <span class="n">StandardScaler</span>
-<span class="c1"># from dummy import Repartitioner</span>
-
-<span class="n">preprocessor</span> <span class="o">=</span> <span class="n">Chain</span><span class="p">(</span>  <span class="c1"># &lt;1&gt;</span>
-    <span class="n">StandardScaler</span><span class="p">([</span><span class="s2">&quot;worst radius&quot;</span><span class="p">,</span> <span class="s2">&quot;worst area&quot;</span><span class="p">]),</span>  <span class="c1"># &lt;2&gt;</span>
-    <span class="c1"># Repartitioner(num_partitions=2)  # &lt;3&gt;</span>
-<span class="p">)</span>
-<span class="c1"># end::preprocessor_create[]</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="s2">&quot;ray[data,train]&quot;</span><span class="o">==</span><span class="mf">2.2.0</span> <span class="n">dask</span><span class="o">==</span><span class="mf">2022.8.1</span> <span class="n">torch</span><span class="o">==</span><span class="mf">1.12.1</span>
 </pre></div>
-<div id="cell-2" class="clipboard-copy-txt"># tag::preprocessor_create[]
-# TODO this doesn't exist. Can we use another preprocessor that need less explanation
-#  (we don't really cover repartitioning) and exists somewhere?
-from ray.data.preprocessors import Chain, StandardScaler
-# from dummy import Repartitioner
-
-preprocessor = Chain(  # <1>
-    StandardScaler(["worst radius", "worst area"]),  # <2>
-    # Repartitioner(num_partitions=2)  # <3>
-)
-# end::preprocessor_create[]</div>
+<div id="cell-2" class="clipboard-copy-txt">! pip install "ray[data,train]"==2.2.0 dask==2022.8.1 torch==1.12.1</div>
     
         </div>
     </div>
@@ -1223,6 +1249,8 @@ preprocessor = Chain(  # <1>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
@@ -1238,59 +1266,89 @@ preprocessor = Chain(  # <1>
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::train_fit_basic[]</span>
-<span class="kn">from</span> <span class="nn">ray.train.xgboost</span> <span class="kn">import</span> <span class="n">XGBoostTrainer</span>
-<span class="kn">from</span> <span class="nn">ray.air.config</span> <span class="kn">import</span> <span class="n">ScalingConfig</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::ml_pipeline_preprocess[]</span>
+<span class="kn">import</span> <span class="nn">ray</span>
+<span class="kn">from</span> <span class="nn">ray.util.dask</span> <span class="kn">import</span> <span class="n">enable_dask_on_ray</span>
 
-<span class="n">trainer</span> <span class="o">=</span> <span class="n">XGBoostTrainer</span><span class="p">(</span>  <span class="c1"># &lt;1&gt;</span>
-    <span class="n">scaling_config</span><span class="o">=</span><span class="n">ScalingConfig</span><span class="p">(</span>  <span class="c1"># &lt;2&gt;</span>
-        <span class="n">num_workers</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
-        <span class="n">resources_per_worker</span><span class="o">=</span><span class="p">{</span>
-            <span class="s2">&quot;CPU&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-            <span class="s2">&quot;GPU&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="p">},</span>
-    <span class="p">),</span>
-    <span class="n">label_column</span><span class="o">=</span><span class="s2">&quot;target&quot;</span><span class="p">,</span>  <span class="c1"># &lt;3&gt;</span>
-    <span class="n">params</span><span class="o">=</span><span class="p">{</span>  <span class="c1"># &lt;4&gt;</span>
-        <span class="s2">&quot;tree_method&quot;</span><span class="p">:</span> <span class="s2">&quot;approx&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;objective&quot;</span><span class="p">:</span> <span class="s2">&quot;binary:logistic&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;eval_metric&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;logloss&quot;</span><span class="p">,</span> <span class="s2">&quot;error&quot;</span><span class="p">],</span>
-    <span class="p">},</span>
-    <span class="n">datasets</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;train&quot;</span><span class="p">:</span> <span class="n">dataset</span><span class="p">},</span>
-    <span class="n">preprocessor</span><span class="o">=</span><span class="n">preprocessor</span><span class="p">,</span>
-<span class="p">)</span>
+<span class="kn">import</span> <span class="nn">dask.dataframe</span> <span class="k">as</span> <span class="nn">dd</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="n">trainer</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>  <span class="c1"># &lt;5&gt;</span>
+<span class="n">LABEL_COLUMN</span> <span class="o">=</span> <span class="s2">&quot;is_big_tip&quot;</span>
+<span class="n">FEATURE_COLUMNS</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;passenger_count&quot;</span><span class="p">,</span> <span class="s2">&quot;trip_distance&quot;</span><span class="p">,</span> <span class="s2">&quot;fare_amount&quot;</span><span class="p">,</span>
+                   <span class="s2">&quot;trip_duration&quot;</span><span class="p">,</span> <span class="s2">&quot;hour&quot;</span><span class="p">,</span> <span class="s2">&quot;day_of_week&quot;</span><span class="p">]</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-<span class="c1"># end::train_fit_basic[]</span>
+<span class="n">enable_dask_on_ray</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">load_dataset</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">include_label</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;tpep_pickup_datetime&quot;</span><span class="p">,</span> <span class="s2">&quot;tpep_dropoff_datetime&quot;</span><span class="p">,</span> <span class="s2">&quot;tip_amount&quot;</span><span class="p">,</span>
+               <span class="s2">&quot;passenger_count&quot;</span><span class="p">,</span> <span class="s2">&quot;trip_distance&quot;</span><span class="p">,</span> <span class="s2">&quot;fare_amount&quot;</span><span class="p">]</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">dd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>  <span class="c1"># &lt;1&gt;</span>
+
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>  <span class="c1"># &lt;2&gt;</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;passenger_count&quot;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">4</span><span class="p">)</span> <span class="o">&amp;</span>
+            <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;trip_distance&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">)</span> <span class="o">&amp;</span>
+            <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;fare_amount&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">)]</span>
+
+    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;tpep_pickup_datetime&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">dd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;tpep_pickup_datetime&quot;</span><span class="p">])</span>
+    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;tpep_dropoff_datetime&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">dd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;tpep_dropoff_datetime&quot;</span><span class="p">])</span>
+
+    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;trip_duration&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;tpep_dropoff_datetime&quot;</span><span class="p">]</span> <span class="o">-</span>
+                           <span class="n">df</span><span class="p">[</span><span class="s2">&quot;tpep_pickup_datetime&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">seconds</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;trip_duration&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">4</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span><span class="p">]</span> <span class="c1"># 4 hours.</span>
+    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;hour&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;tpep_pickup_datetime&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">hour</span>
+    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;day_of_week&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;tpep_pickup_datetime&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">weekday</span>  <span class="c1"># &lt;3&gt;</span>
+
+    <span class="k">if</span> <span class="n">include_label</span><span class="p">:</span>
+        <span class="n">df</span><span class="p">[</span><span class="n">LABEL_COLUMN</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;tip_amount&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">0.2</span> <span class="o">*</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;fare_amount&quot;</span><span class="p">]</span>  <span class="c1"># &lt;4&gt;</span>
+
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span>  <span class="c1"># &lt;5&gt;</span>
+        <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;tpep_pickup_datetime&quot;</span><span class="p">,</span> <span class="s2">&quot;tpep_dropoff_datetime&quot;</span><span class="p">,</span> <span class="s2">&quot;tip_amount&quot;</span><span class="p">]</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">from_dask</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">repartition</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>  <span class="c1"># &lt;6&gt;</span>
+<span class="c1"># end::ml_pipeline_preprocess[]</span>
 </pre></div>
-<div id="cell-3" class="clipboard-copy-txt"># tag::train_fit_basic[]
-from ray.train.xgboost import XGBoostTrainer
-from ray.air.config import ScalingConfig
+<div id="cell-3" class="clipboard-copy-txt"># tag::ml_pipeline_preprocess[]
+import ray
+from ray.util.dask import enable_dask_on_ray
 
-trainer = XGBoostTrainer(  # <1>
-    scaling_config=ScalingConfig(  # <2>
-        num_workers=2,
-        resources_per_worker={
-            "CPU": 2,
-            "GPU": 0,
-        },
-    ),
-    label_column="target",  # <3>
-    params={  # <4>
-        "tree_method": "approx",
-        "objective": "binary:logistic",
-        "eval_metric": ["logloss", "error"],
-    },
-    datasets={"train": dataset},
-    preprocessor=preprocessor,
-)
+import dask.dataframe as dd
 
-result = trainer.fit()  # <5>
+LABEL_COLUMN = "is_big_tip"
+FEATURE_COLUMNS = ["passenger_count", "trip_distance", "fare_amount",
+                   "trip_duration", "hour", "day_of_week"]
 
-print(result)
-# end::train_fit_basic[]</div>
+enable_dask_on_ray()
+
+
+def load_dataset(path: str, *, include_label=True):
+    columns = ["tpep_pickup_datetime", "tpep_dropoff_datetime", "tip_amount",
+               "passenger_count", "trip_distance", "fare_amount"]
+    df = dd.read_parquet(path, columns=columns)  # <1>
+
+    df = df.dropna()  # <2>
+    df = df[(df["passenger_count"] <= 4) &
+            (df["trip_distance"] < 100) &
+            (df["fare_amount"] < 1000)]
+
+    df["tpep_pickup_datetime"] = dd.to_datetime(df["tpep_pickup_datetime"])
+    df["tpep_dropoff_datetime"] = dd.to_datetime(df["tpep_dropoff_datetime"])
+
+    df["trip_duration"] = (df["tpep_dropoff_datetime"] -
+                           df["tpep_pickup_datetime"]).dt.seconds
+    df = df[df["trip_duration"] < 4 * 60 * 60] # 4 hours.
+    df["hour"] = df["tpep_pickup_datetime"].dt.hour
+    df["day_of_week"] = df["tpep_pickup_datetime"].dt.weekday  # <3>
+
+    if include_label:
+        df[LABEL_COLUMN] = df["tip_amount"] > 0.2 * df["fare_amount"]  # <4>
+
+    df = df.drop(  # <5>
+        columns=["tpep_pickup_datetime", "tpep_dropoff_datetime", "tip_amount"]
+    )
+
+    return ray.data.from_dask(df).repartition(100)  # <6>
+# end::ml_pipeline_preprocess[]</div>
     
         </div>
     </div>
@@ -1302,6 +1360,8 @@ print(result)
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
@@ -1317,91 +1377,59 @@ print(result)
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::training_func_setup[]</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::ml_pipeline_model[]</span>
 <span class="kn">import</span> <span class="nn">torch</span>
 <span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
+<span class="kn">import</span> <span class="nn">torch.nn.functional</span> <span class="k">as</span> <span class="nn">F</span>
 
 
-<span class="n">num_samples</span> <span class="o">=</span> <span class="mi">20</span>
-<span class="n">input_size</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">layer_size</span> <span class="o">=</span> <span class="mi">15</span>
-<span class="n">output_size</span> <span class="o">=</span> <span class="mi">5</span>
-
-
-<span class="k">class</span> <span class="nc">NeuralNetwork</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">FarePredictor</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">(</span><span class="n">NeuralNetwork</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">layer1</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">input_size</span><span class="p">,</span> <span class="n">layer_size</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">relu</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">layer2</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">layer_size</span><span class="p">,</span> <span class="n">output_size</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_data</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">layer2</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layer1</span><span class="p">(</span><span class="n">input_data</span><span class="p">)))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fc1</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">256</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fc2</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">256</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fc3</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
+        <span class="bp">self</span><span class="o">.</span><span class="n">bn1</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">BatchNorm1d</span><span class="p">(</span><span class="mi">256</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bn2</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">BatchNorm1d</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>
 
-<span class="nb">input</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">num_samples</span><span class="p">,</span> <span class="n">input_size</span><span class="p">)</span>  <span class="c1"># &lt;1&gt;</span>
-<span class="n">labels</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">num_samples</span><span class="p">,</span> <span class="n">output_size</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fc1</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bn1</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fc2</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bn2</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sigmoid</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fc3</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 
-
-<span class="k">def</span> <span class="nf">train_loop</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">loss_fn</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">):</span>
-    <span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
-    <span class="n">loss</span> <span class="o">=</span> <span class="n">loss_fn</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
-    <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
-    <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
-    <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
-
-
-<span class="k">def</span> <span class="nf">train_func</span><span class="p">():</span>  <span class="c1"># &lt;2&gt;</span>
-    <span class="n">num_epochs</span> <span class="o">=</span> <span class="mi">3</span>
-    <span class="n">model</span> <span class="o">=</span> <span class="n">NeuralNetwork</span><span class="p">()</span>
-    <span class="n">loss_fn</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">MSELoss</span><span class="p">()</span>
-    <span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_epochs</span><span class="p">):</span>
-        <span class="n">train_loop</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">loss_fn</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">)</span>
-<span class="c1"># end::training_func_setup[]</span>
+        <span class="k">return</span> <span class="n">x</span>
+<span class="c1"># end::ml_pipeline_model[]</span>
 </pre></div>
-<div id="cell-4" class="clipboard-copy-txt"># tag::training_func_setup[]
+<div id="cell-4" class="clipboard-copy-txt"># tag::ml_pipeline_model[]
 import torch
 import torch.nn as nn
+import torch.nn.functional as F
 
 
-num_samples = 20
-input_size = 10
-layer_size = 15
-output_size = 5
-
-
-class NeuralNetwork(nn.Module):
+class FarePredictor(nn.Module):
     def __init__(self):
-        super(NeuralNetwork, self).__init__()
-        self.layer1 = nn.Linear(input_size, layer_size)
-        self.relu = nn.ReLU()
-        self.layer2 = nn.Linear(layer_size, output_size)
+        super().__init__()
 
-    def forward(self, input_data):
-        return self.layer2(self.relu(self.layer1(input_data)))
+        self.fc1 = nn.Linear(6, 256)
+        self.fc2 = nn.Linear(256, 16)
+        self.fc3 = nn.Linear(16, 1)
 
+        self.bn1 = nn.BatchNorm1d(256)
+        self.bn2 = nn.BatchNorm1d(16)
 
-input = torch.randn(num_samples, input_size)  # <1>
-labels = torch.randn(num_samples, output_size)
+    def forward(self, x):
+        x = F.relu(self.fc1(x))
+        x = self.bn1(x)
+        x = F.relu(self.fc2(x))
+        x = self.bn2(x)
+        x = torch.sigmoid(self.fc3(x))
 
-
-def train_loop(model, loss_fn, optimizer):
-    output = model(input)
-    loss = loss_fn(output, labels)
-    optimizer.zero_grad()
-    loss.backward()
-    optimizer.step()
-
-
-def train_func():  # <2>
-    num_epochs = 3
-    model = NeuralNetwork()
-    loss_fn = nn.MSELoss()
-    optimizer = torch.optim.SGD(model.parameters(), lr=0.1)
-    for epoch in range(num_epochs):
-        train_loop(model, loss_fn, optimizer)
-# end::training_func_setup[]</div>
+        return x
+# end::ml_pipeline_model[]</div>
     
         </div>
     </div>
@@ -1413,6 +1441,8 @@ def train_func():  # <2>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
@@ -1428,35 +1458,95 @@ def train_func():  # <2>
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::dist_func_setup[]</span>
-<span class="kn">from</span> <span class="nn">ray.train.torch</span> <span class="kn">import</span> <span class="n">prepare_model</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::ml_pipeline_train_1[]</span>
+<span class="kn">from</span> <span class="nn">ray.air</span> <span class="kn">import</span> <span class="n">session</span>
+<span class="kn">from</span> <span class="nn">ray.air.config</span> <span class="kn">import</span> <span class="n">ScalingConfig</span>
+<span class="kn">import</span> <span class="nn">ray.train</span> <span class="k">as</span> <span class="nn">train</span>
+<span class="kn">from</span> <span class="nn">ray.train.torch</span> <span class="kn">import</span> <span class="n">TorchCheckpoint</span><span class="p">,</span> <span class="n">TorchTrainer</span>
 
 
-<span class="k">def</span> <span class="nf">train_func_distributed</span><span class="p">():</span>
-    <span class="n">num_epochs</span> <span class="o">=</span> <span class="mi">3</span>
-    <span class="n">model</span> <span class="o">=</span> <span class="n">NeuralNetwork</span><span class="p">()</span>
-    <span class="n">model</span> <span class="o">=</span> <span class="n">prepare_model</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>  <span class="c1"># &lt;1&gt;</span>
-    <span class="n">loss_fn</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">MSELoss</span><span class="p">()</span>
-    <span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_epochs</span><span class="p">):</span>
-        <span class="n">train_loop</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">loss_fn</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">train_loop_per_worker</span><span class="p">(</span><span class="n">config</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>  <span class="c1"># &lt;1&gt;</span>
+    <span class="n">batch_size</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;batch_size&quot;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+    <span class="n">lr</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;lr&quot;</span><span class="p">,</span> <span class="mf">1e-2</span><span class="p">)</span>
+    <span class="n">num_epochs</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;num_epochs&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 
-<span class="c1"># end::dist_func_setup[]</span>
+    <span class="n">dataset_shard</span> <span class="o">=</span> <span class="n">train</span><span class="o">.</span><span class="n">get_dataset_shard</span><span class="p">(</span><span class="s2">&quot;train&quot;</span><span class="p">)</span>  <span class="c1"># &lt;2&gt;</span>
+
+    <span class="n">model</span> <span class="o">=</span> <span class="n">FarePredictor</span><span class="p">()</span>
+    <span class="n">dist_model</span> <span class="o">=</span> <span class="n">train</span><span class="o">.</span><span class="n">torch</span><span class="o">.</span><span class="n">prepare_model</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>  <span class="c1"># &lt;3&gt;</span>
+
+    <span class="n">loss_function</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">SmoothL1Loss</span><span class="p">()</span>
+    <span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">dist_model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="n">lr</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_epochs</span><span class="p">):</span>  <span class="c1"># &lt;4&gt;</span>
+        <span class="n">loss</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">num_batches</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">batch</span> <span class="ow">in</span> <span class="n">dataset_shard</span><span class="o">.</span><span class="n">iter_torch_batches</span><span class="p">(</span>  <span class="c1"># &lt;5&gt;</span>
+                <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">dtypes</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float</span>
+        <span class="p">):</span>
+            <span class="n">labels</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="n">batch</span><span class="p">[</span><span class="n">LABEL_COLUMN</span><span class="p">],</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">inputs</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">(</span>
+                <span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="n">batch</span><span class="p">[</span><span class="n">f</span><span class="p">],</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">FEATURE_COLUMNS</span><span class="p">],</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span>
+            <span class="p">)</span>
+            <span class="n">output</span> <span class="o">=</span> <span class="n">dist_model</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
+            <span class="n">batch_loss</span> <span class="o">=</span> <span class="n">loss_function</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
+            <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+            <span class="n">batch_loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+            <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+
+            <span class="n">num_batches</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">loss</span> <span class="o">+=</span> <span class="n">batch_loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+
+        <span class="n">session</span><span class="o">.</span><span class="n">report</span><span class="p">(</span>  <span class="c1"># &lt;6&gt;</span>
+            <span class="p">{</span><span class="s2">&quot;epoch&quot;</span><span class="p">:</span> <span class="n">epoch</span><span class="p">,</span> <span class="s2">&quot;loss&quot;</span><span class="p">:</span> <span class="n">loss</span><span class="p">},</span>
+            <span class="n">checkpoint</span><span class="o">=</span><span class="n">TorchCheckpoint</span><span class="o">.</span><span class="n">from_model</span><span class="p">(</span><span class="n">dist_model</span><span class="p">)</span>
+        <span class="p">)</span>
+<span class="c1"># end::ml_pipeline_train_1[]</span>
 </pre></div>
-<div id="cell-5" class="clipboard-copy-txt"># tag::dist_func_setup[]
-from ray.train.torch import prepare_model
+<div id="cell-5" class="clipboard-copy-txt"># tag::ml_pipeline_train_1[]
+from ray.air import session
+from ray.air.config import ScalingConfig
+import ray.train as train
+from ray.train.torch import TorchCheckpoint, TorchTrainer
 
 
-def train_func_distributed():
-    num_epochs = 3
-    model = NeuralNetwork()
-    model = prepare_model(model)  # <1>
-    loss_fn = nn.MSELoss()
-    optimizer = torch.optim.SGD(model.parameters(), lr=0.1)
-    for epoch in range(num_epochs):
-        train_loop(model, loss_fn, optimizer)
+def train_loop_per_worker(config: dict):  # <1>
+    batch_size = config.get("batch_size", 32)
+    lr = config.get("lr", 1e-2)
+    num_epochs = config.get("num_epochs", 3)
 
-# end::dist_func_setup[]</div>
+    dataset_shard = train.get_dataset_shard("train")  # <2>
+
+    model = FarePredictor()
+    dist_model = train.torch.prepare_model(model)  # <3>
+
+    loss_function = nn.SmoothL1Loss()
+    optimizer = torch.optim.Adam(dist_model.parameters(), lr=lr)
+
+    for epoch in range(num_epochs):  # <4>
+        loss = 0
+        num_batches = 0
+        for batch in dataset_shard.iter_torch_batches(  # <5>
+                batch_size=batch_size, dtypes=torch.float
+        ):
+            labels = torch.unsqueeze(batch[LABEL_COLUMN], dim=1)
+            inputs = torch.cat(
+                [torch.unsqueeze(batch[f], dim=1) for f in FEATURE_COLUMNS], dim=1
+            )
+            output = dist_model(inputs)
+            batch_loss = loss_function(output, labels)
+            optimizer.zero_grad()
+            batch_loss.backward()
+            optimizer.step()
+
+            num_batches += 1
+            loss += batch_loss.item()
+
+        session.report(  # <6>
+            {"epoch": epoch, "loss": loss},
+            checkpoint=TorchCheckpoint.from_model(dist_model)
+        )
+# end::ml_pipeline_train_1[]</div>
     
         </div>
     </div>
@@ -1468,6 +1558,8 @@ def train_func_distributed():
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
@@ -1483,25 +1575,37 @@ def train_func_distributed():
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::train_start[]</span>
-<span class="kn">from</span> <span class="nn">ray.train</span> <span class="kn">import</span> <span class="n">Trainer</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::ml_pipeline_train_2[]</span>
+<span class="n">trainer</span> <span class="o">=</span> <span class="n">TorchTrainer</span><span class="p">(</span>
+    <span class="n">train_loop_per_worker</span><span class="o">=</span><span class="n">train_loop_per_worker</span><span class="p">,</span>  <span class="c1"># &lt;1&gt;</span>
+    <span class="n">train_loop_config</span><span class="o">=</span><span class="p">{</span>  <span class="c1"># &lt;2&gt;</span>
+        <span class="s2">&quot;lr&quot;</span><span class="p">:</span> <span class="mf">1e-2</span><span class="p">,</span> <span class="s2">&quot;num_epochs&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;batch_size&quot;</span><span class="p">:</span> <span class="mi">64</span>
+    <span class="p">},</span>
+    <span class="n">scaling_config</span><span class="o">=</span><span class="n">ScalingConfig</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>  <span class="c1"># &lt;3&gt;</span>
+    <span class="n">datasets</span><span class="o">=</span><span class="p">{</span>  <span class="c1"># &lt;4&gt;</span>
+        <span class="s2">&quot;train&quot;</span><span class="p">:</span> <span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;nyc_tlc_data/yellow_tripdata_2020-01.parquet&quot;</span><span class="p">)</span>
+    <span class="p">},</span>
+<span class="p">)</span>
 
-
-<span class="n">trainer</span> <span class="o">=</span> <span class="n">Trainer</span><span class="p">(</span><span class="n">backend</span><span class="o">=</span><span class="s2">&quot;torch&quot;</span><span class="p">,</span> <span class="n">num_workers</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">use_gpu</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># &lt;1&gt;</span>
-<span class="n">trainer</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-<span class="n">results</span> <span class="o">=</span> <span class="n">trainer</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">train_func_distributed</span><span class="p">)</span>
-<span class="n">trainer</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span>
-<span class="c1"># end::train_start[]</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">trainer</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>  <span class="c1"># &lt;5&gt;</span>
+<span class="n">trained_model</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">checkpoint</span>
+<span class="c1"># end::ml_pipeline_train_2[]</span>
 </pre></div>
-<div id="cell-6" class="clipboard-copy-txt"># tag::train_start[]
-from ray.train import Trainer
+<div id="cell-6" class="clipboard-copy-txt"># tag::ml_pipeline_train_2[]
+trainer = TorchTrainer(
+    train_loop_per_worker=train_loop_per_worker,  # <1>
+    train_loop_config={  # <2>
+        "lr": 1e-2, "num_epochs": 3, "batch_size": 64
+    },
+    scaling_config=ScalingConfig(num_workers=2),  # <3>
+    datasets={  # <4>
+        "train": load_dataset("nyc_tlc_data/yellow_tripdata_2020-01.parquet")
+    },
+)
 
-
-trainer = Trainer(backend="torch", num_workers=4, use_gpu=False)  # <1>
-trainer.start()
-results = trainer.run(train_func_distributed)
-trainer.shutdown()
-# end::train_start[]</div>
+result = trainer.fit()  # <5>
+trained_model = result.checkpoint
+# end::ml_pipeline_train_2[]</div>
     
         </div>
     </div>
@@ -1513,6 +1617,8 @@ trainer.shutdown()
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
@@ -1528,29 +1634,27 @@ trainer.shutdown()
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::xgb_start[]</span>
-<span class="n">scaling_config</span> <span class="o">=</span> <span class="n">ScalingConfig</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">use_gpu</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::ml_pipeline_inference[]</span>
+<span class="kn">from</span> <span class="nn">ray.train.torch</span> <span class="kn">import</span> <span class="n">TorchPredictor</span>
+<span class="kn">from</span> <span class="nn">ray.train.batch_predictor</span> <span class="kn">import</span> <span class="n">BatchPredictor</span>
 
-<span class="n">trainer</span> <span class="o">=</span> <span class="n">XGBoostTrainer</span><span class="p">(</span>
-    <span class="n">scaling_config</span><span class="o">=</span><span class="n">scaling_config</span><span class="p">,</span>
-    <span class="n">datasets</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;train&quot;</span><span class="p">:</span> <span class="n">dataset</span><span class="p">},</span>
-    <span class="n">label_column</span><span class="o">=</span><span class="s2">&quot;target&quot;</span><span class="p">,</span>
-    <span class="n">params</span><span class="o">=</span><span class="p">{}</span>
-    <span class="c1"># ...</span>
-<span class="p">)</span>
-<span class="c1"># end::xgb_start[]</span>
+<span class="n">batch_predictor</span> <span class="o">=</span> <span class="n">BatchPredictor</span><span class="p">(</span><span class="n">trained_model</span><span class="p">,</span> <span class="n">TorchPredictor</span><span class="p">)</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span>
+    <span class="s2">&quot;nyc_tlc_data/yellow_tripdata_2021-01.parquet&quot;</span><span class="p">,</span> <span class="n">include_label</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">batch_predictor</span><span class="o">.</span><span class="n">predict_pipelined</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">blocks_per_window</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="c1"># end::ml_pipeline_inference[]</span>
 </pre></div>
-<div id="cell-7" class="clipboard-copy-txt"># tag::xgb_start[]
-scaling_config = ScalingConfig(num_workers=10, use_gpu=True)
+<div id="cell-7" class="clipboard-copy-txt"># tag::ml_pipeline_inference[]
+from ray.train.torch import TorchPredictor
+from ray.train.batch_predictor import BatchPredictor
 
-trainer = XGBoostTrainer(
-    scaling_config=scaling_config,
-    datasets={"train": dataset},
-    label_column="target",
-    params={}
-    # ...
-)
-# end::xgb_start[]</div>
+batch_predictor = BatchPredictor(trained_model, TorchPredictor)
+ds = load_dataset(
+    "nyc_tlc_data/yellow_tripdata_2021-01.parquet", include_label=False)
+
+batch_predictor.predict_pipelined(ds, blocks_per_window=10)
+# end::ml_pipeline_inference[]</div>
     
         </div>
     </div>
@@ -1562,6 +1666,8 @@ trainer = XGBoostTrainer(
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
@@ -1577,65 +1683,109 @@ trainer = XGBoostTrainer(
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::get_datasets[]</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::training_func_setup[]</span>
 <span class="kn">import</span> <span class="nn">torch</span>
 <span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
+<span class="kn">from</span> <span class="nn">ray.data</span> <span class="kn">import</span> <span class="n">read_datasource</span><span class="p">,</span> <span class="n">datasource</span>
 
-<span class="kn">import</span> <span class="nn">ray</span>
-<span class="kn">import</span> <span class="nn">ray.train</span> <span class="k">as</span> <span class="nn">train</span>
-<span class="kn">from</span> <span class="nn">ray.train</span> <span class="kn">import</span> <span class="n">Trainer</span>
+<span class="n">num_samples</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">input_size</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">layer_size</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="n">output_size</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">num_epochs</span> <span class="o">=</span> <span class="mi">3</span>
 
 
-<span class="k">def</span> <span class="nf">get_datasets</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">split</span><span class="o">=</span><span class="mf">0.8</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">NeuralNetwork</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fc1</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">input_size</span><span class="p">,</span> <span class="n">layer_size</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">relu</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fc2</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">layer_size</span><span class="p">,</span> <span class="n">output_size</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">get_dataset</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">size</span><span class="p">):</span>
-        <span class="n">items</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="o">/</span> <span class="n">size</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">size</span><span class="p">)]</span>
-        <span class="n">dataset</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">from_items</span><span class="p">([{</span><span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="n">a</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">b</span><span class="p">}</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">items</span><span class="p">])</span>
-        <span class="k">return</span> <span class="n">dataset</span>
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">f12</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fc2</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">x</span>
 
-    <span class="n">dataset</span> <span class="o">=</span> <span class="n">get_dataset</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
-    <span class="n">split_index</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">count</span><span class="p">()</span> <span class="o">*</span> <span class="n">split</span><span class="p">)</span>
-    <span class="n">train_dataset</span><span class="p">,</span> <span class="n">validation_dataset</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">random_shuffle</span><span class="p">()</span><span class="o">.</span><span class="n">split_at_indices</span><span class="p">(</span>
-        <span class="p">[</span><span class="n">split_index</span><span class="p">]</span>
-    <span class="p">)</span>
-    <span class="n">train_dataset_pipeline</span> <span class="o">=</span> <span class="n">train_dataset</span><span class="o">.</span><span class="n">repeat</span><span class="p">()</span><span class="o">.</span><span class="n">random_shuffle_each_window</span><span class="p">()</span>
-    <span class="n">validation_dataset_pipeline</span> <span class="o">=</span> <span class="n">validation_dataset</span><span class="o">.</span><span class="n">repeat</span><span class="p">()</span>
-    <span class="n">datasets</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s2">&quot;train&quot;</span><span class="p">:</span> <span class="n">train_dataset_pipeline</span><span class="p">,</span>
-        <span class="s2">&quot;validation&quot;</span><span class="p">:</span> <span class="n">validation_dataset_pipeline</span><span class="p">,</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="n">datasets</span>
-<span class="c1"># end::get_datasets[]</span>
+
+<span class="k">def</span> <span class="nf">train_data</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">num_samples</span><span class="p">,</span> <span class="n">input_size</span><span class="p">)</span>  <span class="c1"># &lt;1&gt;</span>
+
+
+<span class="n">input_data</span> <span class="o">=</span> <span class="n">train_data</span><span class="p">()</span>
+<span class="n">label_data</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">num_samples</span><span class="p">,</span> <span class="n">output_size</span><span class="p">)</span>
+
+<span class="n">source</span> <span class="o">=</span> <span class="n">datasource</span><span class="o">.</span><span class="n">SimpleTorchDatasource</span><span class="p">()</span>  <span class="c1"># &lt;2&gt;</span>
+<span class="n">train_dataset</span> <span class="o">=</span> <span class="n">read_datasource</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">dataset_factory</span><span class="o">=</span><span class="n">train_data</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">train_one_epoch</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">loss_fn</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">):</span>  <span class="c1"># &lt;3&gt;</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">input_data</span><span class="p">)</span>
+    <span class="n">loss</span> <span class="o">=</span> <span class="n">loss_fn</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">label_data</span><span class="p">)</span>
+    <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+    <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+    <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">training_loop</span><span class="p">():</span>  <span class="c1"># &lt;4&gt;</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">NeuralNetwork</span><span class="p">()</span>
+    <span class="n">loss_fn</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">MSELoss</span><span class="p">()</span>
+    <span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_epochs</span><span class="p">):</span>
+        <span class="n">train_one_epoch</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">loss_fn</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">)</span>
+<span class="c1"># end::training_func_setup[]</span>
 </pre></div>
-<div id="cell-8" class="clipboard-copy-txt"># tag::get_datasets[]
+<div id="cell-8" class="clipboard-copy-txt"># tag::training_func_setup[]
 import torch
 import torch.nn as nn
+from ray.data import read_datasource, datasource
 
-import ray
-import ray.train as train
-from ray.train import Trainer
+num_samples = 20
+input_size = 10
+layer_size = 15
+output_size = 5
+num_epochs = 3
 
 
-def get_datasets(a=5, b=10, size=1000, split=0.8):
+class NeuralNetwork(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.fc1 = nn.Linear(input_size, layer_size)
+        self.relu = nn.ReLU()
+        self.fc2 = nn.Linear(layer_size, output_size)
 
-    def get_dataset(a, b, size):
-        items = [i / size for i in range(size)]
-        dataset = ray.data.from_items([{"x": x, "y": a * x + b} for x in items])
-        return dataset
+    def forward(self, x):
+        x = F.relu(self.f12(x))
+        x = self.fc2(x)
+        return x
 
-    dataset = get_dataset(a, b, size)
-    split_index = int(dataset.count() * split)
-    train_dataset, validation_dataset = dataset.random_shuffle().split_at_indices(
-        [split_index]
-    )
-    train_dataset_pipeline = train_dataset.repeat().random_shuffle_each_window()
-    validation_dataset_pipeline = validation_dataset.repeat()
-    datasets = {
-        "train": train_dataset_pipeline,
-        "validation": validation_dataset_pipeline,
-    }
-    return datasets
-# end::get_datasets[]</div>
+
+def train_data():
+    return torch.randn(num_samples, input_size)  # <1>
+
+
+input_data = train_data()
+label_data = torch.randn(num_samples, output_size)
+
+source = datasource.SimpleTorchDatasource()  # <2>
+train_dataset = read_datasource(source, dataset_factory=train_data)
+
+
+def train_one_epoch(model, loss_fn, optimizer):  # <3>
+    output = model(input_data)
+    loss = loss_fn(output, label_data)
+    optimizer.zero_grad()
+    loss.backward()
+    optimizer.step()
+
+
+def training_loop():  # <4>
+    model = NeuralNetwork()
+    loss_fn = nn.MSELoss()
+    optimizer = torch.optim.SGD(model.parameters(), lr=0.1)
+    for epoch in range(num_epochs):
+        train_one_epoch(model, loss_fn, optimizer)
+# end::training_func_setup[]</div>
     
         </div>
     </div>
@@ -1647,6 +1797,8 @@ def get_datasets(a=5, b=10, size=1000, split=0.8):
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
@@ -1662,73 +1814,47 @@ def get_datasets(a=5, b=10, size=1000, split=0.8):
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::train_func_with_data[]</span>
-<span class="k">def</span> <span class="nf">train_func</span><span class="p">(</span><span class="n">config</span><span class="p">):</span>
-    <span class="n">batch_size</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s2">&quot;batch_size&quot;</span><span class="p">]</span>
-    <span class="c1"># hidden_size = config[&quot;hidden_size&quot;]</span>
-    <span class="c1"># lr = config.get(&quot;lr&quot;, 1e-2)</span>
-    <span class="n">epochs</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;epochs&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::dist_func_setup[]</span>
+<span class="kn">from</span> <span class="nn">ray.train.torch</span> <span class="kn">import</span> <span class="n">prepare_model</span>
 
-    <span class="n">train_dataset_pipeline_shard</span> <span class="o">=</span> <span class="n">train</span><span class="o">.</span><span class="n">get_dataset_shard</span><span class="p">(</span><span class="s2">&quot;train&quot;</span><span class="p">)</span>
-    <span class="n">validation_dataset_pipeline_shard</span> <span class="o">=</span> <span class="n">train</span><span class="o">.</span><span class="n">get_dataset_shard</span><span class="p">(</span><span class="s2">&quot;validation&quot;</span><span class="p">)</span>
-    <span class="n">train_dataset_iterator</span> <span class="o">=</span> <span class="n">train_dataset_pipeline_shard</span><span class="o">.</span><span class="n">iter_epochs</span><span class="p">()</span>
-    <span class="n">validation_dataset_iterator</span> <span class="o">=</span> <span class="n">validation_dataset_pipeline_shard</span><span class="o">.</span><span class="n">iter_epochs</span><span class="p">()</span>
 
-    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">epochs</span><span class="p">):</span>
-        <span class="n">train_dataset</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">train_dataset_iterator</span><span class="p">)</span>
-        <span class="n">validation_dataset</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">validation_dataset_iterator</span><span class="p">)</span>
-        <span class="n">train_torch_dataset</span> <span class="o">=</span> <span class="n">train_dataset</span><span class="o">.</span><span class="n">to_torch</span><span class="p">(</span>
-            <span class="n">label_column</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">,</span>
-            <span class="n">feature_columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">],</span>
-            <span class="n">label_column_dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float</span><span class="p">,</span>
-            <span class="n">feature_column_dtypes</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float</span><span class="p">,</span>
-            <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span>
-        <span class="p">)</span>
-        <span class="n">validation_torch_dataset</span> <span class="o">=</span> <span class="n">validation_dataset</span><span class="o">.</span><span class="n">to_torch</span><span class="p">(</span>
-            <span class="n">label_column</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">,</span>
-            <span class="n">feature_columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">],</span>
-            <span class="n">label_column_dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float</span><span class="p">,</span>
-            <span class="n">feature_column_dtypes</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float</span><span class="p">,</span>
-            <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span>
-        <span class="p">)</span>
-        <span class="c1"># ... training</span>
+<span class="k">def</span> <span class="nf">distributed_training_loop</span><span class="p">():</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">NeuralNetwork</span><span class="p">()</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">prepare_model</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>  <span class="c1"># &lt;1&gt;</span>
+    <span class="n">loss_fn</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">MSELoss</span><span class="p">()</span>
+    <span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_epochs</span><span class="p">):</span>
+        <span class="n">train_one_epoch</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">loss_fn</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">)</span>
 
-    <span class="k">return</span> <span class="n">results</span>
-<span class="c1"># end::train_func_with_data[]</span>
+<span class="c1"># end::dist_func_setup[]</span>
+
+
+<span class="c1"># TODO: this code previously didn&#39;t work. we need to provide a &quot;dataset&quot; argument here.</span>
+<span class="c1"># Notet that this is also wrong in the current docs, which state that this is possible.</span>
+<span class="c1"># TODO running this results in: Result dict has no key: training_iteration.</span>
+<span class="c1">#  checkpoint_score_attr must be set to a key in the result dict.</span>
+<span class="c1">#  Valid keys are: [&#39;trial_id&#39;, &#39;experiment_id&#39;, &#39;date&#39;, &#39;timestamp&#39;, &#39;pid&#39;, &#39;hostname&#39;, &#39;node_ip&#39;, &#39;config&#39;, &#39;done&#39;]</span>
 </pre></div>
-<div id="cell-9" class="clipboard-copy-txt"># tag::train_func_with_data[]
-def train_func(config):
-    batch_size = config["batch_size"]
-    # hidden_size = config["hidden_size"]
-    # lr = config.get("lr", 1e-2)
-    epochs = config.get("epochs", 3)
+<div id="cell-9" class="clipboard-copy-txt"># tag::dist_func_setup[]
+from ray.train.torch import prepare_model
 
-    train_dataset_pipeline_shard = train.get_dataset_shard("train")
-    validation_dataset_pipeline_shard = train.get_dataset_shard("validation")
-    train_dataset_iterator = train_dataset_pipeline_shard.iter_epochs()
-    validation_dataset_iterator = validation_dataset_pipeline_shard.iter_epochs()
 
-    for _ in range(epochs):
-        train_dataset = next(train_dataset_iterator)
-        validation_dataset = next(validation_dataset_iterator)
-        train_torch_dataset = train_dataset.to_torch(
-            label_column="y",
-            feature_columns=["x"],
-            label_column_dtype=torch.float,
-            feature_column_dtypes=torch.float,
-            batch_size=batch_size,
-        )
-        validation_torch_dataset = validation_dataset.to_torch(
-            label_column="y",
-            feature_columns=["x"],
-            label_column_dtype=torch.float,
-            feature_column_dtypes=torch.float,
-            batch_size=batch_size,
-        )
-        # ... training
+def distributed_training_loop():
+    model = NeuralNetwork()
+    model = prepare_model(model)  # <1>
+    loss_fn = nn.MSELoss()
+    optimizer = torch.optim.SGD(model.parameters(), lr=0.1)
+    for epoch in range(num_epochs):
+        train_one_epoch(model, loss_fn, optimizer)
 
-    return results
-# end::train_func_with_data[]</div>
+# end::dist_func_setup[]
+
+
+# TODO: this code previously didn't work. we need to provide a "dataset" argument here.
+# Notet that this is also wrong in the current docs, which state that this is possible.
+# TODO running this results in: Result dict has no key: training_iteration.
+#  checkpoint_score_attr must be set to a key in the result dict.
+#  Valid keys are: ['trial_id', 'experiment_id', 'date', 'timestamp', 'pid', 'hostname', 'node_ip', 'config', 'done']</div>
     
         </div>
     </div>
@@ -1740,6 +1866,8 @@ def train_func(config):
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
@@ -1755,49 +1883,39 @@ def train_func(config):
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::put_things_together[]</span>
-<span class="kn">from</span> <span class="nn">ray.tune.logger</span> <span class="kn">import</span> <span class="n">JsonLoggerCallback</span><span class="p">,</span> <span class="n">TBXLoggerCallback</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::train_start[]</span>
+<span class="kn">from</span> <span class="nn">ray.air.config</span> <span class="kn">import</span> <span class="n">ScalingConfig</span>
+<span class="kn">from</span> <span class="nn">ray.train.torch</span> <span class="kn">import</span> <span class="n">TorchTrainer</span>
 
-<span class="n">datasets</span> <span class="o">=</span> <span class="n">get_datasets</span><span class="p">()</span>
-<span class="n">trainer</span> <span class="o">=</span> <span class="n">Trainer</span><span class="p">(</span><span class="s2">&quot;torch&quot;</span><span class="p">,</span> <span class="n">num_workers</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">use_gpu</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">config</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;lr&quot;</span><span class="p">:</span> <span class="mf">1e-2</span><span class="p">,</span> <span class="s2">&quot;hidden_size&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;batch_size&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;epochs&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
-<span class="n">trainer</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-<span class="n">results</span> <span class="o">=</span> <span class="n">trainer</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
-   <span class="n">train_func</span><span class="p">,</span>
-   <span class="n">config</span><span class="p">,</span>
-   <span class="n">dataset</span><span class="o">=</span><span class="n">datasets</span><span class="p">,</span>
-   <span class="c1">#  TODO: I got an error with the JSON logger:</span>
-    <span class="c1">#   (is there any benefit of using it here?)</span>
-    <span class="c1">#   AttributeError: &#39;JsonLoggerCallback&#39; object has no</span>
-    <span class="c1">#   attribute &#39;start_training&#39;</span>
-   <span class="c1"># callbacks=[JsonLoggerCallback(), TBXLoggerCallback()],</span>
+
+<span class="n">trainer</span> <span class="o">=</span> <span class="n">TorchTrainer</span><span class="p">(</span>
+    <span class="n">train_loop_per_worker</span><span class="o">=</span><span class="n">distributed_training_loop</span><span class="p">,</span>
+    <span class="n">scaling_config</span><span class="o">=</span><span class="n">ScalingConfig</span><span class="p">(</span>
+        <span class="n">num_workers</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+        <span class="n">use_gpu</span><span class="o">=</span><span class="kc">False</span>
+    <span class="p">),</span>
+    <span class="n">datasets</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;train&quot;</span><span class="p">:</span> <span class="n">train_dataset</span><span class="p">}</span>
 <span class="p">)</span>
-<span class="n">trainer</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
 
-<span class="c1"># end::put_things_together[]</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">trainer</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="c1"># end::train_start[]</span>
 </pre></div>
-<div id="cell-10" class="clipboard-copy-txt"># tag::put_things_together[]
-from ray.tune.logger import JsonLoggerCallback, TBXLoggerCallback
+<div id="cell-10" class="clipboard-copy-txt"># tag::train_start[]
+from ray.air.config import ScalingConfig
+from ray.train.torch import TorchTrainer
 
-datasets = get_datasets()
-trainer = Trainer("torch", num_workers=4, use_gpu=False)
-config = {"lr": 1e-2, "hidden_size": 1, "batch_size": 4, "epochs": 3}
-trainer.start()
-results = trainer.run(
-   train_func,
-   config,
-   dataset=datasets,
-   #  TODO: I got an error with the JSON logger:
-    #   (is there any benefit of using it here?)
-    #   AttributeError: 'JsonLoggerCallback' object has no
-    #   attribute 'start_training'
-   # callbacks=[JsonLoggerCallback(), TBXLoggerCallback()],
+
+trainer = TorchTrainer(
+    train_loop_per_worker=distributed_training_loop,
+    scaling_config=ScalingConfig(
+        num_workers=2,
+        use_gpu=False
+    ),
+    datasets={"train": train_dataset}
 )
-trainer.shutdown()
-print(results)
 
-# end::put_things_together[]</div>
+result = trainer.fit()
+# end::train_start[]</div>
     
         </div>
     </div>
@@ -1809,6 +1927,8 @@ print(results)
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
@@ -1824,12 +1944,16 @@ print(results)
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::ray_tune_integration[]</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::ray_tune_integration_1[]</span>
 <span class="kn">from</span> <span class="nn">ray</span> <span class="kn">import</span> <span class="n">tune</span>
+<span class="kn">from</span> <span class="nn">ray.data.preprocessors</span> <span class="kn">import</span> <span class="n">StandardScaler</span><span class="p">,</span> <span class="n">MinMaxScaler</span>
 
-<span class="n">fail_after_finished</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="n">prep_v1</span> <span class="o">=</span> <span class="n">preprocessor</span>
-<span class="n">prep_v2</span> <span class="o">=</span> <span class="n">preprocessor</span>
+
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">from_items</span><span class="p">(</span>
+    <span class="p">[{</span><span class="s2">&quot;X&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;Y&quot;</span><span class="p">:</span> <span class="mf">2.0</span><span class="p">},</span> <span class="p">{</span><span class="s2">&quot;X&quot;</span><span class="p">:</span> <span class="mf">4.0</span><span class="p">,</span> <span class="s2">&quot;Y&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">}]</span>
+<span class="p">)</span>
+<span class="n">prep_v1</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;X&quot;</span><span class="p">,</span> <span class="s2">&quot;Y&quot;</span><span class="p">])</span>
+<span class="n">prep_v2</span> <span class="o">=</span> <span class="n">MinMaxScaler</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;X&quot;</span><span class="p">,</span> <span class="s2">&quot;Y&quot;</span><span class="p">])</span>
 
 <span class="n">param_space</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;scaling_config&quot;</span><span class="p">:</span> <span class="n">ScalingConfig</span><span class="p">(</span>
@@ -1840,10 +1964,6 @@ print(results)
         <span class="p">},</span>
     <span class="p">),</span>
     <span class="s2">&quot;preprocessor&quot;</span><span class="p">:</span> <span class="n">tune</span><span class="o">.</span><span class="n">grid_search</span><span class="p">([</span><span class="n">prep_v1</span><span class="p">,</span> <span class="n">prep_v2</span><span class="p">]),</span>
-    <span class="c1"># TODO: make this work</span>
-    <span class="c1"># &quot;datasets&quot;: {</span>
-    <span class="c1">#     &quot;train_dataset&quot;: tune.grid_search([dataset_v1, dataset_v2]),</span>
-    <span class="c1"># },</span>
     <span class="s2">&quot;params&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;objective&quot;</span><span class="p">:</span> <span class="s2">&quot;binary:logistic&quot;</span><span class="p">,</span>
         <span class="s2">&quot;tree_method&quot;</span><span class="p">:</span> <span class="s2">&quot;approx&quot;</span><span class="p">,</span>
@@ -1853,38 +1973,18 @@ print(results)
         <span class="s2">&quot;max_depth&quot;</span><span class="p">:</span> <span class="n">tune</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">),</span>
     <span class="p">},</span>
 <span class="p">}</span>
-
-<span class="c1"># from dummy import StopperCallbaack</span>
-<span class="c1"># TODO this also does not exist. Even &quot;fail_after_finished&quot;</span>
-<span class="c1">#  seems to be made up. How to fix this?</span>
-<span class="k">if</span> <span class="n">fail_after_finished</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="n">callbacks</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="c1"># callbacks = [StopperCallback(fail_after_finished=fail_after_finished)]</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="n">callbacks</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="n">tuner</span> <span class="o">=</span> <span class="n">tune</span><span class="o">.</span><span class="n">Tuner</span><span class="p">(</span>
-    <span class="n">XGBoostTrainer</span><span class="p">(</span>
-        <span class="n">run_config</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;max_actor_restarts&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
-        <span class="n">scaling_config</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-        <span class="n">resume_from_checkpoint</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-        <span class="n">label_column</span><span class="o">=</span><span class="s2">&quot;target&quot;</span><span class="p">,</span>
-        <span class="n">datasets</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;train&quot;</span><span class="p">:</span> <span class="n">dataset</span><span class="p">}</span>
-    <span class="p">),</span>
-    <span class="n">run_config</span><span class="o">=</span><span class="p">{},</span>
-    <span class="n">param_space</span><span class="o">=</span><span class="n">param_space</span><span class="p">,</span>
-    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;tuner_resume&quot;</span><span class="p">,</span>
-    <span class="n">callbacks</span><span class="o">=</span><span class="n">callbacks</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="n">results</span> <span class="o">=</span> <span class="n">tuner</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">results</span><span class="p">)</span>
-<span class="c1"># end::ray_tune_integration[]</span>
+<span class="c1"># end::ray_tune_integration_1[]</span>
 </pre></div>
-<div id="cell-11" class="clipboard-copy-txt"># tag::ray_tune_integration[]
+<div id="cell-11" class="clipboard-copy-txt"># tag::ray_tune_integration_1[]
 from ray import tune
+from ray.data.preprocessors import StandardScaler, MinMaxScaler
 
-fail_after_finished = True
-prep_v1 = preprocessor
-prep_v2 = preprocessor
+
+dataset = ray.data.from_items(
+    [{"X": 1.0, "Y": 2.0}, {"X": 4.0, "Y": 0.0}]
+)
+prep_v1 = StandardScaler(columns=["X", "Y"])
+prep_v2 = MinMaxScaler(columns=["X", "Y"])
 
 param_space = {
     "scaling_config": ScalingConfig(
@@ -1895,10 +1995,6 @@ param_space = {
         },
     ),
     "preprocessor": tune.grid_search([prep_v1, prep_v2]),
-    # TODO: make this work
-    # "datasets": {
-    #     "train_dataset": tune.grid_search([dataset_v1, dataset_v2]),
-    # },
     "params": {
         "objective": "binary:logistic",
         "tree_method": "approx",
@@ -1908,33 +2004,7 @@ param_space = {
         "max_depth": tune.randint(1, 9),
     },
 }
-
-# from dummy import StopperCallbaack
-# TODO this also does not exist. Even "fail_after_finished"
-#  seems to be made up. How to fix this?
-if fail_after_finished > 0:
-    callbacks = None
-    # callbacks = [StopperCallback(fail_after_finished=fail_after_finished)]
-else:
-    callbacks = None
-tuner = tune.Tuner(
-    XGBoostTrainer(
-        run_config={"max_actor_restarts": 1},
-        scaling_config=None,
-        resume_from_checkpoint=None,
-        label_column="target",
-        datasets={"train": dataset}
-    ),
-    run_config={},
-    param_space=param_space,
-    name="tuner_resume",
-    callbacks=callbacks,
-)
-results = tuner.fit()
-print(results.results)
-# end::ray_tune_integration[]
-
-</div>
+# end::ray_tune_integration_1[]</div>
     
         </div>
     </div>
@@ -1946,6 +2016,8 @@ print(results.results)
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
@@ -1961,78 +2033,49 @@ print(results.results)
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::trainer_callbacks[]</span>
-<span class="kn">from</span> <span class="nn">ray.air.callbacks.mlflow</span> <span class="kn">import</span> <span class="n">MLflowLoggerCallback</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::ray_tune_integration_2[]</span>
+<span class="kn">from</span> <span class="nn">ray.train.xgboost</span> <span class="kn">import</span> <span class="n">XGBoostTrainer</span>
+<span class="kn">from</span> <span class="nn">ray.air.config</span> <span class="kn">import</span> <span class="n">RunConfig</span>
+<span class="kn">from</span> <span class="nn">ray.tune</span> <span class="kn">import</span> <span class="n">Tuner</span>
 
 
-<span class="n">result</span> <span class="o">=</span> <span class="n">trainer</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
-    <span class="n">train_func</span><span class="p">,</span>
-    <span class="n">callbacks</span><span class="o">=</span><span class="p">[</span>
-        <span class="n">MLflowLoggerCallback</span><span class="p">(</span><span class="n">experiment_name</span><span class="o">=</span><span class="s2">&quot;train_experiment&quot;</span><span class="p">),</span>
-        <span class="n">TBXLoggerCallback</span><span class="p">(),</span>
-    <span class="p">],</span>
+<span class="n">trainer</span> <span class="o">=</span> <span class="n">XGBoostTrainer</span><span class="p">(</span>
+    <span class="n">run_config</span><span class="o">=</span><span class="n">RunConfig</span><span class="p">(</span><span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+    <span class="n">preprocessor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">scaling_config</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">label_column</span><span class="o">=</span><span class="s2">&quot;Y&quot;</span><span class="p">,</span>
+    <span class="n">datasets</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;train&quot;</span><span class="p">:</span> <span class="n">dataset</span><span class="p">}</span>
 <span class="p">)</span>
-<span class="c1"># end::trainer_callbacks[]</span>
+
+<span class="n">tuner</span> <span class="o">=</span> <span class="n">Tuner</span><span class="p">(</span>
+    <span class="n">trainer</span><span class="p">,</span>
+    <span class="n">param_space</span><span class="o">=</span><span class="n">param_space</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">results</span> <span class="o">=</span> <span class="n">tuner</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="c1"># end::ray_tune_integration_2[]</span>
 </pre></div>
-<div id="cell-12" class="clipboard-copy-txt"># tag::trainer_callbacks[]
-from ray.air.callbacks.mlflow import MLflowLoggerCallback
+<div id="cell-12" class="clipboard-copy-txt"># tag::ray_tune_integration_2[]
+from ray.train.xgboost import XGBoostTrainer
+from ray.air.config import RunConfig
+from ray.tune import Tuner
 
 
-result = trainer.fit(
-    train_func,
-    callbacks=[
-        MLflowLoggerCallback(experiment_name="train_experiment"),
-        TBXLoggerCallback(),
-    ],
+trainer = XGBoostTrainer(
+    run_config=RunConfig(verbose=1),
+    preprocessor=None,
+    scaling_config=None,
+    label_column="Y",
+    datasets={"train": dataset}
 )
-# end::trainer_callbacks[]</div>
-    
-        </div>
-    </div>
 
-</div>
-</div>
+tuner = Tuner(
+    trainer,
+    param_space=param_space,
+)
 
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-        
-        
-        <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-13">
-            <div>
-                <span class="notice" hidden>Copied!</span>
-                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
-                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
-                </svg>
-                </div>
-            </clipboard-copy>
-        </div>
-        <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::export_model[]</span>
-<span class="c1"># TODO why fit again?</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">trainer</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">dataset</span><span class="o">=</span><span class="n">dataset</span><span class="p">,</span> <span class="n">preprocessor</span><span class="o">=</span><span class="n">preprocessor</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-
-<span class="n">this_checkpoint</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">checkpoint</span>
-<span class="n">this_model</span> <span class="o">=</span> <span class="n">this_checkpoint</span><span class="o">.</span><span class="n">load_model</span><span class="p">()</span>
-<span class="n">predicted</span> <span class="o">=</span> <span class="n">this_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">predict_ds</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">predicted</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">())</span>
-<span class="c1"># end::export_model[]</span>
-</pre></div>
-<div id="cell-13" class="clipboard-copy-txt"># tag::export_model[]
-# TODO why fit again?
-result = trainer.fit(dataset=dataset, preprocessor=preprocessor)
-print(result)
-
-this_checkpoint = result.checkpoint
-this_model = this_checkpoint.load_model()
-predicted = this_model.predict(predict_ds)
-print(predicted.to_pandas())
-# end::export_model[]</div>
+results = tuner.fit()
+# end::ray_tune_integration_2[]</div>
     
         </div>
     </div>
@@ -2069,7 +2112,7 @@ print(predicted.to_pandas())
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../ch_06_data_processing/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Data Processing with Ray Data" rel="prev">
+        <a href="../ch_06_data_processing/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Chapter 6: Data Processing with Ray" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -2078,20 +2121,20 @@ print(predicted.to_pandas())
               <span class="md-footer__direction">
                 Previous
               </span>
-              Data Processing with Ray Data
+              Chapter 6: Data Processing with Ray
             </div>
           </div>
         </a>
       
       
         
-        <a href="../ch_08_model_serving/" class="md-footer__link md-footer__link--next" aria-label="Next: Serving Models with Ray Serve" rel="next">
+        <a href="../ch_08_model_serving/" class="md-footer__link md-footer__link--next" aria-label="Next: Chapter 8: Online Inference with Ray Serve" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Serving Models with Ray Serve
+              Chapter 8: Online Inference with Ray Serve
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -2152,7 +2195,7 @@ print(predicted.to_pandas())
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate", "navigation.tracking", "navigation.instant", "navigation.expand", "navigation.sections", "navigation.top", "navigation.indexes"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate", "navigation.tracking", "navigation.instant", "navigation.expand", "navigation.sections", "navigation.top", "navigation.indexes"], "search": "../assets/javascripts/workers/search.fcfe8b6d.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": null}</script>
     
     
 

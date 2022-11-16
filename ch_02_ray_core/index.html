@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://maxpumperla.com/learning_ray/ch_02_ray_core/">
       
       <link rel="icon" href="../assets/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-7.3.6">
     
     
       
@@ -332,7 +332,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_04_rllib/" class="md-nav__link">
-        Reinforcement Learning with Ray RLlib
+        Chapter 4: Reinforcement Learning with Ray RLlib
       </a>
     </li>
   
@@ -347,7 +347,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_05_tune/" class="md-nav__link">
-        Hyperparameter Optimization with Ray Tune
+        Chapter 5: Hyperparameter Optimization with Ray Tune
       </a>
     </li>
   
@@ -362,7 +362,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_06_data_processing/" class="md-nav__link">
-        Data Processing with Ray Data
+        Chapter 6: Data Processing with Ray
       </a>
     </li>
   
@@ -377,7 +377,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_07_train/" class="md-nav__link">
-        Distributed Training with Ray Train
+        Chapter 7: Distributed Training with Ray Train
       </a>
     </li>
   
@@ -392,7 +392,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_08_model_serving/" class="md-nav__link">
-        Serving Models with Ray Serve
+        Chapter 8: Online Inference with Ray Serve
       </a>
     </li>
   
@@ -407,7 +407,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_09_script/" class="md-nav__link">
-        Working with Ray Clusters
+        Chapter 9: Ray Clusters
       </a>
     </li>
   
@@ -422,7 +422,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_10_air/" class="md-nav__link">
-        Getting Started with the Ray AI Runtime
+        Chapter 10: Getting Started with the Ray AI Runtime
       </a>
     </li>
   
@@ -437,7 +437,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_11_ecosystem/" class="md-nav__link">
-        Ray's Ecosystem and Beyond
+        Chapter 11: Ray's Ecosystem and Beyond
       </a>
     </li>
   
@@ -1131,24 +1131,34 @@ all of MD as it is not optimized for dense, information rich UIs.
                 },
                 displayAlign: 'center',
                 CommonHTML: {
-                    linebreaks: { 
-                    automatic: true 
+                    linebreaks: {
+                    automatic: true
                     }
                 }
             });
-        
+
             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
         }
     }
     init_mathjax();
     </script>
     <!-- End of mathjax configuration --><div class="jupyter-wrapper">
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 id="chapter-2-getting-started-with-ray-core">Chapter 2: Getting Started with Ray Core<a class="anchor-link" href="#Chapter-2:-Getting-Started-with-Ray-Core">&#182;</a></h1>
 </div>
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>For a book on distributed Python, it's not without a certain irony that Python on its own is
 largely ineffective for distributed computing.
@@ -1158,9 +1168,30 @@ That means you need extra tooling, and luckily the Python ecosystem has some opt
 For instance, libraries like <code>multiprocessing</code> can help you distribute work on a single machine, but not beyond.</p>
 
 </div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>You can run this notebook directly in
+<a href="https://colab.research.google.com/github/maxpumperla/learning_ray/blob/main/notebooks/ch_02_ray_core.ipynb">Colab</a>.</p>
+<p>The book has been written for Ray 2.2.0,which at the time of writing has not
+officially been released yet. If you are reading this and this version is already
+available, you can install it using <code>pip install ray==2.2.0</code>. If not, you can
+use a nightly wheel (here for Python 3.7 on Linux):</p>
+
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
@@ -1176,11 +1207,9 @@ For instance, libraries like <code>multiprocessing</code> can help you distribut
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">ray</span>
-<span class="n">ray</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">s3</span><span class="o">-</span><span class="n">us</span><span class="o">-</span><span class="n">west</span><span class="o">-</span><span class="mf">2.</span><span class="n">amazonaws</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ray</span><span class="o">-</span><span class="n">wheels</span><span class="o">/</span><span class="n">latest</span><span class="o">/</span><span class="n">ray</span><span class="o">-</span><span class="mf">3.0.0</span><span class="o">.</span><span class="n">dev0</span><span class="o">-</span><span class="n">cp37</span><span class="o">-</span><span class="n">cp37m</span><span class="o">-</span><span class="n">manylinux2014_x86_64</span><span class="o">.</span><span class="n">whl</span>
 </pre></div>
-<div id="cell-1" class="clipboard-copy-txt">import ray
-ray.init()</div>
+<div id="cell-1" class="clipboard-copy-txt">! pip install -U https://s3-us-west-2.amazonaws.com/ray-wheels/latest/ray-3.0.0.dev0-cp37-cp37m-manylinux2014_x86_64.whl</div>
     
         </div>
     </div>
@@ -1189,9 +1218,24 @@ ray.init()</div>
 </div>
 
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Should you not run this notebook in Colab and need another type of wheel, please
+refer to Ray's <a href="https://docs.ray.io/en/latest/ray-overview/installation.html#install-nightlies">installation instructions for nightlies</a>.</p>
+
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
@@ -1207,12 +1251,45 @@ ray.init()</div>
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">ray</span>
+<span class="n">ray</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+</pre></div>
+<div id="cell-2" class="clipboard-copy-txt">import ray
+ray.init()</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-3">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::retrieve[]</span>
 <span class="kn">import</span> <span class="nn">time</span>
 
 <span class="n">database</span> <span class="o">=</span> <span class="p">[</span>  <span class="c1"># &lt;1&gt;</span>
     <span class="s2">&quot;Learning&quot;</span><span class="p">,</span> <span class="s2">&quot;Ray&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Flexible&quot;</span><span class="p">,</span> <span class="s2">&quot;Distributed&quot;</span><span class="p">,</span> <span class="s2">&quot;Python&quot;</span><span class="p">,</span> <span class="s2">&quot;for&quot;</span><span class="p">,</span> <span class="s2">&quot;Data&quot;</span><span class="p">,</span> <span class="s2">&quot;Science&quot;</span>
+    <span class="s2">&quot;Flexible&quot;</span><span class="p">,</span> <span class="s2">&quot;Distributed&quot;</span><span class="p">,</span> <span class="s2">&quot;Python&quot;</span><span class="p">,</span> <span class="s2">&quot;for&quot;</span><span class="p">,</span> <span class="s2">&quot;Machine&quot;</span><span class="p">,</span> <span class="s2">&quot;Learning&quot;</span>
 <span class="p">]</span>
 
 
@@ -1221,12 +1298,12 @@ ray.init()</div>
     <span class="k">return</span> <span class="n">item</span><span class="p">,</span> <span class="n">database</span><span class="p">[</span><span class="n">item</span><span class="p">]</span>
 <span class="c1"># end::retrieve[]</span>
 </pre></div>
-<div id="cell-2" class="clipboard-copy-txt"># tag::retrieve[]
+<div id="cell-3" class="clipboard-copy-txt"># tag::retrieve[]
 import time
 
 database = [  # <1>
     "Learning", "Ray",
-    "Flexible", "Distributed", "Python", "for", "Data", "Science"
+    "Flexible", "Distributed", "Python", "for", "Machine", "Learning"
 ]
 
 
@@ -1245,12 +1322,14 @@ def retrieve(item):
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-3">
+            <clipboard-copy for="cell-4">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1261,8 +1340,8 @@ def retrieve(item):
         </div>
         <div class="CodeMirror cm-s-jupyter">
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::duration[]</span>
-<span class="k">def</span> <span class="nf">print_runtime</span><span class="p">(</span><span class="n">input_data</span><span class="p">,</span> <span class="n">start_time</span><span class="p">,</span> <span class="n">decimals</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Runtime: </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="si">:</span><span class="s1">.</span><span class="si">{</span><span class="n">decimals</span><span class="si">}</span><span class="s1">f</span><span class="si">}</span><span class="s1"> seconds, data:&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">print_runtime</span><span class="p">(</span><span class="n">input_data</span><span class="p">,</span> <span class="n">start_time</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Runtime: </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> seconds, data:&#39;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">input_data</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 
 
@@ -1271,9 +1350,9 @@ def retrieve(item):
 <span class="n">print_runtime</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">start</span><span class="p">)</span>  <span class="c1"># &lt;2&gt;</span>
 <span class="c1"># end::duration[]</span>
 </pre></div>
-<div id="cell-3" class="clipboard-copy-txt"># tag::duration[]
-def print_runtime(input_data, start_time, decimals=1):
-    print(f'Runtime: {time.time() - start_time:.{decimals}f} seconds, data:')
+<div id="cell-4" class="clipboard-copy-txt"># tag::duration[]
+def print_runtime(input_data, start_time):
+    print(f'Runtime: {time.time() - start_time:.2f} seconds, data:')
     print(*input_data, sep="\n")
 
 
@@ -1292,43 +1371,8 @@ print_runtime(data, start)  # <2>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-        
-        
-        <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-4">
-            <div>
-                <span class="notice" hidden>Copied!</span>
-                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
-                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
-                </svg>
-                </div>
-            </clipboard-copy>
-        </div>
-        <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::remote[]</span>
-<span class="nd">@ray</span><span class="o">.</span><span class="n">remote</span>  <span class="c1"># &lt;1&gt;</span>
-<span class="k">def</span> <span class="nf">retrieve_task</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">retrieve</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>  <span class="c1"># &lt;2&gt;</span>
-<span class="c1"># end::remote[]</span>
-</pre></div>
-<div id="cell-4" class="clipboard-copy-txt"># tag::remote[]
-@ray.remote  # <1>
-def retrieve_task(item):
-    return retrieve(item)  # <2>
-# end::remote[]</div>
-    
-        </div>
-    </div>
-
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-</div>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
@@ -1344,22 +1388,61 @@ def retrieve_task(item):
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::remote[]</span>
+<span class="nd">@ray</span><span class="o">.</span><span class="n">remote</span>  <span class="c1"># &lt;1&gt;</span>
+<span class="k">def</span> <span class="nf">retrieve_task</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">retrieve</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>  <span class="c1"># &lt;2&gt;</span>
+<span class="c1"># end::remote[]</span>
+</pre></div>
+<div id="cell-5" class="clipboard-copy-txt"># tag::remote[]
+@ray.remote  # <1>
+def retrieve_task(item):
+    return retrieve(item)  # <2>
+# end::remote[]</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-6">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::duration_remote[]</span>
 <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
 <span class="n">data_references</span> <span class="o">=</span> <span class="p">[</span>  <span class="c1"># &lt;1&gt;</span>
     <span class="n">retrieve_task</span><span class="o">.</span><span class="n">remote</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
 <span class="p">]</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">data_references</span><span class="p">)</span>  <span class="c1"># &lt;2&gt;</span>
-<span class="n">print_runtime</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">print_runtime</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">start</span><span class="p">)</span>
 <span class="c1"># end::duration_remote[]</span>
 </pre></div>
-<div id="cell-5" class="clipboard-copy-txt"># tag::duration_remote[]
+<div id="cell-6" class="clipboard-copy-txt"># tag::duration_remote[]
 start = time.time()
 data_references = [  # <1>
     retrieve_task.remote(item) for item in range(8)
 ]
 data = ray.get(data_references)  # <2>
-print_runtime(data, start, 2)
+print_runtime(data, start)
 # end::duration_remote[]</div>
     
         </div>
@@ -1372,12 +1455,14 @@ print_runtime(data, start, 2)
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-6">
+            <clipboard-copy for="cell-7">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1398,7 +1483,7 @@ print_runtime(data, start, 2)
     <span class="k">return</span> <span class="n">item</span><span class="p">,</span> <span class="n">obj_store_data</span><span class="p">[</span><span class="n">item</span><span class="p">]</span>
 <span class="c1"># end::object_store[]</span>
 </pre></div>
-<div id="cell-6" class="clipboard-copy-txt"># tag::object_store[]
+<div id="cell-7" class="clipboard-copy-txt"># tag::object_store[]
 database_object_ref = ray.put(database)  # <1>
 
 
@@ -1419,12 +1504,14 @@ def retrieve_task(item):
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-7">
+            <clipboard-copy for="cell-8">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1444,13 +1531,13 @@ def retrieve_task(item):
         <span class="n">data_references</span><span class="p">,</span> <span class="n">num_returns</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mf">7.0</span>
     <span class="p">)</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">finished</span><span class="p">)</span>
-    <span class="n">print_runtime</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># &lt;3&gt;</span>
+    <span class="n">print_runtime</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">start</span><span class="p">)</span>  <span class="c1"># &lt;3&gt;</span>
     <span class="n">all_data</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>  <span class="c1"># &lt;4&gt;</span>
 
 <span class="c1"># end::duration_object_store[]</span>
 <span class="n">print_runtime</span><span class="p">(</span><span class="n">all_data</span><span class="p">,</span> <span class="n">start</span><span class="p">)</span>
 </pre></div>
-<div id="cell-7" class="clipboard-copy-txt"># tag::duration_object_store[]
+<div id="cell-8" class="clipboard-copy-txt"># tag::duration_object_store[]
 start = time.time()
 data_references = [retrieve_task.remote(item) for item in range(8)]
 all_data = []
@@ -1460,7 +1547,7 @@ while len(data_references) > 0:  # <1>
         data_references, num_returns=2, timeout=7.0
     )
     data = ray.get(finished)
-    print_runtime(data, start, 3)  # <3>
+    print_runtime(data, start)  # <3>
     all_data.extend(data)  # <4>
 
 # end::duration_object_store[]
@@ -1476,12 +1563,14 @@ print_runtime(all_data, start)</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-8">
+            <clipboard-copy for="cell-9">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1505,7 +1594,7 @@ print_runtime(all_data, start)</div>
 <span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="k">for</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">ray</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">follow_up_refs</span><span class="p">)]</span>
 <span class="c1"># end::task_dependency[]</span>
 </pre></div>
-<div id="cell-8" class="clipboard-copy-txt"># tag::task_dependency[]
+<div id="cell-9" class="clipboard-copy-txt"># tag::task_dependency[]
 @ray.remote
 def follow_up_task(retrieve_result):  # <1>
     original_item, _ = retrieve_result
@@ -1529,12 +1618,14 @@ result = [print(data) for data in ray.get(follow_up_refs)]
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-9">
+            <clipboard-copy for="cell-10">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1557,7 +1648,7 @@ result = [print(data) for data in ray.get(follow_up_refs)]
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_counts</span>
 <span class="c1"># end::actors[]</span>
 </pre></div>
-<div id="cell-9" class="clipboard-copy-txt"># tag::actors[]
+<div id="cell-10" class="clipboard-copy-txt"># tag::actors[]
 @ray.remote  # <1>
 class DataTracker:
     def __init__(self):
@@ -1580,12 +1671,14 @@ class DataTracker:
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-10">
+            <clipboard-copy for="cell-11">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1613,7 +1706,7 @@ class DataTracker:
 <span class="nb">print</span><span class="p">(</span><span class="n">ray</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">tracker</span><span class="o">.</span><span class="n">counts</span><span class="o">.</span><span class="n">remote</span><span class="p">()))</span>  <span class="c1"># &lt;5&gt;</span>
 <span class="c1"># end::actors_remote[]</span>
 </pre></div>
-<div id="cell-10" class="clipboard-copy-txt"># tag::actors_remote[]
+<div id="cell-11" class="clipboard-copy-txt"># tag::actors_remote[]
 @ray.remote
 def retrieve_tracker_task(item, tracker):  # <1>
     obj_store_data = ray.get(database_object_ref)
@@ -1641,12 +1734,14 @@ print(ray.get(tracker.counts.remote()))  # <5>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-11">
+            <clipboard-copy for="cell-12">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1672,7 +1767,7 @@ print(ray.get(tracker.counts.remote()))  # <5>
 <span class="n">res</span> <span class="o">=</span> <span class="n">task</span><span class="o">.</span><span class="n">remote</span><span class="p">(</span><span class="n">dependency</span><span class="o">=</span><span class="n">val</span><span class="p">)</span>
 <span class="c1"># end::ownership[]</span>
 </pre></div>
-<div id="cell-11" class="clipboard-copy-txt"># tag::ownership[]
+<div id="cell-12" class="clipboard-copy-txt"># tag::ownership[]
 @ray.remote
 def task_owned():
     return
@@ -1696,32 +1791,103 @@ res = task.remote(dependency=val)
 
 </div>
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1><img src="https://raw.githubusercontent.com/maxpumperla/learning_ray/main/notebooks/images/chapter_02/task_dependency.png" alt="Task dependency"></h1>
 
 </div>
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1><img src="https://raw.githubusercontent.com/maxpumperla/learning_ray/main/notebooks/images/chapter_02/worker_node.png" alt="Workder Node"></h1>
+<h1><img src="https://raw.githubusercontent.com/maxpumperla/learning_ray/main/notebooks/images/chapter_02/worker_node.png" alt="Worker Node"></h1>
 
 </div>
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1><img src="https://raw.githubusercontent.com/maxpumperla/learning_ray/main/notebooks/images/chapter_02/architecture.png" alt="Ray architecture"></h1>
 
 </div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-12">
+            <clipboard-copy for="cell-13">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::load_data[]</span>
+<span class="kn">import</span> <span class="nn">subprocess</span>
+<span class="n">zen_of_python</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">check_output</span><span class="p">([</span><span class="s2">&quot;python&quot;</span><span class="p">,</span> <span class="s2">&quot;-c&quot;</span><span class="p">,</span> <span class="s2">&quot;import this&quot;</span><span class="p">])</span>
+<span class="n">corpus</span> <span class="o">=</span> <span class="n">zen_of_python</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>  <span class="c1"># &lt;1&gt;</span>
+
+<span class="n">num_partitions</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">chunk</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">corpus</span><span class="p">)</span> <span class="o">//</span> <span class="n">num_partitions</span>
+<span class="n">partitions</span> <span class="o">=</span> <span class="p">[</span>  <span class="c1"># &lt;2&gt;</span>
+    <span class="n">corpus</span><span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="n">chunk</span><span class="p">:</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">chunk</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_partitions</span><span class="p">)</span>
+<span class="p">]</span>
+<span class="c1"># end::load_data[]</span>
+</pre></div>
+<div id="cell-13" class="clipboard-copy-txt"># tag::load_data[]
+import subprocess
+zen_of_python = subprocess.check_output(["python", "-c", "import this"])
+corpus = zen_of_python.split()  # <1>
+
+num_partitions = 3
+chunk = len(corpus) // num_partitions
+partitions = [  # <2>
+    corpus[i * chunk: (i + 1) * chunk] for i in range(num_partitions)
+]
+# end::load_data[]</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-14">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1736,134 +1902,228 @@ res = task.remote(dependency=val)
     <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">document</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">():</span>
         <span class="k">yield</span> <span class="n">word</span><span class="p">,</span> <span class="mi">1</span>
 <span class="c1"># end::map_fct[]</span>
-
-
-<span class="c1"># tag::map[]</span>
-<span class="kn">import</span> <span class="nn">ray</span>
-
-
-<span class="nd">@ray</span><span class="o">.</span><span class="n">remote</span>
-<span class="k">def</span> <span class="nf">apply_map</span><span class="p">(</span><span class="n">corpus</span><span class="p">):</span>
-    <span class="n">map_results</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">document</span> <span class="ow">in</span> <span class="n">corpus</span><span class="p">:</span>
-        <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">map_function</span><span class="p">(</span><span class="n">document</span><span class="p">):</span>
-            <span class="n">map_results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">map_results</span>
-<span class="c1"># end::map[]</span>
-
-
-<span class="c1"># tag::shuffle[]</span>
-<span class="nd">@ray</span><span class="o">.</span><span class="n">remote</span>
-<span class="k">def</span> <span class="nf">apply_shuffle</span><span class="p">(</span><span class="n">map_results</span><span class="p">):</span>
-    <span class="n">shuffle_results</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
-    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">map_results</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">shuffle_results</span><span class="p">:</span>
-            <span class="n">shuffle_results</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="n">shuffle_results</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">shuffle_results</span>
-<span class="c1"># end::shuffle[]</span>
-
-
-<span class="c1"># tag::reduce[]</span>
-<span class="k">def</span> <span class="nf">reduce_function</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
-    <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">count</span> <span class="ow">in</span> <span class="n">values</span><span class="p">:</span>
-        <span class="n">total</span> <span class="o">+=</span> <span class="n">count</span>
-    <span class="k">return</span> <span class="n">key</span><span class="p">,</span> <span class="n">total</span>
-
-
-<span class="nd">@ray</span><span class="o">.</span><span class="n">remote</span>
-<span class="k">def</span> <span class="nf">apply_reduce</span><span class="p">(</span><span class="n">shuffle_results</span><span class="p">):</span>
-    <span class="n">reduce_results</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
-    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">values</span> <span class="ow">in</span> <span class="n">shuffle_results</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-        <span class="n">_</span><span class="p">,</span> <span class="n">count</span> <span class="o">=</span> <span class="n">reduce_function</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span>
-        <span class="n">reduce_results</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">count</span>
-    <span class="k">return</span> <span class="n">reduce_results</span>
-<span class="c1"># end::reduce[]</span>
-
-
-<span class="c1"># tag::apply_mr[]</span>
-<span class="kn">import</span> <span class="nn">subprocess</span>
-<span class="n">zen_of_python</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">check_output</span><span class="p">([</span><span class="s2">&quot;python&quot;</span><span class="p">,</span> <span class="s2">&quot;-c&quot;</span><span class="p">,</span> <span class="s2">&quot;import this&quot;</span><span class="p">])</span>
-<span class="n">text_data</span> <span class="o">=</span> <span class="n">zen_of_python</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-
-
-<span class="n">map_results</span> <span class="o">=</span> <span class="n">apply_map</span><span class="o">.</span><span class="n">remote</span><span class="p">(</span><span class="n">text_data</span><span class="p">)</span>
-<span class="n">group_results</span> <span class="o">=</span> <span class="n">apply_shuffle</span><span class="o">.</span><span class="n">remote</span><span class="p">(</span><span class="n">map_results</span><span class="p">)</span>
-<span class="n">reduce_results</span> <span class="o">=</span> <span class="n">apply_reduce</span><span class="o">.</span><span class="n">remote</span><span class="p">(</span><span class="n">group_results</span><span class="p">)</span>
-<span class="n">counts</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">reduce_results</span><span class="p">)</span>
-
-<span class="n">sorted_counts</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">counts</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">kv</span><span class="p">:</span> <span class="n">kv</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">sorted_counts</span><span class="p">)</span>
-<span class="c1"># end::apply_mr[]</span>
 </pre></div>
-<div id="cell-12" class="clipboard-copy-txt">
-
-# tag::map_fct[]
+<div id="cell-14" class="clipboard-copy-txt"># tag::map_fct[]
 def map_function(document):
     for word in document.lower().split():
         yield word, 1
-# end::map_fct[]
+# end::map_fct[]</div>
+    
+        </div>
+    </div>
 
+</div>
+</div>
 
-# tag::map[]
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-15">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::map[]</span>
+<span class="kn">import</span> <span class="nn">ray</span>
+
+<span class="nd">@ray</span><span class="o">.</span><span class="n">remote</span>
+<span class="k">def</span> <span class="nf">apply_map</span><span class="p">(</span><span class="n">corpus</span><span class="p">,</span> <span class="n">num_partitions</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">map_results</span> <span class="o">=</span> <span class="p">[</span><span class="nb">list</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_partitions</span><span class="p">)]</span>  <span class="c1"># &lt;1&gt;</span>
+    <span class="k">for</span> <span class="n">document</span> <span class="ow">in</span> <span class="n">corpus</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">map_function</span><span class="p">(</span><span class="n">document</span><span class="p">):</span>
+            <span class="n">first_letter</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">word_index</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="n">first_letter</span><span class="p">)</span> <span class="o">%</span> <span class="n">num_partitions</span>  <span class="c1"># &lt;2&gt;</span>
+            <span class="n">map_results</span><span class="p">[</span><span class="n">word_index</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>  <span class="c1"># &lt;3&gt;</span>
+    <span class="k">return</span> <span class="n">map_results</span>
+<span class="c1"># end::map[]</span>
+</pre></div>
+<div id="cell-15" class="clipboard-copy-txt"># tag::map[]
 import ray
 
-
 @ray.remote
-def apply_map(corpus):
-    map_results = []
+def apply_map(corpus, num_partitions=3):
+    map_results = [list() for _ in range(num_partitions)]  # <1>
     for document in corpus:
         for result in map_function(document):
-            map_results.append(result)
+            first_letter = result[0].decode("utf-8")[0]
+            word_index = ord(first_letter) % num_partitions  # <2>
+            map_results[word_index].append(result)  # <3>
     return map_results
-# end::map[]
+# end::map[]</div>
+    
+        </div>
+    </div>
 
+</div>
+</div>
 
-# tag::shuffle[]
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-16">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::apply_mr_1[]</span>
+<span class="n">map_results</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">apply_map</span><span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">num_returns</span><span class="o">=</span><span class="n">num_partitions</span><span class="p">)</span>  <span class="c1"># &lt;1&gt;</span>
+    <span class="o">.</span><span class="n">remote</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">num_partitions</span><span class="p">)</span>  <span class="c1"># &lt;2&gt;</span>
+    <span class="k">for</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">partitions</span>  <span class="c1"># &lt;3&gt;</span>
+<span class="p">]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_partitions</span><span class="p">):</span>
+    <span class="n">mapper_results</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">map_results</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>  <span class="c1"># &lt;4&gt;</span>
+    <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">result</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">mapper_results</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mapper </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">, return value </span><span class="si">{</span><span class="n">j</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">result</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1"># end::apply_mr_1[]</span>
+</pre></div>
+<div id="cell-16" class="clipboard-copy-txt"># tag::apply_mr_1[]
+map_results = [
+    apply_map.options(num_returns=num_partitions)  # <1>
+    .remote(data, num_partitions)  # <2>
+    for data in partitions  # <3>
+]
+
+for i in range(num_partitions):
+    mapper_results = ray.get(map_results[i])  # <4>
+    for j, result in enumerate(mapper_results):
+        print(f"Mapper {i}, return value {j}: {result[:2]}")
+# end::apply_mr_1[]</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-17">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::reduce[]</span>
+<span class="nd">@ray</span><span class="o">.</span><span class="n">remote</span>
+<span class="k">def</span> <span class="nf">apply_reduce</span><span class="p">(</span><span class="o">*</span><span class="n">results</span><span class="p">):</span>  <span class="c1"># &lt;1&gt;</span>
+    <span class="n">reduce_results</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">res</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">reduce_results</span><span class="p">:</span>
+                <span class="n">reduce_results</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">reduce_results</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">+=</span> <span class="n">value</span>  <span class="c1"># &lt;2&gt;</span>
+
+    <span class="k">return</span> <span class="n">reduce_results</span>
+<span class="c1"># end::reduce[]</span>
+</pre></div>
+<div id="cell-17" class="clipboard-copy-txt"># tag::reduce[]
 @ray.remote
-def apply_shuffle(map_results):
-    shuffle_results = dict()
-    for key, value in map_results:
-        if key not in shuffle_results:
-            shuffle_results[key] = []
-        shuffle_results[key].append(value)
-    return shuffle_results
-# end::shuffle[]
-
-
-# tag::reduce[]
-def reduce_function(key, values):
-    total = 0
-    for count in values:
-        total += count
-    return key, total
-
-
-@ray.remote
-def apply_reduce(shuffle_results):
+def apply_reduce(*results):  # <1>
     reduce_results = dict()
-    for key, values in shuffle_results.items():
-        _, count = reduce_function(key, values)
-        reduce_results[key] = count
+    for res in results:
+        for key, value in res:
+            if key not in reduce_results:
+                reduce_results[key] = 0
+            reduce_results[key] += value  # <2>
+
     return reduce_results
-# end::reduce[]
+# end::reduce[]</div>
+    
+        </div>
+    </div>
 
+</div>
+</div>
 
-# tag::apply_mr[]
-import subprocess
-zen_of_python = subprocess.check_output(["python", "-c", "import this"])
-text_data = zen_of_python.split()
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-18">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::apply_mr_2[]</span>
+<span class="n">outputs</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_partitions</span><span class="p">):</span>
+    <span class="n">outputs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>  <span class="c1"># &lt;1&gt;</span>
+        <span class="n">apply_reduce</span><span class="o">.</span><span class="n">remote</span><span class="p">(</span><span class="o">*</span><span class="p">[</span><span class="n">partition</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">partition</span> <span class="ow">in</span> <span class="n">map_results</span><span class="p">])</span>
+    <span class="p">)</span>
 
+<span class="n">counts</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">output</span> <span class="ow">in</span> <span class="n">ray</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">outputs</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">output</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>  <span class="c1"># &lt;2&gt;</span>
 
-map_results = apply_map.remote(text_data)
-group_results = apply_shuffle.remote(map_results)
-reduce_results = apply_reduce.remote(group_results)
-counts = ray.get(reduce_results)
+<span class="n">sorted_counts</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">counts</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">item</span><span class="p">:</span> <span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># &lt;3&gt;</span>
+<span class="k">for</span> <span class="n">count</span> <span class="ow">in</span> <span class="n">sorted_counts</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">count</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">count</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1"># end::apply_mr_2[]</span>
+</pre></div>
+<div id="cell-18" class="clipboard-copy-txt"># tag::apply_mr_2[]
+outputs = []
+for i in range(num_partitions):
+    outputs.append(  # <1>
+        apply_reduce.remote(*[partition[i] for partition in map_results])
+    )
 
-sorted_counts = sorted(counts.items(), key=lambda kv: kv[1], reverse=True)
-print(sorted_counts)
-# end::apply_mr[]</div>
+counts = {k: v for output in ray.get(outputs) for k, v in output.items()}  # <2>
+
+sorted_counts = sorted(counts.items(), key=lambda item: item[1], reverse=True)  # <3>
+for count in sorted_counts:
+    print(f"{count[0].decode('utf-8')}: {count[1]}")
+# end::apply_mr_2[]</div>
     
         </div>
     </div>
@@ -1983,7 +2243,7 @@ print(sorted_counts)
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate", "navigation.tracking", "navigation.instant", "navigation.expand", "navigation.sections", "navigation.top", "navigation.indexes"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate", "navigation.tracking", "navigation.instant", "navigation.expand", "navigation.sections", "navigation.top", "navigation.indexes"], "search": "../assets/javascripts/workers/search.fcfe8b6d.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": null}</script>
     
     
 

@@ -1,0 +1,48 @@
+apiVersion: ray.io/v1alpha1
+kind: RayCluster
+metadata:
+  name: raycluster-complete
+spec:
+  headGroupSpec:
+    rayStartParams:
+      port: '6379'
+      num-cpus: '1'
+      ...
+    template: # Pod template
+        metadata: # Pod metadata
+        spec: # Pod spec
+            containers:
+            - name: ray-head
+              image: rayproject/ray:1.12.1
+              resources:
+                limits:
+                  cpu: "1"
+                  memory: "1024Mi"
+                requests:
+                  cpu: "1"
+                  memory: "1024Mi"
+              ports:
+              - containerPort: 6379
+                name: gcs
+              - containerPort: 8265
+                name: dashboard
+              - containerPort: 10001
+                name: client
+              env:
+                - name: "RAY_LOG_TO_STDERR"
+                  value: "1"
+              volumeMounts:
+                - mountPath: /tmp/ray
+                  name: ray-logs
+            volumes:
+            - name: ray-logs
+              emptyDir: {}
+  workerGroupSpecs:
+  - groupName: small-group
+    replicas: 2
+    rayStartParams:
+        ...
+    template: # Pod template
+        ...
+  - groupName: medium-group
+    ...

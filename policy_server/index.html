@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://maxpumperla.com/learning_ray/policy_server/">
       
       <link rel="icon" href="../assets/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-7.3.6">
     
     
       
@@ -317,7 +317,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_04_rllib/" class="md-nav__link">
-        Reinforcement Learning with Ray RLlib
+        Chapter 4: Reinforcement Learning with Ray RLlib
       </a>
     </li>
   
@@ -332,7 +332,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_05_tune/" class="md-nav__link">
-        Hyperparameter Optimization with Ray Tune
+        Chapter 5: Hyperparameter Optimization with Ray Tune
       </a>
     </li>
   
@@ -347,7 +347,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_06_data_processing/" class="md-nav__link">
-        Data Processing with Ray Data
+        Chapter 6: Data Processing with Ray
       </a>
     </li>
   
@@ -362,7 +362,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_07_train/" class="md-nav__link">
-        Distributed Training with Ray Train
+        Chapter 7: Distributed Training with Ray Train
       </a>
     </li>
   
@@ -377,7 +377,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_08_model_serving/" class="md-nav__link">
-        Serving Models with Ray Serve
+        Chapter 8: Online Inference with Ray Serve
       </a>
     </li>
   
@@ -392,7 +392,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_09_script/" class="md-nav__link">
-        Working with Ray Clusters
+        Chapter 9: Ray Clusters
       </a>
     </li>
   
@@ -407,7 +407,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_10_air/" class="md-nav__link">
-        Getting Started with the Ray AI Runtime
+        Chapter 10: Getting Started with the Ray AI Runtime
       </a>
     </li>
   
@@ -422,7 +422,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_11_ecosystem/" class="md-nav__link">
-        Ray's Ecosystem and Beyond
+        Chapter 11: Ray's Ecosystem and Beyond
       </a>
     </li>
   
@@ -1099,12 +1099,12 @@ all of MD as it is not optimized for dense, information rich UIs.
                 },
                 displayAlign: 'center',
                 CommonHTML: {
-                    linebreaks: { 
-                    automatic: true 
+                    linebreaks: {
+                    automatic: true
                     }
                 }
             });
-        
+
             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
         }
     }
@@ -1113,6 +1113,8 @@ all of MD as it is not optimized for dense, information rich UIs.
     <!-- End of mathjax configuration --><div class="jupyter-wrapper"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
@@ -1131,14 +1133,14 @@ all of MD as it is not optimized for dense, information rich UIs.
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::server_config[]</span>
 <span class="c1"># policy_server.py</span>
 <span class="kn">import</span> <span class="nn">ray</span>
-<span class="kn">from</span> <span class="nn">ray.rllib.agents.dqn</span> <span class="kn">import</span> <span class="n">DQNTrainer</span>
+<span class="kn">from</span> <span class="nn">ray.rllib.agents.dqn</span> <span class="kn">import</span> <span class="n">DQNConfig</span>
 <span class="kn">from</span> <span class="nn">ray.rllib.env.policy_server_input</span> <span class="kn">import</span> <span class="n">PolicyServerInput</span>
 <span class="kn">import</span> <span class="nn">gym</span>
 </pre></div>
 <div id="cell-1" class="clipboard-copy-txt"># tag::server_config[]
 # policy_server.py
 import ray
-from ray.rllib.agents.dqn import DQNTrainer
+from ray.rllib.agents.dqn import DQNConfig
 from ray.rllib.env.policy_server_input import PolicyServerInput
 import gym</div>
     
@@ -1152,6 +1154,8 @@ import gym</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
@@ -1181,6 +1185,8 @@ import gym</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
@@ -1212,6 +1218,8 @@ import gym</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
@@ -1227,25 +1235,27 @@ import gym</div>
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">config</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;env&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>  <span class="c1"># &lt;2&gt;</span>
-    <span class="s2">&quot;observation_space&quot;</span><span class="p">:</span> <span class="n">gym</span><span class="o">.</span><span class="n">spaces</span><span class="o">.</span><span class="n">Discrete</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="mi">5</span><span class="p">),</span>
-    <span class="s2">&quot;action_space&quot;</span><span class="p">:</span> <span class="n">gym</span><span class="o">.</span><span class="n">spaces</span><span class="o">.</span><span class="n">Discrete</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span>
-    <span class="s2">&quot;input&quot;</span><span class="p">:</span> <span class="n">policy_input</span><span class="p">,</span>  <span class="c1"># &lt;3&gt;</span>
-    <span class="s2">&quot;num_workers&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-    <span class="s2">&quot;input_evaluation&quot;</span><span class="p">:</span> <span class="p">[],</span>
-    <span class="s2">&quot;log_level&quot;</span><span class="p">:</span> <span class="s2">&quot;INFO&quot;</span><span class="p">,</span>
-<span class="p">}</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">config</span> <span class="o">=</span> <span class="n">DQNConfig</span><span class="p">()</span>\
+    <span class="o">.</span><span class="n">environment</span><span class="p">(</span>
+        <span class="n">env</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># &lt;2&gt;</span>
+        <span class="n">action_space</span><span class="o">=</span><span class="n">gym</span><span class="o">.</span><span class="n">spaces</span><span class="o">.</span><span class="n">Discrete</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span>  <span class="c1"># &lt;3&gt;</span>
+        <span class="n">observation_space</span><span class="o">=</span><span class="n">gym</span><span class="o">.</span><span class="n">spaces</span><span class="o">.</span><span class="n">Discrete</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="mi">5</span><span class="p">))</span>\
+    <span class="o">.</span><span class="n">debugging</span><span class="p">(</span><span class="n">log_level</span><span class="o">=</span><span class="s2">&quot;INFO&quot;</span><span class="p">)</span>\
+    <span class="o">.</span><span class="n">rollouts</span><span class="p">(</span><span class="n">num_rollout_workers</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>\
+    <span class="o">.</span><span class="n">offline_data</span><span class="p">(</span>  <span class="c1"># &lt;4&gt;</span>
+        <span class="nb">input</span><span class="o">=</span><span class="n">policy_input</span><span class="p">,</span>
+        <span class="n">input_evaluation</span><span class="o">=</span><span class="p">[])</span>\
 </pre></div>
-<div id="cell-4" class="clipboard-copy-txt">config = {
-    "env": None,  # <2>
-    "observation_space": gym.spaces.Discrete(5*5),
-    "action_space": gym.spaces.Discrete(4),
-    "input": policy_input,  # <3>
-    "num_workers": 0,
-    "input_evaluation": [],
-    "log_level": "INFO",
-}</div>
+<div id="cell-4" class="clipboard-copy-txt">config = DQNConfig()\
+    .environment(
+        env=None,  # <2>
+        action_space=gym.spaces.Discrete(4),  # <3>
+        observation_space=gym.spaces.Discrete(5*5))\
+    .debugging(log_level="INFO")\
+    .rollouts(num_rollout_workers=0)\
+    .offline_data(  # <4>
+        input=policy_input,
+        input_evaluation=[])\</div>
     
         </div>
     </div>
@@ -1257,6 +1267,8 @@ import gym</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
@@ -1272,9 +1284,9 @@ import gym</div>
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">trainer</span> <span class="o">=</span> <span class="n">DQNTrainer</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">)</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">algo</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
 </pre></div>
-<div id="cell-5" class="clipboard-copy-txt">trainer = DQNTrainer(config=config)</div>
+<div id="cell-5" class="clipboard-copy-txt">algo = config.build()</div>
     
         </div>
     </div>
@@ -1284,14 +1296,22 @@ import gym</div>
 
 </div>
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>end::server_config[]</p>
 
 </div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
@@ -1313,8 +1333,8 @@ import gym</div>
 
     <span class="n">time_steps</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
-        <span class="n">results</span> <span class="o">=</span> <span class="n">trainer</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
-        <span class="n">checkpoint</span> <span class="o">=</span> <span class="n">trainer</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>  <span class="c1"># &lt;1&gt;</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="n">algo</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+        <span class="n">checkpoint</span> <span class="o">=</span> <span class="n">algo</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>  <span class="c1"># &lt;1&gt;</span>
         <span class="k">if</span> <span class="n">time_steps</span> <span class="o">&gt;=</span> <span class="mi">1000</span><span class="p">:</span>  <span class="c1"># &lt;2&gt;</span>
             <span class="k">break</span>
         <span class="n">time_steps</span> <span class="o">+=</span> <span class="n">results</span><span class="p">[</span><span class="s2">&quot;timesteps_total&quot;</span><span class="p">]</span>
@@ -1326,8 +1346,8 @@ if __name__ == "__main__":
 
     time_steps = 0
     for _ in range(100):
-        results = trainer.train()
-        checkpoint = trainer.save()  # <1>
+        results = algo.train()
+        checkpoint = algo.save()  # <1>
         if time_steps >= 1000:  # <2>
             break
         time_steps += results["timesteps_total"]
@@ -1416,7 +1436,7 @@ if __name__ == "__main__":
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate", "navigation.tracking", "navigation.instant", "navigation.expand", "navigation.sections", "navigation.top", "navigation.indexes"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate", "navigation.tracking", "navigation.instant", "navigation.expand", "navigation.sections", "navigation.top", "navigation.indexes"], "search": "../assets/javascripts/workers/search.fcfe8b6d.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": null}</script>
     
     
 

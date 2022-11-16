@@ -16,11 +16,11 @@
         <link rel="canonical" href="https://maxpumperla.com/learning_ray/ch_04_rllib/">
       
       <link rel="icon" href="../assets/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-7.3.6">
     
     
       
-        <title>Reinforcement Learning with Ray RLlib - Learning Ray - Flexible Distributed Python for Data Science</title>
+        <title>Chapter 4: Reinforcement Learning with Ray RLlib - Learning Ray - Flexible Distributed Python for Data Science</title>
       
     
     
@@ -74,6 +74,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#chapter-4-reinforcement-learning-with-ray-rllib" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -122,7 +127,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Reinforcement Learning with Ray RLlib
+              Chapter 4: Reinforcement Learning with Ray RLlib
             
           </span>
         </div>
@@ -322,9 +327,11 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        
+      
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Reinforcement Learning with Ray RLlib
+        Chapter 4: Reinforcement Learning with Ray RLlib
       </a>
       
     </li>
@@ -340,7 +347,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_05_tune/" class="md-nav__link">
-        Hyperparameter Optimization with Ray Tune
+        Chapter 5: Hyperparameter Optimization with Ray Tune
       </a>
     </li>
   
@@ -355,7 +362,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_06_data_processing/" class="md-nav__link">
-        Data Processing with Ray Data
+        Chapter 6: Data Processing with Ray
       </a>
     </li>
   
@@ -370,7 +377,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_07_train/" class="md-nav__link">
-        Distributed Training with Ray Train
+        Chapter 7: Distributed Training with Ray Train
       </a>
     </li>
   
@@ -385,7 +392,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_08_model_serving/" class="md-nav__link">
-        Serving Models with Ray Serve
+        Chapter 8: Online Inference with Ray Serve
       </a>
     </li>
   
@@ -400,7 +407,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_09_script/" class="md-nav__link">
-        Working with Ray Clusters
+        Chapter 9: Ray Clusters
       </a>
     </li>
   
@@ -415,7 +422,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_10_air/" class="md-nav__link">
-        Getting Started with the Ray AI Runtime
+        Chapter 10: Getting Started with the Ray AI Runtime
       </a>
     </li>
   
@@ -430,7 +437,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_11_ecosystem/" class="md-nav__link">
-        Ray's Ecosystem and Beyond
+        Chapter 11: Ray's Ecosystem and Beyond
       </a>
     </li>
   
@@ -443,6 +450,25 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
@@ -452,8 +478,6 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
-                
-                  <h1>Reinforcement Learning with Ray RLlib</h1>
                 
                 <script>
 (function (global, factory) {
@@ -1107,26 +1131,132 @@ all of MD as it is not optimized for dense, information rich UIs.
                 },
                 displayAlign: 'center',
                 CommonHTML: {
-                    linebreaks: { 
-                    automatic: true 
+                    linebreaks: {
+                    automatic: true
                     }
                 }
             });
-        
+
             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
         }
     }
     init_mathjax();
     </script>
-    <!-- End of mathjax configuration --><div class="jupyter-wrapper"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+    <!-- End of mathjax configuration --><div class="jupyter-wrapper">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="chapter-4-reinforcement-learning-with-ray-rllib">Chapter 4: Reinforcement Learning with Ray RLlib<a class="anchor-link" href="#Chapter-4:-Reinforcement-Learning-with-Ray-RLlib">&#182;</a></h1>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>You can run this notebook directly in
+<a href="https://colab.research.google.com/github/maxpumperla/learning_ray/blob/main/notebooks/ch_04_rllib.ipynb">Colab</a>.</p>
+<p>The book has been written for Ray 2.2.0,which at the time of writing has not
+officially been released yet. If you are reading this and this version is already
+available, you can install it using <code>pip install ray==2.2.0</code>. If not, you can
+use a nightly wheel (here for Python 3.7 on Linux):</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
             <clipboard-copy for="cell-1">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">s3</span><span class="o">-</span><span class="n">us</span><span class="o">-</span><span class="n">west</span><span class="o">-</span><span class="mf">2.</span><span class="n">amazonaws</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ray</span><span class="o">-</span><span class="n">wheels</span><span class="o">/</span><span class="n">latest</span><span class="o">/</span><span class="n">ray</span><span class="o">-</span><span class="mf">3.0.0</span><span class="o">.</span><span class="n">dev0</span><span class="o">-</span><span class="n">cp37</span><span class="o">-</span><span class="n">cp37m</span><span class="o">-</span><span class="n">manylinux2014_x86_64</span><span class="o">.</span><span class="n">whl</span>
+</pre></div>
+<div id="cell-1" class="clipboard-copy-txt">! pip install -U https://s3-us-west-2.amazonaws.com/ray-wheels/latest/ray-3.0.0.dev0-cp37-cp37m-manylinux2014_x86_64.whl</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Should you not run this notebook in Colab and need another type of wheel, please
+refer to Ray's <a href="https://docs.ray.io/en/latest/ray-overview/installation.html#install-nightlies">installation instructions for nightlies</a>.</p>
+<p>For this chapter you will also need to install the following dependencies:</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-2">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="s2">&quot;ray[rllib]&quot;</span>
+</pre></div>
+<div id="cell-2" class="clipboard-copy-txt">! pip install "ray[rllib]"</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-3">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1155,7 +1285,7 @@ all of MD as it is not optimized for dense, information rich UIs.
         <span class="o">...</span>
 <span class="c1"># end::gym_mock[]</span>
 </pre></div>
-<div id="cell-1" class="clipboard-copy-txt"># tag::gym_mock[]
+<div id="cell-3" class="clipboard-copy-txt"># tag::gym_mock[]
 import gym
 
 
@@ -1184,12 +1314,14 @@ class Env:
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-2">
+            <clipboard-copy for="cell-4">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1202,71 +1334,336 @@ class Env:
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::rllib_dqn_simple[]</span>
 <span class="kn">from</span> <span class="nn">ray.tune.logger</span> <span class="kn">import</span> <span class="n">pretty_print</span>
 <span class="kn">from</span> <span class="nn">maze_gym_env</span> <span class="kn">import</span> <span class="n">GymEnvironment</span>
-<span class="kn">from</span> <span class="nn">ray.rllib.agents.dqn</span> <span class="kn">import</span> <span class="n">DQNTrainer</span>
+<span class="kn">from</span> <span class="nn">ray.rllib.algorithms.dqn</span> <span class="kn">import</span> <span class="n">DQNConfig</span>
 
-<span class="n">trainer</span> <span class="o">=</span> <span class="n">DQNTrainer</span><span class="p">(</span><span class="n">env</span><span class="o">=</span><span class="n">GymEnvironment</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;num_workers&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">})</span>  <span class="c1"># &lt;1&gt;</span>
 
-<span class="n">config</span> <span class="o">=</span> <span class="n">trainer</span><span class="o">.</span><span class="n">get_config</span><span class="p">()</span>  <span class="c1"># &lt;2&gt;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">pretty_print</span><span class="p">(</span><span class="n">config</span><span class="p">))</span>
+<span class="n">config</span> <span class="o">=</span> <span class="n">DQNConfig</span><span class="p">()</span><span class="o">.</span><span class="n">environment</span><span class="p">(</span><span class="n">GymEnvironment</span><span class="p">)</span><span class="o">.</span><span class="n">rollouts</span><span class="p">(</span><span class="n">num_rollout_workers</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">to_dict</span><span class="p">())</span>
+
+<span class="n">algo</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>  <span class="c1"># &lt;1&gt;</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="n">trainer</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>  <span class="c1"># &lt;3&gt;</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">algo</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>  <span class="c1"># &lt;2&gt;</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">pretty_print</span><span class="p">(</span><span class="n">result</span><span class="p">))</span>  <span class="c1"># &lt;4&gt;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pretty_print</span><span class="p">(</span><span class="n">result</span><span class="p">))</span>  <span class="c1"># &lt;3&gt;</span>
 <span class="c1"># end::rllib_dqn_simple[]</span>
+</pre></div>
+<div id="cell-4" class="clipboard-copy-txt"># tag::rllib_dqn_simple[]
+from ray.tune.logger import pretty_print
+from maze_gym_env import GymEnvironment
+from ray.rllib.algorithms.dqn import DQNConfig
 
-<span class="c1"># tag::rllib_simple_save[]</span>
-<span class="n">checkpoint</span> <span class="o">=</span> <span class="n">trainer</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>  <span class="c1"># &lt;1&gt;</span>
+
+config = DQNConfig().environment(GymEnvironment).rollouts(num_rollout_workers=4)
+pretty_print(config.to_dict())
+
+algo = config.build()  # <1>
+
+for i in range(10):
+    result = algo.train()  # <2>
+
+print(pretty_print(result))  # <3>
+# end::rllib_dqn_simple[]</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-5">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::rllib_simple_save[]</span>
+<span class="kn">from</span> <span class="nn">ray.rllib.algorithms.algorithm</span> <span class="kn">import</span> <span class="n">Algorithm</span>
+
+
+<span class="n">checkpoint</span> <span class="o">=</span> <span class="n">algo</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>  <span class="c1"># &lt;1&gt;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">checkpoint</span><span class="p">)</span>
 
-<span class="n">evaluation</span> <span class="o">=</span> <span class="n">trainer</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">checkpoint</span><span class="p">)</span>  <span class="c1"># &lt;2&gt;</span>
+<span class="n">restored_algorithm</span> <span class="o">=</span> <span class="n">Algorithm</span><span class="o">.</span><span class="n">from_checkpoint</span><span class="p">(</span><span class="n">checkpoint</span><span class="p">)</span>  <span class="c1"># &lt;2&gt;</span>
+
+<span class="n">evaluation</span> <span class="o">=</span> <span class="n">algo</span><span class="o">.</span><span class="n">evaluate</span><span class="p">()</span>  <span class="c1"># &lt;3&gt;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">pretty_print</span><span class="p">(</span><span class="n">evaluation</span><span class="p">))</span>
 
-<span class="n">restored_trainer</span> <span class="o">=</span> <span class="n">DQNTrainer</span><span class="p">(</span><span class="n">env</span><span class="o">=</span><span class="n">GymEnvironment</span><span class="p">)</span>
-<span class="n">restored_trainer</span><span class="o">.</span><span class="n">restore</span><span class="p">(</span><span class="n">checkpoint</span><span class="p">)</span>  <span class="c1"># &lt;3&gt;</span>
 <span class="c1"># end::rllib_simple_save[]</span>
+</pre></div>
+<div id="cell-5" class="clipboard-copy-txt"># tag::rllib_simple_save[]
+from ray.rllib.algorithms.algorithm import Algorithm
 
-<span class="c1"># TODO: if I pretty print in the loop above, the &quot;evaluation&quot; has only NaNs.</span>
 
-<span class="c1"># tag::rllib_manual_rollout[]</span>
+checkpoint = algo.save()  # <1>
+print(checkpoint)
+
+restored_algorithm = Algorithm.from_checkpoint(checkpoint)  # <2>
+
+evaluation = algo.evaluate()  # <3>
+print(pretty_print(evaluation))
+
+# end::rllib_simple_save[]</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-6">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::rllib_manual_rollout[]</span>
 <span class="n">env</span> <span class="o">=</span> <span class="n">GymEnvironment</span><span class="p">()</span>
 <span class="n">done</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="n">total_reward</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">observations</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
 
 <span class="k">while</span> <span class="ow">not</span> <span class="n">done</span><span class="p">:</span>
-    <span class="n">action</span> <span class="o">=</span> <span class="n">trainer</span><span class="o">.</span><span class="n">compute_single_action</span><span class="p">(</span><span class="n">observations</span><span class="p">)</span>  <span class="c1"># &lt;1&gt;</span>
+    <span class="n">action</span> <span class="o">=</span> <span class="n">algo</span><span class="o">.</span><span class="n">compute_single_action</span><span class="p">(</span><span class="n">observations</span><span class="p">)</span>  <span class="c1"># &lt;1&gt;</span>
     <span class="n">observations</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
     <span class="n">total_reward</span> <span class="o">+=</span> <span class="n">reward</span>
 <span class="c1"># end::rllib_manual_rollout[]</span>
+</pre></div>
+<div id="cell-6" class="clipboard-copy-txt"># tag::rllib_manual_rollout[]
+env = GymEnvironment()
+done = False
+total_reward = 0
+observations = env.reset()
 
-<span class="c1"># tag::rllib_actions[]</span>
-<span class="n">action</span> <span class="o">=</span> <span class="n">trainer</span><span class="o">.</span><span class="n">compute_actions</span><span class="p">({</span><span class="s2">&quot;obs_1&quot;</span><span class="p">:</span> <span class="n">observations</span><span class="p">,</span> <span class="s2">&quot;obs_2&quot;</span><span class="p">:</span> <span class="n">observations</span><span class="p">})</span>
+while not done:
+    action = algo.compute_single_action(observations)  # <1>
+    observations, reward, done, info = env.step(action)
+    total_reward += reward
+# end::rllib_manual_rollout[]</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-7">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::rllib_actions[]</span>
+<span class="n">action</span> <span class="o">=</span> <span class="n">algo</span><span class="o">.</span><span class="n">compute_actions</span><span class="p">(</span>  <span class="c1"># &lt;1&gt;</span>
+    <span class="p">{</span><span class="s2">&quot;obs_1&quot;</span><span class="p">:</span> <span class="n">observations</span><span class="p">,</span> <span class="s2">&quot;obs_2&quot;</span><span class="p">:</span> <span class="n">observations</span><span class="p">}</span>
+<span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
 <span class="c1"># {&#39;obs_1&#39;: 0, &#39;obs_2&#39;: 1}</span>
 <span class="c1"># end::rllib_actions[]</span>
+</pre></div>
+<div id="cell-7" class="clipboard-copy-txt"># tag::rllib_actions[]
+action = algo.compute_actions(  # <1>
+    {"obs_1": observations, "obs_2": observations}
+)
+print(action)
+# {'obs_1': 0, 'obs_2': 1}
+# end::rllib_actions[]</div>
+    
+        </div>
+    </div>
 
-<span class="c1"># tag::rllib_policy[]</span>
-<span class="n">policy</span> <span class="o">=</span> <span class="n">trainer</span><span class="o">.</span><span class="n">get_policy</span><span class="p">()</span>
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-8">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::rllib_policy[]</span>
+<span class="n">policy</span> <span class="o">=</span> <span class="n">algo</span><span class="o">.</span><span class="n">get_policy</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">policy</span><span class="o">.</span><span class="n">get_weights</span><span class="p">())</span>
 
 <span class="n">model</span> <span class="o">=</span> <span class="n">policy</span><span class="o">.</span><span class="n">model</span>
 <span class="c1"># end::rllib_policy[]</span>
+</pre></div>
+<div id="cell-8" class="clipboard-copy-txt"># tag::rllib_policy[]
+policy = algo.get_policy()
+print(policy.get_weights())
 
-<span class="c1"># tag::rllib_workers[]</span>
-<span class="n">workers</span> <span class="o">=</span> <span class="n">trainer</span><span class="o">.</span><span class="n">workers</span>
+model = policy.model
+# end::rllib_policy[]</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-9">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::rllib_workers[]</span>
+<span class="n">workers</span> <span class="o">=</span> <span class="n">algo</span><span class="o">.</span><span class="n">workers</span>
 <span class="n">workers</span><span class="o">.</span><span class="n">foreach_worker</span><span class="p">(</span>
     <span class="k">lambda</span> <span class="n">remote_trainer</span><span class="p">:</span> <span class="n">remote_trainer</span><span class="o">.</span><span class="n">get_policy</span><span class="p">()</span><span class="o">.</span><span class="n">get_weights</span><span class="p">()</span>
 <span class="p">)</span>
 <span class="c1"># end::rllib_workers[]</span>
+</pre></div>
+<div id="cell-9" class="clipboard-copy-txt"># tag::rllib_workers[]
+workers = algo.workers
+workers.foreach_worker(
+    lambda remote_trainer: remote_trainer.get_policy().get_weights()
+)
+# end::rllib_workers[]</div>
+    
+        </div>
+    </div>
 
-<span class="c1"># tag::rllib_q_network[]</span>
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-10">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::rllib_q_network[]</span>
 <span class="n">model</span><span class="o">.</span><span class="n">base_model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
 
 <span class="c1"># end::rllib_q_network[]</span>
+</pre></div>
+<div id="cell-10" class="clipboard-copy-txt"># tag::rllib_q_network[]
+model.base_model.summary()
 
-<span class="c1"># tag::rllib_model_output[]</span>
+# end::rllib_q_network[]</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-11">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::rllib_model_output[]</span>
 <span class="kn">from</span> <span class="nn">ray.rllib.models.preprocessors</span> <span class="kn">import</span> <span class="n">get_preprocessor</span>
+
+
 <span class="n">env</span> <span class="o">=</span> <span class="n">GymEnvironment</span><span class="p">()</span>
 <span class="n">obs_space</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">observation_space</span>
 <span class="n">preprocessor</span> <span class="o">=</span> <span class="n">get_preprocessor</span><span class="p">(</span><span class="n">obs_space</span><span class="p">)(</span><span class="n">obs_space</span><span class="p">)</span>  <span class="c1"># &lt;1&gt;</span>
@@ -1276,8 +1673,49 @@ class Env:
 
 <span class="n">model_output</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">from_batch</span><span class="p">({</span><span class="s2">&quot;obs&quot;</span><span class="p">:</span> <span class="n">transformed</span><span class="p">})</span>  <span class="c1"># &lt;3&gt;</span>
 <span class="c1"># end::rllib_model_output[]</span>
+</pre></div>
+<div id="cell-11" class="clipboard-copy-txt"># tag::rllib_model_output[]
+from ray.rllib.models.preprocessors import get_preprocessor
 
-<span class="c1"># tag::rllib_q_values_action_dist[]</span>
+
+env = GymEnvironment()
+obs_space = env.observation_space
+preprocessor = get_preprocessor(obs_space)(obs_space)  # <1>
+
+observations = env.reset()
+transformed = preprocessor.transform(observations).reshape(1, -1)  # <2>
+
+model_output, _ = model.from_batch({"obs": transformed})  # <3>
+# end::rllib_model_output[]</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-12">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::rllib_q_values_action_dist[]</span>
 <span class="n">q_values</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">get_q_value_distributions</span><span class="p">(</span><span class="n">model_output</span><span class="p">)</span>  <span class="c1"># &lt;1&gt;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">q_values</span><span class="p">)</span>
 
@@ -1287,8 +1725,46 @@ class Env:
 <span class="c1"># end::rllib_q_values_action_dist[]</span>
 
 <span class="c1"># model.get_state_value(model_output)</span>
+</pre></div>
+<div id="cell-12" class="clipboard-copy-txt"># tag::rllib_q_values_action_dist[]
+q_values = model.get_q_value_distributions(model_output)  # <1>
+print(q_values)
 
-<span class="c1"># tag::multi_agent_init[]</span>
+action_distribution = policy.dist_class(model_output, model)  # <2>
+sample = action_distribution.sample()  # <3>
+print(sample)
+# end::rllib_q_values_action_dist[]
+
+# model.get_state_value(model_output)</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-13">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::multi_agent_init[]</span>
 <span class="kn">from</span> <span class="nn">ray.rllib.env.multi_agent_env</span> <span class="kn">import</span> <span class="n">MultiAgentEnv</span>
 <span class="kn">from</span> <span class="nn">gym.spaces</span> <span class="kn">import</span> <span class="n">Discrete</span>
 <span class="kn">import</span> <span class="nn">os</span>
@@ -1296,22 +1772,69 @@ class Env:
 
 <span class="k">class</span> <span class="nc">MultiAgentMaze</span><span class="p">(</span><span class="n">MultiAgentEnv</span><span class="p">):</span>
 
-    <span class="n">agents</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">2</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">)}</span>  <span class="c1"># &lt;1&gt;</span>
-    <span class="n">goal</span> <span class="o">=</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-    <span class="n">info</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;obs&#39;</span><span class="p">:</span> <span class="n">agents</span><span class="p">[</span><span class="mi">1</span><span class="p">]},</span> <span class="mi">2</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;obs&#39;</span><span class="p">:</span> <span class="n">agents</span><span class="p">[</span><span class="mi">2</span><span class="p">]}}</span>  <span class="c1"># &lt;2&gt;</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>  <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>  <span class="c1"># &lt;3&gt;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>  <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>  <span class="c1"># &lt;1&gt;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">action_space</span> <span class="o">=</span> <span class="n">Discrete</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">observation_space</span> <span class="o">=</span> <span class="n">Discrete</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="mi">5</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">agents</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">2</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">)}</span>  <span class="c1"># &lt;2&gt;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">goal</span> <span class="o">=</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">info</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;obs&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">agents</span><span class="p">[</span><span class="mi">1</span><span class="p">]},</span> <span class="mi">2</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;obs&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">agents</span><span class="p">[</span><span class="mi">2</span><span class="p">]}}</span>  <span class="c1"># &lt;3&gt;</span>
 
     <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">agents</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">2</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">)}</span>
 
         <span class="k">return</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_observation</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="mi">2</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_observation</span><span class="p">(</span><span class="mi">2</span><span class="p">)}</span>  <span class="c1"># &lt;4&gt;</span>
 <span class="c1"># end::multi_agent_init[]</span>
+</pre></div>
+<div id="cell-13" class="clipboard-copy-txt"># tag::multi_agent_init[]
+from ray.rllib.env.multi_agent_env import MultiAgentEnv
+from gym.spaces import Discrete
+import os
 
-<span class="c1"># tag::multi_agent_helpers[]</span>
-    <span class="k">def</span> <span class="nf">get_observation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">agent_id</span><span class="p">):</span>  <span class="c1"># &lt;2&gt;</span>
+
+class MultiAgentMaze(MultiAgentEnv):
+
+    def __init__(self,  *args, **kwargs):  # <1>
+        self.action_space = Discrete(4)
+        self.observation_space = Discrete(5*5)
+        self.agents = {1: (4, 0), 2: (0, 4)}  # <2>
+        self.goal = (4, 4)
+        self.info = {1: {'obs': self.agents[1]}, 2: {'obs': self.agents[2]}}  # <3>
+
+    def reset(self):
+        self.agents = {1: (4, 0), 2: (0, 4)}
+
+        return {1: self.get_observation(1), 2: self.get_observation(2)}  # <4>
+# end::multi_agent_init[]</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-14">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::multi_agent_helpers[]</span>
+    <span class="k">def</span> <span class="nf">get_observation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">agent_id</span><span class="p">):</span>
         <span class="n">seeker</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">agents</span><span class="p">[</span><span class="n">agent_id</span><span class="p">]</span>
         <span class="k">return</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">seeker</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">seeker</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 
@@ -1321,8 +1844,47 @@ class Env:
     <span class="k">def</span> <span class="nf">is_done</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">agent_id</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">agents</span><span class="p">[</span><span class="n">agent_id</span><span class="p">]</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">goal</span>
 <span class="c1"># end::multi_agent_helpers[]</span>
+</pre></div>
+<div id="cell-14" class="clipboard-copy-txt"># tag::multi_agent_helpers[]
+    def get_observation(self, agent_id):
+        seeker = self.agents[agent_id]
+        return 5 * seeker[0] + seeker[1]
 
-<span class="c1"># tag::multi_agent_step[]</span>
+    def get_reward(self, agent_id):
+        return 1 if self.agents[agent_id] == self.goal else 0
+
+    def is_done(self, agent_id):
+        return self.agents[agent_id] == self.goal
+# end::multi_agent_helpers[]</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-15">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::multi_agent_step[]</span>
     <span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">action</span><span class="p">):</span>  <span class="c1"># &lt;1&gt;</span>
         <span class="n">agent_ids</span> <span class="o">=</span> <span class="n">action</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
 
@@ -1348,8 +1910,62 @@ class Env:
 
         <span class="k">return</span> <span class="n">observations</span><span class="p">,</span> <span class="n">rewards</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">info</span>
 <span class="c1"># end::multi_agent_step[]</span>
+</pre></div>
+<div id="cell-15" class="clipboard-copy-txt"># tag::multi_agent_step[]
+    def step(self, action):  # <1>
+        agent_ids = action.keys()
 
-<span class="c1"># tag::multi_agent_render[]</span>
+        for agent_id in agent_ids:
+            seeker = self.agents[agent_id]
+            if action[agent_id] == 0:  # move down
+                seeker = (min(seeker[0] + 1, 4), seeker[1])
+            elif action[agent_id] == 1:  # move left
+                seeker = (seeker[0], max(seeker[1] - 1, 0))
+            elif action[agent_id] == 2:  # move up
+                seeker = (max(seeker[0] - 1, 0), seeker[1])
+            elif action[agent_id] == 3:  # move right
+                seeker = (seeker[0], min(seeker[1] + 1, 4))
+            else:
+                raise ValueError("Invalid action")
+            self.agents[agent_id] = seeker  # <2>
+
+        observations = {i: self.get_observation(i) for i in agent_ids}  # <3>
+        rewards = {i: self.get_reward(i) for i in agent_ids}
+        done = {i: self.is_done(i) for i in agent_ids}
+
+        done["__all__"] = all(done.values())  # <4>
+
+        return observations, rewards, done, self.info
+# end::multi_agent_step[]</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-16">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::multi_agent_render[]</span>
     <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;cls&#39;</span> <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;nt&#39;</span> <span class="k">else</span> <span class="s1">&#39;clear&#39;</span><span class="p">)</span>
         <span class="n">grid</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;| &#39;</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span> <span class="o">+</span> <span class="p">[</span><span class="s2">&quot;|</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>
@@ -1358,9 +1974,45 @@ class Env:
         <span class="n">grid</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">agents</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]][</span><span class="bp">self</span><span class="o">.</span><span class="n">agents</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="s1">&#39;|2&#39;</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">grid_row</span><span class="p">)</span> <span class="k">for</span> <span class="n">grid_row</span> <span class="ow">in</span> <span class="n">grid</span><span class="p">]))</span>
 <span class="c1"># end::multi_agent_render[]</span>
+</pre></div>
+<div id="cell-16" class="clipboard-copy-txt"># tag::multi_agent_render[]
+    def render(self, *args, **kwargs):
+        os.system('cls' if os.name == 'nt' else 'clear')
+        grid = [['| ' for _ in range(5)] + ["|\n"] for _ in range(5)]
+        grid[self.goal[0]][self.goal[1]] = '|G'
+        grid[self.agents[1][0]][self.agents[1][1]] = '|1'
+        grid[self.agents[2][0]][self.agents[2][1]] = '|2'
+        print(''.join([''.join(grid_row) for grid_row in grid]))
+# end::multi_agent_render[]</div>
+    
+        </div>
+    </div>
 
+</div>
+</div>
 
-<span class="c1"># tag::multi_agent_run[]</span>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-17">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::multi_agent_run[]</span>
 <span class="kn">import</span> <span class="nn">time</span>
 
 <span class="n">env</span> <span class="o">=</span> <span class="n">MultiAgentMaze</span><span class="p">()</span>
@@ -1374,18 +2026,61 @@ class Env:
     <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">done</span><span class="o">.</span><span class="n">values</span><span class="p">()):</span>
         <span class="k">break</span>
 <span class="c1"># end::multi_agent_run[]</span>
+</pre></div>
+<div id="cell-17" class="clipboard-copy-txt"># tag::multi_agent_run[]
+import time
 
-<span class="c1"># tag::multi_agent_simple[]</span>
-<span class="kn">from</span> <span class="nn">ray.rllib.agents.dqn</span> <span class="kn">import</span> <span class="n">DQNTrainer</span>
+env = MultiAgentMaze()
 
-<span class="n">simple_trainer</span> <span class="o">=</span> <span class="n">DQNTrainer</span><span class="p">(</span><span class="n">env</span><span class="o">=</span><span class="n">MultiAgentMaze</span><span class="p">)</span>
+while True:
+    obs, rew, done, info = env.step(
+        {1: env.action_space.sample(), 2: env.action_space.sample()}
+    )
+    time.sleep(0.1)
+    env.render()
+    if any(done.values()):
+        break
+# end::multi_agent_run[]</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-18">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::multi_agent_simple[]</span>
+<span class="kn">from</span> <span class="nn">ray.rllib.algorithms.dqn</span> <span class="kn">import</span> <span class="n">DQNConfig</span>
+
+<span class="n">simple_trainer</span> <span class="o">=</span> <span class="n">DQNConfig</span><span class="p">()</span><span class="o">.</span><span class="n">environment</span><span class="p">(</span><span class="n">env</span><span class="o">=</span><span class="n">MultiAgentMaze</span><span class="p">)</span>
 <span class="n">simple_trainer</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
 <span class="c1"># end::multi_agent_simple[]</span>
 
 <span class="c1"># tag::multi_agent_mapping[]</span>
-<span class="n">trainer</span> <span class="o">=</span> <span class="n">DQNTrainer</span><span class="p">(</span><span class="n">env</span><span class="o">=</span><span class="n">MultiAgentMaze</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="p">{</span>
-    <span class="s2">&quot;multiagent&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;policies&quot;</span><span class="p">:</span> <span class="p">{</span>  <span class="c1"># &lt;1&gt;</span>
+<span class="n">algo</span> <span class="o">=</span> <span class="n">DQNConfig</span><span class="p">()</span>\
+    <span class="o">.</span><span class="n">environment</span><span class="p">(</span><span class="n">env</span><span class="o">=</span><span class="n">MultiAgentMaze</span><span class="p">)</span>\
+    <span class="o">.</span><span class="n">multi_agent</span><span class="p">(</span>
+        <span class="n">policies</span><span class="o">=</span><span class="p">{</span>  <span class="c1"># &lt;1&gt;</span>
             <span class="s2">&quot;policy_1&quot;</span><span class="p">:</span> <span class="p">(</span>
                 <span class="kc">None</span><span class="p">,</span> <span class="n">env</span><span class="o">.</span><span class="n">observation_space</span><span class="p">,</span> <span class="n">env</span><span class="o">.</span><span class="n">action_space</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;gamma&quot;</span><span class="p">:</span> <span class="mf">0.80</span><span class="p">}</span>
             <span class="p">),</span>
@@ -1393,15 +2088,65 @@ class Env:
                 <span class="kc">None</span><span class="p">,</span> <span class="n">env</span><span class="o">.</span><span class="n">observation_space</span><span class="p">,</span> <span class="n">env</span><span class="o">.</span><span class="n">action_space</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;gamma&quot;</span><span class="p">:</span> <span class="mf">0.95</span><span class="p">}</span>
             <span class="p">),</span>
         <span class="p">},</span>
-        <span class="s2">&quot;policy_mapping_fn&quot;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">agent_id</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;policy_</span><span class="si">{</span><span class="n">agent_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>  <span class="c1"># &lt;2&gt;</span>
-    <span class="p">},</span>
-<span class="p">})</span>
+        <span class="n">policy_mapping_fn</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">agent_id</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;policy_</span><span class="si">{</span><span class="n">agent_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>  <span class="c1"># &lt;2&gt;</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">trainer</span><span class="o">.</span><span class="n">train</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">algo</span><span class="o">.</span><span class="n">train</span><span class="p">())</span>
 <span class="c1"># end::multi_agent_mapping[]</span>
+</pre></div>
+<div id="cell-18" class="clipboard-copy-txt"># tag::multi_agent_simple[]
+from ray.rllib.algorithms.dqn import DQNConfig
 
+simple_trainer = DQNConfig().environment(env=MultiAgentMaze)
+simple_trainer.train()
+# end::multi_agent_simple[]
 
-<span class="c1"># tag::advanced_env_init[]</span>
+# tag::multi_agent_mapping[]
+algo = DQNConfig()\
+    .environment(env=MultiAgentMaze)\
+    .multi_agent(
+        policies={  # <1>
+            "policy_1": (
+                None, env.observation_space, env.action_space, {"gamma": 0.80}
+            ),
+            "policy_2": (
+                None, env.observation_space, env.action_space, {"gamma": 0.95}
+            ),
+        },
+        policy_mapping_fn = lambda agent_id: f"policy_{agent_id}",  # <2>
+    ).build()
+
+print(algo.train())
+# end::multi_agent_mapping[]</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-19">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::advanced_env_init[]</span>
 <span class="kn">from</span> <span class="nn">gym.spaces</span> <span class="kn">import</span> <span class="n">Discrete</span>
 <span class="kn">import</span> <span class="nn">random</span>
 <span class="kn">import</span> <span class="nn">os</span>
@@ -1461,271 +2206,8 @@ class Env:
         <span class="n">grid</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">seeker</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="bp">self</span><span class="o">.</span><span class="n">seeker</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="s1">&#39;|S&#39;</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">grid_row</span><span class="p">)</span> <span class="k">for</span> <span class="n">grid_row</span> <span class="ow">in</span> <span class="n">grid</span><span class="p">]))</span>
 <span class="c1"># end::advanced_env_rest[]</span>
-
-
-<span class="c1"># tag::task_settable[]</span>
-<span class="kn">from</span> <span class="nn">ray.rllib.env.apis.task_settable_env</span> <span class="kn">import</span> <span class="n">TaskSettableEnv</span>
-
-
-<span class="k">class</span> <span class="nc">CurriculumEnv</span><span class="p">(</span><span class="n">AdvancedEnv</span><span class="p">,</span> <span class="n">TaskSettableEnv</span><span class="p">):</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="n">AdvancedEnv</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">difficulty</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># &lt;1&gt;</span>
-        <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">seeker</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">goal</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">+</span> <span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">seeker</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">goal</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-
-    <span class="k">def</span> <span class="nf">get_task</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># &lt;2&gt;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">difficulty</span><span class="p">()</span>
-
-    <span class="k">def</span> <span class="nf">set_task</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task_difficulty</span><span class="p">):</span>  <span class="c1"># &lt;3&gt;</span>
-        <span class="k">while</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">difficulty</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="n">task_difficulty</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
-<span class="c1"># end::task_settable[]</span>
-
-<span class="c1"># tag::curriculum_fn[]</span>
-<span class="k">def</span> <span class="nf">curriculum_fn</span><span class="p">(</span><span class="n">train_results</span><span class="p">,</span> <span class="n">task_settable_env</span><span class="p">,</span> <span class="n">env_ctx</span><span class="p">):</span>
-    <span class="n">time_steps</span> <span class="o">=</span> <span class="n">train_results</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;timesteps_total&quot;</span><span class="p">)</span>
-    <span class="n">difficulty</span> <span class="o">=</span> <span class="n">time_steps</span> <span class="o">//</span> <span class="mi">1000</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Current difficulty: </span><span class="si">{</span><span class="n">difficulty</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">difficulty</span>
-<span class="c1"># end::curriculum_fn[]</span>
-
-<span class="c1"># TODO use os independent temp dirs here</span>
-<span class="c1"># tag::curriculum_trainer[]</span>
-<span class="n">config</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;env&quot;</span><span class="p">:</span> <span class="n">CurriculumEnv</span><span class="p">,</span>
-    <span class="s2">&quot;env_task_fn&quot;</span><span class="p">:</span> <span class="n">curriculum_fn</span><span class="p">,</span>
-    <span class="s2">&quot;output&quot;</span><span class="p">:</span> <span class="s2">&quot;/tmp/env-out&quot;</span><span class="p">,</span>
-<span class="p">}</span>
-
-<span class="kn">from</span> <span class="nn">ray.rllib.agents.dqn</span> <span class="kn">import</span> <span class="n">DQNTrainer</span>
-
-<span class="n">trainer</span> <span class="o">=</span> <span class="n">DQNTrainer</span><span class="p">(</span><span class="n">env</span><span class="o">=</span><span class="n">CurriculumEnv</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">15</span><span class="p">):</span>
-    <span class="n">trainer</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
-<span class="c1"># end::curriculum_trainer[]</span>
-
-<span class="c1"># tag::input_config[]</span>
-<span class="n">input_config</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;input&quot;</span><span class="p">:</span> <span class="s2">&quot;/tmp/env-out&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;input_evaluation&quot;</span><span class="p">:</span> <span class="p">[],</span>
-    <span class="s2">&quot;explore&quot;</span><span class="p">:</span> <span class="kc">False</span>
-<span class="p">}</span>
-<span class="c1"># end::input_config[]</span>
-
-<span class="c1"># tag::input_trainer[]</span>
-<span class="n">imitation_trainer</span> <span class="o">=</span> <span class="n">DQNTrainer</span><span class="p">(</span><span class="n">env</span><span class="o">=</span><span class="n">AdvancedEnv</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">input_config</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-    <span class="n">imitation_trainer</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
-
-<span class="n">imitation_trainer</span><span class="o">.</span><span class="n">evaluate</span><span class="p">()</span>
-<span class="c1"># end::input_trainer[]</span>
 </pre></div>
-<div id="cell-2" class="clipboard-copy-txt"># tag::rllib_dqn_simple[]
-from ray.tune.logger import pretty_print
-from maze_gym_env import GymEnvironment
-from ray.rllib.agents.dqn import DQNTrainer
-
-trainer = DQNTrainer(env=GymEnvironment, config={"num_workers": 4})  # <1>
-
-config = trainer.get_config()  # <2>
-print(pretty_print(config))
-
-for i in range(10):
-    result = trainer.train()  # <3>
-
-print(pretty_print(result))  # <4>
-# end::rllib_dqn_simple[]
-
-# tag::rllib_simple_save[]
-checkpoint = trainer.save()  # <1>
-print(checkpoint)
-
-evaluation = trainer.evaluate(checkpoint)  # <2>
-print(pretty_print(evaluation))
-
-restored_trainer = DQNTrainer(env=GymEnvironment)
-restored_trainer.restore(checkpoint)  # <3>
-# end::rllib_simple_save[]
-
-# TODO: if I pretty print in the loop above, the "evaluation" has only NaNs.
-
-# tag::rllib_manual_rollout[]
-env = GymEnvironment()
-done = False
-total_reward = 0
-observations = env.reset()
-
-while not done:
-    action = trainer.compute_single_action(observations)  # <1>
-    observations, reward, done, info = env.step(action)
-    total_reward += reward
-# end::rllib_manual_rollout[]
-
-# tag::rllib_actions[]
-action = trainer.compute_actions({"obs_1": observations, "obs_2": observations})
-print(action)
-# {'obs_1': 0, 'obs_2': 1}
-# end::rllib_actions[]
-
-# tag::rllib_policy[]
-policy = trainer.get_policy()
-print(policy.get_weights())
-
-model = policy.model
-# end::rllib_policy[]
-
-# tag::rllib_workers[]
-workers = trainer.workers
-workers.foreach_worker(
-    lambda remote_trainer: remote_trainer.get_policy().get_weights()
-)
-# end::rllib_workers[]
-
-# tag::rllib_q_network[]
-model.base_model.summary()
-
-# end::rllib_q_network[]
-
-# tag::rllib_model_output[]
-from ray.rllib.models.preprocessors import get_preprocessor
-env = GymEnvironment()
-obs_space = env.observation_space
-preprocessor = get_preprocessor(obs_space)(obs_space)  # <1>
-
-observations = env.reset()
-transformed = preprocessor.transform(observations).reshape(1, -1)  # <2>
-
-model_output, _ = model.from_batch({"obs": transformed})  # <3>
-# end::rllib_model_output[]
-
-# tag::rllib_q_values_action_dist[]
-q_values = model.get_q_value_distributions(model_output)  # <1>
-print(q_values)
-
-action_distribution = policy.dist_class(model_output, model)  # <2>
-sample = action_distribution.sample()  # <3>
-print(sample)
-# end::rllib_q_values_action_dist[]
-
-# model.get_state_value(model_output)
-
-# tag::multi_agent_init[]
-from ray.rllib.env.multi_agent_env import MultiAgentEnv
-from gym.spaces import Discrete
-import os
-
-
-class MultiAgentMaze(MultiAgentEnv):
-
-    agents = {1: (4, 0), 2: (0, 4)}  # <1>
-    goal = (4, 4)
-    info = {1: {'obs': agents[1]}, 2: {'obs': agents[2]}}  # <2>
-
-    def __init__(self,  *args, **kwargs):  # <3>
-        self.action_space = Discrete(4)
-        self.observation_space = Discrete(5*5)
-
-    def reset(self):
-        self.agents = {1: (4, 0), 2: (0, 4)}
-
-        return {1: self.get_observation(1), 2: self.get_observation(2)}  # <4>
-# end::multi_agent_init[]
-
-# tag::multi_agent_helpers[]
-    def get_observation(self, agent_id):  # <2>
-        seeker = self.agents[agent_id]
-        return 5 * seeker[0] + seeker[1]
-
-    def get_reward(self, agent_id):
-        return 1 if self.agents[agent_id] == self.goal else 0
-
-    def is_done(self, agent_id):
-        return self.agents[agent_id] == self.goal
-# end::multi_agent_helpers[]
-
-# tag::multi_agent_step[]
-    def step(self, action):  # <1>
-        agent_ids = action.keys()
-
-        for agent_id in agent_ids:
-            seeker = self.agents[agent_id]
-            if action[agent_id] == 0:  # move down
-                seeker = (min(seeker[0] + 1, 4), seeker[1])
-            elif action[agent_id] == 1:  # move left
-                seeker = (seeker[0], max(seeker[1] - 1, 0))
-            elif action[agent_id] == 2:  # move up
-                seeker = (max(seeker[0] - 1, 0), seeker[1])
-            elif action[agent_id] == 3:  # move right
-                seeker = (seeker[0], min(seeker[1] + 1, 4))
-            else:
-                raise ValueError("Invalid action")
-            self.agents[agent_id] = seeker  # <2>
-
-        observations = {i: self.get_observation(i) for i in agent_ids}  # <3>
-        rewards = {i: self.get_reward(i) for i in agent_ids}
-        done = {i: self.is_done(i) for i in agent_ids}
-
-        done["__all__"] = all(done.values())  # <4>
-
-        return observations, rewards, done, self.info
-# end::multi_agent_step[]
-
-# tag::multi_agent_render[]
-    def render(self, *args, **kwargs):
-        os.system('cls' if os.name == 'nt' else 'clear')
-        grid = [['| ' for _ in range(5)] + ["|\n"] for _ in range(5)]
-        grid[self.goal[0]][self.goal[1]] = '|G'
-        grid[self.agents[1][0]][self.agents[1][1]] = '|1'
-        grid[self.agents[2][0]][self.agents[2][1]] = '|2'
-        print(''.join([''.join(grid_row) for grid_row in grid]))
-# end::multi_agent_render[]
-
-
-# tag::multi_agent_run[]
-import time
-
-env = MultiAgentMaze()
-
-while True:
-    obs, rew, done, info = env.step(
-        {1: env.action_space.sample(), 2: env.action_space.sample()}
-    )
-    time.sleep(0.1)
-    env.render()
-    if any(done.values()):
-        break
-# end::multi_agent_run[]
-
-# tag::multi_agent_simple[]
-from ray.rllib.agents.dqn import DQNTrainer
-
-simple_trainer = DQNTrainer(env=MultiAgentMaze)
-simple_trainer.train()
-# end::multi_agent_simple[]
-
-# tag::multi_agent_mapping[]
-trainer = DQNTrainer(env=MultiAgentMaze, config={
-    "multiagent": {
-        "policies": {  # <1>
-            "policy_1": (
-                None, env.observation_space, env.action_space, {"gamma": 0.80}
-            ),
-            "policy_2": (
-                None, env.observation_space, env.action_space, {"gamma": 0.95}
-            ),
-        },
-        "policy_mapping_fn": lambda agent_id: f"policy_{agent_id}",  # <2>
-    },
-})
-
-print(trainer.train())
-# end::multi_agent_mapping[]
-
-
-# tag::advanced_env_init[]
+<div id="cell-19" class="clipboard-copy-txt"># tag::advanced_env_init[]
 from gym.spaces import Discrete
 import random
 import os
@@ -1784,10 +2266,57 @@ class AdvancedEnv(GymEnvironment):
         grid[self.goal[0]][self.goal[1]] = '|G'
         grid[self.seeker[0]][self.seeker[1]] = '|S'
         print(''.join([''.join(grid_row) for grid_row in grid]))
-# end::advanced_env_rest[]
+# end::advanced_env_rest[]</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-20">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::task_settable[]</span>
+<span class="kn">from</span> <span class="nn">ray.rllib.env.apis.task_settable_env</span> <span class="kn">import</span> <span class="n">TaskSettableEnv</span>
 
 
-# tag::task_settable[]
+<span class="k">class</span> <span class="nc">CurriculumEnv</span><span class="p">(</span><span class="n">AdvancedEnv</span><span class="p">,</span> <span class="n">TaskSettableEnv</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">AdvancedEnv</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">difficulty</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># &lt;1&gt;</span>
+        <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">seeker</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">goal</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">+</span> \
+               <span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">seeker</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">goal</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+    <span class="k">def</span> <span class="nf">get_task</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># &lt;2&gt;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">difficulty</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">set_task</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task_difficulty</span><span class="p">):</span>  <span class="c1"># &lt;3&gt;</span>
+        <span class="k">while</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">difficulty</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="n">task_difficulty</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+<span class="c1"># end::task_settable[]</span>
+</pre></div>
+<div id="cell-20" class="clipboard-copy-txt"># tag::task_settable[]
 from ray.rllib.env.apis.task_settable_env import TaskSettableEnv
 
 
@@ -1797,7 +2326,8 @@ class CurriculumEnv(AdvancedEnv, TaskSettableEnv):
         AdvancedEnv.__init__(self)
 
     def difficulty(self):  # <1>
-        return abs(self.seeker[0] - self.goal[0]) + abs(self.seeker[1] - self.goal[1])
+        return abs(self.seeker[0] - self.goal[0]) + \
+               abs(self.seeker[1] - self.goal[1])
 
     def get_task(self):  # <2>
         return self.difficulty()
@@ -1805,46 +2335,167 @@ class CurriculumEnv(AdvancedEnv, TaskSettableEnv):
     def set_task(self, task_difficulty):  # <3>
         while not self.difficulty() <= task_difficulty:
             self.reset()
-# end::task_settable[]
+# end::task_settable[]</div>
+    
+        </div>
+    </div>
 
-# tag::curriculum_fn[]
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-21">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::curriculum_fn[]</span>
+<span class="k">def</span> <span class="nf">curriculum_fn</span><span class="p">(</span><span class="n">train_results</span><span class="p">,</span> <span class="n">task_settable_env</span><span class="p">,</span> <span class="n">env_ctx</span><span class="p">):</span>
+    <span class="n">time_steps</span> <span class="o">=</span> <span class="n">train_results</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;timesteps_total&quot;</span><span class="p">)</span>
+    <span class="n">difficulty</span> <span class="o">=</span> <span class="n">time_steps</span> <span class="o">//</span> <span class="mi">1000</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Current difficulty: </span><span class="si">{</span><span class="n">difficulty</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">difficulty</span>
+<span class="c1"># end::curriculum_fn[]</span>
+</pre></div>
+<div id="cell-21" class="clipboard-copy-txt"># tag::curriculum_fn[]
 def curriculum_fn(train_results, task_settable_env, env_ctx):
     time_steps = train_results.get("timesteps_total")
     difficulty = time_steps // 1000
     print(f"Current difficulty: {difficulty}")
     return difficulty
-# end::curriculum_fn[]
+# end::curriculum_fn[]</div>
+    
+        </div>
+    </div>
 
-# TODO use os independent temp dirs here
-# tag::curriculum_trainer[]
-config = {
-    "env": CurriculumEnv,
-    "env_task_fn": curriculum_fn,
-    "output": "/tmp/env-out",
-}
+</div>
+</div>
 
-from ray.rllib.agents.dqn import DQNTrainer
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-22">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::curriculum_trainer[]</span>
+<span class="kn">from</span> <span class="nn">ray.rllib.algorithms.dqn</span> <span class="kn">import</span> <span class="n">DQNConfig</span>
+<span class="kn">import</span> <span class="nn">tempfile</span>
 
-trainer = DQNTrainer(env=CurriculumEnv, config=config)
+
+<span class="n">temp</span> <span class="o">=</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">mkdtemp</span><span class="p">()</span>  <span class="c1"># &lt;1&gt;</span>
+
+<span class="n">trainer</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">DQNConfig</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">environment</span><span class="p">(</span><span class="n">env</span><span class="o">=</span><span class="n">CurriculumEnv</span><span class="p">,</span> <span class="n">env_task_fn</span><span class="o">=</span><span class="n">curriculum_fn</span><span class="p">)</span>  <span class="c1"># &lt;2&gt;</span>
+    <span class="o">.</span><span class="n">offline_data</span><span class="p">(</span><span class="n">output</span><span class="o">=</span><span class="n">temp</span><span class="p">)</span>  <span class="c1"># &lt;3&gt;</span>
+    <span class="o">.</span><span class="n">build</span><span class="p">()</span>
+<span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">15</span><span class="p">):</span>
+    <span class="n">trainer</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+<span class="c1"># end::curriculum_trainer[]</span>
+</pre></div>
+<div id="cell-22" class="clipboard-copy-txt"># tag::curriculum_trainer[]
+from ray.rllib.algorithms.dqn import DQNConfig
+import tempfile
+
+
+temp = tempfile.mkdtemp()  # <1>
+
+trainer = (
+    DQNConfig()
+    .environment(env=CurriculumEnv, env_task_fn=curriculum_fn)  # <2>
+    .offline_data(output=temp)  # <3>
+    .build()
+)
 
 for i in range(15):
     trainer.train()
-# end::curriculum_trainer[]
+# end::curriculum_trainer[]</div>
+    
+        </div>
+    </div>
 
-# tag::input_config[]
-input_config = {
-    "input": "/tmp/env-out",
-    "input_evaluation": [],
-    "explore": False
-}
-# end::input_config[]
+</div>
+</div>
 
-# tag::input_trainer[]
-imitation_trainer = DQNTrainer(env=AdvancedEnv, config=input_config)
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-23">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::input_trainer[]</span>
+<span class="n">imitation_algo</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">DQNConfig</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">environment</span><span class="p">(</span><span class="n">env</span><span class="o">=</span><span class="n">AdvancedEnv</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">offline_data</span><span class="p">(</span><span class="n">input_</span><span class="o">=</span><span class="n">temp</span><span class="p">,</span> <span class="n">input_evaluation</span><span class="o">=</span><span class="p">[])</span>
+    <span class="o">.</span><span class="n">exploration</span><span class="p">(</span><span class="n">explore</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">build</span><span class="p">())</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">imitation_algo</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+
+<span class="n">imitation_algo</span><span class="o">.</span><span class="n">evaluate</span><span class="p">()</span>
+<span class="c1"># end::input_trainer[]</span>
+</pre></div>
+<div id="cell-23" class="clipboard-copy-txt"># tag::input_trainer[]
+imitation_algo = (
+    DQNConfig()
+    .environment(env=AdvancedEnv)
+    .offline_data(input_=temp, input_evaluation=[])
+    .exploration(explore=False)
+    .build())
+
 for i in range(10):
-    imitation_trainer.train()
+    imitation_algo.train()
 
-imitation_trainer.evaluate()
+imitation_algo.evaluate()
 # end::input_trainer[]</div>
     
         </div>
@@ -1898,13 +2549,13 @@ imitation_trainer.evaluate()
       
       
         
-        <a href="../ch_05_tune/" class="md-footer__link md-footer__link--next" aria-label="Next: Hyperparameter Optimization with Ray Tune" rel="next">
+        <a href="../ch_05_tune/" class="md-footer__link md-footer__link--next" aria-label="Next: Chapter 5: Hyperparameter Optimization with Ray Tune" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Hyperparameter Optimization with Ray Tune
+              Chapter 5: Hyperparameter Optimization with Ray Tune
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -1965,7 +2616,7 @@ imitation_trainer.evaluate()
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate", "navigation.tracking", "navigation.instant", "navigation.expand", "navigation.sections", "navigation.top", "navigation.indexes"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate", "navigation.tracking", "navigation.instant", "navigation.expand", "navigation.sections", "navigation.top", "navigation.indexes"], "search": "../assets/javascripts/workers/search.fcfe8b6d.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": null}</script>
     
     
 
