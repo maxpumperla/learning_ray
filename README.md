@@ -18,7 +18,7 @@ Here's what you can expect from each chapter.
   Walks you through the foundations of the Ray project, namely its low-level API.
   It also discussed how Ray Tasks and Actors naturally extend from Python functions and classes.
   You also learn about all of Ray's system components and how they work together.
-* [_Chapter 3, Building Your First Distributed Application with Ray Core_](https://github.com/maxpumperla/learning_ray/blob/main/notebooks/ch_03_core_app.ipynb)
+_* [_Chapter 3, Building Your First Distributed Application with Ray Core_](https://github.com/maxpumperla/learning_ray/blob/main/notebooks/ch_03_core_app.ipynb)
   Gives you an introduction to distributed systems and what makes them hard.
   We'll then build a first application together and discuss how to peak behind the scenes
   and get insights from the Ray toolbox.
@@ -49,4 +49,4 @@ Here's what you can expect from each chapter.
   third party integrations for model training or accessing custom data sources.
 * [_Chapter 11, Ray's Ecosystem and Beyond_](https://github.com/maxpumperla/learning_ray/blob/main/notebooks/ch_11_ecosystem.ipynb)
   Gives you an overview of the many interesting extensions and
-  integrations that Ray has attracted over the years. 
+  integrations that Ray has attracted over the years._ 

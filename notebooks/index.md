@@ -1,4 +1,4 @@
-# Learning Ray - Flexible Distributed Python for Data Science
+# Learning Ray - Flexible Distributed Python for Machine Learning
 
 Jupyter notebooks and other resources for the upcoming book "Learning Ray" (O'Reilly).
 
@@ -29,15 +29,15 @@ Here's what you can expect from each chapter.
 * [_Chapter 5, Hyperparameter Optimization with Ray Tune_](./ch_05_tune)
   Covers why efficiently tuning hyperparameters is hard, how Ray Tune works conceptually,
   and how you can use it in practice for your machine learning projects.
-* [_Chapter 6, Distributed Training with Ray Train_](./ch_06_train)
-  Provides you with the basics of distributed model training and shows you how to use
-  RaySGD with popular frameworks such as TensorFlow or PyTorch, and how to combine it
-  with Ray Tune for hyperparameter optimization.
-* [_Chapter 7, Data Processing with Ray_](./ch_07_data_processing)
+* [_Chapter 6, Data Processing with Ray_](./ch_06_data_processing)
   Introduces you to the Dataset abstraction of Ray and how it fits into the landscape
   of other data structures. You will also learn how to bring pandas data frames, Dask
   data structures and Apache Spark workloads to Ray.
-* [_Chapter 8, Serving Models with Ray Serve_](./ch_08_model_serving)
+* [_Chapter 7, Distributed Training with Ray Train_](./ch_07_train)
+  Provides you with the basics of distributed model training and shows you how to use
+  RaySGD with popular frameworks such as TensorFlow or PyTorch, and how to combine it
+  with Ray Tune for hyperparameter optimization.
+* [_Chapter 9, Serving Models with Ray Serve_](./ch_08_model_serving)
   Introduces you to model serving with Ray, why it works well within the framework,
   and how to do single-node and cluster deployment with it.
 * [_Chapter 9, Working with Ray Clusters_](./ch_09_script)
