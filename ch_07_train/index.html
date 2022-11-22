@@ -1686,7 +1686,8 @@ batch_predictor.predict_pipelined(ds, blocks_per_window=10)
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::training_func_setup[]</span>
 <span class="kn">import</span> <span class="nn">torch</span>
 <span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
-<span class="kn">from</span> <span class="nn">ray.data</span> <span class="kn">import</span> <span class="n">read_datasource</span><span class="p">,</span> <span class="n">datasource</span>
+<span class="kn">import</span> <span class="nn">torch.nn.functional</span> <span class="k">as</span> <span class="nn">F</span>
+<span class="kn">from</span> <span class="nn">ray.data</span> <span class="kn">import</span> <span class="n">from_torch</span>
 
 <span class="n">num_samples</span> <span class="o">=</span> <span class="mi">20</span>
 <span class="n">input_size</span> <span class="o">=</span> <span class="mi">10</span>
@@ -1703,7 +1704,7 @@ batch_predictor.predict_pipelined(ds, blocks_per_window=10)
         <span class="bp">self</span><span class="o">.</span><span class="n">fc2</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">layer_size</span><span class="p">,</span> <span class="n">output_size</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
-        <span class="n">x</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">f12</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fc1</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
         <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fc2</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">x</span>
 
@@ -1714,9 +1715,7 @@ batch_predictor.predict_pipelined(ds, blocks_per_window=10)
 
 <span class="n">input_data</span> <span class="o">=</span> <span class="n">train_data</span><span class="p">()</span>
 <span class="n">label_data</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">num_samples</span><span class="p">,</span> <span class="n">output_size</span><span class="p">)</span>
-
-<span class="n">source</span> <span class="o">=</span> <span class="n">datasource</span><span class="o">.</span><span class="n">SimpleTorchDatasource</span><span class="p">()</span>  <span class="c1"># &lt;2&gt;</span>
-<span class="n">train_dataset</span> <span class="o">=</span> <span class="n">read_datasource</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">dataset_factory</span><span class="o">=</span><span class="n">train_data</span><span class="p">)</span>
+<span class="n">train_dataset</span> <span class="o">=</span> <span class="n">from_torch</span><span class="p">(</span><span class="n">input_data</span><span class="p">)</span>  <span class="c1"># &lt;2&gt;</span>
 
 
 <span class="k">def</span> <span class="nf">train_one_epoch</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">loss_fn</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">):</span>  <span class="c1"># &lt;3&gt;</span>
@@ -1738,7 +1737,8 @@ batch_predictor.predict_pipelined(ds, blocks_per_window=10)
 <div id="cell-8" class="clipboard-copy-txt"># tag::training_func_setup[]
 import torch
 import torch.nn as nn
-from ray.data import read_datasource, datasource
+import torch.nn.functional as F
+from ray.data import from_torch
 
 num_samples = 20
 input_size = 10
@@ -1755,7 +1755,7 @@ class NeuralNetwork(nn.Module):
         self.fc2 = nn.Linear(layer_size, output_size)
 
     def forward(self, x):
-        x = F.relu(self.f12(x))
+        x = F.relu(self.fc1(x))
         x = self.fc2(x)
         return x
 
@@ -1766,9 +1766,7 @@ def train_data():
 
 input_data = train_data()
 label_data = torch.randn(num_samples, output_size)
-
-source = datasource.SimpleTorchDatasource()  # <2>
-train_dataset = read_datasource(source, dataset_factory=train_data)
+train_dataset = from_torch(input_data)  # <2>
 
 
 def train_one_epoch(model, loss_fn, optimizer):  # <3>
@@ -1825,15 +1823,7 @@ def training_loop():  # <4>
     <span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_epochs</span><span class="p">):</span>
         <span class="n">train_one_epoch</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">loss_fn</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">)</span>
-
 <span class="c1"># end::dist_func_setup[]</span>
-
-
-<span class="c1"># TODO: this code previously didn&#39;t work. we need to provide a &quot;dataset&quot; argument here.</span>
-<span class="c1"># Notet that this is also wrong in the current docs, which state that this is possible.</span>
-<span class="c1"># TODO running this results in: Result dict has no key: training_iteration.</span>
-<span class="c1">#  checkpoint_score_attr must be set to a key in the result dict.</span>
-<span class="c1">#  Valid keys are: [&#39;trial_id&#39;, &#39;experiment_id&#39;, &#39;date&#39;, &#39;timestamp&#39;, &#39;pid&#39;, &#39;hostname&#39;, &#39;node_ip&#39;, &#39;config&#39;, &#39;done&#39;]</span>
 </pre></div>
 <div id="cell-9" class="clipboard-copy-txt"># tag::dist_func_setup[]
 from ray.train.torch import prepare_model
@@ -1846,15 +1836,7 @@ def distributed_training_loop():
     optimizer = torch.optim.SGD(model.parameters(), lr=0.1)
     for epoch in range(num_epochs):
         train_one_epoch(model, loss_fn, optimizer)
-
-# end::dist_func_setup[]
-
-
-# TODO: this code previously didn't work. we need to provide a "dataset" argument here.
-# Notet that this is also wrong in the current docs, which state that this is possible.
-# TODO running this results in: Result dict has no key: training_iteration.
-#  checkpoint_score_attr must be set to a key in the result dict.
-#  Valid keys are: ['trial_id', 'experiment_id', 'date', 'timestamp', 'pid', 'hostname', 'node_ip', 'config', 'done']</div>
+# end::dist_func_setup[]</div>
     
         </div>
     </div>
@@ -1945,15 +1927,19 @@ result = trainer.fit()
         </div>
         <div class="CodeMirror cm-s-jupyter">
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::ray_tune_integration_1[]</span>
+<span class="kn">import</span> <span class="nn">ray</span>
+
+<span class="kn">from</span> <span class="nn">ray.air.config</span> <span class="kn">import</span> <span class="n">ScalingConfig</span>
 <span class="kn">from</span> <span class="nn">ray</span> <span class="kn">import</span> <span class="n">tune</span>
 <span class="kn">from</span> <span class="nn">ray.data.preprocessors</span> <span class="kn">import</span> <span class="n">StandardScaler</span><span class="p">,</span> <span class="n">MinMaxScaler</span>
 
 
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">from_items</span><span class="p">(</span>
-    <span class="p">[{</span><span class="s2">&quot;X&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;Y&quot;</span><span class="p">:</span> <span class="mf">2.0</span><span class="p">},</span> <span class="p">{</span><span class="s2">&quot;X&quot;</span><span class="p">:</span> <span class="mf">4.0</span><span class="p">,</span> <span class="s2">&quot;Y&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">}]</span>
+    <span class="p">[{</span><span class="s2">&quot;X&quot;</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span> <span class="s2">&quot;Y&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)]</span> <span class="o">+</span>
+    <span class="p">[{</span><span class="s2">&quot;X&quot;</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span> <span class="s2">&quot;Y&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">)]</span>
 <span class="p">)</span>
-<span class="n">prep_v1</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;X&quot;</span><span class="p">,</span> <span class="s2">&quot;Y&quot;</span><span class="p">])</span>
-<span class="n">prep_v2</span> <span class="o">=</span> <span class="n">MinMaxScaler</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;X&quot;</span><span class="p">,</span> <span class="s2">&quot;Y&quot;</span><span class="p">])</span>
+<span class="n">prep_v1</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;X&quot;</span><span class="p">])</span>
+<span class="n">prep_v2</span> <span class="o">=</span> <span class="n">MinMaxScaler</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;X&quot;</span><span class="p">])</span>
 
 <span class="n">param_space</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;scaling_config&quot;</span><span class="p">:</span> <span class="n">ScalingConfig</span><span class="p">(</span>
@@ -1966,7 +1952,7 @@ result = trainer.fit()
     <span class="s2">&quot;preprocessor&quot;</span><span class="p">:</span> <span class="n">tune</span><span class="o">.</span><span class="n">grid_search</span><span class="p">([</span><span class="n">prep_v1</span><span class="p">,</span> <span class="n">prep_v2</span><span class="p">]),</span>
     <span class="s2">&quot;params&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;objective&quot;</span><span class="p">:</span> <span class="s2">&quot;binary:logistic&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;tree_method&quot;</span><span class="p">:</span> <span class="s2">&quot;approx&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;tree_method&quot;</span><span class="p">:</span> <span class="s2">&quot;hist&quot;</span><span class="p">,</span>
         <span class="s2">&quot;eval_metric&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;logloss&quot;</span><span class="p">,</span> <span class="s2">&quot;error&quot;</span><span class="p">],</span>
         <span class="s2">&quot;eta&quot;</span><span class="p">:</span> <span class="n">tune</span><span class="o">.</span><span class="n">loguniform</span><span class="p">(</span><span class="mf">1e-4</span><span class="p">,</span> <span class="mf">1e-1</span><span class="p">),</span>
         <span class="s2">&quot;subsample&quot;</span><span class="p">:</span> <span class="n">tune</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span>
@@ -1976,15 +1962,19 @@ result = trainer.fit()
 <span class="c1"># end::ray_tune_integration_1[]</span>
 </pre></div>
 <div id="cell-11" class="clipboard-copy-txt"># tag::ray_tune_integration_1[]
+import ray
+
+from ray.air.config import ScalingConfig
 from ray import tune
 from ray.data.preprocessors import StandardScaler, MinMaxScaler
 
 
 dataset = ray.data.from_items(
-    [{"X": 1.0, "Y": 2.0}, {"X": 4.0, "Y": 0.0}]
+    [{"X": x, "Y": 1} for x in range(0, 100)] +
+    [{"X": x, "Y": 0} for x in range(100, 200)]
 )
-prep_v1 = StandardScaler(columns=["X", "Y"])
-prep_v2 = MinMaxScaler(columns=["X", "Y"])
+prep_v1 = StandardScaler(columns=["X"])
+prep_v2 = MinMaxScaler(columns=["X"])
 
 param_space = {
     "scaling_config": ScalingConfig(
@@ -1997,7 +1987,7 @@ param_space = {
     "preprocessor": tune.grid_search([prep_v1, prep_v2]),
     "params": {
         "objective": "binary:logistic",
-        "tree_method": "approx",
+        "tree_method": "hist",
         "eval_metric": ["logloss", "error"],
         "eta": tune.loguniform(1e-4, 1e-1),
         "subsample": tune.uniform(0.5, 1.0),
@@ -2040,7 +2030,8 @@ param_space = {
 
 
 <span class="n">trainer</span> <span class="o">=</span> <span class="n">XGBoostTrainer</span><span class="p">(</span>
-    <span class="n">run_config</span><span class="o">=</span><span class="n">RunConfig</span><span class="p">(</span><span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+    <span class="n">params</span><span class="o">=</span><span class="p">{},</span>
+    <span class="n">run_config</span><span class="o">=</span><span class="n">RunConfig</span><span class="p">(</span><span class="n">verbose</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>
     <span class="n">preprocessor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">scaling_config</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">label_column</span><span class="o">=</span><span class="s2">&quot;Y&quot;</span><span class="p">,</span>
@@ -2062,7 +2053,8 @@ from ray.tune import Tuner
 
 
 trainer = XGBoostTrainer(
-    run_config=RunConfig(verbose=1),
+    params={},
+    run_config=RunConfig(verbose=2),
     preprocessor=None,
     scaling_config=None,
     label_column="Y",

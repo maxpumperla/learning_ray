@@ -1278,14 +1278,12 @@ refer to Ray's <a href="https://docs.ray.io/en/latest/ray-overview/installation.
         <span class="n">transforms</span><span class="o">.</span><span class="n">Normalize</span><span class="p">((</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">))</span>
     <span class="p">])</span>
 
-    <span class="k">def</span> <span class="nf">loader</span><span class="p">():</span>
-        <span class="k">return</span> <span class="n">datasets</span><span class="o">.</span><span class="n">CIFAR10</span><span class="p">(</span>  <span class="c1"># &lt;2&gt;</span>
-            <span class="n">root</span><span class="o">=</span><span class="s2">&quot;./data&quot;</span><span class="p">,</span>
-            <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-            <span class="n">train</span><span class="o">=</span><span class="n">train</span><span class="p">,</span>  <span class="c1"># &lt;3&gt;</span>
-            <span class="n">transform</span><span class="o">=</span><span class="n">transform</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">loader</span>
+    <span class="k">return</span> <span class="n">datasets</span><span class="o">.</span><span class="n">CIFAR10</span><span class="p">(</span>  <span class="c1"># &lt;2&gt;</span>
+        <span class="n">root</span><span class="o">=</span><span class="s2">&quot;./data&quot;</span><span class="p">,</span>
+        <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">train</span><span class="o">=</span><span class="n">train</span><span class="p">,</span>  <span class="c1"># &lt;3&gt;</span>
+        <span class="n">transform</span><span class="o">=</span><span class="n">transform</span>
+    <span class="p">)</span>
 <span class="c1"># end::load_cifar[]</span>
 </pre></div>
 <div id="cell-3" class="clipboard-copy-txt"># tag::load_cifar[]
@@ -1298,14 +1296,12 @@ def load_cifar(train: bool):
         transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
     ])
 
-    def loader():
-        return datasets.CIFAR10(  # <2>
-            root="./data",
-            download=True,
-            train=train,  # <3>
-            transform=transform)
-
-    return loader
+    return datasets.CIFAR10(  # <2>
+        root="./data",
+        download=True,
+        train=train,  # <3>
+        transform=transform
+    )
 # end::load_cifar[]</div>
     
         </div>
@@ -1336,21 +1332,19 @@ def load_cifar(train: bool):
         </div>
         <div class="CodeMirror cm-s-jupyter">
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::std[]</span>
-<span class="kn">from</span> <span class="nn">ray.data</span> <span class="kn">import</span> <span class="n">read_datasource</span><span class="p">,</span> <span class="n">datasource</span>
+<span class="kn">from</span> <span class="nn">ray.data</span> <span class="kn">import</span> <span class="n">from_torch</span>
 
 
-<span class="n">source</span> <span class="o">=</span> <span class="n">datasource</span><span class="o">.</span><span class="n">SimpleTorchDatasource</span><span class="p">()</span>  <span class="c1"># &lt;1&gt;</span>
-<span class="n">train_dataset</span> <span class="o">=</span> <span class="n">read_datasource</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">dataset_factory</span><span class="o">=</span><span class="n">load_cifar</span><span class="p">(</span><span class="n">train</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>  <span class="c1"># &lt;2&gt;</span>
-<span class="n">test_dataset</span> <span class="o">=</span> <span class="n">read_datasource</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">dataset_factory</span><span class="o">=</span><span class="n">load_cifar</span><span class="p">(</span><span class="n">train</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+<span class="n">train_dataset</span> <span class="o">=</span> <span class="n">from_torch</span><span class="p">(</span><span class="n">load_cifar</span><span class="p">(</span><span class="n">train</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+<span class="n">test_dataset</span> <span class="o">=</span> <span class="n">from_torch</span><span class="p">(</span><span class="n">load_cifar</span><span class="p">(</span><span class="n">train</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
 <span class="c1"># end::std[]</span>
 </pre></div>
 <div id="cell-4" class="clipboard-copy-txt"># tag::std[]
-from ray.data import read_datasource, datasource
+from ray.data import from_torch
 
 
-source = datasource.SimpleTorchDatasource()  # <1>
-train_dataset = read_datasource(source, dataset_factory=load_cifar(train=True))  # <2>
-test_dataset = read_datasource(source, dataset_factory=load_cifar(train=False))
+train_dataset = from_torch(load_cifar(train=True))
+test_dataset = from_torch(load_cifar(train=False))
 # end::std[]</div>
     
         </div>
@@ -1381,35 +1375,33 @@ test_dataset = read_datasource(source, dataset_factory=load_cifar(train=False))
         </div>
         <div class="CodeMirror cm-s-jupyter">
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::batch_conversion[]</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">from</span> <span class="nn">ray.data.extensions</span> <span class="kn">import</span> <span class="n">TensorArray</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 
-<span class="k">def</span> <span class="nf">convert_to_pandas</span><span class="p">(</span><span class="n">batch</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
-        <span class="s2">&quot;image&quot;</span><span class="p">:</span> <span class="n">TensorArray</span><span class="p">([</span><span class="n">image</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span> <span class="k">for</span> <span class="n">image</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">batch</span><span class="p">]),</span>  <span class="c1"># &lt;1&gt;</span>
-        <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">label</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">batch</span><span class="p">]</span>  <span class="c1"># &lt;2&gt;</span>
-    <span class="p">})</span>
+<span class="k">def</span> <span class="nf">to_labeled_image</span><span class="p">(</span><span class="n">batch</span><span class="p">):</span>  <span class="c1"># &lt;1&gt;</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s2">&quot;image&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">image</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span> <span class="k">for</span> <span class="n">image</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">batch</span><span class="p">]),</span>
+        <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">label</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">batch</span><span class="p">]),</span>
+    <span class="p">}</span>
 
 
-<span class="n">train_dataset</span> <span class="o">=</span> <span class="n">train_dataset</span><span class="o">.</span><span class="n">map_batches</span><span class="p">(</span><span class="n">convert_to_pandas</span><span class="p">)</span>  <span class="c1"># &lt;3&gt;</span>
-<span class="n">test_dataset</span> <span class="o">=</span> <span class="n">test_dataset</span><span class="o">.</span><span class="n">map_batches</span><span class="p">(</span><span class="n">convert_to_pandas</span><span class="p">)</span>
+<span class="n">train_dataset</span> <span class="o">=</span> <span class="n">train_dataset</span><span class="o">.</span><span class="n">map_batches</span><span class="p">(</span><span class="n">to_labeled_image</span><span class="p">)</span>  <span class="c1"># &lt;2&gt;</span>
+<span class="n">test_dataset</span> <span class="o">=</span> <span class="n">test_dataset</span><span class="o">.</span><span class="n">map_batches</span><span class="p">(</span><span class="n">to_labeled_image</span><span class="p">)</span>
 <span class="c1"># end::batch_conversion[]</span>
 </pre></div>
 <div id="cell-5" class="clipboard-copy-txt"># tag::batch_conversion[]
-import pandas as pd
-from ray.data.extensions import TensorArray
+import numpy as np
 
 
-def convert_to_pandas(batch):
-    return pd.DataFrame({
-        "image": TensorArray([image.numpy() for image, _ in batch]),  # <1>
-        "label": [label for _, label in batch]  # <2>
-    })
+def to_labeled_image(batch):  # <1>
+    return {
+        "image": np.array([image.numpy() for image, _ in batch]),
+        "label": np.array([label for _, label in batch]),
+    }
 
 
-train_dataset = train_dataset.map_batches(convert_to_pandas)  # <3>
-test_dataset = test_dataset.map_batches(convert_to_pandas)
+train_dataset = train_dataset.map_batches(to_labeled_image)  # <2>
+test_dataset = test_dataset.map_batches(to_labeled_image)
 # end::batch_conversion[]</div>
     
         </div>
@@ -1839,7 +1831,8 @@ trainer = JaxTrainer(
         <div class="CodeMirror cm-s-jupyter">
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::custom_tuner[]</span>
 <span class="kn">from</span> <span class="nn">ray.tune</span> <span class="kn">import</span> <span class="n">logger</span><span class="p">,</span> <span class="n">tuner</span>
-<span class="kn">from</span> <span class="nn">ray.air.config</span> <span class="kn">import</span> <span class="n">RunConfig</span><span class="p">,</span> <span class="n">ScalingConfig</span>
+<span class="kn">from</span> <span class="nn">ray.air.config</span> <span class="kn">import</span> <span class="n">RunConfig</span>
+
 
 <span class="k">class</span> <span class="nc">NeptuneCallback</span><span class="p">(</span><span class="n">logger</span><span class="o">.</span><span class="n">LoggerCallback</span><span class="p">):</span>
     <span class="k">pass</span>
@@ -1847,13 +1840,14 @@ trainer = JaxTrainer(
 
 <span class="n">tuner</span> <span class="o">=</span> <span class="n">tuner</span><span class="o">.</span><span class="n">Tuner</span><span class="p">(</span>
     <span class="n">trainer</span><span class="p">,</span>
-    <span class="n">run_config</span><span class="o">=</span><span class="n">RunConfig</span><span class="p">(</span><span class="n">callbacks</span><span class="o">=</span><span class="p">[</span><span class="n">NeptuneCallback</span><span class="p">(</span><span class="o">...</span><span class="p">)])</span>
+    <span class="n">run_config</span><span class="o">=</span><span class="n">RunConfig</span><span class="p">(</span><span class="n">callbacks</span><span class="o">=</span><span class="p">[</span><span class="n">NeptuneCallback</span><span class="p">()])</span>
 <span class="p">)</span>
 <span class="c1"># end::custom_tuner[]</span>
 </pre></div>
 <div id="cell-12" class="clipboard-copy-txt"># tag::custom_tuner[]
 from ray.tune import logger, tuner
-from ray.air.config import RunConfig, ScalingConfig
+from ray.air.config import RunConfig
+
 
 class NeptuneCallback(logger.LoggerCallback):
     pass
@@ -1861,7 +1855,7 @@ class NeptuneCallback(logger.LoggerCallback):
 
 tuner = tuner.Tuner(
     trainer,
-    run_config=RunConfig(callbacks=[NeptuneCallback(...)])
+    run_config=RunConfig(callbacks=[NeptuneCallback()])
 )
 # end::custom_tuner[]</div>
     

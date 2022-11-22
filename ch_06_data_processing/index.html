@@ -1363,36 +1363,34 @@ print(ds.count())
         </div>
         <div class="CodeMirror cm-s-jupyter">
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::ds_transform[]</span>
-<span class="c1"># Basic transformations: join two datasets, filter, and sort.</span>
 <span class="n">ds1</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
 <span class="n">ds2</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
-<span class="n">ds3</span> <span class="o">=</span> <span class="n">ds1</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">ds2</span><span class="p">)</span>
+<span class="n">ds3</span> <span class="o">=</span> <span class="n">ds1</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">ds2</span><span class="p">)</span>  <span class="c1"># &lt;1&gt;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ds3</span><span class="o">.</span><span class="n">count</span><span class="p">())</span>  <span class="c1"># -&gt; 20000</span>
 
 <span class="c1"># Filter the combined dataset to only the even elements.</span>
-<span class="n">ds3</span> <span class="o">=</span> <span class="n">ds3</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">ds3</span> <span class="o">=</span> <span class="n">ds3</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># &lt;2&gt;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ds3</span><span class="o">.</span><span class="n">count</span><span class="p">())</span>  <span class="c1"># -&gt; 10000</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ds3</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>  <span class="c1"># -&gt; [0, 2, 4, 6, 8]</span>
 
 <span class="c1"># Sort the filtered dataset.</span>
-<span class="n">ds3</span> <span class="o">=</span> <span class="n">ds3</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="n">ds3</span> <span class="o">=</span> <span class="n">ds3</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>  <span class="c1"># &lt;3&gt;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ds3</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>  <span class="c1"># -&gt; [0, 0, 2, 2, 4]</span>
 <span class="c1"># end::ds_transform[]</span>
 </pre></div>
 <div id="cell-5" class="clipboard-copy-txt"># tag::ds_transform[]
-# Basic transformations: join two datasets, filter, and sort.
 ds1 = ray.data.range(10000)
 ds2 = ray.data.range(10000)
-ds3 = ds1.union(ds2)
+ds3 = ds1.union(ds2)  # <1>
 print(ds3.count())  # -> 20000
 
 # Filter the combined dataset to only the even elements.
-ds3 = ds3.filter(lambda x: x % 2 == 0)
+ds3 = ds3.filter(lambda x: x % 2 == 0)  # <2>
 print(ds3.count())  # -> 10000
 print(ds3.take(5))  # -> [0, 2, 4, 6, 8]
 
 # Sort the filtered dataset.
-ds3 = ds3.sort()
+ds3 = ds3.sort()  # <3>
 print(ds3.take(5))  # -> [0, 0, 2, 2, 4]
 # end::ds_transform[]</div>
     
@@ -1706,18 +1704,20 @@ gpu_intensive_inference = lambda batch: batch</div>
         </div>
         <div class="CodeMirror cm-s-jupyter">
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::ds_pipeline_1[]</span>
-<span class="n">ds</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="s2">&quot;s3://my_bucket/input_data&quot;</span><span class="p">)</span>\
-        <span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">cpu_intensive_preprocessing</span><span class="p">)</span>\
-        <span class="o">.</span><span class="n">map_batches</span><span class="p">(</span><span class="n">gpu_intensive_inference</span><span class="p">,</span> <span class="n">compute</span><span class="o">=</span><span class="s2">&quot;actors&quot;</span><span class="p">,</span> <span class="n">num_gpus</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>\
-        <span class="o">.</span><span class="n">repartition</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="p">(</span><span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="s2">&quot;s3://my_bucket/input_data&quot;</span><span class="p">)</span>  <span class="c1"># &lt;1&gt;</span>
+      <span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">cpu_intensive_preprocessing</span><span class="p">)</span>  <span class="c1"># &lt;2&gt;</span>
+      <span class="o">.</span><span class="n">map_batches</span><span class="p">(</span><span class="n">gpu_intensive_inference</span><span class="p">,</span> <span class="n">compute</span><span class="o">=</span><span class="s2">&quot;actors&quot;</span><span class="p">,</span> <span class="n">num_gpus</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># &lt;3&gt;</span>
+      <span class="o">.</span><span class="n">repartition</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>  <span class="c1"># &lt;4&gt;</span>
+
 <span class="n">ds</span><span class="o">.</span><span class="n">write_parquet</span><span class="p">(</span><span class="s2">&quot;s3://my_bucket/output_predictions&quot;</span><span class="p">)</span>
 <span class="c1"># end::ds_pipeline_1[]</span>
 </pre></div>
 <div id="cell-12" class="clipboard-copy-txt"># tag::ds_pipeline_1[]
-ds = ray.data.read_parquet("s3://my_bucket/input_data")\
-        .map(cpu_intensive_preprocessing)\
-        .map_batches(gpu_intensive_inference, compute="actors", num_gpus=1)\
-        .repartition(10)
+ds = (ray.data.read_parquet("s3://my_bucket/input_data")  # <1>
+      .map(cpu_intensive_preprocessing)  # <2>
+      .map_batches(gpu_intensive_inference, compute="actors", num_gpus=1)  # <3>
+      .repartition(10))  # <4>
+
 ds.write_parquet("s3://my_bucket/output_predictions")
 # end::ds_pipeline_1[]</div>
     
@@ -1749,20 +1749,20 @@ ds.write_parquet("s3://my_bucket/output_predictions")
         </div>
         <div class="CodeMirror cm-s-jupyter">
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::ds_pipeline_2[]</span>
-<span class="n">ds</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="s2">&quot;s3://my_bucket/input_data&quot;</span><span class="p">)</span>\
-        <span class="o">.</span><span class="n">window</span><span class="p">(</span><span class="n">blocks_per_window</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>\
-        <span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">cpu_intensive_preprocessing</span><span class="p">)</span>\
-        <span class="o">.</span><span class="n">map_batches</span><span class="p">(</span><span class="n">gpu_intensive_inference</span><span class="p">,</span> <span class="n">compute</span><span class="o">=</span><span class="s2">&quot;actors&quot;</span><span class="p">,</span> <span class="n">num_gpus</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>\
-        <span class="o">.</span><span class="n">repartition</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="p">(</span><span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="s2">&quot;s3://my_bucket/input_data&quot;</span><span class="p">)</span>
+      <span class="o">.</span><span class="n">window</span><span class="p">(</span><span class="n">blocks_per_window</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+      <span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">cpu_intensive_preprocessing</span><span class="p">)</span>
+      <span class="o">.</span><span class="n">map_batches</span><span class="p">(</span><span class="n">gpu_intensive_inference</span><span class="p">,</span> <span class="n">compute</span><span class="o">=</span><span class="s2">&quot;actors&quot;</span><span class="p">,</span> <span class="n">num_gpus</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+      <span class="o">.</span><span class="n">repartition</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
 <span class="n">ds</span><span class="o">.</span><span class="n">write_parquet</span><span class="p">(</span><span class="s2">&quot;s3://my_bucket/output_predictions&quot;</span><span class="p">)</span>
 <span class="c1"># end::ds_pipeline_2[]</span>
 </pre></div>
 <div id="cell-13" class="clipboard-copy-txt"># tag::ds_pipeline_2[]
-ds = ray.data.read_parquet("s3://my_bucket/input_data")\
-        .window(blocks_per_window=5)\
-        .map(cpu_intensive_preprocessing)\
-        .map_batches(gpu_intensive_inference, compute="actors", num_gpus=1)\
-        .repartition(10)
+ds = (ray.data.read_parquet("s3://my_bucket/input_data")
+      .window(blocks_per_window=5)
+      .map(cpu_intensive_preprocessing)
+      .map_batches(gpu_intensive_inference, compute="actors", num_gpus=1)
+      .repartition(10))
 ds.write_parquet("s3://my_bucket/output_predictions")
 # end::ds_pipeline_2[]</div>
     
@@ -1911,11 +1911,11 @@ workers = [TrainingWorker.remote(alpha) for alpha in ALPHA_VALS]
 <span class="p">)</span>
 
 <span class="n">train_ds</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">from_items</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">)))</span>  <span class="c1"># &lt;2&gt;</span>
-<span class="n">shards</span> <span class="o">=</span> <span class="n">train_ds</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>\
-                 <span class="o">.</span><span class="n">random_shuffle_each_window</span><span class="p">()</span>\
-                 <span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">workers</span><span class="p">),</span> <span class="n">locality_hints</span><span class="o">=</span><span class="n">workers</span><span class="p">)</span>
+<span class="n">shards</span> <span class="o">=</span> <span class="p">(</span><span class="n">train_ds</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># &lt;3&gt;</span>
+          <span class="o">.</span><span class="n">random_shuffle_each_window</span><span class="p">()</span>  <span class="c1"># &lt;4&gt;</span>
+          <span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">workers</span><span class="p">),</span> <span class="n">locality_hints</span><span class="o">=</span><span class="n">workers</span><span class="p">))</span>  <span class="c1"># &lt;5&gt;</span>
 
-<span class="n">ray</span><span class="o">.</span><span class="n">get</span><span class="p">([</span><span class="n">worker</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">remote</span><span class="p">(</span><span class="n">shard</span><span class="p">)</span> <span class="k">for</span> <span class="n">worker</span><span class="p">,</span> <span class="n">shard</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">workers</span><span class="p">,</span> <span class="n">shards</span><span class="p">)])</span>  <span class="c1"># &lt;3&gt;</span>
+<span class="n">ray</span><span class="o">.</span><span class="n">get</span><span class="p">([</span><span class="n">worker</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">remote</span><span class="p">(</span><span class="n">shard</span><span class="p">)</span> <span class="k">for</span> <span class="n">worker</span><span class="p">,</span> <span class="n">shard</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">workers</span><span class="p">,</span> <span class="n">shards</span><span class="p">)])</span>  <span class="c1"># &lt;6&gt;</span>
 <span class="c1"># end::parallel_sgd_3[]</span>
 </pre></div>
 <div id="cell-16" class="clipboard-copy-txt"># tag::parallel_sgd_3[]
@@ -1924,11 +1924,11 @@ X_train, X_test, Y_train, Y_test = train_test_split(  # <1>
 )
 
 train_ds = ray.data.from_items(list(zip(X_train, Y_train)))  # <2>
-shards = train_ds.repeat(10)\
-                 .random_shuffle_each_window()\
-                 .split(len(workers), locality_hints=workers)
+shards = (train_ds.repeat(10)  # <3>
+          .random_shuffle_each_window()  # <4>
+          .split(len(workers), locality_hints=workers))  # <5>
 
-ray.get([worker.train.remote(shard) for worker, shard in zip(workers, shards)])  # <3>
+ray.get([worker.train.remote(shard) for worker, shard in zip(workers, shards)])  # <6>
 # end::parallel_sgd_3[]</div>
     
         </div>

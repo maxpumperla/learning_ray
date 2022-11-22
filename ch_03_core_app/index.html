@@ -1936,10 +1936,10 @@ class SimulationActor(Simulation):  # <2>
         <div class="CodeMirror cm-s-jupyter">
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::ray_training[]</span>
 <span class="nd">@ray</span><span class="o">.</span><span class="n">remote</span>
-<span class="k">def</span> <span class="nf">update_policy_task</span><span class="p">(</span><span class="n">policy_ref</span><span class="p">,</span> <span class="n">experiences_list</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">update_policy_task</span><span class="p">(</span><span class="n">policy</span><span class="p">,</span> <span class="n">experiences_list</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Remote Ray task for updating a policy with experiences in parallel.&quot;&quot;&quot;</span>
-    <span class="p">[</span><span class="n">update_policy</span><span class="p">(</span><span class="n">policy_ref</span><span class="p">,</span> <span class="n">ray</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">xp</span><span class="p">))</span> <span class="k">for</span> <span class="n">xp</span> <span class="ow">in</span> <span class="n">experiences_list</span><span class="p">]</span>  <span class="c1"># &lt;1&gt;</span>
-    <span class="k">return</span> <span class="n">policy_ref</span>
+    <span class="p">[</span><span class="n">update_policy</span><span class="p">(</span><span class="n">policy</span><span class="p">,</span> <span class="n">ray</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">xp</span><span class="p">))</span> <span class="k">for</span> <span class="n">xp</span> <span class="ow">in</span> <span class="n">experiences_list</span><span class="p">]</span>  <span class="c1"># &lt;1&gt;</span>
+    <span class="k">return</span> <span class="n">policy</span>
 
 
 <span class="k">def</span> <span class="nf">train_policy_parallel</span><span class="p">(</span><span class="n">num_episodes</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">num_simulations</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
@@ -1956,10 +1956,10 @@ class SimulationActor(Simulation):  # <2>
 </pre></div>
 <div id="cell-12" class="clipboard-copy-txt"># tag::ray_training[]
 @ray.remote
-def update_policy_task(policy_ref, experiences_list):
+def update_policy_task(policy, experiences_list):
     """Remote Ray task for updating a policy with experiences in parallel."""
-    [update_policy(policy_ref, ray.get(xp)) for xp in experiences_list]  # <1>
-    return policy_ref
+    [update_policy(policy, ray.get(xp)) for xp in experiences_list]  # <1>
+    return policy
 
 
 def train_policy_parallel(num_episodes=1000, num_simulations=4):

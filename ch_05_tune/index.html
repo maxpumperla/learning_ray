@@ -2031,9 +2031,6 @@ def objective(config):
 <span class="n">best</span> <span class="o">=</span> <span class="n">analysis</span><span class="o">.</span><span class="n">best_trial</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">pretty_print</span><span class="p">(</span><span class="n">best</span><span class="o">.</span><span class="n">last_result</span><span class="p">))</span>
 <span class="c1"># end::tune_metrics_2[]</span>
-
-
-<span class="c1"># TODO: don&#39;t make this hardcoded?</span>
 </pre></div>
 <div id="cell-15" class="clipboard-copy-txt"># tag::tune_metrics_2[]
 search_space = {"weight": tune.uniform(0, 1), "bias": tune.uniform(0, 1)}
@@ -2047,10 +2044,7 @@ analysis = tune.run(
 
 best = analysis.best_trial
 print(pretty_print(best.last_result))
-# end::tune_metrics_2[]
-
-
-# TODO: don't make this hardcoded?</div>
+# end::tune_metrics_2[]</div>
     
         </div>
     </div>

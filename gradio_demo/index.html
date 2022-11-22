@@ -1210,21 +1210,6 @@ import torch.nn.functional as F</div>
 </div>
 
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>TODO it complains about missing "model_definition", but only "model" exists.
-Also, we need to make clear that users know that "model" is required here and which
-format it expects.
-TODO note that one can provide preprocessors as well</p>
-
-</div>
-</div>
-</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
@@ -1246,9 +1231,11 @@ TODO note that one can provide preprocessors as well</p>
         </div>
         <div class="CodeMirror cm-s-jupyter">
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::load_checkpoint[]</span>
+<span class="c1"># gradio_demo.py</span>
 <span class="kn">from</span> <span class="nn">ray.train.torch</span> <span class="kn">import</span> <span class="n">TorchCheckpoint</span><span class="p">,</span> <span class="n">TorchPredictor</span>
 </pre></div>
 <div id="cell-3" class="clipboard-copy-txt"># tag::load_checkpoint[]
+# gradio_demo.py
 from ray.train.torch import TorchCheckpoint, TorchPredictor</div>
     
         </div>
@@ -1461,47 +1448,6 @@ import numpy as np</div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>demo.launch()</p>
-
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>TODO none of this ever properly fails if incorrectly configured
-import ray
-from ray import serve
-from ray.serve.gradio_integrations import GradioIngress</p>
-<p>import gradio as gr</p>
-<p>@serve.deployment
-class TorchClassifier:
-    def <strong>call</strong>(self, data):
-        return predict(data)</p>
-<p>app = TorchClassifier.bind()</p>
-<p>@serve.deployment
-class MyGradioServer(GradioIngress):
-    def <strong>init</strong>(self, deployment_1, deployment_2):
-        self.d1 = deployment_1
-        self.d2 = deployment_2</p>
-
-<pre><code>    io = gr.Interface(
-        fn=self.fan_out,
-        inputs=gr.Image(),
-        outputs="textbox",
-    )
-    super().__init__(io)
-
-def fan_out(self, array):
-    [result0, result1] = ray.get([self.d1.remote(array), self.d2.remote(array)])
-    return f"First model: {result0}, second model: {result1}"
-
-
-</code></pre>
-<p>app = MyGradioServer.bind(app, app)</p>
 
 </div>
 </div>
