@@ -22,13 +22,9 @@ class Net(nn.Module):
         x = self.fc3(x)
         return x
 
-# TODO it complains about missing "model_definition", but only "model" exists.
-# Also, we need to make clear that users know that "model" is required here and which
-# format it expects.
-# TODO note that one can provide preprocessors as well
-
 
 # tag::load_checkpoint[]
+# gradio_demo.py
 from ray.train.torch import TorchCheckpoint, TorchPredictor
 
 CHECKPOINT_PATH = "torch_checkpoint"
@@ -64,40 +60,3 @@ app = GradioServer.options(  # <3>
 # end::gradio[]
 
 # demo.launch()
-
-
-# TODO none of this ever properly fails if incorrectly configured
-# import ray
-# from ray import serve
-# from ray.serve.gradio_integrations import GradioIngress
-#
-# import gradio as gr
-#
-#
-# @serve.deployment
-# class TorchClassifier:
-#     def __call__(self, data):
-#         return predict(data)
-#
-# app = TorchClassifier.bind()
-#
-#
-# @serve.deployment
-# class MyGradioServer(GradioIngress):
-#     def __init__(self, deployment_1, deployment_2):
-#         self.d1 = deployment_1
-#         self.d2 = deployment_2
-#
-#         io = gr.Interface(
-#             fn=self.fan_out,
-#             inputs=gr.Image(),
-#             outputs="textbox",
-#         )
-#         super().__init__(io)
-#
-#     def fan_out(self, array):
-#         [result0, result1] = ray.get([self.d1.remote(array), self.d2.remote(array)])
-#         return f"First model: {result0}, second model: {result1}"
-#
-#
-# app = MyGradioServer.bind(app, app)

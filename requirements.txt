@@ -3,3 +3,4 @@ pymdown-extensions
 mkdocs-jupyter==0.18.2
 mkdocs-material==7.3.6
 mkdocs-material-extensions==1.0.3
+mdx-include==1.4.2
