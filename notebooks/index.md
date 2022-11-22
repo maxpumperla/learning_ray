@@ -2,13 +2,13 @@
 
 Jupyter notebooks and other resources for the upcoming book "Learning Ray" (O'Reilly).
 
+![Learning Ray](https://raw.githubusercontent.com/maxpumperla/learning_ray/main/notebooks/images/learning_ray.png)
+
 The book is organized to guide you chapter by chapter from core concepts of Ray to more sophisticated topics along the way.
 The first three chapters of the book teach the basics of Ray as a distributed Python framework with practical examples.
 Chapters four to ten introduce Ray's high-level libraries and show how to build applications with them.
 The last two chapters give you an overview of Ray's ecosystem and show you where to go next.
 Here's what you can expect from each chapter.
-
-![Ray Layers](https://raw.githubusercontent.com/maxpumperla/learning_ray/main/notebooks/images/chapter_01/ray_layers.png)
 
 * [_Chapter 1, An Overview of Ray_](./ch_01_overview)
   Introduces you at a high level to all of Ray's components, how it can be used in
