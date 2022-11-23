@@ -1742,7 +1742,7 @@ serve.shutdown()  # <2>
     <span class="n">run_config</span><span class="o">=</span><span class="n">RunConfig</span><span class="p">(</span><span class="n">stop</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;training_iteration&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">}),</span>
     <span class="n">scaling_config</span><span class="o">=</span><span class="n">ScalingConfig</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">use_gpu</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
     <span class="n">algorithm</span><span class="o">=</span><span class="s2">&quot;PPO&quot;</span><span class="p">,</span>
-    <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;env&quot;</span><span class="p">:</span> <span class="s2">&quot;CartPole-v0&quot;</span><span class="p">},</span>
+    <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;env&quot;</span><span class="p">:</span> <span class="s2">&quot;CartPole-v1&quot;</span><span class="p">},</span>
 <span class="p">)</span>
 
 <span class="n">tuner</span> <span class="o">=</span> <span class="n">Tuner</span><span class="p">(</span>  <span class="c1"># &lt;2&gt;</span>
@@ -1763,7 +1763,7 @@ trainer = RLTrainer(  # <1>
     run_config=RunConfig(stop={"training_iteration": 5}),
     scaling_config=ScalingConfig(num_workers=2, use_gpu=False),
     algorithm="PPO",
-    config={"env": "CartPole-v0"},
+    config={"env": "CartPole-v1"},
 )
 
 tuner = Tuner(  # <2>

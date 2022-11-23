@@ -2076,7 +2076,7 @@ print(pretty_print(best.last_result))
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::tune_resume[]</span>
 <span class="n">analysis</span> <span class="o">=</span> <span class="n">tune</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
     <span class="n">objective</span><span class="p">,</span>
-    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;/Users/maxpumperla/ray_results/objective_2022-05-23_15-52-01&quot;</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;&lt;your-logdir&gt;&quot;</span><span class="p">,</span>
     <span class="n">resume</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">config</span><span class="o">=</span><span class="n">search_space</span><span class="p">)</span>
 <span class="c1"># end::tune_resume[]</span>
@@ -2084,7 +2084,7 @@ print(pretty_print(best.last_result))
 <div id="cell-16" class="clipboard-copy-txt"># tag::tune_resume[]
 analysis = tune.run(
     objective,
-    name="/Users/maxpumperla/ray_results/objective_2022-05-23_15-52-01",
+    name="<your-logdir>",
     resume=True,
     config=search_space)
 # end::tune_resume[]</div>
