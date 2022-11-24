@@ -1429,19 +1429,19 @@ def retrieve_task(item):
         <div class="CodeMirror cm-s-jupyter">
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::duration_remote[]</span>
 <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-<span class="n">data_references</span> <span class="o">=</span> <span class="p">[</span>  <span class="c1"># &lt;1&gt;</span>
+<span class="n">object_references</span> <span class="o">=</span> <span class="p">[</span>  <span class="c1"># &lt;1&gt;</span>
     <span class="n">retrieve_task</span><span class="o">.</span><span class="n">remote</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
 <span class="p">]</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">data_references</span><span class="p">)</span>  <span class="c1"># &lt;2&gt;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">object_references</span><span class="p">)</span>  <span class="c1"># &lt;2&gt;</span>
 <span class="n">print_runtime</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">start</span><span class="p">)</span>
 <span class="c1"># end::duration_remote[]</span>
 </pre></div>
 <div id="cell-6" class="clipboard-copy-txt"># tag::duration_remote[]
 start = time.time()
-data_references = [  # <1>
+object_references = [  # <1>
     retrieve_task.remote(item) for item in range(8)
 ]
-data = ray.get(data_references)  # <2>
+data = ray.get(object_references)  # <2>
 print_runtime(data, start)
 # end::duration_remote[]</div>
     
@@ -1473,25 +1473,23 @@ print_runtime(data, start)
         </div>
         <div class="CodeMirror cm-s-jupyter">
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::object_store[]</span>
-<span class="n">database_object_ref</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">database</span><span class="p">)</span>  <span class="c1"># &lt;1&gt;</span>
+<span class="n">db_object_ref</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">database</span><span class="p">)</span>  <span class="c1"># &lt;1&gt;</span>
 
 
 <span class="nd">@ray</span><span class="o">.</span><span class="n">remote</span>
-<span class="k">def</span> <span class="nf">retrieve_task</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
-    <span class="n">obj_store_data</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">database_object_ref</span><span class="p">)</span>  <span class="c1"># &lt;2&gt;</span>
+<span class="k">def</span> <span class="nf">retrieve_task</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">db</span><span class="p">):</span>  <span class="c1"># &lt;2&gt;</span>
     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">item</span> <span class="o">/</span> <span class="mf">10.</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">item</span><span class="p">,</span> <span class="n">obj_store_data</span><span class="p">[</span><span class="n">item</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">item</span><span class="p">,</span> <span class="n">db</span><span class="p">[</span><span class="n">item</span><span class="p">]</span>
 <span class="c1"># end::object_store[]</span>
 </pre></div>
 <div id="cell-7" class="clipboard-copy-txt"># tag::object_store[]
-database_object_ref = ray.put(database)  # <1>
+db_object_ref = ray.put(database)  # <1>
 
 
 @ray.remote
-def retrieve_task(item):
-    obj_store_data = ray.get(database_object_ref)  # <2>
+def retrieve_task(item, db):  # <2>
     time.sleep(item / 10.)
-    return item, obj_store_data[item]
+    return item, db[item]
 # end::object_store[]</div>
     
         </div>
@@ -1523,32 +1521,36 @@ def retrieve_task(item):
         <div class="CodeMirror cm-s-jupyter">
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::duration_object_store[]</span>
 <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-<span class="n">data_references</span> <span class="o">=</span> <span class="p">[</span><span class="n">retrieve_task</span><span class="o">.</span><span class="n">remote</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">)]</span>
+<span class="n">object_references</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">retrieve_task</span><span class="o">.</span><span class="n">remote</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">db_object_ref</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>  <span class="c1"># &lt;1&gt;</span>
+<span class="p">]</span>
 <span class="n">all_data</span> <span class="o">=</span> <span class="p">[]</span>
 
-<span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_references</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>  <span class="c1"># &lt;1&gt;</span>
-    <span class="n">finished</span><span class="p">,</span> <span class="n">data_references</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span>  <span class="c1"># &lt;2&gt;</span>
-        <span class="n">data_references</span><span class="p">,</span> <span class="n">num_returns</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mf">7.0</span>
+<span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">object_references</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>  <span class="c1"># &lt;2&gt;</span>
+    <span class="n">finished</span><span class="p">,</span> <span class="n">object_references</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span>  <span class="c1"># &lt;3&gt;</span>
+        <span class="n">object_references</span><span class="p">,</span> <span class="n">num_returns</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mf">7.0</span>
     <span class="p">)</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">finished</span><span class="p">)</span>
-    <span class="n">print_runtime</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">start</span><span class="p">)</span>  <span class="c1"># &lt;3&gt;</span>
-    <span class="n">all_data</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>  <span class="c1"># &lt;4&gt;</span>
+    <span class="n">print_runtime</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">start</span><span class="p">)</span>  <span class="c1"># &lt;4&gt;</span>
+    <span class="n">all_data</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>  <span class="c1"># &lt;5&gt;</span>
 
 <span class="c1"># end::duration_object_store[]</span>
 <span class="n">print_runtime</span><span class="p">(</span><span class="n">all_data</span><span class="p">,</span> <span class="n">start</span><span class="p">)</span>
 </pre></div>
 <div id="cell-8" class="clipboard-copy-txt"># tag::duration_object_store[]
 start = time.time()
-data_references = [retrieve_task.remote(item) for item in range(8)]
+object_references = [
+    retrieve_task.remote(item, db_object_ref) for item in range(8)  # <1>
+]
 all_data = []
 
-while len(data_references) > 0:  # <1>
-    finished, data_references = ray.wait(  # <2>
-        data_references, num_returns=2, timeout=7.0
+while len(object_references) > 0:  # <2>
+    finished, object_references = ray.wait(  # <3>
+        object_references, num_returns=2, timeout=7.0
     )
     data = ray.get(finished)
-    print_runtime(data, start)  # <3>
-    all_data.extend(data)  # <4>
+    print_runtime(data, start)  # <4>
+    all_data.extend(data)  # <5>
 
 # end::duration_object_store[]
 print_runtime(all_data, start)</div>
@@ -1588,7 +1590,7 @@ print_runtime(all_data, start)</div>
     <span class="k">return</span> <span class="n">retrieve_result</span><span class="p">,</span> <span class="n">follow_up_result</span>  <span class="c1"># &lt;3&gt;</span>
 
 
-<span class="n">retrieve_refs</span> <span class="o">=</span> <span class="p">[</span><span class="n">retrieve_task</span><span class="o">.</span><span class="n">remote</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]</span>
+<span class="n">retrieve_refs</span> <span class="o">=</span> <span class="p">[</span><span class="n">retrieve_task</span><span class="o">.</span><span class="n">remote</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">db_object_ref</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]</span>
 <span class="n">follow_up_refs</span> <span class="o">=</span> <span class="p">[</span><span class="n">follow_up_task</span><span class="o">.</span><span class="n">remote</span><span class="p">(</span><span class="n">ref</span><span class="p">)</span> <span class="k">for</span> <span class="n">ref</span> <span class="ow">in</span> <span class="n">retrieve_refs</span><span class="p">]</span>  <span class="c1"># &lt;4&gt;</span>
 
 <span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="k">for</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">ray</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">follow_up_refs</span><span class="p">)]</span>
@@ -1602,7 +1604,7 @@ def follow_up_task(retrieve_result):  # <1>
     return retrieve_result, follow_up_result  # <3>
 
 
-retrieve_refs = [retrieve_task.remote(item) for item in [0, 2, 4, 6]]
+retrieve_refs = [retrieve_task.remote(item, db_object_ref) for item in [0, 2, 4, 6]]
 follow_up_refs = [follow_up_task.remote(ref) for ref in retrieve_refs]  # <4>
 
 result = [print(data) for data in ray.get(follow_up_refs)]
@@ -1690,37 +1692,39 @@ class DataTracker:
         <div class="CodeMirror cm-s-jupyter">
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::actors_remote[]</span>
 <span class="nd">@ray</span><span class="o">.</span><span class="n">remote</span>
-<span class="k">def</span> <span class="nf">retrieve_tracker_task</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">tracker</span><span class="p">):</span>  <span class="c1"># &lt;1&gt;</span>
-    <span class="n">obj_store_data</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">database_object_ref</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">retrieve_tracker_task</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">tracker</span><span class="p">,</span> <span class="n">db</span><span class="p">):</span>  <span class="c1"># &lt;1&gt;</span>
     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">item</span> <span class="o">/</span> <span class="mf">10.</span><span class="p">)</span>
     <span class="n">tracker</span><span class="o">.</span><span class="n">increment</span><span class="o">.</span><span class="n">remote</span><span class="p">()</span>  <span class="c1"># &lt;2&gt;</span>
-    <span class="k">return</span> <span class="n">item</span><span class="p">,</span> <span class="n">obj_store_data</span><span class="p">[</span><span class="n">item</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">item</span><span class="p">,</span> <span class="n">db</span><span class="p">[</span><span class="n">item</span><span class="p">]</span>
 
 
 <span class="n">tracker</span> <span class="o">=</span> <span class="n">DataTracker</span><span class="o">.</span><span class="n">remote</span><span class="p">()</span>  <span class="c1"># &lt;3&gt;</span>
 
-<span class="n">data_references</span> <span class="o">=</span> <span class="p">[</span>  <span class="c1"># &lt;4&gt;</span>
-    <span class="n">retrieve_tracker_task</span><span class="o">.</span><span class="n">remote</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">tracker</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">object_references</span> <span class="o">=</span> <span class="p">[</span>  <span class="c1"># &lt;4&gt;</span>
+    <span class="n">retrieve_tracker_task</span><span class="o">.</span><span class="n">remote</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">tracker</span><span class="p">,</span> <span class="n">db_object_ref</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
 <span class="p">]</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">data_references</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">object_references</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ray</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">tracker</span><span class="o">.</span><span class="n">counts</span><span class="o">.</span><span class="n">remote</span><span class="p">()))</span>  <span class="c1"># &lt;5&gt;</span>
 <span class="c1"># end::actors_remote[]</span>
 </pre></div>
 <div id="cell-11" class="clipboard-copy-txt"># tag::actors_remote[]
 @ray.remote
-def retrieve_tracker_task(item, tracker):  # <1>
-    obj_store_data = ray.get(database_object_ref)
+def retrieve_tracker_task(item, tracker, db):  # <1>
     time.sleep(item / 10.)
     tracker.increment.remote()  # <2>
-    return item, obj_store_data[item]
+    return item, db[item]
 
 
 tracker = DataTracker.remote()  # <3>
 
-data_references = [  # <4>
-    retrieve_tracker_task.remote(item, tracker) for item in range(8)
+object_references = [  # <4>
+    retrieve_tracker_task.remote(item, tracker, db_object_ref) for item in range(8)
 ]
-data = ray.get(data_references)
+data = ray.get(object_references)
+
+print(data)
 print(ray.get(tracker.counts.remote()))  # <5>
 # end::actors_remote[]</div>
     

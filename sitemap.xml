@@ -2,97 +2,97 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://maxpumperla.com/learning_ray/</loc>
-         <lastmod>2022-11-23</lastmod>
+         <lastmod>2022-11-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://maxpumperla.com/learning_ray/app/</loc>
-         <lastmod>2022-11-23</lastmod>
+         <lastmod>2022-11-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://maxpumperla.com/learning_ray/ch_01_overview/</loc>
-         <lastmod>2022-11-23</lastmod>
+         <lastmod>2022-11-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://maxpumperla.com/learning_ray/ch_02_ray_core/</loc>
-         <lastmod>2022-11-23</lastmod>
+         <lastmod>2022-11-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://maxpumperla.com/learning_ray/ch_03_core_app/</loc>
-         <lastmod>2022-11-23</lastmod>
+         <lastmod>2022-11-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://maxpumperla.com/learning_ray/ch_04_rllib/</loc>
-         <lastmod>2022-11-23</lastmod>
+         <lastmod>2022-11-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://maxpumperla.com/learning_ray/ch_05_tune/</loc>
-         <lastmod>2022-11-23</lastmod>
+         <lastmod>2022-11-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://maxpumperla.com/learning_ray/ch_06_data_processing/</loc>
-         <lastmod>2022-11-23</lastmod>
+         <lastmod>2022-11-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://maxpumperla.com/learning_ray/ch_07_train/</loc>
-         <lastmod>2022-11-23</lastmod>
+         <lastmod>2022-11-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://maxpumperla.com/learning_ray/ch_08_model_serving/</loc>
-         <lastmod>2022-11-23</lastmod>
+         <lastmod>2022-11-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://maxpumperla.com/learning_ray/ch_09_script/</loc>
-         <lastmod>2022-11-23</lastmod>
+         <lastmod>2022-11-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://maxpumperla.com/learning_ray/ch_10_air/</loc>
-         <lastmod>2022-11-23</lastmod>
+         <lastmod>2022-11-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://maxpumperla.com/learning_ray/ch_11_ecosystem/</loc>
-         <lastmod>2022-11-23</lastmod>
+         <lastmod>2022-11-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://maxpumperla.com/learning_ray/fare_predictor/</loc>
-         <lastmod>2022-11-23</lastmod>
+         <lastmod>2022-11-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://maxpumperla.com/learning_ray/gradio_demo/</loc>
-         <lastmod>2022-11-23</lastmod>
+         <lastmod>2022-11-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://maxpumperla.com/learning_ray/maze/</loc>
-         <lastmod>2022-11-23</lastmod>
+         <lastmod>2022-11-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://maxpumperla.com/learning_ray/maze_gym_env/</loc>
-         <lastmod>2022-11-23</lastmod>
+         <lastmod>2022-11-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://maxpumperla.com/learning_ray/policy_client/</loc>
-         <lastmod>2022-11-23</lastmod>
+         <lastmod>2022-11-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://maxpumperla.com/learning_ray/policy_server/</loc>
-         <lastmod>2022-11-23</lastmod>
+         <lastmod>2022-11-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
