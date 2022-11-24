@@ -61,6 +61,11 @@ class Environment:
     def render(self, *args, **kwargs):
         """Render the environment, e.g. by printing its representation."""
         os.system('cls' if os.name == 'nt' else 'clear')  # <1>
+        try:
+            from IPython.display import clear_output
+            clear_output(wait=True)
+        except Exception:
+            pass
         grid = [['| ' for _ in range(5)] + ["|\n"] for _ in range(5)]
         grid[self.goal[0]][self.goal[1]] = '|G'
         grid[self.seeker[0]][self.seeker[1]] = '|S'  # <2>
