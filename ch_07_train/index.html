@@ -1237,9 +1237,9 @@ refer to Ray's <a href="https://docs.ray.io/en/latest/ray-overview/installation.
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="s2">&quot;ray[data,train]&quot;</span><span class="o">==</span><span class="mf">2.1.0</span> <span class="n">dask</span><span class="o">==</span><span class="mf">2022.8.1</span> <span class="n">torch</span><span class="o">==</span><span class="mf">1.12.1</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="s2">&quot;ray[data,train]&quot;</span><span class="o">==</span><span class="mf">2.1.0</span> <span class="n">dask</span><span class="o">==</span><span class="mf">2022.2.0</span> <span class="n">torch</span><span class="o">==</span><span class="mf">1.12.1</span>
 </pre></div>
-<div id="cell-2" class="clipboard-copy-txt">! pip install "ray[data,train]"==2.1.0 dask==2022.8.1 torch==1.12.1</div>
+<div id="cell-2" class="clipboard-copy-txt">! pip install "ray[data,train]"==2.1.0 dask==2022.2.0 torch==1.12.1</div>
     
         </div>
     </div>
@@ -1518,7 +1518,7 @@ class FarePredictor(nn.Module):
     <span class="n">lr</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;lr&quot;</span><span class="p">,</span> <span class="mf">1e-2</span><span class="p">)</span>
     <span class="n">num_epochs</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;num_epochs&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 
-    <span class="n">dataset_shard</span> <span class="o">=</span> <span class="n">train</span><span class="o">.</span><span class="n">get_dataset_shard</span><span class="p">(</span><span class="s2">&quot;train&quot;</span><span class="p">)</span>  <span class="c1"># &lt;2&gt;</span>
+    <span class="n">dataset_shard</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">get_dataset_shard</span><span class="p">(</span><span class="s2">&quot;train&quot;</span><span class="p">)</span>  <span class="c1"># &lt;2&gt;</span>
 
     <span class="n">model</span> <span class="o">=</span> <span class="n">FarePredictor</span><span class="p">()</span>
     <span class="n">dist_model</span> <span class="o">=</span> <span class="n">train</span><span class="o">.</span><span class="n">torch</span><span class="o">.</span><span class="n">prepare_model</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>  <span class="c1"># &lt;3&gt;</span>
@@ -1563,7 +1563,7 @@ def train_loop_per_worker(config: dict):  # <1>
     lr = config.get("lr", 1e-2)
     num_epochs = config.get("num_epochs", 3)
 
-    dataset_shard = train.get_dataset_shard("train")  # <2>
+    dataset_shard = session.get_dataset_shard("train")  # <2>
 
     model = FarePredictor()
     dist_model = train.torch.prepare_model(model)  # <3>
@@ -1623,7 +1623,11 @@ def train_loop_per_worker(config: dict):  # <1>
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::ml_pipeline_train_2[]</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># NOTE: Colab does not have enough resources to run this example.</span>
+<span class="c1"># try using num_workers=1, resources_per_worker={&quot;CPU&quot;: 1, &quot;GPU&quot;: 0} in your</span>
+<span class="c1"># ScalingConfig below.</span>
+<span class="c1"># In any case, this training loop will take considerable time to run.</span>
+<span class="c1"># tag::ml_pipeline_train_2[]</span>
 <span class="n">trainer</span> <span class="o">=</span> <span class="n">TorchTrainer</span><span class="p">(</span>
     <span class="n">train_loop_per_worker</span><span class="o">=</span><span class="n">train_loop_per_worker</span><span class="p">,</span>  <span class="c1"># &lt;1&gt;</span>
     <span class="n">train_loop_config</span><span class="o">=</span><span class="p">{</span>  <span class="c1"># &lt;2&gt;</span>
@@ -1639,7 +1643,11 @@ def train_loop_per_worker(config: dict):  # <1>
 <span class="n">trained_model</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">checkpoint</span>
 <span class="c1"># end::ml_pipeline_train_2[]</span>
 </pre></div>
-<div id="cell-7" class="clipboard-copy-txt"># tag::ml_pipeline_train_2[]
+<div id="cell-7" class="clipboard-copy-txt"># NOTE: Colab does not have enough resources to run this example.
+# try using num_workers=1, resources_per_worker={"CPU": 1, "GPU": 0} in your
+# ScalingConfig below.
+# In any case, this training loop will take considerable time to run.
+# tag::ml_pipeline_train_2[]
 trainer = TorchTrainer(
     train_loop_per_worker=train_loop_per_worker,  # <1>
     train_loop_config={  # <2>
