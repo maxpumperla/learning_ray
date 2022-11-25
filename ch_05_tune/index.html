@@ -1254,6 +1254,19 @@ refer to Ray's <a href="https://docs.ray.io/en/latest/ray-overview/installation.
 </div>
 
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>To import utility files for this chapter, on Colab you will also have to clone
+the repo and copy the code files to the base path of the runtime:</p>
+
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
@@ -1265,6 +1278,39 @@ refer to Ray's <a href="https://docs.ray.io/en/latest/ray-overview/installation.
         
         <div class="zeroclipboard-container">
             <clipboard-copy for="cell-3">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="err">!</span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">maxpumperla</span><span class="o">/</span><span class="n">learning_ray</span>
+<span class="o">%</span><span class="n">cp</span> <span class="o">-</span><span class="n">r</span> <span class="n">learning_ray</span><span class="o">/</span><span class="n">notebooks</span><span class="o">/*</span> <span class="o">.</span>
+</pre></div>
+<div id="cell-3" class="clipboard-copy-txt">!git clone https://github.com/maxpumperla/learning_ray
+%cp -r learning_ray/notebooks/* .</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-4">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1355,7 +1401,7 @@ refer to Ray's <a href="https://docs.ray.io/en/latest/ray-overview/installation.
 
     <span class="k">return</span> <span class="n">steps</span> <span class="o">/</span> <span class="n">num_episodes</span>
 </pre></div>
-<div id="cell-3" class="clipboard-copy-txt">from maze_gym_env import Environment
+<div id="cell-4" class="clipboard-copy-txt">from maze_gym_env import Environment
 import time
 
 
@@ -1453,7 +1499,7 @@ def evaluate_policy(env, policy, num_episodes=10):
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-4">
+            <clipboard-copy for="cell-5">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1474,7 +1520,7 @@ def evaluate_policy(env, policy, num_episodes=10):
     <span class="n">search_space</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">random_choice</span><span class="p">)</span>
 <span class="c1"># end::search_space[]</span>
 </pre></div>
-<div id="cell-4" class="clipboard-copy-txt"># tag::search_space[]
+<div id="cell-5" class="clipboard-copy-txt"># tag::search_space[]
 import random
 search_space = []
 for i in range(10):
@@ -1502,7 +1548,7 @@ for i in range(10):
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-5">
+            <clipboard-copy for="cell-6">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1528,7 +1574,7 @@ for i in range(10):
     <span class="k">return</span> <span class="p">[</span><span class="n">score</span><span class="p">,</span> <span class="n">config</span><span class="p">]</span>  <span class="c1"># &lt;4&gt;</span>
 <span class="c1"># end::objective[]</span>
 </pre></div>
-<div id="cell-5" class="clipboard-copy-txt"># tag::objective[]
+<div id="cell-6" class="clipboard-copy-txt"># tag::objective[]
 import ray
 
 
@@ -1561,7 +1607,7 @@ def objective(config):  # <1>
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-6">
+            <clipboard-copy for="cell-7">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1579,60 +1625,13 @@ def objective(config):  # <1>
 <span class="nb">print</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 <span class="c1"># end::random_search[]</span>
 </pre></div>
-<div id="cell-6" class="clipboard-copy-txt"># tag::random_search[]
+<div id="cell-7" class="clipboard-copy-txt"># tag::random_search[]
 result_objects = [objective.remote(choice) for choice in search_space]
 results = ray.get(result_objects)
 
 results.sort(key=lambda x: x[0])
 print(results[-1])
 # end::random_search[]</div>
-    
-        </div>
-    </div>
-
-</div>
-</div>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-        
-        
-        <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-7">
-            <div>
-                <span class="notice" hidden>Copied!</span>
-                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
-                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
-                </svg>
-                </div>
-            </clipboard-copy>
-        </div>
-        <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::tune_search_space[]</span>
-<span class="kn">from</span> <span class="nn">ray</span> <span class="kn">import</span> <span class="n">tune</span>
-
-
-<span class="n">search_space</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;weight&quot;</span><span class="p">:</span> <span class="n">tune</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-    <span class="s2">&quot;discount_factor&quot;</span><span class="p">:</span> <span class="n">tune</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-<span class="p">}</span>
-<span class="c1"># end::tune_search_space[]</span>
-</pre></div>
-<div id="cell-7" class="clipboard-copy-txt"># tag::tune_search_space[]
-from ray import tune
-
-
-search_space = {
-    "weight": tune.uniform(0, 1),
-    "discount_factor": tune.uniform(0, 1),
-}
-# end::tune_search_space[]</div>
     
         </div>
     </div>
@@ -1661,6 +1660,53 @@ search_space = {
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::tune_search_space[]</span>
+<span class="kn">from</span> <span class="nn">ray</span> <span class="kn">import</span> <span class="n">tune</span>
+
+
+<span class="n">search_space</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;weight&quot;</span><span class="p">:</span> <span class="n">tune</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+    <span class="s2">&quot;discount_factor&quot;</span><span class="p">:</span> <span class="n">tune</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+<span class="p">}</span>
+<span class="c1"># end::tune_search_space[]</span>
+</pre></div>
+<div id="cell-8" class="clipboard-copy-txt"># tag::tune_search_space[]
+from ray import tune
+
+
+search_space = {
+    "weight": tune.uniform(0, 1),
+    "discount_factor": tune.uniform(0, 1),
+}
+# end::tune_search_space[]</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-9">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::tune_objective[]</span>
 <span class="k">def</span> <span class="nf">tune_objective</span><span class="p">(</span><span class="n">config</span><span class="p">):</span>
     <span class="n">environment</span> <span class="o">=</span> <span class="n">Environment</span><span class="p">()</span>
@@ -1674,7 +1720,7 @@ search_space = {
     <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;score&quot;</span><span class="p">:</span> <span class="n">score</span><span class="p">}</span>
 <span class="c1"># end::tune_objective[]</span>
 </pre></div>
-<div id="cell-8" class="clipboard-copy-txt"># tag::tune_objective[]
+<div id="cell-9" class="clipboard-copy-txt"># tag::tune_objective[]
 def tune_objective(config):
     environment = Environment()
     policy = train_policy(
@@ -1704,7 +1750,7 @@ def tune_objective(config):
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-9">
+            <clipboard-copy for="cell-10">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1719,7 +1765,7 @@ def tune_objective(config):
 <span class="nb">print</span><span class="p">(</span><span class="n">analysis</span><span class="o">.</span><span class="n">get_best_config</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="s2">&quot;score&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;min&quot;</span><span class="p">))</span>
 <span class="c1"># end::tune_analysis[]</span>
 </pre></div>
-<div id="cell-9" class="clipboard-copy-txt"># tag::tune_analysis[]
+<div id="cell-10" class="clipboard-copy-txt"># tag::tune_analysis[]
 analysis = tune.run(tune_objective, config=search_space)
 print(analysis.get_best_config(metric="score", mode="min"))
 # end::tune_analysis[]</div>
@@ -1741,7 +1787,7 @@ print(analysis.get_best_config(metric="score", mode="min"))
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-10">
+            <clipboard-copy for="cell-11">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1767,7 +1813,7 @@ print(analysis.get_best_config(metric="score", mode="min"))
 <span class="p">)</span>
 <span class="c1"># end::tune_bo[]</span>
 </pre></div>
-<div id="cell-10" class="clipboard-copy-txt"># tag::tune_bo[]
+<div id="cell-11" class="clipboard-copy-txt"># tag::tune_bo[]
 from ray.tune.suggest.bayesopt import BayesOptSearch
 
 
@@ -1800,7 +1846,7 @@ tune.run(
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-11">
+            <clipboard-copy for="cell-12">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1820,7 +1866,7 @@ tune.run(
 <span class="n">search_space</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;weight&quot;</span><span class="p">:</span> <span class="n">tune</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="s2">&quot;bias&quot;</span><span class="p">:</span> <span class="n">tune</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)}</span>
 <span class="c1"># end::scheduler_obj[]</span>
 </pre></div>
-<div id="cell-11" class="clipboard-copy-txt"># tag::scheduler_obj[]
+<div id="cell-12" class="clipboard-copy-txt"># tag::scheduler_obj[]
 def objective(config):
     for step in range(30):  # <1>
         score = config["weight"] * (step ** 0.5) + config["bias"]
@@ -1847,7 +1893,7 @@ search_space = {"weight": tune.uniform(0, 1), "bias": tune.uniform(0, 1)}
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-12">
+            <clipboard-copy for="cell-13">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1874,7 +1920,7 @@ search_space = {"weight": tune.uniform(0, 1), "bias": tune.uniform(0, 1)}
 <span class="nb">print</span><span class="p">(</span><span class="n">analysis</span><span class="o">.</span><span class="n">get_best_config</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="s2">&quot;score&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;min&quot;</span><span class="p">))</span>
 <span class="c1"># end::tune_scheduler[]</span>
 </pre></div>
-<div id="cell-12" class="clipboard-copy-txt"># tag::tune_scheduler[]
+<div id="cell-13" class="clipboard-copy-txt"># tag::tune_scheduler[]
 from ray.tune.schedulers import HyperBandScheduler
 
 
@@ -1908,7 +1954,7 @@ print(analysis.get_best_config(metric="score", mode="min"))
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-13">
+            <clipboard-copy for="cell-14">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1924,7 +1970,7 @@ print(analysis.get_best_config(metric="score", mode="min"))
 <span class="n">tune</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">objective</span><span class="p">,</span> <span class="n">num_samples</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">resources_per_trial</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;cpu&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;gpu&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">})</span>
 <span class="c1"># end::tune_simple_objective[]</span>
 </pre></div>
-<div id="cell-13" class="clipboard-copy-txt"># tag::tune_simple_objective[]
+<div id="cell-14" class="clipboard-copy-txt"># tag::tune_simple_objective[]
 from ray import tune
 
 tune.run(objective, num_samples=10, resources_per_trial={"cpu": 2, "gpu": 0.5})
@@ -1947,7 +1993,7 @@ tune.run(objective, num_samples=10, resources_per_trial={"cpu": 2, "gpu": 0.5})
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-14">
+            <clipboard-copy for="cell-15">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1975,7 +2021,7 @@ tune.run(objective, num_samples=10, resources_per_trial={"cpu": 2, "gpu": 0.5})
         <span class="n">tune</span><span class="o">.</span><span class="n">report</span><span class="p">(</span><span class="n">score</span><span class="o">=</span><span class="n">score</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="n">step</span><span class="p">,</span> <span class="n">more_metrics</span><span class="o">=</span><span class="p">{})</span>
 <span class="c1"># end::tune_metrics_1[]</span>
 </pre></div>
-<div id="cell-14" class="clipboard-copy-txt"># tag::tune_metrics_1[]
+<div id="cell-15" class="clipboard-copy-txt"># tag::tune_metrics_1[]
 from ray import tune
 from ray.tune import Callback
 from ray.tune.logger import pretty_print
@@ -2010,7 +2056,7 @@ def objective(config):
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-15">
+            <clipboard-copy for="cell-16">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -2034,7 +2080,7 @@ def objective(config):
 <span class="nb">print</span><span class="p">(</span><span class="n">pretty_print</span><span class="p">(</span><span class="n">best</span><span class="o">.</span><span class="n">last_result</span><span class="p">))</span>
 <span class="c1"># end::tune_metrics_2[]</span>
 </pre></div>
-<div id="cell-15" class="clipboard-copy-txt"># tag::tune_metrics_2[]
+<div id="cell-16" class="clipboard-copy-txt"># tag::tune_metrics_2[]
 search_space = {"weight": tune.uniform(0, 1), "bias": tune.uniform(0, 1)}
 
 analysis = tune.run(
@@ -2065,7 +2111,7 @@ print(pretty_print(best.last_result))
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-16">
+            <clipboard-copy for="cell-17">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -2083,54 +2129,13 @@ print(pretty_print(best.last_result))
     <span class="n">config</span><span class="o">=</span><span class="n">search_space</span><span class="p">)</span>
 <span class="c1"># end::tune_resume[]</span>
 </pre></div>
-<div id="cell-16" class="clipboard-copy-txt"># tag::tune_resume[]
+<div id="cell-17" class="clipboard-copy-txt"># tag::tune_resume[]
 analysis = tune.run(
     objective,
     name="<your-logdir>",
     resume=True,
     config=search_space)
 # end::tune_resume[]</div>
-    
-        </div>
-    </div>
-
-</div>
-</div>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-        
-        
-        <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-17">
-            <div>
-                <span class="notice" hidden>Copied!</span>
-                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
-                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
-                </svg>
-                </div>
-            </clipboard-copy>
-        </div>
-        <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::tune_stop_dict[]</span>
-<span class="n">tune</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
-    <span class="n">objective</span><span class="p">,</span>
-    <span class="n">config</span><span class="o">=</span><span class="n">search_space</span><span class="p">,</span>
-    <span class="n">stop</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;training_iteration&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">})</span>
-<span class="c1"># end::tune_stop_dict[]</span>
-</pre></div>
-<div id="cell-17" class="clipboard-copy-txt"># tag::tune_stop_dict[]
-tune.run(
-    objective,
-    config=search_space,
-    stop={"training_iteration": 10})
-# end::tune_stop_dict[]</div>
     
         </div>
     </div>
@@ -2159,27 +2164,19 @@ tune.run(
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::tune_stop_function[]</span>
-<span class="k">def</span> <span class="nf">stopper</span><span class="p">(</span><span class="n">trial_id</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">result</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">2</span>
-
-
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::tune_stop_dict[]</span>
 <span class="n">tune</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
     <span class="n">objective</span><span class="p">,</span>
     <span class="n">config</span><span class="o">=</span><span class="n">search_space</span><span class="p">,</span>
-    <span class="n">stop</span><span class="o">=</span><span class="n">stopper</span><span class="p">)</span>
-<span class="c1"># end::tune_stop_function[]</span>
+    <span class="n">stop</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;training_iteration&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">})</span>
+<span class="c1"># end::tune_stop_dict[]</span>
 </pre></div>
-<div id="cell-18" class="clipboard-copy-txt"># tag::tune_stop_function[]
-def stopper(trial_id, result):
-    return result["score"] < 2
-
-
+<div id="cell-18" class="clipboard-copy-txt"># tag::tune_stop_dict[]
 tune.run(
     objective,
     config=search_space,
-    stop=stopper)
-# end::tune_stop_function[]</div>
+    stop={"training_iteration": 10})
+# end::tune_stop_dict[]</div>
     
         </div>
     </div>
@@ -2208,6 +2205,55 @@ tune.run(
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::tune_stop_function[]</span>
+<span class="k">def</span> <span class="nf">stopper</span><span class="p">(</span><span class="n">trial_id</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">result</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">2</span>
+
+
+<span class="n">tune</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+    <span class="n">objective</span><span class="p">,</span>
+    <span class="n">config</span><span class="o">=</span><span class="n">search_space</span><span class="p">,</span>
+    <span class="n">stop</span><span class="o">=</span><span class="n">stopper</span><span class="p">)</span>
+<span class="c1"># end::tune_stop_function[]</span>
+</pre></div>
+<div id="cell-19" class="clipboard-copy-txt"># tag::tune_stop_function[]
+def stopper(trial_id, result):
+    return result["score"] < 2
+
+
+tune.run(
+    objective,
+    config=search_space,
+    stop=stopper)
+# end::tune_stop_function[]</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-20">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::tune_custom_space[]</span>
 <span class="kn">from</span> <span class="nn">ray</span> <span class="kn">import</span> <span class="n">tune</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -2223,7 +2269,7 @@ tune.run(
 <span class="n">tune</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">objective</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">search_space</span><span class="p">)</span>
 <span class="c1"># end::tune_custom_space[]</span>
 </pre></div>
-<div id="cell-19" class="clipboard-copy-txt"># tag::tune_custom_space[]
+<div id="cell-20" class="clipboard-copy-txt"># tag::tune_custom_space[]
 from ray import tune
 import numpy as np
 
@@ -2255,7 +2301,7 @@ tune.run(objective, config=search_space)
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-20">
+            <clipboard-copy for="cell-21">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -2280,7 +2326,7 @@ tune.run(objective, config=search_space)
 <span class="p">)</span>
 <span class="c1"># end::tune_rllib[]</span>
 </pre></div>
-<div id="cell-20" class="clipboard-copy-txt"># tag::tune_rllib[]
+<div id="cell-21" class="clipboard-copy-txt"># tag::tune_rllib[]
 from ray import tune
 
 analysis = tune.run(
@@ -2312,7 +2358,7 @@ analysis = tune.run(
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-21">
+            <clipboard-copy for="cell-22">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -2339,7 +2385,7 @@ analysis = tune.run(
 <span class="n">load_data</span><span class="p">()</span>
 <span class="c1"># end::tune_keras_1[]</span>
 </pre></div>
-<div id="cell-21" class="clipboard-copy-txt"># tag::tune_keras_1[]
+<div id="cell-22" class="clipboard-copy-txt"># tag::tune_keras_1[]
 from tensorflow.keras.datasets import mnist
 from tensorflow.keras.utils import to_categorical
 
@@ -2373,7 +2419,7 @@ load_data()
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-22">
+            <clipboard-copy for="cell-23">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -2403,7 +2449,7 @@ load_data()
               <span class="n">callbacks</span><span class="o">=</span><span class="p">[</span><span class="n">TuneReportCallback</span><span class="p">({</span><span class="s2">&quot;mean_accuracy&quot;</span><span class="p">:</span> <span class="s2">&quot;accuracy&quot;</span><span class="p">})])</span>
 <span class="c1"># end::tune_keras_2[]</span>
 </pre></div>
-<div id="cell-22" class="clipboard-copy-txt"># tag::tune_keras_2[]
+<div id="cell-23" class="clipboard-copy-txt"># tag::tune_keras_2[]
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Flatten, Dense, Dropout
 from ray.tune.integration.keras import TuneReportCallback
@@ -2440,7 +2486,7 @@ def objective(config):
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-23">
+            <clipboard-copy for="cell-24">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -2478,7 +2524,7 @@ def objective(config):
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best hyperparameters found were: &quot;</span><span class="p">,</span> <span class="n">analysis</span><span class="o">.</span><span class="n">best_config</span><span class="p">)</span>
 <span class="c1"># end::tune_keras_3[]</span>
 </pre></div>
-<div id="cell-23" class="clipboard-copy-txt"># tag::tune_keras_3[]
+<div id="cell-24" class="clipboard-copy-txt"># tag::tune_keras_3[]
 from ray import tune
 from ray.tune.suggest.hyperopt import HyperOptSearch
 
