@@ -1295,7 +1295,7 @@ all of MD as it is not optimized for dense, information rich UIs.
 <a href="https://colab.research.google.com/github/maxpumperla/learning_ray/blob/main/notebooks/ch_01_overview.ipynb">Colab</a>:
 <a target="_blank" href="https://colab.research.google.com/github/maxpumperla/learning_ray/blob/main/notebooks/ch_01_overview.ipynb">
 <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<p>The book has been written for Ray 2.2.0,which at the time of writing has not
+<p>The book has been written for Ray 2.2.0, which at the time of writing has not
 officially been released yet. If you are reading this and this version is already
 available, you can install it using <code>pip install ray==2.2.0</code>. If not, you can
 use a nightly wheel (here for Python 3.7 on Linux):</p>
@@ -1368,15 +1368,15 @@ refer to Ray's <a href="https://docs.ray.io/en/latest/ray-overview/installation.
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="s2">&quot;ray[rllib, serve, tune]&quot;</span>
-<span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">pyarrow</span>
-<span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">tensorflow</span>
-<span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">transformers</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="s2">&quot;ray[rllib, serve, tune]&quot;</span><span class="o">&gt;=</span><span class="mf">2.1.0</span>
+<span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">pyarrow</span><span class="o">==</span><span class="mf">10.0.0</span>
+<span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">tensorflow</span><span class="o">&gt;=</span><span class="mf">2.9.0</span>
+<span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">transformers</span><span class="o">&gt;=</span><span class="mf">4.24.0</span>
 </pre></div>
-<div id="cell-2" class="clipboard-copy-txt">! pip install "ray[rllib, serve, tune]"
-! pip install pyarrow
-! pip install tensorflow
-! pip install transformers</div>
+<div id="cell-2" class="clipboard-copy-txt">! pip install "ray[rllib, serve, tune]">=2.1.0
+! pip install pyarrow==10.0.0
+! pip install tensorflow>=2.9.0
+! pip install transformers>=4.24.0</div>
     
         </div>
     </div>
