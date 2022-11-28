@@ -1237,9 +1237,9 @@ refer to Ray's <a href="https://docs.ray.io/en/latest/ray-overview/installation.
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="s2">&quot;ray[rllib]&quot;</span><span class="o">&gt;=</span><span class="mf">2.1.0</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="s2">&quot;ray[rllib]&gt;=2.1.0&quot;</span>
 </pre></div>
-<div id="cell-2" class="clipboard-copy-txt">! pip install "ray[rllib]">=2.1.0</div>
+<div id="cell-2" class="clipboard-copy-txt">! pip install "ray[rllib]>=2.1.0"</div>
     
         </div>
     </div>
@@ -1379,6 +1379,54 @@ class Env:
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="err">!</span> <span class="n">rllib</span> <span class="n">train</span> <span class="n">file</span> <span class="n">maze</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">stop</span> <span class="s1">&#39;{&quot;timesteps_total&quot;: 10000}&#39;</span>
+</pre></div>
+<div id="cell-5" class="clipboard-copy-txt">
+! rllib train file maze.py --stop '{"timesteps_total": 10000}'</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Try:
+rllib evaluate ~/ray_results/maze_env/<checkpoint>\
+ --algo DQN\
+ --env maze_gym_env.Environment\
+ --steps 100</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-6">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::rllib_dqn_simple[]</span>
 <span class="kn">from</span> <span class="nn">ray.tune.logger</span> <span class="kn">import</span> <span class="n">pretty_print</span>
 <span class="kn">from</span> <span class="nn">maze_gym_env</span> <span class="kn">import</span> <span class="n">GymEnvironment</span>
@@ -1397,7 +1445,7 @@ class Env:
 <span class="nb">print</span><span class="p">(</span><span class="n">pretty_print</span><span class="p">(</span><span class="n">result</span><span class="p">))</span>  <span class="c1"># &lt;4&gt;</span>
 <span class="c1"># end::rllib_dqn_simple[]</span>
 </pre></div>
-<div id="cell-5" class="clipboard-copy-txt"># tag::rllib_dqn_simple[]
+<div id="cell-6" class="clipboard-copy-txt"># tag::rllib_dqn_simple[]
 from ray.tune.logger import pretty_print
 from maze_gym_env import GymEnvironment
 from ray.rllib.algorithms.dqn import DQNConfig
@@ -1432,7 +1480,7 @@ print(pretty_print(result))  # <4>
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-6">
+            <clipboard-copy for="cell-7">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1459,7 +1507,7 @@ print(pretty_print(result))  # <4>
 <span class="c1"># end::rllib_simple_save[]</span>
 <span class="n">algo</span> <span class="o">=</span> <span class="n">restored_algo</span>
 </pre></div>
-<div id="cell-6" class="clipboard-copy-txt"># tag::rllib_simple_save[]
+<div id="cell-7" class="clipboard-copy-txt"># tag::rllib_simple_save[]
 from ray.rllib.algorithms.algorithm import Algorithm
 
 
@@ -1493,7 +1541,7 @@ algo = restored_algo</div>
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-7">
+            <clipboard-copy for="cell-8">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1515,7 +1563,7 @@ algo = restored_algo</div>
     <span class="n">total_reward</span> <span class="o">+=</span> <span class="n">reward</span>
 <span class="c1"># end::rllib_manual_rollout[]</span>
 </pre></div>
-<div id="cell-7" class="clipboard-copy-txt"># tag::rllib_manual_rollout[]
+<div id="cell-8" class="clipboard-copy-txt"># tag::rllib_manual_rollout[]
 env = GymEnvironment()
 done = False
 total_reward = 0
@@ -1544,7 +1592,7 @@ while not done:
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-8">
+            <clipboard-copy for="cell-9">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1562,54 +1610,13 @@ while not done:
 <span class="c1"># {&#39;obs_1&#39;: 0, &#39;obs_2&#39;: 1}</span>
 <span class="c1"># end::rllib_actions[]</span>
 </pre></div>
-<div id="cell-8" class="clipboard-copy-txt"># tag::rllib_actions[]
+<div id="cell-9" class="clipboard-copy-txt"># tag::rllib_actions[]
 action = algo.compute_actions(  # <1>
     {"obs_1": observations, "obs_2": observations}
 )
 print(action)
 # {'obs_1': 0, 'obs_2': 1}
 # end::rllib_actions[]</div>
-    
-        </div>
-    </div>
-
-</div>
-</div>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-        
-        
-        <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-9">
-            <div>
-                <span class="notice" hidden>Copied!</span>
-                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
-                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
-                </svg>
-                </div>
-            </clipboard-copy>
-        </div>
-        <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::rllib_policy[]</span>
-<span class="n">policy</span> <span class="o">=</span> <span class="n">algo</span><span class="o">.</span><span class="n">get_policy</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">policy</span><span class="o">.</span><span class="n">get_weights</span><span class="p">())</span>
-
-<span class="n">model</span> <span class="o">=</span> <span class="n">policy</span><span class="o">.</span><span class="n">model</span>
-<span class="c1"># end::rllib_policy[]</span>
-</pre></div>
-<div id="cell-9" class="clipboard-copy-txt"># tag::rllib_policy[]
-policy = algo.get_policy()
-print(policy.get_weights())
-
-model = policy.model
-# end::rllib_policy[]</div>
     
         </div>
     </div>
@@ -1638,19 +1645,19 @@ model = policy.model
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::rllib_workers[]</span>
-<span class="n">workers</span> <span class="o">=</span> <span class="n">algo</span><span class="o">.</span><span class="n">workers</span>
-<span class="n">workers</span><span class="o">.</span><span class="n">foreach_worker</span><span class="p">(</span>
-    <span class="k">lambda</span> <span class="n">remote_trainer</span><span class="p">:</span> <span class="n">remote_trainer</span><span class="o">.</span><span class="n">get_policy</span><span class="p">()</span><span class="o">.</span><span class="n">get_weights</span><span class="p">()</span>
-<span class="p">)</span>
-<span class="c1"># end::rllib_workers[]</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::rllib_policy[]</span>
+<span class="n">policy</span> <span class="o">=</span> <span class="n">algo</span><span class="o">.</span><span class="n">get_policy</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">policy</span><span class="o">.</span><span class="n">get_weights</span><span class="p">())</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">policy</span><span class="o">.</span><span class="n">model</span>
+<span class="c1"># end::rllib_policy[]</span>
 </pre></div>
-<div id="cell-10" class="clipboard-copy-txt"># tag::rllib_workers[]
-workers = algo.workers
-workers.foreach_worker(
-    lambda remote_trainer: remote_trainer.get_policy().get_weights()
-)
-# end::rllib_workers[]</div>
+<div id="cell-10" class="clipboard-copy-txt"># tag::rllib_policy[]
+policy = algo.get_policy()
+print(policy.get_weights())
+
+model = policy.model
+# end::rllib_policy[]</div>
     
         </div>
     </div>
@@ -1679,15 +1686,19 @@ workers.foreach_worker(
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::rllib_q_network[]</span>
-<span class="n">model</span><span class="o">.</span><span class="n">base_model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
-
-<span class="c1"># end::rllib_q_network[]</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::rllib_workers[]</span>
+<span class="n">workers</span> <span class="o">=</span> <span class="n">algo</span><span class="o">.</span><span class="n">workers</span>
+<span class="n">workers</span><span class="o">.</span><span class="n">foreach_worker</span><span class="p">(</span>
+    <span class="k">lambda</span> <span class="n">remote_trainer</span><span class="p">:</span> <span class="n">remote_trainer</span><span class="o">.</span><span class="n">get_policy</span><span class="p">()</span><span class="o">.</span><span class="n">get_weights</span><span class="p">()</span>
+<span class="p">)</span>
+<span class="c1"># end::rllib_workers[]</span>
 </pre></div>
-<div id="cell-11" class="clipboard-copy-txt"># tag::rllib_q_network[]
-model.base_model.summary()
-
-# end::rllib_q_network[]</div>
+<div id="cell-11" class="clipboard-copy-txt"># tag::rllib_workers[]
+workers = algo.workers
+workers.foreach_worker(
+    lambda remote_trainer: remote_trainer.get_policy().get_weights()
+)
+# end::rllib_workers[]</div>
     
         </div>
     </div>
@@ -1716,6 +1727,43 @@ model.base_model.summary()
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::rllib_q_network[]</span>
+<span class="n">model</span><span class="o">.</span><span class="n">base_model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+
+<span class="c1"># end::rllib_q_network[]</span>
+</pre></div>
+<div id="cell-12" class="clipboard-copy-txt"># tag::rllib_q_network[]
+model.base_model.summary()
+
+# end::rllib_q_network[]</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-13">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::rllib_model_output[]</span>
 <span class="kn">from</span> <span class="nn">ray.rllib.models.preprocessors</span> <span class="kn">import</span> <span class="n">get_preprocessor</span>
 
@@ -1730,7 +1778,7 @@ model.base_model.summary()
 <span class="n">model_output</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">model</span><span class="p">({</span><span class="s2">&quot;obs&quot;</span><span class="p">:</span> <span class="n">transformed</span><span class="p">})</span>  <span class="c1"># &lt;3&gt;</span>
 <span class="c1"># end::rllib_model_output[]</span>
 </pre></div>
-<div id="cell-12" class="clipboard-copy-txt"># tag::rllib_model_output[]
+<div id="cell-13" class="clipboard-copy-txt"># tag::rllib_model_output[]
 from ray.rllib.models.preprocessors import get_preprocessor
 
 
@@ -1761,7 +1809,7 @@ model_output, _ = model({"obs": transformed})  # <3>
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-13">
+            <clipboard-copy for="cell-14">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1782,7 +1830,7 @@ model_output, _ = model({"obs": transformed})  # <3>
 
 <span class="c1"># model.get_state_value(model_output)</span>
 </pre></div>
-<div id="cell-13" class="clipboard-copy-txt"># tag::rllib_q_values_action_dist[]
+<div id="cell-14" class="clipboard-copy-txt"># tag::rllib_q_values_action_dist[]
 q_values = model.get_q_value_distributions(model_output)  # <1>
 print(q_values)
 
@@ -1810,7 +1858,7 @@ print(sample)
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-14">
+            <clipboard-copy for="cell-15">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1910,7 +1958,7 @@ print(sample)
         <span class="n">grid</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">agents</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]][</span><span class="bp">self</span><span class="o">.</span><span class="n">agents</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="s1">&#39;|2&#39;</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">grid_row</span><span class="p">)</span> <span class="k">for</span> <span class="n">grid_row</span> <span class="ow">in</span> <span class="n">grid</span><span class="p">]))</span>
 </pre></div>
-<div id="cell-14" class="clipboard-copy-txt"># tag::multi_agent_init[]
+<div id="cell-15" class="clipboard-copy-txt"># tag::multi_agent_init[]
 from ray.rllib.env.multi_agent_env import MultiAgentEnv
 from gym.spaces import Discrete
 import os
@@ -2017,7 +2065,7 @@ class MultiAgentMaze(MultiAgentEnv):
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-15">
+            <clipboard-copy for="cell-16">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -2042,7 +2090,7 @@ class MultiAgentMaze(MultiAgentEnv):
         <span class="k">break</span>
 <span class="c1"># end::multi_agent_run[]</span>
 </pre></div>
-<div id="cell-15" class="clipboard-copy-txt"># tag::multi_agent_run[]
+<div id="cell-16" class="clipboard-copy-txt"># tag::multi_agent_run[]
 import time
 
 env = MultiAgentMaze()
@@ -2074,7 +2122,7 @@ while True:
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-16">
+            <clipboard-copy for="cell-17">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -2109,7 +2157,7 @@ while True:
 <span class="nb">print</span><span class="p">(</span><span class="n">algo</span><span class="o">.</span><span class="n">train</span><span class="p">())</span>
 <span class="c1"># end::multi_agent_mapping[]</span>
 </pre></div>
-<div id="cell-16" class="clipboard-copy-txt"># tag::multi_agent_simple[]
+<div id="cell-17" class="clipboard-copy-txt"># tag::multi_agent_simple[]
 from ray.rllib.algorithms.dqn import DQNConfig
 
 simple_trainer = DQNConfig().environment(env=MultiAgentMaze).build()
@@ -2151,7 +2199,7 @@ print(algo.train())
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-17">
+            <clipboard-copy for="cell-18">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -2241,7 +2289,7 @@ print(algo.train())
         <span class="n">grid</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">seeker</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="bp">self</span><span class="o">.</span><span class="n">seeker</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="s1">&#39;|S&#39;</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">grid_row</span><span class="p">)</span> <span class="k">for</span> <span class="n">grid_row</span> <span class="ow">in</span> <span class="n">grid</span><span class="p">]))</span>
 </pre></div>
-<div id="cell-17" class="clipboard-copy-txt"># tag::advanced_env_init[]
+<div id="cell-18" class="clipboard-copy-txt"># tag::advanced_env_init[]
 from gym.spaces import Discrete
 import random
 import os
@@ -2338,7 +2386,7 @@ class AdvancedEnv(GymEnvironment):
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-18">
+            <clipboard-copy for="cell-19">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -2369,7 +2417,7 @@ class AdvancedEnv(GymEnvironment):
             <span class="bp">self</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
 <span class="c1"># end::task_settable[]</span>
 </pre></div>
-<div id="cell-18" class="clipboard-copy-txt"># tag::task_settable[]
+<div id="cell-19" class="clipboard-copy-txt"># tag::task_settable[]
 from ray.rllib.env.apis.task_settable_env import TaskSettableEnv
 
 
@@ -2407,7 +2455,7 @@ class CurriculumEnv(AdvancedEnv, TaskSettableEnv):
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-19">
+            <clipboard-copy for="cell-20">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -2425,7 +2473,7 @@ class CurriculumEnv(AdvancedEnv, TaskSettableEnv):
     <span class="k">return</span> <span class="n">difficulty</span>
 <span class="c1"># end::curriculum_fn[]</span>
 </pre></div>
-<div id="cell-19" class="clipboard-copy-txt"># tag::curriculum_fn[]
+<div id="cell-20" class="clipboard-copy-txt"># tag::curriculum_fn[]
 def curriculum_fn(train_results, task_settable_env, env_ctx):
     time_steps = train_results.get("timesteps_total")
     difficulty = time_steps // 1000
@@ -2450,7 +2498,7 @@ def curriculum_fn(train_results, task_settable_env, env_ctx):
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-20">
+            <clipboard-copy for="cell-21">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -2478,7 +2526,7 @@ def curriculum_fn(train_results, task_settable_env, env_ctx):
     <span class="n">trainer</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
 <span class="c1"># end::curriculum_trainer[]</span>
 </pre></div>
-<div id="cell-20" class="clipboard-copy-txt"># tag::curriculum_trainer[]
+<div id="cell-21" class="clipboard-copy-txt"># tag::curriculum_trainer[]
 from ray.rllib.algorithms.dqn import DQNConfig
 import tempfile
 
@@ -2513,7 +2561,7 @@ for i in range(15):
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-21">
+            <clipboard-copy for="cell-22">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -2538,7 +2586,7 @@ for i in range(15):
 <span class="n">imitation_algo</span><span class="o">.</span><span class="n">evaluate</span><span class="p">()</span>
 <span class="c1"># end::input_trainer[]</span>
 </pre></div>
-<div id="cell-21" class="clipboard-copy-txt"># tag::input_trainer[]
+<div id="cell-22" class="clipboard-copy-txt"># tag::input_trainer[]
 imitation_algo = (
     DQNConfig()
     .environment(env=AdvancedEnv)

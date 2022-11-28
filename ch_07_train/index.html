@@ -1237,9 +1237,11 @@ refer to Ray's <a href="https://docs.ray.io/en/latest/ray-overview/installation.
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="s2">&quot;ray[data,train]&quot;</span><span class="o">==</span><span class="mf">2.1.0</span> <span class="n">dask</span><span class="o">==</span><span class="mf">2022.2.0</span> <span class="n">torch</span><span class="o">==</span><span class="mf">1.12.1</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="s2">&quot;ray[data,train]&quot;</span><span class="o">&gt;=</span><span class="mf">2.1.0</span> <span class="s2">&quot;dask==2022.2.0&quot;</span> <span class="s2">&quot;torch==1.12.1&quot;</span>
+<span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="s2">&quot;xgboost==1.6.2&quot;</span> <span class="s2">&quot;xgboost-ray&gt;=0.1.10&quot;</span>
 </pre></div>
-<div id="cell-2" class="clipboard-copy-txt">! pip install "ray[data,train]"==2.1.0 dask==2022.2.0 torch==1.12.1</div>
+<div id="cell-2" class="clipboard-copy-txt">! pip install "ray[data,train]">=2.1.0 "dask==2022.2.0" "torch==1.12.1"
+! pip install "xgboost==1.6.2" "xgboost-ray>=0.1.10"</div>
     
         </div>
     </div>
