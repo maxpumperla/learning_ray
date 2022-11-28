@@ -1314,43 +1314,39 @@ the repo and copy the code files to the base path of the runtime:</p>
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::gym_mock[]</span>
-<span class="kn">import</span> <span class="nn">gym</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">gym</span>
 
 
 <span class="k">class</span> <span class="nc">Env</span><span class="p">:</span>
 
     <span class="n">action_space</span><span class="p">:</span> <span class="n">gym</span><span class="o">.</span><span class="n">spaces</span><span class="o">.</span><span class="n">Space</span>
-    <span class="n">observation_space</span><span class="p">:</span> <span class="n">gym</span><span class="o">.</span><span class="n">spaces</span><span class="o">.</span><span class="n">Space</span>  <span class="c1"># &lt;1&gt;</span>
+    <span class="n">observation_space</span><span class="p">:</span> <span class="n">gym</span><span class="o">.</span><span class="n">spaces</span><span class="o">.</span><span class="n">Space</span>
 
-    <span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">action</span><span class="p">):</span>  <span class="c1"># &lt;2&gt;</span>
+    <span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">action</span><span class="p">):</span>
         <span class="o">...</span>
 
-    <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># &lt;3&gt;</span>
+    <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="o">...</span>
 
-    <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;human&quot;</span><span class="p">):</span>  <span class="c1"># &lt;4&gt;</span>
+    <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;human&quot;</span><span class="p">):</span>
         <span class="o">...</span>
-<span class="c1"># end::gym_mock[]</span>
 </pre></div>
-<div id="cell-4" class="clipboard-copy-txt"># tag::gym_mock[]
-import gym
+<div id="cell-4" class="clipboard-copy-txt">import gym
 
 
 class Env:
 
     action_space: gym.spaces.Space
-    observation_space: gym.spaces.Space  # <1>
+    observation_space: gym.spaces.Space
 
-    def step(self, action):  # <2>
+    def step(self, action):
         ...
 
-    def reset(self):  # <3>
+    def reset(self):
         ...
 
-    def render(self, mode="human"):  # <4>
-        ...
-# end::gym_mock[]</div>
+    def render(self, mode="human"):
+        ...</div>
     
         </div>
     </div>
@@ -1381,8 +1377,7 @@ class Env:
         <div class="CodeMirror cm-s-jupyter">
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="err">!</span> <span class="n">rllib</span> <span class="n">train</span> <span class="n">file</span> <span class="n">maze</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">stop</span> <span class="s1">&#39;{&quot;timesteps_total&quot;: 10000}&#39;</span>
 </pre></div>
-<div id="cell-5" class="clipboard-copy-txt">
-! rllib train file maze.py --stop '{"timesteps_total": 10000}'</div>
+<div id="cell-5" class="clipboard-copy-txt">! rllib train file maze.py --stop '{"timesteps_total": 10000}'</div>
     
         </div>
     </div>
@@ -1427,41 +1422,37 @@ rllib evaluate ~/ray_results/maze_env/<checkpoint>\
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::rllib_dqn_simple[]</span>
-<span class="kn">from</span> <span class="nn">ray.tune.logger</span> <span class="kn">import</span> <span class="n">pretty_print</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">ray.tune.logger</span> <span class="kn">import</span> <span class="n">pretty_print</span>
 <span class="kn">from</span> <span class="nn">maze_gym_env</span> <span class="kn">import</span> <span class="n">GymEnvironment</span>
 <span class="kn">from</span> <span class="nn">ray.rllib.algorithms.dqn</span> <span class="kn">import</span> <span class="n">DQNConfig</span>
 
-<span class="n">config</span> <span class="o">=</span> <span class="p">(</span><span class="n">DQNConfig</span><span class="p">()</span><span class="o">.</span><span class="n">environment</span><span class="p">(</span><span class="n">GymEnvironment</span><span class="p">)</span>  <span class="c1"># &lt;1&gt;</span>
+<span class="n">config</span> <span class="o">=</span> <span class="p">(</span><span class="n">DQNConfig</span><span class="p">()</span><span class="o">.</span><span class="n">environment</span><span class="p">(</span><span class="n">GymEnvironment</span><span class="p">)</span>
           <span class="o">.</span><span class="n">rollouts</span><span class="p">(</span><span class="n">num_rollout_workers</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">create_env_on_local_worker</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
 
 <span class="n">pretty_print</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">to_dict</span><span class="p">())</span>
 
-<span class="n">algo</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>  <span class="c1"># &lt;2&gt;</span>
+<span class="n">algo</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="n">algo</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>  <span class="c1"># &lt;3&gt;</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">algo</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">pretty_print</span><span class="p">(</span><span class="n">result</span><span class="p">))</span>  <span class="c1"># &lt;4&gt;</span>
-<span class="c1"># end::rllib_dqn_simple[]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pretty_print</span><span class="p">(</span><span class="n">result</span><span class="p">))</span>
 </pre></div>
-<div id="cell-6" class="clipboard-copy-txt"># tag::rllib_dqn_simple[]
-from ray.tune.logger import pretty_print
+<div id="cell-6" class="clipboard-copy-txt">from ray.tune.logger import pretty_print
 from maze_gym_env import GymEnvironment
 from ray.rllib.algorithms.dqn import DQNConfig
 
-config = (DQNConfig().environment(GymEnvironment)  # <1>
+config = (DQNConfig().environment(GymEnvironment)
           .rollouts(num_rollout_workers=2, create_env_on_local_worker=True))
 
 pretty_print(config.to_dict())
 
-algo = config.build()  # <2>
+algo = config.build()
 
 for i in range(10):
-    result = algo.train()  # <3>
+    result = algo.train()
 
-print(pretty_print(result))  # <4>
-# end::rllib_dqn_simple[]</div>
+print(pretty_print(result))</div>
     
         </div>
     </div>
@@ -1490,38 +1481,32 @@ print(pretty_print(result))  # <4>
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::rllib_simple_save[]</span>
-<span class="kn">from</span> <span class="nn">ray.rllib.algorithms.algorithm</span> <span class="kn">import</span> <span class="n">Algorithm</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">ray.rllib.algorithms.algorithm</span> <span class="kn">import</span> <span class="n">Algorithm</span>
 
 
-<span class="n">checkpoint</span> <span class="o">=</span> <span class="n">algo</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>  <span class="c1"># &lt;1&gt;</span>
+<span class="n">checkpoint</span> <span class="o">=</span> <span class="n">algo</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">checkpoint</span><span class="p">)</span>
 
-<span class="n">evaluation</span> <span class="o">=</span> <span class="n">algo</span><span class="o">.</span><span class="n">evaluate</span><span class="p">()</span>  <span class="c1"># &lt;2&gt;</span>
+<span class="n">evaluation</span> <span class="o">=</span> <span class="n">algo</span><span class="o">.</span><span class="n">evaluate</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">pretty_print</span><span class="p">(</span><span class="n">evaluation</span><span class="p">))</span>
 
-<span class="n">algo</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>  <span class="c1"># &lt;3&gt;</span>
-<span class="n">restored_algo</span> <span class="o">=</span> <span class="n">Algorithm</span><span class="o">.</span><span class="n">from_checkpoint</span><span class="p">(</span><span class="n">checkpoint</span><span class="p">)</span>  <span class="c1"># &lt;4&gt;</span>
+<span class="n">algo</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+<span class="n">restored_algo</span> <span class="o">=</span> <span class="n">Algorithm</span><span class="o">.</span><span class="n">from_checkpoint</span><span class="p">(</span><span class="n">checkpoint</span><span class="p">)</span>
 
-
-<span class="c1"># end::rllib_simple_save[]</span>
 <span class="n">algo</span> <span class="o">=</span> <span class="n">restored_algo</span>
 </pre></div>
-<div id="cell-7" class="clipboard-copy-txt"># tag::rllib_simple_save[]
-from ray.rllib.algorithms.algorithm import Algorithm
+<div id="cell-7" class="clipboard-copy-txt">from ray.rllib.algorithms.algorithm import Algorithm
 
 
-checkpoint = algo.save()  # <1>
+checkpoint = algo.save()
 print(checkpoint)
 
-evaluation = algo.evaluate()  # <2>
+evaluation = algo.evaluate()
 print(pretty_print(evaluation))
 
-algo.stop()  # <3>
-restored_algo = Algorithm.from_checkpoint(checkpoint)  # <4>
+algo.stop()
+restored_algo = Algorithm.from_checkpoint(checkpoint)
 
-
-# end::rllib_simple_save[]
 algo = restored_algo</div>
     
         </div>
@@ -1551,29 +1536,25 @@ algo = restored_algo</div>
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::rllib_manual_rollout[]</span>
-<span class="n">env</span> <span class="o">=</span> <span class="n">GymEnvironment</span><span class="p">()</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">env</span> <span class="o">=</span> <span class="n">GymEnvironment</span><span class="p">()</span>
 <span class="n">done</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="n">total_reward</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">observations</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
 
 <span class="k">while</span> <span class="ow">not</span> <span class="n">done</span><span class="p">:</span>
-    <span class="n">action</span> <span class="o">=</span> <span class="n">algo</span><span class="o">.</span><span class="n">compute_single_action</span><span class="p">(</span><span class="n">observations</span><span class="p">)</span>  <span class="c1"># &lt;1&gt;</span>
+    <span class="n">action</span> <span class="o">=</span> <span class="n">algo</span><span class="o">.</span><span class="n">compute_single_action</span><span class="p">(</span><span class="n">observations</span><span class="p">)</span>
     <span class="n">observations</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
     <span class="n">total_reward</span> <span class="o">+=</span> <span class="n">reward</span>
-<span class="c1"># end::rllib_manual_rollout[]</span>
 </pre></div>
-<div id="cell-8" class="clipboard-copy-txt"># tag::rllib_manual_rollout[]
-env = GymEnvironment()
+<div id="cell-8" class="clipboard-copy-txt">env = GymEnvironment()
 done = False
 total_reward = 0
 observations = env.reset()
 
 while not done:
-    action = algo.compute_single_action(observations)  # <1>
+    action = algo.compute_single_action(observations)
     observations, reward, done, info = env.step(action)
-    total_reward += reward
-# end::rllib_manual_rollout[]</div>
+    total_reward += reward</div>
     
         </div>
     </div>
@@ -1602,21 +1583,17 @@ while not done:
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::rllib_actions[]</span>
-<span class="n">action</span> <span class="o">=</span> <span class="n">algo</span><span class="o">.</span><span class="n">compute_actions</span><span class="p">(</span>  <span class="c1"># &lt;1&gt;</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">action</span> <span class="o">=</span> <span class="n">algo</span><span class="o">.</span><span class="n">compute_actions</span><span class="p">(</span>
     <span class="p">{</span><span class="s2">&quot;obs_1&quot;</span><span class="p">:</span> <span class="n">observations</span><span class="p">,</span> <span class="s2">&quot;obs_2&quot;</span><span class="p">:</span> <span class="n">observations</span><span class="p">}</span>
 <span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
 <span class="c1"># {&#39;obs_1&#39;: 0, &#39;obs_2&#39;: 1}</span>
-<span class="c1"># end::rllib_actions[]</span>
 </pre></div>
-<div id="cell-9" class="clipboard-copy-txt"># tag::rllib_actions[]
-action = algo.compute_actions(  # <1>
+<div id="cell-9" class="clipboard-copy-txt">action = algo.compute_actions(
     {"obs_1": observations, "obs_2": observations}
 )
 print(action)
-# {'obs_1': 0, 'obs_2': 1}
-# end::rllib_actions[]</div>
+# {'obs_1': 0, 'obs_2': 1}</div>
     
         </div>
     </div>
@@ -1645,19 +1622,15 @@ print(action)
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::rllib_policy[]</span>
-<span class="n">policy</span> <span class="o">=</span> <span class="n">algo</span><span class="o">.</span><span class="n">get_policy</span><span class="p">()</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">policy</span> <span class="o">=</span> <span class="n">algo</span><span class="o">.</span><span class="n">get_policy</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">policy</span><span class="o">.</span><span class="n">get_weights</span><span class="p">())</span>
 
 <span class="n">model</span> <span class="o">=</span> <span class="n">policy</span><span class="o">.</span><span class="n">model</span>
-<span class="c1"># end::rllib_policy[]</span>
 </pre></div>
-<div id="cell-10" class="clipboard-copy-txt"># tag::rllib_policy[]
-policy = algo.get_policy()
+<div id="cell-10" class="clipboard-copy-txt">policy = algo.get_policy()
 print(policy.get_weights())
 
-model = policy.model
-# end::rllib_policy[]</div>
+model = policy.model</div>
     
         </div>
     </div>
@@ -1686,19 +1659,15 @@ model = policy.model
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::rllib_workers[]</span>
-<span class="n">workers</span> <span class="o">=</span> <span class="n">algo</span><span class="o">.</span><span class="n">workers</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">workers</span> <span class="o">=</span> <span class="n">algo</span><span class="o">.</span><span class="n">workers</span>
 <span class="n">workers</span><span class="o">.</span><span class="n">foreach_worker</span><span class="p">(</span>
     <span class="k">lambda</span> <span class="n">remote_trainer</span><span class="p">:</span> <span class="n">remote_trainer</span><span class="o">.</span><span class="n">get_policy</span><span class="p">()</span><span class="o">.</span><span class="n">get_weights</span><span class="p">()</span>
 <span class="p">)</span>
-<span class="c1"># end::rllib_workers[]</span>
 </pre></div>
-<div id="cell-11" class="clipboard-copy-txt"># tag::rllib_workers[]
-workers = algo.workers
+<div id="cell-11" class="clipboard-copy-txt">workers = algo.workers
 workers.foreach_worker(
     lambda remote_trainer: remote_trainer.get_policy().get_weights()
-)
-# end::rllib_workers[]</div>
+)</div>
     
         </div>
     </div>
@@ -1727,15 +1696,9 @@ workers.foreach_worker(
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::rllib_q_network[]</span>
-<span class="n">model</span><span class="o">.</span><span class="n">base_model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
-
-<span class="c1"># end::rllib_q_network[]</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">base_model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
 </pre></div>
-<div id="cell-12" class="clipboard-copy-txt"># tag::rllib_q_network[]
-model.base_model.summary()
-
-# end::rllib_q_network[]</div>
+<div id="cell-12" class="clipboard-copy-txt">model.base_model.summary()</div>
     
         </div>
     </div>
@@ -1764,33 +1727,29 @@ model.base_model.summary()
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::rllib_model_output[]</span>
-<span class="kn">from</span> <span class="nn">ray.rllib.models.preprocessors</span> <span class="kn">import</span> <span class="n">get_preprocessor</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">ray.rllib.models.preprocessors</span> <span class="kn">import</span> <span class="n">get_preprocessor</span>
 
 
 <span class="n">env</span> <span class="o">=</span> <span class="n">GymEnvironment</span><span class="p">()</span>
 <span class="n">obs_space</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">observation_space</span>
-<span class="n">preprocessor</span> <span class="o">=</span> <span class="n">get_preprocessor</span><span class="p">(</span><span class="n">obs_space</span><span class="p">)(</span><span class="n">obs_space</span><span class="p">)</span>  <span class="c1"># &lt;1&gt;</span>
+<span class="n">preprocessor</span> <span class="o">=</span> <span class="n">get_preprocessor</span><span class="p">(</span><span class="n">obs_space</span><span class="p">)(</span><span class="n">obs_space</span><span class="p">)</span>
 
 <span class="n">observations</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
-<span class="n">transformed</span> <span class="o">=</span> <span class="n">preprocessor</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">observations</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># &lt;2&gt;</span>
+<span class="n">transformed</span> <span class="o">=</span> <span class="n">preprocessor</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">observations</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 
-<span class="n">model_output</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">model</span><span class="p">({</span><span class="s2">&quot;obs&quot;</span><span class="p">:</span> <span class="n">transformed</span><span class="p">})</span>  <span class="c1"># &lt;3&gt;</span>
-<span class="c1"># end::rllib_model_output[]</span>
+<span class="n">model_output</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">model</span><span class="p">({</span><span class="s2">&quot;obs&quot;</span><span class="p">:</span> <span class="n">transformed</span><span class="p">})</span>
 </pre></div>
-<div id="cell-13" class="clipboard-copy-txt"># tag::rllib_model_output[]
-from ray.rllib.models.preprocessors import get_preprocessor
+<div id="cell-13" class="clipboard-copy-txt">from ray.rllib.models.preprocessors import get_preprocessor
 
 
 env = GymEnvironment()
 obs_space = env.observation_space
-preprocessor = get_preprocessor(obs_space)(obs_space)  # <1>
+preprocessor = get_preprocessor(obs_space)(obs_space)
 
 observations = env.reset()
-transformed = preprocessor.transform(observations).reshape(1, -1)  # <2>
+transformed = preprocessor.transform(observations).reshape(1, -1)
 
-model_output, _ = model({"obs": transformed})  # <3>
-# end::rllib_model_output[]</div>
+model_output, _ = model({"obs": transformed})</div>
     
         </div>
     </div>
@@ -1819,27 +1778,19 @@ model_output, _ = model({"obs": transformed})  # <3>
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::rllib_q_values_action_dist[]</span>
-<span class="n">q_values</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">get_q_value_distributions</span><span class="p">(</span><span class="n">model_output</span><span class="p">)</span>  <span class="c1"># &lt;1&gt;</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">q_values</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">get_q_value_distributions</span><span class="p">(</span><span class="n">model_output</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">q_values</span><span class="p">)</span>
 
-<span class="n">action_distribution</span> <span class="o">=</span> <span class="n">policy</span><span class="o">.</span><span class="n">dist_class</span><span class="p">(</span><span class="n">model_output</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>  <span class="c1"># &lt;2&gt;</span>
-<span class="n">sample</span> <span class="o">=</span> <span class="n">action_distribution</span><span class="o">.</span><span class="n">sample</span><span class="p">()</span>  <span class="c1"># &lt;3&gt;</span>
+<span class="n">action_distribution</span> <span class="o">=</span> <span class="n">policy</span><span class="o">.</span><span class="n">dist_class</span><span class="p">(</span><span class="n">model_output</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>
+<span class="n">sample</span> <span class="o">=</span> <span class="n">action_distribution</span><span class="o">.</span><span class="n">sample</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
-<span class="c1"># end::rllib_q_values_action_dist[]</span>
-
-<span class="c1"># model.get_state_value(model_output)</span>
 </pre></div>
-<div id="cell-14" class="clipboard-copy-txt"># tag::rllib_q_values_action_dist[]
-q_values = model.get_q_value_distributions(model_output)  # <1>
+<div id="cell-14" class="clipboard-copy-txt">q_values = model.get_q_value_distributions(model_output)
 print(q_values)
 
-action_distribution = policy.dist_class(model_output, model)  # <2>
-sample = action_distribution.sample()  # <3>
-print(sample)
-# end::rllib_q_values_action_dist[]
-
-# model.get_state_value(model_output)</div>
+action_distribution = policy.dist_class(model_output, model)
+sample = action_distribution.sample()
+print(sample)</div>
     
         </div>
     </div>
@@ -1868,29 +1819,25 @@ print(sample)
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::multi_agent_init[]</span>
-<span class="kn">from</span> <span class="nn">ray.rllib.env.multi_agent_env</span> <span class="kn">import</span> <span class="n">MultiAgentEnv</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">ray.rllib.env.multi_agent_env</span> <span class="kn">import</span> <span class="n">MultiAgentEnv</span>
 <span class="kn">from</span> <span class="nn">gym.spaces</span> <span class="kn">import</span> <span class="n">Discrete</span>
 <span class="kn">import</span> <span class="nn">os</span>
 
 
 <span class="k">class</span> <span class="nc">MultiAgentMaze</span><span class="p">(</span><span class="n">MultiAgentEnv</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>  <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>  <span class="c1"># &lt;1&gt;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>  <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">action_space</span> <span class="o">=</span> <span class="n">Discrete</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">observation_space</span> <span class="o">=</span> <span class="n">Discrete</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="mi">5</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">agents</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">2</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">)}</span>  <span class="c1"># &lt;2&gt;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">agents</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">2</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">)}</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">goal</span> <span class="o">=</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">info</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;obs&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">agents</span><span class="p">[</span><span class="mi">1</span><span class="p">]},</span> <span class="mi">2</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;obs&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">agents</span><span class="p">[</span><span class="mi">2</span><span class="p">]}}</span>  <span class="c1"># &lt;3&gt;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">info</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;obs&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">agents</span><span class="p">[</span><span class="mi">1</span><span class="p">]},</span> <span class="mi">2</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;obs&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">agents</span><span class="p">[</span><span class="mi">2</span><span class="p">]}}</span>
 
     <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">agents</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">2</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">)}</span>
 
-        <span class="k">return</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_observation</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="mi">2</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_observation</span><span class="p">(</span><span class="mi">2</span><span class="p">)}</span>  <span class="c1"># &lt;4&gt;</span>
-<span class="c1"># end::multi_agent_init[]</span>
+        <span class="k">return</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_observation</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="mi">2</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_observation</span><span class="p">(</span><span class="mi">2</span><span class="p">)}</span>
 
-
-<span class="c1"># tag::multi_agent_helpers[]</span>
     <span class="k">def</span> <span class="nf">get_observation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">agent_id</span><span class="p">):</span>
         <span class="n">seeker</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">agents</span><span class="p">[</span><span class="n">agent_id</span><span class="p">]</span>
         <span class="k">return</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">seeker</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">seeker</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
@@ -1900,10 +1847,8 @@ print(sample)
 
     <span class="k">def</span> <span class="nf">is_done</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">agent_id</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">agents</span><span class="p">[</span><span class="n">agent_id</span><span class="p">]</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">goal</span>
-<span class="c1"># end::multi_agent_helpers[]</span>
 
-<span class="c1"># tag::multi_agent_step[]</span>
-    <span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">action</span><span class="p">):</span>  <span class="c1"># &lt;1&gt;</span>
+    <span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">action</span><span class="p">):</span>
         <span class="n">agent_ids</span> <span class="o">=</span> <span class="n">action</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
 
         <span class="k">for</span> <span class="n">agent_id</span> <span class="ow">in</span> <span class="n">agent_ids</span><span class="p">:</span>
@@ -1918,34 +1863,22 @@ print(sample)
                 <span class="n">seeker</span> <span class="o">=</span> <span class="p">(</span><span class="n">seeker</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">min</span><span class="p">(</span><span class="n">seeker</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Invalid action&quot;</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">agents</span><span class="p">[</span><span class="n">agent_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">seeker</span>  <span class="c1"># &lt;2&gt;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">agents</span><span class="p">[</span><span class="n">agent_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">seeker</span>
 
-        <span class="n">observations</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_observation</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">agent_ids</span><span class="p">}</span>  <span class="c1"># &lt;3&gt;</span>
+        <span class="n">observations</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_observation</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">agent_ids</span><span class="p">}</span>
         <span class="n">rewards</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_reward</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">agent_ids</span><span class="p">}</span>
         <span class="n">done</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_done</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">agent_ids</span><span class="p">}</span>
 
-        <span class="n">done</span><span class="p">[</span><span class="s2">&quot;__all__&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">all</span><span class="p">(</span><span class="n">done</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>  <span class="c1"># &lt;4&gt;</span>
+        <span class="n">done</span><span class="p">[</span><span class="s2">&quot;__all__&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">all</span><span class="p">(</span><span class="n">done</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
 
         <span class="k">return</span> <span class="n">observations</span><span class="p">,</span> <span class="n">rewards</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">info</span>
-<span class="c1"># end::multi_agent_step[]</span>
-
-<span class="c1"># tag::multi_agent_render[]</span>
-    <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;cls&#39;</span> <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;nt&#39;</span> <span class="k">else</span> <span class="s1">&#39;clear&#39;</span><span class="p">)</span>
-        <span class="n">grid</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;| &#39;</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span> <span class="o">+</span> <span class="p">[</span><span class="s2">&quot;|</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>
-        <span class="n">grid</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">goal</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="bp">self</span><span class="o">.</span><span class="n">goal</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="s1">&#39;|G&#39;</span>
-        <span class="n">grid</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">agents</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]][</span><span class="bp">self</span><span class="o">.</span><span class="n">agents</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="s1">&#39;|1&#39;</span>
-        <span class="n">grid</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">agents</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]][</span><span class="bp">self</span><span class="o">.</span><span class="n">agents</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="s1">&#39;|2&#39;</span>
-        <span class="n">grid</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">agents</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]][</span><span class="bp">self</span><span class="o">.</span><span class="n">agents</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="s1">&#39;|2&#39;</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">grid_row</span><span class="p">)</span> <span class="k">for</span> <span class="n">grid_row</span> <span class="ow">in</span> <span class="n">grid</span><span class="p">]))</span>
-<span class="c1"># end::multi_agent_render[]</span>
 
     <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;We override this method here so clear the output in Jupyter notebooks.</span>
 <span class="sd">        The previous implementation works well in the terminal, but does not clear</span>
 <span class="sd">        the screen in interactive environments.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;cls&#39;</span> <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;nt&#39;</span> <span class="k">else</span> <span class="s1">&#39;clear&#39;</span><span class="p">)</span>  <span class="c1"># &lt;1&gt;</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;cls&#39;</span> <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;nt&#39;</span> <span class="k">else</span> <span class="s1">&#39;clear&#39;</span><span class="p">)</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">clear_output</span>
             <span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -1958,29 +1891,25 @@ print(sample)
         <span class="n">grid</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">agents</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]][</span><span class="bp">self</span><span class="o">.</span><span class="n">agents</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="s1">&#39;|2&#39;</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">grid_row</span><span class="p">)</span> <span class="k">for</span> <span class="n">grid_row</span> <span class="ow">in</span> <span class="n">grid</span><span class="p">]))</span>
 </pre></div>
-<div id="cell-15" class="clipboard-copy-txt"># tag::multi_agent_init[]
-from ray.rllib.env.multi_agent_env import MultiAgentEnv
+<div id="cell-15" class="clipboard-copy-txt">from ray.rllib.env.multi_agent_env import MultiAgentEnv
 from gym.spaces import Discrete
 import os
 
 
 class MultiAgentMaze(MultiAgentEnv):
 
-    def __init__(self,  *args, **kwargs):  # <1>
+    def __init__(self,  *args, **kwargs):
         self.action_space = Discrete(4)
         self.observation_space = Discrete(5*5)
-        self.agents = {1: (4, 0), 2: (0, 4)}  # <2>
+        self.agents = {1: (4, 0), 2: (0, 4)}
         self.goal = (4, 4)
-        self.info = {1: {'obs': self.agents[1]}, 2: {'obs': self.agents[2]}}  # <3>
+        self.info = {1: {'obs': self.agents[1]}, 2: {'obs': self.agents[2]}}
 
     def reset(self):
         self.agents = {1: (4, 0), 2: (0, 4)}
 
-        return {1: self.get_observation(1), 2: self.get_observation(2)}  # <4>
-# end::multi_agent_init[]
+        return {1: self.get_observation(1), 2: self.get_observation(2)}
 
-
-# tag::multi_agent_helpers[]
     def get_observation(self, agent_id):
         seeker = self.agents[agent_id]
         return 5 * seeker[0] + seeker[1]
@@ -1990,10 +1919,8 @@ class MultiAgentMaze(MultiAgentEnv):
 
     def is_done(self, agent_id):
         return self.agents[agent_id] == self.goal
-# end::multi_agent_helpers[]
 
-# tag::multi_agent_step[]
-    def step(self, action):  # <1>
+    def step(self, action):
         agent_ids = action.keys()
 
         for agent_id in agent_ids:
@@ -2008,34 +1935,22 @@ class MultiAgentMaze(MultiAgentEnv):
                 seeker = (seeker[0], min(seeker[1] + 1, 4))
             else:
                 raise ValueError("Invalid action")
-            self.agents[agent_id] = seeker  # <2>
+            self.agents[agent_id] = seeker
 
-        observations = {i: self.get_observation(i) for i in agent_ids}  # <3>
+        observations = {i: self.get_observation(i) for i in agent_ids}
         rewards = {i: self.get_reward(i) for i in agent_ids}
         done = {i: self.is_done(i) for i in agent_ids}
 
-        done["__all__"] = all(done.values())  # <4>
+        done["__all__"] = all(done.values())
 
         return observations, rewards, done, self.info
-# end::multi_agent_step[]
-
-# tag::multi_agent_render[]
-    def render(self, *args, **kwargs):
-        os.system('cls' if os.name == 'nt' else 'clear')
-        grid = [['| ' for _ in range(5)] + ["|\n"] for _ in range(5)]
-        grid[self.goal[0]][self.goal[1]] = '|G'
-        grid[self.agents[1][0]][self.agents[1][1]] = '|1'
-        grid[self.agents[2][0]][self.agents[2][1]] = '|2'
-        grid[self.agents[2][0]][self.agents[2][1]] = '|2'
-        print(''.join([''.join(grid_row) for grid_row in grid]))
-# end::multi_agent_render[]
 
     def render(self, *args, **kwargs):
         """We override this method here so clear the output in Jupyter notebooks.
         The previous implementation works well in the terminal, but does not clear
         the screen in interactive environments.
         """
-        os.system('cls' if os.name == 'nt' else 'clear')  # <1>
+        os.system('cls' if os.name == 'nt' else 'clear')
         try:
             from IPython.display import clear_output
             clear_output(wait=True)
@@ -2075,8 +1990,7 @@ class MultiAgentMaze(MultiAgentEnv):
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::multi_agent_run[]</span>
-<span class="kn">import</span> <span class="nn">time</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
 
 <span class="n">env</span> <span class="o">=</span> <span class="n">MultiAgentMaze</span><span class="p">()</span>
 
@@ -2088,10 +2002,8 @@ class MultiAgentMaze(MultiAgentEnv):
     <span class="n">env</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
     <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">done</span><span class="o">.</span><span class="n">values</span><span class="p">()):</span>
         <span class="k">break</span>
-<span class="c1"># end::multi_agent_run[]</span>
 </pre></div>
-<div id="cell-16" class="clipboard-copy-txt"># tag::multi_agent_run[]
-import time
+<div id="cell-16" class="clipboard-copy-txt">import time
 
 env = MultiAgentMaze()
 
@@ -2102,8 +2014,7 @@ while True:
     time.sleep(0.1)
     env.render()
     if any(done.values()):
-        break
-# end::multi_agent_run[]</div>
+        break</div>
     
         </div>
     </div>
@@ -2132,18 +2043,15 @@ while True:
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::multi_agent_simple[]</span>
-<span class="kn">from</span> <span class="nn">ray.rllib.algorithms.dqn</span> <span class="kn">import</span> <span class="n">DQNConfig</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">ray.rllib.algorithms.dqn</span> <span class="kn">import</span> <span class="n">DQNConfig</span>
 
 <span class="n">simple_trainer</span> <span class="o">=</span> <span class="n">DQNConfig</span><span class="p">()</span><span class="o">.</span><span class="n">environment</span><span class="p">(</span><span class="n">env</span><span class="o">=</span><span class="n">MultiAgentMaze</span><span class="p">)</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
 <span class="n">simple_trainer</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
-<span class="c1"># end::multi_agent_simple[]</span>
 
-<span class="c1"># tag::multi_agent_mapping[]</span>
 <span class="n">algo</span> <span class="o">=</span> <span class="n">DQNConfig</span><span class="p">()</span>\
     <span class="o">.</span><span class="n">environment</span><span class="p">(</span><span class="n">env</span><span class="o">=</span><span class="n">MultiAgentMaze</span><span class="p">)</span>\
     <span class="o">.</span><span class="n">multi_agent</span><span class="p">(</span>
-        <span class="n">policies</span><span class="o">=</span><span class="p">{</span>  <span class="c1"># &lt;1&gt;</span>
+        <span class="n">policies</span><span class="o">=</span><span class="p">{</span>
             <span class="s2">&quot;policy_1&quot;</span><span class="p">:</span> <span class="p">(</span>
                 <span class="kc">None</span><span class="p">,</span> <span class="n">env</span><span class="o">.</span><span class="n">observation_space</span><span class="p">,</span> <span class="n">env</span><span class="o">.</span><span class="n">action_space</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;gamma&quot;</span><span class="p">:</span> <span class="mf">0.80</span><span class="p">}</span>
             <span class="p">),</span>
@@ -2151,24 +2059,20 @@ while True:
                 <span class="kc">None</span><span class="p">,</span> <span class="n">env</span><span class="o">.</span><span class="n">observation_space</span><span class="p">,</span> <span class="n">env</span><span class="o">.</span><span class="n">action_space</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;gamma&quot;</span><span class="p">:</span> <span class="mf">0.95</span><span class="p">}</span>
             <span class="p">),</span>
         <span class="p">},</span>
-        <span class="n">policy_mapping_fn</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">agent_id</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;policy_</span><span class="si">{</span><span class="n">agent_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>  <span class="c1"># &lt;2&gt;</span>
+        <span class="n">policy_mapping_fn</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">agent_id</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;policy_</span><span class="si">{</span><span class="n">agent_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
     <span class="p">)</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">algo</span><span class="o">.</span><span class="n">train</span><span class="p">())</span>
-<span class="c1"># end::multi_agent_mapping[]</span>
 </pre></div>
-<div id="cell-17" class="clipboard-copy-txt"># tag::multi_agent_simple[]
-from ray.rllib.algorithms.dqn import DQNConfig
+<div id="cell-17" class="clipboard-copy-txt">from ray.rllib.algorithms.dqn import DQNConfig
 
 simple_trainer = DQNConfig().environment(env=MultiAgentMaze).build()
 simple_trainer.train()
-# end::multi_agent_simple[]
 
-# tag::multi_agent_mapping[]
 algo = DQNConfig()\
     .environment(env=MultiAgentMaze)\
     .multi_agent(
-        policies={  # <1>
+        policies={
             "policy_1": (
                 None, env.observation_space, env.action_space, {"gamma": 0.80}
             ),
@@ -2176,11 +2080,10 @@ algo = DQNConfig()\
                 None, env.observation_space, env.action_space, {"gamma": 0.95}
             ),
         },
-        policy_mapping_fn = lambda agent_id: f"policy_{agent_id}",  # <2>
+        policy_mapping_fn = lambda agent_id: f"policy_{agent_id}",
     ).build()
 
-print(algo.train())
-# end::multi_agent_mapping[]</div>
+print(algo.train())</div>
     
         </div>
     </div>
@@ -2209,8 +2112,7 @@ print(algo.train())
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::advanced_env_init[]</span>
-<span class="kn">from</span> <span class="nn">gym.spaces</span> <span class="kn">import</span> <span class="n">Discrete</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">gym.spaces</span> <span class="kn">import</span> <span class="n">Discrete</span>
 <span class="kn">import</span> <span class="nn">random</span>
 <span class="kn">import</span> <span class="nn">os</span>
 
@@ -2223,7 +2125,7 @@ print(algo.train())
         <span class="bp">self</span><span class="o">.</span><span class="n">action_space</span> <span class="o">=</span> <span class="n">Discrete</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">observation_space</span> <span class="o">=</span> <span class="n">Discrete</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">maze_len</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">maze_len</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="n">seeker</span><span class="p">:</span>  <span class="c1"># &lt;1&gt;</span>
+        <span class="k">if</span> <span class="n">seeker</span><span class="p">:</span>
             <span class="k">assert</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">seeker</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">maze_len</span> <span class="ow">and</span> \
                    <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">seeker</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">maze_len</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">seeker</span> <span class="o">=</span> <span class="n">seeker</span>
@@ -2233,13 +2135,11 @@ print(algo.train())
         <span class="bp">self</span><span class="o">.</span><span class="n">goal</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">maze_len</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">maze_len</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">info</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;seeker&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">seeker</span><span class="p">,</span> <span class="s1">&#39;goal&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">goal</span><span class="p">}</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">punish_states</span> <span class="o">=</span> <span class="p">[</span>  <span class="c1"># &lt;2&gt;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">punish_states</span> <span class="o">=</span> <span class="p">[</span>
             <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">maze_len</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">maze_len</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">j</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span>
         <span class="p">]</span>
-<span class="c1"># end::advanced_env_init[]</span>
 
-<span class="c1"># tag::advanced_env_rest[]</span>
     <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Reset seeker position randomly, return observations.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">seeker</span> <span class="o">=</span> <span class="p">(</span>
@@ -2259,23 +2159,11 @@ print(algo.train())
         <span class="k">return</span> <span class="n">reward</span>
 
     <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Render the environment, e.g. by printing its representation.&quot;&quot;&quot;</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;cls&#39;</span> <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;nt&#39;</span> <span class="k">else</span> <span class="s1">&#39;clear&#39;</span><span class="p">)</span>
-        <span class="n">grid</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;| &#39;</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">maze_len</span><span class="p">)]</span> <span class="o">+</span>
-                <span class="p">[</span><span class="s2">&quot;|</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">maze_len</span><span class="p">)]</span>
-        <span class="k">for</span> <span class="n">punish</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">punish_states</span><span class="p">:</span>
-            <span class="n">grid</span><span class="p">[</span><span class="n">punish</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="n">punish</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="s1">&#39;|X&#39;</span>
-        <span class="n">grid</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">goal</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="bp">self</span><span class="o">.</span><span class="n">goal</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="s1">&#39;|G&#39;</span>
-        <span class="n">grid</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">seeker</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="bp">self</span><span class="o">.</span><span class="n">seeker</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="s1">&#39;|S&#39;</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">grid_row</span><span class="p">)</span> <span class="k">for</span> <span class="n">grid_row</span> <span class="ow">in</span> <span class="n">grid</span><span class="p">]))</span>
-<span class="c1"># end::advanced_env_rest[]</span>
-
-    <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;We override this method here so clear the output in Jupyter notebooks.</span>
 <span class="sd">        The previous implementation works well in the terminal, but does not clear</span>
 <span class="sd">        the screen in interactive environments.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;cls&#39;</span> <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;nt&#39;</span> <span class="k">else</span> <span class="s1">&#39;clear&#39;</span><span class="p">)</span>  <span class="c1"># &lt;1&gt;</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;cls&#39;</span> <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;nt&#39;</span> <span class="k">else</span> <span class="s1">&#39;clear&#39;</span><span class="p">)</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">clear_output</span>
             <span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -2289,8 +2177,7 @@ print(algo.train())
         <span class="n">grid</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">seeker</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="bp">self</span><span class="o">.</span><span class="n">seeker</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="s1">&#39;|S&#39;</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">grid_row</span><span class="p">)</span> <span class="k">for</span> <span class="n">grid_row</span> <span class="ow">in</span> <span class="n">grid</span><span class="p">]))</span>
 </pre></div>
-<div id="cell-18" class="clipboard-copy-txt"># tag::advanced_env_init[]
-from gym.spaces import Discrete
+<div id="cell-18" class="clipboard-copy-txt">from gym.spaces import Discrete
 import random
 import os
 
@@ -2303,7 +2190,7 @@ class AdvancedEnv(GymEnvironment):
         self.action_space = Discrete(4)
         self.observation_space = Discrete(self.maze_len * self.maze_len)
 
-        if seeker:  # <1>
+        if seeker:
             assert 0 <= seeker[0] < self.maze_len and \
                    0 <= seeker[1] < self.maze_len
             self.seeker = seeker
@@ -2313,13 +2200,11 @@ class AdvancedEnv(GymEnvironment):
         self.goal = (self.maze_len-1, self.maze_len-1)
         self.info = {'seeker': self.seeker, 'goal': self.goal}
 
-        self.punish_states = [  # <2>
+        self.punish_states = [
             (i, j) for i in range(self.maze_len) for j in range(self.maze_len)
             if i % 2 == 1 and j % 2 == 0
         ]
-# end::advanced_env_init[]
 
-# tag::advanced_env_rest[]
     def reset(self):
         """Reset seeker position randomly, return observations."""
         self.seeker = (
@@ -2339,23 +2224,11 @@ class AdvancedEnv(GymEnvironment):
         return reward
 
     def render(self, *args, **kwargs):
-        """Render the environment, e.g. by printing its representation."""
-        os.system('cls' if os.name == 'nt' else 'clear')
-        grid = [['| ' for _ in range(self.maze_len)] +
-                ["|\n"] for _ in range(self.maze_len)]
-        for punish in self.punish_states:
-            grid[punish[0]][punish[1]] = '|X'
-        grid[self.goal[0]][self.goal[1]] = '|G'
-        grid[self.seeker[0]][self.seeker[1]] = '|S'
-        print(''.join([''.join(grid_row) for grid_row in grid]))
-# end::advanced_env_rest[]
-
-    def render(self, *args, **kwargs):
         """We override this method here so clear the output in Jupyter notebooks.
         The previous implementation works well in the terminal, but does not clear
         the screen in interactive environments.
         """
-        os.system('cls' if os.name == 'nt' else 'clear')  # <1>
+        os.system('cls' if os.name == 'nt' else 'clear')
         try:
             from IPython.display import clear_output
             clear_output(wait=True)
@@ -2396,8 +2269,7 @@ class AdvancedEnv(GymEnvironment):
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::task_settable[]</span>
-<span class="kn">from</span> <span class="nn">ray.rllib.env.apis.task_settable_env</span> <span class="kn">import</span> <span class="n">TaskSettableEnv</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">ray.rllib.env.apis.task_settable_env</span> <span class="kn">import</span> <span class="n">TaskSettableEnv</span>
 
 
 <span class="k">class</span> <span class="nc">CurriculumEnv</span><span class="p">(</span><span class="n">AdvancedEnv</span><span class="p">,</span> <span class="n">TaskSettableEnv</span><span class="p">):</span>
@@ -2405,20 +2277,18 @@ class AdvancedEnv(GymEnvironment):
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="n">AdvancedEnv</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">difficulty</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># &lt;1&gt;</span>
+    <span class="k">def</span> <span class="nf">difficulty</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">seeker</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">goal</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">+</span> \
                <span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">seeker</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">goal</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 
-    <span class="k">def</span> <span class="nf">get_task</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># &lt;2&gt;</span>
+    <span class="k">def</span> <span class="nf">get_task</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">difficulty</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">set_task</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task_difficulty</span><span class="p">):</span>  <span class="c1"># &lt;3&gt;</span>
+    <span class="k">def</span> <span class="nf">set_task</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task_difficulty</span><span class="p">):</span>
         <span class="k">while</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">difficulty</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="n">task_difficulty</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
-<span class="c1"># end::task_settable[]</span>
 </pre></div>
-<div id="cell-19" class="clipboard-copy-txt"># tag::task_settable[]
-from ray.rllib.env.apis.task_settable_env import TaskSettableEnv
+<div id="cell-19" class="clipboard-copy-txt">from ray.rllib.env.apis.task_settable_env import TaskSettableEnv
 
 
 class CurriculumEnv(AdvancedEnv, TaskSettableEnv):
@@ -2426,17 +2296,16 @@ class CurriculumEnv(AdvancedEnv, TaskSettableEnv):
     def __init__(self, *args, **kwargs):
         AdvancedEnv.__init__(self)
 
-    def difficulty(self):  # <1>
+    def difficulty(self):
         return abs(self.seeker[0] - self.goal[0]) + \
                abs(self.seeker[1] - self.goal[1])
 
-    def get_task(self):  # <2>
+    def get_task(self):
         return self.difficulty()
 
-    def set_task(self, task_difficulty):  # <3>
+    def set_task(self, task_difficulty):
         while not self.difficulty() <= task_difficulty:
-            self.reset()
-# end::task_settable[]</div>
+            self.reset()</div>
     
         </div>
     </div>
@@ -2465,21 +2334,17 @@ class CurriculumEnv(AdvancedEnv, TaskSettableEnv):
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::curriculum_fn[]</span>
-<span class="k">def</span> <span class="nf">curriculum_fn</span><span class="p">(</span><span class="n">train_results</span><span class="p">,</span> <span class="n">task_settable_env</span><span class="p">,</span> <span class="n">env_ctx</span><span class="p">):</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="k">def</span> <span class="nf">curriculum_fn</span><span class="p">(</span><span class="n">train_results</span><span class="p">,</span> <span class="n">task_settable_env</span><span class="p">,</span> <span class="n">env_ctx</span><span class="p">):</span>
     <span class="n">time_steps</span> <span class="o">=</span> <span class="n">train_results</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;timesteps_total&quot;</span><span class="p">)</span>
     <span class="n">difficulty</span> <span class="o">=</span> <span class="n">time_steps</span> <span class="o">//</span> <span class="mi">1000</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Current difficulty: </span><span class="si">{</span><span class="n">difficulty</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">difficulty</span>
-<span class="c1"># end::curriculum_fn[]</span>
 </pre></div>
-<div id="cell-20" class="clipboard-copy-txt"># tag::curriculum_fn[]
-def curriculum_fn(train_results, task_settable_env, env_ctx):
+<div id="cell-20" class="clipboard-copy-txt">def curriculum_fn(train_results, task_settable_env, env_ctx):
     time_steps = train_results.get("timesteps_total")
     difficulty = time_steps // 1000
     print(f"Current difficulty: {difficulty}")
-    return difficulty
-# end::curriculum_fn[]</div>
+    return difficulty</div>
     
         </div>
     </div>
@@ -2508,41 +2373,37 @@ def curriculum_fn(train_results, task_settable_env, env_ctx):
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::curriculum_trainer[]</span>
-<span class="kn">from</span> <span class="nn">ray.rllib.algorithms.dqn</span> <span class="kn">import</span> <span class="n">DQNConfig</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">ray.rllib.algorithms.dqn</span> <span class="kn">import</span> <span class="n">DQNConfig</span>
 <span class="kn">import</span> <span class="nn">tempfile</span>
 
 
-<span class="n">temp</span> <span class="o">=</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">mkdtemp</span><span class="p">()</span>  <span class="c1"># &lt;1&gt;</span>
+<span class="n">temp</span> <span class="o">=</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">mkdtemp</span><span class="p">()</span>
 
 <span class="n">trainer</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">DQNConfig</span><span class="p">()</span>
-    <span class="o">.</span><span class="n">environment</span><span class="p">(</span><span class="n">env</span><span class="o">=</span><span class="n">CurriculumEnv</span><span class="p">,</span> <span class="n">env_task_fn</span><span class="o">=</span><span class="n">curriculum_fn</span><span class="p">)</span>  <span class="c1"># &lt;2&gt;</span>
-    <span class="o">.</span><span class="n">offline_data</span><span class="p">(</span><span class="n">output</span><span class="o">=</span><span class="n">temp</span><span class="p">)</span>  <span class="c1"># &lt;3&gt;</span>
+    <span class="o">.</span><span class="n">environment</span><span class="p">(</span><span class="n">env</span><span class="o">=</span><span class="n">CurriculumEnv</span><span class="p">,</span> <span class="n">env_task_fn</span><span class="o">=</span><span class="n">curriculum_fn</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">offline_data</span><span class="p">(</span><span class="n">output</span><span class="o">=</span><span class="n">temp</span><span class="p">)</span>
     <span class="o">.</span><span class="n">build</span><span class="p">()</span>
 <span class="p">)</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">15</span><span class="p">):</span>
     <span class="n">trainer</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
-<span class="c1"># end::curriculum_trainer[]</span>
 </pre></div>
-<div id="cell-21" class="clipboard-copy-txt"># tag::curriculum_trainer[]
-from ray.rllib.algorithms.dqn import DQNConfig
+<div id="cell-21" class="clipboard-copy-txt">from ray.rllib.algorithms.dqn import DQNConfig
 import tempfile
 
 
-temp = tempfile.mkdtemp()  # <1>
+temp = tempfile.mkdtemp()
 
 trainer = (
     DQNConfig()
-    .environment(env=CurriculumEnv, env_task_fn=curriculum_fn)  # <2>
-    .offline_data(output=temp)  # <3>
+    .environment(env=CurriculumEnv, env_task_fn=curriculum_fn)
+    .offline_data(output=temp)
     .build()
 )
 
 for i in range(15):
-    trainer.train()
-# end::curriculum_trainer[]</div>
+    trainer.train()</div>
     
         </div>
     </div>
@@ -2571,8 +2432,7 @@ for i in range(15):
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::input_trainer[]</span>
-<span class="n">imitation_algo</span> <span class="o">=</span> <span class="p">(</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">imitation_algo</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">DQNConfig</span><span class="p">()</span>
     <span class="o">.</span><span class="n">environment</span><span class="p">(</span><span class="n">env</span><span class="o">=</span><span class="n">AdvancedEnv</span><span class="p">)</span>
     <span class="o">.</span><span class="n">evaluation</span><span class="p">(</span><span class="n">off_policy_estimation_methods</span><span class="o">=</span><span class="p">{})</span>
@@ -2584,10 +2444,8 @@ for i in range(15):
     <span class="n">imitation_algo</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
 
 <span class="n">imitation_algo</span><span class="o">.</span><span class="n">evaluate</span><span class="p">()</span>
-<span class="c1"># end::input_trainer[]</span>
 </pre></div>
-<div id="cell-22" class="clipboard-copy-txt"># tag::input_trainer[]
-imitation_algo = (
+<div id="cell-22" class="clipboard-copy-txt">imitation_algo = (
     DQNConfig()
     .environment(env=AdvancedEnv)
     .evaluation(off_policy_estimation_methods={})
@@ -2598,8 +2456,7 @@ imitation_algo = (
 for i in range(10):
     imitation_algo.train()
 
-imitation_algo.evaluate()
-# end::input_trainer[]</div>
+imitation_algo.evaluate()</div>
     
         </div>
     </div>

@@ -1172,13 +1172,13 @@ use a nightly wheel (here for Python 3.7 on Linux):</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
@@ -1200,6 +1200,31 @@ use a nightly wheel (here for Python 3.7 on Linux):</p>
     </div>
 
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre><span class="ansi-yellow-fg">DEPRECATION: Configuring installation scheme with distutils config files is deprecated and will no longer work in the near future. If you are using a Homebrew or Linuxbrew Python, please see discussion at https://github.com/Homebrew/homebrew-core/issues/76621</span><span class="ansi-yellow-fg">
+</span><span class="ansi-red-fg">ERROR: ray-3.0.0.dev0-cp37-cp37m-macosx_10_15_intel.whl is not a supported wheel on this platform.</span><span class="ansi-red-fg">
+</span><span class="ansi-yellow-fg">WARNING: There was an error checking the latest version of pip.</span><span class="ansi-yellow-fg">
+</span></pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -1228,13 +1253,13 @@ refer to Ray's <a href="https://docs.ray.io/en/latest/ray-overview/installation.
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
@@ -1258,6 +1283,124 @@ refer to Ray's <a href="https://docs.ray.io/en/latest/ray-overview/installation.
     </div>
 
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre><span class="ansi-yellow-fg">DEPRECATION: Configuring installation scheme with distutils config files is deprecated and will no longer work in the near future. If you are using a Homebrew or Linuxbrew Python, please see discussion at https://github.com/Homebrew/homebrew-core/issues/76621</span><span class="ansi-yellow-fg">
+</span>Collecting ray[data,train]&gt;=2.1.0
+  Downloading ray-2.1.0-cp39-cp39-macosx_10_15_x86_64.whl (76.2 MB)
+     <span class="ansi-black-intense-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">76.2/76.2 MB</span> <span class="ansi-red-fg">3.4 MB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>00:0100:01
+Collecting dask==2022.2.0
+  Using cached dask-2022.2.0-py3-none-any.whl (1.1 MB)
+Requirement already satisfied: torch==1.12.1 in /usr/local/lib/python3.9/site-packages (1.12.1)
+Requirement already satisfied: fsspec&gt;=0.6.0 in /usr/local/lib/python3.9/site-packages (from dask==2022.2.0) (2022.8.2)
+Collecting partd&gt;=0.3.10
+  Using cached partd-1.3.0-py3-none-any.whl (18 kB)
+Requirement already satisfied: cloudpickle&gt;=1.1.1 in /usr/local/lib/python3.9/site-packages (from dask==2022.2.0) (2.0.0)
+Collecting toolz&gt;=0.8.2
+  Using cached toolz-0.12.0-py3-none-any.whl (55 kB)
+Requirement already satisfied: pyyaml&gt;=5.3.1 in /usr/local/lib/python3.9/site-packages (from dask==2022.2.0) (5.4.1)
+Requirement already satisfied: packaging&gt;=20.0 in /usr/local/lib/python3.9/site-packages (from dask==2022.2.0) (21.3)
+Requirement already satisfied: typing-extensions in /usr/local/lib/python3.9/site-packages (from torch==1.12.1) (3.10.0.2)
+Requirement already satisfied: click&lt;=8.0.4,&gt;=7.0 in /usr/local/lib/python3.9/site-packages (from ray[data,train]&gt;=2.1.0) (7.1.2)
+Requirement already satisfied: grpcio&gt;=1.32.0 in /usr/local/lib/python3.9/site-packages (from ray[data,train]&gt;=2.1.0) (1.43.0)
+Requirement already satisfied: attrs in /usr/local/lib/python3.9/site-packages (from ray[data,train]&gt;=2.1.0) (20.3.0)
+Requirement already satisfied: aiosignal in /usr/local/lib/python3.9/site-packages (from ray[data,train]&gt;=2.1.0) (1.2.0)
+Requirement already satisfied: jsonschema in /usr/local/lib/python3.9/site-packages (from ray[data,train]&gt;=2.1.0) (3.2.0)
+Requirement already satisfied: requests in /usr/local/lib/python3.9/site-packages (from ray[data,train]&gt;=2.1.0) (2.25.1)
+Requirement already satisfied: protobuf!=3.19.5,&gt;=3.15.3 in /usr/local/lib/python3.9/site-packages (from ray[data,train]&gt;=2.1.0) (3.19.6)
+Requirement already satisfied: numpy&gt;=1.19.3 in /usr/local/lib/python3.9/site-packages (from ray[data,train]&gt;=2.1.0) (1.23.3)
+Requirement already satisfied: msgpack&lt;2.0.0,&gt;=1.0.0 in /usr/local/lib/python3.9/site-packages (from ray[data,train]&gt;=2.1.0) (1.0.3)
+Requirement already satisfied: frozenlist in /usr/local/lib/python3.9/site-packages (from ray[data,train]&gt;=2.1.0) (1.3.0)
+Requirement already satisfied: filelock in /usr/local/lib/python3.9/site-packages (from ray[data,train]&gt;=2.1.0) (3.3.1)
+Requirement already satisfied: virtualenv&gt;=20.0.24 in /usr/local/lib/python3.9/site-packages (from ray[data,train]&gt;=2.1.0) (20.8.1)
+Requirement already satisfied: pandas in /usr/local/lib/python3.9/site-packages (from ray[data,train]&gt;=2.1.0) (1.4.4)
+Requirement already satisfied: tensorboardX&gt;=1.9 in /usr/local/lib/python3.9/site-packages (from ray[data,train]&gt;=2.1.0) (2.5.1)
+Requirement already satisfied: tabulate in /usr/local/lib/python3.9/site-packages (from ray[data,train]&gt;=2.1.0) (0.8.9)
+Requirement already satisfied: pyarrow&lt;7.0.0,&gt;=6.0.1 in /usr/local/lib/python3.9/site-packages (from ray[data,train]&gt;=2.1.0) (6.0.1)
+Requirement already satisfied: six&gt;=1.5.2 in /usr/local/lib/python3.9/site-packages/six-1.15.0-py3.9.egg (from grpcio&gt;=1.32.0-&gt;ray[data,train]&gt;=2.1.0) (1.15.0)
+Requirement already satisfied: pyparsing!=3.0.5,&gt;=2.0.2 in /usr/local/lib/python3.9/site-packages (from packaging&gt;=20.0-&gt;dask==2022.2.0) (2.4.7)
+Requirement already satisfied: pytz&gt;=2020.1 in /usr/local/lib/python3.9/site-packages (from pandas-&gt;ray[data,train]&gt;=2.1.0) (2020.4)
+Requirement already satisfied: python-dateutil&gt;=2.8.1 in /usr/local/lib/python3.9/site-packages (from pandas-&gt;ray[data,train]&gt;=2.1.0) (2.8.1)
+Collecting locket
+  Using cached locket-1.0.0-py2.py3-none-any.whl (4.4 kB)
+Requirement already satisfied: backports.entry-points-selectable&gt;=1.0.4 in /usr/local/lib/python3.9/site-packages (from virtualenv&gt;=20.0.24-&gt;ray[data,train]&gt;=2.1.0) (1.1.0)
+Requirement already satisfied: distlib&lt;1,&gt;=0.3.1 in /usr/local/lib/python3.9/site-packages (from virtualenv&gt;=20.0.24-&gt;ray[data,train]&gt;=2.1.0) (0.3.3)
+Requirement already satisfied: platformdirs&lt;3,&gt;=2 in /usr/local/lib/python3.9/site-packages (from virtualenv&gt;=20.0.24-&gt;ray[data,train]&gt;=2.1.0) (2.4.0)
+Requirement already satisfied: pyrsistent&gt;=0.14.0 in /usr/local/lib/python3.9/site-packages (from jsonschema-&gt;ray[data,train]&gt;=2.1.0) (0.17.3)
+Requirement already satisfied: setuptools in /usr/local/lib/python3.9/site-packages (from jsonschema-&gt;ray[data,train]&gt;=2.1.0) (59.5.0)
+Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /usr/local/lib/python3.9/site-packages (from requests-&gt;ray[data,train]&gt;=2.1.0) (1.26.12)
+Requirement already satisfied: idna&lt;3,&gt;=2.5 in /usr/local/lib/python3.9/site-packages (from requests-&gt;ray[data,train]&gt;=2.1.0) (2.10)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /usr/local/lib/python3.9/site-packages (from requests-&gt;ray[data,train]&gt;=2.1.0) (2020.12.5)
+Requirement already satisfied: chardet&lt;5,&gt;=3.0.2 in /usr/local/lib/python3.9/site-packages (from requests-&gt;ray[data,train]&gt;=2.1.0) (4.0.0)
+Installing collected packages: toolz, locket, ray, partd, dask
+<span class="ansi-yellow-fg">  DEPRECATION: Configuring installation scheme with distutils config files is deprecated and will no longer work in the near future. If you are using a Homebrew or Linuxbrew Python, please see discussion at https://github.com/Homebrew/homebrew-core/issues/76621</span><span class="ansi-yellow-fg">
+</span><span class="ansi-yellow-fg">  DEPRECATION: Configuring installation scheme with distutils config files is deprecated and will no longer work in the near future. If you are using a Homebrew or Linuxbrew Python, please see discussion at https://github.com/Homebrew/homebrew-core/issues/76621</span><span class="ansi-yellow-fg">
+</span>  Attempting uninstall: ray
+    Found existing installation: ray 2.0.0
+    Uninstalling ray-2.0.0:
+      Successfully uninstalled ray-2.0.0
+<span class="ansi-yellow-fg">  DEPRECATION: Configuring installation scheme with distutils config files is deprecated and will no longer work in the near future. If you are using a Homebrew or Linuxbrew Python, please see discussion at https://github.com/Homebrew/homebrew-core/issues/76621</span><span class="ansi-yellow-fg">
+</span><span class="ansi-yellow-fg">  DEPRECATION: Configuring installation scheme with distutils config files is deprecated and will no longer work in the near future. If you are using a Homebrew or Linuxbrew Python, please see discussion at https://github.com/Homebrew/homebrew-core/issues/76621</span><span class="ansi-yellow-fg">
+</span><span class="ansi-yellow-fg">  DEPRECATION: Configuring installation scheme with distutils config files is deprecated and will no longer work in the near future. If you are using a Homebrew or Linuxbrew Python, please see discussion at https://github.com/Homebrew/homebrew-core/issues/76621</span><span class="ansi-yellow-fg">
+</span><span class="ansi-yellow-fg">DEPRECATION: Configuring installation scheme with distutils config files is deprecated and will no longer work in the near future. If you are using a Homebrew or Linuxbrew Python, please see discussion at https://github.com/Homebrew/homebrew-core/issues/76621</span><span class="ansi-yellow-fg">
+</span>Successfully installed dask-2022.2.0 locket-1.0.0 partd-1.3.0 ray-2.1.0 toolz-0.12.0
+<span class="ansi-yellow-fg">WARNING: There was an error checking the latest version of pip.</span><span class="ansi-yellow-fg">
+</span><span class="ansi-yellow-fg">DEPRECATION: Configuring installation scheme with distutils config files is deprecated and will no longer work in the near future. If you are using a Homebrew or Linuxbrew Python, please see discussion at https://github.com/Homebrew/homebrew-core/issues/76621</span><span class="ansi-yellow-fg">
+</span>Requirement already satisfied: xgboost==1.6.2 in /usr/local/lib/python3.9/site-packages (1.6.2)
+Requirement already satisfied: xgboost-ray&gt;=0.1.10 in /usr/local/lib/python3.9/site-packages (0.1.11)
+Requirement already satisfied: scipy in /usr/local/lib/python3.9/site-packages (from xgboost==1.6.2) (1.8.1)
+Requirement already satisfied: numpy in /usr/local/lib/python3.9/site-packages (from xgboost==1.6.2) (1.23.3)
+Requirement already satisfied: ray&gt;=1.10 in /usr/local/lib/python3.9/site-packages (from xgboost-ray&gt;=0.1.10) (2.1.0)
+Requirement already satisfied: wrapt&gt;=1.12.1 in /usr/local/lib/python3.9/site-packages (from xgboost-ray&gt;=0.1.10) (1.12.1)
+Requirement already satisfied: packaging in /usr/local/lib/python3.9/site-packages (from xgboost-ray&gt;=0.1.10) (21.3)
+Requirement already satisfied: pandas in /usr/local/lib/python3.9/site-packages (from xgboost-ray&gt;=0.1.10) (1.4.4)
+Requirement already satisfied: attrs in /usr/local/lib/python3.9/site-packages (from ray&gt;=1.10-&gt;xgboost-ray&gt;=0.1.10) (20.3.0)
+Requirement already satisfied: requests in /usr/local/lib/python3.9/site-packages (from ray&gt;=1.10-&gt;xgboost-ray&gt;=0.1.10) (2.25.1)
+Requirement already satisfied: msgpack&lt;2.0.0,&gt;=1.0.0 in /usr/local/lib/python3.9/site-packages (from ray&gt;=1.10-&gt;xgboost-ray&gt;=0.1.10) (1.0.3)
+Requirement already satisfied: pyyaml in /usr/local/lib/python3.9/site-packages (from ray&gt;=1.10-&gt;xgboost-ray&gt;=0.1.10) (5.4.1)
+Requirement already satisfied: click&lt;=8.0.4,&gt;=7.0 in /usr/local/lib/python3.9/site-packages (from ray&gt;=1.10-&gt;xgboost-ray&gt;=0.1.10) (7.1.2)
+Requirement already satisfied: frozenlist in /usr/local/lib/python3.9/site-packages (from ray&gt;=1.10-&gt;xgboost-ray&gt;=0.1.10) (1.3.0)
+Requirement already satisfied: virtualenv&gt;=20.0.24 in /usr/local/lib/python3.9/site-packages (from ray&gt;=1.10-&gt;xgboost-ray&gt;=0.1.10) (20.8.1)
+Requirement already satisfied: jsonschema in /usr/local/lib/python3.9/site-packages (from ray&gt;=1.10-&gt;xgboost-ray&gt;=0.1.10) (3.2.0)
+Requirement already satisfied: protobuf!=3.19.5,&gt;=3.15.3 in /usr/local/lib/python3.9/site-packages (from ray&gt;=1.10-&gt;xgboost-ray&gt;=0.1.10) (3.19.6)
+Requirement already satisfied: filelock in /usr/local/lib/python3.9/site-packages (from ray&gt;=1.10-&gt;xgboost-ray&gt;=0.1.10) (3.3.1)
+Requirement already satisfied: grpcio&gt;=1.32.0 in /usr/local/lib/python3.9/site-packages (from ray&gt;=1.10-&gt;xgboost-ray&gt;=0.1.10) (1.43.0)
+Requirement already satisfied: aiosignal in /usr/local/lib/python3.9/site-packages (from ray&gt;=1.10-&gt;xgboost-ray&gt;=0.1.10) (1.2.0)
+Requirement already satisfied: pyparsing!=3.0.5,&gt;=2.0.2 in /usr/local/lib/python3.9/site-packages (from packaging-&gt;xgboost-ray&gt;=0.1.10) (2.4.7)
+Requirement already satisfied: python-dateutil&gt;=2.8.1 in /usr/local/lib/python3.9/site-packages (from pandas-&gt;xgboost-ray&gt;=0.1.10) (2.8.1)
+Requirement already satisfied: pytz&gt;=2020.1 in /usr/local/lib/python3.9/site-packages (from pandas-&gt;xgboost-ray&gt;=0.1.10) (2020.4)
+Requirement already satisfied: six&gt;=1.5.2 in /usr/local/lib/python3.9/site-packages/six-1.15.0-py3.9.egg (from grpcio&gt;=1.32.0-&gt;ray&gt;=1.10-&gt;xgboost-ray&gt;=0.1.10) (1.15.0)
+Requirement already satisfied: platformdirs&lt;3,&gt;=2 in /usr/local/lib/python3.9/site-packages (from virtualenv&gt;=20.0.24-&gt;ray&gt;=1.10-&gt;xgboost-ray&gt;=0.1.10) (2.4.0)
+Requirement already satisfied: distlib&lt;1,&gt;=0.3.1 in /usr/local/lib/python3.9/site-packages (from virtualenv&gt;=20.0.24-&gt;ray&gt;=1.10-&gt;xgboost-ray&gt;=0.1.10) (0.3.3)
+Requirement already satisfied: backports.entry-points-selectable&gt;=1.0.4 in /usr/local/lib/python3.9/site-packages (from virtualenv&gt;=20.0.24-&gt;ray&gt;=1.10-&gt;xgboost-ray&gt;=0.1.10) (1.1.0)
+Requirement already satisfied: pyrsistent&gt;=0.14.0 in /usr/local/lib/python3.9/site-packages (from jsonschema-&gt;ray&gt;=1.10-&gt;xgboost-ray&gt;=0.1.10) (0.17.3)
+Requirement already satisfied: setuptools in /usr/local/lib/python3.9/site-packages (from jsonschema-&gt;ray&gt;=1.10-&gt;xgboost-ray&gt;=0.1.10) (59.5.0)
+Requirement already satisfied: chardet&lt;5,&gt;=3.0.2 in /usr/local/lib/python3.9/site-packages (from requests-&gt;ray&gt;=1.10-&gt;xgboost-ray&gt;=0.1.10) (4.0.0)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /usr/local/lib/python3.9/site-packages (from requests-&gt;ray&gt;=1.10-&gt;xgboost-ray&gt;=0.1.10) (2020.12.5)
+Requirement already satisfied: idna&lt;3,&gt;=2.5 in /usr/local/lib/python3.9/site-packages (from requests-&gt;ray&gt;=1.10-&gt;xgboost-ray&gt;=0.1.10) (2.10)
+Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /usr/local/lib/python3.9/site-packages (from requests-&gt;ray&gt;=1.10-&gt;xgboost-ray&gt;=0.1.10) (1.26.12)
+<span class="ansi-yellow-fg">DEPRECATION: Configuring installation scheme with distutils config files is deprecated and will no longer work in the near future. If you are using a Homebrew or Linuxbrew Python, please see discussion at https://github.com/Homebrew/homebrew-core/issues/76621</span><span class="ansi-yellow-fg">
+</span><span class="ansi-yellow-fg">WARNING: There was an error checking the latest version of pip.</span><span class="ansi-yellow-fg">
+</span></pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -1313,7 +1456,7 @@ the repo and copy the code files to the base path of the runtime:</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
@@ -1327,8 +1470,7 @@ the repo and copy the code files to the base path of the runtime:</p>
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::ml_pipeline_preprocess[]</span>
-<span class="kn">import</span> <span class="nn">ray</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">ray</span>
 <span class="kn">from</span> <span class="nn">ray.util.dask</span> <span class="kn">import</span> <span class="n">enable_dask_on_ray</span>
 
 <span class="kn">import</span> <span class="nn">dask.dataframe</span> <span class="k">as</span> <span class="nn">dd</span>
@@ -1343,9 +1485,9 @@ the repo and copy the code files to the base path of the runtime:</p>
 <span class="k">def</span> <span class="nf">load_dataset</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">include_label</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
     <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;tpep_pickup_datetime&quot;</span><span class="p">,</span> <span class="s2">&quot;tpep_dropoff_datetime&quot;</span><span class="p">,</span> <span class="s2">&quot;tip_amount&quot;</span><span class="p">,</span>
                <span class="s2">&quot;passenger_count&quot;</span><span class="p">,</span> <span class="s2">&quot;trip_distance&quot;</span><span class="p">,</span> <span class="s2">&quot;fare_amount&quot;</span><span class="p">]</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">dd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>  <span class="c1"># &lt;1&gt;</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">dd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>
 
-    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>  <span class="c1"># &lt;2&gt;</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
     <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;passenger_count&quot;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">4</span><span class="p">)</span> <span class="o">&amp;</span>
             <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;trip_distance&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">)</span> <span class="o">&amp;</span>
             <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;fare_amount&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">)]</span>
@@ -1357,20 +1499,18 @@ the repo and copy the code files to the base path of the runtime:</p>
                            <span class="n">df</span><span class="p">[</span><span class="s2">&quot;tpep_pickup_datetime&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">seconds</span>
     <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;trip_duration&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">4</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span><span class="p">]</span> <span class="c1"># 4 hours.</span>
     <span class="n">df</span><span class="p">[</span><span class="s2">&quot;hour&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;tpep_pickup_datetime&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">hour</span>
-    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;day_of_week&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;tpep_pickup_datetime&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">weekday</span>  <span class="c1"># &lt;3&gt;</span>
+    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;day_of_week&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;tpep_pickup_datetime&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">weekday</span>
 
     <span class="k">if</span> <span class="n">include_label</span><span class="p">:</span>
-        <span class="n">df</span><span class="p">[</span><span class="n">LABEL_COLUMN</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;tip_amount&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">0.2</span> <span class="o">*</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;fare_amount&quot;</span><span class="p">]</span>  <span class="c1"># &lt;4&gt;</span>
+        <span class="n">df</span><span class="p">[</span><span class="n">LABEL_COLUMN</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;tip_amount&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">0.2</span> <span class="o">*</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;fare_amount&quot;</span><span class="p">]</span>
 
-    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span>  <span class="c1"># &lt;5&gt;</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span>
         <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;tpep_pickup_datetime&quot;</span><span class="p">,</span> <span class="s2">&quot;tpep_dropoff_datetime&quot;</span><span class="p">,</span> <span class="s2">&quot;tip_amount&quot;</span><span class="p">]</span>
     <span class="p">)</span>
 
-    <span class="k">return</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">from_dask</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">repartition</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>  <span class="c1"># &lt;6&gt;</span>
-<span class="c1"># end::ml_pipeline_preprocess[]</span>
+    <span class="k">return</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">from_dask</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">repartition</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
 </pre></div>
-<div id="cell-4" class="clipboard-copy-txt"># tag::ml_pipeline_preprocess[]
-import ray
+<div id="cell-4" class="clipboard-copy-txt">import ray
 from ray.util.dask import enable_dask_on_ray
 
 import dask.dataframe as dd
@@ -1385,9 +1525,9 @@ enable_dask_on_ray()
 def load_dataset(path: str, *, include_label=True):
     columns = ["tpep_pickup_datetime", "tpep_dropoff_datetime", "tip_amount",
                "passenger_count", "trip_distance", "fare_amount"]
-    df = dd.read_parquet(path, columns=columns)  # <1>
+    df = dd.read_parquet(path, columns=columns)
 
-    df = df.dropna()  # <2>
+    df = df.dropna()
     df = df[(df["passenger_count"] <= 4) &
             (df["trip_distance"] < 100) &
             (df["fare_amount"] < 1000)]
@@ -1399,17 +1539,16 @@ def load_dataset(path: str, *, include_label=True):
                            df["tpep_pickup_datetime"]).dt.seconds
     df = df[df["trip_duration"] < 4 * 60 * 60] # 4 hours.
     df["hour"] = df["tpep_pickup_datetime"].dt.hour
-    df["day_of_week"] = df["tpep_pickup_datetime"].dt.weekday  # <3>
+    df["day_of_week"] = df["tpep_pickup_datetime"].dt.weekday
 
     if include_label:
-        df[LABEL_COLUMN] = df["tip_amount"] > 0.2 * df["fare_amount"]  # <4>
+        df[LABEL_COLUMN] = df["tip_amount"] > 0.2 * df["fare_amount"]
 
-    df = df.drop(  # <5>
+    df = df.drop(
         columns=["tpep_pickup_datetime", "tpep_dropoff_datetime", "tip_amount"]
     )
 
-    return ray.data.from_dask(df).repartition(100)  # <6>
-# end::ml_pipeline_preprocess[]</div>
+    return ray.data.from_dask(df).repartition(100)</div>
     
         </div>
     </div>
@@ -1424,7 +1563,7 @@ def load_dataset(path: str, *, include_label=True):
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
@@ -1438,8 +1577,7 @@ def load_dataset(path: str, *, include_label=True):
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::ml_pipeline_model[]</span>
-<span class="kn">import</span> <span class="nn">torch</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
 <span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
 <span class="kn">import</span> <span class="nn">torch.nn.functional</span> <span class="k">as</span> <span class="nn">F</span>
 
@@ -1463,10 +1601,8 @@ def load_dataset(path: str, *, include_label=True):
         <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sigmoid</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fc3</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 
         <span class="k">return</span> <span class="n">x</span>
-<span class="c1"># end::ml_pipeline_model[]</span>
 </pre></div>
-<div id="cell-5" class="clipboard-copy-txt"># tag::ml_pipeline_model[]
-import torch
+<div id="cell-5" class="clipboard-copy-txt">import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
@@ -1489,8 +1625,7 @@ class FarePredictor(nn.Module):
         x = self.bn2(x)
         x = torch.sigmoid(self.fc3(x))
 
-        return x
-# end::ml_pipeline_model[]</div>
+        return x</div>
     
         </div>
     </div>
@@ -1505,7 +1640,7 @@ class FarePredictor(nn.Module):
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
@@ -1519,30 +1654,29 @@ class FarePredictor(nn.Module):
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::ml_pipeline_train_1[]</span>
-<span class="kn">from</span> <span class="nn">ray.air</span> <span class="kn">import</span> <span class="n">session</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">ray.air</span> <span class="kn">import</span> <span class="n">session</span>
 <span class="kn">from</span> <span class="nn">ray.air.config</span> <span class="kn">import</span> <span class="n">ScalingConfig</span>
 <span class="kn">import</span> <span class="nn">ray.train</span> <span class="k">as</span> <span class="nn">train</span>
 <span class="kn">from</span> <span class="nn">ray.train.torch</span> <span class="kn">import</span> <span class="n">TorchCheckpoint</span><span class="p">,</span> <span class="n">TorchTrainer</span>
 
 
-<span class="k">def</span> <span class="nf">train_loop_per_worker</span><span class="p">(</span><span class="n">config</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>  <span class="c1"># &lt;1&gt;</span>
+<span class="k">def</span> <span class="nf">train_loop_per_worker</span><span class="p">(</span><span class="n">config</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
     <span class="n">batch_size</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;batch_size&quot;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
     <span class="n">lr</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;lr&quot;</span><span class="p">,</span> <span class="mf">1e-2</span><span class="p">)</span>
     <span class="n">num_epochs</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;num_epochs&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 
-    <span class="n">dataset_shard</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">get_dataset_shard</span><span class="p">(</span><span class="s2">&quot;train&quot;</span><span class="p">)</span>  <span class="c1"># &lt;2&gt;</span>
+    <span class="n">dataset_shard</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">get_dataset_shard</span><span class="p">(</span><span class="s2">&quot;train&quot;</span><span class="p">)</span>
 
     <span class="n">model</span> <span class="o">=</span> <span class="n">FarePredictor</span><span class="p">()</span>
-    <span class="n">dist_model</span> <span class="o">=</span> <span class="n">train</span><span class="o">.</span><span class="n">torch</span><span class="o">.</span><span class="n">prepare_model</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>  <span class="c1"># &lt;3&gt;</span>
+    <span class="n">dist_model</span> <span class="o">=</span> <span class="n">train</span><span class="o">.</span><span class="n">torch</span><span class="o">.</span><span class="n">prepare_model</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
 
     <span class="n">loss_function</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">SmoothL1Loss</span><span class="p">()</span>
     <span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">dist_model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="n">lr</span><span class="p">)</span>
 
-    <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_epochs</span><span class="p">):</span>  <span class="c1"># &lt;4&gt;</span>
+    <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_epochs</span><span class="p">):</span>
         <span class="n">loss</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="n">num_batches</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="k">for</span> <span class="n">batch</span> <span class="ow">in</span> <span class="n">dataset_shard</span><span class="o">.</span><span class="n">iter_torch_batches</span><span class="p">(</span>  <span class="c1"># &lt;5&gt;</span>
+        <span class="k">for</span> <span class="n">batch</span> <span class="ow">in</span> <span class="n">dataset_shard</span><span class="o">.</span><span class="n">iter_torch_batches</span><span class="p">(</span>
                 <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">dtypes</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float</span>
         <span class="p">):</span>
             <span class="n">labels</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="n">batch</span><span class="p">[</span><span class="n">LABEL_COLUMN</span><span class="p">],</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -1558,36 +1692,34 @@ class FarePredictor(nn.Module):
             <span class="n">num_batches</span> <span class="o">+=</span> <span class="mi">1</span>
             <span class="n">loss</span> <span class="o">+=</span> <span class="n">batch_loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
 
-        <span class="n">session</span><span class="o">.</span><span class="n">report</span><span class="p">(</span>  <span class="c1"># &lt;6&gt;</span>
+        <span class="n">session</span><span class="o">.</span><span class="n">report</span><span class="p">(</span>
             <span class="p">{</span><span class="s2">&quot;epoch&quot;</span><span class="p">:</span> <span class="n">epoch</span><span class="p">,</span> <span class="s2">&quot;loss&quot;</span><span class="p">:</span> <span class="n">loss</span><span class="p">},</span>
             <span class="n">checkpoint</span><span class="o">=</span><span class="n">TorchCheckpoint</span><span class="o">.</span><span class="n">from_model</span><span class="p">(</span><span class="n">dist_model</span><span class="p">)</span>
         <span class="p">)</span>
-<span class="c1"># end::ml_pipeline_train_1[]</span>
 </pre></div>
-<div id="cell-6" class="clipboard-copy-txt"># tag::ml_pipeline_train_1[]
-from ray.air import session
+<div id="cell-6" class="clipboard-copy-txt">from ray.air import session
 from ray.air.config import ScalingConfig
 import ray.train as train
 from ray.train.torch import TorchCheckpoint, TorchTrainer
 
 
-def train_loop_per_worker(config: dict):  # <1>
+def train_loop_per_worker(config: dict):
     batch_size = config.get("batch_size", 32)
     lr = config.get("lr", 1e-2)
     num_epochs = config.get("num_epochs", 3)
 
-    dataset_shard = session.get_dataset_shard("train")  # <2>
+    dataset_shard = session.get_dataset_shard("train")
 
     model = FarePredictor()
-    dist_model = train.torch.prepare_model(model)  # <3>
+    dist_model = train.torch.prepare_model(model)
 
     loss_function = nn.SmoothL1Loss()
     optimizer = torch.optim.Adam(dist_model.parameters(), lr=lr)
 
-    for epoch in range(num_epochs):  # <4>
+    for epoch in range(num_epochs):
         loss = 0
         num_batches = 0
-        for batch in dataset_shard.iter_torch_batches(  # <5>
+        for batch in dataset_shard.iter_torch_batches(
                 batch_size=batch_size, dtypes=torch.float
         ):
             labels = torch.unsqueeze(batch[LABEL_COLUMN], dim=1)
@@ -1603,11 +1735,10 @@ def train_loop_per_worker(config: dict):  # <1>
             num_batches += 1
             loss += batch_loss.item()
 
-        session.report(  # <6>
+        session.report(
             {"epoch": epoch, "loss": loss},
             checkpoint=TorchCheckpoint.from_model(dist_model)
-        )
-# end::ml_pipeline_train_1[]</div>
+        )</div>
     
         </div>
     </div>
@@ -1616,13 +1747,13 @@ def train_loop_per_worker(config: dict):  # <1>
 </div>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
@@ -1640,41 +1771,37 @@ def train_loop_per_worker(config: dict):  # <1>
 <span class="c1"># try using num_workers=1, resources_per_worker={&quot;CPU&quot;: 1, &quot;GPU&quot;: 0} in your</span>
 <span class="c1"># ScalingConfig below.</span>
 <span class="c1"># In any case, this training loop will take considerable time to run.</span>
-<span class="c1"># tag::ml_pipeline_train_2[]</span>
 <span class="n">trainer</span> <span class="o">=</span> <span class="n">TorchTrainer</span><span class="p">(</span>
-    <span class="n">train_loop_per_worker</span><span class="o">=</span><span class="n">train_loop_per_worker</span><span class="p">,</span>  <span class="c1"># &lt;1&gt;</span>
-    <span class="n">train_loop_config</span><span class="o">=</span><span class="p">{</span>  <span class="c1"># &lt;2&gt;</span>
+    <span class="n">train_loop_per_worker</span><span class="o">=</span><span class="n">train_loop_per_worker</span><span class="p">,</span>
+    <span class="n">train_loop_config</span><span class="o">=</span><span class="p">{</span>
         <span class="s2">&quot;lr&quot;</span><span class="p">:</span> <span class="mf">1e-2</span><span class="p">,</span> <span class="s2">&quot;num_epochs&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;batch_size&quot;</span><span class="p">:</span> <span class="mi">64</span>
     <span class="p">},</span>
-    <span class="n">scaling_config</span><span class="o">=</span><span class="n">ScalingConfig</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>  <span class="c1"># &lt;3&gt;</span>
-    <span class="n">datasets</span><span class="o">=</span><span class="p">{</span>  <span class="c1"># &lt;4&gt;</span>
+    <span class="n">scaling_config</span><span class="o">=</span><span class="n">ScalingConfig</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>
+    <span class="n">datasets</span><span class="o">=</span><span class="p">{</span>
         <span class="s2">&quot;train&quot;</span><span class="p">:</span> <span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;nyc_tlc_data/yellow_tripdata_2020-01.parquet&quot;</span><span class="p">)</span>
     <span class="p">},</span>
 <span class="p">)</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="n">trainer</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>  <span class="c1"># &lt;5&gt;</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">trainer</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
 <span class="n">trained_model</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">checkpoint</span>
-<span class="c1"># end::ml_pipeline_train_2[]</span>
 </pre></div>
 <div id="cell-7" class="clipboard-copy-txt"># NOTE: Colab does not have enough resources to run this example.
 # try using num_workers=1, resources_per_worker={"CPU": 1, "GPU": 0} in your
 # ScalingConfig below.
 # In any case, this training loop will take considerable time to run.
-# tag::ml_pipeline_train_2[]
 trainer = TorchTrainer(
-    train_loop_per_worker=train_loop_per_worker,  # <1>
-    train_loop_config={  # <2>
+    train_loop_per_worker=train_loop_per_worker,
+    train_loop_config={
         "lr": 1e-2, "num_epochs": 3, "batch_size": 64
     },
-    scaling_config=ScalingConfig(num_workers=2),  # <3>
-    datasets={  # <4>
+    scaling_config=ScalingConfig(num_workers=2),
+    datasets={
         "train": load_dataset("nyc_tlc_data/yellow_tripdata_2020-01.parquet")
     },
 )
 
-result = trainer.fit()  # <5>
-trained_model = result.checkpoint
-# end::ml_pipeline_train_2[]</div>
+result = trainer.fit()
+trained_model = result.checkpoint</div>
     
         </div>
     </div>
@@ -1682,14 +1809,123 @@ trained_model = result.checkpoint
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>2022-11-28 13:58:57,798	INFO worker.py:1519 -- Started a local Ray instance. View the dashboard at <span class="ansi-green-intense-fg ansi-bold">127.0.0.1:8265 </span>
+Repartition: 100%|██████████| 100/100 [00:00&lt;00:00, 107.31it/s]
+</pre>
+</div>
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+
+</div>
+
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre><span class="ansi-cyan-fg">(RayTrainWorker pid=14268)</span> 2022-11-28 13:59:13,024	INFO config.py:87 -- Setting up process group for: env:// [rank=0, world_size=2]
+<span class="ansi-cyan-fg">(RayTrainWorker pid=14268)</span> [W ProcessGroupGloo.cpp:715] Warning: Unable to resolve hostname to a (local) address. Using the loopback address as fallback. Manually set the network interface to bind to with GLOO_SOCKET_IFNAME. (function operator())
+<span class="ansi-cyan-fg">(RayTrainWorker pid=14269)</span> [W ProcessGroupGloo.cpp:715] Warning: Unable to resolve hostname to a (local) address. Using the loopback address as fallback. Manually set the network interface to bind to with GLOO_SOCKET_IFNAME. (function operator())
+<span class="ansi-cyan-fg">(RayTrainWorker pid=14268)</span> 2022-11-28 13:59:15,086	INFO train_loop_utils.py:298 -- Moving model to device: cpu
+<span class="ansi-cyan-fg">(RayTrainWorker pid=14268)</span> 2022-11-28 13:59:15,088	INFO train_loop_utils.py:362 -- Wrapping provided model in DistributedDataParallel.
+<span class="ansi-cyan-fg">(RayTrainWorker pid=14268)</span> /usr/local/lib/python3.9/site-packages/ray/air/_internal/torch_utils.py:135: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at  /Users/runner/work/pytorch/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:178.)
+<span class="ansi-cyan-fg">(RayTrainWorker pid=14268)</span>   return torch.as_tensor(ndarray, dtype=dtype, device=device)
+<span class="ansi-cyan-fg">(RayTrainWorker pid=14269)</span> /usr/local/lib/python3.9/site-packages/ray/air/_internal/torch_utils.py:135: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at  /Users/runner/work/pytorch/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:178.)
+<span class="ansi-cyan-fg">(RayTrainWorker pid=14269)</span>   return torch.as_tensor(ndarray, dtype=dtype, device=device)
+</pre>
+</div>
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<div class="trialProgress">
+  <h3>Trial Progress</h3>
+  <table>
+<thead>
+<tr><th>Trial name              </th><th style="text-align: right;">  _time_this_iter_s</th><th style="text-align: right;">  _timestamp</th><th style="text-align: right;">  _training_iteration</th><th>date               </th><th>done  </th><th>episodes_total  </th><th style="text-align: right;">  epoch</th><th>experiment_id                   </th><th>hostname  </th><th style="text-align: right;">  iterations_since_restore</th><th style="text-align: right;">  loss</th><th>node_ip  </th><th style="text-align: right;">  pid</th><th>should_checkpoint  </th><th style="text-align: right;">  time_since_restore</th><th style="text-align: right;">  time_this_iter_s</th><th style="text-align: right;">  time_total_s</th><th style="text-align: right;">  timestamp</th><th style="text-align: right;">  timesteps_since_restore</th><th>timesteps_total  </th><th style="text-align: right;">  training_iteration</th><th>trial_id   </th><th style="text-align: right;">  warmup_time</th></tr>
+</thead>
+<tbody>
+<tr><td>TorchTrainer_7103e_00000</td><td style="text-align: right;">            165.991</td><td style="text-align: right;">  1669640521</td><td style="text-align: right;">                    1</td><td>2022-11-28_14-02-01</td><td>False </td><td>                </td><td style="text-align: right;">      0</td><td>5b072afdc0e748d7b82e1d7dbe312338</td><td>mac       </td><td style="text-align: right;">                         1</td><td style="text-align: right;">5656.2</td><td>127.0.0.1</td><td style="text-align: right;">14259</td><td>True               </td><td style="text-align: right;">              171.36</td><td style="text-align: right;">            171.36</td><td style="text-align: right;">        171.36</td><td style="text-align: right;"> 1669640521</td><td style="text-align: right;">                        0</td><td>                 </td><td style="text-align: right;">                   1</td><td>7103e_00000</td><td style="text-align: right;">    0.0213518</td></tr>
+</tbody>
+</table>
+</div>
+<style>
+.trialProgress {
+  display: flex;
+  flex-direction: column;
+  color: var(--jp-ui-font-color1);
+}
+.trialProgress h3 {
+  font-weight: bold;
+}
+.trialProgress td {
+  white-space: nowrap;
+}
+</style>
+
+</div>
+
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>2022-11-28 14:09:30,212	WARNING tune.py:705 -- Stop signal received (e.g. via SIGINT/Ctrl+C), ending Ray Tune run. This will try to checkpoint the experiment state one last time. Press CTRL+C (or send SIGINT/SIGKILL/SIGTERM) to skip. 
+2022-11-28 14:09:30,438	ERROR tune.py:773 -- Trials did not complete: [TorchTrainer_7103e_00000]
+2022-11-28 14:09:30,439	INFO tune.py:777 -- Total run time: 624.02 seconds (623.71 seconds for the tuning loop).
+2022-11-28 14:09:30,440	WARNING tune.py:783 -- Experiment has been interrupted, but the most recent state was saved. You can continue running this experiment by passing `resume=True` to `tune.run()`
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
@@ -1703,8 +1939,7 @@ trained_model = result.checkpoint
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::ml_pipeline_inference[]</span>
-<span class="kn">from</span> <span class="nn">ray.train.torch</span> <span class="kn">import</span> <span class="n">TorchPredictor</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">ray.train.torch</span> <span class="kn">import</span> <span class="n">TorchPredictor</span>
 <span class="kn">from</span> <span class="nn">ray.train.batch_predictor</span> <span class="kn">import</span> <span class="n">BatchPredictor</span>
 
 <span class="n">batch_predictor</span> <span class="o">=</span> <span class="n">BatchPredictor</span><span class="p">(</span><span class="n">trained_model</span><span class="p">,</span> <span class="n">TorchPredictor</span><span class="p">)</span>
@@ -1712,18 +1947,15 @@ trained_model = result.checkpoint
     <span class="s2">&quot;nyc_tlc_data/yellow_tripdata_2021-01.parquet&quot;</span><span class="p">,</span> <span class="n">include_label</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
 <span class="n">batch_predictor</span><span class="o">.</span><span class="n">predict_pipelined</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">blocks_per_window</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="c1"># end::ml_pipeline_inference[]</span>
 </pre></div>
-<div id="cell-8" class="clipboard-copy-txt"># tag::ml_pipeline_inference[]
-from ray.train.torch import TorchPredictor
+<div id="cell-8" class="clipboard-copy-txt">from ray.train.torch import TorchPredictor
 from ray.train.batch_predictor import BatchPredictor
 
 batch_predictor = BatchPredictor(trained_model, TorchPredictor)
 ds = load_dataset(
     "nyc_tlc_data/yellow_tripdata_2021-01.parquet", include_label=False)
 
-batch_predictor.predict_pipelined(ds, blocks_per_window=10)
-# end::ml_pipeline_inference[]</div>
+batch_predictor.predict_pipelined(ds, blocks_per_window=10)</div>
     
         </div>
     </div>
@@ -1731,14 +1963,55 @@ batch_predictor.predict_pipelined(ds, blocks_per_window=10)
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>Repartition: 100%|██████████| 100/100 [00:00&lt;00:00, 771.81it/s]
+2022-11-28 14:10:03,685	INFO dataset.py:3402 -- Created DatasetPipeline with 10 windows: 5.55MiB min, 5.55MiB max, 5.55MiB mean
+2022-11-28 14:10:03,685	INFO dataset.py:3412 -- Blocks per window: 10 min, 10 max, 10 mean
+2022-11-28 14:10:03,687	WARNING dataset.py:3424 -- ⚠️  This pipeline&#39;s parallelism is limited by its blocks per window to ~10 concurrent tasks per window. To maximize performance, increase the blocks per window to at least 12. This may require increasing the base dataset&#39;s parallelism and/or adjusting the windowing parameters.
+2022-11-28 14:10:03,688	INFO dataset.py:3451 -- ✔️  This pipeline&#39;s windows likely fit in object store memory without spilling.
+</pre>
+</div>
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>DatasetPipeline(num_windows=10, num_stages=2)</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
@@ -1752,8 +2025,7 @@ batch_predictor.predict_pipelined(ds, blocks_per_window=10)
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::training_func_setup[]</span>
-<span class="kn">import</span> <span class="nn">torch</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
 <span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
 <span class="kn">import</span> <span class="nn">torch.nn.functional</span> <span class="k">as</span> <span class="nn">F</span>
 <span class="kn">from</span> <span class="nn">ray.data</span> <span class="kn">import</span> <span class="n">from_torch</span>
@@ -1779,15 +2051,15 @@ batch_predictor.predict_pipelined(ds, blocks_per_window=10)
 
 
 <span class="k">def</span> <span class="nf">train_data</span><span class="p">():</span>
-    <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">num_samples</span><span class="p">,</span> <span class="n">input_size</span><span class="p">)</span>  <span class="c1"># &lt;1&gt;</span>
+    <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">num_samples</span><span class="p">,</span> <span class="n">input_size</span><span class="p">)</span>
 
 
 <span class="n">input_data</span> <span class="o">=</span> <span class="n">train_data</span><span class="p">()</span>
 <span class="n">label_data</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">num_samples</span><span class="p">,</span> <span class="n">output_size</span><span class="p">)</span>
-<span class="n">train_dataset</span> <span class="o">=</span> <span class="n">from_torch</span><span class="p">(</span><span class="n">input_data</span><span class="p">)</span>  <span class="c1"># &lt;2&gt;</span>
+<span class="n">train_dataset</span> <span class="o">=</span> <span class="n">from_torch</span><span class="p">(</span><span class="n">input_data</span><span class="p">)</span>
 
 
-<span class="k">def</span> <span class="nf">train_one_epoch</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">loss_fn</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">):</span>  <span class="c1"># &lt;3&gt;</span>
+<span class="k">def</span> <span class="nf">train_one_epoch</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">loss_fn</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">):</span>
     <span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">input_data</span><span class="p">)</span>
     <span class="n">loss</span> <span class="o">=</span> <span class="n">loss_fn</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">label_data</span><span class="p">)</span>
     <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
@@ -1795,16 +2067,14 @@ batch_predictor.predict_pipelined(ds, blocks_per_window=10)
     <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
 
 
-<span class="k">def</span> <span class="nf">training_loop</span><span class="p">():</span>  <span class="c1"># &lt;4&gt;</span>
+<span class="k">def</span> <span class="nf">training_loop</span><span class="p">():</span>
     <span class="n">model</span> <span class="o">=</span> <span class="n">NeuralNetwork</span><span class="p">()</span>
     <span class="n">loss_fn</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">MSELoss</span><span class="p">()</span>
     <span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_epochs</span><span class="p">):</span>
         <span class="n">train_one_epoch</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">loss_fn</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">)</span>
-<span class="c1"># end::training_func_setup[]</span>
 </pre></div>
-<div id="cell-9" class="clipboard-copy-txt"># tag::training_func_setup[]
-import torch
+<div id="cell-9" class="clipboard-copy-txt">import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from ray.data import from_torch
@@ -1830,15 +2100,15 @@ class NeuralNetwork(nn.Module):
 
 
 def train_data():
-    return torch.randn(num_samples, input_size)  # <1>
+    return torch.randn(num_samples, input_size)
 
 
 input_data = train_data()
 label_data = torch.randn(num_samples, output_size)
-train_dataset = from_torch(input_data)  # <2>
+train_dataset = from_torch(input_data)
 
 
-def train_one_epoch(model, loss_fn, optimizer):  # <3>
+def train_one_epoch(model, loss_fn, optimizer):
     output = model(input_data)
     loss = loss_fn(output, label_data)
     optimizer.zero_grad()
@@ -1846,18 +2116,49 @@ def train_one_epoch(model, loss_fn, optimizer):  # <3>
     optimizer.step()
 
 
-def training_loop():  # <4>
+def training_loop():
     model = NeuralNetwork()
     loss_fn = nn.MSELoss()
     optimizer = torch.optim.SGD(model.parameters(), lr=0.1)
     for epoch in range(num_epochs):
-        train_one_epoch(model, loss_fn, optimizer)
-# end::training_func_setup[]</div>
+        train_one_epoch(model, loss_fn, optimizer)</div>
     
         </div>
     </div>
 
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ImportError</span>                               Traceback (most recent call last)
+<span class="ansi-green-fg">/var/folders/y_/l41py1sx7bl5n30jygrsv0q40000gn/T/ipykernel_14176/917945122.py</span> in <span class="ansi-cyan-fg">&lt;cell line: 5&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">      3</span> <span class="ansi-green-fg">import</span> torch<span class="ansi-blue-fg">.</span>nn <span class="ansi-green-fg">as</span> nn
+<span class="ansi-green-intense-fg ansi-bold">      4</span> <span class="ansi-green-fg">import</span> torch<span class="ansi-blue-fg">.</span>nn<span class="ansi-blue-fg">.</span>functional <span class="ansi-green-fg">as</span> F
+<span class="ansi-green-fg">----&gt; 5</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">from</span> ray<span class="ansi-blue-fg">.</span>data <span class="ansi-green-fg">import</span> from_torch
+<span class="ansi-green-intense-fg ansi-bold">      6</span> 
+<span class="ansi-green-intense-fg ansi-bold">      7</span> num_samples <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">20</span>
+
+<span class="ansi-red-fg">ImportError</span>: cannot import name &#39;from_torch&#39; from &#39;ray.data&#39; (/usr/local/lib/python3.9/site-packages/ray/data/__init__.py)</pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -1867,7 +2168,7 @@ def training_loop():  # <4>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
@@ -1881,31 +2182,27 @@ def training_loop():  # <4>
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::dist_func_setup[]</span>
-<span class="kn">from</span> <span class="nn">ray.train.torch</span> <span class="kn">import</span> <span class="n">prepare_model</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">ray.train.torch</span> <span class="kn">import</span> <span class="n">prepare_model</span>
 
 
 <span class="k">def</span> <span class="nf">distributed_training_loop</span><span class="p">():</span>
     <span class="n">model</span> <span class="o">=</span> <span class="n">NeuralNetwork</span><span class="p">()</span>
-    <span class="n">model</span> <span class="o">=</span> <span class="n">prepare_model</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>  <span class="c1"># &lt;1&gt;</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">prepare_model</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
     <span class="n">loss_fn</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">MSELoss</span><span class="p">()</span>
     <span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_epochs</span><span class="p">):</span>
         <span class="n">train_one_epoch</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">loss_fn</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">)</span>
-<span class="c1"># end::dist_func_setup[]</span>
 </pre></div>
-<div id="cell-10" class="clipboard-copy-txt"># tag::dist_func_setup[]
-from ray.train.torch import prepare_model
+<div id="cell-10" class="clipboard-copy-txt">from ray.train.torch import prepare_model
 
 
 def distributed_training_loop():
     model = NeuralNetwork()
-    model = prepare_model(model)  # <1>
+    model = prepare_model(model)
     loss_fn = nn.MSELoss()
     optimizer = torch.optim.SGD(model.parameters(), lr=0.1)
     for epoch in range(num_epochs):
-        train_one_epoch(model, loss_fn, optimizer)
-# end::dist_func_setup[]</div>
+        train_one_epoch(model, loss_fn, optimizer)</div>
     
         </div>
     </div>
@@ -1914,13 +2211,13 @@ def distributed_training_loop():
 </div>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
@@ -1934,8 +2231,7 @@ def distributed_training_loop():
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::train_start[]</span>
-<span class="kn">from</span> <span class="nn">ray.air.config</span> <span class="kn">import</span> <span class="n">ScalingConfig</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">ray.air.config</span> <span class="kn">import</span> <span class="n">ScalingConfig</span>
 <span class="kn">from</span> <span class="nn">ray.train.torch</span> <span class="kn">import</span> <span class="n">TorchTrainer</span>
 
 
@@ -1949,10 +2245,8 @@ def distributed_training_loop():
 <span class="p">)</span>
 
 <span class="n">result</span> <span class="o">=</span> <span class="n">trainer</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
-<span class="c1"># end::train_start[]</span>
 </pre></div>
-<div id="cell-11" class="clipboard-copy-txt"># tag::train_start[]
-from ray.air.config import ScalingConfig
+<div id="cell-11" class="clipboard-copy-txt">from ray.air.config import ScalingConfig
 from ray.train.torch import TorchTrainer
 
 
@@ -1965,13 +2259,44 @@ trainer = TorchTrainer(
     datasets={"train": train_dataset}
 )
 
-result = trainer.fit()
-# end::train_start[]</div>
+result = trainer.fit()</div>
     
         </div>
     </div>
 
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">/var/folders/y_/l41py1sx7bl5n30jygrsv0q40000gn/T/ipykernel_14176/2405101806.py</span> in <span class="ansi-cyan-fg">&lt;cell line: 6&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">     10</span>         use_gpu<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">False</span>
+<span class="ansi-green-intense-fg ansi-bold">     11</span>     ),
+<span class="ansi-green-fg">---&gt; 12</span><span class="ansi-red-fg">     </span>datasets<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">{</span><span class="ansi-blue-fg">&#34;train&#34;</span><span class="ansi-blue-fg">:</span> train_dataset<span class="ansi-blue-fg">}</span>
+<span class="ansi-green-intense-fg ansi-bold">     13</span> )
+<span class="ansi-green-intense-fg ansi-bold">     14</span> 
+
+<span class="ansi-red-fg">NameError</span>: name &#39;train_dataset&#39; is not defined</pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -1995,8 +2320,7 @@ result = trainer.fit()
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::ray_tune_integration_1[]</span>
-<span class="kn">import</span> <span class="nn">ray</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">ray</span>
 
 <span class="kn">from</span> <span class="nn">ray.air.config</span> <span class="kn">import</span> <span class="n">ScalingConfig</span>
 <span class="kn">from</span> <span class="nn">ray</span> <span class="kn">import</span> <span class="n">tune</span>
@@ -2028,10 +2352,8 @@ result = trainer.fit()
         <span class="s2">&quot;max_depth&quot;</span><span class="p">:</span> <span class="n">tune</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">),</span>
     <span class="p">},</span>
 <span class="p">}</span>
-<span class="c1"># end::ray_tune_integration_1[]</span>
 </pre></div>
-<div id="cell-12" class="clipboard-copy-txt"># tag::ray_tune_integration_1[]
-import ray
+<div id="cell-12" class="clipboard-copy-txt">import ray
 
 from ray.air.config import ScalingConfig
 from ray import tune
@@ -2062,8 +2384,7 @@ param_space = {
         "subsample": tune.uniform(0.5, 1.0),
         "max_depth": tune.randint(1, 9),
     },
-}
-# end::ray_tune_integration_1[]</div>
+}</div>
     
         </div>
     </div>
@@ -2092,8 +2413,7 @@ param_space = {
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::ray_tune_integration_2[]</span>
-<span class="kn">from</span> <span class="nn">ray.train.xgboost</span> <span class="kn">import</span> <span class="n">XGBoostTrainer</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">ray.train.xgboost</span> <span class="kn">import</span> <span class="n">XGBoostTrainer</span>
 <span class="kn">from</span> <span class="nn">ray.air.config</span> <span class="kn">import</span> <span class="n">RunConfig</span>
 <span class="kn">from</span> <span class="nn">ray.tune</span> <span class="kn">import</span> <span class="n">Tuner</span>
 
@@ -2113,10 +2433,8 @@ param_space = {
 <span class="p">)</span>
 
 <span class="n">results</span> <span class="o">=</span> <span class="n">tuner</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
-<span class="c1"># end::ray_tune_integration_2[]</span>
 </pre></div>
-<div id="cell-13" class="clipboard-copy-txt"># tag::ray_tune_integration_2[]
-from ray.train.xgboost import XGBoostTrainer
+<div id="cell-13" class="clipboard-copy-txt">from ray.train.xgboost import XGBoostTrainer
 from ray.air.config import RunConfig
 from ray.tune import Tuner
 
@@ -2135,8 +2453,7 @@ tuner = Tuner(
     param_space=param_space,
 )
 
-results = tuner.fit()
-# end::ray_tune_integration_2[]</div>
+results = tuner.fit()</div>
     
         </div>
     </div>

@@ -1286,33 +1286,29 @@ ray.init()</div>
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::retrieve[]</span>
-<span class="kn">import</span> <span class="nn">time</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
 
-<span class="n">database</span> <span class="o">=</span> <span class="p">[</span>  <span class="c1"># &lt;1&gt;</span>
+<span class="n">database</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s2">&quot;Learning&quot;</span><span class="p">,</span> <span class="s2">&quot;Ray&quot;</span><span class="p">,</span>
     <span class="s2">&quot;Flexible&quot;</span><span class="p">,</span> <span class="s2">&quot;Distributed&quot;</span><span class="p">,</span> <span class="s2">&quot;Python&quot;</span><span class="p">,</span> <span class="s2">&quot;for&quot;</span><span class="p">,</span> <span class="s2">&quot;Machine&quot;</span><span class="p">,</span> <span class="s2">&quot;Learning&quot;</span>
 <span class="p">]</span>
 
 
 <span class="k">def</span> <span class="nf">retrieve</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
-    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">item</span> <span class="o">/</span> <span class="mf">10.</span><span class="p">)</span>  <span class="c1"># &lt;2&gt;</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">item</span> <span class="o">/</span> <span class="mf">10.</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">item</span><span class="p">,</span> <span class="n">database</span><span class="p">[</span><span class="n">item</span><span class="p">]</span>
-<span class="c1"># end::retrieve[]</span>
 </pre></div>
-<div id="cell-3" class="clipboard-copy-txt"># tag::retrieve[]
-import time
+<div id="cell-3" class="clipboard-copy-txt">import time
 
-database = [  # <1>
+database = [
     "Learning", "Ray",
     "Flexible", "Distributed", "Python", "for", "Machine", "Learning"
 ]
 
 
 def retrieve(item):
-    time.sleep(item / 10.)  # <2>
-    return item, database[item]
-# end::retrieve[]</div>
+    time.sleep(item / 10.)
+    return item, database[item]</div>
     
         </div>
     </div>
@@ -1341,27 +1337,23 @@ def retrieve(item):
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::duration[]</span>
-<span class="k">def</span> <span class="nf">print_runtime</span><span class="p">(</span><span class="n">input_data</span><span class="p">,</span> <span class="n">start_time</span><span class="p">):</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="k">def</span> <span class="nf">print_runtime</span><span class="p">(</span><span class="n">input_data</span><span class="p">,</span> <span class="n">start_time</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Runtime: </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> seconds, data:&#39;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">input_data</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 
 
 <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">retrieve</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">)]</span>  <span class="c1"># &lt;1&gt;</span>
-<span class="n">print_runtime</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">start</span><span class="p">)</span>  <span class="c1"># &lt;2&gt;</span>
-<span class="c1"># end::duration[]</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">retrieve</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">)]</span>
+<span class="n">print_runtime</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">start</span><span class="p">)</span>
 </pre></div>
-<div id="cell-4" class="clipboard-copy-txt"># tag::duration[]
-def print_runtime(input_data, start_time):
+<div id="cell-4" class="clipboard-copy-txt">def print_runtime(input_data, start_time):
     print(f'Runtime: {time.time() - start_time:.2f} seconds, data:')
     print(*input_data, sep="\n")
 
 
 start = time.time()
-data = [retrieve(item) for item in range(8)]  # <1>
-print_runtime(data, start)  # <2>
-# end::duration[]</div>
+data = [retrieve(item) for item in range(8)]
+print_runtime(data, start)</div>
     
         </div>
     </div>
@@ -1390,17 +1382,13 @@ print_runtime(data, start)  # <2>
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::remote[]</span>
-<span class="nd">@ray</span><span class="o">.</span><span class="n">remote</span>  <span class="c1"># &lt;1&gt;</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="nd">@ray</span><span class="o">.</span><span class="n">remote</span>
 <span class="k">def</span> <span class="nf">retrieve_task</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">retrieve</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>  <span class="c1"># &lt;2&gt;</span>
-<span class="c1"># end::remote[]</span>
+    <span class="k">return</span> <span class="n">retrieve</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 </pre></div>
-<div id="cell-5" class="clipboard-copy-txt"># tag::remote[]
-@ray.remote  # <1>
+<div id="cell-5" class="clipboard-copy-txt">@ray.remote
 def retrieve_task(item):
-    return retrieve(item)  # <2>
-# end::remote[]</div>
+    return retrieve(item)</div>
     
         </div>
     </div>
@@ -1429,23 +1417,19 @@ def retrieve_task(item):
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::duration_remote[]</span>
-<span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-<span class="n">object_references</span> <span class="o">=</span> <span class="p">[</span>  <span class="c1"># &lt;1&gt;</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">object_references</span> <span class="o">=</span> <span class="p">[</span>
     <span class="n">retrieve_task</span><span class="o">.</span><span class="n">remote</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
 <span class="p">]</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">object_references</span><span class="p">)</span>  <span class="c1"># &lt;2&gt;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">object_references</span><span class="p">)</span>
 <span class="n">print_runtime</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">start</span><span class="p">)</span>
-<span class="c1"># end::duration_remote[]</span>
 </pre></div>
-<div id="cell-6" class="clipboard-copy-txt"># tag::duration_remote[]
-start = time.time()
-object_references = [  # <1>
+<div id="cell-6" class="clipboard-copy-txt">start = time.time()
+object_references = [
     retrieve_task.remote(item) for item in range(8)
 ]
-data = ray.get(object_references)  # <2>
-print_runtime(data, start)
-# end::duration_remote[]</div>
+data = ray.get(object_references)
+print_runtime(data, start)</div>
     
         </div>
     </div>
@@ -1474,25 +1458,21 @@ print_runtime(data, start)
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::object_store[]</span>
-<span class="n">db_object_ref</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">database</span><span class="p">)</span>  <span class="c1"># &lt;1&gt;</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">db_object_ref</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">database</span><span class="p">)</span>
 
 
 <span class="nd">@ray</span><span class="o">.</span><span class="n">remote</span>
-<span class="k">def</span> <span class="nf">retrieve_task</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">db</span><span class="p">):</span>  <span class="c1"># &lt;2&gt;</span>
+<span class="k">def</span> <span class="nf">retrieve_task</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">db</span><span class="p">):</span>
     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">item</span> <span class="o">/</span> <span class="mf">10.</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">item</span><span class="p">,</span> <span class="n">db</span><span class="p">[</span><span class="n">item</span><span class="p">]</span>
-<span class="c1"># end::object_store[]</span>
 </pre></div>
-<div id="cell-7" class="clipboard-copy-txt"># tag::object_store[]
-db_object_ref = ray.put(database)  # <1>
+<div id="cell-7" class="clipboard-copy-txt">db_object_ref = ray.put(database)
 
 
 @ray.remote
-def retrieve_task(item, db):  # <2>
+def retrieve_task(item, db):
     time.sleep(item / 10.)
-    return item, db[item]
-# end::object_store[]</div>
+    return item, db[item]</div>
     
         </div>
     </div>
@@ -1521,40 +1501,36 @@ def retrieve_task(item, db):  # <2>
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::duration_object_store[]</span>
-<span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
 <span class="n">object_references</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="n">retrieve_task</span><span class="o">.</span><span class="n">remote</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">db_object_ref</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>  <span class="c1"># &lt;1&gt;</span>
+    <span class="n">retrieve_task</span><span class="o">.</span><span class="n">remote</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">db_object_ref</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
 <span class="p">]</span>
 <span class="n">all_data</span> <span class="o">=</span> <span class="p">[]</span>
 
-<span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">object_references</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>  <span class="c1"># &lt;2&gt;</span>
-    <span class="n">finished</span><span class="p">,</span> <span class="n">object_references</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span>  <span class="c1"># &lt;3&gt;</span>
+<span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">object_references</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">finished</span><span class="p">,</span> <span class="n">object_references</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span>
         <span class="n">object_references</span><span class="p">,</span> <span class="n">num_returns</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mf">7.0</span>
     <span class="p">)</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">finished</span><span class="p">)</span>
-    <span class="n">print_runtime</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">start</span><span class="p">)</span>  <span class="c1"># &lt;4&gt;</span>
-    <span class="n">all_data</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>  <span class="c1"># &lt;5&gt;</span>
+    <span class="n">print_runtime</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">start</span><span class="p">)</span>
+    <span class="n">all_data</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 
-<span class="c1"># end::duration_object_store[]</span>
 <span class="n">print_runtime</span><span class="p">(</span><span class="n">all_data</span><span class="p">,</span> <span class="n">start</span><span class="p">)</span>
 </pre></div>
-<div id="cell-8" class="clipboard-copy-txt"># tag::duration_object_store[]
-start = time.time()
+<div id="cell-8" class="clipboard-copy-txt">start = time.time()
 object_references = [
-    retrieve_task.remote(item, db_object_ref) for item in range(8)  # <1>
+    retrieve_task.remote(item, db_object_ref) for item in range(8)
 ]
 all_data = []
 
-while len(object_references) > 0:  # <2>
-    finished, object_references = ray.wait(  # <3>
+while len(object_references) > 0:
+    finished, object_references = ray.wait(
         object_references, num_returns=2, timeout=7.0
     )
     data = ray.get(finished)
-    print_runtime(data, start)  # <4>
-    all_data.extend(data)  # <5>
+    print_runtime(data, start)
+    all_data.extend(data)
 
-# end::duration_object_store[]
 print_runtime(all_data, start)</div>
     
         </div>
@@ -1584,33 +1560,29 @@ print_runtime(all_data, start)</div>
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::task_dependency[]</span>
-<span class="nd">@ray</span><span class="o">.</span><span class="n">remote</span>
-<span class="k">def</span> <span class="nf">follow_up_task</span><span class="p">(</span><span class="n">retrieve_result</span><span class="p">):</span>  <span class="c1"># &lt;1&gt;</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="nd">@ray</span><span class="o">.</span><span class="n">remote</span>
+<span class="k">def</span> <span class="nf">follow_up_task</span><span class="p">(</span><span class="n">retrieve_result</span><span class="p">):</span>
     <span class="n">original_item</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">retrieve_result</span>
-    <span class="n">follow_up_result</span> <span class="o">=</span> <span class="n">retrieve</span><span class="p">(</span><span class="n">original_item</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># &lt;2&gt;</span>
-    <span class="k">return</span> <span class="n">retrieve_result</span><span class="p">,</span> <span class="n">follow_up_result</span>  <span class="c1"># &lt;3&gt;</span>
+    <span class="n">follow_up_result</span> <span class="o">=</span> <span class="n">retrieve</span><span class="p">(</span><span class="n">original_item</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">retrieve_result</span><span class="p">,</span> <span class="n">follow_up_result</span>
 
 
 <span class="n">retrieve_refs</span> <span class="o">=</span> <span class="p">[</span><span class="n">retrieve_task</span><span class="o">.</span><span class="n">remote</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">db_object_ref</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]</span>
-<span class="n">follow_up_refs</span> <span class="o">=</span> <span class="p">[</span><span class="n">follow_up_task</span><span class="o">.</span><span class="n">remote</span><span class="p">(</span><span class="n">ref</span><span class="p">)</span> <span class="k">for</span> <span class="n">ref</span> <span class="ow">in</span> <span class="n">retrieve_refs</span><span class="p">]</span>  <span class="c1"># &lt;4&gt;</span>
+<span class="n">follow_up_refs</span> <span class="o">=</span> <span class="p">[</span><span class="n">follow_up_task</span><span class="o">.</span><span class="n">remote</span><span class="p">(</span><span class="n">ref</span><span class="p">)</span> <span class="k">for</span> <span class="n">ref</span> <span class="ow">in</span> <span class="n">retrieve_refs</span><span class="p">]</span>
 
 <span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="k">for</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">ray</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">follow_up_refs</span><span class="p">)]</span>
-<span class="c1"># end::task_dependency[]</span>
 </pre></div>
-<div id="cell-9" class="clipboard-copy-txt"># tag::task_dependency[]
-@ray.remote
-def follow_up_task(retrieve_result):  # <1>
+<div id="cell-9" class="clipboard-copy-txt">@ray.remote
+def follow_up_task(retrieve_result):
     original_item, _ = retrieve_result
-    follow_up_result = retrieve(original_item + 1)  # <2>
-    return retrieve_result, follow_up_result  # <3>
+    follow_up_result = retrieve(original_item + 1)
+    return retrieve_result, follow_up_result
 
 
 retrieve_refs = [retrieve_task.remote(item, db_object_ref) for item in [0, 2, 4, 6]]
-follow_up_refs = [follow_up_task.remote(ref) for ref in retrieve_refs]  # <4>
+follow_up_refs = [follow_up_task.remote(ref) for ref in retrieve_refs]
 
-result = [print(data) for data in ray.get(follow_up_refs)]
-# end::task_dependency[]</div>
+result = [print(data) for data in ray.get(follow_up_refs)]</div>
     
         </div>
     </div>
@@ -1639,8 +1611,7 @@ result = [print(data) for data in ray.get(follow_up_refs)]
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::actors[]</span>
-<span class="nd">@ray</span><span class="o">.</span><span class="n">remote</span>  <span class="c1"># &lt;1&gt;</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="nd">@ray</span><span class="o">.</span><span class="n">remote</span>
 <span class="k">class</span> <span class="nc">DataTracker</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_counts</span> <span class="o">=</span> <span class="mi">0</span>
@@ -1650,10 +1621,8 @@ result = [print(data) for data in ray.get(follow_up_refs)]
 
     <span class="k">def</span> <span class="nf">counts</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_counts</span>
-<span class="c1"># end::actors[]</span>
 </pre></div>
-<div id="cell-10" class="clipboard-copy-txt"># tag::actors[]
-@ray.remote  # <1>
+<div id="cell-10" class="clipboard-copy-txt">@ray.remote
 class DataTracker:
     def __init__(self):
         self._counts = 0
@@ -1662,8 +1631,7 @@ class DataTracker:
         self._counts += 1
 
     def counts(self):
-        return self._counts
-# end::actors[]</div>
+        return self._counts</div>
     
         </div>
     </div>
@@ -1692,43 +1660,39 @@ class DataTracker:
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::actors_remote[]</span>
-<span class="nd">@ray</span><span class="o">.</span><span class="n">remote</span>
-<span class="k">def</span> <span class="nf">retrieve_tracker_task</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">tracker</span><span class="p">,</span> <span class="n">db</span><span class="p">):</span>  <span class="c1"># &lt;1&gt;</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="nd">@ray</span><span class="o">.</span><span class="n">remote</span>
+<span class="k">def</span> <span class="nf">retrieve_tracker_task</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">tracker</span><span class="p">,</span> <span class="n">db</span><span class="p">):</span>
     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">item</span> <span class="o">/</span> <span class="mf">10.</span><span class="p">)</span>
-    <span class="n">tracker</span><span class="o">.</span><span class="n">increment</span><span class="o">.</span><span class="n">remote</span><span class="p">()</span>  <span class="c1"># &lt;2&gt;</span>
+    <span class="n">tracker</span><span class="o">.</span><span class="n">increment</span><span class="o">.</span><span class="n">remote</span><span class="p">()</span>
     <span class="k">return</span> <span class="n">item</span><span class="p">,</span> <span class="n">db</span><span class="p">[</span><span class="n">item</span><span class="p">]</span>
 
 
-<span class="n">tracker</span> <span class="o">=</span> <span class="n">DataTracker</span><span class="o">.</span><span class="n">remote</span><span class="p">()</span>  <span class="c1"># &lt;3&gt;</span>
+<span class="n">tracker</span> <span class="o">=</span> <span class="n">DataTracker</span><span class="o">.</span><span class="n">remote</span><span class="p">()</span>
 
-<span class="n">object_references</span> <span class="o">=</span> <span class="p">[</span>  <span class="c1"># &lt;4&gt;</span>
+<span class="n">object_references</span> <span class="o">=</span> <span class="p">[</span>
     <span class="n">retrieve_tracker_task</span><span class="o">.</span><span class="n">remote</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">tracker</span><span class="p">,</span> <span class="n">db_object_ref</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
 <span class="p">]</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">object_references</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">ray</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">tracker</span><span class="o">.</span><span class="n">counts</span><span class="o">.</span><span class="n">remote</span><span class="p">()))</span>  <span class="c1"># &lt;5&gt;</span>
-<span class="c1"># end::actors_remote[]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ray</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">tracker</span><span class="o">.</span><span class="n">counts</span><span class="o">.</span><span class="n">remote</span><span class="p">()))</span>
 </pre></div>
-<div id="cell-11" class="clipboard-copy-txt"># tag::actors_remote[]
-@ray.remote
-def retrieve_tracker_task(item, tracker, db):  # <1>
+<div id="cell-11" class="clipboard-copy-txt">@ray.remote
+def retrieve_tracker_task(item, tracker, db):
     time.sleep(item / 10.)
-    tracker.increment.remote()  # <2>
+    tracker.increment.remote()
     return item, db[item]
 
 
-tracker = DataTracker.remote()  # <3>
+tracker = DataTracker.remote()
 
-object_references = [  # <4>
+object_references = [
     retrieve_tracker_task.remote(item, tracker, db_object_ref) for item in range(8)
 ]
 data = ray.get(object_references)
 
 print(data)
-print(ray.get(tracker.counts.remote()))  # <5>
-# end::actors_remote[]</div>
+print(ray.get(tracker.counts.remote()))</div>
     
         </div>
     </div>
@@ -1757,8 +1721,7 @@ print(ray.get(tracker.counts.remote()))  # <5>
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::ownership[]</span>
-<span class="nd">@ray</span><span class="o">.</span><span class="n">remote</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="nd">@ray</span><span class="o">.</span><span class="n">remote</span>
 <span class="k">def</span> <span class="nf">task_owned</span><span class="p">():</span>
     <span class="k">return</span>
 
@@ -1771,10 +1734,8 @@ print(ray.get(tracker.counts.remote()))  # <5>
 
 <span class="n">val</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s2">&quot;value&quot;</span><span class="p">)</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">task</span><span class="o">.</span><span class="n">remote</span><span class="p">(</span><span class="n">dependency</span><span class="o">=</span><span class="n">val</span><span class="p">)</span>
-<span class="c1"># end::ownership[]</span>
 </pre></div>
-<div id="cell-12" class="clipboard-copy-txt"># tag::ownership[]
-@ray.remote
+<div id="cell-12" class="clipboard-copy-txt">@ray.remote
 def task_owned():
     return
 
@@ -1786,8 +1747,7 @@ def task(dependency):
 
 
 val = ray.put("value")
-res = task.remote(dependency=val)
-# end::ownership[]</div>
+res = task.remote(dependency=val)</div>
     
         </div>
     </div>
@@ -1852,29 +1812,25 @@ res = task.remote(dependency=val)
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::load_data[]</span>
-<span class="kn">import</span> <span class="nn">subprocess</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">subprocess</span>
 <span class="n">zen_of_python</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">check_output</span><span class="p">([</span><span class="s2">&quot;python&quot;</span><span class="p">,</span> <span class="s2">&quot;-c&quot;</span><span class="p">,</span> <span class="s2">&quot;import this&quot;</span><span class="p">])</span>
-<span class="n">corpus</span> <span class="o">=</span> <span class="n">zen_of_python</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>  <span class="c1"># &lt;1&gt;</span>
+<span class="n">corpus</span> <span class="o">=</span> <span class="n">zen_of_python</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
 
 <span class="n">num_partitions</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="n">chunk</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">corpus</span><span class="p">)</span> <span class="o">//</span> <span class="n">num_partitions</span>
-<span class="n">partitions</span> <span class="o">=</span> <span class="p">[</span>  <span class="c1"># &lt;2&gt;</span>
+<span class="n">partitions</span> <span class="o">=</span> <span class="p">[</span>
     <span class="n">corpus</span><span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="n">chunk</span><span class="p">:</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">chunk</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_partitions</span><span class="p">)</span>
 <span class="p">]</span>
-<span class="c1"># end::load_data[]</span>
 </pre></div>
-<div id="cell-13" class="clipboard-copy-txt"># tag::load_data[]
-import subprocess
+<div id="cell-13" class="clipboard-copy-txt">import subprocess
 zen_of_python = subprocess.check_output(["python", "-c", "import this"])
-corpus = zen_of_python.split()  # <1>
+corpus = zen_of_python.split()
 
 num_partitions = 3
 chunk = len(corpus) // num_partitions
-partitions = [  # <2>
+partitions = [
     corpus[i * chunk: (i + 1) * chunk] for i in range(num_partitions)
-]
-# end::load_data[]</div>
+]</div>
     
         </div>
     </div>
@@ -1903,17 +1859,13 @@ partitions = [  # <2>
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::map_fct[]</span>
-<span class="k">def</span> <span class="nf">map_function</span><span class="p">(</span><span class="n">document</span><span class="p">):</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="k">def</span> <span class="nf">map_function</span><span class="p">(</span><span class="n">document</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">document</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">():</span>
         <span class="k">yield</span> <span class="n">word</span><span class="p">,</span> <span class="mi">1</span>
-<span class="c1"># end::map_fct[]</span>
 </pre></div>
-<div id="cell-14" class="clipboard-copy-txt"># tag::map_fct[]
-def map_function(document):
+<div id="cell-14" class="clipboard-copy-txt">def map_function(document):
     for word in document.lower().split():
-        yield word, 1
-# end::map_fct[]</div>
+        yield word, 1</div>
     
         </div>
     </div>
@@ -1942,33 +1894,29 @@ def map_function(document):
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::map[]</span>
-<span class="kn">import</span> <span class="nn">ray</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">ray</span>
 
 <span class="nd">@ray</span><span class="o">.</span><span class="n">remote</span>
 <span class="k">def</span> <span class="nf">apply_map</span><span class="p">(</span><span class="n">corpus</span><span class="p">,</span> <span class="n">num_partitions</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
-    <span class="n">map_results</span> <span class="o">=</span> <span class="p">[</span><span class="nb">list</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_partitions</span><span class="p">)]</span>  <span class="c1"># &lt;1&gt;</span>
+    <span class="n">map_results</span> <span class="o">=</span> <span class="p">[</span><span class="nb">list</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_partitions</span><span class="p">)]</span>
     <span class="k">for</span> <span class="n">document</span> <span class="ow">in</span> <span class="n">corpus</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">map_function</span><span class="p">(</span><span class="n">document</span><span class="p">):</span>
             <span class="n">first_letter</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-            <span class="n">word_index</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="n">first_letter</span><span class="p">)</span> <span class="o">%</span> <span class="n">num_partitions</span>  <span class="c1"># &lt;2&gt;</span>
-            <span class="n">map_results</span><span class="p">[</span><span class="n">word_index</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>  <span class="c1"># &lt;3&gt;</span>
+            <span class="n">word_index</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="n">first_letter</span><span class="p">)</span> <span class="o">%</span> <span class="n">num_partitions</span>
+            <span class="n">map_results</span><span class="p">[</span><span class="n">word_index</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">map_results</span>
-<span class="c1"># end::map[]</span>
 </pre></div>
-<div id="cell-15" class="clipboard-copy-txt"># tag::map[]
-import ray
+<div id="cell-15" class="clipboard-copy-txt">import ray
 
 @ray.remote
 def apply_map(corpus, num_partitions=3):
-    map_results = [list() for _ in range(num_partitions)]  # <1>
+    map_results = [list() for _ in range(num_partitions)]
     for document in corpus:
         for result in map_function(document):
             first_letter = result[0].decode("utf-8")[0]
-            word_index = ord(first_letter) % num_partitions  # <2>
-            map_results[word_index].append(result)  # <3>
-    return map_results
-# end::map[]</div>
+            word_index = ord(first_letter) % num_partitions
+            map_results[word_index].append(result)
+    return map_results</div>
     
         </div>
     </div>
@@ -1997,31 +1945,27 @@ def apply_map(corpus, num_partitions=3):
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::apply_mr_1[]</span>
-<span class="n">map_results</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="n">apply_map</span><span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">num_returns</span><span class="o">=</span><span class="n">num_partitions</span><span class="p">)</span>  <span class="c1"># &lt;1&gt;</span>
-    <span class="o">.</span><span class="n">remote</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">num_partitions</span><span class="p">)</span>  <span class="c1"># &lt;2&gt;</span>
-    <span class="k">for</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">partitions</span>  <span class="c1"># &lt;3&gt;</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">map_results</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">apply_map</span><span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">num_returns</span><span class="o">=</span><span class="n">num_partitions</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">remote</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">num_partitions</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">partitions</span>
 <span class="p">]</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_partitions</span><span class="p">):</span>
-    <span class="n">mapper_results</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">map_results</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>  <span class="c1"># &lt;4&gt;</span>
+    <span class="n">mapper_results</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">map_results</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
     <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">result</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">mapper_results</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mapper </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">, return value </span><span class="si">{</span><span class="n">j</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">result</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="c1"># end::apply_mr_1[]</span>
 </pre></div>
-<div id="cell-16" class="clipboard-copy-txt"># tag::apply_mr_1[]
-map_results = [
-    apply_map.options(num_returns=num_partitions)  # <1>
-    .remote(data, num_partitions)  # <2>
-    for data in partitions  # <3>
+<div id="cell-16" class="clipboard-copy-txt">map_results = [
+    apply_map.options(num_returns=num_partitions)
+    .remote(data, num_partitions)
+    for data in partitions
 ]
 
 for i in range(num_partitions):
-    mapper_results = ray.get(map_results[i])  # <4>
+    mapper_results = ray.get(map_results[i])
     for j, result in enumerate(mapper_results):
-        print(f"Mapper {i}, return value {j}: {result[:2]}")
-# end::apply_mr_1[]</div>
+        print(f"Mapper {i}, return value {j}: {result[:2]}")</div>
     
         </div>
     </div>
@@ -2050,31 +1994,27 @@ for i in range(num_partitions):
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::reduce[]</span>
-<span class="nd">@ray</span><span class="o">.</span><span class="n">remote</span>
-<span class="k">def</span> <span class="nf">apply_reduce</span><span class="p">(</span><span class="o">*</span><span class="n">results</span><span class="p">):</span>  <span class="c1"># &lt;1&gt;</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="nd">@ray</span><span class="o">.</span><span class="n">remote</span>
+<span class="k">def</span> <span class="nf">apply_reduce</span><span class="p">(</span><span class="o">*</span><span class="n">results</span><span class="p">):</span>
     <span class="n">reduce_results</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
     <span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">res</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">reduce_results</span><span class="p">:</span>
                 <span class="n">reduce_results</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-            <span class="n">reduce_results</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">+=</span> <span class="n">value</span>  <span class="c1"># &lt;2&gt;</span>
+            <span class="n">reduce_results</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">+=</span> <span class="n">value</span>
 
     <span class="k">return</span> <span class="n">reduce_results</span>
-<span class="c1"># end::reduce[]</span>
 </pre></div>
-<div id="cell-17" class="clipboard-copy-txt"># tag::reduce[]
-@ray.remote
-def apply_reduce(*results):  # <1>
+<div id="cell-17" class="clipboard-copy-txt">@ray.remote
+def apply_reduce(*results):
     reduce_results = dict()
     for res in results:
         for key, value in res:
             if key not in reduce_results:
                 reduce_results[key] = 0
-            reduce_results[key] += value  # <2>
+            reduce_results[key] += value
 
-    return reduce_results
-# end::reduce[]</div>
+    return reduce_results</div>
     
         </div>
     </div>
@@ -2103,33 +2043,29 @@ def apply_reduce(*results):  # <1>
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::apply_mr_2[]</span>
-<span class="n">outputs</span> <span class="o">=</span> <span class="p">[]</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">outputs</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_partitions</span><span class="p">):</span>
-    <span class="n">outputs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>  <span class="c1"># &lt;1&gt;</span>
+    <span class="n">outputs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
         <span class="n">apply_reduce</span><span class="o">.</span><span class="n">remote</span><span class="p">(</span><span class="o">*</span><span class="p">[</span><span class="n">partition</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">partition</span> <span class="ow">in</span> <span class="n">map_results</span><span class="p">])</span>
     <span class="p">)</span>
 
-<span class="n">counts</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">output</span> <span class="ow">in</span> <span class="n">ray</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">outputs</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">output</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>  <span class="c1"># &lt;2&gt;</span>
+<span class="n">counts</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">output</span> <span class="ow">in</span> <span class="n">ray</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">outputs</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">output</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
 
-<span class="n">sorted_counts</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">counts</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">item</span><span class="p">:</span> <span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># &lt;3&gt;</span>
+<span class="n">sorted_counts</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">counts</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">item</span><span class="p">:</span> <span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">count</span> <span class="ow">in</span> <span class="n">sorted_counts</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">count</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">count</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="c1"># end::apply_mr_2[]</span>
 </pre></div>
-<div id="cell-18" class="clipboard-copy-txt"># tag::apply_mr_2[]
-outputs = []
+<div id="cell-18" class="clipboard-copy-txt">outputs = []
 for i in range(num_partitions):
-    outputs.append(  # <1>
+    outputs.append(
         apply_reduce.remote(*[partition[i] for partition in map_results])
     )
 
-counts = {k: v for output in ray.get(outputs) for k, v in output.items()}  # <2>
+counts = {k: v for output in ray.get(outputs) for k, v in output.items()}
 
-sorted_counts = sorted(counts.items(), key=lambda item: item[1], reverse=True)  # <3>
+sorted_counts = sorted(counts.items(), key=lambda item: item[1], reverse=True)
 for count in sorted_counts:
-    print(f"{count[0].decode('utf-8')}: {count[1]}")
-# end::apply_mr_2[]</div>
+    print(f"{count[0].decode('utf-8')}: {count[1]}")</div>
     
         </div>
     </div>

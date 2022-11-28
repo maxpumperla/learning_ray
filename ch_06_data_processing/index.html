@@ -1318,8 +1318,7 @@ the repo and copy the code files to the base path of the runtime:</p>
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::ds_create[]</span>
-<span class="kn">import</span> <span class="nn">ray</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">ray</span>
 
 <span class="c1"># Create a dataset containing integers in the range [0, 10000).</span>
 <span class="n">ds</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
@@ -1328,10 +1327,8 @@ the repo and copy the code files to the base path of the runtime:</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">count</span><span class="p">())</span>  <span class="c1"># -&gt; 10000</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>  <span class="c1"># -&gt; [0, 1, 2, 3, 4]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">schema</span><span class="p">())</span>  <span class="c1"># -&gt; &lt;class &#39;int&#39;&gt;</span>
-<span class="c1"># end::ds_create[]</span>
 </pre></div>
-<div id="cell-4" class="clipboard-copy-txt"># tag::ds_create[]
-import ray
+<div id="cell-4" class="clipboard-copy-txt">import ray
 
 # Create a dataset containing integers in the range [0, 10000).
 ds = ray.data.range(10000)
@@ -1339,8 +1336,7 @@ ds = ray.data.range(10000)
 # Basic operations: show the size of the dataset, get a few samples, print the schema.
 print(ds.count())  # -> 10000
 print(ds.take(5))  # -> [0, 1, 2, 3, 4]
-print(ds.schema())  # -> <class 'int'>
-# end::ds_create[]</div>
+print(ds.schema())  # -> <class 'int'></div>
     
         </div>
     </div>
@@ -1369,19 +1365,15 @@ print(ds.schema())  # -> <class 'int'>
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::ds_read_write[]</span>
-<span class="c1"># Save the dataset to a local file and load it back.</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Save the dataset to a local file and load it back.</span>
 <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span><span class="o">.</span><span class="n">write_csv</span><span class="p">(</span><span class="s2">&quot;local_dir&quot;</span><span class="p">)</span>
 <span class="n">ds</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;local_dir&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">count</span><span class="p">())</span>
-<span class="c1"># end::ds_read_write[]</span>
 </pre></div>
-<div id="cell-5" class="clipboard-copy-txt"># tag::ds_read_write[]
-# Save the dataset to a local file and load it back.
+<div id="cell-5" class="clipboard-copy-txt"># Save the dataset to a local file and load it back.
 ray.data.range(10000).write_csv("local_dir")
 ds = ray.data.read_csv("local_dir")
-print(ds.count())
-# end::ds_read_write[]</div>
+print(ds.count())</div>
     
         </div>
     </div>
@@ -1410,37 +1402,33 @@ print(ds.count())
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::ds_transform[]</span>
-<span class="n">ds1</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">ds1</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
 <span class="n">ds2</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
-<span class="n">ds3</span> <span class="o">=</span> <span class="n">ds1</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">ds2</span><span class="p">)</span>  <span class="c1"># &lt;1&gt;</span>
+<span class="n">ds3</span> <span class="o">=</span> <span class="n">ds1</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">ds2</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ds3</span><span class="o">.</span><span class="n">count</span><span class="p">())</span>  <span class="c1"># -&gt; 20000</span>
 
 <span class="c1"># Filter the combined dataset to only the even elements.</span>
-<span class="n">ds3</span> <span class="o">=</span> <span class="n">ds3</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># &lt;2&gt;</span>
+<span class="n">ds3</span> <span class="o">=</span> <span class="n">ds3</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ds3</span><span class="o">.</span><span class="n">count</span><span class="p">())</span>  <span class="c1"># -&gt; 10000</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ds3</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>  <span class="c1"># -&gt; [0, 2, 4, 6, 8]</span>
 
 <span class="c1"># Sort the filtered dataset.</span>
 <span class="n">ds3</span> <span class="o">=</span> <span class="n">ds3</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>  <span class="c1"># &lt;3&gt;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ds3</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>  <span class="c1"># -&gt; [0, 0, 2, 2, 4]</span>
-<span class="c1"># end::ds_transform[]</span>
 </pre></div>
-<div id="cell-6" class="clipboard-copy-txt"># tag::ds_transform[]
-ds1 = ray.data.range(10000)
+<div id="cell-6" class="clipboard-copy-txt">ds1 = ray.data.range(10000)
 ds2 = ray.data.range(10000)
-ds3 = ds1.union(ds2)  # <1>
+ds3 = ds1.union(ds2)
 print(ds3.count())  # -> 20000
 
 # Filter the combined dataset to only the even elements.
-ds3 = ds3.filter(lambda x: x % 2 == 0)  # <2>
+ds3 = ds3.filter(lambda x: x % 2 == 0)
 print(ds3.count())  # -> 10000
 print(ds3.take(5))  # -> [0, 2, 4, 6, 8]
 
 # Sort the filtered dataset.
 ds3 = ds3.sort()  # <3>
-print(ds3.take(5))  # -> [0, 0, 2, 2, 4]
-# end::ds_transform[]</div>
+print(ds3.take(5))  # -> [0, 0, 2, 2, 4]</div>
     
         </div>
     </div>
@@ -1469,8 +1457,7 @@ print(ds3.take(5))  # -> [0, 0, 2, 2, 4]
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::ds_repartition[]</span>
-<span class="n">ds1</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">ds1</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ds1</span><span class="o">.</span><span class="n">num_blocks</span><span class="p">())</span>  <span class="c1"># -&gt; 200</span>
 <span class="n">ds2</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ds2</span><span class="o">.</span><span class="n">num_blocks</span><span class="p">())</span>  <span class="c1"># -&gt; 200</span>
@@ -1478,18 +1465,15 @@ print(ds3.take(5))  # -> [0, 0, 2, 2, 4]
 <span class="nb">print</span><span class="p">(</span><span class="n">ds3</span><span class="o">.</span><span class="n">num_blocks</span><span class="p">())</span>  <span class="c1"># -&gt; 400</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">ds3</span><span class="o">.</span><span class="n">repartition</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span><span class="o">.</span><span class="n">num_blocks</span><span class="p">())</span>  <span class="c1"># -&gt; 200</span>
-<span class="c1"># end::ds_repartition[]</span>
 </pre></div>
-<div id="cell-7" class="clipboard-copy-txt"># tag::ds_repartition[]
-ds1 = ray.data.range(10000)
+<div id="cell-7" class="clipboard-copy-txt">ds1 = ray.data.range(10000)
 print(ds1.num_blocks())  # -> 200
 ds2 = ray.data.range(10000)
 print(ds2.num_blocks())  # -> 200
 ds3 = ds1.union(ds2)
 print(ds3.num_blocks())  # -> 400
 
-print(ds3.repartition(200).num_blocks())  # -> 200
-# end::ds_repartition[]</div>
+print(ds3.repartition(200).num_blocks())  # -> 200</div>
     
         </div>
     </div>
@@ -1518,15 +1502,11 @@ print(ds3.repartition(200).num_blocks())  # -> 200
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::ds_schema_1[]</span>
-<span class="n">ds</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">from_items</span><span class="p">([{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;abc&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;def&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}])</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">from_items</span><span class="p">([{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;abc&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;def&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">schema</span><span class="p">())</span>  <span class="c1"># -&gt; id: string, value: int64</span>
-<span class="c1"># end::ds_schema_1[]</span>
 </pre></div>
-<div id="cell-8" class="clipboard-copy-txt"># tag::ds_schema_1[]
-ds = ray.data.from_items([{"id": "abc", "value": 1}, {"id": "def", "value": 2}])
-print(ds.schema())  # -> id: string, value: int64
-# end::ds_schema_1[]</div>
+<div id="cell-8" class="clipboard-copy-txt">ds = ray.data.from_items([{"id": "abc", "value": 1}, {"id": "def", "value": 2}])
+print(ds.schema())  # -> id: string, value: int64</div>
     
         </div>
     </div>
@@ -1555,13 +1535,9 @@ print(ds.schema())  # -> id: string, value: int64
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::ds_schema_2[]</span>
-<span class="n">pandas_df</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>  <span class="c1"># pandas_df will inherit the schema from our Dataset.</span>
-<span class="c1"># end::ds_schema_2[]</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">pandas_df</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>  <span class="c1"># pandas_df will inherit the schema from our Dataset.</span>
 </pre></div>
-<div id="cell-9" class="clipboard-copy-txt"># tag::ds_schema_2[]
-pandas_df = ds.to_pandas()  # pandas_df will inherit the schema from our Dataset.
-# end::ds_schema_2[]</div>
+<div id="cell-9" class="clipboard-copy-txt">pandas_df = ds.to_pandas()  # pandas_df will inherit the schema from our Dataset.</div>
     
         </div>
     </div>
@@ -1590,15 +1566,11 @@ pandas_df = ds.to_pandas()  # pandas_df will inherit the schema from our Dataset
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::ds_compute_1[]</span>
-<span class="n">ds</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">ds</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># -&gt; [0, 1, 4, 9, 16]</span>
-<span class="c1"># end::ds_compute_1[]</span>
 </pre></div>
-<div id="cell-10" class="clipboard-copy-txt"># tag::ds_compute_1[]
-ds = ray.data.range(10000).map(lambda x: x ** 2)
-ds.take(5)  # -> [0, 1, 4, 9, 16]
-# end::ds_compute_1[]</div>
+<div id="cell-10" class="clipboard-copy-txt">ds = ray.data.range(10000).map(lambda x: x ** 2)
+ds.take(5)  # -> [0, 1, 4, 9, 16]</div>
     
         </div>
     </div>
@@ -1627,21 +1599,17 @@ ds.take(5)  # -> [0, 1, 4, 9, 16]
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::ds_compute_2[]</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 
 <span class="n">ds</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span><span class="o">.</span><span class="n">map_batches</span><span class="p">(</span><span class="k">lambda</span> <span class="n">batch</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">batch</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
 <span class="n">ds</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># -&gt; [0, 1, 4, 9, 16]</span>
-<span class="c1"># end::ds_compute_2[]</span>
 </pre></div>
-<div id="cell-11" class="clipboard-copy-txt"># tag::ds_compute_2[]
-import numpy as np
+<div id="cell-11" class="clipboard-copy-txt">import numpy as np
 
 
 ds = ray.data.range(10000).map_batches(lambda batch: np.square(batch).tolist())
-ds.take(5)  # -> [0, 1, 4, 9, 16]
-# end::ds_compute_2[]</div>
+ds.take(5)  # -> [0, 1, 4, 9, 16]</div>
     
         </div>
     </div>
@@ -1670,8 +1638,7 @@ ds.take(5)  # -> [0, 1, 4, 9, 16]
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::ds_compute_3[]</span>
-<span class="k">def</span> <span class="nf">load_model</span><span class="p">():</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="k">def</span> <span class="nf">load_model</span><span class="p">():</span>
     <span class="c1"># Returns a dummy model for this example.</span>
     <span class="c1"># In reality, this would likely load some model weights onto a GPU.</span>
     <span class="k">class</span> <span class="nc">DummyModel</span><span class="p">:</span>
@@ -1691,14 +1658,12 @@ ds.take(5)  # -> [0, 1, 4, 9, 16]
 
 
 <span class="n">ds</span><span class="o">.</span><span class="n">map_batches</span><span class="p">(</span><span class="n">MLModel</span><span class="p">,</span> <span class="n">compute</span><span class="o">=</span><span class="s2">&quot;actors&quot;</span><span class="p">)</span>
-<span class="c1"># end::ds_compute_3[]</span>
 
 
 <span class="n">cpu_intensive_preprocessing</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">batch</span><span class="p">:</span> <span class="n">batch</span>
 <span class="n">gpu_intensive_inference</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">batch</span><span class="p">:</span> <span class="n">batch</span>
 </pre></div>
-<div id="cell-12" class="clipboard-copy-txt"># tag::ds_compute_3[]
-def load_model():
+<div id="cell-12" class="clipboard-copy-txt">def load_model():
     # Returns a dummy model for this example.
     # In reality, this would likely load some model weights onto a GPU.
     class DummyModel:
@@ -1718,7 +1683,6 @@ class MLModel:
 
 
 ds.map_batches(MLModel, compute="actors")
-# end::ds_compute_3[]
 
 
 cpu_intensive_preprocessing = lambda batch: batch
@@ -1752,24 +1716,20 @@ gpu_intensive_inference = lambda batch: batch</div>
         </div>
         <div class="CodeMirror cm-s-jupyter">
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># NOTE: this only works if you create an S3 bucket and upload the data there.</span>
-<span class="c1"># tag::ds_pipeline_1[]</span>
-<span class="n">ds</span> <span class="o">=</span> <span class="p">(</span><span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="s2">&quot;s3://my_bucket/input_data&quot;</span><span class="p">)</span>  <span class="c1"># &lt;1&gt;</span>
-      <span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">cpu_intensive_preprocessing</span><span class="p">)</span>  <span class="c1"># &lt;2&gt;</span>
-      <span class="o">.</span><span class="n">map_batches</span><span class="p">(</span><span class="n">gpu_intensive_inference</span><span class="p">,</span> <span class="n">compute</span><span class="o">=</span><span class="s2">&quot;actors&quot;</span><span class="p">,</span> <span class="n">num_gpus</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># &lt;3&gt;</span>
-      <span class="o">.</span><span class="n">repartition</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>  <span class="c1"># &lt;4&gt;</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="p">(</span><span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="s2">&quot;s3://my_bucket/input_data&quot;</span><span class="p">)</span>
+      <span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">cpu_intensive_preprocessing</span><span class="p">)</span>
+      <span class="o">.</span><span class="n">map_batches</span><span class="p">(</span><span class="n">gpu_intensive_inference</span><span class="p">,</span> <span class="n">compute</span><span class="o">=</span><span class="s2">&quot;actors&quot;</span><span class="p">,</span> <span class="n">num_gpus</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+      <span class="o">.</span><span class="n">repartition</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
 
 <span class="n">ds</span><span class="o">.</span><span class="n">write_parquet</span><span class="p">(</span><span class="s2">&quot;s3://my_bucket/output_predictions&quot;</span><span class="p">)</span>
-<span class="c1"># end::ds_pipeline_1[]</span>
 </pre></div>
 <div id="cell-13" class="clipboard-copy-txt"># NOTE: this only works if you create an S3 bucket and upload the data there.
-# tag::ds_pipeline_1[]
-ds = (ray.data.read_parquet("s3://my_bucket/input_data")  # <1>
-      .map(cpu_intensive_preprocessing)  # <2>
-      .map_batches(gpu_intensive_inference, compute="actors", num_gpus=1)  # <3>
-      .repartition(10))  # <4>
+ds = (ray.data.read_parquet("s3://my_bucket/input_data")
+      .map(cpu_intensive_preprocessing)
+      .map_batches(gpu_intensive_inference, compute="actors", num_gpus=1)
+      .repartition(10))
 
-ds.write_parquet("s3://my_bucket/output_predictions")
-# end::ds_pipeline_1[]</div>
+ds.write_parquet("s3://my_bucket/output_predictions")</div>
     
         </div>
     </div>
@@ -1799,24 +1759,20 @@ ds.write_parquet("s3://my_bucket/output_predictions")
         </div>
         <div class="CodeMirror cm-s-jupyter">
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># NOTE: this only works if you create an S3 bucket and upload the data there.</span>
-<span class="c1"># tag::ds_pipeline_2[]</span>
 <span class="n">ds</span> <span class="o">=</span> <span class="p">(</span><span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="s2">&quot;s3://my_bucket/input_data&quot;</span><span class="p">)</span>
       <span class="o">.</span><span class="n">window</span><span class="p">(</span><span class="n">blocks_per_window</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
       <span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">cpu_intensive_preprocessing</span><span class="p">)</span>
       <span class="o">.</span><span class="n">map_batches</span><span class="p">(</span><span class="n">gpu_intensive_inference</span><span class="p">,</span> <span class="n">compute</span><span class="o">=</span><span class="s2">&quot;actors&quot;</span><span class="p">,</span> <span class="n">num_gpus</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
       <span class="o">.</span><span class="n">repartition</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
 <span class="n">ds</span><span class="o">.</span><span class="n">write_parquet</span><span class="p">(</span><span class="s2">&quot;s3://my_bucket/output_predictions&quot;</span><span class="p">)</span>
-<span class="c1"># end::ds_pipeline_2[]</span>
 </pre></div>
 <div id="cell-14" class="clipboard-copy-txt"># NOTE: this only works if you create an S3 bucket and upload the data there.
-# tag::ds_pipeline_2[]
 ds = (ray.data.read_parquet("s3://my_bucket/input_data")
       .window(blocks_per_window=5)
       .map(cpu_intensive_preprocessing)
       .map_batches(gpu_intensive_inference, compute="actors", num_gpus=1)
       .repartition(10))
-ds.write_parquet("s3://my_bucket/output_predictions")
-# end::ds_pipeline_2[]</div>
+ds.write_parquet("s3://my_bucket/output_predictions")</div>
     
         </div>
     </div>
@@ -1845,8 +1801,7 @@ ds.write_parquet("s3://my_bucket/output_predictions")
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::parallel_sgd_1[]</span>
-<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span>
 <span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">SGDClassifier</span>
 <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
 
@@ -1865,10 +1820,8 @@ ds.write_parquet("s3://my_bucket/output_predictions")
 
     <span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X_test</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">Y_test</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">Y_test</span><span class="p">)</span>
-<span class="c1"># end::parallel_sgd_1[]</span>
 </pre></div>
-<div id="cell-15" class="clipboard-copy-txt"># tag::parallel_sgd_1[]
-from sklearn import datasets
+<div id="cell-15" class="clipboard-copy-txt">from sklearn import datasets
 from sklearn.linear_model import SGDClassifier
 from sklearn.model_selection import train_test_split
 
@@ -1886,8 +1839,7 @@ class TrainingWorker:
         return self._model
 
     def test(self, X_test: np.ndarray, Y_test: np.ndarray):
-        return self._model.score(X_test, Y_test)
-# end::parallel_sgd_1[]</div>
+        return self._model.score(X_test, Y_test)</div>
     
         </div>
     </div>
@@ -1916,19 +1868,15 @@ class TrainingWorker:
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::parallel_sgd_2[]</span>
-<span class="n">ALPHA_VALS</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.00008</span><span class="p">,</span> <span class="mf">0.00009</span><span class="p">,</span> <span class="mf">0.0001</span><span class="p">,</span> <span class="mf">0.00011</span><span class="p">,</span> <span class="mf">0.00012</span><span class="p">]</span> 
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">ALPHA_VALS</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.00008</span><span class="p">,</span> <span class="mf">0.00009</span><span class="p">,</span> <span class="mf">0.0001</span><span class="p">,</span> <span class="mf">0.00011</span><span class="p">,</span> <span class="mf">0.00012</span><span class="p">]</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Starting </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">ALPHA_VALS</span><span class="p">)</span><span class="si">}</span><span class="s2"> training workers.&quot;</span><span class="p">)</span>
 <span class="n">workers</span> <span class="o">=</span> <span class="p">[</span><span class="n">TrainingWorker</span><span class="o">.</span><span class="n">remote</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span> <span class="k">for</span> <span class="n">alpha</span> <span class="ow">in</span> <span class="n">ALPHA_VALS</span><span class="p">]</span>
-<span class="c1"># end::parallel_sgd_2[]</span>
 </pre></div>
-<div id="cell-16" class="clipboard-copy-txt"># tag::parallel_sgd_2[]
-ALPHA_VALS = [0.00008, 0.00009, 0.0001, 0.00011, 0.00012] 
+<div id="cell-16" class="clipboard-copy-txt">ALPHA_VALS = [0.00008, 0.00009, 0.0001, 0.00011, 0.00012]
 
 print(f"Starting {len(ALPHA_VALS)} training workers.")
-workers = [TrainingWorker.remote(alpha) for alpha in ALPHA_VALS]
-# end::parallel_sgd_2[]</div>
+workers = [TrainingWorker.remote(alpha) for alpha in ALPHA_VALS]</div>
     
         </div>
     </div>
@@ -1957,31 +1905,27 @@ workers = [TrainingWorker.remote(alpha) for alpha in ALPHA_VALS]
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::parallel_sgd_3[]</span>
-<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">,</span> <span class="n">Y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>  <span class="c1"># &lt;1&gt;</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">,</span> <span class="n">Y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
     <span class="o">*</span><span class="n">datasets</span><span class="o">.</span><span class="n">make_classification</span><span class="p">()</span>
 <span class="p">)</span>
 
-<span class="n">train_ds</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">from_items</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">)))</span>  <span class="c1"># &lt;2&gt;</span>
-<span class="n">shards</span> <span class="o">=</span> <span class="p">(</span><span class="n">train_ds</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># &lt;3&gt;</span>
-          <span class="o">.</span><span class="n">random_shuffle_each_window</span><span class="p">()</span>  <span class="c1"># &lt;4&gt;</span>
-          <span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">workers</span><span class="p">),</span> <span class="n">locality_hints</span><span class="o">=</span><span class="n">workers</span><span class="p">))</span>  <span class="c1"># &lt;5&gt;</span>
+<span class="n">train_ds</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">from_items</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">)))</span>
+<span class="n">shards</span> <span class="o">=</span> <span class="p">(</span><span class="n">train_ds</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+          <span class="o">.</span><span class="n">random_shuffle_each_window</span><span class="p">()</span>
+          <span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">workers</span><span class="p">),</span> <span class="n">locality_hints</span><span class="o">=</span><span class="n">workers</span><span class="p">))</span>
 
-<span class="n">ray</span><span class="o">.</span><span class="n">get</span><span class="p">([</span><span class="n">worker</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">remote</span><span class="p">(</span><span class="n">shard</span><span class="p">)</span> <span class="k">for</span> <span class="n">worker</span><span class="p">,</span> <span class="n">shard</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">workers</span><span class="p">,</span> <span class="n">shards</span><span class="p">)])</span>  <span class="c1"># &lt;6&gt;</span>
-<span class="c1"># end::parallel_sgd_3[]</span>
+<span class="n">ray</span><span class="o">.</span><span class="n">get</span><span class="p">([</span><span class="n">worker</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">remote</span><span class="p">(</span><span class="n">shard</span><span class="p">)</span> <span class="k">for</span> <span class="n">worker</span><span class="p">,</span> <span class="n">shard</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">workers</span><span class="p">,</span> <span class="n">shards</span><span class="p">)])</span>
 </pre></div>
-<div id="cell-17" class="clipboard-copy-txt"># tag::parallel_sgd_3[]
-X_train, X_test, Y_train, Y_test = train_test_split(  # <1>
+<div id="cell-17" class="clipboard-copy-txt">X_train, X_test, Y_train, Y_test = train_test_split(
     *datasets.make_classification()
 )
 
-train_ds = ray.data.from_items(list(zip(X_train, Y_train)))  # <2>
-shards = (train_ds.repeat(10)  # <3>
-          .random_shuffle_each_window()  # <4>
-          .split(len(workers), locality_hints=workers))  # <5>
+train_ds = ray.data.from_items(list(zip(X_train, Y_train)))
+shards = (train_ds.repeat(10)
+          .random_shuffle_each_window()
+          .split(len(workers), locality_hints=workers))
 
-ray.get([worker.train.remote(shard) for worker, shard in zip(workers, shards)])  # <6>
-# end::parallel_sgd_3[]</div>
+ray.get([worker.train.remote(shard) for worker, shard in zip(workers, shards)])</div>
     
         </div>
     </div>
@@ -2010,17 +1954,13 @@ ray.get([worker.train.remote(shard) for worker, shard in zip(workers, shards)]) 
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::parallel_sgd_5[]</span>
-<span class="c1"># Get validation results from each worker.</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Get validation results from each worker.</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ray</span><span class="o">.</span><span class="n">get</span><span class="p">([</span><span class="n">worker</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">remote</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">Y_test</span><span class="p">)</span> <span class="k">for</span> <span class="n">worker</span> <span class="ow">in</span> <span class="n">workers</span><span class="p">]))</span>
-<span class="c1"># end::parallel_sgd_5[]</span>
 
 <span class="n">ray</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span>
 </pre></div>
-<div id="cell-18" class="clipboard-copy-txt"># tag::parallel_sgd_5[]
-# Get validation results from each worker.
+<div id="cell-18" class="clipboard-copy-txt"># Get validation results from each worker.
 print(ray.get([worker.test.remote(X_test, Y_test) for worker in workers]))
-# end::parallel_sgd_5[]
 
 ray.shutdown()</div>
     
@@ -2051,21 +1991,17 @@ ray.shutdown()</div>
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::dask_on_ray_1[]</span>
-<span class="kn">import</span> <span class="nn">ray</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">ray</span>
 <span class="kn">from</span> <span class="nn">ray.util.dask</span> <span class="kn">import</span> <span class="n">enable_dask_on_ray</span>
 
 <span class="n">ray</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>  <span class="c1"># Start or connect to Ray.</span>
 <span class="n">enable_dask_on_ray</span><span class="p">()</span>  <span class="c1"># Enable the Ray scheduler backend for Dask.</span>
-<span class="c1"># end::dask_on_ray_1[]</span>
 </pre></div>
-<div id="cell-19" class="clipboard-copy-txt"># tag::dask_on_ray_1[]
-import ray
+<div id="cell-19" class="clipboard-copy-txt">import ray
 from ray.util.dask import enable_dask_on_ray
 
 ray.init()  # Start or connect to Ray.
-enable_dask_on_ray()  # Enable the Ray scheduler backend for Dask.
-# end::dask_on_ray_1[]</div>
+enable_dask_on_ray()  # Enable the Ray scheduler backend for Dask.</div>
     
         </div>
     </div>
@@ -2094,21 +2030,17 @@ enable_dask_on_ray()  # Enable the Ray scheduler backend for Dask.
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::dask_on_ray_2[]</span>
-<span class="kn">import</span> <span class="nn">dask</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">dask</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">dask</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">timeseries</span><span class="p">()</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">y</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
 <span class="n">df</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>  <span class="c1"># Trigger the task graph to be evaluated.</span>
-<span class="c1"># end::dask_on_ray_2[]</span>
 </pre></div>
-<div id="cell-20" class="clipboard-copy-txt"># tag::dask_on_ray_2[]
-import dask
+<div id="cell-20" class="clipboard-copy-txt">import dask
 
 df = dask.datasets.timeseries()
 df = df[df.y > 0].groupby("name").x.std()
-df.compute()  # Trigger the task graph to be evaluated.
-# end::dask_on_ray_2[]</div>
+df.compute()  # Trigger the task graph to be evaluated.</div>
     
         </div>
     </div>
@@ -2137,8 +2069,7 @@ df.compute()  # Trigger the task graph to be evaluated.
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::dask_on_ray_3[]</span>
-<span class="kn">import</span> <span class="nn">ray</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">ray</span>
 <span class="n">ds</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
 
 <span class="c1"># Convert the Dataset to a Dask DataFrame.</span>
@@ -2148,10 +2079,8 @@ df.compute()  # Trigger the task graph to be evaluated.
 <span class="c1"># Convert the Dask DataFrame back to a Dataset.</span>
 <span class="n">ds</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">from_dask</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">std</span><span class="p">())</span>  <span class="c1"># -&gt; 2886.89568</span>
-<span class="c1"># end::dask_on_ray_3[]</span>
 </pre></div>
-<div id="cell-21" class="clipboard-copy-txt"># tag::dask_on_ray_3[]
-import ray
+<div id="cell-21" class="clipboard-copy-txt">import ray
 ds = ray.data.range(10000)
 
 # Convert the Dataset to a Dask DataFrame.
@@ -2160,8 +2089,7 @@ print(df.std().compute())  # -> 2886.89568
 
 # Convert the Dask DataFrame back to a Dataset.
 ds = ray.data.from_dask(df)
-print(ds.std())  # -> 2886.89568
-# end::dask_on_ray_3[]</div>
+print(ds.std())  # -> 2886.89568</div>
     
         </div>
     </div>

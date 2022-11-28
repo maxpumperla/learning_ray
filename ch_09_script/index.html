@@ -1314,9 +1314,7 @@ the repo and copy the code files to the base path of the runtime:</p>
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::cluster_connect[]</span>
-
-<span class="kn">import</span> <span class="nn">ray</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">ray</span>
 <span class="n">ray</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">address</span><span class="o">=</span><span class="s2">&quot;auto&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ray</span><span class="o">.</span><span class="n">cluster_resources</span><span class="p">())</span>
 
@@ -1327,11 +1325,8 @@ the repo and copy the code files to the base path of the runtime:</p>
 
 
 <span class="n">ray</span><span class="o">.</span><span class="n">get</span><span class="p">([</span><span class="n">test</span><span class="o">.</span><span class="n">remote</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">12</span><span class="p">)])</span>
-<span class="c1"># end::cluster_connect[]</span>
 </pre></div>
-<div id="cell-4" class="clipboard-copy-txt"># tag::cluster_connect[]
-
-import ray
+<div id="cell-4" class="clipboard-copy-txt">import ray
 ray.init(address="auto")
 print(ray.cluster_resources())
 
@@ -1341,8 +1336,7 @@ def test():
     return 12
 
 
-ray.get([test.remote() for i in range(12)])
-# end::cluster_connect[]</div>
+ray.get([test.remote() for i in range(12)])</div>
     
         </div>
     </div>
@@ -1371,8 +1365,7 @@ ray.get([test.remote() for i in range(12)])
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::ray_client[]</span>
-<span class="kn">import</span> <span class="nn">ray</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">ray</span>
 <span class="n">ray</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">address</span><span class="o">=</span><span class="s2">&quot;ray://localhost:10001&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ray</span><span class="o">.</span><span class="n">cluster_resources</span><span class="p">())</span>
 
@@ -1383,10 +1376,8 @@ ray.get([test.remote() for i in range(12)])
 
 
 <span class="n">ray</span><span class="o">.</span><span class="n">get</span><span class="p">([</span><span class="n">test</span><span class="o">.</span><span class="n">remote</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">12</span><span class="p">)])</span>
-<span class="c1"># end::ray_client[]</span>
 </pre></div>
-<div id="cell-5" class="clipboard-copy-txt"># tag::ray_client[]
-import ray
+<div id="cell-5" class="clipboard-copy-txt">import ray
 ray.init(address="ray://localhost:10001")
 print(ray.cluster_resources())
 
@@ -1396,8 +1387,7 @@ def test():
     return 12
 
 
-ray.get([test.remote() for i in range(12)])
-# end::ray_client[]</div>
+ray.get([test.remote() for i in range(12)])</div>
     
         </div>
     </div>

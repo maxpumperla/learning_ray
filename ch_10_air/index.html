@@ -1270,31 +1270,27 @@ refer to Ray's <a href="https://docs.ray.io/en/latest/ray-overview/installation.
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::data_preprocessor[]</span>
-<span class="kn">import</span> <span class="nn">ray</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">ray</span>
 <span class="kn">from</span> <span class="nn">ray.data.preprocessors</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
 
 
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;s3://anonymous@air-example-data/breast_cancer.csv&quot;</span><span class="p">)</span>  <span class="c1"># &lt;1&gt;</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;s3://anonymous@air-example-data/breast_cancer.csv&quot;</span><span class="p">)</span>
 
 <span class="n">train_dataset</span><span class="p">,</span> <span class="n">valid_dataset</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">train_test_split</span><span class="p">(</span><span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
-<span class="n">test_dataset</span> <span class="o">=</span> <span class="n">valid_dataset</span><span class="o">.</span><span class="n">drop_columns</span><span class="p">(</span><span class="n">cols</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;target&quot;</span><span class="p">])</span>  <span class="c1"># &lt;2&gt;</span>
+<span class="n">test_dataset</span> <span class="o">=</span> <span class="n">valid_dataset</span><span class="o">.</span><span class="n">drop_columns</span><span class="p">(</span><span class="n">cols</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;target&quot;</span><span class="p">])</span>
 
-<span class="n">preprocessor</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;mean radius&quot;</span><span class="p">,</span> <span class="s2">&quot;mean texture&quot;</span><span class="p">])</span>  <span class="c1"># &lt;3&gt;</span>
-<span class="c1"># end::data_preprocessor[]</span>
+<span class="n">preprocessor</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;mean radius&quot;</span><span class="p">,</span> <span class="s2">&quot;mean texture&quot;</span><span class="p">])</span>
 </pre></div>
-<div id="cell-3" class="clipboard-copy-txt"># tag::data_preprocessor[]
-import ray
+<div id="cell-3" class="clipboard-copy-txt">import ray
 from ray.data.preprocessors import StandardScaler
 
 
-dataset = ray.data.read_csv("s3://anonymous@air-example-data/breast_cancer.csv")  # <1>
+dataset = ray.data.read_csv("s3://anonymous@air-example-data/breast_cancer.csv")
 
 train_dataset, valid_dataset = dataset.train_test_split(test_size=0.2)
-test_dataset = valid_dataset.drop_columns(cols=["target"])  # <2>
+test_dataset = valid_dataset.drop_columns(cols=["target"])
 
-preprocessor = StandardScaler(columns=["mean radius", "mean texture"])  # <3>
-# end::data_preprocessor[]</div>
+preprocessor = StandardScaler(columns=["mean radius", "mean texture"])</div>
     
         </div>
     </div>
@@ -1323,8 +1319,7 @@ preprocessor = StandardScaler(columns=["mean radius", "mean texture"])  # <3>
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::trainer[]</span>
-<span class="c1"># NOTE: Colab does not have enough resources to run this example.</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># NOTE: Colab does not have enough resources to run this example.</span>
 <span class="c1"># try using num_workers=1, resources_per_worker={&quot;CPU&quot;: 1, &quot;GPU&quot;: 0} in your</span>
 <span class="c1"># ScalingConfig below.</span>
 <span class="c1"># In any case, this training loop will take considerable time to run.</span>
@@ -1333,25 +1328,23 @@ preprocessor = StandardScaler(columns=["mean radius", "mean texture"])  # <3>
 
 
 <span class="n">trainer</span> <span class="o">=</span> <span class="n">XGBoostTrainer</span><span class="p">(</span>
-    <span class="n">scaling_config</span><span class="o">=</span><span class="n">ScalingConfig</span><span class="p">(</span>  <span class="c1"># &lt;1&gt;</span>
+    <span class="n">scaling_config</span><span class="o">=</span><span class="n">ScalingConfig</span><span class="p">(</span>
         <span class="n">num_workers</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
         <span class="n">use_gpu</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="p">),</span>
     <span class="n">label_column</span><span class="o">=</span><span class="s2">&quot;target&quot;</span><span class="p">,</span>
-    <span class="n">num_boost_round</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>  <span class="c1"># &lt;2&gt;</span>
+    <span class="n">num_boost_round</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
     <span class="n">params</span><span class="o">=</span><span class="p">{</span>
         <span class="s2">&quot;objective&quot;</span><span class="p">:</span> <span class="s2">&quot;binary:logistic&quot;</span><span class="p">,</span>
         <span class="s2">&quot;eval_metric&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;logloss&quot;</span><span class="p">,</span> <span class="s2">&quot;error&quot;</span><span class="p">],</span>
     <span class="p">},</span>
-    <span class="n">datasets</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;train&quot;</span><span class="p">:</span> <span class="n">train_dataset</span><span class="p">,</span> <span class="s2">&quot;valid&quot;</span><span class="p">:</span> <span class="n">valid_dataset</span><span class="p">},</span>  <span class="c1"># &lt;3&gt;</span>
-    <span class="n">preprocessor</span><span class="o">=</span><span class="n">preprocessor</span><span class="p">,</span>  <span class="c1"># &lt;4&gt;</span>
+    <span class="n">datasets</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;train&quot;</span><span class="p">:</span> <span class="n">train_dataset</span><span class="p">,</span> <span class="s2">&quot;valid&quot;</span><span class="p">:</span> <span class="n">valid_dataset</span><span class="p">},</span>
+    <span class="n">preprocessor</span><span class="o">=</span><span class="n">preprocessor</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">trainer</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>  <span class="c1"># &lt;5&gt;</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">trainer</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">metrics</span><span class="p">)</span>
-<span class="c1"># end::trainer[]</span>
 </pre></div>
-<div id="cell-4" class="clipboard-copy-txt"># tag::trainer[]
-# NOTE: Colab does not have enough resources to run this example.
+<div id="cell-4" class="clipboard-copy-txt"># NOTE: Colab does not have enough resources to run this example.
 # try using num_workers=1, resources_per_worker={"CPU": 1, "GPU": 0} in your
 # ScalingConfig below.
 # In any case, this training loop will take considerable time to run.
@@ -1360,22 +1353,21 @@ from ray.train.xgboost import XGBoostTrainer
 
 
 trainer = XGBoostTrainer(
-    scaling_config=ScalingConfig(  # <1>
+    scaling_config=ScalingConfig(
         num_workers=2,
         use_gpu=False,
     ),
     label_column="target",
-    num_boost_round=20,  # <2>
+    num_boost_round=20,
     params={
         "objective": "binary:logistic",
         "eval_metric": ["logloss", "error"],
     },
-    datasets={"train": train_dataset, "valid": valid_dataset},  # <3>
-    preprocessor=preprocessor,  # <4>
+    datasets={"train": train_dataset, "valid": valid_dataset},
+    preprocessor=preprocessor,
 )
-result = trainer.fit()  # <5>
-print(result.metrics)
-# end::trainer[]</div>
+result = trainer.fit()
+print(result.metrics)</div>
     
         </div>
     </div>
@@ -1404,8 +1396,7 @@ print(result.metrics)
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::tuner[]</span>
-<span class="kn">from</span> <span class="nn">ray</span> <span class="kn">import</span> <span class="n">tune</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">ray</span> <span class="kn">import</span> <span class="n">tune</span>
 
 <span class="n">param_space</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;params&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;max_depth&quot;</span><span class="p">:</span> <span class="n">tune</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">)}}</span>
 <span class="n">metric</span> <span class="o">=</span> <span class="s2">&quot;train-logloss&quot;</span>
@@ -1414,19 +1405,17 @@ print(result.metrics)
 <span class="kn">from</span> <span class="nn">ray.air.config</span> <span class="kn">import</span> <span class="n">RunConfig</span>
 
 <span class="n">tuner</span> <span class="o">=</span> <span class="n">Tuner</span><span class="p">(</span>
-    <span class="n">trainer</span><span class="p">,</span>  <span class="c1"># &lt;1&gt;</span>
-    <span class="n">param_space</span><span class="o">=</span><span class="n">param_space</span><span class="p">,</span>  <span class="c1"># &lt;2&gt;</span>
+    <span class="n">trainer</span><span class="p">,</span>
+    <span class="n">param_space</span><span class="o">=</span><span class="n">param_space</span><span class="p">,</span>
     <span class="n">run_config</span><span class="o">=</span><span class="n">RunConfig</span><span class="p">(</span><span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
-    <span class="n">tune_config</span><span class="o">=</span><span class="n">TuneConfig</span><span class="p">(</span><span class="n">num_samples</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="n">metric</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;min&quot;</span><span class="p">),</span>  <span class="c1"># &lt;3&gt;</span>
+    <span class="n">tune_config</span><span class="o">=</span><span class="n">TuneConfig</span><span class="p">(</span><span class="n">num_samples</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="n">metric</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;min&quot;</span><span class="p">),</span>
 <span class="p">)</span>
-<span class="n">result_grid</span> <span class="o">=</span> <span class="n">tuner</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>  <span class="c1"># &lt;4&gt;</span>
+<span class="n">result_grid</span> <span class="o">=</span> <span class="n">tuner</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
 
 <span class="n">best_result</span> <span class="o">=</span> <span class="n">result_grid</span><span class="o">.</span><span class="n">get_best_result</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best Result:&quot;</span><span class="p">,</span> <span class="n">best_result</span><span class="p">)</span>
-<span class="c1"># end::tuner[]</span>
 </pre></div>
-<div id="cell-5" class="clipboard-copy-txt"># tag::tuner[]
-from ray import tune
+<div id="cell-5" class="clipboard-copy-txt">from ray import tune
 
 param_space = {"params": {"max_depth": tune.randint(1, 9)}}
 metric = "train-logloss"
@@ -1435,16 +1424,15 @@ from ray.tune.tuner import Tuner, TuneConfig
 from ray.air.config import RunConfig
 
 tuner = Tuner(
-    trainer,  # <1>
-    param_space=param_space,  # <2>
+    trainer,
+    param_space=param_space,
     run_config=RunConfig(verbose=1),
-    tune_config=TuneConfig(num_samples=2, metric=metric, mode="min"),  # <3>
+    tune_config=TuneConfig(num_samples=2, metric=metric, mode="min"),
 )
-result_grid = tuner.fit()  # <4>
+result_grid = tuner.fit()
 
 best_result = result_grid.get_best_result()
-print("Best Result:", best_result)
-# end::tuner[]</div>
+print("Best Result:", best_result)</div>
     
         </div>
     </div>
@@ -1473,15 +1461,11 @@ print("Best Result:", best_result)
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::checkpoint[]</span>
-<span class="n">checkpoint</span> <span class="o">=</span> <span class="n">best_result</span><span class="o">.</span><span class="n">checkpoint</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">checkpoint</span> <span class="o">=</span> <span class="n">best_result</span><span class="o">.</span><span class="n">checkpoint</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">checkpoint</span><span class="p">)</span>
-<span class="c1"># end::checkpoint[]</span>
 </pre></div>
-<div id="cell-6" class="clipboard-copy-txt"># tag::checkpoint[]
-checkpoint = best_result.checkpoint
-print(checkpoint)
-# end::checkpoint[]</div>
+<div id="cell-6" class="clipboard-copy-txt">checkpoint = best_result.checkpoint
+print(checkpoint)</div>
     
         </div>
     </div>
@@ -1510,8 +1494,7 @@ print(checkpoint)
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::keras_checkpoint[]</span>
-<span class="kn">from</span> <span class="nn">ray.train.tensorflow</span> <span class="kn">import</span> <span class="n">TensorflowCheckpoint</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">ray.train.tensorflow</span> <span class="kn">import</span> <span class="n">TensorflowCheckpoint</span>
 <span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
 
 <span class="n">model</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Sequential</span><span class="p">([</span>
@@ -1520,10 +1503,8 @@ print(checkpoint)
 <span class="p">])</span>
 
 <span class="n">keras_checkpoint</span> <span class="o">=</span> <span class="n">TensorflowCheckpoint</span><span class="o">.</span><span class="n">from_model</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
-<span class="c1"># end::keras_checkpoint[]</span>
 </pre></div>
-<div id="cell-7" class="clipboard-copy-txt"># tag::keras_checkpoint[]
-from ray.train.tensorflow import TensorflowCheckpoint
+<div id="cell-7" class="clipboard-copy-txt">from ray.train.tensorflow import TensorflowCheckpoint
 import tensorflow as tf
 
 model = tf.keras.Sequential([
@@ -1531,8 +1512,7 @@ model = tf.keras.Sequential([
     tf.keras.layers.Dense(1)
 ])
 
-keras_checkpoint = TensorflowCheckpoint.from_model(model)
-# end::keras_checkpoint[]</div>
+keras_checkpoint = TensorflowCheckpoint.from_model(model)</div>
     
         </div>
     </div>
@@ -1561,27 +1541,23 @@ keras_checkpoint = TensorflowCheckpoint.from_model(model)
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::predictor[]</span>
-<span class="kn">from</span> <span class="nn">ray.train.batch_predictor</span> <span class="kn">import</span> <span class="n">BatchPredictor</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">ray.train.batch_predictor</span> <span class="kn">import</span> <span class="n">BatchPredictor</span>
 <span class="kn">from</span> <span class="nn">ray.train.xgboost</span> <span class="kn">import</span> <span class="n">XGBoostPredictor</span>
 
 <span class="n">checkpoint</span> <span class="o">=</span> <span class="n">best_result</span><span class="o">.</span><span class="n">checkpoint</span>
-<span class="n">batch_predictor</span> <span class="o">=</span> <span class="n">BatchPredictor</span><span class="o">.</span><span class="n">from_checkpoint</span><span class="p">(</span><span class="n">checkpoint</span><span class="p">,</span> <span class="n">XGBoostPredictor</span><span class="p">)</span>  <span class="c1"># &lt;1&gt;</span>
+<span class="n">batch_predictor</span> <span class="o">=</span> <span class="n">BatchPredictor</span><span class="o">.</span><span class="n">from_checkpoint</span><span class="p">(</span><span class="n">checkpoint</span><span class="p">,</span> <span class="n">XGBoostPredictor</span><span class="p">)</span>
 
-<span class="n">predicted_probabilities</span> <span class="o">=</span> <span class="n">batch_predictor</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test_dataset</span><span class="p">)</span>  <span class="c1"># &lt;2&gt;</span>
+<span class="n">predicted_probabilities</span> <span class="o">=</span> <span class="n">batch_predictor</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test_dataset</span><span class="p">)</span>
 <span class="n">predicted_probabilities</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<span class="c1"># end::predictor[]</span>
 </pre></div>
-<div id="cell-8" class="clipboard-copy-txt"># tag::predictor[]
-from ray.train.batch_predictor import BatchPredictor
+<div id="cell-8" class="clipboard-copy-txt">from ray.train.batch_predictor import BatchPredictor
 from ray.train.xgboost import XGBoostPredictor
 
 checkpoint = best_result.checkpoint
-batch_predictor = BatchPredictor.from_checkpoint(checkpoint, XGBoostPredictor)  # <1>
+batch_predictor = BatchPredictor.from_checkpoint(checkpoint, XGBoostPredictor)
 
-predicted_probabilities = batch_predictor.predict(test_dataset)  # <2>
-predicted_probabilities.show()
-# end::predictor[]</div>
+predicted_probabilities = batch_predictor.predict(test_dataset)
+predicted_probabilities.show()</div>
     
         </div>
     </div>
@@ -1610,53 +1586,49 @@ predicted_probabilities.show()
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::deployment[]</span>
-<span class="kn">from</span> <span class="nn">ray</span> <span class="kn">import</span> <span class="n">serve</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">ray</span> <span class="kn">import</span> <span class="n">serve</span>
 <span class="kn">from</span> <span class="nn">fastapi</span> <span class="kn">import</span> <span class="n">Request</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">ray.serve</span> <span class="kn">import</span> <span class="n">PredictorDeployment</span>
 
 
-<span class="k">async</span> <span class="k">def</span> <span class="nf">adapter</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">):</span>  <span class="c1"># &lt;1&gt;</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">adapter</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">):</span>
     <span class="n">payload</span> <span class="o">=</span> <span class="k">await</span> <span class="n">request</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
     <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
 
 
 <span class="n">serve</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="n">detached</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">deployment</span> <span class="o">=</span> <span class="n">PredictorDeployment</span><span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;XGBoostService&quot;</span><span class="p">)</span>  <span class="c1"># &lt;2&gt;</span>
+<span class="n">deployment</span> <span class="o">=</span> <span class="n">PredictorDeployment</span><span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;XGBoostService&quot;</span><span class="p">)</span>
 
-<span class="n">deployment</span><span class="o">.</span><span class="n">deploy</span><span class="p">(</span>  <span class="c1"># &lt;3&gt;</span>
+<span class="n">deployment</span><span class="o">.</span><span class="n">deploy</span><span class="p">(</span>
     <span class="n">XGBoostPredictor</span><span class="p">,</span>
     <span class="n">checkpoint</span><span class="p">,</span>
     <span class="n">http_adapter</span><span class="o">=</span><span class="n">adapter</span>
 <span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">deployment</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
-<span class="c1"># end::deployment[]</span>
 </pre></div>
-<div id="cell-9" class="clipboard-copy-txt"># tag::deployment[]
-from ray import serve
+<div id="cell-9" class="clipboard-copy-txt">from ray import serve
 from fastapi import Request
 import pandas as pd
 from ray.serve import PredictorDeployment
 
 
-async def adapter(request: Request):  # <1>
+async def adapter(request: Request):
     payload = await request.json()
     return pd.DataFrame.from_dict(payload)
 
 
 serve.start(detached=True)
-deployment = PredictorDeployment.options(name="XGBoostService")  # <2>
+deployment = PredictorDeployment.options(name="XGBoostService")
 
-deployment.deploy(  # <3>
+deployment.deploy(
     XGBoostPredictor,
     checkpoint,
     http_adapter=adapter
 )
 
-print(deployment.url)
-# end::deployment[]</div>
+print(deployment.url)</div>
     
         </div>
     </div>
@@ -1685,35 +1657,31 @@ print(deployment.url)
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::request[]</span>
-<span class="kn">import</span> <span class="nn">requests</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">first_item</span> <span class="o">=</span> <span class="n">test_dataset</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">sample_input</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">first_item</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>  <span class="c1"># &lt;1&gt;</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
     <span class="n">deployment</span><span class="o">.</span><span class="n">url</span><span class="p">,</span>
     <span class="n">json</span><span class="o">=</span><span class="p">[</span><span class="n">sample_input</span><span class="p">]</span>
 <span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
 
-<span class="n">serve</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span>  <span class="c1"># &lt;2&gt;</span>
-<span class="c1"># end::request[]</span>
+<span class="n">serve</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span>
 </pre></div>
-<div id="cell-10" class="clipboard-copy-txt"># tag::request[]
-import requests
+<div id="cell-10" class="clipboard-copy-txt">import requests
 
 first_item = test_dataset.take(1)
 sample_input = dict(first_item[0])
 
-result = requests.post(  # <1>
+result = requests.post(
     deployment.url,
     json=[sample_input]
 )
 print(result.json())
 
-serve.shutdown()  # <2>
-# end::request[]</div>
+serve.shutdown()</div>
     
         </div>
     </div>
@@ -1742,47 +1710,43 @@ serve.shutdown()  # <2>
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::rl_trainer[]</span>
-<span class="kn">from</span> <span class="nn">ray.tune.tuner</span> <span class="kn">import</span> <span class="n">Tuner</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">ray.tune.tuner</span> <span class="kn">import</span> <span class="n">Tuner</span>
 <span class="kn">from</span> <span class="nn">ray.train.rl.rl_trainer</span> <span class="kn">import</span> <span class="n">RLTrainer</span>
 <span class="kn">from</span> <span class="nn">ray.air.config</span> <span class="kn">import</span> <span class="n">RunConfig</span><span class="p">,</span> <span class="n">ScalingConfig</span>
 
 
-<span class="n">trainer</span> <span class="o">=</span> <span class="n">RLTrainer</span><span class="p">(</span>  <span class="c1"># &lt;1&gt;</span>
+<span class="n">trainer</span> <span class="o">=</span> <span class="n">RLTrainer</span><span class="p">(</span>
     <span class="n">run_config</span><span class="o">=</span><span class="n">RunConfig</span><span class="p">(</span><span class="n">stop</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;training_iteration&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">}),</span>
     <span class="n">scaling_config</span><span class="o">=</span><span class="n">ScalingConfig</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">use_gpu</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
     <span class="n">algorithm</span><span class="o">=</span><span class="s2">&quot;PPO&quot;</span><span class="p">,</span>
     <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;env&quot;</span><span class="p">:</span> <span class="s2">&quot;CartPole-v1&quot;</span><span class="p">},</span>
 <span class="p">)</span>
 
-<span class="n">tuner</span> <span class="o">=</span> <span class="n">Tuner</span><span class="p">(</span>  <span class="c1"># &lt;2&gt;</span>
+<span class="n">tuner</span> <span class="o">=</span> <span class="n">Tuner</span><span class="p">(</span>
     <span class="n">trainer</span><span class="p">,</span>
     <span class="n">_tuner_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;checkpoint_at_end&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
 <span class="p">)</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="n">tuner</span><span class="o">.</span><span class="n">fit</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># &lt;3&gt;</span>
-<span class="c1"># end::rl_trainer[]</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">tuner</span><span class="o">.</span><span class="n">fit</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
-<div id="cell-11" class="clipboard-copy-txt"># tag::rl_trainer[]
-from ray.tune.tuner import Tuner
+<div id="cell-11" class="clipboard-copy-txt">from ray.tune.tuner import Tuner
 from ray.train.rl.rl_trainer import RLTrainer
 from ray.air.config import RunConfig, ScalingConfig
 
 
-trainer = RLTrainer(  # <1>
+trainer = RLTrainer(
     run_config=RunConfig(stop={"training_iteration": 5}),
     scaling_config=ScalingConfig(num_workers=2, use_gpu=False),
     algorithm="PPO",
     config={"env": "CartPole-v1"},
 )
 
-tuner = Tuner(  # <2>
+tuner = Tuner(
     trainer,
     _tuner_kwargs={"checkpoint_at_end": True},
 )
 
-result = tuner.fit()[0]  # <3>
-# end::rl_trainer[]</div>
+result = tuner.fit()[0]</div>
     
         </div>
     </div>
@@ -1811,8 +1775,7 @@ result = tuner.fit()[0]  # <3>
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::serve_rl_model[]</span>
-<span class="kn">from</span> <span class="nn">ray.train.rl.rl_predictor</span> <span class="kn">import</span> <span class="n">RLPredictor</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">ray.train.rl.rl_predictor</span> <span class="kn">import</span> <span class="n">RLPredictor</span>
 <span class="kn">from</span> <span class="nn">ray.serve</span> <span class="kn">import</span> <span class="n">PredictorDeployment</span>
 
 
@@ -1820,14 +1783,12 @@ result = tuner.fit()[0]  # <3>
 <span class="n">deployment</span> <span class="o">=</span> <span class="n">PredictorDeployment</span><span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;RLDeployment&quot;</span><span class="p">)</span>
 <span class="n">deployment</span><span class="o">.</span><span class="n">deploy</span><span class="p">(</span><span class="n">RLPredictor</span><span class="p">,</span> <span class="n">result</span><span class="o">.</span><span class="n">checkpoint</span><span class="p">)</span>
 
-<span class="c1"># end::serve_rl_model[]</span>
 
 <span class="n">serve</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
     <span class="n">PredictorDeployment</span><span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;RLDeployment&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">RLPredictor</span><span class="p">,</span> <span class="n">result</span><span class="o">.</span><span class="n">checkpoint</span><span class="p">)</span>
 <span class="p">)</span>
 </pre></div>
-<div id="cell-12" class="clipboard-copy-txt"># tag::serve_rl_model[]
-from ray.train.rl.rl_predictor import RLPredictor
+<div id="cell-12" class="clipboard-copy-txt">from ray.train.rl.rl_predictor import RLPredictor
 from ray.serve import PredictorDeployment
 
 
@@ -1835,7 +1796,6 @@ serve.start(detached=True)
 deployment = PredictorDeployment.options(name="RLDeployment")
 deployment.deploy(RLPredictor, result.checkpoint)
 
-# end::serve_rl_model[]
 
 serve.run(
     PredictorDeployment.options(name="RLDeployment").bind(RLPredictor, result.checkpoint)
@@ -1868,9 +1828,7 @@ serve.run(
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::use_rl_endpoint[]</span>
-
-<span class="kn">import</span> <span class="nn">gym</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">gym</span>
 <span class="kn">import</span> <span class="nn">requests</span>
 
 
@@ -1883,7 +1841,7 @@ serve.run(
     <span class="n">reward</span> <span class="o">=</span> <span class="mf">0.0</span>
     <span class="n">done</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="k">while</span> <span class="ow">not</span> <span class="n">done</span><span class="p">:</span>
-        <span class="n">action</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>  <span class="c1"># &lt;1&gt;</span>
+        <span class="n">action</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
             <span class="n">deployment</span><span class="o">.</span><span class="n">url</span><span class="p">,</span>
             <span class="n">json</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;array&quot;</span><span class="p">:</span> <span class="n">obs</span><span class="o">.</span><span class="n">tolist</span><span class="p">()}</span>
         <span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
@@ -1894,11 +1852,8 @@ serve.run(
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Episode rewards:&quot;</span><span class="p">,</span> <span class="n">rewards</span><span class="p">)</span>
 
 <span class="n">serve</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span>
-<span class="c1"># end::use_rl_endpoint[]</span>
 </pre></div>
-<div id="cell-13" class="clipboard-copy-txt"># tag::use_rl_endpoint[]
-
-import gym
+<div id="cell-13" class="clipboard-copy-txt">import gym
 import requests
 
 
@@ -1911,7 +1866,7 @@ for i in range(num_episodes):
     reward = 0.0
     done = False
     while not done:
-        action = requests.post(  # <1>
+        action = requests.post(
             deployment.url,
             json={"array": obs.tolist()}
         ).json()
@@ -1921,8 +1876,7 @@ for i in range(num_episodes):
 
 print("Episode rewards:", rewards)
 
-serve.shutdown()
-# end::use_rl_endpoint[]</div>
+serve.shutdown()</div>
     
         </div>
     </div>

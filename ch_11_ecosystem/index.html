@@ -1316,41 +1316,37 @@ the repo and copy the code files to the base path of the runtime:</p>
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::load_cifar[]</span>
-<span class="kn">from</span> <span class="nn">torchvision</span> <span class="kn">import</span> <span class="n">transforms</span><span class="p">,</span> <span class="n">datasets</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">torchvision</span> <span class="kn">import</span> <span class="n">transforms</span><span class="p">,</span> <span class="n">datasets</span>
 
 
 <span class="k">def</span> <span class="nf">load_cifar</span><span class="p">(</span><span class="n">train</span><span class="p">:</span> <span class="nb">bool</span><span class="p">):</span>
-    <span class="n">transform</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span>  <span class="c1"># &lt;1&gt;</span>
+    <span class="n">transform</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span>
         <span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">(),</span>
         <span class="n">transforms</span><span class="o">.</span><span class="n">Normalize</span><span class="p">((</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">))</span>
     <span class="p">])</span>
 
-    <span class="k">return</span> <span class="n">datasets</span><span class="o">.</span><span class="n">CIFAR10</span><span class="p">(</span>  <span class="c1"># &lt;2&gt;</span>
+    <span class="k">return</span> <span class="n">datasets</span><span class="o">.</span><span class="n">CIFAR10</span><span class="p">(</span>
         <span class="n">root</span><span class="o">=</span><span class="s2">&quot;./data&quot;</span><span class="p">,</span>
         <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-        <span class="n">train</span><span class="o">=</span><span class="n">train</span><span class="p">,</span>  <span class="c1"># &lt;3&gt;</span>
+        <span class="n">train</span><span class="o">=</span><span class="n">train</span><span class="p">,</span>
         <span class="n">transform</span><span class="o">=</span><span class="n">transform</span>
     <span class="p">)</span>
-<span class="c1"># end::load_cifar[]</span>
 </pre></div>
-<div id="cell-4" class="clipboard-copy-txt"># tag::load_cifar[]
-from torchvision import transforms, datasets
+<div id="cell-4" class="clipboard-copy-txt">from torchvision import transforms, datasets
 
 
 def load_cifar(train: bool):
-    transform = transforms.Compose([  # <1>
+    transform = transforms.Compose([
         transforms.ToTensor(),
         transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
     ])
 
-    return datasets.CIFAR10(  # <2>
+    return datasets.CIFAR10(
         root="./data",
         download=True,
-        train=train,  # <3>
+        train=train,
         transform=transform
-    )
-# end::load_cifar[]</div>
+    )</div>
     
         </div>
     </div>
@@ -1379,21 +1375,17 @@ def load_cifar(train: bool):
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::std[]</span>
-<span class="kn">from</span> <span class="nn">ray.data</span> <span class="kn">import</span> <span class="n">from_torch</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">ray.data</span> <span class="kn">import</span> <span class="n">from_torch</span>
 
 
 <span class="n">train_dataset</span> <span class="o">=</span> <span class="n">from_torch</span><span class="p">(</span><span class="n">load_cifar</span><span class="p">(</span><span class="n">train</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
 <span class="n">test_dataset</span> <span class="o">=</span> <span class="n">from_torch</span><span class="p">(</span><span class="n">load_cifar</span><span class="p">(</span><span class="n">train</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
-<span class="c1"># end::std[]</span>
 </pre></div>
-<div id="cell-5" class="clipboard-copy-txt"># tag::std[]
-from ray.data import from_torch
+<div id="cell-5" class="clipboard-copy-txt">from ray.data import from_torch
 
 
 train_dataset = from_torch(load_cifar(train=True))
-test_dataset = from_torch(load_cifar(train=False))
-# end::std[]</div>
+test_dataset = from_torch(load_cifar(train=False))</div>
     
         </div>
     </div>
@@ -1422,35 +1414,31 @@ test_dataset = from_torch(load_cifar(train=False))
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::batch_conversion[]</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 
-<span class="k">def</span> <span class="nf">to_labeled_image</span><span class="p">(</span><span class="n">batch</span><span class="p">):</span>  <span class="c1"># &lt;1&gt;</span>
+<span class="k">def</span> <span class="nf">to_labeled_image</span><span class="p">(</span><span class="n">batch</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">{</span>
         <span class="s2">&quot;image&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">image</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span> <span class="k">for</span> <span class="n">image</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">batch</span><span class="p">]),</span>
         <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">label</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">batch</span><span class="p">]),</span>
     <span class="p">}</span>
 
 
-<span class="n">train_dataset</span> <span class="o">=</span> <span class="n">train_dataset</span><span class="o">.</span><span class="n">map_batches</span><span class="p">(</span><span class="n">to_labeled_image</span><span class="p">)</span>  <span class="c1"># &lt;2&gt;</span>
+<span class="n">train_dataset</span> <span class="o">=</span> <span class="n">train_dataset</span><span class="o">.</span><span class="n">map_batches</span><span class="p">(</span><span class="n">to_labeled_image</span><span class="p">)</span>
 <span class="n">test_dataset</span> <span class="o">=</span> <span class="n">test_dataset</span><span class="o">.</span><span class="n">map_batches</span><span class="p">(</span><span class="n">to_labeled_image</span><span class="p">)</span>
-<span class="c1"># end::batch_conversion[]</span>
 </pre></div>
-<div id="cell-6" class="clipboard-copy-txt"># tag::batch_conversion[]
-import numpy as np
+<div id="cell-6" class="clipboard-copy-txt">import numpy as np
 
 
-def to_labeled_image(batch):  # <1>
+def to_labeled_image(batch):
     return {
         "image": np.array([image.numpy() for image, _ in batch]),
         "label": np.array([label for _, label in batch]),
     }
 
 
-train_dataset = train_dataset.map_batches(to_labeled_image)  # <2>
-test_dataset = test_dataset.map_batches(to_labeled_image)
-# end::batch_conversion[]</div>
+train_dataset = train_dataset.map_batches(to_labeled_image)
+test_dataset = test_dataset.map_batches(to_labeled_image)</div>
     
         </div>
     </div>
@@ -1479,8 +1467,7 @@ test_dataset = test_dataset.map_batches(to_labeled_image)
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::torch_model[]</span>
-<span class="kn">import</span> <span class="nn">torch</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
 <span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
 <span class="kn">import</span> <span class="nn">torch.nn.functional</span> <span class="k">as</span> <span class="nn">F</span>
 
@@ -1503,10 +1490,8 @@ test_dataset = test_dataset.map_batches(to_labeled_image)
         <span class="n">x</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fc2</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
         <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fc3</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">x</span>
-<span class="c1"># end::torch_model[]</span>
 </pre></div>
-<div id="cell-7" class="clipboard-copy-txt"># tag::torch_model[]
-import torch
+<div id="cell-7" class="clipboard-copy-txt">import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
@@ -1528,8 +1513,7 @@ class Net(nn.Module):
         x = F.relu(self.fc1(x))
         x = F.relu(self.fc2(x))
         x = self.fc3(x)
-        return x
-# end::torch_model[]</div>
+        return x</div>
     
         </div>
     </div>
@@ -1558,83 +1542,79 @@ class Net(nn.Module):
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::torch_training_loop[]</span>
-<span class="kn">from</span> <span class="nn">ray</span> <span class="kn">import</span> <span class="n">train</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">ray</span> <span class="kn">import</span> <span class="n">train</span>
 <span class="kn">from</span> <span class="nn">ray.air</span> <span class="kn">import</span> <span class="n">session</span><span class="p">,</span> <span class="n">Checkpoint</span>
 
 
 <span class="k">def</span> <span class="nf">train_loop</span><span class="p">(</span><span class="n">config</span><span class="p">):</span>
-    <span class="n">model</span> <span class="o">=</span> <span class="n">train</span><span class="o">.</span><span class="n">torch</span><span class="o">.</span><span class="n">prepare_model</span><span class="p">(</span><span class="n">Net</span><span class="p">())</span>  <span class="c1"># &lt;1&gt;</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">train</span><span class="o">.</span><span class="n">torch</span><span class="o">.</span><span class="n">prepare_model</span><span class="p">(</span><span class="n">Net</span><span class="p">())</span>
     <span class="n">loss_fct</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">()</span>
     <span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">momentum</span><span class="o">=</span><span class="mf">0.9</span><span class="p">)</span>
 
-    <span class="n">train_batches</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">get_dataset_shard</span><span class="p">(</span><span class="s2">&quot;train&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">iter_torch_batches</span><span class="p">(</span>  <span class="c1"># &lt;2&gt;</span>
+    <span class="n">train_batches</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">get_dataset_shard</span><span class="p">(</span><span class="s2">&quot;train&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">iter_torch_batches</span><span class="p">(</span>
         <span class="n">batch_size</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;batch_size&quot;</span><span class="p">],</span>
     <span class="p">)</span>
 
     <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;epochs&quot;</span><span class="p">]):</span>
         <span class="n">running_loss</span> <span class="o">=</span> <span class="mf">0.0</span>
         <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">train_batches</span><span class="p">):</span>
-            <span class="n">inputs</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;image&quot;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">]</span>  <span class="c1"># &lt;3&gt;</span>
+            <span class="n">inputs</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;image&quot;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">]</span>
 
-            <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>  <span class="c1"># &lt;4&gt;</span>
+            <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
             <span class="n">forward_outputs</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
             <span class="n">loss</span> <span class="o">=</span> <span class="n">loss_fct</span><span class="p">(</span><span class="n">forward_outputs</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
             <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
             <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
 
-            <span class="n">running_loss</span> <span class="o">+=</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>  <span class="c1"># &lt;5&gt;</span>
+            <span class="n">running_loss</span> <span class="o">+=</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
             <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">1000</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
                 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[</span><span class="si">{</span><span class="n">epoch</span> <span class="o">+</span> <span class="mi">1</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="si">:</span><span class="s2">4d</span><span class="si">}</span><span class="s2">] loss: &quot;</span>
                       <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">running_loss</span> <span class="o">/</span> <span class="mi">1000</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
                 <span class="n">running_loss</span> <span class="o">=</span> <span class="mf">0.0</span>
 
-        <span class="n">session</span><span class="o">.</span><span class="n">report</span><span class="p">(</span>  <span class="c1"># &lt;6&gt;</span>
+        <span class="n">session</span><span class="o">.</span><span class="n">report</span><span class="p">(</span>
             <span class="nb">dict</span><span class="p">(</span><span class="n">running_loss</span><span class="o">=</span><span class="n">running_loss</span><span class="p">),</span>
             <span class="n">checkpoint</span><span class="o">=</span><span class="n">Checkpoint</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span>
                 <span class="nb">dict</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="o">.</span><span class="n">module</span><span class="o">.</span><span class="n">state_dict</span><span class="p">())</span>
             <span class="p">),</span>
         <span class="p">)</span>
-<span class="c1"># end::torch_training_loop[]</span>
 </pre></div>
-<div id="cell-8" class="clipboard-copy-txt"># tag::torch_training_loop[]
-from ray import train
+<div id="cell-8" class="clipboard-copy-txt">from ray import train
 from ray.air import session, Checkpoint
 
 
 def train_loop(config):
-    model = train.torch.prepare_model(Net())  # <1>
+    model = train.torch.prepare_model(Net())
     loss_fct = nn.CrossEntropyLoss()
     optimizer = torch.optim.SGD(model.parameters(), lr=0.001, momentum=0.9)
 
-    train_batches = session.get_dataset_shard("train").iter_torch_batches(  # <2>
+    train_batches = session.get_dataset_shard("train").iter_torch_batches(
         batch_size=config["batch_size"],
     )
 
     for epoch in range(config["epochs"]):
         running_loss = 0.0
         for i, data in enumerate(train_batches):
-            inputs, labels = data["image"], data["label"]  # <3>
+            inputs, labels = data["image"], data["label"]
 
-            optimizer.zero_grad()  # <4>
+            optimizer.zero_grad()
             forward_outputs = model(inputs)
             loss = loss_fct(forward_outputs, labels)
             loss.backward()
             optimizer.step()
 
-            running_loss += loss.item()  # <5>
+            running_loss += loss.item()
             if i % 1000 == 0:
                 print(f"[{epoch + 1}, {i + 1:4d}] loss: "
                       f"{running_loss / 1000:.3f}")
                 running_loss = 0.0
 
-        session.report(  # <6>
+        session.report(
             dict(running_loss=running_loss),
             checkpoint=Checkpoint.from_dict(
                 dict(model=model.module.state_dict())
             ),
-        )
-# end::torch_training_loop[]</div>
+        )</div>
     
         </div>
     </div>
@@ -1663,8 +1643,7 @@ def train_loop(config):
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::torch_trainer[]</span>
-<span class="kn">from</span> <span class="nn">ray.train.torch</span> <span class="kn">import</span> <span class="n">TorchTrainer</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">ray.train.torch</span> <span class="kn">import</span> <span class="n">TorchTrainer</span>
 <span class="kn">from</span> <span class="nn">ray.air.config</span> <span class="kn">import</span> <span class="n">ScalingConfig</span><span class="p">,</span> <span class="n">RunConfig</span>
 <span class="kn">from</span> <span class="nn">ray.air.callbacks.mlflow</span> <span class="kn">import</span> <span class="n">MLflowLoggerCallback</span>
 
@@ -1680,10 +1659,8 @@ def train_loop(config):
 
 <span class="p">)</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">trainer</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
-<span class="c1"># end::torch_trainer[]</span>
 </pre></div>
-<div id="cell-9" class="clipboard-copy-txt"># tag::torch_trainer[]
-from ray.train.torch import TorchTrainer
+<div id="cell-9" class="clipboard-copy-txt">from ray.train.torch import TorchTrainer
 from ray.air.config import ScalingConfig, RunConfig
 from ray.air.callbacks.mlflow import MLflowLoggerCallback
 
@@ -1698,8 +1675,7 @@ trainer = TorchTrainer(
     ])
 
 )
-result = trainer.fit()
-# end::torch_trainer[]</div>
+result = trainer.fit()</div>
     
         </div>
     </div>
@@ -1728,15 +1704,11 @@ result = trainer.fit()
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::store_checkpoint[]</span>
-<span class="n">CHECKPOINT_PATH</span> <span class="o">=</span> <span class="s2">&quot;torch_checkpoint&quot;</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">CHECKPOINT_PATH</span> <span class="o">=</span> <span class="s2">&quot;torch_checkpoint&quot;</span>
 <span class="n">result</span><span class="o">.</span><span class="n">checkpoint</span><span class="o">.</span><span class="n">to_directory</span><span class="p">(</span><span class="n">CHECKPOINT_PATH</span><span class="p">)</span>
-<span class="c1"># end::store_checkpoint[]</span>
 </pre></div>
-<div id="cell-10" class="clipboard-copy-txt"># tag::store_checkpoint[]
-CHECKPOINT_PATH = "torch_checkpoint"
-result.checkpoint.to_directory(CHECKPOINT_PATH)
-# end::store_checkpoint[]</div>
+<div id="cell-10" class="clipboard-copy-txt">CHECKPOINT_PATH = "torch_checkpoint"
+result.checkpoint.to_directory(CHECKPOINT_PATH)</div>
     
         </div>
     </div>
@@ -1811,8 +1783,7 @@ on faulty checkpoints.</p>
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::custom_data[]</span>
-<span class="kn">from</span> <span class="nn">ray.data</span> <span class="kn">import</span> <span class="n">read_datasource</span><span class="p">,</span> <span class="n">datasource</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">ray.data</span> <span class="kn">import</span> <span class="n">read_datasource</span><span class="p">,</span> <span class="n">datasource</span>
 
 
 <span class="k">class</span> <span class="nc">SnowflakeDatasource</span><span class="p">(</span><span class="n">datasource</span><span class="o">.</span><span class="n">Datasource</span><span class="p">):</span>
@@ -1820,18 +1791,15 @@ on faulty checkpoints.</p>
 
 
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">read_datasource</span><span class="p">(</span><span class="n">SnowflakeDatasource</span><span class="p">(),</span> <span class="o">...</span><span class="p">)</span>
-<span class="c1"># end::custom_data[]</span>
 </pre></div>
-<div id="cell-12" class="clipboard-copy-txt"># tag::custom_data[]
-from ray.data import read_datasource, datasource
+<div id="cell-12" class="clipboard-copy-txt">from ray.data import read_datasource, datasource
 
 
 class SnowflakeDatasource(datasource.Datasource):
     pass
 
 
-dataset = read_datasource(SnowflakeDatasource(), ...)
-# end::custom_data[]</div>
+dataset = read_datasource(SnowflakeDatasource(), ...)</div>
     
         </div>
     </div>
@@ -1860,8 +1828,7 @@ dataset = read_datasource(SnowflakeDatasource(), ...)
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::custom_trainer[]</span>
-<span class="kn">from</span> <span class="nn">ray.train.data_parallel_trainer</span> <span class="kn">import</span> <span class="n">DataParallelTrainer</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">ray.train.data_parallel_trainer</span> <span class="kn">import</span> <span class="n">DataParallelTrainer</span>
 
 
 <span class="k">class</span> <span class="nc">JaxTrainer</span><span class="p">(</span><span class="n">DataParallelTrainer</span><span class="p">):</span>
@@ -1873,10 +1840,8 @@ dataset = read_datasource(SnowflakeDatasource(), ...)
     <span class="n">scaling_config</span><span class="o">=</span><span class="n">ScalingConfig</span><span class="p">(</span><span class="o">...</span><span class="p">),</span>
     <span class="n">datasets</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">train</span><span class="o">=</span><span class="n">dataset</span><span class="p">),</span>
 <span class="p">)</span>
-<span class="c1"># end::custom_trainer[]</span>
 </pre></div>
-<div id="cell-13" class="clipboard-copy-txt"># tag::custom_trainer[]
-from ray.train.data_parallel_trainer import DataParallelTrainer
+<div id="cell-13" class="clipboard-copy-txt">from ray.train.data_parallel_trainer import DataParallelTrainer
 
 
 class JaxTrainer(DataParallelTrainer):
@@ -1887,8 +1852,7 @@ trainer = JaxTrainer(
     ...,
     scaling_config=ScalingConfig(...),
     datasets=dict(train=dataset),
-)
-# end::custom_trainer[]</div>
+)</div>
     
         </div>
     </div>
@@ -1917,8 +1881,7 @@ trainer = JaxTrainer(
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::custom_tuner[]</span>
-<span class="kn">from</span> <span class="nn">ray.tune</span> <span class="kn">import</span> <span class="n">logger</span><span class="p">,</span> <span class="n">tuner</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">ray.tune</span> <span class="kn">import</span> <span class="n">logger</span><span class="p">,</span> <span class="n">tuner</span>
 <span class="kn">from</span> <span class="nn">ray.air.config</span> <span class="kn">import</span> <span class="n">RunConfig</span>
 
 
@@ -1930,10 +1893,8 @@ trainer = JaxTrainer(
     <span class="n">trainer</span><span class="p">,</span>
     <span class="n">run_config</span><span class="o">=</span><span class="n">RunConfig</span><span class="p">(</span><span class="n">callbacks</span><span class="o">=</span><span class="p">[</span><span class="n">NeptuneCallback</span><span class="p">()])</span>
 <span class="p">)</span>
-<span class="c1"># end::custom_tuner[]</span>
 </pre></div>
-<div id="cell-14" class="clipboard-copy-txt"># tag::custom_tuner[]
-from ray.tune import logger, tuner
+<div id="cell-14" class="clipboard-copy-txt">from ray.tune import logger, tuner
 from ray.air.config import RunConfig
 
 
@@ -1944,8 +1905,7 @@ class NeptuneCallback(logger.LoggerCallback):
 tuner = tuner.Tuner(
     trainer,
     run_config=RunConfig(callbacks=[NeptuneCallback()])
-)
-# end::custom_tuner[]</div>
+)</div>
     
         </div>
     </div>

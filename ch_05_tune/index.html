@@ -1509,8 +1509,7 @@ def evaluate_policy(env, policy, num_episodes=10):
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::search_space[]</span>
-<span class="kn">import</span> <span class="nn">random</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 <span class="n">search_space</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
     <span class="n">random_choice</span> <span class="o">=</span> <span class="p">{</span>
@@ -1518,18 +1517,15 @@ def evaluate_policy(env, policy, num_episodes=10):
         <span class="s1">&#39;discount_factor&#39;</span><span class="p">:</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
     <span class="p">}</span>
     <span class="n">search_space</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">random_choice</span><span class="p">)</span>
-<span class="c1"># end::search_space[]</span>
 </pre></div>
-<div id="cell-5" class="clipboard-copy-txt"># tag::search_space[]
-import random
+<div id="cell-5" class="clipboard-copy-txt">import random
 search_space = []
 for i in range(10):
     random_choice = {
         'weight': random.uniform(0, 1),
         'discount_factor': random.uniform(0, 1)
     }
-    search_space.append(random_choice)
-# end::search_space[]</div>
+    search_space.append(random_choice)</div>
     
         </div>
     </div>
@@ -1558,37 +1554,33 @@ for i in range(10):
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::objective[]</span>
-<span class="kn">import</span> <span class="nn">ray</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">ray</span>
 
 
 <span class="nd">@ray</span><span class="o">.</span><span class="n">remote</span>
-<span class="k">def</span> <span class="nf">objective</span><span class="p">(</span><span class="n">config</span><span class="p">):</span>  <span class="c1"># &lt;1&gt;</span>
+<span class="k">def</span> <span class="nf">objective</span><span class="p">(</span><span class="n">config</span><span class="p">):</span>
     <span class="n">environment</span> <span class="o">=</span> <span class="n">Environment</span><span class="p">()</span>
-    <span class="n">policy</span> <span class="o">=</span> <span class="n">train_policy</span><span class="p">(</span>  <span class="c1"># &lt;2&gt;</span>
+    <span class="n">policy</span> <span class="o">=</span> <span class="n">train_policy</span><span class="p">(</span>
         <span class="n">environment</span><span class="p">,</span>
         <span class="n">weight</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;weight&quot;</span><span class="p">],</span>
         <span class="n">discount_factor</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;discount_factor&quot;</span><span class="p">]</span>
     <span class="p">)</span>
-    <span class="n">score</span> <span class="o">=</span> <span class="n">evaluate_policy</span><span class="p">(</span><span class="n">environment</span><span class="p">,</span> <span class="n">policy</span><span class="p">)</span>  <span class="c1"># &lt;3&gt;</span>
-    <span class="k">return</span> <span class="p">[</span><span class="n">score</span><span class="p">,</span> <span class="n">config</span><span class="p">]</span>  <span class="c1"># &lt;4&gt;</span>
-<span class="c1"># end::objective[]</span>
+    <span class="n">score</span> <span class="o">=</span> <span class="n">evaluate_policy</span><span class="p">(</span><span class="n">environment</span><span class="p">,</span> <span class="n">policy</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">score</span><span class="p">,</span> <span class="n">config</span><span class="p">]</span>
 </pre></div>
-<div id="cell-6" class="clipboard-copy-txt"># tag::objective[]
-import ray
+<div id="cell-6" class="clipboard-copy-txt">import ray
 
 
 @ray.remote
-def objective(config):  # <1>
+def objective(config):
     environment = Environment()
-    policy = train_policy(  # <2>
+    policy = train_policy(
         environment,
         weight=config["weight"],
         discount_factor=config["discount_factor"]
     )
-    score = evaluate_policy(environment, policy)  # <3>
-    return [score, config]  # <4>
-# end::objective[]</div>
+    score = evaluate_policy(environment, policy)
+    return [score, config]</div>
     
         </div>
     </div>
@@ -1617,21 +1609,17 @@ def objective(config):  # <1>
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::random_search[]</span>
-<span class="n">result_objects</span> <span class="o">=</span> <span class="p">[</span><span class="n">objective</span><span class="o">.</span><span class="n">remote</span><span class="p">(</span><span class="n">choice</span><span class="p">)</span> <span class="k">for</span> <span class="n">choice</span> <span class="ow">in</span> <span class="n">search_space</span><span class="p">]</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">result_objects</span> <span class="o">=</span> <span class="p">[</span><span class="n">objective</span><span class="o">.</span><span class="n">remote</span><span class="p">(</span><span class="n">choice</span><span class="p">)</span> <span class="k">for</span> <span class="n">choice</span> <span class="ow">in</span> <span class="n">search_space</span><span class="p">]</span>
 <span class="n">results</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">result_objects</span><span class="p">)</span>
 
 <span class="n">results</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-<span class="c1"># end::random_search[]</span>
 </pre></div>
-<div id="cell-7" class="clipboard-copy-txt"># tag::random_search[]
-result_objects = [objective.remote(choice) for choice in search_space]
+<div id="cell-7" class="clipboard-copy-txt">result_objects = [objective.remote(choice) for choice in search_space]
 results = ray.get(result_objects)
 
 results.sort(key=lambda x: x[0])
-print(results[-1])
-# end::random_search[]</div>
+print(results[-1])</div>
     
         </div>
     </div>
@@ -1660,25 +1648,21 @@ print(results[-1])
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::tune_search_space[]</span>
-<span class="kn">from</span> <span class="nn">ray</span> <span class="kn">import</span> <span class="n">tune</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">ray</span> <span class="kn">import</span> <span class="n">tune</span>
 
 
 <span class="n">search_space</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;weight&quot;</span><span class="p">:</span> <span class="n">tune</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
     <span class="s2">&quot;discount_factor&quot;</span><span class="p">:</span> <span class="n">tune</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
 <span class="p">}</span>
-<span class="c1"># end::tune_search_space[]</span>
 </pre></div>
-<div id="cell-8" class="clipboard-copy-txt"># tag::tune_search_space[]
-from ray import tune
+<div id="cell-8" class="clipboard-copy-txt">from ray import tune
 
 
 search_space = {
     "weight": tune.uniform(0, 1),
     "discount_factor": tune.uniform(0, 1),
-}
-# end::tune_search_space[]</div>
+}</div>
     
         </div>
     </div>
@@ -1707,8 +1691,7 @@ search_space = {
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::tune_objective[]</span>
-<span class="k">def</span> <span class="nf">tune_objective</span><span class="p">(</span><span class="n">config</span><span class="p">):</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="k">def</span> <span class="nf">tune_objective</span><span class="p">(</span><span class="n">config</span><span class="p">):</span>
     <span class="n">environment</span> <span class="o">=</span> <span class="n">Environment</span><span class="p">()</span>
     <span class="n">policy</span> <span class="o">=</span> <span class="n">train_policy</span><span class="p">(</span>
         <span class="n">environment</span><span class="p">,</span>
@@ -1718,10 +1701,8 @@ search_space = {
     <span class="n">score</span> <span class="o">=</span> <span class="n">evaluate_policy</span><span class="p">(</span><span class="n">environment</span><span class="p">,</span> <span class="n">policy</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;score&quot;</span><span class="p">:</span> <span class="n">score</span><span class="p">}</span>
-<span class="c1"># end::tune_objective[]</span>
 </pre></div>
-<div id="cell-9" class="clipboard-copy-txt"># tag::tune_objective[]
-def tune_objective(config):
+<div id="cell-9" class="clipboard-copy-txt">def tune_objective(config):
     environment = Environment()
     policy = train_policy(
         environment,
@@ -1730,8 +1711,7 @@ def tune_objective(config):
     )
     score = evaluate_policy(environment, policy)
 
-    return {"score": score}
-# end::tune_objective[]</div>
+    return {"score": score}</div>
     
         </div>
     </div>
@@ -1760,15 +1740,11 @@ def tune_objective(config):
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::tune_analysis[]</span>
-<span class="n">analysis</span> <span class="o">=</span> <span class="n">tune</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">tune_objective</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">search_space</span><span class="p">)</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">analysis</span> <span class="o">=</span> <span class="n">tune</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">tune_objective</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">search_space</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">analysis</span><span class="o">.</span><span class="n">get_best_config</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="s2">&quot;score&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;min&quot;</span><span class="p">))</span>
-<span class="c1"># end::tune_analysis[]</span>
 </pre></div>
-<div id="cell-10" class="clipboard-copy-txt"># tag::tune_analysis[]
-analysis = tune.run(tune_objective, config=search_space)
-print(analysis.get_best_config(metric="score", mode="min"))
-# end::tune_analysis[]</div>
+<div id="cell-10" class="clipboard-copy-txt">analysis = tune.run(tune_objective, config=search_space)
+print(analysis.get_best_config(metric="score", mode="min"))</div>
     
         </div>
     </div>
@@ -1797,8 +1773,7 @@ print(analysis.get_best_config(metric="score", mode="min"))
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::tune_bo[]</span>
-<span class="kn">from</span> <span class="nn">ray.tune.suggest.bayesopt</span> <span class="kn">import</span> <span class="n">BayesOptSearch</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">ray.tune.suggest.bayesopt</span> <span class="kn">import</span> <span class="n">BayesOptSearch</span>
 
 
 <span class="n">algo</span> <span class="o">=</span> <span class="n">BayesOptSearch</span><span class="p">(</span><span class="n">random_search_steps</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
@@ -1811,10 +1786,8 @@ print(analysis.get_best_config(metric="score", mode="min"))
     <span class="n">search_alg</span><span class="o">=</span><span class="n">algo</span><span class="p">,</span>
     <span class="n">stop</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;training_iteration&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
 <span class="p">)</span>
-<span class="c1"># end::tune_bo[]</span>
 </pre></div>
-<div id="cell-11" class="clipboard-copy-txt"># tag::tune_bo[]
-from ray.tune.suggest.bayesopt import BayesOptSearch
+<div id="cell-11" class="clipboard-copy-txt">from ray.tune.suggest.bayesopt import BayesOptSearch
 
 
 algo = BayesOptSearch(random_search_steps=4)
@@ -1826,8 +1799,7 @@ tune.run(
     mode="min",
     search_alg=algo,
     stop={"training_iteration": 10},
-)
-# end::tune_bo[]</div>
+)</div>
     
         </div>
     </div>
@@ -1856,25 +1828,21 @@ tune.run(
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::scheduler_obj[]</span>
-<span class="k">def</span> <span class="nf">objective</span><span class="p">(</span><span class="n">config</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">30</span><span class="p">):</span>  <span class="c1"># &lt;1&gt;</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="k">def</span> <span class="nf">objective</span><span class="p">(</span><span class="n">config</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">30</span><span class="p">):</span>
         <span class="n">score</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s2">&quot;weight&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">step</span> <span class="o">**</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">+</span> <span class="n">config</span><span class="p">[</span><span class="s2">&quot;bias&quot;</span><span class="p">]</span>
-        <span class="n">tune</span><span class="o">.</span><span class="n">report</span><span class="p">(</span><span class="n">score</span><span class="o">=</span><span class="n">score</span><span class="p">)</span>  <span class="c1"># &lt;2&gt;</span>
+        <span class="n">tune</span><span class="o">.</span><span class="n">report</span><span class="p">(</span><span class="n">score</span><span class="o">=</span><span class="n">score</span><span class="p">)</span>
 
 
 <span class="n">search_space</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;weight&quot;</span><span class="p">:</span> <span class="n">tune</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="s2">&quot;bias&quot;</span><span class="p">:</span> <span class="n">tune</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)}</span>
-<span class="c1"># end::scheduler_obj[]</span>
 </pre></div>
-<div id="cell-12" class="clipboard-copy-txt"># tag::scheduler_obj[]
-def objective(config):
-    for step in range(30):  # <1>
+<div id="cell-12" class="clipboard-copy-txt">def objective(config):
+    for step in range(30):
         score = config["weight"] * (step ** 0.5) + config["bias"]
-        tune.report(score=score)  # <2>
+        tune.report(score=score)
 
 
-search_space = {"weight": tune.uniform(0, 1), "bias": tune.uniform(0, 1)}
-# end::scheduler_obj[]</div>
+search_space = {"weight": tune.uniform(0, 1), "bias": tune.uniform(0, 1)}</div>
     
         </div>
     </div>
@@ -1903,8 +1871,7 @@ search_space = {"weight": tune.uniform(0, 1), "bias": tune.uniform(0, 1)}
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::tune_scheduler[]</span>
-<span class="kn">from</span> <span class="nn">ray.tune.schedulers</span> <span class="kn">import</span> <span class="n">HyperBandScheduler</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">ray.tune.schedulers</span> <span class="kn">import</span> <span class="n">HyperBandScheduler</span>
 
 
 <span class="n">scheduler</span> <span class="o">=</span> <span class="n">HyperBandScheduler</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="s2">&quot;score&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;min&quot;</span><span class="p">)</span>
@@ -1918,10 +1885,8 @@ search_space = {"weight": tune.uniform(0, 1), "bias": tune.uniform(0, 1)}
 <span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">analysis</span><span class="o">.</span><span class="n">get_best_config</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="s2">&quot;score&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;min&quot;</span><span class="p">))</span>
-<span class="c1"># end::tune_scheduler[]</span>
 </pre></div>
-<div id="cell-13" class="clipboard-copy-txt"># tag::tune_scheduler[]
-from ray.tune.schedulers import HyperBandScheduler
+<div id="cell-13" class="clipboard-copy-txt">from ray.tune.schedulers import HyperBandScheduler
 
 
 scheduler = HyperBandScheduler(metric="score", mode="min")
@@ -1934,8 +1899,7 @@ analysis = tune.run(
     num_samples=10,
 )
 
-print(analysis.get_best_config(metric="score", mode="min"))
-# end::tune_scheduler[]</div>
+print(analysis.get_best_config(metric="score", mode="min"))</div>
     
         </div>
     </div>
@@ -1966,7 +1930,6 @@ print(analysis.get_best_config(metric="score", mode="min"))
         <div class="CodeMirror cm-s-jupyter">
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># NOTE: on Colab you will have to set {&quot;cpu&quot;: 2, &quot;gpu&quot;: 0} to avoid resource</span>
 <span class="c1"># allocation errors</span>
-<span class="c1"># tag::tune_simple_objective[]</span>
 <span class="kn">from</span> <span class="nn">ray</span> <span class="kn">import</span> <span class="n">tune</span>
 
 <span class="n">tune</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
@@ -1975,11 +1938,9 @@ print(analysis.get_best_config(metric="score", mode="min"))
     <span class="n">num_samples</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
     <span class="n">resources_per_trial</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;cpu&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;gpu&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">}</span>
 <span class="p">)</span>
-<span class="c1"># end::tune_simple_objective[]</span>
 </pre></div>
 <div id="cell-14" class="clipboard-copy-txt"># NOTE: on Colab you will have to set {"cpu": 2, "gpu": 0} to avoid resource
 # allocation errors
-# tag::tune_simple_objective[]
 from ray import tune
 
 tune.run(
@@ -1987,8 +1948,7 @@ tune.run(
     config=search_space,
     num_samples=10,
     resources_per_trial={"cpu": 2, "gpu": 0.5}
-)
-# end::tune_simple_objective[]</div>
+)</div>
     
         </div>
     </div>
@@ -2017,8 +1977,7 @@ tune.run(
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::tune_metrics_1[]</span>
-<span class="kn">from</span> <span class="nn">ray</span> <span class="kn">import</span> <span class="n">tune</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">ray</span> <span class="kn">import</span> <span class="n">tune</span>
 <span class="kn">from</span> <span class="nn">ray.tune</span> <span class="kn">import</span> <span class="n">Callback</span>
 <span class="kn">from</span> <span class="nn">ray.tune.logger</span> <span class="kn">import</span> <span class="n">pretty_print</span>
 
@@ -2033,10 +1992,8 @@ tune.run(
     <span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">30</span><span class="p">):</span>
         <span class="n">score</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s2">&quot;weight&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">step</span> <span class="o">**</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">+</span> <span class="n">config</span><span class="p">[</span><span class="s2">&quot;bias&quot;</span><span class="p">]</span>
         <span class="n">tune</span><span class="o">.</span><span class="n">report</span><span class="p">(</span><span class="n">score</span><span class="o">=</span><span class="n">score</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="n">step</span><span class="p">,</span> <span class="n">more_metrics</span><span class="o">=</span><span class="p">{})</span>
-<span class="c1"># end::tune_metrics_1[]</span>
 </pre></div>
-<div id="cell-15" class="clipboard-copy-txt"># tag::tune_metrics_1[]
-from ray import tune
+<div id="cell-15" class="clipboard-copy-txt">from ray import tune
 from ray.tune import Callback
 from ray.tune.logger import pretty_print
 
@@ -2050,8 +2007,7 @@ class PrintResultCallback(Callback):
 def objective(config):
     for step in range(30):
         score = config["weight"] * (step ** 0.5) + config["bias"]
-        tune.report(score=score, step=step, more_metrics={})
-# end::tune_metrics_1[]</div>
+        tune.report(score=score, step=step, more_metrics={})</div>
     
         </div>
     </div>
@@ -2080,8 +2036,7 @@ def objective(config):
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::tune_metrics_2[]</span>
-<span class="n">search_space</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;weight&quot;</span><span class="p">:</span> <span class="n">tune</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="s2">&quot;bias&quot;</span><span class="p">:</span> <span class="n">tune</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)}</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">search_space</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;weight&quot;</span><span class="p">:</span> <span class="n">tune</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="s2">&quot;bias&quot;</span><span class="p">:</span> <span class="n">tune</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)}</span>
 
 <span class="n">analysis</span> <span class="o">=</span> <span class="n">tune</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
     <span class="n">objective</span><span class="p">,</span>
@@ -2092,10 +2047,8 @@ def objective(config):
 
 <span class="n">best</span> <span class="o">=</span> <span class="n">analysis</span><span class="o">.</span><span class="n">best_trial</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">pretty_print</span><span class="p">(</span><span class="n">best</span><span class="o">.</span><span class="n">last_result</span><span class="p">))</span>
-<span class="c1"># end::tune_metrics_2[]</span>
 </pre></div>
-<div id="cell-16" class="clipboard-copy-txt"># tag::tune_metrics_2[]
-search_space = {"weight": tune.uniform(0, 1), "bias": tune.uniform(0, 1)}
+<div id="cell-16" class="clipboard-copy-txt">search_space = {"weight": tune.uniform(0, 1), "bias": tune.uniform(0, 1)}
 
 analysis = tune.run(
     objective,
@@ -2105,8 +2058,7 @@ analysis = tune.run(
     callbacks=[PrintResultCallback()])
 
 best = analysis.best_trial
-print(pretty_print(best.last_result))
-# end::tune_metrics_2[]</div>
+print(pretty_print(best.last_result))</div>
     
         </div>
     </div>
@@ -2136,22 +2088,18 @@ print(pretty_print(best.last_result))
         </div>
         <div class="CodeMirror cm-s-jupyter">
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># NOTE: this will only run if you insert a correct logdir.</span>
-<span class="c1"># tag::tune_resume[]</span>
 <span class="n">analysis</span> <span class="o">=</span> <span class="n">tune</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
     <span class="n">objective</span><span class="p">,</span>
     <span class="n">name</span><span class="o">=</span><span class="s2">&quot;&lt;your-logdir&gt;&quot;</span><span class="p">,</span>
     <span class="n">resume</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">config</span><span class="o">=</span><span class="n">search_space</span><span class="p">)</span>
-<span class="c1"># end::tune_resume[]</span>
 </pre></div>
 <div id="cell-17" class="clipboard-copy-txt"># NOTE: this will only run if you insert a correct logdir.
-# tag::tune_resume[]
 analysis = tune.run(
     objective,
     name="<your-logdir>",
     resume=True,
-    config=search_space)
-# end::tune_resume[]</div>
+    config=search_space)</div>
     
         </div>
     </div>
@@ -2180,19 +2128,15 @@ analysis = tune.run(
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::tune_stop_dict[]</span>
-<span class="n">tune</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">tune</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
     <span class="n">objective</span><span class="p">,</span>
     <span class="n">config</span><span class="o">=</span><span class="n">search_space</span><span class="p">,</span>
     <span class="n">stop</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;training_iteration&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">})</span>
-<span class="c1"># end::tune_stop_dict[]</span>
 </pre></div>
-<div id="cell-18" class="clipboard-copy-txt"># tag::tune_stop_dict[]
-tune.run(
+<div id="cell-18" class="clipboard-copy-txt">tune.run(
     objective,
     config=search_space,
-    stop={"training_iteration": 10})
-# end::tune_stop_dict[]</div>
+    stop={"training_iteration": 10})</div>
     
         </div>
     </div>
@@ -2221,8 +2165,7 @@ tune.run(
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::tune_stop_function[]</span>
-<span class="k">def</span> <span class="nf">stopper</span><span class="p">(</span><span class="n">trial_id</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="k">def</span> <span class="nf">stopper</span><span class="p">(</span><span class="n">trial_id</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">result</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">2</span>
 
 
@@ -2230,18 +2173,15 @@ tune.run(
     <span class="n">objective</span><span class="p">,</span>
     <span class="n">config</span><span class="o">=</span><span class="n">search_space</span><span class="p">,</span>
     <span class="n">stop</span><span class="o">=</span><span class="n">stopper</span><span class="p">)</span>
-<span class="c1"># end::tune_stop_function[]</span>
 </pre></div>
-<div id="cell-19" class="clipboard-copy-txt"># tag::tune_stop_function[]
-def stopper(trial_id, result):
+<div id="cell-19" class="clipboard-copy-txt">def stopper(trial_id, result):
     return result["score"] < 2
 
 
 tune.run(
     objective,
     config=search_space,
-    stop=stopper)
-# end::tune_stop_function[]</div>
+    stop=stopper)</div>
     
         </div>
     </div>
@@ -2270,8 +2210,7 @@ tune.run(
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::tune_custom_space[]</span>
-<span class="kn">from</span> <span class="nn">ray</span> <span class="kn">import</span> <span class="n">tune</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">ray</span> <span class="kn">import</span> <span class="n">tune</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">search_space</span> <span class="o">=</span> <span class="p">{</span>
@@ -2283,10 +2222,8 @@ tune.run(
     <span class="p">)}</span>
 
 <span class="n">tune</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">objective</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">search_space</span><span class="p">)</span>
-<span class="c1"># end::tune_custom_space[]</span>
 </pre></div>
-<div id="cell-20" class="clipboard-copy-txt"># tag::tune_custom_space[]
-from ray import tune
+<div id="cell-20" class="clipboard-copy-txt">from ray import tune
 import numpy as np
 
 search_space = {
@@ -2297,8 +2234,7 @@ search_space = {
         lambda context: context.config.weight * np.random.normal()
     )}
 
-tune.run(objective, config=search_space)
-# end::tune_custom_space[]</div>
+tune.run(objective, config=search_space)</div>
     
         </div>
     </div>
@@ -2328,7 +2264,6 @@ tune.run(objective, config=search_space)
         </div>
         <div class="CodeMirror cm-s-jupyter">
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># NOTE: this run will take incredibly long on Colab, be warned!</span>
-<span class="c1"># tag::tune_rllib[]</span>
 <span class="kn">from</span> <span class="nn">ray</span> <span class="kn">import</span> <span class="n">tune</span>
 
 <span class="n">analysis</span> <span class="o">=</span> <span class="n">tune</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
@@ -2341,10 +2276,8 @@ tune.run(objective, config=search_space)
         <span class="s2">&quot;train_batch_size&quot;</span><span class="p">:</span> <span class="n">tune</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="mi">10000</span><span class="p">,</span> <span class="mi">20000</span><span class="p">,</span> <span class="mi">40000</span><span class="p">]),</span>
     <span class="p">},</span>
 <span class="p">)</span>
-<span class="c1"># end::tune_rllib[]</span>
 </pre></div>
 <div id="cell-21" class="clipboard-copy-txt"># NOTE: this run will take incredibly long on Colab, be warned!
-# tag::tune_rllib[]
 from ray import tune
 
 analysis = tune.run(
@@ -2356,8 +2289,7 @@ analysis = tune.run(
         "lr": tune.uniform(1e-5, 1e-4),
         "train_batch_size": tune.choice([10000, 20000, 40000]),
     },
-)
-# end::tune_rllib[]</div>
+)</div>
     
         </div>
     </div>
@@ -2386,8 +2318,7 @@ analysis = tune.run(
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::tune_keras_1[]</span>
-<span class="kn">from</span> <span class="nn">tensorflow.keras.datasets</span> <span class="kn">import</span> <span class="n">mnist</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">tensorflow.keras.datasets</span> <span class="kn">import</span> <span class="n">mnist</span>
 <span class="kn">from</span> <span class="nn">tensorflow.keras.utils</span> <span class="kn">import</span> <span class="n">to_categorical</span>
 
 
@@ -2401,10 +2332,8 @@ analysis = tune.run(
 
 
 <span class="n">load_data</span><span class="p">()</span>
-<span class="c1"># end::tune_keras_1[]</span>
 </pre></div>
-<div id="cell-22" class="clipboard-copy-txt"># tag::tune_keras_1[]
-from tensorflow.keras.datasets import mnist
+<div id="cell-22" class="clipboard-copy-txt">from tensorflow.keras.datasets import mnist
 from tensorflow.keras.utils import to_categorical
 
 
@@ -2417,8 +2346,7 @@ def load_data():
     return (x_train, y_train), (x_test, y_test)
 
 
-load_data()
-# end::tune_keras_1[]</div>
+load_data()</div>
     
         </div>
     </div>
@@ -2447,8 +2375,7 @@ load_data()
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::tune_keras_2[]</span>
-<span class="kn">from</span> <span class="nn">tensorflow.keras.models</span> <span class="kn">import</span> <span class="n">Sequential</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">tensorflow.keras.models</span> <span class="kn">import</span> <span class="n">Sequential</span>
 <span class="kn">from</span> <span class="nn">tensorflow.keras.layers</span> <span class="kn">import</span> <span class="n">Flatten</span><span class="p">,</span> <span class="n">Dense</span><span class="p">,</span> <span class="n">Dropout</span>
 <span class="kn">from</span> <span class="nn">ray.tune.integration.keras</span> <span class="kn">import</span> <span class="n">TuneReportCallback</span>
 
@@ -2465,10 +2392,8 @@ load_data()
     <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
               <span class="n">validation_data</span><span class="o">=</span><span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">),</span>
               <span class="n">callbacks</span><span class="o">=</span><span class="p">[</span><span class="n">TuneReportCallback</span><span class="p">({</span><span class="s2">&quot;mean_accuracy&quot;</span><span class="p">:</span> <span class="s2">&quot;accuracy&quot;</span><span class="p">})])</span>
-<span class="c1"># end::tune_keras_2[]</span>
 </pre></div>
-<div id="cell-23" class="clipboard-copy-txt"># tag::tune_keras_2[]
-from tensorflow.keras.models import Sequential
+<div id="cell-23" class="clipboard-copy-txt">from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Flatten, Dense, Dropout
 from ray.tune.integration.keras import TuneReportCallback
 
@@ -2484,8 +2409,7 @@ def objective(config):
     model.compile(loss="categorical_crossentropy", metrics=["accuracy"])
     model.fit(x_train, y_train, batch_size=128, epochs=10,
               validation_data=(x_test, y_test),
-              callbacks=[TuneReportCallback({"mean_accuracy": "accuracy"})])
-# end::tune_keras_2[]</div>
+              callbacks=[TuneReportCallback({"mean_accuracy": "accuracy"})])</div>
     
         </div>
     </div>
@@ -2514,8 +2438,7 @@ def objective(config):
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::tune_keras_3[]</span>
-<span class="kn">from</span> <span class="nn">ray</span> <span class="kn">import</span> <span class="n">tune</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">ray</span> <span class="kn">import</span> <span class="n">tune</span>
 <span class="kn">from</span> <span class="nn">ray.tune.suggest.hyperopt</span> <span class="kn">import</span> <span class="n">HyperOptSearch</span>
 
 <span class="n">initial_params</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">&quot;rate&quot;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">,</span> <span class="s2">&quot;hidden&quot;</span><span class="p">:</span> <span class="mi">128</span><span class="p">,</span> <span class="s2">&quot;activation&quot;</span><span class="p">:</span> <span class="s2">&quot;relu&quot;</span><span class="p">}]</span>
@@ -2539,10 +2462,8 @@ def objective(config):
     <span class="n">config</span><span class="o">=</span><span class="n">search_space</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best hyperparameters found were: &quot;</span><span class="p">,</span> <span class="n">analysis</span><span class="o">.</span><span class="n">best_config</span><span class="p">)</span>
-<span class="c1"># end::tune_keras_3[]</span>
 </pre></div>
-<div id="cell-24" class="clipboard-copy-txt"># tag::tune_keras_3[]
-from ray import tune
+<div id="cell-24" class="clipboard-copy-txt">from ray import tune
 from ray.tune.suggest.hyperopt import HyperOptSearch
 
 initial_params = [{"rate": 0.2, "hidden": 128, "activation": "relu"}]
@@ -2565,8 +2486,7 @@ analysis = tune.run(
     num_samples=10,
     config=search_space,
 )
-print("Best hyperparameters found were: ", analysis.best_config)
-# end::tune_keras_3[]</div>
+print("Best hyperparameters found were: ", analysis.best_config)</div>
     
         </div>
     </div>

@@ -1236,8 +1236,7 @@ refer to Ray's <a href="https://docs.ray.io/en/latest/ray-overview/installation.
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::discrete_actions[]</span>
-<span class="kn">import</span> <span class="nn">random</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 
 
 <span class="k">class</span> <span class="nc">Discrete</span><span class="p">:</span>
@@ -1249,15 +1248,13 @@ refer to Ray's <a href="https://docs.ray.io/en/latest/ray-overview/installation.
         <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">=</span> <span class="n">num_actions</span>
 
     <span class="k">def</span> <span class="nf">sample</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># &lt;1&gt;</span>
+        <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
 
 
 <span class="n">space</span> <span class="o">=</span> <span class="n">Discrete</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">space</span><span class="o">.</span><span class="n">sample</span><span class="p">())</span>  <span class="c1"># &lt;2&gt;</span>
-<span class="c1"># end::discrete_actions[]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">space</span><span class="o">.</span><span class="n">sample</span><span class="p">())</span>
 </pre></div>
-<div id="cell-2" class="clipboard-copy-txt"># tag::discrete_actions[]
-import random
+<div id="cell-2" class="clipboard-copy-txt">import random
 
 
 class Discrete:
@@ -1269,12 +1266,11 @@ class Discrete:
         self.n = num_actions
 
     def sample(self):
-        return random.randint(0, self.n - 1)  # <1>
+        return random.randint(0, self.n - 1)
 
 
 space = Discrete(4)
-print(space.sample())  # <2>
-# end::discrete_actions[]</div>
+print(space.sample())</div>
     
         </div>
     </div>
@@ -1303,21 +1299,18 @@ print(space.sample())  # <2>
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::init_env[]</span>
-<span class="kn">import</span> <span class="nn">os</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 
 
 <span class="k">class</span> <span class="nc">Environment</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>  <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">seeker</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">goal</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>  <span class="c1"># &lt;1&gt;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">seeker</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">goal</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">info</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;seeker&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">seeker</span><span class="p">,</span> <span class="s1">&#39;goal&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">goal</span><span class="p">}</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">action_space</span> <span class="o">=</span> <span class="n">Discrete</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>  <span class="c1"># &lt;2&gt;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">observation_space</span> <span class="o">=</span> <span class="n">Discrete</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># &lt;3&gt;</span>
-<span class="c1"># end::init_env[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">action_space</span> <span class="o">=</span> <span class="n">Discrete</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">observation_space</span> <span class="o">=</span> <span class="n">Discrete</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="mi">5</span><span class="p">)</span>
 
-<span class="c1"># tag::env_helpers[]</span>
-    <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># &lt;1&gt;</span>
+    <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Reset seeker position and return observations.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">seeker</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 
@@ -1325,18 +1318,16 @@ print(space.sample())  # <2>
 
     <span class="k">def</span> <span class="nf">get_observation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Encode the seeker position as integer&quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="mi">5</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">seeker</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">seeker</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># &lt;2&gt;</span>
+        <span class="k">return</span> <span class="mi">5</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">seeker</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">seeker</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 
     <span class="k">def</span> <span class="nf">get_reward</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Reward finding the goal&quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="mi">1</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">seeker</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">goal</span> <span class="k">else</span> <span class="mi">0</span>  <span class="c1"># &lt;3&gt;</span>
+        <span class="k">return</span> <span class="mi">1</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">seeker</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">goal</span> <span class="k">else</span> <span class="mi">0</span>
 
     <span class="k">def</span> <span class="nf">is_done</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;We&#39;re done if we found the goal&quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">seeker</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">goal</span>  <span class="c1"># &lt;4&gt;</span>
-<span class="c1"># end::env_helpers[]</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">seeker</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">goal</span>
 
-<span class="c1"># tag::env_step[]</span>
     <span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">action</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Take a step in a direction and return all available information.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">action</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>  <span class="c1"># move down</span>
@@ -1353,26 +1344,14 @@ print(space.sample())  # <2>
         <span class="n">obs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_observation</span><span class="p">()</span>
         <span class="n">rew</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_reward</span><span class="p">()</span>
         <span class="n">done</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_done</span><span class="p">()</span>
-        <span class="k">return</span> <span class="n">obs</span><span class="p">,</span> <span class="n">rew</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">info</span>  <span class="c1"># &lt;1&gt;</span>
-<span class="c1"># end::env_step[]</span>
-
-<span class="c1"># tag::env_render[]</span>
-    <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Render the environment, e.g. by printing its representation.&quot;&quot;&quot;</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;cls&#39;</span> <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;nt&#39;</span> <span class="k">else</span> <span class="s1">&#39;clear&#39;</span><span class="p">)</span>  <span class="c1"># &lt;1&gt;</span>
-
-        <span class="n">grid</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;| &#39;</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span> <span class="o">+</span> <span class="p">[</span><span class="s2">&quot;|</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>
-        <span class="n">grid</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">goal</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="bp">self</span><span class="o">.</span><span class="n">goal</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="s1">&#39;|G&#39;</span>
-        <span class="n">grid</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">seeker</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="bp">self</span><span class="o">.</span><span class="n">seeker</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="s1">&#39;|S&#39;</span>  <span class="c1"># &lt;2&gt;</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">grid_row</span><span class="p">)</span> <span class="k">for</span> <span class="n">grid_row</span> <span class="ow">in</span> <span class="n">grid</span><span class="p">]))</span>  <span class="c1"># &lt;3&gt;</span>
-<span class="c1"># end::env_render[]</span>
+        <span class="k">return</span> <span class="n">obs</span><span class="p">,</span> <span class="n">rew</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">info</span>
 
     <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;We override this method here so clear the output in Jupyter notebooks.</span>
 <span class="sd">        The previous implementation works well in the terminal, but does not clear</span>
 <span class="sd">        the screen in interactive environments.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;cls&#39;</span> <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;nt&#39;</span> <span class="k">else</span> <span class="s1">&#39;clear&#39;</span><span class="p">)</span>  <span class="c1"># &lt;1&gt;</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;cls&#39;</span> <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;nt&#39;</span> <span class="k">else</span> <span class="s1">&#39;clear&#39;</span><span class="p">)</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">clear_output</span>
             <span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -1380,24 +1359,21 @@ print(space.sample())  # <2>
             <span class="k">pass</span>
         <span class="n">grid</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;| &#39;</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span> <span class="o">+</span> <span class="p">[</span><span class="s2">&quot;|</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>
         <span class="n">grid</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">goal</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="bp">self</span><span class="o">.</span><span class="n">goal</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="s1">&#39;|G&#39;</span>
-        <span class="n">grid</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">seeker</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="bp">self</span><span class="o">.</span><span class="n">seeker</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="s1">&#39;|S&#39;</span>  <span class="c1"># &lt;2&gt;</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">grid_row</span><span class="p">)</span> <span class="k">for</span> <span class="n">grid_row</span> <span class="ow">in</span> <span class="n">grid</span><span class="p">]))</span>  <span class="c1"># &lt;3&gt;</span>
+        <span class="n">grid</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">seeker</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="bp">self</span><span class="o">.</span><span class="n">seeker</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="s1">&#39;|S&#39;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">grid_row</span><span class="p">)</span> <span class="k">for</span> <span class="n">grid_row</span> <span class="ow">in</span> <span class="n">grid</span><span class="p">]))</span>
 </pre></div>
-<div id="cell-3" class="clipboard-copy-txt"># tag::init_env[]
-import os
+<div id="cell-3" class="clipboard-copy-txt">import os
 
 
 class Environment:
     def __init__(self,  *args, **kwargs):
-        self.seeker, self.goal = (0, 0), (4, 4)  # <1>
+        self.seeker, self.goal = (0, 0), (4, 4)
         self.info = {'seeker': self.seeker, 'goal': self.goal}
 
-        self.action_space = Discrete(4)  # <2>
-        self.observation_space = Discrete(5*5)  # <3>
-# end::init_env[]
+        self.action_space = Discrete(4)
+        self.observation_space = Discrete(5*5)
 
-# tag::env_helpers[]
-    def reset(self):  # <1>
+    def reset(self):
         """Reset seeker position and return observations."""
         self.seeker = (0, 0)
 
@@ -1405,18 +1381,16 @@ class Environment:
 
     def get_observation(self):
         """Encode the seeker position as integer"""
-        return 5 * self.seeker[0] + self.seeker[1]  # <2>
+        return 5 * self.seeker[0] + self.seeker[1]
 
     def get_reward(self):
         """Reward finding the goal"""
-        return 1 if self.seeker == self.goal else 0  # <3>
+        return 1 if self.seeker == self.goal else 0
 
     def is_done(self):
         """We're done if we found the goal"""
-        return self.seeker == self.goal  # <4>
-# end::env_helpers[]
+        return self.seeker == self.goal
 
-# tag::env_step[]
     def step(self, action):
         """Take a step in a direction and return all available information."""
         if action == 0:  # move down
@@ -1433,26 +1407,14 @@ class Environment:
         obs = self.get_observation()
         rew = self.get_reward()
         done = self.is_done()
-        return obs, rew, done, self.info  # <1>
-# end::env_step[]
-
-# tag::env_render[]
-    def render(self, *args, **kwargs):
-        """Render the environment, e.g. by printing its representation."""
-        os.system('cls' if os.name == 'nt' else 'clear')  # <1>
-
-        grid = [['| ' for _ in range(5)] + ["|\n"] for _ in range(5)]
-        grid[self.goal[0]][self.goal[1]] = '|G'
-        grid[self.seeker[0]][self.seeker[1]] = '|S'  # <2>
-        print(''.join([''.join(grid_row) for grid_row in grid]))  # <3>
-# end::env_render[]
+        return obs, rew, done, self.info
 
     def render(self, *args, **kwargs):
         """We override this method here so clear the output in Jupyter notebooks.
         The previous implementation works well in the terminal, but does not clear
         the screen in interactive environments.
         """
-        os.system('cls' if os.name == 'nt' else 'clear')  # <1>
+        os.system('cls' if os.name == 'nt' else 'clear')
         try:
             from IPython.display import clear_output
             clear_output(wait=True)
@@ -1460,8 +1422,8 @@ class Environment:
             pass
         grid = [['| ' for _ in range(5)] + ["|\n"] for _ in range(5)]
         grid[self.goal[0]][self.goal[1]] = '|G'
-        grid[self.seeker[0]][self.seeker[1]] = '|S'  # <2>
-        print(''.join([''.join(grid_row) for grid_row in grid]))  # <3></div>
+        grid[self.seeker[0]][self.seeker[1]] = '|S'
+        print(''.join([''.join(grid_row) for grid_row in grid]))</div>
     
         </div>
     </div>
@@ -1490,29 +1452,25 @@ class Environment:
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::env_test[]</span>
-<span class="kn">import</span> <span class="nn">time</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
 
 <span class="n">environment</span> <span class="o">=</span> <span class="n">Environment</span><span class="p">()</span>
 
 <span class="k">while</span> <span class="ow">not</span> <span class="n">environment</span><span class="o">.</span><span class="n">is_done</span><span class="p">():</span>
-    <span class="n">random_action</span> <span class="o">=</span> <span class="n">environment</span><span class="o">.</span><span class="n">action_space</span><span class="o">.</span><span class="n">sample</span><span class="p">()</span>  <span class="c1"># &lt;1&gt;</span>
+    <span class="n">random_action</span> <span class="o">=</span> <span class="n">environment</span><span class="o">.</span><span class="n">action_space</span><span class="o">.</span><span class="n">sample</span><span class="p">()</span>
     <span class="n">environment</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">random_action</span><span class="p">)</span>
     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
-    <span class="n">environment</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>  <span class="c1"># &lt;2&gt;</span>
-<span class="c1"># end::env_test[]</span>
+    <span class="n">environment</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
 </pre></div>
-<div id="cell-4" class="clipboard-copy-txt"># tag::env_test[]
-import time
+<div id="cell-4" class="clipboard-copy-txt">import time
 
 environment = Environment()
 
 while not environment.is_done():
-    random_action = environment.action_space.sample()  # <1>
+    random_action = environment.action_space.sample()
     environment.step(random_action)
     time.sleep(0.1)
-    environment.render()  # <2>
-# end::env_test[]</div>
+    environment.render()</div>
     
         </div>
     </div>
@@ -1541,8 +1499,7 @@ while not environment.is_done():
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::policy[]</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="k">class</span> <span class="nc">Policy</span><span class="p">:</span>
 
@@ -1552,19 +1509,17 @@ while not environment.is_done():
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">state_action_table</span> <span class="o">=</span> <span class="p">[</span>
             <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">action_space</span><span class="o">.</span><span class="n">n</span><span class="p">)]</span>
-            <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">observation_space</span><span class="o">.</span><span class="n">n</span><span class="p">)</span>  <span class="c1"># &lt;1&gt;</span>
+            <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">observation_space</span><span class="o">.</span><span class="n">n</span><span class="p">)</span>
         <span class="p">]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">action_space</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">action_space</span>
 
-    <span class="k">def</span> <span class="nf">get_action</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">,</span> <span class="n">explore</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">0.1</span><span class="p">):</span>  <span class="c1"># &lt;2&gt;</span>
+    <span class="k">def</span> <span class="nf">get_action</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">,</span> <span class="n">explore</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">0.1</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Explore randomly or exploit the best value currently available.&quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="n">explore</span> <span class="ow">and</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">epsilon</span><span class="p">:</span>  <span class="c1"># &lt;3&gt;</span>
+        <span class="k">if</span> <span class="n">explore</span> <span class="ow">and</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">epsilon</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">action_space</span><span class="o">.</span><span class="n">sample</span><span class="p">()</span>
-        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">state_action_table</span><span class="p">[</span><span class="n">state</span><span class="p">])</span>  <span class="c1"># &lt;4&gt;</span>
-<span class="c1"># end::policy[]</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">state_action_table</span><span class="p">[</span><span class="n">state</span><span class="p">])</span>
 </pre></div>
-<div id="cell-5" class="clipboard-copy-txt"># tag::policy[]
-import numpy as np
+<div id="cell-5" class="clipboard-copy-txt">import numpy as np
 
 class Policy:
 
@@ -1574,16 +1529,15 @@ class Policy:
         """
         self.state_action_table = [
             [0 for _ in range(env.action_space.n)]
-            for _ in range(env.observation_space.n)  # <1>
+            for _ in range(env.observation_space.n)
         ]
         self.action_space = env.action_space
 
-    def get_action(self, state, explore=True, epsilon=0.1):  # <2>
+    def get_action(self, state, explore=True, epsilon=0.1):
         """Explore randomly or exploit the best value currently available."""
-        if explore and random.uniform(0, 1) < epsilon:  # <3>
+        if explore and random.uniform(0, 1) < epsilon:
             return self.action_space.sample()
-        return np.argmax(self.state_action_table[state])  # <4>
-# end::policy[]</div>
+        return np.argmax(self.state_action_table[state])</div>
     
         </div>
     </div>
@@ -1612,51 +1566,47 @@ class Policy:
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::simulation[]</span>
-<span class="k">class</span> <span class="nc">Simulation</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="k">class</span> <span class="nc">Simulation</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">env</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Simulates rollouts of an environment, given a policy to follow.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">env</span> <span class="o">=</span> <span class="n">env</span>
 
-    <span class="k">def</span> <span class="nf">rollout</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">policy</span><span class="p">,</span> <span class="n">render</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">explore</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">0.1</span><span class="p">):</span>  <span class="c1"># &lt;1&gt;</span>
+    <span class="k">def</span> <span class="nf">rollout</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">policy</span><span class="p">,</span> <span class="n">render</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">explore</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">0.1</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns experiences for a policy rollout.&quot;&quot;&quot;</span>
         <span class="n">experiences</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="n">state</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>  <span class="c1"># &lt;2&gt;</span>
+        <span class="n">state</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
         <span class="n">done</span> <span class="o">=</span> <span class="kc">False</span>
         <span class="k">while</span> <span class="ow">not</span> <span class="n">done</span><span class="p">:</span>
-            <span class="n">action</span> <span class="o">=</span> <span class="n">policy</span><span class="o">.</span><span class="n">get_action</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">explore</span><span class="p">,</span> <span class="n">epsilon</span><span class="p">)</span>  <span class="c1"># &lt;3&gt;</span>
-            <span class="n">next_state</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>  <span class="c1"># &lt;4&gt;</span>
-            <span class="n">experiences</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">state</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">next_state</span><span class="p">])</span>  <span class="c1"># &lt;5&gt;</span>
+            <span class="n">action</span> <span class="o">=</span> <span class="n">policy</span><span class="o">.</span><span class="n">get_action</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">explore</span><span class="p">,</span> <span class="n">epsilon</span><span class="p">)</span>
+            <span class="n">next_state</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
+            <span class="n">experiences</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">state</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">next_state</span><span class="p">])</span>
             <span class="n">state</span> <span class="o">=</span> <span class="n">next_state</span>
-            <span class="k">if</span> <span class="n">render</span><span class="p">:</span>  <span class="c1"># &lt;6&gt;</span>
+            <span class="k">if</span> <span class="n">render</span><span class="p">:</span>
                 <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.05</span><span class="p">)</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
 
         <span class="k">return</span> <span class="n">experiences</span>
-<span class="c1"># end::simulation[]</span>
 </pre></div>
-<div id="cell-6" class="clipboard-copy-txt"># tag::simulation[]
-class Simulation(object):
+<div id="cell-6" class="clipboard-copy-txt">class Simulation(object):
     def __init__(self, env):
         """Simulates rollouts of an environment, given a policy to follow."""
         self.env = env
 
-    def rollout(self, policy, render=False, explore=True, epsilon=0.1):  # <1>
+    def rollout(self, policy, render=False, explore=True, epsilon=0.1):
         """Returns experiences for a policy rollout."""
         experiences = []
-        state = self.env.reset()  # <2>
+        state = self.env.reset()
         done = False
         while not done:
-            action = policy.get_action(state, explore, epsilon)  # <3>
-            next_state, reward, done, info = self.env.step(action)  # <4>
-            experiences.append([state, action, reward, next_state])  # <5>
+            action = policy.get_action(state, explore, epsilon)
+            next_state, reward, done, info = self.env.step(action)
+            experiences.append([state, action, reward, next_state])
             state = next_state
-            if render:  # <6>
+            if render:
                 time.sleep(0.05)
                 self.env.render()
 
-        return experiences
-# end::simulation[]</div>
+        return experiences</div>
     
         </div>
     </div>
@@ -1685,23 +1635,19 @@ class Simulation(object):
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::naive_rollout[]</span>
-<span class="n">untrained_policy</span> <span class="o">=</span> <span class="n">Policy</span><span class="p">(</span><span class="n">environment</span><span class="p">)</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">untrained_policy</span> <span class="o">=</span> <span class="n">Policy</span><span class="p">(</span><span class="n">environment</span><span class="p">)</span>
 <span class="n">sim</span> <span class="o">=</span> <span class="n">Simulation</span><span class="p">(</span><span class="n">environment</span><span class="p">)</span>
 
-<span class="n">exp</span> <span class="o">=</span> <span class="n">sim</span><span class="o">.</span><span class="n">rollout</span><span class="p">(</span><span class="n">untrained_policy</span><span class="p">,</span> <span class="n">render</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>  <span class="c1"># &lt;1&gt;</span>
+<span class="n">exp</span> <span class="o">=</span> <span class="n">sim</span><span class="o">.</span><span class="n">rollout</span><span class="p">(</span><span class="n">untrained_policy</span><span class="p">,</span> <span class="n">render</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">untrained_policy</span><span class="o">.</span><span class="n">state_action_table</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>  <span class="c1"># &lt;2&gt;</span>
-<span class="c1"># end::naive_rollout[]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
 </pre></div>
-<div id="cell-7" class="clipboard-copy-txt"># tag::naive_rollout[]
-untrained_policy = Policy(environment)
+<div id="cell-7" class="clipboard-copy-txt">untrained_policy = Policy(environment)
 sim = Simulation(environment)
 
-exp = sim.rollout(untrained_policy, render=True, epsilon=1.0)  # <1>
+exp = sim.rollout(untrained_policy, render=True, epsilon=1.0)
 for row in untrained_policy.state_action_table:
-    print(row)  # <2>
-# end::naive_rollout[]</div>
+    print(row)</div>
     
         </div>
     </div>
@@ -1730,29 +1676,25 @@ for row in untrained_policy.state_action_table:
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::update_policy[]</span>
-<span class="k">def</span> <span class="nf">update_policy</span><span class="p">(</span><span class="n">policy</span><span class="p">,</span> <span class="n">experiences</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">discount_factor</span><span class="o">=</span><span class="mf">0.9</span><span class="p">):</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="k">def</span> <span class="nf">update_policy</span><span class="p">(</span><span class="n">policy</span><span class="p">,</span> <span class="n">experiences</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">discount_factor</span><span class="o">=</span><span class="mf">0.9</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Updates a given policy with a list of (state, action, reward, state)</span>
 <span class="sd">    experiences.&quot;&quot;&quot;</span>
-    <span class="k">for</span> <span class="n">state</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">next_state</span> <span class="ow">in</span> <span class="n">experiences</span><span class="p">:</span>  <span class="c1"># &lt;1&gt;</span>
-        <span class="n">next_max</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">policy</span><span class="o">.</span><span class="n">state_action_table</span><span class="p">[</span><span class="n">next_state</span><span class="p">])</span>  <span class="c1"># &lt;2&gt;</span>
-        <span class="n">value</span> <span class="o">=</span> <span class="n">policy</span><span class="o">.</span><span class="n">state_action_table</span><span class="p">[</span><span class="n">state</span><span class="p">][</span><span class="n">action</span><span class="p">]</span>  <span class="c1"># &lt;3&gt;</span>
+    <span class="k">for</span> <span class="n">state</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">next_state</span> <span class="ow">in</span> <span class="n">experiences</span><span class="p">:</span>
+        <span class="n">next_max</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">policy</span><span class="o">.</span><span class="n">state_action_table</span><span class="p">[</span><span class="n">next_state</span><span class="p">])</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">policy</span><span class="o">.</span><span class="n">state_action_table</span><span class="p">[</span><span class="n">state</span><span class="p">][</span><span class="n">action</span><span class="p">]</span>
         <span class="n">new_value</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">weight</span><span class="p">)</span> <span class="o">*</span> <span class="n">value</span> <span class="o">+</span> <span class="n">weight</span> <span class="o">*</span> \
-                    <span class="p">(</span><span class="n">reward</span> <span class="o">+</span> <span class="n">discount_factor</span> <span class="o">*</span> <span class="n">next_max</span><span class="p">)</span>  <span class="c1"># &lt;4&gt;</span>
-        <span class="n">policy</span><span class="o">.</span><span class="n">state_action_table</span><span class="p">[</span><span class="n">state</span><span class="p">][</span><span class="n">action</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_value</span>  <span class="c1"># &lt;5&gt;</span>
-<span class="c1"># end::update_policy[]</span>
+                    <span class="p">(</span><span class="n">reward</span> <span class="o">+</span> <span class="n">discount_factor</span> <span class="o">*</span> <span class="n">next_max</span><span class="p">)</span>
+        <span class="n">policy</span><span class="o">.</span><span class="n">state_action_table</span><span class="p">[</span><span class="n">state</span><span class="p">][</span><span class="n">action</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_value</span>
 </pre></div>
-<div id="cell-8" class="clipboard-copy-txt"># tag::update_policy[]
-def update_policy(policy, experiences, weight=0.1, discount_factor=0.9):
+<div id="cell-8" class="clipboard-copy-txt">def update_policy(policy, experiences, weight=0.1, discount_factor=0.9):
     """Updates a given policy with a list of (state, action, reward, state)
     experiences."""
-    for state, action, reward, next_state in experiences:  # <1>
-        next_max = np.max(policy.state_action_table[next_state])  # <2>
-        value = policy.state_action_table[state][action]  # <3>
+    for state, action, reward, next_state in experiences:
+        next_max = np.max(policy.state_action_table[next_state])
+        value = policy.state_action_table[state][action]
         new_value = (1 - weight) * value + weight * \
-                    (reward + discount_factor * next_max)  # <4>
-        policy.state_action_table[state][action] = new_value  # <5>
-# end::update_policy[]</div>
+                    (reward + discount_factor * next_max)
+        policy.state_action_table[state][action] = new_value</div>
     
         </div>
     </div>
@@ -1781,35 +1723,31 @@ def update_policy(policy, experiences, weight=0.1, discount_factor=0.9):
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::train_policy[]</span>
-<span class="k">def</span> <span class="nf">train_policy</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">num_episodes</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">discount_factor</span><span class="o">=</span><span class="mf">0.9</span><span class="p">):</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="k">def</span> <span class="nf">train_policy</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">num_episodes</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">discount_factor</span><span class="o">=</span><span class="mf">0.9</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Training a policy by updating it with rollout experiences.&quot;&quot;&quot;</span>
     <span class="n">policy</span> <span class="o">=</span> <span class="n">Policy</span><span class="p">(</span><span class="n">env</span><span class="p">)</span>
     <span class="n">sim</span> <span class="o">=</span> <span class="n">Simulation</span><span class="p">(</span><span class="n">env</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_episodes</span><span class="p">):</span>
-        <span class="n">experiences</span> <span class="o">=</span> <span class="n">sim</span><span class="o">.</span><span class="n">rollout</span><span class="p">(</span><span class="n">policy</span><span class="p">)</span>  <span class="c1"># &lt;1&gt;</span>
-        <span class="n">update_policy</span><span class="p">(</span><span class="n">policy</span><span class="p">,</span> <span class="n">experiences</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">discount_factor</span><span class="p">)</span>  <span class="c1"># &lt;2&gt;</span>
+        <span class="n">experiences</span> <span class="o">=</span> <span class="n">sim</span><span class="o">.</span><span class="n">rollout</span><span class="p">(</span><span class="n">policy</span><span class="p">)</span>
+        <span class="n">update_policy</span><span class="p">(</span><span class="n">policy</span><span class="p">,</span> <span class="n">experiences</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">discount_factor</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">policy</span>
 
 
-<span class="n">trained_policy</span> <span class="o">=</span> <span class="n">train_policy</span><span class="p">(</span><span class="n">environment</span><span class="p">)</span>  <span class="c1"># &lt;3&gt;</span>
-<span class="c1"># end::train_policy[]</span>
+<span class="n">trained_policy</span> <span class="o">=</span> <span class="n">train_policy</span><span class="p">(</span><span class="n">environment</span><span class="p">)</span>
 </pre></div>
-<div id="cell-9" class="clipboard-copy-txt"># tag::train_policy[]
-def train_policy(env, num_episodes=10000, weight=0.1, discount_factor=0.9):
+<div id="cell-9" class="clipboard-copy-txt">def train_policy(env, num_episodes=10000, weight=0.1, discount_factor=0.9):
     """Training a policy by updating it with rollout experiences."""
     policy = Policy(env)
     sim = Simulation(env)
     for _ in range(num_episodes):
-        experiences = sim.rollout(policy)  # <1>
-        update_policy(policy, experiences, weight, discount_factor)  # <2>
+        experiences = sim.rollout(policy)
+        update_policy(policy, experiences, weight, discount_factor)
 
     return policy
 
 
-trained_policy = train_policy(environment)  # <3>
-# end::train_policy[]</div>
+trained_policy = train_policy(environment)</div>
     
         </div>
     </div>
@@ -1838,15 +1776,14 @@ trained_policy = train_policy(environment)  # <3>
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::evaluate_policy[]</span>
-<span class="k">def</span> <span class="nf">evaluate_policy</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">policy</span><span class="p">,</span> <span class="n">num_episodes</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="k">def</span> <span class="nf">evaluate_policy</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">policy</span><span class="p">,</span> <span class="n">num_episodes</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Evaluate a trained policy through rollouts.&quot;&quot;&quot;</span>
     <span class="n">simulation</span> <span class="o">=</span> <span class="n">Simulation</span><span class="p">(</span><span class="n">env</span><span class="p">)</span>
     <span class="n">steps</span> <span class="o">=</span> <span class="mi">0</span>
 
     <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_episodes</span><span class="p">):</span>
-        <span class="n">experiences</span> <span class="o">=</span> <span class="n">simulation</span><span class="o">.</span><span class="n">rollout</span><span class="p">(</span><span class="n">policy</span><span class="p">,</span> <span class="n">render</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">explore</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># &lt;1&gt;</span>
-        <span class="n">steps</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">experiences</span><span class="p">)</span>  <span class="c1"># &lt;2&gt;</span>
+        <span class="n">experiences</span> <span class="o">=</span> <span class="n">simulation</span><span class="o">.</span><span class="n">rollout</span><span class="p">(</span><span class="n">policy</span><span class="p">,</span> <span class="n">render</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">explore</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">steps</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">experiences</span><span class="p">)</span>
 
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">steps</span> <span class="o">/</span> <span class="n">num_episodes</span><span class="si">}</span><span class="s2"> steps on average &quot;</span>
           <span class="sa">f</span><span class="s2">&quot;for a total of </span><span class="si">{</span><span class="n">num_episodes</span><span class="si">}</span><span class="s2"> episodes.&quot;</span><span class="p">)</span>
@@ -1855,17 +1792,15 @@ trained_policy = train_policy(environment)  # <3>
 
 
 <span class="n">evaluate_policy</span><span class="p">(</span><span class="n">environment</span><span class="p">,</span> <span class="n">trained_policy</span><span class="p">)</span>
-<span class="c1"># end::evaluate_policy[]</span>
 </pre></div>
-<div id="cell-10" class="clipboard-copy-txt"># tag::evaluate_policy[]
-def evaluate_policy(env, policy, num_episodes=10):
+<div id="cell-10" class="clipboard-copy-txt">def evaluate_policy(env, policy, num_episodes=10):
     """Evaluate a trained policy through rollouts."""
     simulation = Simulation(env)
     steps = 0
 
     for _ in range(num_episodes):
-        experiences = simulation.rollout(policy, render=True, explore=False)  # <1>
-        steps += len(experiences)  # <2>
+        experiences = simulation.rollout(policy, render=True, explore=False)
+        steps += len(experiences)
 
     print(f"{steps / num_episodes} steps on average "
           f"for a total of {num_episodes} episodes.")
@@ -1873,8 +1808,7 @@ def evaluate_policy(env, policy, num_episodes=10):
     return steps / num_episodes
 
 
-evaluate_policy(environment, trained_policy)
-# end::evaluate_policy[]</div>
+evaluate_policy(environment, trained_policy)</div>
     
         </div>
     </div>
@@ -1903,31 +1837,27 @@ evaluate_policy(environment, trained_policy)
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::ray_policy_simulation[]</span>
-<span class="kn">import</span> <span class="nn">ray</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">ray</span>
 
 <span class="n">ray</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
 
 <span class="nd">@ray</span><span class="o">.</span><span class="n">remote</span>
-<span class="k">class</span> <span class="nc">SimulationActor</span><span class="p">(</span><span class="n">Simulation</span><span class="p">):</span>  <span class="c1"># &lt;1&gt;</span>
+<span class="k">class</span> <span class="nc">SimulationActor</span><span class="p">(</span><span class="n">Simulation</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Ray actor for a Simulation.&quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">env</span> <span class="o">=</span> <span class="n">Environment</span><span class="p">()</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">env</span><span class="p">)</span>
-<span class="c1"># end::ray_policy_simulation[]</span>
 </pre></div>
-<div id="cell-11" class="clipboard-copy-txt"># tag::ray_policy_simulation[]
-import ray
+<div id="cell-11" class="clipboard-copy-txt">import ray
 
 ray.init()
 
 @ray.remote
-class SimulationActor(Simulation):  # <1>
+class SimulationActor(Simulation):
     """Ray actor for a Simulation."""
     def __init__(self):
         env = Environment()
-        super().__init__(env)
-# end::ray_policy_simulation[]</div>
+        super().__init__(env)</div>
     
         </div>
     </div>
@@ -1956,41 +1886,37 @@ class SimulationActor(Simulation):  # <1>
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::ray_training[]</span>
-<span class="k">def</span> <span class="nf">train_policy_parallel</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">num_episodes</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">num_simulations</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="k">def</span> <span class="nf">train_policy_parallel</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">num_episodes</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">num_simulations</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Parallel policy training function.&quot;&quot;&quot;</span>
-    <span class="n">policy</span> <span class="o">=</span> <span class="n">Policy</span><span class="p">(</span><span class="n">env</span><span class="p">)</span>  <span class="c1"># &lt;1&gt;</span>
-    <span class="n">simulations</span> <span class="o">=</span> <span class="p">[</span><span class="n">SimulationActor</span><span class="o">.</span><span class="n">remote</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_simulations</span><span class="p">)]</span>  <span class="c1"># &lt;2&gt;</span>
+    <span class="n">policy</span> <span class="o">=</span> <span class="n">Policy</span><span class="p">(</span><span class="n">env</span><span class="p">)</span>
+    <span class="n">simulations</span> <span class="o">=</span> <span class="p">[</span><span class="n">SimulationActor</span><span class="o">.</span><span class="n">remote</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_simulations</span><span class="p">)]</span>
 
-    <span class="n">policy_ref</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">policy</span><span class="p">)</span>  <span class="c1"># &lt;3&gt;</span>
+    <span class="n">policy_ref</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">policy</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_episodes</span><span class="p">):</span>
-        <span class="n">experiences</span> <span class="o">=</span> <span class="p">[</span><span class="n">sim</span><span class="o">.</span><span class="n">rollout</span><span class="o">.</span><span class="n">remote</span><span class="p">(</span><span class="n">policy_ref</span><span class="p">)</span> <span class="k">for</span> <span class="n">sim</span> <span class="ow">in</span> <span class="n">simulations</span><span class="p">]</span>  <span class="c1"># &lt;4&gt;</span>
+        <span class="n">experiences</span> <span class="o">=</span> <span class="p">[</span><span class="n">sim</span><span class="o">.</span><span class="n">rollout</span><span class="o">.</span><span class="n">remote</span><span class="p">(</span><span class="n">policy_ref</span><span class="p">)</span> <span class="k">for</span> <span class="n">sim</span> <span class="ow">in</span> <span class="n">simulations</span><span class="p">]</span>
 
         <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">experiences</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">finished</span><span class="p">,</span> <span class="n">experiences</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="n">experiences</span><span class="p">)</span>  <span class="c1"># &lt;5&gt;</span>
+            <span class="n">finished</span><span class="p">,</span> <span class="n">experiences</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="n">experiences</span><span class="p">)</span>
             <span class="k">for</span> <span class="n">xp</span> <span class="ow">in</span> <span class="n">ray</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">finished</span><span class="p">):</span>
                 <span class="n">update_policy</span><span class="p">(</span><span class="n">policy</span><span class="p">,</span> <span class="n">xp</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">policy</span>
-<span class="c1"># end::ray_training[]</span>
 </pre></div>
-<div id="cell-12" class="clipboard-copy-txt"># tag::ray_training[]
-def train_policy_parallel(env, num_episodes=1000, num_simulations=4):
+<div id="cell-12" class="clipboard-copy-txt">def train_policy_parallel(env, num_episodes=1000, num_simulations=4):
     """Parallel policy training function."""
-    policy = Policy(env)  # <1>
-    simulations = [SimulationActor.remote() for _ in range(num_simulations)]  # <2>
+    policy = Policy(env)
+    simulations = [SimulationActor.remote() for _ in range(num_simulations)]
 
-    policy_ref = ray.put(policy)  # <3>
+    policy_ref = ray.put(policy)
     for _ in range(num_episodes):
-        experiences = [sim.rollout.remote(policy_ref) for sim in simulations]  # <4>
+        experiences = [sim.rollout.remote(policy_ref) for sim in simulations]
 
         while len(experiences) > 0:
-            finished, experiences = ray.wait(experiences)  # <5>
+            finished, experiences = ray.wait(experiences)
             for xp in ray.get(finished):
                 update_policy(policy, xp)
 
-    return policy
-# end::ray_training[]</div>
+    return policy</div>
     
         </div>
     </div>
@@ -2019,15 +1945,11 @@ def train_policy_parallel(env, num_episodes=1000, num_simulations=4):
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::ray_evaluation[]</span>
-<span class="n">parallel_policy</span> <span class="o">=</span> <span class="n">train_policy_parallel</span><span class="p">(</span><span class="n">environment</span><span class="p">)</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">parallel_policy</span> <span class="o">=</span> <span class="n">train_policy_parallel</span><span class="p">(</span><span class="n">environment</span><span class="p">)</span>
 <span class="n">evaluate_policy</span><span class="p">(</span><span class="n">environment</span><span class="p">,</span> <span class="n">parallel_policy</span><span class="p">)</span>
-<span class="c1"># end::ray_evaluation[]</span>
 </pre></div>
-<div id="cell-13" class="clipboard-copy-txt"># tag::ray_evaluation[]
-parallel_policy = train_policy_parallel(environment)
-evaluate_policy(environment, parallel_policy)
-# end::ray_evaluation[]</div>
+<div id="cell-13" class="clipboard-copy-txt">parallel_policy = train_policy_parallel(environment)
+evaluate_policy(environment, parallel_policy)</div>
     
         </div>
     </div>

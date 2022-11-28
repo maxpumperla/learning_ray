@@ -1217,13 +1217,13 @@ refer to Ray's <a href="https://docs.ray.io/en/latest/ray-overview/installation.
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
@@ -1247,6 +1247,144 @@ refer to Ray's <a href="https://docs.ray.io/en/latest/ray-overview/installation.
     </div>
 
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre><span class="ansi-yellow-fg">DEPRECATION: Configuring installation scheme with distutils config files is deprecated and will no longer work in the near future. If you are using a Homebrew or Linuxbrew Python, please see discussion at https://github.com/Homebrew/homebrew-core/issues/76621</span><span class="ansi-yellow-fg">
+</span>Requirement already satisfied: ray[serve]&gt;=2.1.0 in /usr/local/lib/python3.9/site-packages (2.1.0)
+Collecting transformers==4.21.2
+  Using cached transformers-4.21.2-py3-none-any.whl (4.7 MB)
+Requirement already satisfied: pyyaml&gt;=5.1 in /usr/local/lib/python3.9/site-packages (from transformers==4.21.2) (5.4.1)
+Requirement already satisfied: tokenizers!=0.11.3,&lt;0.13,&gt;=0.11.1 in /usr/local/lib/python3.9/site-packages (from transformers==4.21.2) (0.12.1)
+Requirement already satisfied: filelock in /usr/local/lib/python3.9/site-packages (from transformers==4.21.2) (3.3.1)
+Requirement already satisfied: packaging&gt;=20.0 in /usr/local/lib/python3.9/site-packages (from transformers==4.21.2) (21.3)
+Requirement already satisfied: regex!=2019.12.17 in /usr/local/lib/python3.9/site-packages (from transformers==4.21.2) (2021.4.4)
+Requirement already satisfied: tqdm&gt;=4.27 in /usr/local/lib/python3.9/site-packages (from transformers==4.21.2) (4.42.1)
+Requirement already satisfied: numpy&gt;=1.17 in /usr/local/lib/python3.9/site-packages (from transformers==4.21.2) (1.23.3)
+Requirement already satisfied: requests in /usr/local/lib/python3.9/site-packages (from transformers==4.21.2) (2.25.1)
+Requirement already satisfied: huggingface-hub&lt;1.0,&gt;=0.1.0 in /usr/local/lib/python3.9/site-packages (from transformers==4.21.2) (0.5.1)
+Requirement already satisfied: msgpack&lt;2.0.0,&gt;=1.0.0 in /usr/local/lib/python3.9/site-packages (from ray[serve]&gt;=2.1.0) (1.0.3)
+Requirement already satisfied: aiosignal in /usr/local/lib/python3.9/site-packages (from ray[serve]&gt;=2.1.0) (1.2.0)
+Requirement already satisfied: attrs in /usr/local/lib/python3.9/site-packages (from ray[serve]&gt;=2.1.0) (20.3.0)
+Requirement already satisfied: jsonschema in /usr/local/lib/python3.9/site-packages (from ray[serve]&gt;=2.1.0) (3.2.0)
+Requirement already satisfied: protobuf!=3.19.5,&gt;=3.15.3 in /usr/local/lib/python3.9/site-packages (from ray[serve]&gt;=2.1.0) (3.19.6)
+Requirement already satisfied: click&lt;=8.0.4,&gt;=7.0 in /usr/local/lib/python3.9/site-packages (from ray[serve]&gt;=2.1.0) (7.1.2)
+Requirement already satisfied: frozenlist in /usr/local/lib/python3.9/site-packages (from ray[serve]&gt;=2.1.0) (1.3.0)
+Requirement already satisfied: virtualenv&gt;=20.0.24 in /usr/local/lib/python3.9/site-packages (from ray[serve]&gt;=2.1.0) (20.8.1)
+Requirement already satisfied: grpcio&gt;=1.32.0 in /usr/local/lib/python3.9/site-packages (from ray[serve]&gt;=2.1.0) (1.43.0)
+Requirement already satisfied: colorful in /usr/local/lib/python3.9/site-packages (from ray[serve]&gt;=2.1.0) (0.5.4)
+Requirement already satisfied: aiohttp&gt;=3.7 in /usr/local/lib/python3.9/site-packages (from ray[serve]&gt;=2.1.0) (3.8.1)
+Requirement already satisfied: smart-open in /usr/local/lib/python3.9/site-packages (from ray[serve]&gt;=2.1.0) (6.2.0)
+Requirement already satisfied: aiorwlock in /usr/local/lib/python3.9/site-packages (from ray[serve]&gt;=2.1.0) (1.3.0)
+Requirement already satisfied: fastapi in /usr/local/lib/python3.9/site-packages (from ray[serve]&gt;=2.1.0) (0.75.2)
+Requirement already satisfied: aiohttp-cors in /usr/local/lib/python3.9/site-packages (from ray[serve]&gt;=2.1.0) (0.7.0)
+Requirement already satisfied: gpustat&gt;=1.0.0 in /usr/local/lib/python3.9/site-packages (from ray[serve]&gt;=2.1.0) (1.0.0)
+Requirement already satisfied: uvicorn in /usr/local/lib/python3.9/site-packages (from ray[serve]&gt;=2.1.0) (0.16.0)
+Requirement already satisfied: starlette in /usr/local/lib/python3.9/site-packages (from ray[serve]&gt;=2.1.0) (0.17.1)
+Requirement already satisfied: opencensus in /usr/local/lib/python3.9/site-packages (from ray[serve]&gt;=2.1.0) (0.11.0)
+Requirement already satisfied: prometheus-client&lt;0.14.0,&gt;=0.7.1 in /usr/local/lib/python3.9/site-packages (from ray[serve]&gt;=2.1.0) (0.12.0)
+Requirement already satisfied: pydantic in /usr/local/lib/python3.9/site-packages (from ray[serve]&gt;=2.1.0) (1.9.0)
+Requirement already satisfied: py-spy&gt;=0.2.0 in /usr/local/lib/python3.9/site-packages (from ray[serve]&gt;=2.1.0) (0.3.14)
+Requirement already satisfied: yarl&lt;2.0,&gt;=1.0 in /usr/local/lib/python3.9/site-packages (from aiohttp&gt;=3.7-&gt;ray[serve]&gt;=2.1.0) (1.7.2)
+Requirement already satisfied: charset-normalizer&lt;3.0,&gt;=2.0 in /usr/local/lib/python3.9/site-packages (from aiohttp&gt;=3.7-&gt;ray[serve]&gt;=2.1.0) (2.0.12)
+Requirement already satisfied: async-timeout&lt;5.0,&gt;=4.0.0a3 in /usr/local/lib/python3.9/site-packages (from aiohttp&gt;=3.7-&gt;ray[serve]&gt;=2.1.0) (4.0.2)
+Requirement already satisfied: multidict&lt;7.0,&gt;=4.5 in /usr/local/lib/python3.9/site-packages (from aiohttp&gt;=3.7-&gt;ray[serve]&gt;=2.1.0) (6.0.2)
+Requirement already satisfied: blessed&gt;=1.17.1 in /usr/local/lib/python3.9/site-packages (from gpustat&gt;=1.0.0-&gt;ray[serve]&gt;=2.1.0) (1.17.6)
+Requirement already satisfied: six&gt;=1.7 in /usr/local/lib/python3.9/site-packages/six-1.15.0-py3.9.egg (from gpustat&gt;=1.0.0-&gt;ray[serve]&gt;=2.1.0) (1.15.0)
+Requirement already satisfied: nvidia-ml-py&lt;=11.495.46,&gt;=11.450.129 in /usr/local/lib/python3.9/site-packages (from gpustat&gt;=1.0.0-&gt;ray[serve]&gt;=2.1.0) (11.495.46)
+Requirement already satisfied: psutil&gt;=5.6.0 in /usr/local/lib/python3.9/site-packages (from gpustat&gt;=1.0.0-&gt;ray[serve]&gt;=2.1.0) (5.9.2)
+Requirement already satisfied: typing-extensions&gt;=3.7.4.3 in /usr/local/lib/python3.9/site-packages (from huggingface-hub&lt;1.0,&gt;=0.1.0-&gt;transformers==4.21.2) (3.10.0.2)
+Requirement already satisfied: pyparsing!=3.0.5,&gt;=2.0.2 in /usr/local/lib/python3.9/site-packages (from packaging&gt;=20.0-&gt;transformers==4.21.2) (2.4.7)
+Requirement already satisfied: platformdirs&lt;3,&gt;=2 in /usr/local/lib/python3.9/site-packages (from virtualenv&gt;=20.0.24-&gt;ray[serve]&gt;=2.1.0) (2.4.0)
+Requirement already satisfied: distlib&lt;1,&gt;=0.3.1 in /usr/local/lib/python3.9/site-packages (from virtualenv&gt;=20.0.24-&gt;ray[serve]&gt;=2.1.0) (0.3.3)
+Requirement already satisfied: backports.entry-points-selectable&gt;=1.0.4 in /usr/local/lib/python3.9/site-packages (from virtualenv&gt;=20.0.24-&gt;ray[serve]&gt;=2.1.0) (1.1.0)
+Requirement already satisfied: anyio&lt;4,&gt;=3.0.0 in /usr/local/lib/python3.9/site-packages (from starlette-&gt;ray[serve]&gt;=2.1.0) (3.5.0)
+Requirement already satisfied: pyrsistent&gt;=0.14.0 in /usr/local/lib/python3.9/site-packages (from jsonschema-&gt;ray[serve]&gt;=2.1.0) (0.17.3)
+Requirement already satisfied: setuptools in /usr/local/lib/python3.9/site-packages (from jsonschema-&gt;ray[serve]&gt;=2.1.0) (59.5.0)
+Requirement already satisfied: opencensus-context&gt;=0.1.3 in /usr/local/lib/python3.9/site-packages (from opencensus-&gt;ray[serve]&gt;=2.1.0) (0.1.3)
+Requirement already satisfied: google-api-core&lt;3.0.0,&gt;=1.0.0 in /usr/local/lib/python3.9/site-packages (from opencensus-&gt;ray[serve]&gt;=2.1.0) (2.10.1)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /usr/local/lib/python3.9/site-packages (from requests-&gt;transformers==4.21.2) (2020.12.5)
+Requirement already satisfied: chardet&lt;5,&gt;=3.0.2 in /usr/local/lib/python3.9/site-packages (from requests-&gt;transformers==4.21.2) (4.0.0)
+Requirement already satisfied: idna&lt;3,&gt;=2.5 in /usr/local/lib/python3.9/site-packages (from requests-&gt;transformers==4.21.2) (2.10)
+Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /usr/local/lib/python3.9/site-packages (from requests-&gt;transformers==4.21.2) (1.26.12)
+Requirement already satisfied: h11&gt;=0.8 in /usr/local/lib/python3.9/site-packages (from uvicorn-&gt;ray[serve]&gt;=2.1.0) (0.13.0)
+Requirement already satisfied: asgiref&gt;=3.4.0 in /usr/local/lib/python3.9/site-packages (from uvicorn-&gt;ray[serve]&gt;=2.1.0) (3.5.0)
+Requirement already satisfied: sniffio&gt;=1.1 in /usr/local/lib/python3.9/site-packages (from anyio&lt;4,&gt;=3.0.0-&gt;starlette-&gt;ray[serve]&gt;=2.1.0) (1.2.0)
+Requirement already satisfied: wcwidth&gt;=0.1.4 in /usr/local/lib/python3.9/site-packages (from blessed&gt;=1.17.1-&gt;gpustat&gt;=1.0.0-&gt;ray[serve]&gt;=2.1.0) (0.2.5)
+Requirement already satisfied: google-auth&lt;3.0dev,&gt;=1.25.0 in /usr/local/lib/python3.9/site-packages (from google-api-core&lt;3.0.0,&gt;=1.0.0-&gt;opencensus-&gt;ray[serve]&gt;=2.1.0) (2.11.0)
+Requirement already satisfied: googleapis-common-protos&lt;2.0dev,&gt;=1.56.2 in /usr/local/lib/python3.9/site-packages (from google-api-core&lt;3.0.0,&gt;=1.0.0-&gt;opencensus-&gt;ray[serve]&gt;=2.1.0) (1.56.4)
+Collecting protobuf!=3.19.5,&gt;=3.15.3
+  Using cached protobuf-4.21.9-cp37-abi3-macosx_10_9_universal2.whl (483 kB)
+Requirement already satisfied: cachetools&lt;6.0,&gt;=2.0.0 in /usr/local/lib/python3.9/site-packages (from google-auth&lt;3.0dev,&gt;=1.25.0-&gt;google-api-core&lt;3.0.0,&gt;=1.0.0-&gt;opencensus-&gt;ray[serve]&gt;=2.1.0) (4.2.1)
+Requirement already satisfied: pyasn1-modules&gt;=0.2.1 in /usr/local/lib/python3.9/site-packages (from google-auth&lt;3.0dev,&gt;=1.25.0-&gt;google-api-core&lt;3.0.0,&gt;=1.0.0-&gt;opencensus-&gt;ray[serve]&gt;=2.1.0) (0.2.8)
+Requirement already satisfied: rsa&lt;5,&gt;=3.1.4 in /usr/local/lib/python3.9/site-packages (from google-auth&lt;3.0dev,&gt;=1.25.0-&gt;google-api-core&lt;3.0.0,&gt;=1.0.0-&gt;opencensus-&gt;ray[serve]&gt;=2.1.0) (4.9)
+Requirement already satisfied: pyasn1&lt;0.5.0,&gt;=0.4.6 in /usr/local/lib/python3.9/site-packages (from pyasn1-modules&gt;=0.2.1-&gt;google-auth&lt;3.0dev,&gt;=1.25.0-&gt;google-api-core&lt;3.0.0,&gt;=1.0.0-&gt;opencensus-&gt;ray[serve]&gt;=2.1.0) (0.4.8)
+Installing collected packages: protobuf, transformers
+  Attempting uninstall: protobuf
+    Found existing installation: protobuf 3.19.6
+    Uninstalling protobuf-3.19.6:
+      Successfully uninstalled protobuf-3.19.6
+<span class="ansi-yellow-fg">  DEPRECATION: Configuring installation scheme with distutils config files is deprecated and will no longer work in the near future. If you are using a Homebrew or Linuxbrew Python, please see discussion at https://github.com/Homebrew/homebrew-core/issues/76621</span><span class="ansi-yellow-fg">
+</span>  Attempting uninstall: transformers
+    Found existing installation: transformers 4.18.0
+    Uninstalling transformers-4.18.0:
+      Successfully uninstalled transformers-4.18.0
+<span class="ansi-yellow-fg">  DEPRECATION: Configuring installation scheme with distutils config files is deprecated and will no longer work in the near future. If you are using a Homebrew or Linuxbrew Python, please see discussion at https://github.com/Homebrew/homebrew-core/issues/76621</span><span class="ansi-yellow-fg">
+</span><span class="ansi-yellow-fg">DEPRECATION: Configuring installation scheme with distutils config files is deprecated and will no longer work in the near future. If you are using a Homebrew or Linuxbrew Python, please see discussion at https://github.com/Homebrew/homebrew-core/issues/76621</span><span class="ansi-yellow-fg">
+</span><span class="ansi-red-fg">ERROR: pip&#39;s dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+tensorflow 2.10.0 requires protobuf&lt;3.20,&gt;=3.9.2, but you have protobuf 4.21.9 which is incompatible.
+tensorboardx 2.5.1 requires protobuf&lt;=3.20.1,&gt;=3.8.0, but you have protobuf 4.21.9 which is incompatible.
+tensorboard 2.10.1 requires protobuf&lt;3.20,&gt;=3.9.2, but you have protobuf 4.21.9 which is incompatible.</span><span class="ansi-red-fg">
+</span>Successfully installed protobuf-4.21.9 transformers-4.21.2
+<span class="ansi-yellow-fg">WARNING: There was an error checking the latest version of pip.</span><span class="ansi-yellow-fg">
+</span><span class="ansi-yellow-fg">DEPRECATION: Configuring installation scheme with distutils config files is deprecated and will no longer work in the near future. If you are using a Homebrew or Linuxbrew Python, please see discussion at https://github.com/Homebrew/homebrew-core/issues/76621</span><span class="ansi-yellow-fg">
+</span>Collecting requests==2.28.1
+  Using cached requests-2.28.1-py3-none-any.whl (62 kB)
+Collecting wikipedia==1.4.0
+  Using cached wikipedia-1.4.0.tar.gz (27 kB)
+  Preparing metadata (setup.py) ... done
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in /usr/local/lib/python3.9/site-packages (from requests==2.28.1) (2.10)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /usr/local/lib/python3.9/site-packages (from requests==2.28.1) (2020.12.5)
+Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /usr/local/lib/python3.9/site-packages (from requests==2.28.1) (1.26.12)
+Requirement already satisfied: charset-normalizer&lt;3,&gt;=2 in /usr/local/lib/python3.9/site-packages (from requests==2.28.1) (2.0.12)
+Requirement already satisfied: beautifulsoup4 in /usr/local/lib/python3.9/site-packages (from wikipedia==1.4.0) (4.9.3)
+Requirement already satisfied: soupsieve&gt;1.2 in /usr/local/lib/python3.9/site-packages (from beautifulsoup4-&gt;wikipedia==1.4.0) (2.2)
+Building wheels for collected packages: wikipedia
+  Building wheel for wikipedia (setup.py) ... done
+  Created wheel for wikipedia: filename=wikipedia-1.4.0-py3-none-any.whl size=11695 sha256=075c09ebaba55311c55a902b9d1df01101a9c1a4c8327dd8d9807ce1888e5a7b
+  Stored in directory: /Users/maxpumperla/Library/Caches/pip/wheels/c2/46/f4/caa1bee71096d7b0cdca2f2a2af45cacf35c5760bee8f00948
+Successfully built wikipedia
+Installing collected packages: requests, wikipedia
+  Attempting uninstall: requests
+    Found existing installation: requests 2.25.1
+    Uninstalling requests-2.25.1:
+      Successfully uninstalled requests-2.25.1
+<span class="ansi-yellow-fg">  DEPRECATION: Configuring installation scheme with distutils config files is deprecated and will no longer work in the near future. If you are using a Homebrew or Linuxbrew Python, please see discussion at https://github.com/Homebrew/homebrew-core/issues/76621</span><span class="ansi-yellow-fg">
+</span><span class="ansi-yellow-fg">  DEPRECATION: Configuring installation scheme with distutils config files is deprecated and will no longer work in the near future. If you are using a Homebrew or Linuxbrew Python, please see discussion at https://github.com/Homebrew/homebrew-core/issues/76621</span><span class="ansi-yellow-fg">
+</span><span class="ansi-yellow-fg">DEPRECATION: Configuring installation scheme with distutils config files is deprecated and will no longer work in the near future. If you are using a Homebrew or Linuxbrew Python, please see discussion at https://github.com/Homebrew/homebrew-core/issues/76621</span><span class="ansi-yellow-fg">
+</span><span class="ansi-red-fg">ERROR: pip&#39;s dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+tensorboard 2.10.1 requires protobuf&lt;3.20,&gt;=3.9.2, but you have protobuf 4.21.9 which is incompatible.</span><span class="ansi-red-fg">
+</span>Successfully installed requests-2.28.1 wikipedia-1.4.0
+<span class="ansi-yellow-fg">WARNING: There was an error checking the latest version of pip.</span><span class="ansi-yellow-fg">
+</span></pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -1296,13 +1434,13 @@ the repo and copy the code files to the base path of the runtime:</p>
 </div>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
@@ -1316,8 +1454,7 @@ the repo and copy the code files to the base path of the runtime:</p>
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::basic_deployment[]</span>
-<span class="kn">from</span> <span class="nn">ray</span> <span class="kn">import</span> <span class="n">serve</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">ray</span> <span class="kn">import</span> <span class="n">serve</span>
 
 <span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">pipeline</span>
 
@@ -1330,10 +1467,8 @@ the repo and copy the code files to the base path of the runtime:</p>
     <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="n">input_text</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">query_params</span><span class="p">[</span><span class="s2">&quot;input_text&quot;</span><span class="p">]</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_classifier</span><span class="p">(</span><span class="n">input_text</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;label&quot;</span><span class="p">]</span>
-<span class="c1"># end::basic_deployment[]</span>
 </pre></div>
-<div id="cell-4" class="clipboard-copy-txt"># tag::basic_deployment[]
-from ray import serve
+<div id="cell-4" class="clipboard-copy-txt">from ray import serve
 
 from transformers import pipeline
 
@@ -1345,13 +1480,168 @@ class SentimentAnalysis:
 
     def __call__(self, request) -> str:
         input_text = request.query_params["input_text"]
-        return self._classifier(input_text)[0]["label"]
-# end::basic_deployment[]</div>
+        return self._classifier(input_text)[0]["label"]</div>
     
         </div>
     </div>
 
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>2022-11-28 14:12:30.401697: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+</pre>
+</div>
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">/var/folders/y_/l41py1sx7bl5n30jygrsv0q40000gn/T/ipykernel_14502/2959941426.py</span> in <span class="ansi-cyan-fg">&lt;cell line: 4&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span> <span class="ansi-green-fg">from</span> ray <span class="ansi-green-fg">import</span> serve
+<span class="ansi-green-intense-fg ansi-bold">      3</span> 
+<span class="ansi-green-fg">----&gt; 4</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">from</span> transformers <span class="ansi-green-fg">import</span> pipeline
+<span class="ansi-green-intense-fg ansi-bold">      5</span> 
+<span class="ansi-green-intense-fg ansi-bold">      6</span> 
+
+<span class="ansi-green-fg">/usr/local/lib/python3.9/site-packages/transformers/__init__.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">     28</span> 
+<span class="ansi-green-intense-fg ansi-bold">     29</span> <span class="ansi-red-fg"># Check the dependencies satisfy the minimal versions required.</span>
+<span class="ansi-green-fg">---&gt; 30</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">from</span> <span class="ansi-blue-fg">.</span> <span class="ansi-green-fg">import</span> dependency_versions_check
+<span class="ansi-green-intense-fg ansi-bold">     31</span> from .utils import (
+<span class="ansi-green-intense-fg ansi-bold">     32</span>     OptionalDependencyNotAvailable<span class="ansi-blue-fg">,</span>
+
+<span class="ansi-green-fg">/usr/local/lib/python3.9/site-packages/transformers/dependency_versions_check.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">     15</span> 
+<span class="ansi-green-intense-fg ansi-bold">     16</span> <span class="ansi-green-fg">from</span> <span class="ansi-blue-fg">.</span>dependency_versions_table <span class="ansi-green-fg">import</span> deps
+<span class="ansi-green-fg">---&gt; 17</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">from</span> <span class="ansi-blue-fg">.</span>utils<span class="ansi-blue-fg">.</span>versions <span class="ansi-green-fg">import</span> require_version<span class="ansi-blue-fg">,</span> require_version_core
+<span class="ansi-green-intense-fg ansi-bold">     18</span> 
+<span class="ansi-green-intense-fg ansi-bold">     19</span> 
+
+<span class="ansi-green-fg">/usr/local/lib/python3.9/site-packages/transformers/utils/__init__.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">     44</span>     to_py_obj<span class="ansi-blue-fg">,</span>
+<span class="ansi-green-intense-fg ansi-bold">     45</span> )
+<span class="ansi-green-fg">---&gt; 46</span><span class="ansi-red-fg"> from .hub import (
+</span><span class="ansi-green-intense-fg ansi-bold">     47</span>     CLOUDFRONT_DISTRIB_PREFIX<span class="ansi-blue-fg">,</span>
+<span class="ansi-green-intense-fg ansi-bold">     48</span>     DISABLE_TELEMETRY<span class="ansi-blue-fg">,</span>
+
+<span class="ansi-green-fg">/usr/local/lib/python3.9/site-packages/transformers/utils/hub.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">     37</span> <span class="ansi-green-fg">import</span> requests
+<span class="ansi-green-intense-fg ansi-bold">     38</span> <span class="ansi-green-fg">from</span> filelock <span class="ansi-green-fg">import</span> FileLock
+<span class="ansi-green-fg">---&gt; 39</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">from</span> huggingface_hub <span class="ansi-green-fg">import</span> HfFolder<span class="ansi-blue-fg">,</span> Repository<span class="ansi-blue-fg">,</span> create_repo<span class="ansi-blue-fg">,</span> list_repo_files<span class="ansi-blue-fg">,</span> whoami
+<span class="ansi-green-intense-fg ansi-bold">     40</span> <span class="ansi-green-fg">from</span> requests<span class="ansi-blue-fg">.</span>exceptions <span class="ansi-green-fg">import</span> HTTPError
+<span class="ansi-green-intense-fg ansi-bold">     41</span> <span class="ansi-green-fg">from</span> requests<span class="ansi-blue-fg">.</span>models <span class="ansi-green-fg">import</span> Response
+
+<span class="ansi-green-fg">/usr/local/lib/python3.9/site-packages/huggingface_hub/__init__.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">     61</span> <span class="ansi-green-fg">from</span> <span class="ansi-blue-fg">.</span>hub_mixin <span class="ansi-green-fg">import</span> ModelHubMixin<span class="ansi-blue-fg">,</span> PyTorchModelHubMixin
+<span class="ansi-green-intense-fg ansi-bold">     62</span> <span class="ansi-green-fg">from</span> <span class="ansi-blue-fg">.</span>inference_api <span class="ansi-green-fg">import</span> InferenceApi
+<span class="ansi-green-fg">---&gt; 63</span><span class="ansi-red-fg"> from .keras_mixin import (
+</span><span class="ansi-green-intense-fg ansi-bold">     64</span>     KerasModelHubMixin<span class="ansi-blue-fg">,</span>
+<span class="ansi-green-intense-fg ansi-bold">     65</span>     from_pretrained_keras<span class="ansi-blue-fg">,</span>
+
+<span class="ansi-green-fg">/usr/local/lib/python3.9/site-packages/huggingface_hub/keras_mixin.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">     22</span> 
+<span class="ansi-green-intense-fg ansi-bold">     23</span> <span class="ansi-green-fg">if</span> is_tf_available<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">---&gt; 24</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">import</span> tensorflow <span class="ansi-green-fg">as</span> tf
+<span class="ansi-green-intense-fg ansi-bold">     25</span> 
+<span class="ansi-green-intense-fg ansi-bold">     26</span> 
+
+<span class="ansi-green-fg">/usr/local/lib/python3.9/site-packages/tensorflow/__init__.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">     35</span> <span class="ansi-green-fg">import</span> typing <span class="ansi-green-fg">as</span> _typing
+<span class="ansi-green-intense-fg ansi-bold">     36</span> 
+<span class="ansi-green-fg">---&gt; 37</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">from</span> tensorflow<span class="ansi-blue-fg">.</span>python<span class="ansi-blue-fg">.</span>tools <span class="ansi-green-fg">import</span> module_util <span class="ansi-green-fg">as</span> _module_util
+<span class="ansi-green-intense-fg ansi-bold">     38</span> <span class="ansi-green-fg">from</span> tensorflow<span class="ansi-blue-fg">.</span>python<span class="ansi-blue-fg">.</span>util<span class="ansi-blue-fg">.</span>lazy_loader <span class="ansi-green-fg">import</span> LazyLoader <span class="ansi-green-fg">as</span> _LazyLoader
+<span class="ansi-green-intense-fg ansi-bold">     39</span> 
+
+<span class="ansi-green-fg">/usr/local/lib/python3.9/site-packages/tensorflow/python/__init__.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">     35</span> 
+<span class="ansi-green-intense-fg ansi-bold">     36</span> <span class="ansi-green-fg">from</span> tensorflow<span class="ansi-blue-fg">.</span>python <span class="ansi-green-fg">import</span> pywrap_tensorflow <span class="ansi-green-fg">as</span> _pywrap_tensorflow
+<span class="ansi-green-fg">---&gt; 37</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">from</span> tensorflow<span class="ansi-blue-fg">.</span>python<span class="ansi-blue-fg">.</span>eager <span class="ansi-green-fg">import</span> context
+<span class="ansi-green-intense-fg ansi-bold">     38</span> 
+<span class="ansi-green-intense-fg ansi-bold">     39</span> <span class="ansi-red-fg"># pylint: enable=wildcard-import</span>
+
+<span class="ansi-green-fg">/usr/local/lib/python3.9/site-packages/tensorflow/python/eager/context.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">     27</span> <span class="ansi-green-fg">import</span> six
+<span class="ansi-green-intense-fg ansi-bold">     28</span> 
+<span class="ansi-green-fg">---&gt; 29</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">from</span> tensorflow<span class="ansi-blue-fg">.</span>core<span class="ansi-blue-fg">.</span>framework <span class="ansi-green-fg">import</span> function_pb2
+<span class="ansi-green-intense-fg ansi-bold">     30</span> <span class="ansi-green-fg">from</span> tensorflow<span class="ansi-blue-fg">.</span>core<span class="ansi-blue-fg">.</span>protobuf <span class="ansi-green-fg">import</span> config_pb2
+<span class="ansi-green-intense-fg ansi-bold">     31</span> <span class="ansi-green-fg">from</span> tensorflow<span class="ansi-blue-fg">.</span>core<span class="ansi-blue-fg">.</span>protobuf <span class="ansi-green-fg">import</span> coordination_config_pb2
+
+<span class="ansi-green-fg">/usr/local/lib/python3.9/site-packages/tensorflow/core/framework/function_pb2.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">     14</span> 
+<span class="ansi-green-intense-fg ansi-bold">     15</span> 
+<span class="ansi-green-fg">---&gt; 16</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">from</span> tensorflow<span class="ansi-blue-fg">.</span>core<span class="ansi-blue-fg">.</span>framework <span class="ansi-green-fg">import</span> attr_value_pb2 <span class="ansi-green-fg">as</span> tensorflow_dot_core_dot_framework_dot_attr__value__pb2
+<span class="ansi-green-intense-fg ansi-bold">     17</span> <span class="ansi-green-fg">from</span> tensorflow<span class="ansi-blue-fg">.</span>core<span class="ansi-blue-fg">.</span>framework <span class="ansi-green-fg">import</span> node_def_pb2 <span class="ansi-green-fg">as</span> tensorflow_dot_core_dot_framework_dot_node__def__pb2
+<span class="ansi-green-intense-fg ansi-bold">     18</span> <span class="ansi-green-fg">from</span> tensorflow<span class="ansi-blue-fg">.</span>core<span class="ansi-blue-fg">.</span>framework <span class="ansi-green-fg">import</span> op_def_pb2 <span class="ansi-green-fg">as</span> tensorflow_dot_core_dot_framework_dot_op__def__pb2
+
+<span class="ansi-green-fg">/usr/local/lib/python3.9/site-packages/tensorflow/core/framework/attr_value_pb2.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">     14</span> 
+<span class="ansi-green-intense-fg ansi-bold">     15</span> 
+<span class="ansi-green-fg">---&gt; 16</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">from</span> tensorflow<span class="ansi-blue-fg">.</span>core<span class="ansi-blue-fg">.</span>framework <span class="ansi-green-fg">import</span> tensor_pb2 <span class="ansi-green-fg">as</span> tensorflow_dot_core_dot_framework_dot_tensor__pb2
+<span class="ansi-green-intense-fg ansi-bold">     17</span> <span class="ansi-green-fg">from</span> tensorflow<span class="ansi-blue-fg">.</span>core<span class="ansi-blue-fg">.</span>framework <span class="ansi-green-fg">import</span> tensor_shape_pb2 <span class="ansi-green-fg">as</span> tensorflow_dot_core_dot_framework_dot_tensor__shape__pb2
+<span class="ansi-green-intense-fg ansi-bold">     18</span> <span class="ansi-green-fg">from</span> tensorflow<span class="ansi-blue-fg">.</span>core<span class="ansi-blue-fg">.</span>framework <span class="ansi-green-fg">import</span> types_pb2 <span class="ansi-green-fg">as</span> tensorflow_dot_core_dot_framework_dot_types__pb2
+
+<span class="ansi-green-fg">/usr/local/lib/python3.9/site-packages/tensorflow/core/framework/tensor_pb2.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">     14</span> 
+<span class="ansi-green-intense-fg ansi-bold">     15</span> 
+<span class="ansi-green-fg">---&gt; 16</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">from</span> tensorflow<span class="ansi-blue-fg">.</span>core<span class="ansi-blue-fg">.</span>framework <span class="ansi-green-fg">import</span> resource_handle_pb2 <span class="ansi-green-fg">as</span> tensorflow_dot_core_dot_framework_dot_resource__handle__pb2
+<span class="ansi-green-intense-fg ansi-bold">     17</span> <span class="ansi-green-fg">from</span> tensorflow<span class="ansi-blue-fg">.</span>core<span class="ansi-blue-fg">.</span>framework <span class="ansi-green-fg">import</span> tensor_shape_pb2 <span class="ansi-green-fg">as</span> tensorflow_dot_core_dot_framework_dot_tensor__shape__pb2
+<span class="ansi-green-intense-fg ansi-bold">     18</span> <span class="ansi-green-fg">from</span> tensorflow<span class="ansi-blue-fg">.</span>core<span class="ansi-blue-fg">.</span>framework <span class="ansi-green-fg">import</span> types_pb2 <span class="ansi-green-fg">as</span> tensorflow_dot_core_dot_framework_dot_types__pb2
+
+<span class="ansi-green-fg">/usr/local/lib/python3.9/site-packages/tensorflow/core/framework/resource_handle_pb2.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">     14</span> 
+<span class="ansi-green-intense-fg ansi-bold">     15</span> 
+<span class="ansi-green-fg">---&gt; 16</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">from</span> tensorflow<span class="ansi-blue-fg">.</span>core<span class="ansi-blue-fg">.</span>framework <span class="ansi-green-fg">import</span> tensor_shape_pb2 <span class="ansi-green-fg">as</span> tensorflow_dot_core_dot_framework_dot_tensor__shape__pb2
+<span class="ansi-green-intense-fg ansi-bold">     17</span> <span class="ansi-green-fg">from</span> tensorflow<span class="ansi-blue-fg">.</span>core<span class="ansi-blue-fg">.</span>framework <span class="ansi-green-fg">import</span> types_pb2 <span class="ansi-green-fg">as</span> tensorflow_dot_core_dot_framework_dot_types__pb2
+<span class="ansi-green-intense-fg ansi-bold">     18</span> 
+
+<span class="ansi-green-fg">/usr/local/lib/python3.9/site-packages/tensorflow/core/framework/tensor_shape_pb2.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">     34</span>   containing_type<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">None</span><span class="ansi-blue-fg">,</span>
+<span class="ansi-green-intense-fg ansi-bold">     35</span>   fields=[
+<span class="ansi-green-fg">---&gt; 36</span><span class="ansi-red-fg">     _descriptor.FieldDescriptor(
+</span><span class="ansi-green-intense-fg ansi-bold">     37</span>       name<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#39;size&#39;</span><span class="ansi-blue-fg">,</span> full_name<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#39;tensorflow.TensorShapeProto.Dim.size&#39;</span><span class="ansi-blue-fg">,</span> index<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">,</span>
+<span class="ansi-green-intense-fg ansi-bold">     38</span>       number<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">,</span> type<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">3</span><span class="ansi-blue-fg">,</span> cpp_type<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">,</span> label<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">,</span>
+
+<span class="ansi-green-fg">/usr/local/lib/python3.9/site-packages/google/protobuf/descriptor.py</span> in <span class="ansi-cyan-fg">__new__</span><span class="ansi-blue-fg">(cls, name, full_name, index, number, type, cpp_type, label, default_value, message_type, enum_type, containing_type, is_extension, extension_scope, options, serialized_options, has_default_value, containing_oneof, json_name, file, create_key)</span>
+<span class="ansi-green-intense-fg ansi-bold">    558</span>                 has_default_value<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">True</span><span class="ansi-blue-fg">,</span> containing_oneof<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">None</span><span class="ansi-blue-fg">,</span> json_name<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">None</span><span class="ansi-blue-fg">,</span>
+<span class="ansi-green-intense-fg ansi-bold">    559</span>                 file=None, create_key=None):  # pylint: disable=redefined-builtin
+<span class="ansi-green-fg">--&gt; 560</span><span class="ansi-red-fg">       </span>_message<span class="ansi-blue-fg">.</span>Message<span class="ansi-blue-fg">.</span>_CheckCalledFromGeneratedFile<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    561</span>       <span class="ansi-green-fg">if</span> is_extension<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">    562</span>         <span class="ansi-green-fg">return</span> _message<span class="ansi-blue-fg">.</span>default_pool<span class="ansi-blue-fg">.</span>FindExtensionByName<span class="ansi-blue-fg">(</span>full_name<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">TypeError</span>: Descriptors cannot not be created directly.
+If this call came from a _pb2.py file, your generated code is out of date and must be regenerated with protoc &gt;= 3.19.0.
+If you cannot immediately regenerate your protos, some other possible workarounds are:
+ 1. Downgrade the protobuf package to 3.20.x or lower.
+ 2. Set PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python (but this will use pure-Python parsing and will be much slower).
+
+More information: https://developers.google.com/protocol-buffers/docs/news/2022-05-06#python-updates</pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -1375,13 +1665,9 @@ class SentimentAnalysis:
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::basic_deployment_bind[]</span>
-<span class="n">basic_deployment</span> <span class="o">=</span> <span class="n">SentimentAnalysis</span><span class="o">.</span><span class="n">bind</span><span class="p">()</span>
-<span class="c1"># end::basic_deployment_bind[]</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">basic_deployment</span> <span class="o">=</span> <span class="n">SentimentAnalysis</span><span class="o">.</span><span class="n">bind</span><span class="p">()</span>
 </pre></div>
-<div id="cell-5" class="clipboard-copy-txt"># tag::basic_deployment_bind[]
-basic_deployment = SentimentAnalysis.bind()
-# end::basic_deployment_bind[]</div>
+<div id="cell-5" class="clipboard-copy-txt">basic_deployment = SentimentAnalysis.bind()</div>
     
         </div>
     </div>
@@ -1443,21 +1729,17 @@ basic_deployment = SentimentAnalysis.bind()
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::basic_deployment_query_1[]</span>
-<span class="kn">import</span> <span class="nn">requests</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
     <span class="s2">&quot;http://localhost:8000/&quot;</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;input_text&quot;</span><span class="p">:</span> <span class="s2">&quot;Hello friend!&quot;</span><span class="p">}</span>
 <span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
-<span class="c1"># end::basic_deployment_query_1[]</span>
 </pre></div>
-<div id="cell-7" class="clipboard-copy-txt"># tag::basic_deployment_query_1[]
-import requests
+<div id="cell-7" class="clipboard-copy-txt">import requests
 
 print(requests.get(
     "http://localhost:8000/", params={"input_text": "Hello friend!"}
-).json())
-# end::basic_deployment_query_1[]</div>
+).json())</div>
     
         </div>
     </div>
@@ -1486,8 +1768,7 @@ print(requests.get(
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::fastapi_deployment[]</span>
-<span class="kn">from</span> <span class="nn">fastapi</span> <span class="kn">import</span> <span class="n">FastAPI</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">fastapi</span> <span class="kn">import</span> <span class="n">FastAPI</span>
 
 <span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">()</span>
 
@@ -1504,10 +1785,8 @@ print(requests.get(
 
 
 <span class="n">fastapi_deployment</span> <span class="o">=</span> <span class="n">SentimentAnalysis</span><span class="o">.</span><span class="n">bind</span><span class="p">()</span>
-<span class="c1"># end::fastapi_deployment[]</span>
 </pre></div>
-<div id="cell-8" class="clipboard-copy-txt"># tag::fastapi_deployment[]
-from fastapi import FastAPI
+<div id="cell-8" class="clipboard-copy-txt">from fastapi import FastAPI
 
 app = FastAPI()
 
@@ -1523,8 +1802,7 @@ class SentimentAnalysis:
         return self._classifier(input_text)[0]["label"]
 
 
-fastapi_deployment = SentimentAnalysis.bind()
-# end::fastapi_deployment[]</div>
+fastapi_deployment = SentimentAnalysis.bind()</div>
     
         </div>
     </div>
@@ -1553,8 +1831,7 @@ fastapi_deployment = SentimentAnalysis.bind()
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::scaled_deployment[]</span>
-<span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">()</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">()</span>
 
 
 <span class="nd">@serve</span><span class="o">.</span><span class="n">deployment</span><span class="p">(</span><span class="n">num_replicas</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ray_actor_options</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;num_cpus&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">})</span>
@@ -1571,10 +1848,8 @@ fastapi_deployment = SentimentAnalysis.bind()
 
 
 <span class="n">scaled_deployment</span> <span class="o">=</span> <span class="n">SentimentAnalysis</span><span class="o">.</span><span class="n">bind</span><span class="p">()</span>
-<span class="c1"># end::scaled_deployment[]</span>
 </pre></div>
-<div id="cell-9" class="clipboard-copy-txt"># tag::scaled_deployment[]
-app = FastAPI()
+<div id="cell-9" class="clipboard-copy-txt">app = FastAPI()
 
 
 @serve.deployment(num_replicas=2, ray_actor_options={"num_cpus": 2})
@@ -1590,8 +1865,7 @@ class SentimentAnalysis:
         return self._classifier(input_text)[0]["label"]
 
 
-scaled_deployment = SentimentAnalysis.bind()
-# end::scaled_deployment[]</div>
+scaled_deployment = SentimentAnalysis.bind()</div>
     
         </div>
     </div>
@@ -1620,8 +1894,7 @@ scaled_deployment = SentimentAnalysis.bind()
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::batched_deployment[]</span>
-<span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">()</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">()</span>
 
 
 <span class="nd">@serve</span><span class="o">.</span><span class="n">deployment</span>
@@ -1642,10 +1915,8 @@ scaled_deployment = SentimentAnalysis.bind()
 
 
 <span class="n">batched_deployment</span> <span class="o">=</span> <span class="n">SentimentAnalysis</span><span class="o">.</span><span class="n">bind</span><span class="p">()</span>
-<span class="c1"># end::batched_deployment[]</span>
 </pre></div>
-<div id="cell-10" class="clipboard-copy-txt"># tag::batched_deployment[]
-app = FastAPI()
+<div id="cell-10" class="clipboard-copy-txt">app = FastAPI()
 
 
 @serve.deployment
@@ -1665,8 +1936,7 @@ class SentimentAnalysis:
         return await self.classify_batched(input_text)
 
 
-batched_deployment = SentimentAnalysis.bind()
-# end::batched_deployment[]</div>
+batched_deployment = SentimentAnalysis.bind()</div>
     
         </div>
     </div>
@@ -1695,23 +1965,19 @@ batched_deployment = SentimentAnalysis.bind()
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::run_batched_deployment[]</span>
-<span class="kn">import</span> <span class="nn">ray</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">ray</span>
 <span class="kn">from</span> <span class="nn">ray</span> <span class="kn">import</span> <span class="n">serve</span>
 <span class="kn">from</span> <span class="nn">app</span> <span class="kn">import</span> <span class="n">batched_deployment</span>
 
-<span class="n">handle</span> <span class="o">=</span> <span class="n">serve</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">batched_deployment</span><span class="p">)</span>  <span class="c1"># &lt;1&gt;</span>
+<span class="n">handle</span> <span class="o">=</span> <span class="n">serve</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">batched_deployment</span><span class="p">)</span>
 <span class="n">ray</span><span class="o">.</span><span class="n">get</span><span class="p">([</span><span class="n">handle</span><span class="o">.</span><span class="n">classify</span><span class="o">.</span><span class="n">remote</span><span class="p">(</span><span class="s2">&quot;sample text&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)])</span>
-<span class="c1"># end::run_batched_deployment[]</span>
 </pre></div>
-<div id="cell-11" class="clipboard-copy-txt"># tag::run_batched_deployment[]
-import ray
+<div id="cell-11" class="clipboard-copy-txt">import ray
 from ray import serve
 from app import batched_deployment
 
-handle = serve.run(batched_deployment)  # <1>
-ray.get([handle.classify.remote("sample text") for _ in range(10)])
-# end::run_batched_deployment[]</div>
+handle = serve.run(batched_deployment)
+ray.get([handle.classify.remote("sample text") for _ in range(10)])</div>
     
         </div>
     </div>
@@ -1740,8 +2006,7 @@ ray.get([handle.classify.remote("sample text") for _ in range(10)])
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::multi_deployment_basic[]</span>
-<span class="nd">@serve</span><span class="o">.</span><span class="n">deployment</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="nd">@serve</span><span class="o">.</span><span class="n">deployment</span>
 <span class="k">class</span> <span class="nc">DownstreamModel</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inp</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
         <span class="k">return</span> <span class="s2">&quot;Hi from downstream model!&quot;</span>
@@ -1758,10 +2023,8 @@ ray.get([handle.classify.remote("sample text") for _ in range(10)])
 
 <span class="n">downstream</span> <span class="o">=</span> <span class="n">DownstreamModel</span><span class="o">.</span><span class="n">bind</span><span class="p">()</span>
 <span class="n">driver</span> <span class="o">=</span> <span class="n">Driver</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">downstream</span><span class="p">)</span>
-<span class="c1"># end::multi_deployment_basic[]</span>
 </pre></div>
-<div id="cell-12" class="clipboard-copy-txt"># tag::multi_deployment_basic[]
-@serve.deployment
+<div id="cell-12" class="clipboard-copy-txt">@serve.deployment
 class DownstreamModel:
     def __call__(self, inp: str):
         return "Hi from downstream model!"
@@ -1777,8 +2040,7 @@ class Driver:
 
 
 downstream = DownstreamModel.bind()
-driver = Driver.bind(downstream)
-# end::multi_deployment_basic[]</div>
+driver = Driver.bind(downstream)</div>
     
         </div>
     </div>
@@ -1807,8 +2069,7 @@ driver = Driver.bind(downstream)
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::pipeline_deployment[]</span>
-<span class="nd">@serve</span><span class="o">.</span><span class="n">deployment</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="nd">@serve</span><span class="o">.</span><span class="n">deployment</span>
 <span class="k">class</span> <span class="nc">DownstreamModel</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">my_val</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_my_val</span> <span class="o">=</span> <span class="n">my_val</span>
@@ -1832,10 +2093,8 @@ driver = Driver.bind(downstream)
 <span class="n">m1</span> <span class="o">=</span> <span class="n">DownstreamModel</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;val1&quot;</span><span class="p">)</span>
 <span class="n">m2</span> <span class="o">=</span> <span class="n">DownstreamModel</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;val2&quot;</span><span class="p">)</span>
 <span class="n">pipeline_driver</span> <span class="o">=</span> <span class="n">PipelineDriver</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">m1</span><span class="p">,</span> <span class="n">m2</span><span class="p">)</span>
-<span class="c1"># end::pipeline_deployment[]</span>
 </pre></div>
-<div id="cell-13" class="clipboard-copy-txt"># tag::pipeline_deployment[]
-@serve.deployment
+<div id="cell-13" class="clipboard-copy-txt">@serve.deployment
 class DownstreamModel:
     def __init__(self, my_val: str):
         self._my_val = my_val
@@ -1858,8 +2117,7 @@ class PipelineDriver:
 
 m1 = DownstreamModel.bind("val1")
 m2 = DownstreamModel.bind("val2")
-pipeline_driver = PipelineDriver.bind(m1, m2)
-# end::pipeline_deployment[]</div>
+pipeline_driver = PipelineDriver.bind(m1, m2)</div>
     
         </div>
     </div>
@@ -1888,8 +2146,7 @@ pipeline_driver = PipelineDriver.bind(m1, m2)
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::broadcast_deployment[]</span>
-<span class="nd">@serve</span><span class="o">.</span><span class="n">deployment</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="nd">@serve</span><span class="o">.</span><span class="n">deployment</span>
 <span class="k">class</span> <span class="nc">DownstreamModel</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">my_val</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_my_val</span> <span class="o">=</span> <span class="n">my_val</span>
@@ -1912,10 +2169,8 @@ pipeline_driver = PipelineDriver.bind(m1, m2)
 <span class="n">m1</span> <span class="o">=</span> <span class="n">DownstreamModel</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;val1&quot;</span><span class="p">)</span>
 <span class="n">m2</span> <span class="o">=</span> <span class="n">DownstreamModel</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;val2&quot;</span><span class="p">)</span>
 <span class="n">broadcast_driver</span> <span class="o">=</span> <span class="n">BroadcastDriver</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">m1</span><span class="p">,</span> <span class="n">m2</span><span class="p">)</span>
-<span class="c1"># end::broadcast_deployment[]</span>
 </pre></div>
-<div id="cell-14" class="clipboard-copy-txt"># tag::broadcast_deployment[]
-@serve.deployment
+<div id="cell-14" class="clipboard-copy-txt">@serve.deployment
 class DownstreamModel:
     def __init__(self, my_val: str):
         self._my_val = my_val
@@ -1937,8 +2192,7 @@ class BroadcastDriver:
 
 m1 = DownstreamModel.bind("val1")
 m2 = DownstreamModel.bind("val2")
-broadcast_driver = BroadcastDriver.bind(m1, m2)
-# end::broadcast_deployment[]</div>
+broadcast_driver = BroadcastDriver.bind(m1, m2)</div>
     
         </div>
     </div>
@@ -1967,8 +2221,7 @@ broadcast_driver = BroadcastDriver.bind(m1, m2)
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::conditional_deployment[]</span>
-<span class="nd">@serve</span><span class="o">.</span><span class="n">deployment</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="nd">@serve</span><span class="o">.</span><span class="n">deployment</span>
 <span class="k">class</span> <span class="nc">DownstreamModel</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">my_val</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_my_val</span> <span class="o">=</span> <span class="n">my_val</span>
@@ -1994,10 +2247,8 @@ broadcast_driver = BroadcastDriver.bind(m1, m2)
 <span class="n">m1</span> <span class="o">=</span> <span class="n">DownstreamModel</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;val1&quot;</span><span class="p">)</span>
 <span class="n">m2</span> <span class="o">=</span> <span class="n">DownstreamModel</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;val2&quot;</span><span class="p">)</span>
 <span class="n">conditional_driver</span> <span class="o">=</span> <span class="n">ConditionalDriver</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">m1</span><span class="p">,</span> <span class="n">m2</span><span class="p">)</span>
-<span class="c1"># end::conditional_deployment[]</span>
 </pre></div>
-<div id="cell-15" class="clipboard-copy-txt"># tag::conditional_deployment[]
-@serve.deployment
+<div id="cell-15" class="clipboard-copy-txt">@serve.deployment
 class DownstreamModel:
     def __init__(self, my_val: str):
         self._my_val = my_val
@@ -2022,8 +2273,7 @@ class ConditionalDriver:
 
 m1 = DownstreamModel.bind("val1")
 m2 = DownstreamModel.bind("val2")
-conditional_driver = ConditionalDriver.bind(m1, m2)
-# end::conditional_deployment[]</div>
+conditional_driver = ConditionalDriver.bind(m1, m2)</div>
     
         </div>
     </div>
@@ -2052,8 +2302,7 @@ conditional_driver = ConditionalDriver.bind(m1, m2)
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::fetch_wikipedia[]</span>
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
 
 <span class="kn">import</span> <span class="nn">wikipedia</span>
 
@@ -2066,10 +2315,8 @@ conditional_driver = ConditionalDriver.bind(m1, m2)
 
     <span class="c1"># Get the page for the top result.</span>
     <span class="k">return</span> <span class="n">wikipedia</span><span class="o">.</span><span class="n">page</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">content</span>
-<span class="c1"># end::fetch_wikipedia[]</span>
 </pre></div>
-<div id="cell-16" class="clipboard-copy-txt"># tag::fetch_wikipedia[]
-from typing import Optional
+<div id="cell-16" class="clipboard-copy-txt">from typing import Optional
 
 import wikipedia
 
@@ -2081,8 +2328,7 @@ def fetch_wikipedia_page(search_term: str) -> Optional[str]:
         return None
 
     # Get the page for the top result.
-    return wikipedia.page(results[0]).content
-# end::fetch_wikipedia[]</div>
+    return wikipedia.page(results[0]).content</div>
     
         </div>
     </div>
@@ -2111,8 +2357,7 @@ def fetch_wikipedia_page(search_term: str) -> Optional[str]:
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::sentiment_analysis[]</span>
-<span class="kn">from</span> <span class="nn">ray</span> <span class="kn">import</span> <span class="n">serve</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">ray</span> <span class="kn">import</span> <span class="n">serve</span>
 <span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">pipeline</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
 
@@ -2129,10 +2374,8 @@ def fetch_wikipedia_page(search_term: str) -> Optional[str]:
 
     <span class="k">async</span> <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
         <span class="k">return</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_positive_batched</span><span class="p">(</span><span class="n">input_text</span><span class="p">)</span>
-<span class="c1"># end::sentiment_analysis[]</span>
 </pre></div>
-<div id="cell-17" class="clipboard-copy-txt"># tag::sentiment_analysis[]
-from ray import serve
+<div id="cell-17" class="clipboard-copy-txt">from ray import serve
 from transformers import pipeline
 from typing import List
 
@@ -2148,8 +2391,7 @@ class SentimentAnalysis:
         return [result["label"] == "POSITIVE" for result in results]
 
     async def __call__(self, input_text: str) -> bool:
-        return await self.is_positive_batched(input_text)
-# end::sentiment_analysis[]</div>
+        return await self.is_positive_batched(input_text)</div>
     
         </div>
     </div>
@@ -2178,8 +2420,7 @@ class SentimentAnalysis:
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::summarizer[]</span>
-<span class="nd">@serve</span><span class="o">.</span><span class="n">deployment</span><span class="p">(</span><span class="n">num_replicas</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="nd">@serve</span><span class="o">.</span><span class="n">deployment</span><span class="p">(</span><span class="n">num_replicas</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="k">class</span> <span class="nc">Summarizer</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">max_length</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_summarizer</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span><span class="s2">&quot;summarization&quot;</span><span class="p">)</span>
@@ -2189,10 +2430,8 @@ class SentimentAnalysis:
         <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_summarizer</span><span class="p">(</span>
             <span class="n">input_text</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_max_length</span><span class="p">,</span> <span class="n">truncation</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;summary_text&quot;</span><span class="p">]</span>
-<span class="c1"># end::summarizer[]</span>
 </pre></div>
-<div id="cell-18" class="clipboard-copy-txt"># tag::summarizer[]
-@serve.deployment(num_replicas=2)
+<div id="cell-18" class="clipboard-copy-txt">@serve.deployment(num_replicas=2)
 class Summarizer:
     def __init__(self, max_length: Optional[int] = None):
         self._summarizer = pipeline("summarization")
@@ -2201,8 +2440,7 @@ class Summarizer:
     def __call__(self, input_text: str) -> str:
         result = self._summarizer(
             input_text, max_length=self._max_length, truncation=True)
-        return result[0]["summary_text"]
-# end::summarizer[]</div>
+        return result[0]["summary_text"]</div>
     
         </div>
     </div>
@@ -2231,8 +2469,7 @@ class Summarizer:
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::entity_recognition[]</span>
-<span class="nd">@serve</span><span class="o">.</span><span class="n">deployment</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="nd">@serve</span><span class="o">.</span><span class="n">deployment</span>
 <span class="k">class</span> <span class="nc">EntityRecognition</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">threshold</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.90</span><span class="p">,</span> <span class="n">max_entities</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_entity_recognition</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span><span class="s2">&quot;ner&quot;</span><span class="p">)</span>
@@ -2248,10 +2485,8 @@ class Summarizer:
                 <span class="k">break</span>
 
         <span class="k">return</span> <span class="n">final_results</span>
-<span class="c1"># end::entity_recognition[]</span>
 </pre></div>
-<div id="cell-19" class="clipboard-copy-txt"># tag::entity_recognition[]
-@serve.deployment
+<div id="cell-19" class="clipboard-copy-txt">@serve.deployment
 class EntityRecognition:
     def __init__(self, threshold: float = 0.90, max_entities: int = 10):
         self._entity_recognition = pipeline("ner")
@@ -2266,8 +2501,7 @@ class EntityRecognition:
             if len(final_results) == self._max_entities:
                 break
 
-        return final_results
-# end::entity_recognition[]</div>
+        return final_results</div>
     
         </div>
     </div>
@@ -2296,8 +2530,7 @@ class EntityRecognition:
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::response_model[]</span>
-<span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span>
 
 
 <span class="k">class</span> <span class="nc">Response</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
@@ -2305,18 +2538,15 @@ class EntityRecognition:
     <span class="n">message</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
     <span class="n">summary</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
     <span class="n">named_entities</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="c1"># end::response_model[]</span>
 </pre></div>
-<div id="cell-20" class="clipboard-copy-txt"># tag::response_model[]
-from pydantic import BaseModel
+<div id="cell-20" class="clipboard-copy-txt">from pydantic import BaseModel
 
 
 class Response(BaseModel):
     success: bool
     message: str = ""
     summary: str = ""
-    named_entities: List[str] = []
-# end::response_model[]</div>
+    named_entities: List[str] = []</div>
     
         </div>
     </div>
@@ -2345,8 +2575,7 @@ class Response(BaseModel):
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::final_driver[]</span>
-<span class="kn">from</span> <span class="nn">fastapi</span> <span class="kn">import</span> <span class="n">FastAPI</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">fastapi</span> <span class="kn">import</span> <span class="n">FastAPI</span>
 
 <span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">()</span>
 
@@ -2379,10 +2608,8 @@ class Response(BaseModel):
             <span class="n">summary</span><span class="o">=</span><span class="k">await</span> <span class="n">summary_result</span><span class="p">,</span>
             <span class="n">named_entities</span><span class="o">=</span><span class="k">await</span> <span class="n">entities_result</span>
         <span class="p">)</span>
-<span class="c1"># end::final_driver[]</span>
 </pre></div>
-<div id="cell-21" class="clipboard-copy-txt"># tag::final_driver[]
-from fastapi import FastAPI
+<div id="cell-21" class="clipboard-copy-txt">from fastapi import FastAPI
 
 app = FastAPI()
 
@@ -2414,8 +2641,7 @@ class NLPPipelineDriver:
             success=True,
             summary=await summary_result,
             named_entities=await entities_result
-        )
-# end::final_driver[]</div>
+        )</div>
     
         </div>
     </div>
@@ -2444,21 +2670,17 @@ class NLPPipelineDriver:
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::final_pipeline[]</span>
-<span class="n">sentiment_analysis</span> <span class="o">=</span> <span class="n">SentimentAnalysis</span><span class="o">.</span><span class="n">bind</span><span class="p">()</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">sentiment_analysis</span> <span class="o">=</span> <span class="n">SentimentAnalysis</span><span class="o">.</span><span class="n">bind</span><span class="p">()</span>
 <span class="n">summarizer</span> <span class="o">=</span> <span class="n">Summarizer</span><span class="o">.</span><span class="n">bind</span><span class="p">()</span>
 <span class="n">entity_recognition</span> <span class="o">=</span> <span class="n">EntityRecognition</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">threshold</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span> <span class="n">max_entities</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 <span class="n">nlp_pipeline_driver</span> <span class="o">=</span> <span class="n">NLPPipelineDriver</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span>
     <span class="n">sentiment_analysis</span><span class="p">,</span> <span class="n">summarizer</span><span class="p">,</span> <span class="n">entity_recognition</span><span class="p">)</span>
-<span class="c1"># end::final_pipeline[]</span>
 </pre></div>
-<div id="cell-22" class="clipboard-copy-txt"># tag::final_pipeline[]
-sentiment_analysis = SentimentAnalysis.bind()
+<div id="cell-22" class="clipboard-copy-txt">sentiment_analysis = SentimentAnalysis.bind()
 summarizer = Summarizer.bind()
 entity_recognition = EntityRecognition.bind(threshold=0.95, max_entities=5)
 nlp_pipeline_driver = NLPPipelineDriver.bind(
-    sentiment_analysis, summarizer, entity_recognition)
-# end::final_pipeline[]</div>
+    sentiment_analysis, summarizer, entity_recognition)</div>
     
         </div>
     </div>
@@ -2520,24 +2742,19 @@ nlp_pipeline_driver = NLPPipelineDriver.bind(
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::basic_deployment_query_2[]</span>
-<span class="kn">import</span> <span class="nn">requests</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
 
 
 <span class="nb">print</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
     <span class="s2">&quot;http://localhost:8000/&quot;</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;search_term&quot;</span><span class="p">:</span> <span class="s2">&quot;rayserve&quot;</span><span class="p">}</span>
 <span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
-<span class="c1"># end::basic_deployment_query_2[]</span>
 </pre></div>
-<div id="cell-24" class="clipboard-copy-txt">
-# tag::basic_deployment_query_2[]
-import requests
+<div id="cell-24" class="clipboard-copy-txt">import requests
 
 
 print(requests.get(
     "http://localhost:8000/", params={"search_term": "rayserve"}
-).text)
-# end::basic_deployment_query_2[]</div>
+).text)</div>
     
         </div>
     </div>
@@ -2566,17 +2783,13 @@ print(requests.get(
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::basic_deployment_query_3[]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
     <span class="s2">&quot;http://localhost:8000/&quot;</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;search_term&quot;</span><span class="p">:</span> <span class="s2">&quot;war&quot;</span><span class="p">}</span>
 <span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
-<span class="c1"># end::basic_deployment_query_3[]</span>
 </pre></div>
-<div id="cell-25" class="clipboard-copy-txt"># tag::basic_deployment_query_3[]
-print(requests.get(
+<div id="cell-25" class="clipboard-copy-txt">print(requests.get(
     "http://localhost:8000/", params={"search_term": "war"}
-).text)
-# end::basic_deployment_query_3[]</div>
+).text)</div>
     
         </div>
     </div>
@@ -2605,17 +2818,13 @@ print(requests.get(
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::basic_deployment_query_4[]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
     <span class="s2">&quot;http://localhost:8000/&quot;</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;search_term&quot;</span><span class="p">:</span> <span class="s2">&quot;physicist&quot;</span><span class="p">}</span>
 <span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
-<span class="c1"># end::basic_deployment_query_4[]</span>
 </pre></div>
-<div id="cell-26" class="clipboard-copy-txt"># tag::basic_deployment_query_4[]
-print(requests.get(
+<div id="cell-26" class="clipboard-copy-txt">print(requests.get(
     "http://localhost:8000/", params={"search_term": "physicist"}
-).text)
-# end::basic_deployment_query_4[]</div>
+).text)</div>
     
         </div>
     </div>
