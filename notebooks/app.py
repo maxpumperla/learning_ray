@@ -60,8 +60,6 @@ class SentimentAnalysis:
 batched_deployment = SentimentAnalysis.bind()
 
 
-# %%
-# tag::fetch_wikipedia[]
 from typing import Optional
 
 import wikipedia
@@ -75,11 +73,8 @@ def fetch_wikipedia_page(search_term: str) -> Optional[str]:
 
     # Get the page for the top result.
     return wikipedia.page(results[0]).content
-# end::fetch_wikipedia[]
 
 
-# %%
-# tag::sentiment_analysis[]
 from ray import serve
 from transformers import pipeline
 from typing import List
@@ -97,11 +92,8 @@ class SentimentAnalysis:
 
     async def __call__(self, input_text: str) -> bool:
         return await self.is_positive_batched(input_text)
-# end::sentiment_analysis[]
 
 
-# %%
-# tag::summarizer[]
 @serve.deployment(num_replicas=2)
 class Summarizer:
     def __init__(self, max_length: Optional[int] = None):
@@ -112,11 +104,8 @@ class Summarizer:
         result = self._summarizer(
             input_text, max_length=self._max_length, truncation=True)
         return result[0]["summary_text"]
-# end::summarizer[]
 
 
-# %%
-# tag::entity_recognition[]
 @serve.deployment
 class EntityRecognition:
     def __init__(self, threshold: float = 0.90, max_entities: int = 10):
@@ -133,11 +122,8 @@ class EntityRecognition:
                 break
 
         return final_results
-# end::entity_recognition[]
 
 
-# %%
-# tag::response_model[]
 from pydantic import BaseModel
 
 
@@ -146,7 +132,7 @@ class Response(BaseModel):
     message: str = ""
     summary: str = ""
     named_entities: List[str] = []
-# end::response_model[]
+
 
 from fastapi import FastAPI
 

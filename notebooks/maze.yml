@@ -1,9 +1,6 @@
-# tag::maze_config[]
-# maze.yml
 maze_env:
-    env: maze_gym_env.GymEnvironment  # <1>
+    env: maze_gym_env.GymEnvironment
     run: DQN
-    checkpoint_freq: 1 # <2>
+    checkpoint_freq: 1
     stop:
-        timesteps_total: 10000  # <3>
-# end::maze_config[]
+        timesteps_total: 10000

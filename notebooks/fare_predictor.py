@@ -1,5 +1,3 @@
-# %%
-# tag::ml_pipeline_model[]
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -26,4 +24,3 @@ class FarePredictor(nn.Module):
         x = torch.sigmoid(self.fc3(x))
 
         return x
-# end::ml_pipeline_model[]

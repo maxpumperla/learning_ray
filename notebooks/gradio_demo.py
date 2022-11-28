@@ -23,8 +23,6 @@ class Net(nn.Module):
         return x
 
 
-# tag::load_checkpoint[]
-# gradio_demo.py
 from ray.train.torch import TorchCheckpoint, TorchPredictor
 
 CHECKPOINT_PATH = "torch_checkpoint"
@@ -33,30 +31,26 @@ predictor = TorchPredictor.from_checkpoint(
     checkpoint=checkpoint,
     model=Net()
 )
-# end::load_checkpoint[]
 
-# tag::gradio[]
+
 from ray.serve.gradio_integrations import GradioServer
 import gradio as gr
 import numpy as np
 
 
-def predict(payload):  # <1>
+def predict(payload):
     payload = np.array(payload, dtype=np.float32)
     array = payload.reshape((1, 3, 32, 32))
     return np.argmax(predictor.predict(array))
 
 
-demo = gr.Interface(  # <2>
+demo = gr.Interface(
     fn=predict,
     inputs=gr.Image(),
     outputs=gr.Label(num_top_classes=10)
 )
 
-app = GradioServer.options(  # <3>
+app = GradioServer.options(
     num_replicas=2,
     ray_actor_options={"num_cpus": 2}
 ).bind(demo)
-# end::gradio[]
-
-# demo.launch()

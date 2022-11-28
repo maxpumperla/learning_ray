@@ -1,4 +1,3 @@
-# %%
 import os
 
 import random
@@ -12,7 +11,7 @@ class Discrete:
         self.n = num_actions
 
     def sample(self):
-        return random.randint(0, self.n - 1)  # <1>
+        return random.randint(0, self.n - 1)
 
 
 class Environment:
@@ -24,7 +23,7 @@ class Environment:
         self.action_space = Discrete(4)
         self.observation_space = Discrete(5*5)
 
-    def reset(self):  # <1>
+    def reset(self):
         """Reset seeker and goal positions, return observations."""
         self.seeker = (0, 0)
         self.goal = (4, 4)
@@ -56,11 +55,11 @@ class Environment:
         else:
             raise ValueError("Invalid action")
 
-        return self.get_observation(), self.get_reward(), self.is_done(), self.info  # <1>
+        return self.get_observation(), self.get_reward(), self.is_done(), self.info
 
     def render(self, *args, **kwargs):
         """Render the environment, e.g. by printing its representation."""
-        os.system('cls' if os.name == 'nt' else 'clear')  # <1>
+        os.system('cls' if os.name == 'nt' else 'clear')
         try:
             from IPython.display import clear_output
             clear_output(wait=True)
@@ -68,26 +67,18 @@ class Environment:
             pass
         grid = [['| ' for _ in range(5)] + ["|\n"] for _ in range(5)]
         grid[self.goal[0]][self.goal[1]] = '|G'
-        grid[self.seeker[0]][self.seeker[1]] = '|S'  # <2>
-        print(''.join([''.join(grid_row) for grid_row in grid]))  # <3>
+        grid[self.seeker[0]][self.seeker[1]] = '|S'
+        print(''.join([''.join(grid_row) for grid_row in grid]))
 
-
-# %%
-# tag::override_env[]
-# maze_gym_env.py  | Original definition of `Environment` goes at the top.
 
 import gym
-from gym.spaces import Discrete  # <1>
+from gym.spaces import Discrete
 
 
-class GymEnvironment(Environment, gym.Env):  # <2>
+class GymEnvironment(Environment, gym.Env):
     def __init__(self, *args, **kwargs):
         """Make our original `Environment` a gym `Env`."""
         super().__init__(*args, **kwargs)
 
 
 gym_env = GymEnvironment()
-# end::override_env[]
-
-
-
