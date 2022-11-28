@@ -16,11 +16,11 @@
         <link rel="canonical" href="https://maxpumperla.com/learning_ray/ch_08_model_serving/">
       
       <link rel="icon" href="../assets/favicon.ico">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.6">
     
     
       
-        <title>Chapter 8: Online Inference with Ray Serve - Learning Ray - Flexible Distributed Python for Machine Learning</title>
+        <title>Online Inference with Ray Serve - Learning Ray - Flexible Distributed Python for Machine Learning</title>
       
     
     
@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#chapter-8-online-inference-with-ray-serve" class="md-skip">
+        <a href="#online-inference-with-ray-serve" class="md-skip">
           Skip to content
         </a>
       
@@ -127,7 +127,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Chapter 8: Online Inference with Ray Serve
+              Online Inference with Ray Serve
             
           </span>
         </div>
@@ -262,7 +262,7 @@
   
     <li class="md-nav__item">
       <a href=".." class="md-nav__link">
-        Welcome
+        Welcome to Learning Ray
       </a>
     </li>
   
@@ -277,7 +277,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_01_overview/" class="md-nav__link">
-        :simple-futurelearn: An Overview of Ray
+        An Overview of Ray
       </a>
     </li>
   
@@ -292,7 +292,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_02_ray_core/" class="md-nav__link">
-        Chapter 2: Getting Started with Ray Core
+        Getting Started with Ray Core
       </a>
     </li>
   
@@ -307,7 +307,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_03_core_app/" class="md-nav__link">
-        Chapter 3: Building Your First Distributed Application With Ray Core
+        Building Your First Distributed Application With Ray Core
       </a>
     </li>
   
@@ -322,7 +322,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_04_rllib/" class="md-nav__link">
-        Chapter 4: Reinforcement Learning with Ray RLlib
+        Reinforcement Learning with Ray RLlib
       </a>
     </li>
   
@@ -337,7 +337,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_05_tune/" class="md-nav__link">
-        Chapter 5: Hyperparameter Optimization with Ray Tune
+        Hyperparameter Optimization with Ray Tune
       </a>
     </li>
   
@@ -352,7 +352,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_06_data_processing/" class="md-nav__link">
-        Chapter 6: Data Processing with Ray
+        Data Processing with Ray
       </a>
     </li>
   
@@ -367,7 +367,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_07_train/" class="md-nav__link">
-        Chapter 7: Distributed Training with Ray Train
+        Distributed Training with Ray Train
       </a>
     </li>
   
@@ -391,7 +391,7 @@
       
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Chapter 8: Online Inference with Ray Serve
+        Online Inference with Ray Serve
       </a>
       
     </li>
@@ -407,7 +407,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_09_script/" class="md-nav__link">
-        Chapter 9: Ray Clusters
+        Ray Clusters
       </a>
     </li>
   
@@ -422,7 +422,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_10_air/" class="md-nav__link">
-        Chapter 10: Getting Started with the Ray AI Runtime
+        Getting Started with the Ray AI Runtime
       </a>
     </li>
   
@@ -437,7 +437,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_11_ecosystem/" class="md-nav__link">
-        Chapter 11: Ray's Ecosystem and Beyond
+        Ray's Ecosystem and Beyond
       </a>
     </li>
   
@@ -1131,34 +1131,24 @@ all of MD as it is not optimized for dense, information rich UIs.
                 },
                 displayAlign: 'center',
                 CommonHTML: {
-                    linebreaks: {
-                    automatic: true
+                    linebreaks: { 
+                    automatic: true 
                     }
                 }
             });
-
+        
             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
         }
     }
     init_mathjax();
     </script>
     <!-- End of mathjax configuration --><div class="jupyter-wrapper">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="chapter-8-online-inference-with-ray-serve">Chapter 8: Online Inference with Ray Serve<a class="anchor-link" href="#Chapter-8:-Online-Inference-with-Ray-Serve">&#182;</a></h1>
+<h1 id="online-inference-with-ray-serve">Online Inference with Ray Serve<a class="anchor-link" href="#Online-Inference-with-Ray-Serve">&#182;</a></h1>
 </div>
 </div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>You can run this notebook directly in
 <a href="https://colab.research.google.com/github/maxpumperla/learning_ray/blob/main/notebooks/ch_08_model_serving.ipynb">Colab</a>.
@@ -1170,13 +1160,9 @@ available, you can install it using <code>pip install ray==2.2.0</code>. If not,
 use a nightly wheel (here for Python 3.7 on Linux):</p>
 
 </div>
-</div>
-</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
@@ -1204,26 +1190,18 @@ use a nightly wheel (here for Python 3.7 on Linux):</p>
 
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Should you not run this notebook in Colab and need another type of wheel, please
 refer to Ray's <a href="https://docs.ray.io/en/latest/ray-overview/installation.html#install-nightlies">installation instructions for nightlies</a>.</p>
 <p>For this chapter you will also need to install the following dependencies:</p>
 
 </div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
@@ -1249,163 +1227,17 @@ refer to Ray's <a href="https://docs.ray.io/en/latest/ray-overview/installation.
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre><span class="ansi-yellow-fg">DEPRECATION: Configuring installation scheme with distutils config files is deprecated and will no longer work in the near future. If you are using a Homebrew or Linuxbrew Python, please see discussion at https://github.com/Homebrew/homebrew-core/issues/76621</span><span class="ansi-yellow-fg">
-</span>Requirement already satisfied: ray[serve]&gt;=2.1.0 in /usr/local/lib/python3.9/site-packages (2.1.0)
-Collecting transformers==4.21.2
-  Using cached transformers-4.21.2-py3-none-any.whl (4.7 MB)
-Requirement already satisfied: pyyaml&gt;=5.1 in /usr/local/lib/python3.9/site-packages (from transformers==4.21.2) (5.4.1)
-Requirement already satisfied: tokenizers!=0.11.3,&lt;0.13,&gt;=0.11.1 in /usr/local/lib/python3.9/site-packages (from transformers==4.21.2) (0.12.1)
-Requirement already satisfied: filelock in /usr/local/lib/python3.9/site-packages (from transformers==4.21.2) (3.3.1)
-Requirement already satisfied: packaging&gt;=20.0 in /usr/local/lib/python3.9/site-packages (from transformers==4.21.2) (21.3)
-Requirement already satisfied: regex!=2019.12.17 in /usr/local/lib/python3.9/site-packages (from transformers==4.21.2) (2021.4.4)
-Requirement already satisfied: tqdm&gt;=4.27 in /usr/local/lib/python3.9/site-packages (from transformers==4.21.2) (4.42.1)
-Requirement already satisfied: numpy&gt;=1.17 in /usr/local/lib/python3.9/site-packages (from transformers==4.21.2) (1.23.3)
-Requirement already satisfied: requests in /usr/local/lib/python3.9/site-packages (from transformers==4.21.2) (2.25.1)
-Requirement already satisfied: huggingface-hub&lt;1.0,&gt;=0.1.0 in /usr/local/lib/python3.9/site-packages (from transformers==4.21.2) (0.5.1)
-Requirement already satisfied: msgpack&lt;2.0.0,&gt;=1.0.0 in /usr/local/lib/python3.9/site-packages (from ray[serve]&gt;=2.1.0) (1.0.3)
-Requirement already satisfied: aiosignal in /usr/local/lib/python3.9/site-packages (from ray[serve]&gt;=2.1.0) (1.2.0)
-Requirement already satisfied: attrs in /usr/local/lib/python3.9/site-packages (from ray[serve]&gt;=2.1.0) (20.3.0)
-Requirement already satisfied: jsonschema in /usr/local/lib/python3.9/site-packages (from ray[serve]&gt;=2.1.0) (3.2.0)
-Requirement already satisfied: protobuf!=3.19.5,&gt;=3.15.3 in /usr/local/lib/python3.9/site-packages (from ray[serve]&gt;=2.1.0) (3.19.6)
-Requirement already satisfied: click&lt;=8.0.4,&gt;=7.0 in /usr/local/lib/python3.9/site-packages (from ray[serve]&gt;=2.1.0) (7.1.2)
-Requirement already satisfied: frozenlist in /usr/local/lib/python3.9/site-packages (from ray[serve]&gt;=2.1.0) (1.3.0)
-Requirement already satisfied: virtualenv&gt;=20.0.24 in /usr/local/lib/python3.9/site-packages (from ray[serve]&gt;=2.1.0) (20.8.1)
-Requirement already satisfied: grpcio&gt;=1.32.0 in /usr/local/lib/python3.9/site-packages (from ray[serve]&gt;=2.1.0) (1.43.0)
-Requirement already satisfied: colorful in /usr/local/lib/python3.9/site-packages (from ray[serve]&gt;=2.1.0) (0.5.4)
-Requirement already satisfied: aiohttp&gt;=3.7 in /usr/local/lib/python3.9/site-packages (from ray[serve]&gt;=2.1.0) (3.8.1)
-Requirement already satisfied: smart-open in /usr/local/lib/python3.9/site-packages (from ray[serve]&gt;=2.1.0) (6.2.0)
-Requirement already satisfied: aiorwlock in /usr/local/lib/python3.9/site-packages (from ray[serve]&gt;=2.1.0) (1.3.0)
-Requirement already satisfied: fastapi in /usr/local/lib/python3.9/site-packages (from ray[serve]&gt;=2.1.0) (0.75.2)
-Requirement already satisfied: aiohttp-cors in /usr/local/lib/python3.9/site-packages (from ray[serve]&gt;=2.1.0) (0.7.0)
-Requirement already satisfied: gpustat&gt;=1.0.0 in /usr/local/lib/python3.9/site-packages (from ray[serve]&gt;=2.1.0) (1.0.0)
-Requirement already satisfied: uvicorn in /usr/local/lib/python3.9/site-packages (from ray[serve]&gt;=2.1.0) (0.16.0)
-Requirement already satisfied: starlette in /usr/local/lib/python3.9/site-packages (from ray[serve]&gt;=2.1.0) (0.17.1)
-Requirement already satisfied: opencensus in /usr/local/lib/python3.9/site-packages (from ray[serve]&gt;=2.1.0) (0.11.0)
-Requirement already satisfied: prometheus-client&lt;0.14.0,&gt;=0.7.1 in /usr/local/lib/python3.9/site-packages (from ray[serve]&gt;=2.1.0) (0.12.0)
-Requirement already satisfied: pydantic in /usr/local/lib/python3.9/site-packages (from ray[serve]&gt;=2.1.0) (1.9.0)
-Requirement already satisfied: py-spy&gt;=0.2.0 in /usr/local/lib/python3.9/site-packages (from ray[serve]&gt;=2.1.0) (0.3.14)
-Requirement already satisfied: yarl&lt;2.0,&gt;=1.0 in /usr/local/lib/python3.9/site-packages (from aiohttp&gt;=3.7-&gt;ray[serve]&gt;=2.1.0) (1.7.2)
-Requirement already satisfied: charset-normalizer&lt;3.0,&gt;=2.0 in /usr/local/lib/python3.9/site-packages (from aiohttp&gt;=3.7-&gt;ray[serve]&gt;=2.1.0) (2.0.12)
-Requirement already satisfied: async-timeout&lt;5.0,&gt;=4.0.0a3 in /usr/local/lib/python3.9/site-packages (from aiohttp&gt;=3.7-&gt;ray[serve]&gt;=2.1.0) (4.0.2)
-Requirement already satisfied: multidict&lt;7.0,&gt;=4.5 in /usr/local/lib/python3.9/site-packages (from aiohttp&gt;=3.7-&gt;ray[serve]&gt;=2.1.0) (6.0.2)
-Requirement already satisfied: blessed&gt;=1.17.1 in /usr/local/lib/python3.9/site-packages (from gpustat&gt;=1.0.0-&gt;ray[serve]&gt;=2.1.0) (1.17.6)
-Requirement already satisfied: six&gt;=1.7 in /usr/local/lib/python3.9/site-packages/six-1.15.0-py3.9.egg (from gpustat&gt;=1.0.0-&gt;ray[serve]&gt;=2.1.0) (1.15.0)
-Requirement already satisfied: nvidia-ml-py&lt;=11.495.46,&gt;=11.450.129 in /usr/local/lib/python3.9/site-packages (from gpustat&gt;=1.0.0-&gt;ray[serve]&gt;=2.1.0) (11.495.46)
-Requirement already satisfied: psutil&gt;=5.6.0 in /usr/local/lib/python3.9/site-packages (from gpustat&gt;=1.0.0-&gt;ray[serve]&gt;=2.1.0) (5.9.2)
-Requirement already satisfied: typing-extensions&gt;=3.7.4.3 in /usr/local/lib/python3.9/site-packages (from huggingface-hub&lt;1.0,&gt;=0.1.0-&gt;transformers==4.21.2) (3.10.0.2)
-Requirement already satisfied: pyparsing!=3.0.5,&gt;=2.0.2 in /usr/local/lib/python3.9/site-packages (from packaging&gt;=20.0-&gt;transformers==4.21.2) (2.4.7)
-Requirement already satisfied: platformdirs&lt;3,&gt;=2 in /usr/local/lib/python3.9/site-packages (from virtualenv&gt;=20.0.24-&gt;ray[serve]&gt;=2.1.0) (2.4.0)
-Requirement already satisfied: distlib&lt;1,&gt;=0.3.1 in /usr/local/lib/python3.9/site-packages (from virtualenv&gt;=20.0.24-&gt;ray[serve]&gt;=2.1.0) (0.3.3)
-Requirement already satisfied: backports.entry-points-selectable&gt;=1.0.4 in /usr/local/lib/python3.9/site-packages (from virtualenv&gt;=20.0.24-&gt;ray[serve]&gt;=2.1.0) (1.1.0)
-Requirement already satisfied: anyio&lt;4,&gt;=3.0.0 in /usr/local/lib/python3.9/site-packages (from starlette-&gt;ray[serve]&gt;=2.1.0) (3.5.0)
-Requirement already satisfied: pyrsistent&gt;=0.14.0 in /usr/local/lib/python3.9/site-packages (from jsonschema-&gt;ray[serve]&gt;=2.1.0) (0.17.3)
-Requirement already satisfied: setuptools in /usr/local/lib/python3.9/site-packages (from jsonschema-&gt;ray[serve]&gt;=2.1.0) (59.5.0)
-Requirement already satisfied: opencensus-context&gt;=0.1.3 in /usr/local/lib/python3.9/site-packages (from opencensus-&gt;ray[serve]&gt;=2.1.0) (0.1.3)
-Requirement already satisfied: google-api-core&lt;3.0.0,&gt;=1.0.0 in /usr/local/lib/python3.9/site-packages (from opencensus-&gt;ray[serve]&gt;=2.1.0) (2.10.1)
-Requirement already satisfied: certifi&gt;=2017.4.17 in /usr/local/lib/python3.9/site-packages (from requests-&gt;transformers==4.21.2) (2020.12.5)
-Requirement already satisfied: chardet&lt;5,&gt;=3.0.2 in /usr/local/lib/python3.9/site-packages (from requests-&gt;transformers==4.21.2) (4.0.0)
-Requirement already satisfied: idna&lt;3,&gt;=2.5 in /usr/local/lib/python3.9/site-packages (from requests-&gt;transformers==4.21.2) (2.10)
-Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /usr/local/lib/python3.9/site-packages (from requests-&gt;transformers==4.21.2) (1.26.12)
-Requirement already satisfied: h11&gt;=0.8 in /usr/local/lib/python3.9/site-packages (from uvicorn-&gt;ray[serve]&gt;=2.1.0) (0.13.0)
-Requirement already satisfied: asgiref&gt;=3.4.0 in /usr/local/lib/python3.9/site-packages (from uvicorn-&gt;ray[serve]&gt;=2.1.0) (3.5.0)
-Requirement already satisfied: sniffio&gt;=1.1 in /usr/local/lib/python3.9/site-packages (from anyio&lt;4,&gt;=3.0.0-&gt;starlette-&gt;ray[serve]&gt;=2.1.0) (1.2.0)
-Requirement already satisfied: wcwidth&gt;=0.1.4 in /usr/local/lib/python3.9/site-packages (from blessed&gt;=1.17.1-&gt;gpustat&gt;=1.0.0-&gt;ray[serve]&gt;=2.1.0) (0.2.5)
-Requirement already satisfied: google-auth&lt;3.0dev,&gt;=1.25.0 in /usr/local/lib/python3.9/site-packages (from google-api-core&lt;3.0.0,&gt;=1.0.0-&gt;opencensus-&gt;ray[serve]&gt;=2.1.0) (2.11.0)
-Requirement already satisfied: googleapis-common-protos&lt;2.0dev,&gt;=1.56.2 in /usr/local/lib/python3.9/site-packages (from google-api-core&lt;3.0.0,&gt;=1.0.0-&gt;opencensus-&gt;ray[serve]&gt;=2.1.0) (1.56.4)
-Collecting protobuf!=3.19.5,&gt;=3.15.3
-  Using cached protobuf-4.21.9-cp37-abi3-macosx_10_9_universal2.whl (483 kB)
-Requirement already satisfied: cachetools&lt;6.0,&gt;=2.0.0 in /usr/local/lib/python3.9/site-packages (from google-auth&lt;3.0dev,&gt;=1.25.0-&gt;google-api-core&lt;3.0.0,&gt;=1.0.0-&gt;opencensus-&gt;ray[serve]&gt;=2.1.0) (4.2.1)
-Requirement already satisfied: pyasn1-modules&gt;=0.2.1 in /usr/local/lib/python3.9/site-packages (from google-auth&lt;3.0dev,&gt;=1.25.0-&gt;google-api-core&lt;3.0.0,&gt;=1.0.0-&gt;opencensus-&gt;ray[serve]&gt;=2.1.0) (0.2.8)
-Requirement already satisfied: rsa&lt;5,&gt;=3.1.4 in /usr/local/lib/python3.9/site-packages (from google-auth&lt;3.0dev,&gt;=1.25.0-&gt;google-api-core&lt;3.0.0,&gt;=1.0.0-&gt;opencensus-&gt;ray[serve]&gt;=2.1.0) (4.9)
-Requirement already satisfied: pyasn1&lt;0.5.0,&gt;=0.4.6 in /usr/local/lib/python3.9/site-packages (from pyasn1-modules&gt;=0.2.1-&gt;google-auth&lt;3.0dev,&gt;=1.25.0-&gt;google-api-core&lt;3.0.0,&gt;=1.0.0-&gt;opencensus-&gt;ray[serve]&gt;=2.1.0) (0.4.8)
-Installing collected packages: protobuf, transformers
-  Attempting uninstall: protobuf
-    Found existing installation: protobuf 3.19.6
-    Uninstalling protobuf-3.19.6:
-      Successfully uninstalled protobuf-3.19.6
-<span class="ansi-yellow-fg">  DEPRECATION: Configuring installation scheme with distutils config files is deprecated and will no longer work in the near future. If you are using a Homebrew or Linuxbrew Python, please see discussion at https://github.com/Homebrew/homebrew-core/issues/76621</span><span class="ansi-yellow-fg">
-</span>  Attempting uninstall: transformers
-    Found existing installation: transformers 4.18.0
-    Uninstalling transformers-4.18.0:
-      Successfully uninstalled transformers-4.18.0
-<span class="ansi-yellow-fg">  DEPRECATION: Configuring installation scheme with distutils config files is deprecated and will no longer work in the near future. If you are using a Homebrew or Linuxbrew Python, please see discussion at https://github.com/Homebrew/homebrew-core/issues/76621</span><span class="ansi-yellow-fg">
-</span><span class="ansi-yellow-fg">DEPRECATION: Configuring installation scheme with distutils config files is deprecated and will no longer work in the near future. If you are using a Homebrew or Linuxbrew Python, please see discussion at https://github.com/Homebrew/homebrew-core/issues/76621</span><span class="ansi-yellow-fg">
-</span><span class="ansi-red-fg">ERROR: pip&#39;s dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
-tensorflow 2.10.0 requires protobuf&lt;3.20,&gt;=3.9.2, but you have protobuf 4.21.9 which is incompatible.
-tensorboardx 2.5.1 requires protobuf&lt;=3.20.1,&gt;=3.8.0, but you have protobuf 4.21.9 which is incompatible.
-tensorboard 2.10.1 requires protobuf&lt;3.20,&gt;=3.9.2, but you have protobuf 4.21.9 which is incompatible.</span><span class="ansi-red-fg">
-</span>Successfully installed protobuf-4.21.9 transformers-4.21.2
-<span class="ansi-yellow-fg">WARNING: There was an error checking the latest version of pip.</span><span class="ansi-yellow-fg">
-</span><span class="ansi-yellow-fg">DEPRECATION: Configuring installation scheme with distutils config files is deprecated and will no longer work in the near future. If you are using a Homebrew or Linuxbrew Python, please see discussion at https://github.com/Homebrew/homebrew-core/issues/76621</span><span class="ansi-yellow-fg">
-</span>Collecting requests==2.28.1
-  Using cached requests-2.28.1-py3-none-any.whl (62 kB)
-Collecting wikipedia==1.4.0
-  Using cached wikipedia-1.4.0.tar.gz (27 kB)
-  Preparing metadata (setup.py) ... done
-Requirement already satisfied: idna&lt;4,&gt;=2.5 in /usr/local/lib/python3.9/site-packages (from requests==2.28.1) (2.10)
-Requirement already satisfied: certifi&gt;=2017.4.17 in /usr/local/lib/python3.9/site-packages (from requests==2.28.1) (2020.12.5)
-Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /usr/local/lib/python3.9/site-packages (from requests==2.28.1) (1.26.12)
-Requirement already satisfied: charset-normalizer&lt;3,&gt;=2 in /usr/local/lib/python3.9/site-packages (from requests==2.28.1) (2.0.12)
-Requirement already satisfied: beautifulsoup4 in /usr/local/lib/python3.9/site-packages (from wikipedia==1.4.0) (4.9.3)
-Requirement already satisfied: soupsieve&gt;1.2 in /usr/local/lib/python3.9/site-packages (from beautifulsoup4-&gt;wikipedia==1.4.0) (2.2)
-Building wheels for collected packages: wikipedia
-  Building wheel for wikipedia (setup.py) ... done
-  Created wheel for wikipedia: filename=wikipedia-1.4.0-py3-none-any.whl size=11695 sha256=075c09ebaba55311c55a902b9d1df01101a9c1a4c8327dd8d9807ce1888e5a7b
-  Stored in directory: /Users/maxpumperla/Library/Caches/pip/wheels/c2/46/f4/caa1bee71096d7b0cdca2f2a2af45cacf35c5760bee8f00948
-Successfully built wikipedia
-Installing collected packages: requests, wikipedia
-  Attempting uninstall: requests
-    Found existing installation: requests 2.25.1
-    Uninstalling requests-2.25.1:
-      Successfully uninstalled requests-2.25.1
-<span class="ansi-yellow-fg">  DEPRECATION: Configuring installation scheme with distutils config files is deprecated and will no longer work in the near future. If you are using a Homebrew or Linuxbrew Python, please see discussion at https://github.com/Homebrew/homebrew-core/issues/76621</span><span class="ansi-yellow-fg">
-</span><span class="ansi-yellow-fg">  DEPRECATION: Configuring installation scheme with distutils config files is deprecated and will no longer work in the near future. If you are using a Homebrew or Linuxbrew Python, please see discussion at https://github.com/Homebrew/homebrew-core/issues/76621</span><span class="ansi-yellow-fg">
-</span><span class="ansi-yellow-fg">DEPRECATION: Configuring installation scheme with distutils config files is deprecated and will no longer work in the near future. If you are using a Homebrew or Linuxbrew Python, please see discussion at https://github.com/Homebrew/homebrew-core/issues/76621</span><span class="ansi-yellow-fg">
-</span><span class="ansi-red-fg">ERROR: pip&#39;s dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
-tensorboard 2.10.1 requires protobuf&lt;3.20,&gt;=3.9.2, but you have protobuf 4.21.9 which is incompatible.</span><span class="ansi-red-fg">
-</span>Successfully installed requests-2.28.1 wikipedia-1.4.0
-<span class="ansi-yellow-fg">WARNING: There was an error checking the latest version of pip.</span><span class="ansi-yellow-fg">
-</span></pre>
 </div>
 </div>
-
-</div>
-
-</div>
-
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>To import utility files for this chapter, on Colab you will also have to clone
 the repo and copy the code files to the base path of the runtime:</p>
 
 </div>
-</div>
-</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
@@ -1434,13 +1266,11 @@ the repo and copy the code files to the base path of the runtime:</p>
 </div>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
@@ -1488,168 +1318,10 @@ class SentimentAnalysis:
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2022-11-28 14:12:30.401697: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
-To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
-</pre>
-</div>
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">/var/folders/y_/l41py1sx7bl5n30jygrsv0q40000gn/T/ipykernel_14502/2959941426.py</span> in <span class="ansi-cyan-fg">&lt;cell line: 4&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span> <span class="ansi-green-fg">from</span> ray <span class="ansi-green-fg">import</span> serve
-<span class="ansi-green-intense-fg ansi-bold">      3</span> 
-<span class="ansi-green-fg">----&gt; 4</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">from</span> transformers <span class="ansi-green-fg">import</span> pipeline
-<span class="ansi-green-intense-fg ansi-bold">      5</span> 
-<span class="ansi-green-intense-fg ansi-bold">      6</span> 
-
-<span class="ansi-green-fg">/usr/local/lib/python3.9/site-packages/transformers/__init__.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">     28</span> 
-<span class="ansi-green-intense-fg ansi-bold">     29</span> <span class="ansi-red-fg"># Check the dependencies satisfy the minimal versions required.</span>
-<span class="ansi-green-fg">---&gt; 30</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">from</span> <span class="ansi-blue-fg">.</span> <span class="ansi-green-fg">import</span> dependency_versions_check
-<span class="ansi-green-intense-fg ansi-bold">     31</span> from .utils import (
-<span class="ansi-green-intense-fg ansi-bold">     32</span>     OptionalDependencyNotAvailable<span class="ansi-blue-fg">,</span>
-
-<span class="ansi-green-fg">/usr/local/lib/python3.9/site-packages/transformers/dependency_versions_check.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">     15</span> 
-<span class="ansi-green-intense-fg ansi-bold">     16</span> <span class="ansi-green-fg">from</span> <span class="ansi-blue-fg">.</span>dependency_versions_table <span class="ansi-green-fg">import</span> deps
-<span class="ansi-green-fg">---&gt; 17</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">from</span> <span class="ansi-blue-fg">.</span>utils<span class="ansi-blue-fg">.</span>versions <span class="ansi-green-fg">import</span> require_version<span class="ansi-blue-fg">,</span> require_version_core
-<span class="ansi-green-intense-fg ansi-bold">     18</span> 
-<span class="ansi-green-intense-fg ansi-bold">     19</span> 
-
-<span class="ansi-green-fg">/usr/local/lib/python3.9/site-packages/transformers/utils/__init__.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">     44</span>     to_py_obj<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">     45</span> )
-<span class="ansi-green-fg">---&gt; 46</span><span class="ansi-red-fg"> from .hub import (
-</span><span class="ansi-green-intense-fg ansi-bold">     47</span>     CLOUDFRONT_DISTRIB_PREFIX<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">     48</span>     DISABLE_TELEMETRY<span class="ansi-blue-fg">,</span>
-
-<span class="ansi-green-fg">/usr/local/lib/python3.9/site-packages/transformers/utils/hub.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">     37</span> <span class="ansi-green-fg">import</span> requests
-<span class="ansi-green-intense-fg ansi-bold">     38</span> <span class="ansi-green-fg">from</span> filelock <span class="ansi-green-fg">import</span> FileLock
-<span class="ansi-green-fg">---&gt; 39</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">from</span> huggingface_hub <span class="ansi-green-fg">import</span> HfFolder<span class="ansi-blue-fg">,</span> Repository<span class="ansi-blue-fg">,</span> create_repo<span class="ansi-blue-fg">,</span> list_repo_files<span class="ansi-blue-fg">,</span> whoami
-<span class="ansi-green-intense-fg ansi-bold">     40</span> <span class="ansi-green-fg">from</span> requests<span class="ansi-blue-fg">.</span>exceptions <span class="ansi-green-fg">import</span> HTTPError
-<span class="ansi-green-intense-fg ansi-bold">     41</span> <span class="ansi-green-fg">from</span> requests<span class="ansi-blue-fg">.</span>models <span class="ansi-green-fg">import</span> Response
-
-<span class="ansi-green-fg">/usr/local/lib/python3.9/site-packages/huggingface_hub/__init__.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">     61</span> <span class="ansi-green-fg">from</span> <span class="ansi-blue-fg">.</span>hub_mixin <span class="ansi-green-fg">import</span> ModelHubMixin<span class="ansi-blue-fg">,</span> PyTorchModelHubMixin
-<span class="ansi-green-intense-fg ansi-bold">     62</span> <span class="ansi-green-fg">from</span> <span class="ansi-blue-fg">.</span>inference_api <span class="ansi-green-fg">import</span> InferenceApi
-<span class="ansi-green-fg">---&gt; 63</span><span class="ansi-red-fg"> from .keras_mixin import (
-</span><span class="ansi-green-intense-fg ansi-bold">     64</span>     KerasModelHubMixin<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">     65</span>     from_pretrained_keras<span class="ansi-blue-fg">,</span>
-
-<span class="ansi-green-fg">/usr/local/lib/python3.9/site-packages/huggingface_hub/keras_mixin.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">     22</span> 
-<span class="ansi-green-intense-fg ansi-bold">     23</span> <span class="ansi-green-fg">if</span> is_tf_available<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">---&gt; 24</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">import</span> tensorflow <span class="ansi-green-fg">as</span> tf
-<span class="ansi-green-intense-fg ansi-bold">     25</span> 
-<span class="ansi-green-intense-fg ansi-bold">     26</span> 
-
-<span class="ansi-green-fg">/usr/local/lib/python3.9/site-packages/tensorflow/__init__.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">     35</span> <span class="ansi-green-fg">import</span> typing <span class="ansi-green-fg">as</span> _typing
-<span class="ansi-green-intense-fg ansi-bold">     36</span> 
-<span class="ansi-green-fg">---&gt; 37</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">from</span> tensorflow<span class="ansi-blue-fg">.</span>python<span class="ansi-blue-fg">.</span>tools <span class="ansi-green-fg">import</span> module_util <span class="ansi-green-fg">as</span> _module_util
-<span class="ansi-green-intense-fg ansi-bold">     38</span> <span class="ansi-green-fg">from</span> tensorflow<span class="ansi-blue-fg">.</span>python<span class="ansi-blue-fg">.</span>util<span class="ansi-blue-fg">.</span>lazy_loader <span class="ansi-green-fg">import</span> LazyLoader <span class="ansi-green-fg">as</span> _LazyLoader
-<span class="ansi-green-intense-fg ansi-bold">     39</span> 
-
-<span class="ansi-green-fg">/usr/local/lib/python3.9/site-packages/tensorflow/python/__init__.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">     35</span> 
-<span class="ansi-green-intense-fg ansi-bold">     36</span> <span class="ansi-green-fg">from</span> tensorflow<span class="ansi-blue-fg">.</span>python <span class="ansi-green-fg">import</span> pywrap_tensorflow <span class="ansi-green-fg">as</span> _pywrap_tensorflow
-<span class="ansi-green-fg">---&gt; 37</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">from</span> tensorflow<span class="ansi-blue-fg">.</span>python<span class="ansi-blue-fg">.</span>eager <span class="ansi-green-fg">import</span> context
-<span class="ansi-green-intense-fg ansi-bold">     38</span> 
-<span class="ansi-green-intense-fg ansi-bold">     39</span> <span class="ansi-red-fg"># pylint: enable=wildcard-import</span>
-
-<span class="ansi-green-fg">/usr/local/lib/python3.9/site-packages/tensorflow/python/eager/context.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">     27</span> <span class="ansi-green-fg">import</span> six
-<span class="ansi-green-intense-fg ansi-bold">     28</span> 
-<span class="ansi-green-fg">---&gt; 29</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">from</span> tensorflow<span class="ansi-blue-fg">.</span>core<span class="ansi-blue-fg">.</span>framework <span class="ansi-green-fg">import</span> function_pb2
-<span class="ansi-green-intense-fg ansi-bold">     30</span> <span class="ansi-green-fg">from</span> tensorflow<span class="ansi-blue-fg">.</span>core<span class="ansi-blue-fg">.</span>protobuf <span class="ansi-green-fg">import</span> config_pb2
-<span class="ansi-green-intense-fg ansi-bold">     31</span> <span class="ansi-green-fg">from</span> tensorflow<span class="ansi-blue-fg">.</span>core<span class="ansi-blue-fg">.</span>protobuf <span class="ansi-green-fg">import</span> coordination_config_pb2
-
-<span class="ansi-green-fg">/usr/local/lib/python3.9/site-packages/tensorflow/core/framework/function_pb2.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">     14</span> 
-<span class="ansi-green-intense-fg ansi-bold">     15</span> 
-<span class="ansi-green-fg">---&gt; 16</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">from</span> tensorflow<span class="ansi-blue-fg">.</span>core<span class="ansi-blue-fg">.</span>framework <span class="ansi-green-fg">import</span> attr_value_pb2 <span class="ansi-green-fg">as</span> tensorflow_dot_core_dot_framework_dot_attr__value__pb2
-<span class="ansi-green-intense-fg ansi-bold">     17</span> <span class="ansi-green-fg">from</span> tensorflow<span class="ansi-blue-fg">.</span>core<span class="ansi-blue-fg">.</span>framework <span class="ansi-green-fg">import</span> node_def_pb2 <span class="ansi-green-fg">as</span> tensorflow_dot_core_dot_framework_dot_node__def__pb2
-<span class="ansi-green-intense-fg ansi-bold">     18</span> <span class="ansi-green-fg">from</span> tensorflow<span class="ansi-blue-fg">.</span>core<span class="ansi-blue-fg">.</span>framework <span class="ansi-green-fg">import</span> op_def_pb2 <span class="ansi-green-fg">as</span> tensorflow_dot_core_dot_framework_dot_op__def__pb2
-
-<span class="ansi-green-fg">/usr/local/lib/python3.9/site-packages/tensorflow/core/framework/attr_value_pb2.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">     14</span> 
-<span class="ansi-green-intense-fg ansi-bold">     15</span> 
-<span class="ansi-green-fg">---&gt; 16</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">from</span> tensorflow<span class="ansi-blue-fg">.</span>core<span class="ansi-blue-fg">.</span>framework <span class="ansi-green-fg">import</span> tensor_pb2 <span class="ansi-green-fg">as</span> tensorflow_dot_core_dot_framework_dot_tensor__pb2
-<span class="ansi-green-intense-fg ansi-bold">     17</span> <span class="ansi-green-fg">from</span> tensorflow<span class="ansi-blue-fg">.</span>core<span class="ansi-blue-fg">.</span>framework <span class="ansi-green-fg">import</span> tensor_shape_pb2 <span class="ansi-green-fg">as</span> tensorflow_dot_core_dot_framework_dot_tensor__shape__pb2
-<span class="ansi-green-intense-fg ansi-bold">     18</span> <span class="ansi-green-fg">from</span> tensorflow<span class="ansi-blue-fg">.</span>core<span class="ansi-blue-fg">.</span>framework <span class="ansi-green-fg">import</span> types_pb2 <span class="ansi-green-fg">as</span> tensorflow_dot_core_dot_framework_dot_types__pb2
-
-<span class="ansi-green-fg">/usr/local/lib/python3.9/site-packages/tensorflow/core/framework/tensor_pb2.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">     14</span> 
-<span class="ansi-green-intense-fg ansi-bold">     15</span> 
-<span class="ansi-green-fg">---&gt; 16</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">from</span> tensorflow<span class="ansi-blue-fg">.</span>core<span class="ansi-blue-fg">.</span>framework <span class="ansi-green-fg">import</span> resource_handle_pb2 <span class="ansi-green-fg">as</span> tensorflow_dot_core_dot_framework_dot_resource__handle__pb2
-<span class="ansi-green-intense-fg ansi-bold">     17</span> <span class="ansi-green-fg">from</span> tensorflow<span class="ansi-blue-fg">.</span>core<span class="ansi-blue-fg">.</span>framework <span class="ansi-green-fg">import</span> tensor_shape_pb2 <span class="ansi-green-fg">as</span> tensorflow_dot_core_dot_framework_dot_tensor__shape__pb2
-<span class="ansi-green-intense-fg ansi-bold">     18</span> <span class="ansi-green-fg">from</span> tensorflow<span class="ansi-blue-fg">.</span>core<span class="ansi-blue-fg">.</span>framework <span class="ansi-green-fg">import</span> types_pb2 <span class="ansi-green-fg">as</span> tensorflow_dot_core_dot_framework_dot_types__pb2
-
-<span class="ansi-green-fg">/usr/local/lib/python3.9/site-packages/tensorflow/core/framework/resource_handle_pb2.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">     14</span> 
-<span class="ansi-green-intense-fg ansi-bold">     15</span> 
-<span class="ansi-green-fg">---&gt; 16</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">from</span> tensorflow<span class="ansi-blue-fg">.</span>core<span class="ansi-blue-fg">.</span>framework <span class="ansi-green-fg">import</span> tensor_shape_pb2 <span class="ansi-green-fg">as</span> tensorflow_dot_core_dot_framework_dot_tensor__shape__pb2
-<span class="ansi-green-intense-fg ansi-bold">     17</span> <span class="ansi-green-fg">from</span> tensorflow<span class="ansi-blue-fg">.</span>core<span class="ansi-blue-fg">.</span>framework <span class="ansi-green-fg">import</span> types_pb2 <span class="ansi-green-fg">as</span> tensorflow_dot_core_dot_framework_dot_types__pb2
-<span class="ansi-green-intense-fg ansi-bold">     18</span> 
-
-<span class="ansi-green-fg">/usr/local/lib/python3.9/site-packages/tensorflow/core/framework/tensor_shape_pb2.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">     34</span>   containing_type<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">None</span><span class="ansi-blue-fg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">     35</span>   fields=[
-<span class="ansi-green-fg">---&gt; 36</span><span class="ansi-red-fg">     _descriptor.FieldDescriptor(
-</span><span class="ansi-green-intense-fg ansi-bold">     37</span>       name<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#39;size&#39;</span><span class="ansi-blue-fg">,</span> full_name<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#39;tensorflow.TensorShapeProto.Dim.size&#39;</span><span class="ansi-blue-fg">,</span> index<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">     38</span>       number<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">,</span> type<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">3</span><span class="ansi-blue-fg">,</span> cpp_type<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">,</span> label<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">,</span>
-
-<span class="ansi-green-fg">/usr/local/lib/python3.9/site-packages/google/protobuf/descriptor.py</span> in <span class="ansi-cyan-fg">__new__</span><span class="ansi-blue-fg">(cls, name, full_name, index, number, type, cpp_type, label, default_value, message_type, enum_type, containing_type, is_extension, extension_scope, options, serialized_options, has_default_value, containing_oneof, json_name, file, create_key)</span>
-<span class="ansi-green-intense-fg ansi-bold">    558</span>                 has_default_value<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">True</span><span class="ansi-blue-fg">,</span> containing_oneof<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">None</span><span class="ansi-blue-fg">,</span> json_name<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">None</span><span class="ansi-blue-fg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">    559</span>                 file=None, create_key=None):  # pylint: disable=redefined-builtin
-<span class="ansi-green-fg">--&gt; 560</span><span class="ansi-red-fg">       </span>_message<span class="ansi-blue-fg">.</span>Message<span class="ansi-blue-fg">.</span>_CheckCalledFromGeneratedFile<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    561</span>       <span class="ansi-green-fg">if</span> is_extension<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    562</span>         <span class="ansi-green-fg">return</span> _message<span class="ansi-blue-fg">.</span>default_pool<span class="ansi-blue-fg">.</span>FindExtensionByName<span class="ansi-blue-fg">(</span>full_name<span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">TypeError</span>: Descriptors cannot not be created directly.
-If this call came from a _pb2.py file, your generated code is out of date and must be regenerated with protoc &gt;= 3.19.0.
-If you cannot immediately regenerate your protos, some other possible workarounds are:
- 1. Downgrade the protobuf package to 3.20.x or lower.
- 2. Set PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python (but this will use pure-Python parsing and will be much slower).
-
-More information: https://developers.google.com/protocol-buffers/docs/news/2022-05-06#python-updates</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
@@ -1679,8 +1351,6 @@ More information: https://developers.google.com/protocol-buffers/docs/news/2022-
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
@@ -1712,8 +1382,6 @@ More information: https://developers.google.com/protocol-buffers/docs/news/2022-
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
@@ -1751,8 +1419,6 @@ print(requests.get(
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
@@ -1814,8 +1480,6 @@ fastapi_deployment = SentimentAnalysis.bind()</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
@@ -1877,8 +1541,6 @@ scaled_deployment = SentimentAnalysis.bind()</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
@@ -1948,8 +1610,6 @@ batched_deployment = SentimentAnalysis.bind()</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
@@ -1989,8 +1649,6 @@ ray.get([handle.classify.remote("sample text") for _ in range(10)])</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
@@ -2052,8 +1710,6 @@ driver = Driver.bind(downstream)</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
@@ -2129,8 +1785,6 @@ pipeline_driver = PipelineDriver.bind(m1, m2)</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
@@ -2204,8 +1858,6 @@ broadcast_driver = BroadcastDriver.bind(m1, m2)</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
@@ -2285,8 +1937,6 @@ conditional_driver = ConditionalDriver.bind(m1, m2)</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
@@ -2340,8 +1990,6 @@ def fetch_wikipedia_page(search_term: str) -> Optional[str]:
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
@@ -2403,8 +2051,6 @@ class SentimentAnalysis:
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
@@ -2452,8 +2098,6 @@ class Summarizer:
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
@@ -2513,8 +2157,6 @@ class EntityRecognition:
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
@@ -2558,8 +2200,6 @@ class Response(BaseModel):
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
@@ -2653,8 +2293,6 @@ class NLPPipelineDriver:
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
@@ -2692,8 +2330,6 @@ nlp_pipeline_driver = NLPPipelineDriver.bind(
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
@@ -2725,8 +2361,6 @@ nlp_pipeline_driver = NLPPipelineDriver.bind(
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
@@ -2766,8 +2400,6 @@ print(requests.get(
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
@@ -2801,8 +2433,6 @@ print(requests.get(
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
@@ -2861,7 +2491,7 @@ print(requests.get(
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../ch_07_train/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Chapter 7: Distributed Training with Ray Train" rel="prev">
+        <a href="../ch_07_train/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Distributed Training with Ray Train" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -2870,20 +2500,20 @@ print(requests.get(
               <span class="md-footer__direction">
                 Previous
               </span>
-              Chapter 7: Distributed Training with Ray Train
+              Distributed Training with Ray Train
             </div>
           </div>
         </a>
       
       
         
-        <a href="../ch_09_script/" class="md-footer__link md-footer__link--next" aria-label="Next: Chapter 9: Ray Clusters" rel="next">
+        <a href="../ch_09_script/" class="md-footer__link md-footer__link--next" aria-label="Next: Ray Clusters" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Chapter 9: Ray Clusters
+              Ray Clusters
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -2944,7 +2574,7 @@ print(requests.get(
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate", "navigation.tracking", "navigation.instant", "navigation.expand", "navigation.sections", "navigation.top", "navigation.indexes"], "search": "../assets/javascripts/workers/search.fcfe8b6d.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate", "navigation.tracking", "navigation.instant", "navigation.expand", "navigation.sections", "navigation.top", "navigation.indexes"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": null}</script>
     
     
 

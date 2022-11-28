@@ -16,11 +16,11 @@
         <link rel="canonical" href="https://maxpumperla.com/learning_ray/ch_07_train/">
       
       <link rel="icon" href="../assets/favicon.ico">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.6">
     
     
       
-        <title>Chapter 7: Distributed Training with Ray Train - Learning Ray - Flexible Distributed Python for Machine Learning</title>
+        <title>Distributed Training with Ray Train - Learning Ray - Flexible Distributed Python for Machine Learning</title>
       
     
     
@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#chapter-7-distributed-training-with-ray-train" class="md-skip">
+        <a href="#distributed-training-with-ray-train" class="md-skip">
           Skip to content
         </a>
       
@@ -127,7 +127,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Chapter 7: Distributed Training with Ray Train
+              Distributed Training with Ray Train
             
           </span>
         </div>
@@ -262,7 +262,7 @@
   
     <li class="md-nav__item">
       <a href=".." class="md-nav__link">
-        Welcome
+        Welcome to Learning Ray
       </a>
     </li>
   
@@ -277,7 +277,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_01_overview/" class="md-nav__link">
-        :simple-futurelearn: An Overview of Ray
+        An Overview of Ray
       </a>
     </li>
   
@@ -292,7 +292,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_02_ray_core/" class="md-nav__link">
-        Chapter 2: Getting Started with Ray Core
+        Getting Started with Ray Core
       </a>
     </li>
   
@@ -307,7 +307,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_03_core_app/" class="md-nav__link">
-        Chapter 3: Building Your First Distributed Application With Ray Core
+        Building Your First Distributed Application With Ray Core
       </a>
     </li>
   
@@ -322,7 +322,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_04_rllib/" class="md-nav__link">
-        Chapter 4: Reinforcement Learning with Ray RLlib
+        Reinforcement Learning with Ray RLlib
       </a>
     </li>
   
@@ -337,7 +337,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_05_tune/" class="md-nav__link">
-        Chapter 5: Hyperparameter Optimization with Ray Tune
+        Hyperparameter Optimization with Ray Tune
       </a>
     </li>
   
@@ -352,7 +352,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_06_data_processing/" class="md-nav__link">
-        Chapter 6: Data Processing with Ray
+        Data Processing with Ray
       </a>
     </li>
   
@@ -376,7 +376,7 @@
       
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Chapter 7: Distributed Training with Ray Train
+        Distributed Training with Ray Train
       </a>
       
     </li>
@@ -392,7 +392,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_08_model_serving/" class="md-nav__link">
-        Chapter 8: Online Inference with Ray Serve
+        Online Inference with Ray Serve
       </a>
     </li>
   
@@ -407,7 +407,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_09_script/" class="md-nav__link">
-        Chapter 9: Ray Clusters
+        Ray Clusters
       </a>
     </li>
   
@@ -422,7 +422,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_10_air/" class="md-nav__link">
-        Chapter 10: Getting Started with the Ray AI Runtime
+        Getting Started with the Ray AI Runtime
       </a>
     </li>
   
@@ -437,7 +437,7 @@
   
     <li class="md-nav__item">
       <a href="../ch_11_ecosystem/" class="md-nav__link">
-        Chapter 11: Ray's Ecosystem and Beyond
+        Ray's Ecosystem and Beyond
       </a>
     </li>
   
@@ -1131,34 +1131,24 @@ all of MD as it is not optimized for dense, information rich UIs.
                 },
                 displayAlign: 'center',
                 CommonHTML: {
-                    linebreaks: {
-                    automatic: true
+                    linebreaks: { 
+                    automatic: true 
                     }
                 }
             });
-
+        
             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
         }
     }
     init_mathjax();
     </script>
     <!-- End of mathjax configuration --><div class="jupyter-wrapper">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="chapter-7-distributed-training-with-ray-train">Chapter 7: Distributed Training with Ray Train<a class="anchor-link" href="#Chapter-7:-Distributed-Training-with-Ray-Train">&#182;</a></h1>
+<h1 id="distributed-training-with-ray-train">Distributed Training with Ray Train<a class="anchor-link" href="#Distributed-Training-with-Ray-Train">&#182;</a></h1>
 </div>
 </div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>You can run this notebook directly in
 <a href="https://colab.research.google.com/github/maxpumperla/learning_ray/blob/main/notebooks/ch_07_train.ipynb">Colab</a>.
@@ -1170,15 +1160,11 @@ available, you can install it using <code>pip install ray==2.2.0</code>. If not,
 use a nightly wheel (here for Python 3.7 on Linux):</p>
 
 </div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
@@ -1202,64 +1188,25 @@ use a nightly wheel (here for Python 3.7 on Linux):</p>
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre><span class="ansi-yellow-fg">DEPRECATION: Configuring installation scheme with distutils config files is deprecated and will no longer work in the near future. If you are using a Homebrew or Linuxbrew Python, please see discussion at https://github.com/Homebrew/homebrew-core/issues/76621</span><span class="ansi-yellow-fg">
-</span><span class="ansi-red-fg">ERROR: ray-3.0.0.dev0-cp37-cp37m-macosx_10_15_intel.whl is not a supported wheel on this platform.</span><span class="ansi-red-fg">
-</span><span class="ansi-yellow-fg">WARNING: There was an error checking the latest version of pip.</span><span class="ansi-yellow-fg">
-</span></pre>
 </div>
 </div>
-
-</div>
-
-</div>
-
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 
 </div>
 </div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Should you not run this notebook in Colab and need another type of wheel, please
 refer to Ray's <a href="https://docs.ray.io/en/latest/ray-overview/installation.html#install-nightlies">installation instructions for nightlies</a>.</p>
 <p>For this chapter you will also need to install the following dependencies:</p>
 
 </div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
@@ -1285,143 +1232,17 @@ refer to Ray's <a href="https://docs.ray.io/en/latest/ray-overview/installation.
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre><span class="ansi-yellow-fg">DEPRECATION: Configuring installation scheme with distutils config files is deprecated and will no longer work in the near future. If you are using a Homebrew or Linuxbrew Python, please see discussion at https://github.com/Homebrew/homebrew-core/issues/76621</span><span class="ansi-yellow-fg">
-</span>Collecting ray[data,train]&gt;=2.1.0
-  Downloading ray-2.1.0-cp39-cp39-macosx_10_15_x86_64.whl (76.2 MB)
-     <span class="ansi-black-intense-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">76.2/76.2 MB</span> <span class="ansi-red-fg">3.4 MB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>00:0100:01
-Collecting dask==2022.2.0
-  Using cached dask-2022.2.0-py3-none-any.whl (1.1 MB)
-Requirement already satisfied: torch==1.12.1 in /usr/local/lib/python3.9/site-packages (1.12.1)
-Requirement already satisfied: fsspec&gt;=0.6.0 in /usr/local/lib/python3.9/site-packages (from dask==2022.2.0) (2022.8.2)
-Collecting partd&gt;=0.3.10
-  Using cached partd-1.3.0-py3-none-any.whl (18 kB)
-Requirement already satisfied: cloudpickle&gt;=1.1.1 in /usr/local/lib/python3.9/site-packages (from dask==2022.2.0) (2.0.0)
-Collecting toolz&gt;=0.8.2
-  Using cached toolz-0.12.0-py3-none-any.whl (55 kB)
-Requirement already satisfied: pyyaml&gt;=5.3.1 in /usr/local/lib/python3.9/site-packages (from dask==2022.2.0) (5.4.1)
-Requirement already satisfied: packaging&gt;=20.0 in /usr/local/lib/python3.9/site-packages (from dask==2022.2.0) (21.3)
-Requirement already satisfied: typing-extensions in /usr/local/lib/python3.9/site-packages (from torch==1.12.1) (3.10.0.2)
-Requirement already satisfied: click&lt;=8.0.4,&gt;=7.0 in /usr/local/lib/python3.9/site-packages (from ray[data,train]&gt;=2.1.0) (7.1.2)
-Requirement already satisfied: grpcio&gt;=1.32.0 in /usr/local/lib/python3.9/site-packages (from ray[data,train]&gt;=2.1.0) (1.43.0)
-Requirement already satisfied: attrs in /usr/local/lib/python3.9/site-packages (from ray[data,train]&gt;=2.1.0) (20.3.0)
-Requirement already satisfied: aiosignal in /usr/local/lib/python3.9/site-packages (from ray[data,train]&gt;=2.1.0) (1.2.0)
-Requirement already satisfied: jsonschema in /usr/local/lib/python3.9/site-packages (from ray[data,train]&gt;=2.1.0) (3.2.0)
-Requirement already satisfied: requests in /usr/local/lib/python3.9/site-packages (from ray[data,train]&gt;=2.1.0) (2.25.1)
-Requirement already satisfied: protobuf!=3.19.5,&gt;=3.15.3 in /usr/local/lib/python3.9/site-packages (from ray[data,train]&gt;=2.1.0) (3.19.6)
-Requirement already satisfied: numpy&gt;=1.19.3 in /usr/local/lib/python3.9/site-packages (from ray[data,train]&gt;=2.1.0) (1.23.3)
-Requirement already satisfied: msgpack&lt;2.0.0,&gt;=1.0.0 in /usr/local/lib/python3.9/site-packages (from ray[data,train]&gt;=2.1.0) (1.0.3)
-Requirement already satisfied: frozenlist in /usr/local/lib/python3.9/site-packages (from ray[data,train]&gt;=2.1.0) (1.3.0)
-Requirement already satisfied: filelock in /usr/local/lib/python3.9/site-packages (from ray[data,train]&gt;=2.1.0) (3.3.1)
-Requirement already satisfied: virtualenv&gt;=20.0.24 in /usr/local/lib/python3.9/site-packages (from ray[data,train]&gt;=2.1.0) (20.8.1)
-Requirement already satisfied: pandas in /usr/local/lib/python3.9/site-packages (from ray[data,train]&gt;=2.1.0) (1.4.4)
-Requirement already satisfied: tensorboardX&gt;=1.9 in /usr/local/lib/python3.9/site-packages (from ray[data,train]&gt;=2.1.0) (2.5.1)
-Requirement already satisfied: tabulate in /usr/local/lib/python3.9/site-packages (from ray[data,train]&gt;=2.1.0) (0.8.9)
-Requirement already satisfied: pyarrow&lt;7.0.0,&gt;=6.0.1 in /usr/local/lib/python3.9/site-packages (from ray[data,train]&gt;=2.1.0) (6.0.1)
-Requirement already satisfied: six&gt;=1.5.2 in /usr/local/lib/python3.9/site-packages/six-1.15.0-py3.9.egg (from grpcio&gt;=1.32.0-&gt;ray[data,train]&gt;=2.1.0) (1.15.0)
-Requirement already satisfied: pyparsing!=3.0.5,&gt;=2.0.2 in /usr/local/lib/python3.9/site-packages (from packaging&gt;=20.0-&gt;dask==2022.2.0) (2.4.7)
-Requirement already satisfied: pytz&gt;=2020.1 in /usr/local/lib/python3.9/site-packages (from pandas-&gt;ray[data,train]&gt;=2.1.0) (2020.4)
-Requirement already satisfied: python-dateutil&gt;=2.8.1 in /usr/local/lib/python3.9/site-packages (from pandas-&gt;ray[data,train]&gt;=2.1.0) (2.8.1)
-Collecting locket
-  Using cached locket-1.0.0-py2.py3-none-any.whl (4.4 kB)
-Requirement already satisfied: backports.entry-points-selectable&gt;=1.0.4 in /usr/local/lib/python3.9/site-packages (from virtualenv&gt;=20.0.24-&gt;ray[data,train]&gt;=2.1.0) (1.1.0)
-Requirement already satisfied: distlib&lt;1,&gt;=0.3.1 in /usr/local/lib/python3.9/site-packages (from virtualenv&gt;=20.0.24-&gt;ray[data,train]&gt;=2.1.0) (0.3.3)
-Requirement already satisfied: platformdirs&lt;3,&gt;=2 in /usr/local/lib/python3.9/site-packages (from virtualenv&gt;=20.0.24-&gt;ray[data,train]&gt;=2.1.0) (2.4.0)
-Requirement already satisfied: pyrsistent&gt;=0.14.0 in /usr/local/lib/python3.9/site-packages (from jsonschema-&gt;ray[data,train]&gt;=2.1.0) (0.17.3)
-Requirement already satisfied: setuptools in /usr/local/lib/python3.9/site-packages (from jsonschema-&gt;ray[data,train]&gt;=2.1.0) (59.5.0)
-Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /usr/local/lib/python3.9/site-packages (from requests-&gt;ray[data,train]&gt;=2.1.0) (1.26.12)
-Requirement already satisfied: idna&lt;3,&gt;=2.5 in /usr/local/lib/python3.9/site-packages (from requests-&gt;ray[data,train]&gt;=2.1.0) (2.10)
-Requirement already satisfied: certifi&gt;=2017.4.17 in /usr/local/lib/python3.9/site-packages (from requests-&gt;ray[data,train]&gt;=2.1.0) (2020.12.5)
-Requirement already satisfied: chardet&lt;5,&gt;=3.0.2 in /usr/local/lib/python3.9/site-packages (from requests-&gt;ray[data,train]&gt;=2.1.0) (4.0.0)
-Installing collected packages: toolz, locket, ray, partd, dask
-<span class="ansi-yellow-fg">  DEPRECATION: Configuring installation scheme with distutils config files is deprecated and will no longer work in the near future. If you are using a Homebrew or Linuxbrew Python, please see discussion at https://github.com/Homebrew/homebrew-core/issues/76621</span><span class="ansi-yellow-fg">
-</span><span class="ansi-yellow-fg">  DEPRECATION: Configuring installation scheme with distutils config files is deprecated and will no longer work in the near future. If you are using a Homebrew or Linuxbrew Python, please see discussion at https://github.com/Homebrew/homebrew-core/issues/76621</span><span class="ansi-yellow-fg">
-</span>  Attempting uninstall: ray
-    Found existing installation: ray 2.0.0
-    Uninstalling ray-2.0.0:
-      Successfully uninstalled ray-2.0.0
-<span class="ansi-yellow-fg">  DEPRECATION: Configuring installation scheme with distutils config files is deprecated and will no longer work in the near future. If you are using a Homebrew or Linuxbrew Python, please see discussion at https://github.com/Homebrew/homebrew-core/issues/76621</span><span class="ansi-yellow-fg">
-</span><span class="ansi-yellow-fg">  DEPRECATION: Configuring installation scheme with distutils config files is deprecated and will no longer work in the near future. If you are using a Homebrew or Linuxbrew Python, please see discussion at https://github.com/Homebrew/homebrew-core/issues/76621</span><span class="ansi-yellow-fg">
-</span><span class="ansi-yellow-fg">  DEPRECATION: Configuring installation scheme with distutils config files is deprecated and will no longer work in the near future. If you are using a Homebrew or Linuxbrew Python, please see discussion at https://github.com/Homebrew/homebrew-core/issues/76621</span><span class="ansi-yellow-fg">
-</span><span class="ansi-yellow-fg">DEPRECATION: Configuring installation scheme with distutils config files is deprecated and will no longer work in the near future. If you are using a Homebrew or Linuxbrew Python, please see discussion at https://github.com/Homebrew/homebrew-core/issues/76621</span><span class="ansi-yellow-fg">
-</span>Successfully installed dask-2022.2.0 locket-1.0.0 partd-1.3.0 ray-2.1.0 toolz-0.12.0
-<span class="ansi-yellow-fg">WARNING: There was an error checking the latest version of pip.</span><span class="ansi-yellow-fg">
-</span><span class="ansi-yellow-fg">DEPRECATION: Configuring installation scheme with distutils config files is deprecated and will no longer work in the near future. If you are using a Homebrew or Linuxbrew Python, please see discussion at https://github.com/Homebrew/homebrew-core/issues/76621</span><span class="ansi-yellow-fg">
-</span>Requirement already satisfied: xgboost==1.6.2 in /usr/local/lib/python3.9/site-packages (1.6.2)
-Requirement already satisfied: xgboost-ray&gt;=0.1.10 in /usr/local/lib/python3.9/site-packages (0.1.11)
-Requirement already satisfied: scipy in /usr/local/lib/python3.9/site-packages (from xgboost==1.6.2) (1.8.1)
-Requirement already satisfied: numpy in /usr/local/lib/python3.9/site-packages (from xgboost==1.6.2) (1.23.3)
-Requirement already satisfied: ray&gt;=1.10 in /usr/local/lib/python3.9/site-packages (from xgboost-ray&gt;=0.1.10) (2.1.0)
-Requirement already satisfied: wrapt&gt;=1.12.1 in /usr/local/lib/python3.9/site-packages (from xgboost-ray&gt;=0.1.10) (1.12.1)
-Requirement already satisfied: packaging in /usr/local/lib/python3.9/site-packages (from xgboost-ray&gt;=0.1.10) (21.3)
-Requirement already satisfied: pandas in /usr/local/lib/python3.9/site-packages (from xgboost-ray&gt;=0.1.10) (1.4.4)
-Requirement already satisfied: attrs in /usr/local/lib/python3.9/site-packages (from ray&gt;=1.10-&gt;xgboost-ray&gt;=0.1.10) (20.3.0)
-Requirement already satisfied: requests in /usr/local/lib/python3.9/site-packages (from ray&gt;=1.10-&gt;xgboost-ray&gt;=0.1.10) (2.25.1)
-Requirement already satisfied: msgpack&lt;2.0.0,&gt;=1.0.0 in /usr/local/lib/python3.9/site-packages (from ray&gt;=1.10-&gt;xgboost-ray&gt;=0.1.10) (1.0.3)
-Requirement already satisfied: pyyaml in /usr/local/lib/python3.9/site-packages (from ray&gt;=1.10-&gt;xgboost-ray&gt;=0.1.10) (5.4.1)
-Requirement already satisfied: click&lt;=8.0.4,&gt;=7.0 in /usr/local/lib/python3.9/site-packages (from ray&gt;=1.10-&gt;xgboost-ray&gt;=0.1.10) (7.1.2)
-Requirement already satisfied: frozenlist in /usr/local/lib/python3.9/site-packages (from ray&gt;=1.10-&gt;xgboost-ray&gt;=0.1.10) (1.3.0)
-Requirement already satisfied: virtualenv&gt;=20.0.24 in /usr/local/lib/python3.9/site-packages (from ray&gt;=1.10-&gt;xgboost-ray&gt;=0.1.10) (20.8.1)
-Requirement already satisfied: jsonschema in /usr/local/lib/python3.9/site-packages (from ray&gt;=1.10-&gt;xgboost-ray&gt;=0.1.10) (3.2.0)
-Requirement already satisfied: protobuf!=3.19.5,&gt;=3.15.3 in /usr/local/lib/python3.9/site-packages (from ray&gt;=1.10-&gt;xgboost-ray&gt;=0.1.10) (3.19.6)
-Requirement already satisfied: filelock in /usr/local/lib/python3.9/site-packages (from ray&gt;=1.10-&gt;xgboost-ray&gt;=0.1.10) (3.3.1)
-Requirement already satisfied: grpcio&gt;=1.32.0 in /usr/local/lib/python3.9/site-packages (from ray&gt;=1.10-&gt;xgboost-ray&gt;=0.1.10) (1.43.0)
-Requirement already satisfied: aiosignal in /usr/local/lib/python3.9/site-packages (from ray&gt;=1.10-&gt;xgboost-ray&gt;=0.1.10) (1.2.0)
-Requirement already satisfied: pyparsing!=3.0.5,&gt;=2.0.2 in /usr/local/lib/python3.9/site-packages (from packaging-&gt;xgboost-ray&gt;=0.1.10) (2.4.7)
-Requirement already satisfied: python-dateutil&gt;=2.8.1 in /usr/local/lib/python3.9/site-packages (from pandas-&gt;xgboost-ray&gt;=0.1.10) (2.8.1)
-Requirement already satisfied: pytz&gt;=2020.1 in /usr/local/lib/python3.9/site-packages (from pandas-&gt;xgboost-ray&gt;=0.1.10) (2020.4)
-Requirement already satisfied: six&gt;=1.5.2 in /usr/local/lib/python3.9/site-packages/six-1.15.0-py3.9.egg (from grpcio&gt;=1.32.0-&gt;ray&gt;=1.10-&gt;xgboost-ray&gt;=0.1.10) (1.15.0)
-Requirement already satisfied: platformdirs&lt;3,&gt;=2 in /usr/local/lib/python3.9/site-packages (from virtualenv&gt;=20.0.24-&gt;ray&gt;=1.10-&gt;xgboost-ray&gt;=0.1.10) (2.4.0)
-Requirement already satisfied: distlib&lt;1,&gt;=0.3.1 in /usr/local/lib/python3.9/site-packages (from virtualenv&gt;=20.0.24-&gt;ray&gt;=1.10-&gt;xgboost-ray&gt;=0.1.10) (0.3.3)
-Requirement already satisfied: backports.entry-points-selectable&gt;=1.0.4 in /usr/local/lib/python3.9/site-packages (from virtualenv&gt;=20.0.24-&gt;ray&gt;=1.10-&gt;xgboost-ray&gt;=0.1.10) (1.1.0)
-Requirement already satisfied: pyrsistent&gt;=0.14.0 in /usr/local/lib/python3.9/site-packages (from jsonschema-&gt;ray&gt;=1.10-&gt;xgboost-ray&gt;=0.1.10) (0.17.3)
-Requirement already satisfied: setuptools in /usr/local/lib/python3.9/site-packages (from jsonschema-&gt;ray&gt;=1.10-&gt;xgboost-ray&gt;=0.1.10) (59.5.0)
-Requirement already satisfied: chardet&lt;5,&gt;=3.0.2 in /usr/local/lib/python3.9/site-packages (from requests-&gt;ray&gt;=1.10-&gt;xgboost-ray&gt;=0.1.10) (4.0.0)
-Requirement already satisfied: certifi&gt;=2017.4.17 in /usr/local/lib/python3.9/site-packages (from requests-&gt;ray&gt;=1.10-&gt;xgboost-ray&gt;=0.1.10) (2020.12.5)
-Requirement already satisfied: idna&lt;3,&gt;=2.5 in /usr/local/lib/python3.9/site-packages (from requests-&gt;ray&gt;=1.10-&gt;xgboost-ray&gt;=0.1.10) (2.10)
-Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /usr/local/lib/python3.9/site-packages (from requests-&gt;ray&gt;=1.10-&gt;xgboost-ray&gt;=0.1.10) (1.26.12)
-<span class="ansi-yellow-fg">DEPRECATION: Configuring installation scheme with distutils config files is deprecated and will no longer work in the near future. If you are using a Homebrew or Linuxbrew Python, please see discussion at https://github.com/Homebrew/homebrew-core/issues/76621</span><span class="ansi-yellow-fg">
-</span><span class="ansi-yellow-fg">WARNING: There was an error checking the latest version of pip.</span><span class="ansi-yellow-fg">
-</span></pre>
 </div>
 </div>
-
-</div>
-
-</div>
-
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>To import utility files for this chapter, on Colab you will also have to clone
 the repo and copy the code files to the base path of the runtime:</p>
 
 </div>
-</div>
-</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
@@ -1453,10 +1274,8 @@ the repo and copy the code files to the base path of the runtime:</p>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
@@ -1560,10 +1379,8 @@ def load_dataset(path: str, *, include_label=True):
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
@@ -1637,10 +1454,8 @@ class FarePredictor(nn.Module):
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
@@ -1747,13 +1562,11 @@ def train_loop_per_worker(config: dict):
 </div>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
@@ -1809,123 +1622,12 @@ trained_model = result.checkpoint</div>
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2022-11-28 13:58:57,798	INFO worker.py:1519 -- Started a local Ray instance. View the dashboard at <span class="ansi-green-intense-fg ansi-bold">127.0.0.1:8265 </span>
-Repartition: 100%|██████████| 100/100 [00:00&lt;00:00, 107.31it/s]
-</pre>
-</div>
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-
-</div>
-
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre><span class="ansi-cyan-fg">(RayTrainWorker pid=14268)</span> 2022-11-28 13:59:13,024	INFO config.py:87 -- Setting up process group for: env:// [rank=0, world_size=2]
-<span class="ansi-cyan-fg">(RayTrainWorker pid=14268)</span> [W ProcessGroupGloo.cpp:715] Warning: Unable to resolve hostname to a (local) address. Using the loopback address as fallback. Manually set the network interface to bind to with GLOO_SOCKET_IFNAME. (function operator())
-<span class="ansi-cyan-fg">(RayTrainWorker pid=14269)</span> [W ProcessGroupGloo.cpp:715] Warning: Unable to resolve hostname to a (local) address. Using the loopback address as fallback. Manually set the network interface to bind to with GLOO_SOCKET_IFNAME. (function operator())
-<span class="ansi-cyan-fg">(RayTrainWorker pid=14268)</span> 2022-11-28 13:59:15,086	INFO train_loop_utils.py:298 -- Moving model to device: cpu
-<span class="ansi-cyan-fg">(RayTrainWorker pid=14268)</span> 2022-11-28 13:59:15,088	INFO train_loop_utils.py:362 -- Wrapping provided model in DistributedDataParallel.
-<span class="ansi-cyan-fg">(RayTrainWorker pid=14268)</span> /usr/local/lib/python3.9/site-packages/ray/air/_internal/torch_utils.py:135: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at  /Users/runner/work/pytorch/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:178.)
-<span class="ansi-cyan-fg">(RayTrainWorker pid=14268)</span>   return torch.as_tensor(ndarray, dtype=dtype, device=device)
-<span class="ansi-cyan-fg">(RayTrainWorker pid=14269)</span> /usr/local/lib/python3.9/site-packages/ray/air/_internal/torch_utils.py:135: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at  /Users/runner/work/pytorch/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:178.)
-<span class="ansi-cyan-fg">(RayTrainWorker pid=14269)</span>   return torch.as_tensor(ndarray, dtype=dtype, device=device)
-</pre>
-</div>
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<div class="trialProgress">
-  <h3>Trial Progress</h3>
-  <table>
-<thead>
-<tr><th>Trial name              </th><th style="text-align: right;">  _time_this_iter_s</th><th style="text-align: right;">  _timestamp</th><th style="text-align: right;">  _training_iteration</th><th>date               </th><th>done  </th><th>episodes_total  </th><th style="text-align: right;">  epoch</th><th>experiment_id                   </th><th>hostname  </th><th style="text-align: right;">  iterations_since_restore</th><th style="text-align: right;">  loss</th><th>node_ip  </th><th style="text-align: right;">  pid</th><th>should_checkpoint  </th><th style="text-align: right;">  time_since_restore</th><th style="text-align: right;">  time_this_iter_s</th><th style="text-align: right;">  time_total_s</th><th style="text-align: right;">  timestamp</th><th style="text-align: right;">  timesteps_since_restore</th><th>timesteps_total  </th><th style="text-align: right;">  training_iteration</th><th>trial_id   </th><th style="text-align: right;">  warmup_time</th></tr>
-</thead>
-<tbody>
-<tr><td>TorchTrainer_7103e_00000</td><td style="text-align: right;">            165.991</td><td style="text-align: right;">  1669640521</td><td style="text-align: right;">                    1</td><td>2022-11-28_14-02-01</td><td>False </td><td>                </td><td style="text-align: right;">      0</td><td>5b072afdc0e748d7b82e1d7dbe312338</td><td>mac       </td><td style="text-align: right;">                         1</td><td style="text-align: right;">5656.2</td><td>127.0.0.1</td><td style="text-align: right;">14259</td><td>True               </td><td style="text-align: right;">              171.36</td><td style="text-align: right;">            171.36</td><td style="text-align: right;">        171.36</td><td style="text-align: right;"> 1669640521</td><td style="text-align: right;">                        0</td><td>                 </td><td style="text-align: right;">                   1</td><td>7103e_00000</td><td style="text-align: right;">    0.0213518</td></tr>
-</tbody>
-</table>
-</div>
-<style>
-.trialProgress {
-  display: flex;
-  flex-direction: column;
-  color: var(--jp-ui-font-color1);
-}
-.trialProgress h3 {
-  font-weight: bold;
-}
-.trialProgress td {
-  white-space: nowrap;
-}
-</style>
-
-</div>
-
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2022-11-28 14:09:30,212	WARNING tune.py:705 -- Stop signal received (e.g. via SIGINT/Ctrl+C), ending Ray Tune run. This will try to checkpoint the experiment state one last time. Press CTRL+C (or send SIGINT/SIGKILL/SIGTERM) to skip. 
-2022-11-28 14:09:30,438	ERROR tune.py:773 -- Trials did not complete: [TorchTrainer_7103e_00000]
-2022-11-28 14:09:30,439	INFO tune.py:777 -- Total run time: 624.02 seconds (623.71 seconds for the tuning loop).
-2022-11-28 14:09:30,440	WARNING tune.py:783 -- Experiment has been interrupted, but the most recent state was saved. You can continue running this experiment by passing `resume=True` to `tune.run()`
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
@@ -1963,55 +1665,12 @@ batch_predictor.predict_pipelined(ds, blocks_per_window=10)</div>
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>Repartition: 100%|██████████| 100/100 [00:00&lt;00:00, 771.81it/s]
-2022-11-28 14:10:03,685	INFO dataset.py:3402 -- Created DatasetPipeline with 10 windows: 5.55MiB min, 5.55MiB max, 5.55MiB mean
-2022-11-28 14:10:03,685	INFO dataset.py:3412 -- Blocks per window: 10 min, 10 max, 10 mean
-2022-11-28 14:10:03,687	WARNING dataset.py:3424 -- ⚠️  This pipeline&#39;s parallelism is limited by its blocks per window to ~10 concurrent tasks per window. To maximize performance, increase the blocks per window to at least 12. This may require increasing the base dataset&#39;s parallelism and/or adjusting the windowing parameters.
-2022-11-28 14:10:03,688	INFO dataset.py:3451 -- ✔️  This pipeline&#39;s windows likely fit in object store memory without spilling.
-</pre>
-</div>
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>DatasetPipeline(num_windows=10, num_stages=2)</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
@@ -2129,46 +1788,12 @@ def training_loop():
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">ImportError</span>                               Traceback (most recent call last)
-<span class="ansi-green-fg">/var/folders/y_/l41py1sx7bl5n30jygrsv0q40000gn/T/ipykernel_14176/917945122.py</span> in <span class="ansi-cyan-fg">&lt;cell line: 5&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-intense-fg ansi-bold">      3</span> <span class="ansi-green-fg">import</span> torch<span class="ansi-blue-fg">.</span>nn <span class="ansi-green-fg">as</span> nn
-<span class="ansi-green-intense-fg ansi-bold">      4</span> <span class="ansi-green-fg">import</span> torch<span class="ansi-blue-fg">.</span>nn<span class="ansi-blue-fg">.</span>functional <span class="ansi-green-fg">as</span> F
-<span class="ansi-green-fg">----&gt; 5</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">from</span> ray<span class="ansi-blue-fg">.</span>data <span class="ansi-green-fg">import</span> from_torch
-<span class="ansi-green-intense-fg ansi-bold">      6</span> 
-<span class="ansi-green-intense-fg ansi-bold">      7</span> num_samples <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">20</span>
-
-<span class="ansi-red-fg">ImportError</span>: cannot import name &#39;from_torch&#39; from &#39;ray.data&#39; (/usr/local/lib/python3.9/site-packages/ray/data/__init__.py)</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
@@ -2211,13 +1836,11 @@ def distributed_training_loop():
 </div>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
@@ -2267,44 +1890,10 @@ result = trainer.fit()</div>
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">/var/folders/y_/l41py1sx7bl5n30jygrsv0q40000gn/T/ipykernel_14176/2405101806.py</span> in <span class="ansi-cyan-fg">&lt;cell line: 6&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-intense-fg ansi-bold">     10</span>         use_gpu<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">False</span>
-<span class="ansi-green-intense-fg ansi-bold">     11</span>     ),
-<span class="ansi-green-fg">---&gt; 12</span><span class="ansi-red-fg">     </span>datasets<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">{</span><span class="ansi-blue-fg">&#34;train&#34;</span><span class="ansi-blue-fg">:</span> train_dataset<span class="ansi-blue-fg">}</span>
-<span class="ansi-green-intense-fg ansi-bold">     13</span> )
-<span class="ansi-green-intense-fg ansi-bold">     14</span> 
-
-<span class="ansi-red-fg">NameError</span>: name &#39;train_dataset&#39; is not defined</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
@@ -2396,8 +1985,6 @@ param_space = {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
@@ -2490,7 +2077,7 @@ results = tuner.fit()</div>
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../ch_06_data_processing/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Chapter 6: Data Processing with Ray" rel="prev">
+        <a href="../ch_06_data_processing/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Data Processing with Ray" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -2499,20 +2086,20 @@ results = tuner.fit()</div>
               <span class="md-footer__direction">
                 Previous
               </span>
-              Chapter 6: Data Processing with Ray
+              Data Processing with Ray
             </div>
           </div>
         </a>
       
       
         
-        <a href="../ch_08_model_serving/" class="md-footer__link md-footer__link--next" aria-label="Next: Chapter 8: Online Inference with Ray Serve" rel="next">
+        <a href="../ch_08_model_serving/" class="md-footer__link md-footer__link--next" aria-label="Next: Online Inference with Ray Serve" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Chapter 8: Online Inference with Ray Serve
+              Online Inference with Ray Serve
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -2573,7 +2160,7 @@ results = tuner.fit()</div>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate", "navigation.tracking", "navigation.instant", "navigation.expand", "navigation.sections", "navigation.top", "navigation.indexes"], "search": "../assets/javascripts/workers/search.fcfe8b6d.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate", "navigation.tracking", "navigation.instant", "navigation.expand", "navigation.sections", "navigation.top", "navigation.indexes"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": null}</script>
     
     
 
