@@ -1130,16 +1130,12 @@ all of MD as it is not optimized for dense, information rich UIs.
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::server_config[]</span>
-<span class="c1"># policy_server.py</span>
-<span class="kn">import</span> <span class="nn">ray</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">ray</span>
 <span class="kn">from</span> <span class="nn">ray.rllib.agents.dqn</span> <span class="kn">import</span> <span class="n">DQNConfig</span>
 <span class="kn">from</span> <span class="nn">ray.rllib.env.policy_server_input</span> <span class="kn">import</span> <span class="n">PolicyServerInput</span>
 <span class="kn">import</span> <span class="nn">gym</span>
 </pre></div>
-<div id="cell-1" class="clipboard-copy-txt"># tag::server_config[]
-# policy_server.py
-import ray
+<div id="cell-1" class="clipboard-copy-txt">import ray
 from ray.rllib.agents.dqn import DQNConfig
 from ray.rllib.env.policy_server_input import PolicyServerInput
 import gym</div>
@@ -1203,10 +1199,10 @@ import gym</div>
         </div>
         <div class="CodeMirror cm-s-jupyter">
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="k">def</span> <span class="nf">policy_input</span><span class="p">(</span><span class="n">context</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">PolicyServerInput</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="s2">&quot;localhost&quot;</span><span class="p">,</span> <span class="mi">9900</span><span class="p">)</span>  <span class="c1"># &lt;1&gt;</span>
+    <span class="k">return</span> <span class="n">PolicyServerInput</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="s2">&quot;localhost&quot;</span><span class="p">,</span> <span class="mi">9900</span><span class="p">)</span>
 </pre></div>
 <div id="cell-3" class="clipboard-copy-txt">def policy_input(context):
-    return PolicyServerInput(context, "localhost", 9900)  # <1></div>
+    return PolicyServerInput(context, "localhost", 9900)</div>
     
         </div>
     </div>
@@ -1237,23 +1233,23 @@ import gym</div>
         <div class="CodeMirror cm-s-jupyter">
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">config</span> <span class="o">=</span> <span class="n">DQNConfig</span><span class="p">()</span>\
     <span class="o">.</span><span class="n">environment</span><span class="p">(</span>
-        <span class="n">env</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># &lt;2&gt;</span>
-        <span class="n">action_space</span><span class="o">=</span><span class="n">gym</span><span class="o">.</span><span class="n">spaces</span><span class="o">.</span><span class="n">Discrete</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span>  <span class="c1"># &lt;3&gt;</span>
+        <span class="n">env</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">action_space</span><span class="o">=</span><span class="n">gym</span><span class="o">.</span><span class="n">spaces</span><span class="o">.</span><span class="n">Discrete</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span>
         <span class="n">observation_space</span><span class="o">=</span><span class="n">gym</span><span class="o">.</span><span class="n">spaces</span><span class="o">.</span><span class="n">Discrete</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="mi">5</span><span class="p">))</span>\
     <span class="o">.</span><span class="n">debugging</span><span class="p">(</span><span class="n">log_level</span><span class="o">=</span><span class="s2">&quot;INFO&quot;</span><span class="p">)</span>\
     <span class="o">.</span><span class="n">rollouts</span><span class="p">(</span><span class="n">num_rollout_workers</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>\
-    <span class="o">.</span><span class="n">offline_data</span><span class="p">(</span>  <span class="c1"># &lt;4&gt;</span>
+    <span class="o">.</span><span class="n">offline_data</span><span class="p">(</span>
         <span class="nb">input</span><span class="o">=</span><span class="n">policy_input</span><span class="p">,</span>
         <span class="n">input_evaluation</span><span class="o">=</span><span class="p">[])</span>\
 </pre></div>
 <div id="cell-4" class="clipboard-copy-txt">config = DQNConfig()\
     .environment(
-        env=None,  # <2>
-        action_space=gym.spaces.Discrete(4),  # <3>
+        env=None,
+        action_space=gym.spaces.Discrete(4),
         observation_space=gym.spaces.Discrete(5*5))\
     .debugging(log_level="INFO")\
     .rollouts(num_rollout_workers=0)\
-    .offline_data(  # <4>
+    .offline_data(
         input=policy_input,
         input_evaluation=[])\</div>
     
@@ -1295,18 +1291,6 @@ import gym</div>
 </div>
 
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>end::server_config[]</p>
-
-</div>
-</div>
-</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
@@ -1327,31 +1311,25 @@ import gym</div>
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::server_run[]</span>
-<span class="c1"># policy_server.py</span>
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
 
     <span class="n">time_steps</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
         <span class="n">results</span> <span class="o">=</span> <span class="n">algo</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
-        <span class="n">checkpoint</span> <span class="o">=</span> <span class="n">algo</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>  <span class="c1"># &lt;1&gt;</span>
-        <span class="k">if</span> <span class="n">time_steps</span> <span class="o">&gt;=</span> <span class="mi">1000</span><span class="p">:</span>  <span class="c1"># &lt;2&gt;</span>
+        <span class="n">checkpoint</span> <span class="o">=</span> <span class="n">algo</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">time_steps</span> <span class="o">&gt;=</span> <span class="mi">1000</span><span class="p">:</span>
             <span class="k">break</span>
         <span class="n">time_steps</span> <span class="o">+=</span> <span class="n">results</span><span class="p">[</span><span class="s2">&quot;timesteps_total&quot;</span><span class="p">]</span>
-<span class="c1"># end::server_run[]</span>
 </pre></div>
-<div id="cell-6" class="clipboard-copy-txt"># tag::server_run[]
-# policy_server.py
-if __name__ == "__main__":
+<div id="cell-6" class="clipboard-copy-txt">if __name__ == "__main__":
 
     time_steps = 0
     for _ in range(100):
         results = algo.train()
-        checkpoint = algo.save()  # <1>
-        if time_steps >= 1000:  # <2>
+        checkpoint = algo.save()
+        if time_steps >= 1000:
             break
-        time_steps += results["timesteps_total"]
-# end::server_run[]</div>
+        time_steps += results["timesteps_total"]</div>
     
         </div>
     </div>

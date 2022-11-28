@@ -1130,15 +1130,11 @@ all of MD as it is not optimized for dense, information rich UIs.
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::client[]</span>
-<span class="c1"># policy_client.py</span>
-<span class="kn">import</span> <span class="nn">gym</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">gym</span>
 <span class="kn">from</span> <span class="nn">ray.rllib.env.policy_client</span> <span class="kn">import</span> <span class="n">PolicyClient</span>
 <span class="kn">from</span> <span class="nn">maze_gym_env</span> <span class="kn">import</span> <span class="n">GymEnvironment</span>
 </pre></div>
-<div id="cell-1" class="clipboard-copy-txt"># tag::client[]
-# policy_client.py
-import gym
+<div id="cell-1" class="clipboard-copy-txt">import gym
 from ray.rllib.env.policy_client import PolicyClient
 from maze_gym_env import GymEnvironment</div>
     
@@ -1171,39 +1167,39 @@ from maze_gym_env import GymEnvironment</div>
         <div class="CodeMirror cm-s-jupyter">
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
     <span class="n">env</span> <span class="o">=</span> <span class="n">GymEnvironment</span><span class="p">()</span>
-    <span class="n">client</span> <span class="o">=</span> <span class="n">PolicyClient</span><span class="p">(</span><span class="s2">&quot;http://localhost:9900&quot;</span><span class="p">,</span> <span class="n">inference_mode</span><span class="o">=</span><span class="s2">&quot;remote&quot;</span><span class="p">)</span>  <span class="c1"># &lt;1&gt;</span>
+    <span class="n">client</span> <span class="o">=</span> <span class="n">PolicyClient</span><span class="p">(</span><span class="s2">&quot;http://localhost:9900&quot;</span><span class="p">,</span> <span class="n">inference_mode</span><span class="o">=</span><span class="s2">&quot;remote&quot;</span><span class="p">)</span>
 
     <span class="n">obs</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
-    <span class="n">episode_id</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">start_episode</span><span class="p">(</span><span class="n">training_enabled</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># &lt;2&gt;</span>
+    <span class="n">episode_id</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">start_episode</span><span class="p">(</span><span class="n">training_enabled</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
     <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-        <span class="n">action</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_action</span><span class="p">(</span><span class="n">episode_id</span><span class="p">,</span> <span class="n">obs</span><span class="p">)</span>  <span class="c1"># &lt;3&gt;</span>
+        <span class="n">action</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_action</span><span class="p">(</span><span class="n">episode_id</span><span class="p">,</span> <span class="n">obs</span><span class="p">)</span>
 
         <span class="n">obs</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
 
-        <span class="n">client</span><span class="o">.</span><span class="n">log_returns</span><span class="p">(</span><span class="n">episode_id</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">info</span><span class="o">=</span><span class="n">info</span><span class="p">)</span>  <span class="c1"># &lt;4&gt;</span>
+        <span class="n">client</span><span class="o">.</span><span class="n">log_returns</span><span class="p">(</span><span class="n">episode_id</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">info</span><span class="o">=</span><span class="n">info</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="n">done</span><span class="p">:</span>
-            <span class="n">client</span><span class="o">.</span><span class="n">end_episode</span><span class="p">(</span><span class="n">episode_id</span><span class="p">,</span> <span class="n">obs</span><span class="p">)</span>  <span class="c1"># &lt;5&gt;</span>
-            <span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># &lt;6&gt;</span>
+            <span class="n">client</span><span class="o">.</span><span class="n">end_episode</span><span class="p">(</span><span class="n">episode_id</span><span class="p">,</span> <span class="n">obs</span><span class="p">)</span>
+            <span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 <div id="cell-2" class="clipboard-copy-txt">if __name__ == "__main__":
     env = GymEnvironment()
-    client = PolicyClient("http://localhost:9900", inference_mode="remote")  # <1>
+    client = PolicyClient("http://localhost:9900", inference_mode="remote")
 
     obs = env.reset()
-    episode_id = client.start_episode(training_enabled=True)  # <2>
+    episode_id = client.start_episode(training_enabled=True)
 
     while True:
-        action = client.get_action(episode_id, obs)  # <3>
+        action = client.get_action(episode_id, obs)
 
         obs, reward, done, info = env.step(action)
 
-        client.log_returns(episode_id, reward, info=info)  # <4>
+        client.log_returns(episode_id, reward, info=info)
 
         if done:
-            client.end_episode(episode_id, obs)  # <5>
-            exit(0)  # <6></div>
+            client.end_episode(episode_id, obs)
+            exit(0)</div>
     
         </div>
     </div>
@@ -1211,18 +1207,6 @@ from maze_gym_env import GymEnvironment</div>
 </div>
 </div>
 
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>end::client[]</p>
-
-</div>
-</div>
 </div>
 </div>
 </div>

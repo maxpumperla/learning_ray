@@ -1110,7 +1110,22 @@ all of MD as it is not optimized for dense, information rich UIs.
     }
     init_mathjax();
     </script>
-    <!-- End of mathjax configuration --><div class="jupyter-wrapper"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+    <!-- End of mathjax configuration --><div class="jupyter-wrapper">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>In this file we collect all the Serve deployments that get referenced in the chapter.
+You can run any of these deployments by running <code>serve run app:&lt;deployment_name&gt;</code>,
+where <deployment_name> is any of basic_deployment, scaled_deployment,
+nlp_pipeline_driver, or batched_deployment.</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -1130,127 +1145,13 @@ all of MD as it is not optimized for dense, information rich UIs.
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># In this file we collect all the Serve deployments that get referenced in the chapter.</span>
-<span class="c1"># You can run any of these deployments by running `serve run app:&lt;deployment_name&gt;`,</span>
-<span class="c1"># where &lt;deployment_name&gt; is any of basic_deployment, scaled_deployment,</span>
-<span class="c1"># nlp_pipeline_driver, or batched_deployment.</span>
-
-<span class="kn">from</span> <span class="nn">fastapi</span> <span class="kn">import</span> <span class="n">FastAPI</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">fastapi</span> <span class="kn">import</span> <span class="n">FastAPI</span>
 <span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">pipeline</span>
 <span class="kn">from</span> <span class="nn">ray</span> <span class="kn">import</span> <span class="n">serve</span>
-
-
-<span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">()</span>
-
-
-<span class="nd">@serve</span><span class="o">.</span><span class="n">deployment</span>
-<span class="k">class</span> <span class="nc">SentimentAnalysis</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_classifier</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span><span class="s2">&quot;sentiment-analysis&quot;</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-        <span class="n">input_text</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">query_params</span><span class="p">[</span><span class="s2">&quot;input_text&quot;</span><span class="p">]</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_classifier</span><span class="p">(</span><span class="n">input_text</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;label&quot;</span><span class="p">]</span>
-
-
-<span class="n">basic_deployment</span> <span class="o">=</span> <span class="n">SentimentAnalysis</span><span class="o">.</span><span class="n">bind</span><span class="p">()</span>
-
-
-<span class="nd">@serve</span><span class="o">.</span><span class="n">deployment</span><span class="p">(</span><span class="n">num_replicas</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ray_actor_options</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;num_cpus&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">})</span>
-<span class="nd">@serve</span><span class="o">.</span><span class="n">ingress</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
-<span class="k">class</span> <span class="nc">SentimentAnalysis</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_classifier</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span><span class="s2">&quot;sentiment-analysis&quot;</span><span class="p">)</span>
-
-    <span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
-    <span class="k">def</span> <span class="nf">classify</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-        <span class="kn">import</span> <span class="nn">os</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;from process:&quot;</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">getpid</span><span class="p">())</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_classifier</span><span class="p">(</span><span class="n">input_text</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;label&quot;</span><span class="p">]</span>
-
-
-<span class="n">scaled_deployment</span> <span class="o">=</span> <span class="n">SentimentAnalysis</span><span class="o">.</span><span class="n">bind</span><span class="p">()</span>
-
-
-<span class="nd">@serve</span><span class="o">.</span><span class="n">deployment</span>
-<span class="nd">@serve</span><span class="o">.</span><span class="n">ingress</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
-<span class="k">class</span> <span class="nc">SentimentAnalysis</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_classifier</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span><span class="s2">&quot;sentiment-analysis&quot;</span><span class="p">)</span>
-
-    <span class="nd">@serve</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="n">max_batch_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">batch_wait_timeout_s</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">classify_batched</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batched_inputs</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Got batch size:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">batched_inputs</span><span class="p">))</span>
-        <span class="n">results</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_classifier</span><span class="p">(</span><span class="n">batched_inputs</span><span class="p">)</span>
-        <span class="k">return</span> <span class="p">[</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">]</span>
-
-    <span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">classify</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-        <span class="k">return</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">classify_batched</span><span class="p">(</span><span class="n">input_text</span><span class="p">)</span>
-
-
-<span class="n">batched_deployment</span> <span class="o">=</span> <span class="n">SentimentAnalysis</span><span class="o">.</span><span class="n">bind</span><span class="p">()</span>
 </pre></div>
-<div id="cell-1" class="clipboard-copy-txt"># In this file we collect all the Serve deployments that get referenced in the chapter.
-# You can run any of these deployments by running `serve run app:<deployment_name>`,
-# where <deployment_name> is any of basic_deployment, scaled_deployment,
-# nlp_pipeline_driver, or batched_deployment.
-
-from fastapi import FastAPI
+<div id="cell-1" class="clipboard-copy-txt">from fastapi import FastAPI
 from transformers import pipeline
-from ray import serve
-
-
-app = FastAPI()
-
-
-@serve.deployment
-class SentimentAnalysis:
-    def __init__(self):
-        self._classifier = pipeline("sentiment-analysis")
-
-    def __call__(self, request) -> str:
-        input_text = request.query_params["input_text"]
-        return self._classifier(input_text)[0]["label"]
-
-
-basic_deployment = SentimentAnalysis.bind()
-
-
-@serve.deployment(num_replicas=2, ray_actor_options={"num_cpus": 2})
-@serve.ingress(app)
-class SentimentAnalysis:
-    def __init__(self):
-        self._classifier = pipeline("sentiment-analysis")
-
-    @app.get("/")
-    def classify(self, input_text: str) -> str:
-        import os
-        print("from process:", os.getpid())
-        return self._classifier(input_text)[0]["label"]
-
-
-scaled_deployment = SentimentAnalysis.bind()
-
-
-@serve.deployment
-@serve.ingress(app)
-class SentimentAnalysis:
-    def __init__(self):
-        self._classifier = pipeline("sentiment-analysis")
-
-    @serve.batch(max_batch_size=10, batch_wait_timeout_s=0.1)
-    async def classify_batched(self, batched_inputs):
-        print("Got batch size:", len(batched_inputs))
-        results = self._classifier(batched_inputs)
-        return [result["label"] for result in results]
-
-    @app.get("/")
-    async def classify(self, input_text: str) -> str:
-        return await self.classify_batched(input_text)
-
-
-batched_deployment = SentimentAnalysis.bind()</div>
+from ray import serve</div>
     
         </div>
     </div>
@@ -1279,37 +1180,9 @@ batched_deployment = SentimentAnalysis.bind()</div>
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::fetch_wikipedia[]</span>
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
-
-<span class="kn">import</span> <span class="nn">wikipedia</span>
-
-
-<span class="k">def</span> <span class="nf">fetch_wikipedia_page</span><span class="p">(</span><span class="n">search_term</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
-    <span class="n">results</span> <span class="o">=</span> <span class="n">wikipedia</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">search_term</span><span class="p">)</span>
-    <span class="c1"># If no results, return to caller.</span>
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">results</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">return</span> <span class="kc">None</span>
-
-    <span class="c1"># Get the page for the top result.</span>
-    <span class="k">return</span> <span class="n">wikipedia</span><span class="o">.</span><span class="n">page</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">content</span>
-<span class="c1"># end::fetch_wikipedia[]</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">()</span>
 </pre></div>
-<div id="cell-2" class="clipboard-copy-txt"># tag::fetch_wikipedia[]
-from typing import Optional
-
-import wikipedia
-
-
-def fetch_wikipedia_page(search_term: str) -> Optional[str]:
-    results = wikipedia.search(search_term)
-    # If no results, return to caller.
-    if len(results) == 0:
-        return None
-
-    # Get the page for the top result.
-    return wikipedia.page(results[0]).content
-# end::fetch_wikipedia[]</div>
+<div id="cell-2" class="clipboard-copy-txt">app = FastAPI()</div>
     
         </div>
     </div>
@@ -1338,45 +1211,23 @@ def fetch_wikipedia_page(search_term: str) -> Optional[str]:
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::sentiment_analysis[]</span>
-<span class="kn">from</span> <span class="nn">ray</span> <span class="kn">import</span> <span class="n">serve</span>
-<span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">pipeline</span>
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
-
-
-<span class="nd">@serve</span><span class="o">.</span><span class="n">deployment</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="nd">@serve</span><span class="o">.</span><span class="n">deployment</span>
 <span class="k">class</span> <span class="nc">SentimentAnalysis</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_classifier</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span><span class="s2">&quot;sentiment-analysis&quot;</span><span class="p">)</span>
 
-    <span class="nd">@serve</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="n">max_batch_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">batch_wait_timeout_s</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">is_positive_batched</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputs</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">bool</span><span class="p">]:</span>
-        <span class="n">results</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_classifier</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="n">truncation</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-        <span class="k">return</span> <span class="p">[</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;POSITIVE&quot;</span> <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">]</span>
-
-    <span class="k">async</span> <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-        <span class="k">return</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_positive_batched</span><span class="p">(</span><span class="n">input_text</span><span class="p">)</span>
-<span class="c1"># end::sentiment_analysis[]</span>
+    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="n">input_text</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">query_params</span><span class="p">[</span><span class="s2">&quot;input_text&quot;</span><span class="p">]</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_classifier</span><span class="p">(</span><span class="n">input_text</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;label&quot;</span><span class="p">]</span>
 </pre></div>
-<div id="cell-3" class="clipboard-copy-txt"># tag::sentiment_analysis[]
-from ray import serve
-from transformers import pipeline
-from typing import List
-
-
-@serve.deployment
+<div id="cell-3" class="clipboard-copy-txt">@serve.deployment
 class SentimentAnalysis:
     def __init__(self):
         self._classifier = pipeline("sentiment-analysis")
 
-    @serve.batch(max_batch_size=10, batch_wait_timeout_s=0.1)
-    async def is_positive_batched(self, inputs: List[str]) -> List[bool]:
-        results = self._classifier(inputs, truncation=True)
-        return [result["label"] == "POSITIVE" for result in results]
-
-    async def __call__(self, input_text: str) -> bool:
-        return await self.is_positive_batched(input_text)
-# end::sentiment_analysis[]</div>
+    def __call__(self, request) -> str:
+        input_text = request.query_params["input_text"]
+        return self._classifier(input_text)[0]["label"]</div>
     
         </div>
     </div>
@@ -1405,31 +1256,9 @@ class SentimentAnalysis:
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::summarizer[]</span>
-<span class="nd">@serve</span><span class="o">.</span><span class="n">deployment</span><span class="p">(</span><span class="n">num_replicas</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="k">class</span> <span class="nc">Summarizer</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">max_length</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_summarizer</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span><span class="s2">&quot;summarization&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_max_length</span> <span class="o">=</span> <span class="n">max_length</span>
-
-    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_summarizer</span><span class="p">(</span>
-            <span class="n">input_text</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_max_length</span><span class="p">,</span> <span class="n">truncation</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;summary_text&quot;</span><span class="p">]</span>
-<span class="c1"># end::summarizer[]</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">basic_deployment</span> <span class="o">=</span> <span class="n">SentimentAnalysis</span><span class="o">.</span><span class="n">bind</span><span class="p">()</span>
 </pre></div>
-<div id="cell-4" class="clipboard-copy-txt"># tag::summarizer[]
-@serve.deployment(num_replicas=2)
-class Summarizer:
-    def __init__(self, max_length: Optional[int] = None):
-        self._summarizer = pipeline("summarization")
-        self._max_length = max_length
-
-    def __call__(self, input_text: str) -> str:
-        result = self._summarizer(
-            input_text, max_length=self._max_length, truncation=True)
-        return result[0]["summary_text"]
-# end::summarizer[]</div>
+<div id="cell-4" class="clipboard-copy-txt">basic_deployment = SentimentAnalysis.bind()</div>
     
         </div>
     </div>
@@ -1458,43 +1287,29 @@ class Summarizer:
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::entity_recognition[]</span>
-<span class="nd">@serve</span><span class="o">.</span><span class="n">deployment</span>
-<span class="k">class</span> <span class="nc">EntityRecognition</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">threshold</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.90</span><span class="p">,</span> <span class="n">max_entities</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_entity_recognition</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span><span class="s2">&quot;ner&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_threshold</span> <span class="o">=</span> <span class="n">threshold</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_max_entities</span> <span class="o">=</span> <span class="n">max_entities</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="nd">@serve</span><span class="o">.</span><span class="n">deployment</span><span class="p">(</span><span class="n">num_replicas</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ray_actor_options</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;num_cpus&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">})</span>
+<span class="nd">@serve</span><span class="o">.</span><span class="n">ingress</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">SentimentAnalysis</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_classifier</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span><span class="s2">&quot;sentiment-analysis&quot;</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
-        <span class="n">final_results</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_entity_recognition</span><span class="p">(</span><span class="n">input_text</span><span class="p">):</span>
-            <span class="k">if</span> <span class="n">result</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">_threshold</span><span class="p">:</span>
-                <span class="n">final_results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;word&quot;</span><span class="p">])</span>
-            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">final_results</span><span class="p">)</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_max_entities</span><span class="p">:</span>
-                <span class="k">break</span>
-
-        <span class="k">return</span> <span class="n">final_results</span>
-<span class="c1"># end::entity_recognition[]</span>
+    <span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">classify</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="kn">import</span> <span class="nn">os</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;from process:&quot;</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">getpid</span><span class="p">())</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_classifier</span><span class="p">(</span><span class="n">input_text</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;label&quot;</span><span class="p">]</span>
 </pre></div>
-<div id="cell-5" class="clipboard-copy-txt"># tag::entity_recognition[]
-@serve.deployment
-class EntityRecognition:
-    def __init__(self, threshold: float = 0.90, max_entities: int = 10):
-        self._entity_recognition = pipeline("ner")
-        self._threshold = threshold
-        self._max_entities = max_entities
+<div id="cell-5" class="clipboard-copy-txt">@serve.deployment(num_replicas=2, ray_actor_options={"num_cpus": 2})
+@serve.ingress(app)
+class SentimentAnalysis:
+    def __init__(self):
+        self._classifier = pipeline("sentiment-analysis")
 
-    def __call__(self, input_text: str) -> List[str]:
-        final_results = []
-        for result in self._entity_recognition(input_text):
-            if result["score"] > self._threshold:
-                final_results.append(result["word"])
-            if len(final_results) == self._max_entities:
-                break
-
-        return final_results
-# end::entity_recognition[]</div>
+    @app.get("/")
+    def classify(self, input_text: str) -> str:
+        import os
+        print("from process:", os.getpid())
+        return self._classifier(input_text)[0]["label"]</div>
     
         </div>
     </div>
@@ -1523,23 +1338,565 @@ class EntityRecognition:
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::response_model[]</span>
-<span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">scaled_deployment</span> <span class="o">=</span> <span class="n">SentimentAnalysis</span><span class="o">.</span><span class="n">bind</span><span class="p">()</span>
+</pre></div>
+<div id="cell-6" class="clipboard-copy-txt">scaled_deployment = SentimentAnalysis.bind()</div>
+    
+        </div>
+    </div>
 
+</div>
+</div>
 
-<span class="k">class</span> <span class="nc">Response</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-7">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="nd">@serve</span><span class="o">.</span><span class="n">deployment</span>
+<span class="nd">@serve</span><span class="o">.</span><span class="n">ingress</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">SentimentAnalysis</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_classifier</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span><span class="s2">&quot;sentiment-analysis&quot;</span><span class="p">)</span>
+
+    <span class="nd">@serve</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="n">max_batch_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">batch_wait_timeout_s</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">classify_batched</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batched_inputs</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Got batch size:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">batched_inputs</span><span class="p">))</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_classifier</span><span class="p">(</span><span class="n">batched_inputs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">]</span>
+
+    <span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">classify</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">classify_batched</span><span class="p">(</span><span class="n">input_text</span><span class="p">)</span>
+</pre></div>
+<div id="cell-7" class="clipboard-copy-txt">@serve.deployment
+@serve.ingress(app)
+class SentimentAnalysis:
+    def __init__(self):
+        self._classifier = pipeline("sentiment-analysis")
+
+    @serve.batch(max_batch_size=10, batch_wait_timeout_s=0.1)
+    async def classify_batched(self, batched_inputs):
+        print("Got batch size:", len(batched_inputs))
+        results = self._classifier(batched_inputs)
+        return [result["label"] for result in results]
+
+    @app.get("/")
+    async def classify(self, input_text: str) -> str:
+        return await self.classify_batched(input_text)</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-8">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">batched_deployment</span> <span class="o">=</span> <span class="n">SentimentAnalysis</span><span class="o">.</span><span class="n">bind</span><span class="p">()</span>
+</pre></div>
+<div id="cell-8" class="clipboard-copy-txt">batched_deployment = SentimentAnalysis.bind()</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-9">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
+</pre></div>
+<div id="cell-9" class="clipboard-copy-txt">from typing import Optional</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-10">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">wikipedia</span>
+</pre></div>
+<div id="cell-10" class="clipboard-copy-txt">import wikipedia</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-11">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="k">def</span> <span class="nf">fetch_wikipedia_page</span><span class="p">(</span><span class="n">search_term</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="n">wikipedia</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">search_term</span><span class="p">)</span>
+    <span class="c1"># If no results, return to caller.</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">results</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="c1"># Get the page for the top result.</span>
+    <span class="k">return</span> <span class="n">wikipedia</span><span class="o">.</span><span class="n">page</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">content</span>
+</pre></div>
+<div id="cell-11" class="clipboard-copy-txt">def fetch_wikipedia_page(search_term: str) -> Optional[str]:
+    results = wikipedia.search(search_term)
+    # If no results, return to caller.
+    if len(results) == 0:
+        return None
+
+    # Get the page for the top result.
+    return wikipedia.page(results[0]).content</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-12">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">ray</span> <span class="kn">import</span> <span class="n">serve</span>
+<span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">pipeline</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+</pre></div>
+<div id="cell-12" class="clipboard-copy-txt">from ray import serve
+from transformers import pipeline
+from typing import List</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-13">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="nd">@serve</span><span class="o">.</span><span class="n">deployment</span>
+<span class="k">class</span> <span class="nc">SentimentAnalysis</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_classifier</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span><span class="s2">&quot;sentiment-analysis&quot;</span><span class="p">)</span>
+
+    <span class="nd">@serve</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="n">max_batch_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">batch_wait_timeout_s</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">is_positive_batched</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputs</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">bool</span><span class="p">]:</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_classifier</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="n">truncation</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;POSITIVE&quot;</span> <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">]</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">return</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_positive_batched</span><span class="p">(</span><span class="n">input_text</span><span class="p">)</span>
+</pre></div>
+<div id="cell-13" class="clipboard-copy-txt">@serve.deployment
+class SentimentAnalysis:
+    def __init__(self):
+        self._classifier = pipeline("sentiment-analysis")
+
+    @serve.batch(max_batch_size=10, batch_wait_timeout_s=0.1)
+    async def is_positive_batched(self, inputs: List[str]) -> List[bool]:
+        results = self._classifier(inputs, truncation=True)
+        return [result["label"] == "POSITIVE" for result in results]
+
+    async def __call__(self, input_text: str) -> bool:
+        return await self.is_positive_batched(input_text)</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-14">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="nd">@serve</span><span class="o">.</span><span class="n">deployment</span><span class="p">(</span><span class="n">num_replicas</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">Summarizer</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">max_length</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_summarizer</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span><span class="s2">&quot;summarization&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_max_length</span> <span class="o">=</span> <span class="n">max_length</span>
+
+    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_summarizer</span><span class="p">(</span>
+            <span class="n">input_text</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_max_length</span><span class="p">,</span> <span class="n">truncation</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;summary_text&quot;</span><span class="p">]</span>
+</pre></div>
+<div id="cell-14" class="clipboard-copy-txt">@serve.deployment(num_replicas=2)
+class Summarizer:
+    def __init__(self, max_length: Optional[int] = None):
+        self._summarizer = pipeline("summarization")
+        self._max_length = max_length
+
+    def __call__(self, input_text: str) -> str:
+        result = self._summarizer(
+            input_text, max_length=self._max_length, truncation=True)
+        return result[0]["summary_text"]</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-15">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="nd">@serve</span><span class="o">.</span><span class="n">deployment</span>
+<span class="k">class</span> <span class="nc">EntityRecognition</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">threshold</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.90</span><span class="p">,</span> <span class="n">max_entities</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_entity_recognition</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span><span class="s2">&quot;ner&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_threshold</span> <span class="o">=</span> <span class="n">threshold</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_max_entities</span> <span class="o">=</span> <span class="n">max_entities</span>
+
+    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+        <span class="n">final_results</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_entity_recognition</span><span class="p">(</span><span class="n">input_text</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">result</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">_threshold</span><span class="p">:</span>
+                <span class="n">final_results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;word&quot;</span><span class="p">])</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">final_results</span><span class="p">)</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_max_entities</span><span class="p">:</span>
+                <span class="k">break</span>
+
+        <span class="k">return</span> <span class="n">final_results</span>
+</pre></div>
+<div id="cell-15" class="clipboard-copy-txt">@serve.deployment
+class EntityRecognition:
+    def __init__(self, threshold: float = 0.90, max_entities: int = 10):
+        self._entity_recognition = pipeline("ner")
+        self._threshold = threshold
+        self._max_entities = max_entities
+
+    def __call__(self, input_text: str) -> List[str]:
+        final_results = []
+        for result in self._entity_recognition(input_text):
+            if result["score"] > self._threshold:
+                final_results.append(result["word"])
+            if len(final_results) == self._max_entities:
+                break
+
+        return final_results</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-16">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span>
+</pre></div>
+<div id="cell-16" class="clipboard-copy-txt">from pydantic import BaseModel</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-17">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="k">class</span> <span class="nc">Response</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
     <span class="n">success</span><span class="p">:</span> <span class="nb">bool</span>
     <span class="n">message</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
     <span class="n">summary</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
     <span class="n">named_entities</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="c1"># end::response_model[]</span>
+</pre></div>
+<div id="cell-17" class="clipboard-copy-txt">class Response(BaseModel):
+    success: bool
+    message: str = ""
+    summary: str = ""
+    named_entities: List[str] = []</div>
+    
+        </div>
+    </div>
 
-<span class="kn">from</span> <span class="nn">fastapi</span> <span class="kn">import</span> <span class="n">FastAPI</span>
+</div>
+</div>
 
-<span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">()</span>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-18">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">fastapi</span> <span class="kn">import</span> <span class="n">FastAPI</span>
+</pre></div>
+<div id="cell-18" class="clipboard-copy-txt">from fastapi import FastAPI</div>
+    
+        </div>
+    </div>
 
+</div>
+</div>
 
-<span class="nd">@serve</span><span class="o">.</span><span class="n">deployment</span>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-19">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">()</span>
+</pre></div>
+<div id="cell-19" class="clipboard-copy-txt">app = FastAPI()</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-20">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="nd">@serve</span><span class="o">.</span><span class="n">deployment</span>
 <span class="nd">@serve</span><span class="o">.</span><span class="n">ingress</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
 <span class="k">class</span> <span class="nc">NLPPipelineDriver</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sentiment_analysis</span><span class="p">,</span> <span class="n">summarizer</span><span class="p">,</span> <span class="n">entity_recognition</span><span class="p">):</span>
@@ -1567,30 +1924,8 @@ class EntityRecognition:
             <span class="n">summary</span><span class="o">=</span><span class="k">await</span> <span class="n">summary_result</span><span class="p">,</span>
             <span class="n">named_entities</span><span class="o">=</span><span class="k">await</span> <span class="n">entities_result</span>
         <span class="p">)</span>
-
-<span class="n">sentiment_analysis</span> <span class="o">=</span> <span class="n">SentimentAnalysis</span><span class="o">.</span><span class="n">bind</span><span class="p">()</span>
-<span class="n">summarizer</span> <span class="o">=</span> <span class="n">Summarizer</span><span class="o">.</span><span class="n">bind</span><span class="p">()</span>
-<span class="n">entity_recognition</span> <span class="o">=</span> <span class="n">EntityRecognition</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">threshold</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span> <span class="n">max_entities</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-<span class="n">nlp_pipeline_driver</span> <span class="o">=</span> <span class="n">NLPPipelineDriver</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span>
-    <span class="n">sentiment_analysis</span><span class="p">,</span> <span class="n">summarizer</span><span class="p">,</span> <span class="n">entity_recognition</span><span class="p">)</span>
 </pre></div>
-<div id="cell-6" class="clipboard-copy-txt"># tag::response_model[]
-from pydantic import BaseModel
-
-
-class Response(BaseModel):
-    success: bool
-    message: str = ""
-    summary: str = ""
-    named_entities: List[str] = []
-# end::response_model[]
-
-from fastapi import FastAPI
-
-app = FastAPI()
-
-
-@serve.deployment
+<div id="cell-20" class="clipboard-copy-txt">@serve.deployment
 @serve.ingress(app)
 class NLPPipelineDriver:
     def __init__(self, sentiment_analysis, summarizer, entity_recognition):
@@ -1617,9 +1952,42 @@ class NLPPipelineDriver:
             success=True,
             summary=await summary_result,
             named_entities=await entities_result
-        )
+        )</div>
+    
+        </div>
+    </div>
 
-sentiment_analysis = SentimentAnalysis.bind()
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-21">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">sentiment_analysis</span> <span class="o">=</span> <span class="n">SentimentAnalysis</span><span class="o">.</span><span class="n">bind</span><span class="p">()</span>
+<span class="n">summarizer</span> <span class="o">=</span> <span class="n">Summarizer</span><span class="o">.</span><span class="n">bind</span><span class="p">()</span>
+<span class="n">entity_recognition</span> <span class="o">=</span> <span class="n">EntityRecognition</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">threshold</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span> <span class="n">max_entities</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">nlp_pipeline_driver</span> <span class="o">=</span> <span class="n">NLPPipelineDriver</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span>
+    <span class="n">sentiment_analysis</span><span class="p">,</span> <span class="n">summarizer</span><span class="p">,</span> <span class="n">entity_recognition</span><span class="p">)</span>
+</pre></div>
+<div id="cell-21" class="clipboard-copy-txt">sentiment_analysis = SentimentAnalysis.bind()
 summarizer = Summarizer.bind()
 entity_recognition = EntityRecognition.bind(threshold=0.95, max_entities=5)
 nlp_pipeline_driver = NLPPipelineDriver.bind(
