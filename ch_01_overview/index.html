@@ -1616,15 +1616,11 @@ In your Python session you can now easily import and initialize Ray as follows:<
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::init[]</span>
-<span class="kn">import</span> <span class="nn">ray</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">ray</span>
 <span class="n">ray</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="c1"># end::init[]</span>
 </pre></div>
-<div id="cell-4" class="clipboard-copy-txt"># tag::init[]
-import ray
-ray.init()
-# end::init[]</div>
+<div id="cell-4" class="clipboard-copy-txt">import ray
+ray.init()</div>
     
         </div>
     </div>
@@ -1677,21 +1673,17 @@ string <code>name</code> and an integer-valued <code>data</code> for <code>10000
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::ray_data_load[]</span>
-<span class="kn">import</span> <span class="nn">ray</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">ray</span>
 
 <span class="n">items</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="n">i</span><span class="p">}</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">)]</span>
-<span class="n">ds</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">from_items</span><span class="p">(</span><span class="n">items</span><span class="p">)</span>   <span class="c1"># &lt;1&gt;</span>
-<span class="n">ds</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># &lt;2&gt;</span>
-<span class="c1"># end::ray_data_load[]</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">from_items</span><span class="p">(</span><span class="n">items</span><span class="p">)</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
-<div id="cell-5" class="clipboard-copy-txt"># tag::ray_data_load[]
-import ray
+<div id="cell-5" class="clipboard-copy-txt">import ray
 
 items = [{"name": str(i), "data": i} for i in range(10000)]
-ds = ray.data.from_items(items)   # <1>
-ds.show(5)  # <2>
-# end::ray_data_load[]</div>
+ds = ray.data.from_items(items)
+ds.show(5)</div>
     
         </div>
     </div>
@@ -1748,27 +1740,23 @@ transform your dataset <code>ds</code>:</p>
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::ray_data_transform[]</span>
-<span class="n">squares</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># &lt;1&gt;</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">squares</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
 
-<span class="n">evens</span> <span class="o">=</span> <span class="n">squares</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># &lt;2&gt;</span>
+<span class="n">evens</span> <span class="o">=</span> <span class="n">squares</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
 <span class="n">evens</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
 
-<span class="n">cubes</span> <span class="o">=</span> <span class="n">evens</span><span class="o">.</span><span class="n">flat_map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="p">])</span>  <span class="c1"># &lt;3&gt;</span>
-<span class="n">sample</span> <span class="o">=</span> <span class="n">cubes</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># &lt;4&gt;</span>
+<span class="n">cubes</span> <span class="o">=</span> <span class="n">evens</span><span class="o">.</span><span class="n">flat_map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">sample</span> <span class="o">=</span> <span class="n">cubes</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
-<span class="c1"># end::ray_data_transform[]</span>
 </pre></div>
-<div id="cell-6" class="clipboard-copy-txt"># tag::ray_data_transform[]
-squares = ds.map(lambda x: x["data"] ** 2)  # <1>
+<div id="cell-6" class="clipboard-copy-txt">squares = ds.map(lambda x: x["data"] ** 2)
 
-evens = squares.filter(lambda x: x % 2 == 0)  # <2>
+evens = squares.filter(lambda x: x % 2 == 0)
 evens.count()
 
-cubes = evens.flat_map(lambda x: [x, x**3])  # <3>
-sample = cubes.take(10)  # <4>
-print(sample)
-# end::ray_data_transform[]</div>
+cubes = evens.flat_map(lambda x: [x, x**3])
+sample = cubes.take(10)
+print(sample)</div>
     
         </div>
     </div>
@@ -1815,23 +1803,19 @@ Let's rewrite the last example into a pipeline.</p>
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::ray_data_pipeline[]</span>
-<span class="n">pipe</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">window</span><span class="p">()</span>  <span class="c1"># &lt;1&gt;</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">pipe</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">window</span><span class="p">()</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">pipe</span>\
     <span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>\
     <span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>\
-    <span class="o">.</span><span class="n">flat_map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="p">])</span>  <span class="c1"># &lt;2&gt;</span>
+    <span class="o">.</span><span class="n">flat_map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="p">])</span>
 <span class="n">result</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-<span class="c1"># end::ray_data_pipeline[]</span>
 </pre></div>
-<div id="cell-7" class="clipboard-copy-txt"># tag::ray_data_pipeline[]
-pipe = ds.window()  # <1>
+<div id="cell-7" class="clipboard-copy-txt">pipe = ds.window()
 result = pipe\
     .map(lambda x: x["data"] ** 2)\
     .filter(lambda x: x % 2 == 0)\
-    .flat_map(lambda x: [x, x**3])  # <2>
-result.show(10)
-# end::ray_data_pipeline[]</div>
+    .flat_map(lambda x: [x, x**3])
+result.show(10)</div>
     
         </div>
     </div>
@@ -1936,8 +1920,7 @@ result.show(10)
         <div class="CodeMirror cm-s-jupyter">
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="err">!</span> <span class="n">rllib</span> <span class="n">example</span> <span class="n">run</span> <span class="n">cartpole</span><span class="o">-</span><span class="n">ppo</span>
 </pre></div>
-<div id="cell-10" class="clipboard-copy-txt">
-! rllib example run cartpole-ppo</div>
+<div id="cell-10" class="clipboard-copy-txt">! rllib example run cartpole-ppo</div>
     
         </div>
     </div>
@@ -1953,9 +1936,10 @@ result.show(10)
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Afterwards try:
-! rllib evaluate <checkpoint-path>/checkpoint_<number> --algo PPO
-for the checkpoint you're shown after training finishes.</p>
+<p>Afterwards run:</p>
+
+<pre><code>! rllib evaluate &lt;checkpoint-path&gt;/checkpoint_&lt;number&gt; --algo PPO</code></pre>
+<p>for the checkpoint you're shown after training finishes.</p>
 
 </div>
 </div>
@@ -2012,59 +1996,55 @@ The focus is yet again on Ray and its API, and not on a specific ML task (which 
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::ray_tune[]</span>
-<span class="kn">from</span> <span class="nn">ray</span> <span class="kn">import</span> <span class="n">tune</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">ray</span> <span class="kn">import</span> <span class="n">tune</span>
 <span class="kn">import</span> <span class="nn">math</span>
 <span class="kn">import</span> <span class="nn">time</span>
 
 
-<span class="k">def</span> <span class="nf">training_function</span><span class="p">(</span><span class="n">config</span><span class="p">):</span>  <span class="c1"># &lt;1&gt;</span>
+<span class="k">def</span> <span class="nf">training_function</span><span class="p">(</span><span class="n">config</span><span class="p">):</span>
     <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">],</span> <span class="n">config</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span>
     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
     <span class="n">score</span> <span class="o">=</span> <span class="n">objective</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-    <span class="n">tune</span><span class="o">.</span><span class="n">report</span><span class="p">(</span><span class="n">score</span><span class="o">=</span><span class="n">score</span><span class="p">)</span>  <span class="c1"># &lt;2&gt;</span>
+    <span class="n">tune</span><span class="o">.</span><span class="n">report</span><span class="p">(</span><span class="n">score</span><span class="o">=</span><span class="n">score</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">objective</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># &lt;3&gt;</span>
+    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
 
 
-<span class="n">result</span> <span class="o">=</span> <span class="n">tune</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>  <span class="c1"># &lt;4&gt;</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">tune</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
     <span class="n">training_function</span><span class="p">,</span>
     <span class="n">config</span><span class="o">=</span><span class="p">{</span>
-        <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="n">tune</span><span class="o">.</span><span class="n">grid_search</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mf">.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">]),</span>  <span class="c1"># &lt;5&gt;</span>
+        <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="n">tune</span><span class="o">.</span><span class="n">grid_search</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mf">.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">]),</span>
         <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="n">tune</span><span class="o">.</span><span class="n">grid_search</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mf">.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
     <span class="p">})</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">get_best_config</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="s2">&quot;score&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;min&quot;</span><span class="p">))</span>
-<span class="c1"># end::ray_tune[]</span>
 </pre></div>
-<div id="cell-11" class="clipboard-copy-txt"># tag::ray_tune[]
-from ray import tune
+<div id="cell-11" class="clipboard-copy-txt">from ray import tune
 import math
 import time
 
 
-def training_function(config):  # <1>
+def training_function(config):
     x, y = config["x"], config["y"]
     time.sleep(10)
     score = objective(x, y)
-    tune.report(score=score)  # <2>
+    tune.report(score=score)
 
 
 def objective(x, y):
-    return math.sqrt((x**2 + y**2)/2)  # <3>
+    return math.sqrt((x**2 + y**2)/2)
 
 
-result = tune.run(  # <4>
+result = tune.run(
     training_function,
     config={
-        "x": tune.grid_search([-1, -.5, 0, .5, 1]),  # <5>
+        "x": tune.grid_search([-1, -.5, 0, .5, 1]),
         "y": tune.grid_search([-1, -.5, 0, .5, 1])
     })
 
-print(result.get_best_config(metric="score", mode="min"))
-# end::ray_tune[]</div>
+print(result.get_best_config(metric="score", mode="min"))</div>
     
         </div>
     </div>
@@ -2120,49 +2100,45 @@ model and ask it for the meaning of life, like so:</p>
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># tag::ray_serve[]</span>
-<span class="kn">from</span> <span class="nn">ray</span> <span class="kn">import</span> <span class="n">serve</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">ray</span> <span class="kn">import</span> <span class="n">serve</span>
 <span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">pipeline</span>
 <span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">serve</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>  <span class="c1"># &lt;1&gt;</span>
+<span class="n">serve</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 
 
-<span class="nd">@serve</span><span class="o">.</span><span class="n">deployment</span>  <span class="c1"># &lt;2&gt;</span>
+<span class="nd">@serve</span><span class="o">.</span><span class="n">deployment</span>
 <span class="k">def</span> <span class="nf">model</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
-    <span class="n">language_model</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span><span class="s2">&quot;text-generation&quot;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt2&quot;</span><span class="p">)</span>  <span class="c1"># &lt;3&gt;</span>
+    <span class="n">language_model</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span><span class="s2">&quot;text-generation&quot;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt2&quot;</span><span class="p">)</span>
     <span class="n">query</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">query_params</span><span class="p">[</span><span class="s2">&quot;query&quot;</span><span class="p">]</span>
-    <span class="k">return</span> <span class="n">language_model</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>  <span class="c1"># &lt;4&gt;</span>
+    <span class="k">return</span> <span class="n">language_model</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
 
 
-<span class="n">model</span><span class="o">.</span><span class="n">deploy</span><span class="p">()</span>  <span class="c1"># &lt;5&gt;</span>
+<span class="n">model</span><span class="o">.</span><span class="n">deploy</span><span class="p">()</span>
 
 <span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;What&#39;s the meaning of life?&quot;</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;http://localhost:8000/model?query=</span><span class="si">{</span><span class="n">query</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># &lt;6&gt;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;http://localhost:8000/model?query=</span><span class="si">{</span><span class="n">query</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
-<span class="c1"># end::ray_serve[]</span>
 </pre></div>
-<div id="cell-12" class="clipboard-copy-txt"># tag::ray_serve[]
-from ray import serve
+<div id="cell-12" class="clipboard-copy-txt">from ray import serve
 from transformers import pipeline
 import requests
 
-serve.start()  # <1>
+serve.start()
 
 
-@serve.deployment  # <2>
+@serve.deployment
 def model(request):
-    language_model = pipeline("text-generation", model="gpt2")  # <3>
+    language_model = pipeline("text-generation", model="gpt2")
     query = request.query_params["query"]
-    return language_model(query, max_length=100)  # <4>
+    return language_model(query, max_length=100)
 
 
-model.deploy()  # <5>
+model.deploy()
 
 query = "What's the meaning of life?"
-response = requests.get(f"http://localhost:8000/model?query={query}")  # <6>
-print(response.text)
-# end::ray_serve[]</div>
+response = requests.get(f"http://localhost:8000/model?query={query}")
+print(response.text)</div>
     
         </div>
     </div>
