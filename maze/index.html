@@ -1158,10 +1158,10 @@ all of MD as it is not optimized for dense, information rich UIs.
         </div>
         <div class="CodeMirror cm-s-jupyter">
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">config</span> <span class="o">=</span> <span class="n">DQNConfig</span><span class="p">()</span><span class="o">.</span><span class="n">environment</span><span class="p">(</span><span class="s2">&quot;maze_gym_env.GymEnvironment&quot;</span><span class="p">)</span>\
-    <span class="o">.</span><span class="n">rollouts</span><span class="p">(</span><span class="n">num_rollout_workers</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">rollouts</span><span class="p">(</span><span class="n">num_rollout_workers</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 <div id="cell-2" class="clipboard-copy-txt">config = DQNConfig().environment("maze_gym_env.GymEnvironment")\
-    .rollouts(num_rollout_workers=2)</div>
+    .rollouts(num_rollout_workers=0)</div>
     
         </div>
     </div>

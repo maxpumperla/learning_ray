@@ -1776,10 +1776,36 @@ result.show(10)</div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Afterwards run:</p>
+<p>With the checkpoint you're shown after training finishes, run:</p>
 
-<pre><code>! rllib evaluate &lt;checkpoint-path&gt;/checkpoint_&lt;number&gt; --algo PPO</code></pre>
-<p>for the checkpoint you're shown after training finishes.</p>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-10">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="err">!</span> <span class="n">rllib</span> <span class="n">evaluate</span> <span class="o">&lt;</span><span class="n">checkpoint</span><span class="o">-</span><span class="n">path</span><span class="o">&gt;/</span><span class="n">checkpoint_</span><span class="o">&lt;</span><span class="n">number</span><span class="o">&gt;</span> <span class="o">--</span><span class="n">algo</span> <span class="n">PPO</span>
+</pre></div>
+<div id="cell-10" class="clipboard-copy-txt">! rllib evaluate <checkpoint-path>/checkpoint_<number> --algo PPO</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
 
 </div>
 </div>
@@ -1816,7 +1842,7 @@ The focus is yet again on Ray and its API, and not on a specific ML task (which 
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-10">
+            <clipboard-copy for="cell-11">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1851,7 +1877,7 @@ The focus is yet again on Ray and its API, and not on a specific ML task (which 
 
 <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">get_best_config</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="s2">&quot;score&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;min&quot;</span><span class="p">))</span>
 </pre></div>
-<div id="cell-10" class="clipboard-copy-txt">from ray import tune
+<div id="cell-11" class="clipboard-copy-txt">from ray import tune
 import math
 import time
 
@@ -1912,7 +1938,7 @@ model and ask it for the meaning of life, like so:</p>
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-11">
+            <clipboard-copy for="cell-12">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1942,7 +1968,7 @@ model and ask it for the meaning of life, like so:</p>
 <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;http://localhost:8000/model?query=</span><span class="si">{</span><span class="n">query</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </pre></div>
-<div id="cell-11" class="clipboard-copy-txt">from ray import serve
+<div id="cell-12" class="clipboard-copy-txt">from ray import serve
 from transformers import pipeline
 import requests
 
@@ -2007,7 +2033,7 @@ print(response.text)</div>
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-12">
+            <clipboard-copy for="cell-13">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -2019,7 +2045,7 @@ print(response.text)</div>
         <div class="CodeMirror cm-s-jupyter">
             <div class="highlight-ipynb hl-python"><pre><span></span>
 </pre></div>
-<div id="cell-12" class="clipboard-copy-txt"></div>
+<div id="cell-13" class="clipboard-copy-txt"></div>
     
         </div>
     </div>
