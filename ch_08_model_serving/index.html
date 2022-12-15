@@ -1154,10 +1154,12 @@ all of MD as it is not optimized for dense, information rich UIs.
 <a href="https://colab.research.google.com/github/maxpumperla/learning_ray/blob/main/notebooks/ch_08_model_serving.ipynb">Colab</a>.
 <a target="_blank" href="https://colab.research.google.com/github/maxpumperla/learning_ray/blob/main/notebooks/ch_08_model_serving.ipynb">
 <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<p>The book has been written for Ray 2.2.0,which at the time of writing has not
-officially been released yet. If you are reading this and this version is already
-available, you can install it using <code>pip install ray==2.2.0</code>. If not, you can
-use a nightly wheel (here for Python 3.7 on Linux):</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>For this chapter you need to install the following dependencies:</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -1178,47 +1180,10 @@ use a nightly wheel (here for Python 3.7 on Linux):</p>
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">s3</span><span class="o">-</span><span class="n">us</span><span class="o">-</span><span class="n">west</span><span class="o">-</span><span class="mf">2.</span><span class="n">amazonaws</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ray</span><span class="o">-</span><span class="n">wheels</span><span class="o">/</span><span class="n">latest</span><span class="o">/</span><span class="n">ray</span><span class="o">-</span><span class="mf">3.0.0</span><span class="o">.</span><span class="n">dev0</span><span class="o">-</span><span class="n">cp37</span><span class="o">-</span><span class="n">cp37m</span><span class="o">-</span><span class="n">manylinux2014_x86_64</span><span class="o">.</span><span class="n">whl</span>
-</pre></div>
-<div id="cell-1" class="clipboard-copy-txt">! pip install -U https://s3-us-west-2.amazonaws.com/ray-wheels/latest/ray-3.0.0.dev0-cp37-cp37m-manylinux2014_x86_64.whl</div>
-    
-        </div>
-    </div>
-
-</div>
-</div>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Should you not run this notebook in Colab and need another type of wheel, please
-refer to Ray's <a href="https://docs.ray.io/en/latest/ray-overview/installation.html#install-nightlies">installation instructions for nightlies</a>.</p>
-<p>For this chapter you will also need to install the following dependencies:</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-        
-        
-        <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-2">
-            <div>
-                <span class="notice" hidden>Copied!</span>
-                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
-                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
-                </svg>
-                </div>
-            </clipboard-copy>
-        </div>
-        <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="s2">&quot;ray[serve]&gt;=2.1.0&quot;</span> <span class="s2">&quot;transformers==4.21.2&quot;</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="s2">&quot;ray[serve]==2.2.0&quot;</span> <span class="s2">&quot;transformers==4.21.2&quot;</span>
 <span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="s2">&quot;requests==2.28.1&quot;</span> <span class="s2">&quot;wikipedia==1.4.0&quot;</span>
 </pre></div>
-<div id="cell-2" class="clipboard-copy-txt">! pip install "ray[serve]>=2.1.0" "transformers==4.21.2"
+<div id="cell-1" class="clipboard-copy-txt">! pip install "ray[serve]==2.2.0" "transformers==4.21.2"
 ! pip install "requests==2.28.1" "wikipedia==1.4.0"</div>
     
         </div>
@@ -1243,7 +1208,7 @@ the repo and copy the code files to the base path of the runtime:</p>
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-3">
+            <clipboard-copy for="cell-2">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1256,7 +1221,7 @@ the repo and copy the code files to the base path of the runtime:</p>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="err">!</span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">maxpumperla</span><span class="o">/</span><span class="n">learning_ray</span>
 <span class="o">%</span><span class="n">cp</span> <span class="o">-</span><span class="n">r</span> <span class="n">learning_ray</span><span class="o">/</span><span class="n">notebooks</span><span class="o">/*</span> <span class="o">.</span>
 </pre></div>
-<div id="cell-3" class="clipboard-copy-txt">!git clone https://github.com/maxpumperla/learning_ray
+<div id="cell-2" class="clipboard-copy-txt">!git clone https://github.com/maxpumperla/learning_ray
 %cp -r learning_ray/notebooks/* .</div>
     
         </div>
@@ -1292,7 +1257,7 @@ the repo and copy the code files to the base path of the runtime:</p>
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-4">
+            <clipboard-copy for="cell-3">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1316,7 +1281,7 @@ the repo and copy the code files to the base path of the runtime:</p>
         <span class="n">input_text</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">query_params</span><span class="p">[</span><span class="s2">&quot;input_text&quot;</span><span class="p">]</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_classifier</span><span class="p">(</span><span class="n">input_text</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;label&quot;</span><span class="p">]</span>
 </pre></div>
-<div id="cell-4" class="clipboard-copy-txt">from ray import serve
+<div id="cell-3" class="clipboard-copy-txt">from ray import serve
 
 from transformers import pipeline
 
@@ -1345,7 +1310,7 @@ class SentimentAnalysis:
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-5">
+            <clipboard-copy for="cell-4">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1357,7 +1322,38 @@ class SentimentAnalysis:
         <div class="CodeMirror cm-s-jupyter">
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">basic_deployment</span> <span class="o">=</span> <span class="n">SentimentAnalysis</span><span class="o">.</span><span class="n">bind</span><span class="p">()</span>
 </pre></div>
-<div id="cell-5" class="clipboard-copy-txt">basic_deployment = SentimentAnalysis.bind()</div>
+<div id="cell-4" class="clipboard-copy-txt">basic_deployment = SentimentAnalysis.bind()</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-5">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Run this in a separate process to avoid any blocking:</span>
+<span class="err">!</span> <span class="n">serve</span> <span class="n">run</span> <span class="n">app</span><span class="p">:</span><span class="n">basic_deployment</span>
+</pre></div>
+<div id="cell-5" class="clipboard-copy-txt"># Run this in a separate process to avoid any blocking:
+! serve run app:basic_deployment</div>
     
         </div>
     </div>
@@ -1384,44 +1380,13 @@ class SentimentAnalysis:
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Run this in a separate process to avoid any blocking:</span>
-<span class="err">!</span> <span class="n">serve</span> <span class="n">run</span> <span class="n">app</span><span class="p">:</span><span class="n">basic_deployment</span>
-</pre></div>
-<div id="cell-6" class="clipboard-copy-txt"># Run this in a separate process to avoid any blocking:
-! serve run app:basic_deployment</div>
-    
-        </div>
-    </div>
-
-</div>
-</div>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-        
-        
-        <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-7">
-            <div>
-                <span class="notice" hidden>Copied!</span>
-                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
-                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
-                </svg>
-                </div>
-            </clipboard-copy>
-        </div>
-        <div class="CodeMirror cm-s-jupyter">
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
     <span class="s2">&quot;http://localhost:8000/&quot;</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;input_text&quot;</span><span class="p">:</span> <span class="s2">&quot;Hello friend!&quot;</span><span class="p">}</span>
 <span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
 </pre></div>
-<div id="cell-7" class="clipboard-copy-txt">import requests
+<div id="cell-6" class="clipboard-copy-txt">import requests
 
 print(requests.get(
     "http://localhost:8000/", params={"input_text": "Hello friend!"}
@@ -1442,7 +1407,7 @@ print(requests.get(
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-8">
+            <clipboard-copy for="cell-7">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1470,7 +1435,7 @@ print(requests.get(
 
 <span class="n">fastapi_deployment</span> <span class="o">=</span> <span class="n">SentimentAnalysis</span><span class="o">.</span><span class="n">bind</span><span class="p">()</span>
 </pre></div>
-<div id="cell-8" class="clipboard-copy-txt">from fastapi import FastAPI
+<div id="cell-7" class="clipboard-copy-txt">from fastapi import FastAPI
 
 app = FastAPI()
 
@@ -1503,7 +1468,7 @@ fastapi_deployment = SentimentAnalysis.bind()</div>
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-9">
+            <clipboard-copy for="cell-8">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1531,7 +1496,7 @@ fastapi_deployment = SentimentAnalysis.bind()</div>
 
 <span class="n">scaled_deployment</span> <span class="o">=</span> <span class="n">SentimentAnalysis</span><span class="o">.</span><span class="n">bind</span><span class="p">()</span>
 </pre></div>
-<div id="cell-9" class="clipboard-copy-txt">app = FastAPI()
+<div id="cell-8" class="clipboard-copy-txt">app = FastAPI()
 
 
 @serve.deployment(num_replicas=2, ray_actor_options={"num_cpus": 2})
@@ -1564,7 +1529,7 @@ scaled_deployment = SentimentAnalysis.bind()</div>
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-10">
+            <clipboard-copy for="cell-9">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1596,7 +1561,7 @@ scaled_deployment = SentimentAnalysis.bind()</div>
 
 <span class="n">batched_deployment</span> <span class="o">=</span> <span class="n">SentimentAnalysis</span><span class="o">.</span><span class="n">bind</span><span class="p">()</span>
 </pre></div>
-<div id="cell-10" class="clipboard-copy-txt">app = FastAPI()
+<div id="cell-9" class="clipboard-copy-txt">app = FastAPI()
 
 
 @serve.deployment
@@ -1633,7 +1598,7 @@ batched_deployment = SentimentAnalysis.bind()</div>
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-11">
+            <clipboard-copy for="cell-10">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1650,7 +1615,7 @@ batched_deployment = SentimentAnalysis.bind()</div>
 <span class="n">handle</span> <span class="o">=</span> <span class="n">serve</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">batched_deployment</span><span class="p">)</span>
 <span class="n">ray</span><span class="o">.</span><span class="n">get</span><span class="p">([</span><span class="n">handle</span><span class="o">.</span><span class="n">classify</span><span class="o">.</span><span class="n">remote</span><span class="p">(</span><span class="s2">&quot;sample text&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)])</span>
 </pre></div>
-<div id="cell-11" class="clipboard-copy-txt">import ray
+<div id="cell-10" class="clipboard-copy-txt">import ray
 from ray import serve
 from app import batched_deployment
 
@@ -1672,7 +1637,7 @@ ray.get([handle.classify.remote("sample text") for _ in range(10)])</div>
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-12">
+            <clipboard-copy for="cell-11">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1700,7 +1665,7 @@ ray.get([handle.classify.remote("sample text") for _ in range(10)])</div>
 <span class="n">downstream</span> <span class="o">=</span> <span class="n">DownstreamModel</span><span class="o">.</span><span class="n">bind</span><span class="p">()</span>
 <span class="n">driver</span> <span class="o">=</span> <span class="n">Driver</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">downstream</span><span class="p">)</span>
 </pre></div>
-<div id="cell-12" class="clipboard-copy-txt">@serve.deployment
+<div id="cell-11" class="clipboard-copy-txt">@serve.deployment
 class DownstreamModel:
     def __call__(self, inp: str):
         return "Hi from downstream model!"
@@ -1733,7 +1698,7 @@ driver = Driver.bind(downstream)</div>
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-13">
+            <clipboard-copy for="cell-12">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1768,7 +1733,7 @@ driver = Driver.bind(downstream)</div>
 <span class="n">m2</span> <span class="o">=</span> <span class="n">DownstreamModel</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;val2&quot;</span><span class="p">)</span>
 <span class="n">pipeline_driver</span> <span class="o">=</span> <span class="n">PipelineDriver</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">m1</span><span class="p">,</span> <span class="n">m2</span><span class="p">)</span>
 </pre></div>
-<div id="cell-13" class="clipboard-copy-txt">@serve.deployment
+<div id="cell-12" class="clipboard-copy-txt">@serve.deployment
 class DownstreamModel:
     def __init__(self, my_val: str):
         self._my_val = my_val
@@ -1808,7 +1773,7 @@ pipeline_driver = PipelineDriver.bind(m1, m2)</div>
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-14">
+            <clipboard-copy for="cell-13">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1842,7 +1807,7 @@ pipeline_driver = PipelineDriver.bind(m1, m2)</div>
 <span class="n">m2</span> <span class="o">=</span> <span class="n">DownstreamModel</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;val2&quot;</span><span class="p">)</span>
 <span class="n">broadcast_driver</span> <span class="o">=</span> <span class="n">BroadcastDriver</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">m1</span><span class="p">,</span> <span class="n">m2</span><span class="p">)</span>
 </pre></div>
-<div id="cell-14" class="clipboard-copy-txt">@serve.deployment
+<div id="cell-13" class="clipboard-copy-txt">@serve.deployment
 class DownstreamModel:
     def __init__(self, my_val: str):
         self._my_val = my_val
@@ -1881,7 +1846,7 @@ broadcast_driver = BroadcastDriver.bind(m1, m2)</div>
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-15">
+            <clipboard-copy for="cell-14">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1918,7 +1883,7 @@ broadcast_driver = BroadcastDriver.bind(m1, m2)</div>
 <span class="n">m2</span> <span class="o">=</span> <span class="n">DownstreamModel</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;val2&quot;</span><span class="p">)</span>
 <span class="n">conditional_driver</span> <span class="o">=</span> <span class="n">ConditionalDriver</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">m1</span><span class="p">,</span> <span class="n">m2</span><span class="p">)</span>
 </pre></div>
-<div id="cell-15" class="clipboard-copy-txt">@serve.deployment
+<div id="cell-14" class="clipboard-copy-txt">@serve.deployment
 class DownstreamModel:
     def __init__(self, my_val: str):
         self._my_val = my_val
@@ -1960,7 +1925,7 @@ conditional_driver = ConditionalDriver.bind(m1, m2)</div>
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-16">
+            <clipboard-copy for="cell-15">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1984,7 +1949,7 @@ conditional_driver = ConditionalDriver.bind(m1, m2)</div>
     <span class="c1"># Get the page for the top result.</span>
     <span class="k">return</span> <span class="n">wikipedia</span><span class="o">.</span><span class="n">page</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">content</span>
 </pre></div>
-<div id="cell-16" class="clipboard-copy-txt">from typing import Optional
+<div id="cell-15" class="clipboard-copy-txt">from typing import Optional
 
 import wikipedia
 
@@ -2013,7 +1978,7 @@ def fetch_wikipedia_page(search_term: str) -> Optional[str]:
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-17">
+            <clipboard-copy for="cell-16">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -2041,7 +2006,7 @@ def fetch_wikipedia_page(search_term: str) -> Optional[str]:
     <span class="k">async</span> <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
         <span class="k">return</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_positive_batched</span><span class="p">(</span><span class="n">input_text</span><span class="p">)</span>
 </pre></div>
-<div id="cell-17" class="clipboard-copy-txt">from ray import serve
+<div id="cell-16" class="clipboard-copy-txt">from ray import serve
 from transformers import pipeline
 from typing import List
 
@@ -2074,7 +2039,7 @@ class SentimentAnalysis:
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-18">
+            <clipboard-copy for="cell-17">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -2095,7 +2060,7 @@ class SentimentAnalysis:
             <span class="n">input_text</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_max_length</span><span class="p">,</span> <span class="n">truncation</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;summary_text&quot;</span><span class="p">]</span>
 </pre></div>
-<div id="cell-18" class="clipboard-copy-txt">@serve.deployment(num_replicas=2)
+<div id="cell-17" class="clipboard-copy-txt">@serve.deployment(num_replicas=2)
 class Summarizer:
     def __init__(self, max_length: Optional[int] = None):
         self._summarizer = pipeline("summarization")
@@ -2121,7 +2086,7 @@ class Summarizer:
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-19">
+            <clipboard-copy for="cell-18">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -2148,7 +2113,7 @@ class Summarizer:
 
         <span class="k">return</span> <span class="n">final_results</span>
 </pre></div>
-<div id="cell-19" class="clipboard-copy-txt">@serve.deployment
+<div id="cell-18" class="clipboard-copy-txt">@serve.deployment
 class EntityRecognition:
     def __init__(self, threshold: float = 0.90, max_entities: int = 10):
         self._entity_recognition = pipeline("ner")
@@ -2180,7 +2145,7 @@ class EntityRecognition:
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-20">
+            <clipboard-copy for="cell-19">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -2199,7 +2164,7 @@ class EntityRecognition:
     <span class="n">summary</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
     <span class="n">named_entities</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
 </pre></div>
-<div id="cell-20" class="clipboard-copy-txt">from pydantic import BaseModel
+<div id="cell-19" class="clipboard-copy-txt">from pydantic import BaseModel
 
 
 class Response(BaseModel):
@@ -2223,7 +2188,7 @@ class Response(BaseModel):
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-21">
+            <clipboard-copy for="cell-20">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -2267,7 +2232,7 @@ class Response(BaseModel):
             <span class="n">named_entities</span><span class="o">=</span><span class="k">await</span> <span class="n">entities_result</span>
         <span class="p">)</span>
 </pre></div>
-<div id="cell-21" class="clipboard-copy-txt">from fastapi import FastAPI
+<div id="cell-20" class="clipboard-copy-txt">from fastapi import FastAPI
 
 app = FastAPI()
 
@@ -2316,7 +2281,7 @@ class NLPPipelineDriver:
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-22">
+            <clipboard-copy for="cell-21">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -2332,11 +2297,42 @@ class NLPPipelineDriver:
 <span class="n">nlp_pipeline_driver</span> <span class="o">=</span> <span class="n">NLPPipelineDriver</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span>
     <span class="n">sentiment_analysis</span><span class="p">,</span> <span class="n">summarizer</span><span class="p">,</span> <span class="n">entity_recognition</span><span class="p">)</span>
 </pre></div>
-<div id="cell-22" class="clipboard-copy-txt">sentiment_analysis = SentimentAnalysis.bind()
+<div id="cell-21" class="clipboard-copy-txt">sentiment_analysis = SentimentAnalysis.bind()
 summarizer = Summarizer.bind()
 entity_recognition = EntityRecognition.bind(threshold=0.95, max_entities=5)
 nlp_pipeline_driver = NLPPipelineDriver.bind(
     sentiment_analysis, summarizer, entity_recognition)</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-22">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Run this in a separate process to avoid any blocking:</span>
+<span class="err">!</span> <span class="n">serve</span> <span class="n">run</span> <span class="n">app</span><span class="p">:</span><span class="n">nlp_pipeline_driver</span>
+</pre></div>
+<div id="cell-22" class="clipboard-copy-txt"># Run this in a separate process to avoid any blocking:
+! serve run app:nlp_pipeline_driver</div>
     
         </div>
     </div>
@@ -2363,11 +2359,19 @@ nlp_pipeline_driver = NLPPipelineDriver.bind(
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Run this in a separate process to avoid any blocking:</span>
-<span class="err">!</span> <span class="n">serve</span> <span class="n">run</span> <span class="n">app</span><span class="p">:</span><span class="n">nlp_pipeline_driver</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+    <span class="s2">&quot;http://localhost:8000/&quot;</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;search_term&quot;</span><span class="p">:</span> <span class="s2">&quot;rayserve&quot;</span><span class="p">}</span>
+<span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </pre></div>
-<div id="cell-23" class="clipboard-copy-txt"># Run this in a separate process to avoid any blocking:
-! serve run app:nlp_pipeline_driver</div>
+<div id="cell-23" class="clipboard-copy-txt">import requests
+
+
+print(requests.get(
+    "http://localhost:8000/", params={"search_term": "rayserve"}
+).text)</div>
     
         </div>
     </div>
@@ -2394,18 +2398,12 @@ nlp_pipeline_driver = NLPPipelineDriver.bind(
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
-
-
-<span class="nb">print</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
-    <span class="s2">&quot;http://localhost:8000/&quot;</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;search_term&quot;</span><span class="p">:</span> <span class="s2">&quot;rayserve&quot;</span><span class="p">}</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+    <span class="s2">&quot;http://localhost:8000/&quot;</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;search_term&quot;</span><span class="p">:</span> <span class="s2">&quot;war&quot;</span><span class="p">}</span>
 <span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </pre></div>
-<div id="cell-24" class="clipboard-copy-txt">import requests
-
-
-print(requests.get(
-    "http://localhost:8000/", params={"search_term": "rayserve"}
+<div id="cell-24" class="clipboard-copy-txt">print(requests.get(
+    "http://localhost:8000/", params={"search_term": "war"}
 ).text)</div>
     
         </div>
@@ -2434,43 +2432,10 @@ print(requests.get(
         </div>
         <div class="CodeMirror cm-s-jupyter">
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
-    <span class="s2">&quot;http://localhost:8000/&quot;</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;search_term&quot;</span><span class="p">:</span> <span class="s2">&quot;war&quot;</span><span class="p">}</span>
-<span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
-</pre></div>
-<div id="cell-25" class="clipboard-copy-txt">print(requests.get(
-    "http://localhost:8000/", params={"search_term": "war"}
-).text)</div>
-    
-        </div>
-    </div>
-
-</div>
-</div>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-        
-        
-        <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-26">
-            <div>
-                <span class="notice" hidden>Copied!</span>
-                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
-                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
-                </svg>
-                </div>
-            </clipboard-copy>
-        </div>
-        <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
     <span class="s2">&quot;http://localhost:8000/&quot;</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;search_term&quot;</span><span class="p">:</span> <span class="s2">&quot;physicist&quot;</span><span class="p">}</span>
 <span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </pre></div>
-<div id="cell-26" class="clipboard-copy-txt">print(requests.get(
+<div id="cell-25" class="clipboard-copy-txt">print(requests.get(
     "http://localhost:8000/", params={"search_term": "physicist"}
 ).text)</div>
     

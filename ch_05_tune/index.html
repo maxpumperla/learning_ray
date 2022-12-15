@@ -1154,10 +1154,6 @@ all of MD as it is not optimized for dense, information rich UIs.
 <a href="https://colab.research.google.com/github/maxpumperla/learning_ray/blob/main/notebooks/ch_05_tune.ipynb">Colab</a>.
 <a target="_blank" href="https://colab.research.google.com/github/maxpumperla/learning_ray/blob/main/notebooks/ch_05_tune.ipynb">
 <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<p>The book has been written for Ray 2.2.0,which at the time of writing has not
-officially been released yet. If you are reading this and this version is already
-available, you can install it using <code>pip install ray==2.2.0</code>. If not, you can
-use a nightly wheel (here for Python 3.7 on Linux):</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -1192,9 +1188,7 @@ use a nightly wheel (here for Python 3.7 on Linux):</p>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Should you not run this notebook in Colab and need another type of wheel, please
-refer to Ray's <a href="https://docs.ray.io/en/latest/ray-overview/installation.html#install-nightlies">installation instructions for nightlies</a>.</p>
-<p>For this chapter you will also need to install the following dependencies:</p>
+<p>For this chapter you need to install the following dependencies:</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -1215,12 +1209,12 @@ refer to Ray's <a href="https://docs.ray.io/en/latest/ray-overview/installation.
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="s2">&quot;ray[tune]&gt;=2.1.0&quot;</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="s2">&quot;ray[tune]==2.2.0&quot;</span>
 <span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="s2">&quot;hyperopt==0.2.7&quot;</span>
 <span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="s2">&quot;bayesian-optimization==1.3.1&quot;</span>
 <span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="s2">&quot;tensorflow&gt;=2.9.0&quot;</span>
 </pre></div>
-<div id="cell-2" class="clipboard-copy-txt">! pip install "ray[tune]>=2.1.0"
+<div id="cell-2" class="clipboard-copy-txt">! pip install "ray[tune]==2.2.0"
 ! pip install "hyperopt==0.2.7"
 ! pip install "bayesian-optimization==1.3.1"
 ! pip install "tensorflow>=2.9.0"</div>

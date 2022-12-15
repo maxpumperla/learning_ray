@@ -1154,10 +1154,12 @@ all of MD as it is not optimized for dense, information rich UIs.
 <a href="https://colab.research.google.com/github/maxpumperla/learning_ray/blob/main/notebooks/ch_07_train.ipynb">Colab</a>.
 <a target="_blank" href="https://colab.research.google.com/github/maxpumperla/learning_ray/blob/main/notebooks/ch_07_train.ipynb">
 <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<p>The book has been written for Ray 2.2.0,which at the time of writing has not
-officially been released yet. If you are reading this and this version is already
-available, you can install it using <code>pip install ray==2.2.0</code>. If not, you can
-use a nightly wheel (here for Python 3.7 on Linux):</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>For this chapter you will need to install the following dependencies:</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -1178,52 +1180,10 @@ use a nightly wheel (here for Python 3.7 on Linux):</p>
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">s3</span><span class="o">-</span><span class="n">us</span><span class="o">-</span><span class="n">west</span><span class="o">-</span><span class="mf">2.</span><span class="n">amazonaws</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ray</span><span class="o">-</span><span class="n">wheels</span><span class="o">/</span><span class="n">latest</span><span class="o">/</span><span class="n">ray</span><span class="o">-</span><span class="mf">3.0.0</span><span class="o">.</span><span class="n">dev0</span><span class="o">-</span><span class="n">cp37</span><span class="o">-</span><span class="n">cp37m</span><span class="o">-</span><span class="n">manylinux2014_x86_64</span><span class="o">.</span><span class="n">whl</span>
-</pre></div>
-<div id="cell-1" class="clipboard-copy-txt">! pip install -U https://s3-us-west-2.amazonaws.com/ray-wheels/latest/ray-3.0.0.dev0-cp37-cp37m-manylinux2014_x86_64.whl</div>
-    
-        </div>
-    </div>
-
-</div>
-</div>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Should you not run this notebook in Colab and need another type of wheel, please
-refer to Ray's <a href="https://docs.ray.io/en/latest/ray-overview/installation.html#install-nightlies">installation instructions for nightlies</a>.</p>
-<p>For this chapter you will also need to install the following dependencies:</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-        
-        
-        <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-2">
-            <div>
-                <span class="notice" hidden>Copied!</span>
-                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
-                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
-                </svg>
-                </div>
-            </clipboard-copy>
-        </div>
-        <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="s2">&quot;ray[data,train]&gt;=2.1.0&quot;</span> <span class="s2">&quot;dask==2022.2.0&quot;</span> <span class="s2">&quot;torch==1.12.1&quot;</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="s2">&quot;ray[data,train]==2.2.0&quot;</span> <span class="s2">&quot;dask==2022.2.0&quot;</span> <span class="s2">&quot;torch==1.12.1&quot;</span>
 <span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="s2">&quot;xgboost==1.6.2&quot;</span> <span class="s2">&quot;xgboost-ray&gt;=0.1.10&quot;</span>
 </pre></div>
-<div id="cell-2" class="clipboard-copy-txt">! pip install "ray[data,train]>=2.1.0" "dask==2022.2.0" "torch==1.12.1"
+<div id="cell-1" class="clipboard-copy-txt">! pip install "ray[data,train]==2.2.0" "dask==2022.2.0" "torch==1.12.1"
 ! pip install "xgboost==1.6.2" "xgboost-ray>=0.1.10"</div>
     
         </div>
@@ -1248,7 +1208,7 @@ the repo and copy the code files to the base path of the runtime:</p>
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-3">
+            <clipboard-copy for="cell-2">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1261,7 +1221,7 @@ the repo and copy the code files to the base path of the runtime:</p>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="err">!</span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">maxpumperla</span><span class="o">/</span><span class="n">learning_ray</span>
 <span class="o">%</span><span class="n">cp</span> <span class="o">-</span><span class="n">r</span> <span class="n">learning_ray</span><span class="o">/</span><span class="n">notebooks</span><span class="o">/*</span> <span class="o">.</span>
 </pre></div>
-<div id="cell-3" class="clipboard-copy-txt">!git clone https://github.com/maxpumperla/learning_ray
+<div id="cell-2" class="clipboard-copy-txt">!git clone https://github.com/maxpumperla/learning_ray
 %cp -r learning_ray/notebooks/* .</div>
     
         </div>
@@ -1309,7 +1269,7 @@ the repo and copy the code files to the base path of the runtime:</p>
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-4">
+            <clipboard-copy for="cell-3">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1359,7 +1319,7 @@ the repo and copy the code files to the base path of the runtime:</p>
 
     <span class="k">return</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">from_dask</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">repartition</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
 </pre></div>
-<div id="cell-4" class="clipboard-copy-txt">import ray
+<div id="cell-3" class="clipboard-copy-txt">import ray
 from ray.util.dask import enable_dask_on_ray
 
 import dask.dataframe as dd
@@ -1414,7 +1374,7 @@ def load_dataset(path: str, *, include_label=True):
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-5">
+            <clipboard-copy for="cell-4">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1449,7 +1409,7 @@ def load_dataset(path: str, *, include_label=True):
 
         <span class="k">return</span> <span class="n">x</span>
 </pre></div>
-<div id="cell-5" class="clipboard-copy-txt">import torch
+<div id="cell-4" class="clipboard-copy-txt">import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
@@ -1489,7 +1449,7 @@ class FarePredictor(nn.Module):
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-6">
+            <clipboard-copy for="cell-5">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1542,7 +1502,7 @@ class FarePredictor(nn.Module):
             <span class="n">checkpoint</span><span class="o">=</span><span class="n">TorchCheckpoint</span><span class="o">.</span><span class="n">from_model</span><span class="p">(</span><span class="n">dist_model</span><span class="p">)</span>
         <span class="p">)</span>
 </pre></div>
-<div id="cell-6" class="clipboard-copy-txt">from ray.air import session
+<div id="cell-5" class="clipboard-copy-txt">from ray.air import session
 from ray.air.config import ScalingConfig
 import ray.train as train
 from ray.train.torch import TorchCheckpoint, TorchTrainer
@@ -1600,7 +1560,7 @@ def train_loop_per_worker(config: dict):
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-7">
+            <clipboard-copy for="cell-6">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1628,7 +1588,7 @@ def train_loop_per_worker(config: dict):
 <span class="n">result</span> <span class="o">=</span> <span class="n">trainer</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
 <span class="n">trained_model</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">checkpoint</span>
 </pre></div>
-<div id="cell-7" class="clipboard-copy-txt"># NOTE: Colab does not have enough resources to run this example.
+<div id="cell-6" class="clipboard-copy-txt"># NOTE: Colab does not have enough resources to run this example.
 # try using num_workers=1, resources_per_worker={"CPU": 1, "GPU": 0} in your
 # ScalingConfig below.
 # In any case, this training loop will take considerable time to run.
@@ -1661,7 +1621,7 @@ trained_model = result.checkpoint</div>
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-8">
+            <clipboard-copy for="cell-7">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1680,7 +1640,7 @@ trained_model = result.checkpoint</div>
 
 <span class="n">batch_predictor</span><span class="o">.</span><span class="n">predict_pipelined</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">blocks_per_window</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
-<div id="cell-8" class="clipboard-copy-txt">from ray.train.torch import TorchPredictor
+<div id="cell-7" class="clipboard-copy-txt">from ray.train.torch import TorchPredictor
 from ray.train.batch_predictor import BatchPredictor
 
 batch_predictor = BatchPredictor(trained_model, TorchPredictor)
@@ -1704,7 +1664,7 @@ batch_predictor.predict_pipelined(ds, blocks_per_window=10)</div>
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-9">
+            <clipboard-copy for="cell-8">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1763,7 +1723,7 @@ batch_predictor.predict_pipelined(ds, blocks_per_window=10)</div>
     <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_epochs</span><span class="p">):</span>
         <span class="n">train_one_epoch</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">loss_fn</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">)</span>
 </pre></div>
-<div id="cell-9" class="clipboard-copy-txt">import torch
+<div id="cell-8" class="clipboard-copy-txt">import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from ray.data import from_torch
@@ -1827,7 +1787,7 @@ def training_loop():
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-10">
+            <clipboard-copy for="cell-9">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1848,7 +1808,7 @@ def training_loop():
     <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_epochs</span><span class="p">):</span>
         <span class="n">train_one_epoch</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">loss_fn</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">)</span>
 </pre></div>
-<div id="cell-10" class="clipboard-copy-txt">from ray.train.torch import prepare_model
+<div id="cell-9" class="clipboard-copy-txt">from ray.train.torch import prepare_model
 
 
 def distributed_training_loop():
@@ -1874,7 +1834,7 @@ def distributed_training_loop():
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-11">
+            <clipboard-copy for="cell-10">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1899,7 +1859,7 @@ def distributed_training_loop():
 
 <span class="n">result</span> <span class="o">=</span> <span class="n">trainer</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
 </pre></div>
-<div id="cell-11" class="clipboard-copy-txt">from ray.air.config import ScalingConfig
+<div id="cell-10" class="clipboard-copy-txt">from ray.air.config import ScalingConfig
 from ray.train.torch import TorchTrainer
 
 
@@ -1929,7 +1889,7 @@ result = trainer.fit()</div>
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-12">
+            <clipboard-copy for="cell-11">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1972,7 +1932,7 @@ result = trainer.fit()</div>
     <span class="p">},</span>
 <span class="p">}</span>
 </pre></div>
-<div id="cell-12" class="clipboard-copy-txt">import ray
+<div id="cell-11" class="clipboard-copy-txt">import ray
 
 from ray.air.config import ScalingConfig
 from ray import tune
@@ -2020,7 +1980,7 @@ param_space = {
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-13">
+            <clipboard-copy for="cell-12">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -2051,7 +2011,7 @@ param_space = {
 
 <span class="n">results</span> <span class="o">=</span> <span class="n">tuner</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
 </pre></div>
-<div id="cell-13" class="clipboard-copy-txt">from ray.train.xgboost import XGBoostTrainer
+<div id="cell-12" class="clipboard-copy-txt">from ray.train.xgboost import XGBoostTrainer
 from ray.air.config import RunConfig
 from ray.tune import Tuner
 

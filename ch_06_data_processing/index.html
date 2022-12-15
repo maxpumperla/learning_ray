@@ -1154,10 +1154,12 @@ all of MD as it is not optimized for dense, information rich UIs.
 <a href="https://colab.research.google.com/github/maxpumperla/learning_ray/blob/main/notebooks/ch_06_data_processing.ipynb">Colab</a>.
 <a target="_blank" href="https://colab.research.google.com/github/maxpumperla/learning_ray/blob/main/notebooks/ch_06_data_processing.ipynb">
 <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<p>The book has been written for Ray 2.2.0,which at the time of writing has not
-officially been released yet. If you are reading this and this version is already
-available, you can install it using <code>pip install ray==2.2.0</code>. If not, you can
-use a nightly wheel (here for Python 3.7 on Linux):</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>For this chapter you need to install the following dependencies:</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -1178,48 +1180,11 @@ use a nightly wheel (here for Python 3.7 on Linux):</p>
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">s3</span><span class="o">-</span><span class="n">us</span><span class="o">-</span><span class="n">west</span><span class="o">-</span><span class="mf">2.</span><span class="n">amazonaws</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ray</span><span class="o">-</span><span class="n">wheels</span><span class="o">/</span><span class="n">latest</span><span class="o">/</span><span class="n">ray</span><span class="o">-</span><span class="mf">3.0.0</span><span class="o">.</span><span class="n">dev0</span><span class="o">-</span><span class="n">cp37</span><span class="o">-</span><span class="n">cp37m</span><span class="o">-</span><span class="n">manylinux2014_x86_64</span><span class="o">.</span><span class="n">whl</span>
-</pre></div>
-<div id="cell-1" class="clipboard-copy-txt">! pip install -U https://s3-us-west-2.amazonaws.com/ray-wheels/latest/ray-3.0.0.dev0-cp37-cp37m-manylinux2014_x86_64.whl</div>
-    
-        </div>
-    </div>
-
-</div>
-</div>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Should you not run this notebook in Colab and need another type of wheel, please
-refer to Ray's <a href="https://docs.ray.io/en/latest/ray-overview/installation.html#install-nightlies">installation instructions for nightlies</a>.</p>
-<p>For this chapter you will also need to install the following dependencies:</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-        
-        
-        <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-2">
-            <div>
-                <span class="notice" hidden>Copied!</span>
-                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
-                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
-                </svg>
-                </div>
-            </clipboard-copy>
-        </div>
-        <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="s2">&quot;ray[data]&gt;=2.1.0&quot;</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="s2">&quot;ray[data]==2.2.0&quot;</span>
 <span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="s2">&quot;scikit-learn==1.0.2&quot;</span>
 <span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="s2">&quot;dask==2022.2.0&quot;</span>
 </pre></div>
-<div id="cell-2" class="clipboard-copy-txt">! pip install "ray[data]>=2.1.0"
+<div id="cell-1" class="clipboard-copy-txt">! pip install "ray[data]==2.2.0"
 ! pip install "scikit-learn==1.0.2"
 ! pip install "dask==2022.2.0"</div>
     
@@ -1245,7 +1210,7 @@ the repo and copy the code files to the base path of the runtime:</p>
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-3">
+            <clipboard-copy for="cell-2">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1258,7 +1223,7 @@ the repo and copy the code files to the base path of the runtime:</p>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="err">!</span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">maxpumperla</span><span class="o">/</span><span class="n">learning_ray</span>
 <span class="o">%</span><span class="n">cp</span> <span class="o">-</span><span class="n">r</span> <span class="n">learning_ray</span><span class="o">/</span><span class="n">notebooks</span><span class="o">/*</span> <span class="o">.</span>
 </pre></div>
-<div id="cell-3" class="clipboard-copy-txt">!git clone https://github.com/maxpumperla/learning_ray
+<div id="cell-2" class="clipboard-copy-txt">!git clone https://github.com/maxpumperla/learning_ray
 %cp -r learning_ray/notebooks/* .</div>
     
         </div>
@@ -1318,7 +1283,7 @@ the repo and copy the code files to the base path of the runtime:</p>
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-4">
+            <clipboard-copy for="cell-3">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1338,7 +1303,7 @@ the repo and copy the code files to the base path of the runtime:</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>  <span class="c1"># -&gt; [0, 1, 2, 3, 4]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">schema</span><span class="p">())</span>  <span class="c1"># -&gt; &lt;class &#39;int&#39;&gt;</span>
 </pre></div>
-<div id="cell-4" class="clipboard-copy-txt">import ray
+<div id="cell-3" class="clipboard-copy-txt">import ray
 
 # Create a dataset containing integers in the range [0, 10000).
 ds = ray.data.range(10000)
@@ -1347,6 +1312,41 @@ ds = ray.data.range(10000)
 print(ds.count())  # -> 10000
 print(ds.take(5))  # -> [0, 1, 2, 3, 4]
 print(ds.schema())  # -> <class 'int'></div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-4">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Save the dataset to a local file and load it back.</span>
+<span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span><span class="o">.</span><span class="n">write_csv</span><span class="p">(</span><span class="s2">&quot;local_dir&quot;</span><span class="p">)</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;local_dir&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">count</span><span class="p">())</span>
+</pre></div>
+<div id="cell-4" class="clipboard-copy-txt"># Save the dataset to a local file and load it back.
+ray.data.range(10000).write_csv("local_dir")
+ds = ray.data.read_csv("local_dir")
+print(ds.count())</div>
     
         </div>
     </div>
@@ -1373,41 +1373,6 @@ print(ds.schema())  # -> <class 'int'></div>
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Save the dataset to a local file and load it back.</span>
-<span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span><span class="o">.</span><span class="n">write_csv</span><span class="p">(</span><span class="s2">&quot;local_dir&quot;</span><span class="p">)</span>
-<span class="n">ds</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;local_dir&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">count</span><span class="p">())</span>
-</pre></div>
-<div id="cell-5" class="clipboard-copy-txt"># Save the dataset to a local file and load it back.
-ray.data.range(10000).write_csv("local_dir")
-ds = ray.data.read_csv("local_dir")
-print(ds.count())</div>
-    
-        </div>
-    </div>
-
-</div>
-</div>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-        
-        
-        <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-6">
-            <div>
-                <span class="notice" hidden>Copied!</span>
-                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
-                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
-                </svg>
-                </div>
-            </clipboard-copy>
-        </div>
-        <div class="CodeMirror cm-s-jupyter">
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">ds1</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
 <span class="n">ds2</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
 <span class="n">ds3</span> <span class="o">=</span> <span class="n">ds1</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">ds2</span><span class="p">)</span>
@@ -1422,7 +1387,7 @@ print(ds.count())</div>
 <span class="n">ds3</span> <span class="o">=</span> <span class="n">ds3</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>  <span class="c1"># &lt;3&gt;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ds3</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>  <span class="c1"># -&gt; [0, 0, 2, 2, 4]</span>
 </pre></div>
-<div id="cell-6" class="clipboard-copy-txt">ds1 = ray.data.range(10000)
+<div id="cell-5" class="clipboard-copy-txt">ds1 = ray.data.range(10000)
 ds2 = ray.data.range(10000)
 ds3 = ds1.union(ds2)
 print(ds3.count())  # -> 20000
@@ -1451,7 +1416,7 @@ print(ds3.take(5))  # -> [0, 0, 2, 2, 4]</div>
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-7">
+            <clipboard-copy for="cell-6">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1470,7 +1435,7 @@ print(ds3.take(5))  # -> [0, 0, 2, 2, 4]</div>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">ds3</span><span class="o">.</span><span class="n">repartition</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span><span class="o">.</span><span class="n">num_blocks</span><span class="p">())</span>  <span class="c1"># -&gt; 200</span>
 </pre></div>
-<div id="cell-7" class="clipboard-copy-txt">ds1 = ray.data.range(10000)
+<div id="cell-6" class="clipboard-copy-txt">ds1 = ray.data.range(10000)
 print(ds1.num_blocks())  # -> 200
 ds2 = ray.data.range(10000)
 print(ds2.num_blocks())  # -> 200
@@ -1478,6 +1443,37 @@ ds3 = ds1.union(ds2)
 print(ds3.num_blocks())  # -> 400
 
 print(ds3.repartition(200).num_blocks())  # -> 200</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-7">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">from_items</span><span class="p">([{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;abc&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;def&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">schema</span><span class="p">())</span>  <span class="c1"># -&gt; id: string, value: int64</span>
+</pre></div>
+<div id="cell-7" class="clipboard-copy-txt">ds = ray.data.from_items([{"id": "abc", "value": 1}, {"id": "def", "value": 2}])
+print(ds.schema())  # -> id: string, value: int64</div>
     
         </div>
     </div>
@@ -1504,11 +1500,9 @@ print(ds3.repartition(200).num_blocks())  # -> 200</div>
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">from_items</span><span class="p">([{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;abc&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;def&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">schema</span><span class="p">())</span>  <span class="c1"># -&gt; id: string, value: int64</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">pandas_df</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>  <span class="c1"># pandas_df will inherit the schema from our Dataset.</span>
 </pre></div>
-<div id="cell-8" class="clipboard-copy-txt">ds = ray.data.from_items([{"id": "abc", "value": 1}, {"id": "def", "value": 2}])
-print(ds.schema())  # -> id: string, value: int64</div>
+<div id="cell-8" class="clipboard-copy-txt">pandas_df = ds.to_pandas()  # pandas_df will inherit the schema from our Dataset.</div>
     
         </div>
     </div>
@@ -1535,9 +1529,11 @@ print(ds.schema())  # -> id: string, value: int64</div>
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">pandas_df</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>  <span class="c1"># pandas_df will inherit the schema from our Dataset.</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># -&gt; [0, 1, 4, 9, 16]</span>
 </pre></div>
-<div id="cell-9" class="clipboard-copy-txt">pandas_df = ds.to_pandas()  # pandas_df will inherit the schema from our Dataset.</div>
+<div id="cell-9" class="clipboard-copy-txt">ds = ray.data.range(10000).map(lambda x: x ** 2)
+ds.take(5)  # -> [0, 1, 4, 9, 16]</div>
     
         </div>
     </div>
@@ -1564,44 +1560,13 @@ print(ds.schema())  # -> id: string, value: int64</div>
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">ds</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># -&gt; [0, 1, 4, 9, 16]</span>
-</pre></div>
-<div id="cell-10" class="clipboard-copy-txt">ds = ray.data.range(10000).map(lambda x: x ** 2)
-ds.take(5)  # -> [0, 1, 4, 9, 16]</div>
-    
-        </div>
-    </div>
-
-</div>
-</div>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-        
-        
-        <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-11">
-            <div>
-                <span class="notice" hidden>Copied!</span>
-                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
-                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
-                </svg>
-                </div>
-            </clipboard-copy>
-        </div>
-        <div class="CodeMirror cm-s-jupyter">
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 
 <span class="n">ds</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span><span class="o">.</span><span class="n">map_batches</span><span class="p">(</span><span class="k">lambda</span> <span class="n">batch</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">batch</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
 <span class="n">ds</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># -&gt; [0, 1, 4, 9, 16]</span>
 </pre></div>
-<div id="cell-11" class="clipboard-copy-txt">import numpy as np
+<div id="cell-10" class="clipboard-copy-txt">import numpy as np
 
 
 ds = ray.data.range(10000).map_batches(lambda batch: np.square(batch).tolist())
@@ -1622,7 +1587,7 @@ ds.take(5)  # -> [0, 1, 4, 9, 16]</div>
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-12">
+            <clipboard-copy for="cell-11">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1657,7 +1622,7 @@ ds.take(5)  # -> [0, 1, 4, 9, 16]</div>
 <span class="n">cpu_intensive_preprocessing</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">batch</span><span class="p">:</span> <span class="n">batch</span>
 <span class="n">gpu_intensive_inference</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">batch</span><span class="p">:</span> <span class="n">batch</span>
 </pre></div>
-<div id="cell-12" class="clipboard-copy-txt">def load_model():
+<div id="cell-11" class="clipboard-copy-txt">def load_model():
     # Returns a dummy model for this example.
     # In reality, this would likely load some model weights onto a GPU.
     class DummyModel:
@@ -1697,7 +1662,7 @@ gpu_intensive_inference = lambda batch: batch</div>
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-13">
+            <clipboard-copy for="cell-12">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1715,7 +1680,7 @@ gpu_intensive_inference = lambda batch: batch</div>
 
 <span class="n">ds</span><span class="o">.</span><span class="n">write_parquet</span><span class="p">(</span><span class="s2">&quot;s3://my_bucket/output_predictions&quot;</span><span class="p">)</span>
 </pre></div>
-<div id="cell-13" class="clipboard-copy-txt"># NOTE: this only works if you create an S3 bucket and upload the data there.
+<div id="cell-12" class="clipboard-copy-txt"># NOTE: this only works if you create an S3 bucket and upload the data there.
 ds = (ray.data.read_parquet("s3://my_bucket/input_data")
       .map(cpu_intensive_preprocessing)
       .map_batches(gpu_intensive_inference, compute="actors", num_gpus=1)
@@ -1738,7 +1703,7 @@ ds.write_parquet("s3://my_bucket/output_predictions")</div>
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-14">
+            <clipboard-copy for="cell-13">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1756,7 +1721,7 @@ ds.write_parquet("s3://my_bucket/output_predictions")</div>
       <span class="o">.</span><span class="n">repartition</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
 <span class="n">ds</span><span class="o">.</span><span class="n">write_parquet</span><span class="p">(</span><span class="s2">&quot;s3://my_bucket/output_predictions&quot;</span><span class="p">)</span>
 </pre></div>
-<div id="cell-14" class="clipboard-copy-txt"># NOTE: this only works if you create an S3 bucket and upload the data there.
+<div id="cell-13" class="clipboard-copy-txt"># NOTE: this only works if you create an S3 bucket and upload the data there.
 ds = (ray.data.read_parquet("s3://my_bucket/input_data")
       .window(blocks_per_window=5)
       .map(cpu_intensive_preprocessing)
@@ -1779,7 +1744,7 @@ ds.write_parquet("s3://my_bucket/output_predictions")</div>
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-15">
+            <clipboard-copy for="cell-14">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1809,7 +1774,7 @@ ds.write_parquet("s3://my_bucket/output_predictions")</div>
     <span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X_test</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">Y_test</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">Y_test</span><span class="p">)</span>
 </pre></div>
-<div id="cell-15" class="clipboard-copy-txt">from sklearn import datasets
+<div id="cell-14" class="clipboard-copy-txt">from sklearn import datasets
 from sklearn.linear_model import SGDClassifier
 from sklearn.model_selection import train_test_split
 
@@ -1844,7 +1809,7 @@ class TrainingWorker:
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-16">
+            <clipboard-copy for="cell-15">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1859,10 +1824,57 @@ class TrainingWorker:
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Starting </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">ALPHA_VALS</span><span class="p">)</span><span class="si">}</span><span class="s2"> training workers.&quot;</span><span class="p">)</span>
 <span class="n">workers</span> <span class="o">=</span> <span class="p">[</span><span class="n">TrainingWorker</span><span class="o">.</span><span class="n">remote</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span> <span class="k">for</span> <span class="n">alpha</span> <span class="ow">in</span> <span class="n">ALPHA_VALS</span><span class="p">]</span>
 </pre></div>
-<div id="cell-16" class="clipboard-copy-txt">ALPHA_VALS = [0.00008, 0.00009, 0.0001, 0.00011, 0.00012]
+<div id="cell-15" class="clipboard-copy-txt">ALPHA_VALS = [0.00008, 0.00009, 0.0001, 0.00011, 0.00012]
 
 print(f"Starting {len(ALPHA_VALS)} training workers.")
 workers = [TrainingWorker.remote(alpha) for alpha in ALPHA_VALS]</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-16">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">,</span> <span class="n">Y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
+    <span class="o">*</span><span class="n">datasets</span><span class="o">.</span><span class="n">make_classification</span><span class="p">()</span>
+<span class="p">)</span>
+
+<span class="n">train_ds</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">from_items</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">)))</span>
+<span class="n">shards</span> <span class="o">=</span> <span class="p">(</span><span class="n">train_ds</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+          <span class="o">.</span><span class="n">random_shuffle_each_window</span><span class="p">()</span>
+          <span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">workers</span><span class="p">),</span> <span class="n">locality_hints</span><span class="o">=</span><span class="n">workers</span><span class="p">))</span>
+
+<span class="n">ray</span><span class="o">.</span><span class="n">get</span><span class="p">([</span><span class="n">worker</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">remote</span><span class="p">(</span><span class="n">shard</span><span class="p">)</span> <span class="k">for</span> <span class="n">worker</span><span class="p">,</span> <span class="n">shard</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">workers</span><span class="p">,</span> <span class="n">shards</span><span class="p">)])</span>
+</pre></div>
+<div id="cell-16" class="clipboard-copy-txt">X_train, X_test, Y_train, Y_test = train_test_split(
+    *datasets.make_classification()
+)
+
+train_ds = ray.data.from_items(list(zip(X_train, Y_train)))
+shards = (train_ds.repeat(10)
+          .random_shuffle_each_window()
+          .split(len(workers), locality_hints=workers))
+
+ray.get([worker.train.remote(shard) for worker, shard in zip(workers, shards)])</div>
     
         </div>
     </div>
@@ -1889,27 +1901,15 @@ workers = [TrainingWorker.remote(alpha) for alpha in ALPHA_VALS]</div>
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">,</span> <span class="n">Y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
-    <span class="o">*</span><span class="n">datasets</span><span class="o">.</span><span class="n">make_classification</span><span class="p">()</span>
-<span class="p">)</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Get validation results from each worker.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ray</span><span class="o">.</span><span class="n">get</span><span class="p">([</span><span class="n">worker</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">remote</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">Y_test</span><span class="p">)</span> <span class="k">for</span> <span class="n">worker</span> <span class="ow">in</span> <span class="n">workers</span><span class="p">]))</span>
 
-<span class="n">train_ds</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">from_items</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">)))</span>
-<span class="n">shards</span> <span class="o">=</span> <span class="p">(</span><span class="n">train_ds</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-          <span class="o">.</span><span class="n">random_shuffle_each_window</span><span class="p">()</span>
-          <span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">workers</span><span class="p">),</span> <span class="n">locality_hints</span><span class="o">=</span><span class="n">workers</span><span class="p">))</span>
-
-<span class="n">ray</span><span class="o">.</span><span class="n">get</span><span class="p">([</span><span class="n">worker</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">remote</span><span class="p">(</span><span class="n">shard</span><span class="p">)</span> <span class="k">for</span> <span class="n">worker</span><span class="p">,</span> <span class="n">shard</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">workers</span><span class="p">,</span> <span class="n">shards</span><span class="p">)])</span>
+<span class="n">ray</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span>
 </pre></div>
-<div id="cell-17" class="clipboard-copy-txt">X_train, X_test, Y_train, Y_test = train_test_split(
-    *datasets.make_classification()
-)
+<div id="cell-17" class="clipboard-copy-txt"># Get validation results from each worker.
+print(ray.get([worker.test.remote(X_test, Y_test) for worker in workers]))
 
-train_ds = ray.data.from_items(list(zip(X_train, Y_train)))
-shards = (train_ds.repeat(10)
-          .random_shuffle_each_window()
-          .split(len(workers), locality_hints=workers))
-
-ray.get([worker.train.remote(shard) for worker, shard in zip(workers, shards)])</div>
+ray.shutdown()</div>
     
         </div>
     </div>
@@ -1936,15 +1936,17 @@ ray.get([worker.train.remote(shard) for worker, shard in zip(workers, shards)])<
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Get validation results from each worker.</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">ray</span><span class="o">.</span><span class="n">get</span><span class="p">([</span><span class="n">worker</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">remote</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">Y_test</span><span class="p">)</span> <span class="k">for</span> <span class="n">worker</span> <span class="ow">in</span> <span class="n">workers</span><span class="p">]))</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">ray</span>
+<span class="kn">from</span> <span class="nn">ray.util.dask</span> <span class="kn">import</span> <span class="n">enable_dask_on_ray</span>
 
-<span class="n">ray</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span>
+<span class="n">ray</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>  <span class="c1"># Start or connect to Ray.</span>
+<span class="n">enable_dask_on_ray</span><span class="p">()</span>  <span class="c1"># Enable the Ray scheduler backend for Dask.</span>
 </pre></div>
-<div id="cell-18" class="clipboard-copy-txt"># Get validation results from each worker.
-print(ray.get([worker.test.remote(X_test, Y_test) for worker in workers]))
+<div id="cell-18" class="clipboard-copy-txt">import ray
+from ray.util.dask import enable_dask_on_ray
 
-ray.shutdown()</div>
+ray.init()  # Start or connect to Ray.
+enable_dask_on_ray()  # Enable the Ray scheduler backend for Dask.</div>
     
         </div>
     </div>
@@ -1971,17 +1973,17 @@ ray.shutdown()</div>
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">ray</span>
-<span class="kn">from</span> <span class="nn">ray.util.dask</span> <span class="kn">import</span> <span class="n">enable_dask_on_ray</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">dask</span>
 
-<span class="n">ray</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>  <span class="c1"># Start or connect to Ray.</span>
-<span class="n">enable_dask_on_ray</span><span class="p">()</span>  <span class="c1"># Enable the Ray scheduler backend for Dask.</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">dask</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">timeseries</span><span class="p">()</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">y</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="n">df</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>  <span class="c1"># Trigger the task graph to be evaluated.</span>
 </pre></div>
-<div id="cell-19" class="clipboard-copy-txt">import ray
-from ray.util.dask import enable_dask_on_ray
+<div id="cell-19" class="clipboard-copy-txt">import dask
 
-ray.init()  # Start or connect to Ray.
-enable_dask_on_ray()  # Enable the Ray scheduler backend for Dask.</div>
+df = dask.datasets.timeseries()
+df = df[df.y > 0].groupby("name").x.std()
+df.compute()  # Trigger the task graph to be evaluated.</div>
     
         </div>
     </div>
@@ -2008,43 +2010,6 @@ enable_dask_on_ray()  # Enable the Ray scheduler backend for Dask.</div>
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">dask</span>
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">dask</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">timeseries</span><span class="p">()</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">y</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
-<span class="n">df</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>  <span class="c1"># Trigger the task graph to be evaluated.</span>
-</pre></div>
-<div id="cell-20" class="clipboard-copy-txt">import dask
-
-df = dask.datasets.timeseries()
-df = df[df.y > 0].groupby("name").x.std()
-df.compute()  # Trigger the task graph to be evaluated.</div>
-    
-        </div>
-    </div>
-
-</div>
-</div>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-        
-        
-        <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-21">
-            <div>
-                <span class="notice" hidden>Copied!</span>
-                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
-                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
-                </svg>
-                </div>
-            </clipboard-copy>
-        </div>
-        <div class="CodeMirror cm-s-jupyter">
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">ray</span>
 <span class="n">ds</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
 
@@ -2056,7 +2021,7 @@ df.compute()  # Trigger the task graph to be evaluated.</div>
 <span class="n">ds</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">from_dask</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">std</span><span class="p">())</span>  <span class="c1"># -&gt; 2886.89568</span>
 </pre></div>
-<div id="cell-21" class="clipboard-copy-txt">import ray
+<div id="cell-20" class="clipboard-copy-txt">import ray
 ds = ray.data.range(10000)
 
 # Convert the Dataset to a Dask DataFrame.

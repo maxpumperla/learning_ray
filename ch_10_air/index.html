@@ -1154,10 +1154,12 @@ all of MD as it is not optimized for dense, information rich UIs.
 <a href="https://colab.research.google.com/github/maxpumperla/learning_ray/blob/main/notebooks/ch_10_air.ipynb">Colab</a>.
 <a target="_blank" href="https://colab.research.google.com/github/maxpumperla/learning_ray/blob/main/notebooks/ch_10_air.ipynb">
 <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<p>The book has been written for Ray 2.2.0,which at the time of writing has not
-officially been released yet. If you are reading this and this version is already
-available, you can install it using <code>pip install ray==2.2.0</code>. If not, you can
-use a nightly wheel (here for Python 3.7 on Linux):</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>For this chapter you will also need to install the following dependencies:</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -1178,47 +1180,10 @@ use a nightly wheel (here for Python 3.7 on Linux):</p>
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">s3</span><span class="o">-</span><span class="n">us</span><span class="o">-</span><span class="n">west</span><span class="o">-</span><span class="mf">2.</span><span class="n">amazonaws</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ray</span><span class="o">-</span><span class="n">wheels</span><span class="o">/</span><span class="n">latest</span><span class="o">/</span><span class="n">ray</span><span class="o">-</span><span class="mf">3.0.0</span><span class="o">.</span><span class="n">dev0</span><span class="o">-</span><span class="n">cp37</span><span class="o">-</span><span class="n">cp37m</span><span class="o">-</span><span class="n">manylinux2014_x86_64</span><span class="o">.</span><span class="n">whl</span>
-</pre></div>
-<div id="cell-1" class="clipboard-copy-txt">! pip install -U https://s3-us-west-2.amazonaws.com/ray-wheels/latest/ray-3.0.0.dev0-cp37-cp37m-manylinux2014_x86_64.whl</div>
-    
-        </div>
-    </div>
-
-</div>
-</div>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Should you not run this notebook in Colab and need another type of wheel, please
-refer to Ray's <a href="https://docs.ray.io/en/latest/ray-overview/installation.html#install-nightlies">installation instructions for nightlies</a>.</p>
-<p>For this chapter you will also need to install the following dependencies:</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-        
-        
-        <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-2">
-            <div>
-                <span class="notice" hidden>Copied!</span>
-                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
-                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
-                </svg>
-                </div>
-            </clipboard-copy>
-        </div>
-        <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="s2">&quot;ray[air]&gt;=2.1.0&quot;</span> <span class="s2">&quot;xgboost-ray&gt;=0.1.10&quot;</span> <span class="s2">&quot;xgboost&gt;=1.6.2&quot;</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="s2">&quot;ray[air]==2.2.0&quot;</span> <span class="s2">&quot;xgboost-ray&gt;=0.1.10&quot;</span> <span class="s2">&quot;xgboost&gt;=1.6.2&quot;</span>
 <span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="s2">&quot;numpy&gt;=1.19.5&quot;</span> <span class="s2">&quot;pandas&gt;=1.3.5&quot;</span> <span class="s2">&quot;pyarrow&gt;=6.0.1&quot;</span> <span class="s2">&quot;aiorwlock==1.3.0&quot;</span>
 </pre></div>
-<div id="cell-2" class="clipboard-copy-txt">! pip install "ray[air]>=2.1.0" "xgboost-ray>=0.1.10" "xgboost>=1.6.2"
+<div id="cell-1" class="clipboard-copy-txt">! pip install "ray[air]==2.2.0" "xgboost-ray>=0.1.10" "xgboost>=1.6.2"
 ! pip install "numpy>=1.19.5" "pandas>=1.3.5" "pyarrow>=6.0.1" "aiorwlock==1.3.0"</div>
     
         </div>
@@ -1290,7 +1255,7 @@ refer to Ray's <a href="https://docs.ray.io/en/latest/ray-overview/installation.
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-3">
+            <clipboard-copy for="cell-2">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1311,7 +1276,7 @@ refer to Ray's <a href="https://docs.ray.io/en/latest/ray-overview/installation.
 
 <span class="n">preprocessor</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;mean radius&quot;</span><span class="p">,</span> <span class="s2">&quot;mean texture&quot;</span><span class="p">])</span>
 </pre></div>
-<div id="cell-3" class="clipboard-copy-txt">import ray
+<div id="cell-2" class="clipboard-copy-txt">import ray
 from ray.data.preprocessors import StandardScaler
 
 
@@ -1337,7 +1302,7 @@ preprocessor = StandardScaler(columns=["mean radius", "mean texture"])</div>
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-4">
+            <clipboard-copy for="cell-3">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1372,7 +1337,7 @@ preprocessor = StandardScaler(columns=["mean radius", "mean texture"])</div>
 <span class="n">result</span> <span class="o">=</span> <span class="n">trainer</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">metrics</span><span class="p">)</span>
 </pre></div>
-<div id="cell-4" class="clipboard-copy-txt"># NOTE: Colab does not have enough resources to run this example.
+<div id="cell-3" class="clipboard-copy-txt"># NOTE: Colab does not have enough resources to run this example.
 # try using num_workers=1, resources_per_worker={"CPU": 1, "GPU": 0} in your
 # ScalingConfig below.
 # In any case, this training loop will take considerable time to run.
@@ -1412,7 +1377,7 @@ print(result.metrics)</div>
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-5">
+            <clipboard-copy for="cell-4">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1441,7 +1406,7 @@ print(result.metrics)</div>
 <span class="n">best_result</span> <span class="o">=</span> <span class="n">result_grid</span><span class="o">.</span><span class="n">get_best_result</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best Result:&quot;</span><span class="p">,</span> <span class="n">best_result</span><span class="p">)</span>
 </pre></div>
-<div id="cell-5" class="clipboard-copy-txt">from ray import tune
+<div id="cell-4" class="clipboard-copy-txt">from ray import tune
 
 param_space = {"params": {"max_depth": tune.randint(1, 9)}}
 metric = "train-logloss"
@@ -1475,7 +1440,7 @@ print("Best Result:", best_result)</div>
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-6">
+            <clipboard-copy for="cell-5">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1488,8 +1453,53 @@ print("Best Result:", best_result)</div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">checkpoint</span> <span class="o">=</span> <span class="n">best_result</span><span class="o">.</span><span class="n">checkpoint</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">checkpoint</span><span class="p">)</span>
 </pre></div>
-<div id="cell-6" class="clipboard-copy-txt">checkpoint = best_result.checkpoint
+<div id="cell-5" class="clipboard-copy-txt">checkpoint = best_result.checkpoint
 print(checkpoint)</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-6">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">ray.train.tensorflow</span> <span class="kn">import</span> <span class="n">TensorflowCheckpoint</span>
+<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Sequential</span><span class="p">([</span>
+    <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">InputLayer</span><span class="p">(</span><span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,)),</span>
+    <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="p">])</span>
+
+<span class="n">keras_checkpoint</span> <span class="o">=</span> <span class="n">TensorflowCheckpoint</span><span class="o">.</span><span class="n">from_model</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+</pre></div>
+<div id="cell-6" class="clipboard-copy-txt">from ray.train.tensorflow import TensorflowCheckpoint
+import tensorflow as tf
+
+model = tf.keras.Sequential([
+    tf.keras.layers.InputLayer(input_shape=(1,)),
+    tf.keras.layers.Dense(1)
+])
+
+keras_checkpoint = TensorflowCheckpoint.from_model(model)</div>
     
         </div>
     </div>
@@ -1516,51 +1526,6 @@ print(checkpoint)</div>
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">ray.train.tensorflow</span> <span class="kn">import</span> <span class="n">TensorflowCheckpoint</span>
-<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
-
-<span class="n">model</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Sequential</span><span class="p">([</span>
-    <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">InputLayer</span><span class="p">(</span><span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,)),</span>
-    <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="p">])</span>
-
-<span class="n">keras_checkpoint</span> <span class="o">=</span> <span class="n">TensorflowCheckpoint</span><span class="o">.</span><span class="n">from_model</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
-</pre></div>
-<div id="cell-7" class="clipboard-copy-txt">from ray.train.tensorflow import TensorflowCheckpoint
-import tensorflow as tf
-
-model = tf.keras.Sequential([
-    tf.keras.layers.InputLayer(input_shape=(1,)),
-    tf.keras.layers.Dense(1)
-])
-
-keras_checkpoint = TensorflowCheckpoint.from_model(model)</div>
-    
-        </div>
-    </div>
-
-</div>
-</div>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-        
-        
-        <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-8">
-            <div>
-                <span class="notice" hidden>Copied!</span>
-                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
-                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
-                </svg>
-                </div>
-            </clipboard-copy>
-        </div>
-        <div class="CodeMirror cm-s-jupyter">
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">ray.train.batch_predictor</span> <span class="kn">import</span> <span class="n">BatchPredictor</span>
 <span class="kn">from</span> <span class="nn">ray.train.xgboost</span> <span class="kn">import</span> <span class="n">XGBoostPredictor</span>
 
@@ -1570,7 +1535,7 @@ keras_checkpoint = TensorflowCheckpoint.from_model(model)</div>
 <span class="n">predicted_probabilities</span> <span class="o">=</span> <span class="n">batch_predictor</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test_dataset</span><span class="p">)</span>
 <span class="n">predicted_probabilities</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
-<div id="cell-8" class="clipboard-copy-txt">from ray.train.batch_predictor import BatchPredictor
+<div id="cell-7" class="clipboard-copy-txt">from ray.train.batch_predictor import BatchPredictor
 from ray.train.xgboost import XGBoostPredictor
 
 checkpoint = best_result.checkpoint
@@ -1594,7 +1559,7 @@ predicted_probabilities.show()</div>
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-9">
+            <clipboard-copy for="cell-8">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1626,7 +1591,7 @@ predicted_probabilities.show()</div>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">deployment</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
 </pre></div>
-<div id="cell-9" class="clipboard-copy-txt">from ray import serve
+<div id="cell-8" class="clipboard-copy-txt">from ray import serve
 from fastapi import Request
 import pandas as pd
 from ray.serve import PredictorDeployment
@@ -1663,7 +1628,7 @@ print(deployment.url)</div>
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-10">
+            <clipboard-copy for="cell-9">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1686,7 +1651,7 @@ print(deployment.url)</div>
 
 <span class="n">serve</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span>
 </pre></div>
-<div id="cell-10" class="clipboard-copy-txt">import requests
+<div id="cell-9" class="clipboard-copy-txt">import requests
 
 first_item = test_dataset.take(1)
 sample_input = dict(first_item[0])
@@ -1714,7 +1679,7 @@ serve.shutdown()</div>
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-11">
+            <clipboard-copy for="cell-10">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1743,7 +1708,7 @@ serve.shutdown()</div>
 
 <span class="n">result</span> <span class="o">=</span> <span class="n">tuner</span><span class="o">.</span><span class="n">fit</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
-<div id="cell-11" class="clipboard-copy-txt">from ray.tune.tuner import Tuner
+<div id="cell-10" class="clipboard-copy-txt">from ray.tune.tuner import Tuner
 from ray.train.rl.rl_trainer import RLTrainer
 from ray.air.config import RunConfig, ScalingConfig
 
@@ -1777,7 +1742,7 @@ result = tuner.fit()[0]</div>
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-12">
+            <clipboard-copy for="cell-11">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1800,7 +1765,7 @@ result = tuner.fit()[0]</div>
     <span class="n">PredictorDeployment</span><span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;RLDeployment&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">RLPredictor</span><span class="p">,</span> <span class="n">result</span><span class="o">.</span><span class="n">checkpoint</span><span class="p">)</span>
 <span class="p">)</span>
 </pre></div>
-<div id="cell-12" class="clipboard-copy-txt">from ray.train.rl.rl_predictor import RLPredictor
+<div id="cell-11" class="clipboard-copy-txt">from ray.train.rl.rl_predictor import RLPredictor
 from ray.serve import PredictorDeployment
 
 
@@ -1828,7 +1793,7 @@ serve.run(
         
         
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-13">
+            <clipboard-copy for="cell-12">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1863,7 +1828,7 @@ serve.run(
 
 <span class="n">serve</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span>
 </pre></div>
-<div id="cell-13" class="clipboard-copy-txt">import gym
+<div id="cell-12" class="clipboard-copy-txt">import gym
 import requests
 
 
