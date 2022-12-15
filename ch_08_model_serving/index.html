@@ -1350,10 +1350,10 @@ class SentimentAnalysis:
         </div>
         <div class="CodeMirror cm-s-jupyter">
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Run this in a separate process to avoid any blocking:</span>
-<span class="err">!</span> <span class="n">serve</span> <span class="n">run</span> <span class="n">app</span><span class="p">:</span><span class="n">basic_deployment</span>
+<span class="err">!</span> <span class="n">serve</span> <span class="n">run</span> <span class="o">--</span><span class="n">non</span><span class="o">-</span><span class="n">blocking</span> <span class="n">app</span><span class="p">:</span><span class="n">basic_deployment</span>
 </pre></div>
 <div id="cell-5" class="clipboard-copy-txt"># Run this in a separate process to avoid any blocking:
-! serve run app:basic_deployment</div>
+! serve run --non-blocking app:basic_deployment</div>
     
         </div>
     </div>
@@ -2329,10 +2329,10 @@ nlp_pipeline_driver = NLPPipelineDriver.bind(
         </div>
         <div class="CodeMirror cm-s-jupyter">
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Run this in a separate process to avoid any blocking:</span>
-<span class="err">!</span> <span class="n">serve</span> <span class="n">run</span> <span class="n">app</span><span class="p">:</span><span class="n">nlp_pipeline_driver</span>
+<span class="err">!</span> <span class="n">serve</span> <span class="n">run</span> <span class="o">--</span><span class="n">non</span><span class="o">-</span><span class="n">blocking</span> <span class="n">app</span><span class="p">:</span><span class="n">nlp_pipeline_driver</span>
 </pre></div>
 <div id="cell-22" class="clipboard-copy-txt"># Run this in a separate process to avoid any blocking:
-! serve run app:nlp_pipeline_driver</div>
+! serve run --non-blocking app:nlp_pipeline_driver</div>
     
         </div>
     </div>
