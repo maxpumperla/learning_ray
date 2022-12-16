@@ -1847,26 +1847,24 @@ print(analysis.get_best_config(metric="score", mode="min"))</div>
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># NOTE: on Colab you will have to set {&quot;cpu&quot;: 2, &quot;gpu&quot;: 0} to avoid resource</span>
-<span class="c1"># allocation errors</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># NOTE: in the book we have 0.5 GPUs, but set this to 0 here so that it runs on Colab.</span>
 <span class="kn">from</span> <span class="nn">ray</span> <span class="kn">import</span> <span class="n">tune</span>
 
 <span class="n">tune</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
     <span class="n">objective</span><span class="p">,</span>
     <span class="n">config</span><span class="o">=</span><span class="n">search_space</span><span class="p">,</span>
     <span class="n">num_samples</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
-    <span class="n">resources_per_trial</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;cpu&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;gpu&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">}</span>
+    <span class="n">resources_per_trial</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;cpu&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;gpu&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
 <span class="p">)</span>
 </pre></div>
-<div id="cell-13" class="clipboard-copy-txt"># NOTE: on Colab you will have to set {"cpu": 2, "gpu": 0} to avoid resource
-# allocation errors
+<div id="cell-13" class="clipboard-copy-txt"># NOTE: in the book we have 0.5 GPUs, but set this to 0 here so that it runs on Colab.
 from ray import tune
 
 tune.run(
     objective,
     config=search_space,
     num_samples=10,
-    resources_per_trial={"cpu": 2, "gpu": 0.5}
+    resources_per_trial={"cpu": 2, "gpu": 0}
 )</div>
     
         </div>

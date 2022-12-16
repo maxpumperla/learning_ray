@@ -1570,16 +1570,14 @@ def train_loop_per_worker(config: dict):
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># NOTE: Colab does not have enough resources to run this example.</span>
-<span class="c1"># try using num_workers=1, resources_per_worker={&quot;CPU&quot;: 1, &quot;GPU&quot;: 0} in your</span>
-<span class="c1"># ScalingConfig below.</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># NOTE: In the book we use num_workers=2, but reduce this here, so that it runs on Colab.</span>
 <span class="c1"># In any case, this training loop will take considerable time to run.</span>
 <span class="n">trainer</span> <span class="o">=</span> <span class="n">TorchTrainer</span><span class="p">(</span>
     <span class="n">train_loop_per_worker</span><span class="o">=</span><span class="n">train_loop_per_worker</span><span class="p">,</span>
     <span class="n">train_loop_config</span><span class="o">=</span><span class="p">{</span>
         <span class="s2">&quot;lr&quot;</span><span class="p">:</span> <span class="mf">1e-2</span><span class="p">,</span> <span class="s2">&quot;num_epochs&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;batch_size&quot;</span><span class="p">:</span> <span class="mi">64</span>
     <span class="p">},</span>
-    <span class="n">scaling_config</span><span class="o">=</span><span class="n">ScalingConfig</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>
+    <span class="n">scaling_config</span><span class="o">=</span><span class="n">ScalingConfig</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">resources_per_worker</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;CPU&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;GPU&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}),</span>
     <span class="n">datasets</span><span class="o">=</span><span class="p">{</span>
         <span class="s2">&quot;train&quot;</span><span class="p">:</span> <span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;nyc_tlc_data/yellow_tripdata_2020-01.parquet&quot;</span><span class="p">)</span>
     <span class="p">},</span>
@@ -1588,16 +1586,14 @@ def train_loop_per_worker(config: dict):
 <span class="n">result</span> <span class="o">=</span> <span class="n">trainer</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
 <span class="n">trained_model</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">checkpoint</span>
 </pre></div>
-<div id="cell-6" class="clipboard-copy-txt"># NOTE: Colab does not have enough resources to run this example.
-# try using num_workers=1, resources_per_worker={"CPU": 1, "GPU": 0} in your
-# ScalingConfig below.
+<div id="cell-6" class="clipboard-copy-txt"># NOTE: In the book we use num_workers=2, but reduce this here, so that it runs on Colab.
 # In any case, this training loop will take considerable time to run.
 trainer = TorchTrainer(
     train_loop_per_worker=train_loop_per_worker,
     train_loop_config={
         "lr": 1e-2, "num_epochs": 3, "batch_size": 64
     },
-    scaling_config=ScalingConfig(num_workers=2),
+    scaling_config=ScalingConfig(num_workers=1, resources_per_worker={"CPU": 1, "GPU": 0}),
     datasets={
         "train": load_dataset("nyc_tlc_data/yellow_tripdata_2020-01.parquet")
     },
