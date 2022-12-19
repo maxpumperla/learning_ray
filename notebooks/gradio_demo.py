@@ -50,6 +50,10 @@ demo = gr.Interface(
     outputs=gr.Label(num_top_classes=10)
 )
 
+# To just run the Gradio demo, without Serve, simply uncomment the line below
+# and start the script with `python gradio_demo.py`:
+# demo.launch()
+
 app = GradioServer.options(
     num_replicas=2,
     ray_actor_options={"num_cpus": 2}
