@@ -1,0 +1,6 @@
+artifact_location: file:///Users/maxpumperla/code/learning_ray_public/notebooks/mlruns/1
+creation_time: 1671189117766
+experiment_id: '1'
+last_update_time: 1671189117766
+lifecycle_stage: active
+name: torch_trainer

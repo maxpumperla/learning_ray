@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://maxpumperla.com/learning_ray/ch_01_overview/">
       
       <link rel="icon" href="../assets/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-7.3.6">
     
     
       
@@ -315,6 +315,60 @@
     What is Ray?
   </a>
   
+    <nav class="md-nav" aria-label="What is Ray?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-led-to-ray" class="md-nav__link">
+    What led to Ray?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rays-design-principles" class="md-nav__link">
+    Ray's Design Principles
+  </a>
+  
+    <nav class="md-nav" aria-label="Ray's Design Principles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simplicity-and-abstraction" class="md-nav__link">
+    Simplicity and abstraction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flexibility-and-heterogeneity" class="md-nav__link">
+    Flexibility and heterogeneity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#speed-and-scalability" class="md-nav__link">
+    Speed and scalability
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#three-layers-core-libraries-and-ecosystem" class="md-nav__link">
+    Three Layers: Core, Libraries and Ecosystem
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -325,16 +379,56 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#a-suite-of-data-science-libraries" class="md-nav__link">
+    A Suite of Data Science Libraries
+  </a>
+  
+    <nav class="md-nav" aria-label="A Suite of Data Science Libraries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ray-air-and-the-data-science-workflow" class="md-nav__link">
+    Ray AIR and the Data Science Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#data-processing-with-ray-data" class="md-nav__link">
     Data Processing with Ray Data
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
+  <a href="#model-training" class="md-nav__link">
+    Model Training
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#reinforcement-learning-with-ray-rllib" class="md-nav__link">
     Reinforcement Learning with Ray RLlib
   </a>
+  
+    <nav class="md-nav" aria-label="Reinforcement Learning with Ray RLlib">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#distributed-training-with-ray-train" class="md-nav__link">
+    Distributed training with Ray Train
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -348,6 +442,13 @@
         <li class="md-nav__item">
   <a href="#model-serving-with-ray-serve" class="md-nav__link">
     Model Serving with Ray Serve
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-growing-ecosystem" class="md-nav__link">
+    A Growing Ecosystem
   </a>
   
 </li>
@@ -542,6 +643,60 @@
     What is Ray?
   </a>
   
+    <nav class="md-nav" aria-label="What is Ray?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-led-to-ray" class="md-nav__link">
+    What led to Ray?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rays-design-principles" class="md-nav__link">
+    Ray's Design Principles
+  </a>
+  
+    <nav class="md-nav" aria-label="Ray's Design Principles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simplicity-and-abstraction" class="md-nav__link">
+    Simplicity and abstraction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flexibility-and-heterogeneity" class="md-nav__link">
+    Flexibility and heterogeneity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#speed-and-scalability" class="md-nav__link">
+    Speed and scalability
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#three-layers-core-libraries-and-ecosystem" class="md-nav__link">
+    Three Layers: Core, Libraries and Ecosystem
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -552,16 +707,56 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#a-suite-of-data-science-libraries" class="md-nav__link">
+    A Suite of Data Science Libraries
+  </a>
+  
+    <nav class="md-nav" aria-label="A Suite of Data Science Libraries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ray-air-and-the-data-science-workflow" class="md-nav__link">
+    Ray AIR and the Data Science Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#data-processing-with-ray-data" class="md-nav__link">
     Data Processing with Ray Data
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
+  <a href="#model-training" class="md-nav__link">
+    Model Training
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#reinforcement-learning-with-ray-rllib" class="md-nav__link">
     Reinforcement Learning with Ray RLlib
   </a>
+  
+    <nav class="md-nav" aria-label="Reinforcement Learning with Ray RLlib">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#distributed-training-with-ray-train" class="md-nav__link">
+    Distributed training with Ray Train
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -575,6 +770,13 @@
         <li class="md-nav__item">
   <a href="#model-serving-with-ray-serve" class="md-nav__link">
     Model Serving with Ray Serve
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-growing-ecosystem" class="md-nav__link">
+    A Growing Ecosystem
   </a>
   
 </li>
@@ -790,6 +992,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight-ipynb .m { color: var(--jp-mirror-editor-number-color) } /* Literal.Number */
 .highlight-ipynb .s { color: var(--jp-mirror-editor-string-color) } /* Literal.String */
 .highlight-ipynb .ow { color: var(--jp-mirror-editor-operator-color); font-weight: bold } /* Operator.Word */
+.highlight-ipynb .pm { color: var(--jp-mirror-editor-punctuation-color) } /* Punctuation.Marker */
 .highlight-ipynb .w { color: var(--jp-mirror-editor-variable-color) } /* Text.Whitespace */
 .highlight-ipynb .mb { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Bin */
 .highlight-ipynb .mf { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Float */
@@ -1248,34 +1451,116 @@ all of MD as it is not optimized for dense, information rich UIs.
                 },
                 displayAlign: 'center',
                 CommonHTML: {
-                    linebreaks: { 
-                    automatic: true 
+                    linebreaks: {
+                    automatic: true
                     }
                 }
             });
-        
+
             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
         }
     }
     init_mathjax();
     </script>
     <!-- End of mathjax configuration --><div class="jupyter-wrapper">
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 id="an-overview-of-ray">An Overview of Ray<a class="anchor-link" href="#An-Overview-of-Ray">&#182;</a></h1>
 </div>
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>You can run this notebook directly in <a href="https://colab.research.google.com/github/maxpumperla/learning_ray/blob/main/notebooks/ch_01_overview.ipynb">Colab</a>:
+<p>One of the reasons we need efficient distributed computing is that we’re collecting
+ever more data with a large variety at increasing speeds. The storage systems, data
+processing and analytics engines that have emerged in the last decade are crucially
+important to the success of many companies. Interestingly, most “big data” technologies
+are built for and operated by (data) engineers, that are in charge of data
+collection and processing tasks. The rationale is to free up data scientists to do
+what they’re best at. As a data science practitioner you might want to focus on training
+complex machine learning models, running efficient hyperparameter selection,
+building entirely new and custom models or simulations, or serving your models to
+showcase them.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>At the same time, it might be inevitable to scale these workloads to a compute
+cluster. To do that, the distributed system of your choice needs to support all of these
+fine-grained “big compute” tasks, potentially on specialized hardware. Ideally, it also
+fits into the big data tool chain you’re using and is fast enough to meet your latency
+requirements. In other words, distributed computing has to be powerful and flexible
+enough for complex data science workloads — and Ray can help you with that.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Python is likely the most popular language for data science today, and it’s certainly
+the one we find the most useful for our daily work. By now it’s over 30 years old,
+but has a still growing and active community. The rich <a href="https://
+pydata.org/">PyData ecosystem</a> is an essential part of a data scientist’s toolbox. How can you make sure
+to scale out your workloads while still leveraging the tools you need? That’s a difficult
+problem, especially since communities can’t be forced to just toss their toolbox, or
+programming language. That means distributed computing tools for data science
+have to be built for their existing community</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Every chapter of this book has an executable notebook that you can run. If you want run the code while following this chapter, you can run this notebook locally or directly in <a href="https://colab.research.google.com/github/maxpumperla/learning_ray/blob/main/notebooks/ch_01_overview.ipynb">Colab</a>: 
 <a target="_blank" href="https://colab.research.google.com/github/maxpumperla/learning_ray/blob/main/notebooks/ch_01_overview.ipynb">
 <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<p>For this chapter you will need to install the following dependencies:</p>
 
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>For this chapter you need to install the following dependencies. We guide you through each dependency and when you need it later on, but if you're impatient you can install them all right now:</p>
+
+</div>
+</div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
@@ -1295,13 +1580,13 @@ all of MD as it is not optimized for dense, information rich UIs.
 <span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="s2">&quot;pyarrow==10.0.0&quot;</span>
 <span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="s2">&quot;tensorflow&gt;=2.9.0&quot;</span>
 <span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="s2">&quot;transformers&gt;=4.24.0&quot;</span>
-<span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="s2">&quot;pygame==2.1.2&quot;</span>
+<span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="s2">&quot;pygame==2.1.2&quot;</span> <span class="s2">&quot;gym==0.25.0&quot;</span>
 </pre></div>
 <div id="cell-1" class="clipboard-copy-txt">! pip install "ray[rllib, serve, tune]==2.2.0"
 ! pip install "pyarrow==10.0.0"
 ! pip install "tensorflow>=2.9.0"
 ! pip install "transformers>=4.24.0"
-! pip install "pygame==2.1.2"</div>
+! pip install "pygame==2.1.2" "gym==0.25.0"</div>
     
         </div>
     </div>
@@ -1311,15 +1596,22 @@ all of MD as it is not optimized for dense, information rich UIs.
 
 </div>
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>To import utility files for this chapter, on Colab you will also have to clone
-the repo and copy the code files to the base path of the runtime:</p>
+<p>To import utility files for this chapter on Colab you will also have to clone the repo and copy the code files to the base path of the runtime. You don't need to do this if you run the notebook locally, of course.</p>
 
+</div>
+</div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
@@ -1349,88 +1641,221 @@ the repo and copy the code files to the base path of the runtime:</p>
 
 </div>
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>One of the reasons we need efficient distributed computing is that we're collecting
-ever more data with a large variety at increasing speeds.
-The storage systems, data processing and analytics engines that have emerged in
-the last decade are crucially important to the success of many companies.
-Interestingly, most "big data" technologies are built for and operated by (data)
-engineers, that are in charge of data collection and processing tasks.
-The rationale is to free up data scientists to do what they're best at.
-As a data science practitioner you might want to focus on training complex machine
-learning models, running efficient hyperparameter selection, building entirely
-new and custom models or simulations, or serving your models to showcase them.
-At the same time you simply might <em>have to</em> scale them to a compute cluster.
-To do that, the distributed system of your choice needs to support all of these
-fine-grained "big compute" tasks, potentially on specialized hardware.
-Ideally, it also fits into the big data tool chain you're using and is fast enough
-to meet your latency requirements.
-In other words, distributed computing has to be powerful and flexible enough for
-complex data science workloads, and Ray can help you with that.</p>
+<h2 id="what-is-ray">What is Ray?<a class="anchor-link" href="#What-is-Ray?">&#182;</a></h2><p>Ray is a great computing framework for the Python data science community because it is flexible and distributed, making it easy to use and understand. It allows you to efficiently parallelize Python programs on your own computer and run them on a cluster without much modification. Additionally, its high-level libraries are easy to set up and can be used together smoothly, and some of them, such as the reinforcement learning library, have a promising future as standalone projects. Even though its core is written in C++, Ray has always been focused on Python and integrates well with many important data science tools. It also has a expanding ecosystem.</p>
 
 </div>
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Python is likely the most popular language for data science today, and it's certainly
-the one I find the most useful for my daily work.
-By now it's over 30 years old, but has a still growing and active community.
-The rich PyData ecosystem is an essential part of a data scientist's toolbox.
-How can you make sure to scale out your workloads while still leveraging the tools
-you need?
-That's a difficult problem, especially since communities can't be forced to just
-toss their toolbox, or programming language.
-That means distributed computing tools for data science have to be built for
-their existing community.</p>
+<p>Ray is not the first framework for distributed Python, nor will it be the last, but it stands out for its ability to handle custom machine learning tasks with ease. Its various modules work well together, allowing for the flexible execution of complex workloads using familiar Python tools. This book aims to teach how to use Ray to effectively utilize distributed Python for machine learning purposes.</p>
 
 </div>
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="what-is-ray">What is Ray?<a class="anchor-link" href="#What-is-Ray?">&#182;</a></h2><p>What I like about Ray is that it checks all the above boxes.
-It's a flexible, distributed computing framework build for the Python data
-science community.
-Ray is easy to get started and keeps simple things simple.
-Its core API is as lean as it gets and helps you reason effectively about the
-distributed programs you want to write.
-You can efficiently parallelize Python programs on your laptop, and run the code
-you tested locally on a cluster practically without any changes.
-Its high-level libraries are easy to configure and can seamlessly be used together.
-Some of them, like Ray's reinforcement learning library, would have a bright future
-as standalone projects, distributed or not.
-While Ray's core is built in C++, it's been a Python-first framework since day one,
-integrates with many important data science tools, and can count
-on a growing ecosystem.
-Distributed Python is not new, and Ray is not the first framework in this space
-(nor will it be the last), but it is special in what it has to offer.
-Ray is particularly strong when you combine several of its modules and have custom,
-machine learning heavy workloads that would be difficult to implement otherwise.
-It makes distributed computing easy enough to run your complex workloads flexibly
-by leveraging the Python tools you know and want to use.
-In other words, by <em>learning Ray</em> you get to know <em>flexible distributed Python for
-machine learning</em>.</p>
+<p>In this chapter, you will learn about the capabilities of Ray and the three components that make it up: the core engine, high-level libraries, and ecosystem. We will provide examples of code to give you an understanding of Ray. However, a more thorough examination of Ray's APIs and components will be covered in later chapters.</p>
 
 </div>
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>In this chapter you'll get a first glimpse at what Ray can do for you.
-We will discuss the three layers that make up Ray, namely its core engine,
-its high-level libraries and its ecosystem.
-Throughout the chapter we'll show you first code examples to give you a feel for Ray,
-but we defer any in-depth treatment of Ray's APIs and components to later chapters.
-You can view this chapter as an overview of the whole book as well.</p>
+<h3 id="what-led-to-ray">What led to Ray?<a class="anchor-link" href="#What-led-to-Ray?">&#182;</a></h3><p>Programming distributed systems can be challenging because it requires specific skills and experience. While these systems are designed to be efficient and allow users to focus on their tasks, they often have <a href="https://www.joelonsoftware.com/2002/11/11/thelaw-of-leaky-abstractions">"leaky abstractions"</a> that can make it difficult to get clusters of computers to work as desired. In addition, many software systems require more resources than a single server can provide, and modern systems need to be able to handle failures and offer high availability. This means that applications may need to run on multiple machines or even in different data centers in order to function reliably.</p>
 
 </div>
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Even if you are not very familiar with machine learning (ML) or artificial intelligence (AI), you have probably heard about recent advances in these fields. Some examples of these advances include Deepmind's Alpha-Fold, which is a system for solving the protein folding problem, and OpenAI's Codex, which helps software developers with the tedious parts of their job. It is commonly known that ML systems require a lot of data to be trained and that ML models tend to become larger. OpenAI has demonstrated that the amount of computing power needed to train AI models has been increasing exponentially, as shown in their paper "AI and Compute." In their study, the operations needed for AI systems were measured in petaflops (thousands of trillion operations per second) and have doubled every 3.4 months since 2012.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>While Moore's Law suggests that computer transistors will double every two years, the use of distributed computing in machine learning can significantly increase the speed at which tasks are completed. While distributed computing may be seen as challenging, it would be beneficial to develop abstractions that allow for code to run on clusters without constantly considering individual machines and their interactions. By focusing specifically on AI workloads, it may be possible to make distributed computing more accessible and efficient.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Researchers at RISELab at UC Berkeley developed Ray to improve the efficiency of their workloads by distributing them. These workloads were flexible in nature and did not fit into existing frameworks. Ray was also designed to handle the distribution of the work and allow researchers to focus on their work without worrying about the specifics of their compute cluster. It was created with a focus on high-performance and diverse workloads, and allows researchers to use their preferred Python tools.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="rays-design-principles">Ray's Design Principles<a class="anchor-link" href="#Ray's-Design-Principles">&#182;</a></h3><p>Ray was created with a focus on certain design principles. Its API aims to be straightforward and applicable to a wide range of situations, while the compute model is designed to be adaptable. Additionally, the system architecture is optimized for speed and the ability to handle increasing workloads. Let's delve into these points further.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="simplicity-and-abstraction">Simplicity and abstraction<a class="anchor-link" href="#Simplicity-and-abstraction">&#182;</a></h4><p>Ray's API is not only simple to use, but it is also intuitive and easy to learn, as you will see in Chapter 2. Whether you want to use all the CPU cores on your laptop or leverage all the machines in your cluster, you can do so with minimal changes to your code. Ray handles task distribution and coordination behind the scenes, allowing you to focus on your work rather than worrying about the mechanics of distributed computing. Additionally, the API is very flexible and can easily be integrated with other tools. For example, Ray actors can interact with other distributed Python workloads, making it a useful "glue code" for connecting different systems and frameworks.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="flexibility-and-heterogeneity">Flexibility and heterogeneity<a class="anchor-link" href="#Flexibility-and-heterogeneity">&#182;</a></h4><p>Ray's API is created to allow users to easily write flexible and modular code for artificial intelligence tasks, especially those involving reinforcement learning. As long as the workload can be expressed in Python, it can be distributed using Ray. However, it is important to ensure that sufficient resources are available and to consider what should be distributed. Ray does not impose any limitations on what can be done with it.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Ray is able to handle a variety of different computational tasks. For example, when working on a complex simulation, it is common for there to be different steps that take different amounts of time to complete. Some may take a long time while others only take a few milliseconds. Ray is able to efficiently schedule and execute these tasks, even if they need to be run in parallel. Additionally, Ray's framework allows for dynamic execution, which is helpful when subsequent tasks depend on the outcome of an earlier task. Overall, Ray provides flexibility in managing heterogeneous workflows.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>It is important to be able to adapt your resource usage and Ray allows for the use of different types of hardware. For example, certain tasks may require the use of a GPU while others may perform better on a CPU. Ray gives you the ability to choose the most appropriate hardware for each task.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="speed-and-scalability">Speed and scalability<a class="anchor-link" href="#Speed-and-scalability">&#182;</a></h4><p>One of the key features of Ray is its speed. It can handle millions of tasks per second with minimal latency, making it an efficient choice for distributed systems. Additionally, Ray is effective at distributing and scheduling tasks across a compute cluster, and it does so in a way that is fault-tolerant. Its auto-scaler can adjust the number of machines in the cluster to match current demand, which helps to minimize costs and ensure there are enough resources available to run workloads. In the event of failures, Ray is designed to recover quickly, further contributing to its overall speed. While we will delve into the specifics of Ray's architecture later on, for now, let's focus on how it can be used in practice.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="three-layers-core-libraries-and-ecosystem">Three Layers: Core, Libraries and Ecosystem<a class="anchor-link" href="#Three-Layers:-Core,-Libraries-and-Ecosystem">&#182;</a></h3><p>Now that you are aware of the purpose and goals behind the creation of Ray, let's examine the three layers of the system. While there may be other ways to classify these layers, the approach used in this book is the most logical and understandable.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ol>
+<li>A low-level, distributed computing framework for Python with a concise core API and tooling for cluster deployment called Ray Core.</li>
+<li>A set of high-level libraries for built and maintained by the creators of Ray. This includes the so-called Ray AI Runtime (AIR) to use these libraries with a unified API in common machine learning workloads.</li>
+<li>A growing ecosystem of integrations and partnerships with other notable
+projects, which span many aspects of the first two layers.</li>
+</ol>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>There are several layers to explore in this chapter. The core of Ray's engine, with its API at the center, serves as the foundation for everything else. The data science libraries in Ray build on top of this core and offer a specialized interface. Many data scientists will use these libraries directly, while those working in ML or platform engineering may focus on creating tools that extend the Ray Core API. Ray AIR serves as a connector between the various Ray libraries and provides a consistent framework for handling common AI tasks. Additionally, there are a increasing number of third-party integrations available for Ray that can be utilized by experienced practitioners. We will examine each of these layers in more detail.</p>
+<p>Below is a quick preview of what libraries and integrations each layer consists of. Maybe you already spot a few of your favorite tools from the ecosystem.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><img src="https://raw.githubusercontent.com/maxpumperla/learning_ray/main/notebooks/images/chapter_01/ray_layers.png" alt="Ray Layers"></p>
 
 </div>
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="a-distributed-computing-framework">A distributed computing framework<a class="anchor-link" href="#A-distributed-computing-framework">&#182;</a></h2><p>At its core, Ray is a distributed computing framework.
 We'll  provide you with just the basic terminology here, and talk about Ray's
@@ -1439,7 +1864,7 @@ In short, Ray sets up and manages clusters of computers so that you can run
 distributed tasks on them.
 A ray cluster consists of nodes that are connected to each other via a network.
 You program against the so-called <em>driver</em>, the program root, which lives on
-the head node_.
+the <em>head node</em>.
 The driver can run <em>jobs</em>, that is a collection of tasks, that are run on the nodes
 in the cluster.
 Specifically, the individual tasks of a job are run on <em>worker</em> processes on
@@ -1447,13 +1872,25 @@ worker nodes_.</p>
 
 </div>
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><img src="https://raw.githubusercontent.com/maxpumperla/learning_ray/main/notebooks/images/chapter_01/simple_cluster.png" alt="Ray cluster"></p>
 
 </div>
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>What's interesting is that a Ray cluster can also be a <em>local cluster</em>, i.e. a cluster
 consisting just of your own computer.
@@ -1464,7 +1901,7 @@ local Ray cluster.
 Installing Ray on any of the major operating systems should work seamlessly
 using <code>pip</code>:</p>
 
-<pre><code>pip install "ray[rllib, tune, serve]"</code></pre>
+<pre><code>pip install "ray[rllib, tune, serve]==2.2.0"</code></pre>
 <p>With a simple <code>pip install ray</code> you would have installed just the very basics of Ray.
 Since we want to explore some advanced features, we installed the "extras" <code>rllib</code>
 and <code>tune</code>, which we'll discuss in a bit.
@@ -1478,11 +1915,15 @@ The choice is up to you, but in any case please remember to use Python version
 In your Python session you can now easily import and initialize Ray as follows:</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
@@ -1508,11 +1949,263 @@ ray.init()</div>
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>2022-12-20 10:05:02,372	INFO worker.py:1529 -- Started a local Ray instance. View the dashboard at <span class="ansi-green-intense-fg ansi-bold">127.0.0.1:8265 </span>
+</pre>
 </div>
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+    <div style="margin-left: 50px;display: flex;flex-direction: row;align-items: center">
+        <h3 style="color: var(--jp-ui-font-color0)">Ray</h3>
+        <svg version="1.1" id="ray" width="3em" viewBox="0 0 144.5 144.6" style="margin-left: 3em;margin-right: 3em">
+            <g id="layer-1">
+                <path fill="#00a2e9" class="st0" d="M97.3,77.2c-3.8-1.1-6.2,0.9-8.3,5.1c-3.5,6.8-9.9,9.9-17.4,9.6S58,88.1,54.8,81.2c-1.4-3-3-4-6.3-4.1
+                    c-5.6-0.1-9.9,0.1-13.1,6.4c-3.8,7.6-13.6,10.2-21.8,7.6C5.2,88.4-0.4,80.5,0,71.7c0.1-8.4,5.7-15.8,13.8-18.2
+                    c8.4-2.6,17.5,0.7,22.3,8c1.3,1.9,1.3,5.2,3.6,5.6c3.9,0.6,8,0.2,12,0.2c1.8,0,1.9-1.6,2.4-2.8c3.5-7.8,9.7-11.8,18-11.9
+                    c8.2-0.1,14.4,3.9,17.8,11.4c1.3,2.8,2.9,3.6,5.7,3.3c1-0.1,2,0.1,3,0c2.8-0.5,6.4,1.7,8.1-2.7s-2.3-5.5-4.1-7.5
+                    c-5.1-5.7-10.9-10.8-16.1-16.3C84,38,81.9,37.1,78,38.3C66.7,42,56.2,35.7,53,24.1C50.3,14,57.3,2.8,67.7,0.5
+                    C78.4-2,89,4.7,91.5,15.3c0.1,0.3,0.1,0.5,0.2,0.8c0.7,3.4,0.7,6.9-0.8,9.8c-1.7,3.2-0.8,5,1.5,7.2c6.7,6.5,13.3,13,19.8,19.7
+                    c1.8,1.8,3,2.1,5.5,1.2c9.1-3.4,17.9-0.6,23.4,7c4.8,6.9,4.6,16.1-0.4,22.9c-5.4,7.2-14.2,9.9-23.1,6.5c-2.3-0.9-3.5-0.6-5.1,1.1
+                    c-6.7,6.9-13.6,13.7-20.5,20.4c-1.8,1.8-2.5,3.2-1.4,5.9c3.5,8.7,0.3,18.6-7.7,23.6c-7.9,5-18.2,3.8-24.8-2.9
+                    c-6.4-6.4-7.4-16.2-2.5-24.3c4.9-7.8,14.5-11,23.1-7.8c3,1.1,4.7,0.5,6.9-1.7C91.7,98.4,98,92.3,104.2,86c1.6-1.6,4.1-2.7,2.6-6.2
+                    c-1.4-3.3-3.8-2.5-6.2-2.6C99.8,77.2,98.9,77.2,97.3,77.2z M72.1,29.7c5.5,0.1,9.9-4.3,10-9.8c0-0.1,0-0.2,0-0.3
+                    C81.8,14,77,9.8,71.5,10.2c-5,0.3-9,4.2-9.3,9.2c-0.2,5.5,4,10.1,9.5,10.3C71.8,29.7,72,29.7,72.1,29.7z M72.3,62.3
+                    c-5.4-0.1-9.9,4.2-10.1,9.7c0,0.2,0,0.3,0,0.5c0.2,5.4,4.5,9.7,9.9,10c5.1,0.1,9.9-4.7,10.1-9.8c0.2-5.5-4-10-9.5-10.3
+                    C72.6,62.3,72.4,62.3,72.3,62.3z M115,72.5c0.1,5.4,4.5,9.7,9.8,9.9c5.6-0.2,10-4.8,10-10.4c-0.2-5.4-4.6-9.7-10-9.7
+                    c-5.3-0.1-9.8,4.2-9.9,9.5C115,72.1,115,72.3,115,72.5z M19.5,62.3c-5.4,0.1-9.8,4.4-10,9.8c-0.1,5.1,5.2,10.4,10.2,10.3
+                    c5.6-0.2,10-4.9,9.8-10.5c-0.1-5.4-4.5-9.7-9.9-9.6C19.6,62.3,19.5,62.3,19.5,62.3z M71.8,134.6c5.9,0.2,10.3-3.9,10.4-9.6
+                    c0.5-5.5-3.6-10.4-9.1-10.8c-5.5-0.5-10.4,3.6-10.8,9.1c0,0.5,0,0.9,0,1.4c-0.2,5.3,4,9.8,9.3,10
+                    C71.6,134.6,71.7,134.6,71.8,134.6z"/>
+            </g>
+        </svg>
+        <table>
+            <tr>
+                <td style="text-align: left"><b>Python version:</b></td>
+                <td style="text-align: left"><b>3.9.13</b></td>
+            </tr>
+            <tr>
+                <td style="text-align: left"><b>Ray version:</b></td>
+                <td style="text-align: left"><b> 2.2.0</b></td>
+            </tr>
+            <tr>
+    <td style="text-align: left"><b>Dashboard:</b></td>
+    <td style="text-align: left"><b><a href="http://127.0.0.1:8265" target="_blank">http://127.0.0.1:8265</a></b></td>
+</tr>
+
+        </table>
+    </div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="data-processing-with-ray-data">Data Processing with Ray Data<a class="anchor-link" href="#Data-Processing-with-Ray-Data">&#182;</a></h2><p>The first high-level library of Ray we talk about is called "Ray Data".
+<p>By running those two lines of code, you have set up a Ray cluster on your local machine. This cluster can take advantage of all the cores on your computer as worker processes. Currently, your Ray cluster isn't doing much, but that will change in the following section. The init function used to initiate the cluster is one of just six fundamental API calls that you will delve into in Chapter 2. Overall, the Ray Core API is straightforward and easy to use, but since it is also a lower-level interface, it takes time to create more complex examples with it. Chapter 2 includes a detailed first example to introduce you to the Ray Core API, and in Chapter 3 you will see how to build a more advanced Ray application for reinforcement learning.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>In the above example, you did not provide any arguments when calling the <code>ray.init(...)</code> function. If you wanted to use Ray on a real cluster, you would need to include more arguments in this init call, which is known as the Ray Client. The Ray Client is used to connect to an existing Ray cluster and interact with it. If you are interested in learning more about using the Ray Client to connect to your production clusters, you can refer to the <a href="https://docs.ray.io/en/latest/cluster/ray-client.html">Ray documentation</a>. Keep in mind that working with compute clusters can be complex, and there are many options for deploying Ray applications on them. For example, you can use cloud providers like AWS, GCP, or Azure to host your Ray clusters, or you can set up your own hardware or use tools like Kubernetes. We will revisit the topic of scaling workloads with Ray Clusters in Chapter 9, after discussing some specific applications of Ray in earlier chapters.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Before moving on the Ray’s higher level libraries, let’s briefly summarize the two
+foundational components of Ray as a distributed computation framework:</p>
+<ul>
+<li><em>Ray Clusters</em>: This component is in charge of allocating resources, creating nodes,
+and ensuring they are healthy. A good way to get started with Ray Clusters is its
+dedicated quick start guide (<a href="https://docs.ray.io/en/latest/cluster/quickstart.html">https://docs.ray.io/en/latest/cluster/quickstart.html</a>).</li>
+<li><em>Ray Core</em>: Once your cluster is up and running, you use the Ray Core API
+that to program against it. You can get started with Ray Core by following the
+official walk-through (<a href="https://docs.ray.io/en/latest/ray-core/walkthrough.html">https://docs.ray.io/en/latest/ray-core/walkthrough.html</a>) for
+this component.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="a-suite-of-data-science-libraries">A Suite of Data Science Libraries<a class="anchor-link" href="#A-Suite-of-Data-Science-Libraries">&#182;</a></h2><p>In this section, we will introduce the data science libraries included with Ray. To understand how these libraries can be beneficial to you, it's important to first have a general understanding of what data science entails. With this context in mind, you'll be able to see how Ray's higher-level libraries fit into the larger picture.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="ray-air-and-the-data-science-workflow">Ray AIR and the Data Science Workflow<a class="anchor-link" href="#Ray-AIR-and-the-Data-Science-Workflow">&#182;</a></h3><p>The concept of "data science" (DS) has undergone significant changes in recent years, and you can find various definitions of the term online, some more useful than others. However, we believe that data science is the practice of using data to gain insights and develop practical applications. It is a field that involves building and understanding things, and is therefore quite practical and applied. In this sense, calling practitioners of this field "data scientists" is similar to calling hackers "computer scientists".</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Data science involves a series of steps that involve identifying and gathering the necessary data, processing it, creating models, and implementing solutions. While machine learning may be a part of this process, it is not always necessary. If machine learning is included, there may be additional steps involved.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li><em>Data Processing</em>: To use machine learning effectively, you must prepare the data in a way that the ML model can understand. This process, called feature engineering, involves selecting and transforming the data that will be input into the model. It can be a challenging task, so it is helpful to have access to reliable tools to assist with it.</li>
+<li><em>Model Training</em>: For machine learning, it is necessary to train your algorithms on data that has been previously processed. This involves selecting the appropriate algorithm for the task at hand. Having a diverse range of algorithms to choose from can also be beneficial.</li>
+<li><em>Hyperparameter Tuning</em>: During the process of training a machine learning model, certain parameters can be fine-tuned in order to improve its performance. In addition to these model parameters, there are also hyperparameters that can be adjusted before training begins. The proper adjustment of these hyperparameters can significantly impact the effectiveness of the final machine learning model. Fortunately, there are tools available to assist with the process of optimizing these hyperparameters.</li>
+<li><em>Model Serving</em>: The deployment of trained models is necessary in order to provide access to them for those who need it. This process, known as serving a model, involves making it available through various means, such as using simple HTTP servers in prototypes or specialized software packages specifically designed for serving ML models.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>It is important to note that this list is not exhaustive and there is more to consider when building machine learning applications. Nonetheless, it is undeniable that these four steps are critical for the success of a data science project that utilizes machine learning.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><img src="https://raw.githubusercontent.com/maxpumperla/learning_ray/main/notebooks/images/chapter_01/ds_workflow.png" alt="Data Science Workflow"></p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Ray has created dedicated libraries for each of the four ML-specific steps mentioned earlier. These libraries include Ray Datasets for data processing, Ray Train for distributed model training, Ray RLlib for reinforcement learning workloads, Ray Tune for efficient hyperparameter tuning, and Ray Serve for serving models. It is important to note that all of these libraries are distributed by design, as that is how Ray is built.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Additionally, it is important to consider that these steps are usually not completed separately but rather as part of a larger process. It is beneficial to have all relevant libraries working smoothly together and to have a uniform API throughout the data science process. The Ray AI Runtime (AIR) was designed with this in mind, providing a common runtime and API for experiments and the capability to expand workloads as needed.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><img src="https://raw.githubusercontent.com/maxpumperla/learning_ray/main/notebooks/images/chapter_01/AIR.png" alt="Ray AIR"></p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>In this chapter, we will not be discussing the Ray AI Runtime API in depth (more on that can be found in Chapter 10). However, we can provide an overview of the components that contribute to it. Specifically, we will go through each of the DS libraries that make up Ray one by one.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="data-processing-with-ray-data">Data Processing with Ray Data<a class="anchor-link" href="#Data-Processing-with-Ray-Data">&#182;</a></h3><p>The first high-level library of Ray we talk about is called "Ray Data".
 This library contains a data structure aptly called <code>Dataset</code>, a multitude of
 connectors for loading data from various formats and systems,
 an API for transforming such datasets, a way to build data processing pipelines
@@ -1527,11 +2220,15 @@ Specifically, you'll create a dataset from a Python dictionary containing a
 string <code>name</code> and an integer-valued <code>data</code> for <code>10000</code> entries:</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
@@ -1563,11 +2260,42 @@ ds.show(5)</div>
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>{&#39;name&#39;: &#39;0&#39;, &#39;data&#39;: 0}
+{&#39;name&#39;: &#39;1&#39;, &#39;data&#39;: 1}
+{&#39;name&#39;: &#39;2&#39;, &#39;data&#39;: 2}
+{&#39;name&#39;: &#39;3&#39;, &#39;data&#39;: 3}
+{&#39;name&#39;: &#39;4&#39;, &#39;data&#39;: 4}
+</pre>
 </div>
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+
+</div>
+
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Great, now you have some distributed rows, but what can you do with that data?
+<p>Great, now you have some rows, but what can you do with that data?
 The <code>Dataset</code> API bets heavily on functional programming, as it is very well suited
 for data transformations.
 Even though Python 3 made a point of hiding some of its functional programming
@@ -1586,11 +2314,15 @@ Equipped with these three functional API calls, let's see how easily you can
 transform your dataset <code>ds</code>:</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
@@ -1628,9 +2360,62 @@ print(sample)</div>
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>2022-12-20 10:05:43,431	WARNING dataset.py:4233 -- The `map`, `flat_map`, and `filter` operations are unvectorized and can be very slow. Consider using `.map_batches()` instead.
+Map: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 200/200 [00:01&lt;00:00, 139.83it/s]
+Filter: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 200/200 [00:00&lt;00:00, 1144.95it/s]
+Flat_Map: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 200/200 [00:00&lt;00:00, 1193.90it/s]</pre>
 </div>
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>[0, 0, 4, 64, 16, 4096, 36, 46656, 64, 262144]
+</pre>
+</div>
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>The drawback of <code>Dataset</code> transformations is that each step gets executed
 synchronously.
@@ -1641,11 +2426,15 @@ you want an execution that can overlap the individual tasks.
 Let's rewrite the last example into a pipeline.</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
@@ -1679,18 +2468,160 @@ result.show(10)</div>
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>2022-12-20 10:05:49,790	INFO dataset.py:3693 -- Created DatasetPipeline with 20 windows: 7390b min, 8000b max, 7944b mean
+2022-12-20 10:05:49,791	INFO dataset.py:3703 -- Blocks per window: 10 min, 10 max, 10 mean
+2022-12-20 10:05:49,793	WARNING dataset.py:3715 -- ⚠️  This pipeline&#39;s parallelism is limited by its blocks per window to ~10 concurrent tasks per window. To maximize performance, increase the blocks per window to at least 12. This may require increasing the base dataset&#39;s parallelism and/or adjusting the windowing parameters.
+2022-12-20 10:05:49,794	INFO dataset.py:3742 -- ✔️  This pipeline&#39;s windows likely fit in object store memory without spilling.
+Stage 0:   0%|                                                                                                                                                                                                   | 0/20 [00:00&lt;?, ?it/s]
+  0%|                                                                                                                                                                                                            | 0/20 [00:00&lt;?, ?it/s]
+Stage 1:   5%|█████████▎                                                                                                                                                                                 | 1/20 [00:00&lt;00:01,  9.56it/s]
+Stage 0:  10%|██████████████████▋                                                                                                                                                                        | 2/20 [00:00&lt;00:00, 18.57it/s]</pre>
 </div>
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="reinforcement-learning-with-ray-rllib">Reinforcement Learning with Ray RLlib<a class="anchor-link" href="#Reinforcement-Learning-with-Ray-RLlib">&#182;</a></h2><p>Note that the following command will only work with Ray 2.2.0 or later.</p>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>0
+0
+4
+64
+16
+4096
+36
+46656
+64
+262144
+</pre>
+</div>
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+</pre>
+</div>
+</div>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>While there is much more that can be explored regarding Ray Datasets and its integration with certain data processing systems, we will have to postpone a more thorough discussion until Chapter 6.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="model-training">Model Training<a class="anchor-link" href="#Model-Training">&#182;</a></h3><p>Next, we will examine the distributed training abilities of Ray through two libraries. The first library is specifically for reinforcement learning, while the second library is primarily focused on supervised learning tasks.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="reinforcement-learning-with-ray-rllib">Reinforcement Learning with Ray RLlib<a class="anchor-link" href="#Reinforcement-Learning-with-Ray-RLlib">&#182;</a></h3><p>We will begin with discussing Ray RLlib for reinforcement learning, a library that utilizes either TensorFlow or PyTorch as its underlying machine learning framework. Both of these frameworks are highly compatible with each other, so you can use whichever one you prefer without sacrificing much in terms of functionality. In this book, we will provide examples using both TensorFlow and PyTorch to give you a comprehensive understanding of how to use Ray with either framework. In this chapter we'll work with TensorFlow, which you can install by simply running the command "pip install tensorflow" in your terminal. If you wanted to, you could equally well install PyTorch instead.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>RLlib provides a command line tool called <code>rllib</code> that can be easily used to run examples. It was already installed when you ran "pip install 'ray[rllib]'" earlier. While you will primarily use the Python API for more advanced examples in Chapter 4, this tool allows you to quickly try out RL experiments using RLlib.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>We will consider a classic control problem in which we try to balance a pole on a cart. Imagine that the pole is attached to the cart at a joint and is subject to the force of gravity. The cart is able to move along a frictionless track and we can give it a push to the left or right with a fixed force. If we do this properly, the pole should remain upright. For each time step in which the pole does not fall, we receive a reward of 1. Our goal is to collect as many rewards as possible and we want to see if we can use a reinforcement learning algorithm to help us achieve this.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><img src="https://raw.githubusercontent.com/maxpumperla/learning_ray/main/notebooks/images/chapter_01/cartpole.png" alt="Cartpole Env"></p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Our goal is to train a reinforcement learning agent that can perform two actions: pushing to the left or to the right, observe the consequences of these actions, and learn from the experience to maximize the reward. To achieve this using Ray RLlib, we can utilize a "tuned example," which is a pre-set algorithm that works effectively for a specific problem. These examples can be easily run with a single command and RLlib offers a variety of them, which can be viewed by using this command:</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
@@ -1714,12 +2645,163 @@ result.show(10)</div>
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>                                 RLlib Examples                                 
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃<span class="ansi-bold"> </span><span class="ansi-bold">Example ID                     </span><span class="ansi-bold"> </span>┃<span class="ansi-bold"> </span><span class="ansi-bold">Description                               </span><span class="ansi-bold"> </span>┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">atari-a2c                      </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Runs grid search over several Atari games </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg">                                 </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">on A2C.                                   </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">atari-dqn                      </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Run grid search on Atari environments with</span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg">                                 </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">DQN.                                      </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">atari-duel-ddqn                </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Run grid search on Atari environments with</span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg">                                 </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">duelling double DQN.                      </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">atari-impala                   </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Run grid search over several atari games  </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg">                                 </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">with IMPALA.                              </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">atari-ppo                      </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Run grid search over several atari games  </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg">                                 </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">with PPO.                                 </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">atari-sac                      </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Run grid search on several atari games    </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg">                                 </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">with SAC.                                 </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">breakout-apex-dqn              </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Runs Apex DQN on BreakoutNoFrameskip-v4.  </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">breakout-ddppo                 </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Runs DDPPO on BreakoutNoFrameskip-v4.     </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">cartpole-a2c                   </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Runs A2C on the CartPole-v1 environment.  </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">cartpole-a2c-micro             </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Runs A2C on the CartPole-v1 environment,  </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg">                                 </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">using micro-batches.                      </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">cartpole-a3c                   </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Runs A3C on the CartPole-v1 environment.  </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">cartpole-alpha-zero            </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Runs AlphaZero on a Cartpole with sparse  </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg">                                 </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">rewards.                                  </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">cartpole-apex-dqn              </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Runs Apex DQN on CartPole-v1.             </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">cartpole-appo                  </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Runs APPO on CartPole-v1.                 </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">cartpole-ars                   </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Runs ARS on CartPole-v1.                  </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">cartpole-bc                    </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Runs BC on CartPole-v1.                   </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">cartpole-crr                   </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Run CRR on CartPole-v1.                   </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">cartpole-ddppo                 </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Runs DDPPO on CartPole-v1                 </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">cartpole-dqn                   </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Run DQN on CartPole-v1.                   </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">cartpole-dt                    </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Run DT on CartPole-v1.                    </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">cartpole-es                    </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Run ES on CartPole-v1.                    </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">cartpole-impala                </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Run IMPALA on CartPole-v1.                </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">cartpole-maml                  </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Run MAML on CartPole-v1.                  </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">cartpole-marwil                </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Run MARWIL on CartPole-v1.                </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">cartpole-mbmpo                 </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Run MBMPO on a CartPole environment       </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg">                                 </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">wrapper.                                  </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">cartpole-pg                    </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Run PG on CartPole-v1                     </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">cartpole-ppo                   </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Run PPO on CartPole-v1.                   </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">cartpole-sac                   </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Run SAC on CartPole-v1                    </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">cartpole-simpleq               </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Run SimpleQ on CartPole-v1                </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">dm-control-dreamer             </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Run DREAMER on a suite of control problems</span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg">                                 </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">by Deepmind.                              </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">frozenlake-appo                </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Runs APPO on FrozenLake-v1.               </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">halfcheetah-appo               </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Runs APPO on HalfCheetah-v2.              </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">halfcheetah-bullet-ddpg        </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Runs DDPG on HalfCheetahBulletEnv-v0.     </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">halfcheetah-cql                </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Runs grid search on HalfCheetah           </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg">                                 </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">environments with CQL.                    </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">halfcheetah-ddpg               </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Runs DDPG on HalfCheetah-v2.              </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">halfcheetah-maml               </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Run MAML on a custom HalfCheetah          </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg">                                 </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">environment.                              </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">halfcheetah-mbmpo              </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Run MBMPO on a HalfCheetah environment    </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg">                                 </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">wrapper.                                  </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">halfcheetah-ppo                </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Run PPO on HalfCheetah-v2.                </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">halfcheetah-sac                </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Run SAC on HalfCheetah-v3.                </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">hopper-bullet-ddpg             </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Runs DDPG on HopperBulletEnv-v0.          </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">hopper-cql                     </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Runs grid search on Hopper environments   </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg">                                 </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">with CQL.                                 </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">hopper-mbmpo                   </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Run MBMPO on a Hopper environment wrapper.</span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">hopper-ppo                     </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Run PPO on Hopper-v1.                     </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">humanoid-es                    </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Run ES on Humanoid-v2.                    </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">humanoid-ppo                   </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Run PPO on Humanoid-v1.                   </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">inverted-pendulum-td3          </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Run TD3 on InvertedPendulum-v2.           </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">mountaincar-apex-ddpg          </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Runs Apex DDPG on                         </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg">                                 </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">MountainCarContinuous-v0.                 </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">mountaincar-ddpg               </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Runs DDPG on MountainCarContinuous-v0.    </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">mujoco-td3                     </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Run TD3 against four of the hardest MuJoCo</span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg">                                 </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">tasks.                                    </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">multi-agent-cartpole-alpha-star</span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Runs AlphaStar on 4 CartPole agents.      </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">multi-agent-cartpole-appo      </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Runs APPO on RLlib&#39;s MultiAgentCartPole   </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">multi-agent-cartpole-impala    </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Run IMPALA on RLlib&#39;s MultiAgentCartPole  </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">pacman-sac                     </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Run SAC on MsPacmanNoFrameskip-v4.        </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">pendulum-apex-ddpg             </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Runs Apex DDPG on Pendulum-v1.            </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">pendulum-appo                  </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Runs APPO on Pendulum-v1.                 </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">pendulum-cql                   </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Runs CQL on Pendulum-v1.                  </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">pendulum-crr                   </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Run CRR on Pendulum-v1.                   </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">pendulum-ddpg                  </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Runs DDPG on Pendulum-v1.                 </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">pendulum-ddppo                 </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Runs DDPPO on Pendulum-v1.                </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">pendulum-dt                    </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Run DT on Pendulum-v1.                    </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">pendulum-impala                </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Run IMPALA on Pendulum-v1.                </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">pendulum-maml                  </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Run MAML on a custom Pendulum environment.</span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">pendulum-mbmpo                 </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Run MBMPO on a Pendulum environment       </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg">                                 </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">wrapper.                                  </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">pendulum-ppo                   </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Run PPO on Pendulum-v1.                   </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">pendulum-sac                   </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Run SAC on Pendulum-v1.                   </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">pendulum-td3                   </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Run TD3 on Pendulum-v1.                   </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">pong-a3c                       </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Runs A3C on the PongDeterministic-v4      </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg">                                 </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">environment.                              </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">pong-apex-dqn                  </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Runs Apex DQN on PongNoFrameskip-v4.      </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">pong-appo                      </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Runs APPO on PongNoFrameskip-v4.          </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">pong-dqn                       </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Run DQN on PongDeterministic-v4.          </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">pong-impala                    </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Run IMPALA on PongNoFrameskip-v4.         </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">pong-ppo                       </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Run PPO on PongNoFrameskip-v4.            </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">pong-rainbow                   </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Run Rainbow on PongDeterministic-v4.      </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">recsys-bandits                 </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Runs BanditLinUCB on a Recommendation     </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg">                                 </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Simulation environment.                   </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">recsys-long-term-slateq        </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Run SlateQ on a recommendation system     </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg">                                 </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">aimed at long-term satisfaction.          </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">recsys-parametric-slateq       </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">SlateQ run on a recommendation system.    </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">recsys-ppo                     </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Run PPO on a recommender system example   </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg">                                 </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">from RLlib.                               </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">recsys-slateq                  </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">SlateQ run on a recommendation system.    </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">repeatafterme-ppo              </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Run PPO on RLlib&#39;s RepeatAfterMe          </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg">                                 </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">environment.                              </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">stateless-cartpole-r2d2        </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Run R2D2 on a stateless cart pole         </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg">                                 </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">environment.                              </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">swimmer-ars                    </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Runs ARS on Swimmer-v2.                   </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">two-step-game-maddpg           </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Run RLlib&#39;s Two-step game with multi-agent</span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg">                                 </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">DDPG.                                     </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">two-step-game-qmix             </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Run QMIX on RLlib&#39;s two-step game.        </span><span class="ansi-magenta-fg"> </span>│
+│<span class="ansi-cyan-fg"> </span><span class="ansi-cyan-fg">walker2d-ppo                   </span><span class="ansi-cyan-fg"> </span>│<span class="ansi-magenta-fg"> </span><span class="ansi-magenta-fg">Run PPO on the Walker2d-v1 environment.   </span><span class="ansi-magenta-fg"> </span>│
+└─────────────────────────────────┴────────────────────────────────────────────┘
+Run any RLlib example as using <span class="ansi-green-fg">&#39;rllib example run </span><span class="ansi-green-fg">&lt;</span><span class="ansi-green-fg">Example</span><span class="ansi-green-fg"> ID</span><span class="ansi-green-fg">&gt;</span><span class="ansi-green-fg">&#39;</span>.See <span class="ansi-green-fg">&#39;rllib </span>
+<span class="ansi-green-fg">example run --help&#39;</span> for more information.
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>An example that is available is called cartpole-ppo, which utilizes the PPO algorithm to solve the cartpole problem in the CartPole-v1 environment from OpenAI Gym (<a href="https://gymnasium.farama.org/environments/classic_control/cart_pole/">https://gymnasium.farama.org/environments/classic_control/cart_pole/</a>). You can access the configuration of this example by entering <code>rllib example get cartpole-ppo</code> in the command line. This will first download the example file from GitHub and then display the configuration, which is written in YAML format.</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
@@ -1743,10 +2825,71 @@ result.show(10)</div>
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>&gt;&gt;&gt; Attempting to download example file https://raw.githubusercontent.com/ray-project/ray/master/rllib/tuned_examples/ppo/cartpole-ppo.yaml...
+b&#39;cartpole-ppo:\n    env: CartPole-v1\n    run: PPO\n    stop:\n        episode_reward_mean: 150\n        timesteps_total: 100000\n    config:\n        # Works for both torch and tf.\n        framework: tf\n        gamma: 0.99\n        lr: 0.0003\n        num_workers: 1\n        observation_filter: MeanStdFilter\n        num_sgd_iter: 6\n        vf_loss_coeff: 0.01\n        model:\n            fcnet_hiddens: [32]\n            fcnet_activation: linear\n            vf_share_layers: true\n        enable_connectors: true\n&#39;
+  Status code: 200
+  Downloaded example file to /var/folders/y_/l41py1sx7bl5n30jygrsv0q40000gn/T/tmpnobuu1ka.yaml
+cartpole-ppo:
+    env: CartPole-v1
+    run: PPO
+    stop:
+        episode_reward_mean: <span class="ansi-cyan-intense-fg ansi-bold">150</span>
+        timesteps_total: <span class="ansi-cyan-intense-fg ansi-bold">100000</span>
+    config:
+        # Works for both torch and tf.
+        framework: tf
+        gamma: <span class="ansi-cyan-intense-fg ansi-bold">0.99</span>
+        lr: <span class="ansi-cyan-intense-fg ansi-bold">0.0003</span>
+        num_workers: <span class="ansi-cyan-intense-fg ansi-bold">1</span>
+        observation_filter: MeanStdFilter
+        num_sgd_iter: <span class="ansi-cyan-intense-fg ansi-bold">6</span>
+        vf_loss_coeff: <span class="ansi-cyan-intense-fg ansi-bold">0.01</span>
+        model:
+            fcnet_hiddens: <span class="ansi-bold">[</span><span class="ansi-cyan-intense-fg ansi-bold">32</span><span class="ansi-bold">]</span>
+            fcnet_activation: linear
+            vf_share_layers: true
+        enable_connectors: true
+
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>While the specific details of the configuration file are not relevant at this time, it is important to note that you must include the Cartpole-v1 environment and the necessary RL configuration for the training process to function properly. You do not need any special equipment to run this configuration, and it should only take a few minutes to complete. In order to train this example, you will need to install the PyGame dependency by using the command <code>pip install pygame</code>, and then simply run:</p>
+
+</div>
+</div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
@@ -1774,14 +2917,77 @@ result.show(10)</div>
 
 </div>
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>With the checkpoint you're shown after training finishes, run:</p>
+<p>If you run this, RLlib creates a named experiment and logs important metrics such as
+the reward, or the <code>episode_reward_mean</code> for you. In the output of the training run,
+you should also see information about the machine (<code>loc</code>, meaning host name and
+port), as well as the status of your training runs. If your run is <code>TERMINATED</code>, but you’ve
+never seen a successfully <code>RUNNING</code> experiment in the log, something must have gone
+wrong. Here’s a sample snippet of a training run:</p>
 
+<pre><code>{text}
++-----------------------------+----------+----------------+
+| Trial name | status | loc |
+|-----------------------------+----------+----------------|
+| PPO_CartPole-v0_9931e_00000 | RUNNING | 127.0.0.1:8683 |
++-----------------------------+----------+----------------+</code></pre>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>When the training run finishes and things went well, you should see the following
+output:</p>
+
+<pre><code>{text}
+Your training finished.
+Best available checkpoint for each trial:
+&lt;checkpoint-path&gt;/checkpoint_&lt;number&gt;
+
+You can now evaluate your trained algorithm from any checkpoint,
+e.g. by running:
+
+╭─────────────────────────────────────────────────────────────────────────╮
+│ rllib evaluate &lt;checkpoint-path&gt;/checkpoint_&lt;number&gt; --algo PPO         │
+╰─────────────────────────────────────────────────────────────────────────╯</code></pre>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Your local Ray checkpoint folder is <code>~/ray-results</code> by default. For the training
+configuration we used, your <code>&lt;checkpoint-path&gt;</code> should be of the form 
+<code>~/ray_results/cartpole-ppo/PPO_CartPole-v1_&lt;experiment_id&gt;</code>. During training
+procedure, your intermediate and final model checkpoints get generated into this
+folder.</p>
+<p>To evaluate the performance of your trained RL algorithm, you can now evaluate it
+from checkpoint by copying the command the previous example training run printed:</p>
+
+</div>
+</div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
@@ -1809,7 +3015,35 @@ result.show(10)</div>
 
 </div>
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Executing this command will display the rewards obtained by the RL algorithm you trained in the <code>CartPole-v1</code> environment. There is a lot more that can be done with RLlib, which will be discussed further in Chapter 4. The purpose of this example was to demonstrate how easy it is to begin using RLlib and the <code>rllib</code> command line tool through the use of the example and evaluate commands.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="distributed-training-with-ray-train">Distributed training with Ray Train<a class="anchor-link" href="#Distributed-training-with-Ray-Train">&#182;</a></h4><p>If you are interested in using Ray for supervised learning, rather than just reinforcement learning, you can use the Ray Train library. However, we do not have enough expertise with frameworks like TensorFlow to provide a detailed example of how to use Ray Train at this time. If you want to learn more about distributed training, you can move on to Chapter 6.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="hyperparameter-tuning-with-ray-tune">Hyperparameter Tuning with Ray Tune<a class="anchor-link" href="#Hyperparameter-Tuning-with-Ray-Tune">&#182;</a></h2><p>Naming things is hard, but the Ray team hit the spot with <em>Ray Tune</em>, which you can
 use to tune all
@@ -1834,11 +3068,15 @@ Let's look at a first example of Ray Tune used for the situation we just explain
 The focus is yet again on Ray and its API, and not on a specific ML task (which we simply simulate for now).</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
@@ -1908,9 +3146,262 @@ print(result.get_best_config(metric="score", mode="min"))</div>
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<div class="tuneStatus">
+  <div style="display: flex;flex-direction: row">
+    <div style="display: flex;flex-direction: column;">
+      <h3>Tune Status</h3>
+      <table>
+<tbody>
+<tr><td>Current time:</td><td>2022-12-20 10:12:03</td></tr>
+<tr><td>Running for: </td><td>00:00:32.62        </td></tr>
+<tr><td>Memory:      </td><td>18.1/32.0 GiB      </td></tr>
+</tbody>
+</table>
+    </div>
+    <div class="vDivider"></div>
+    <div class="systemInfo">
+      <h3>System Info</h3>
+      Using FIFO scheduling algorithm.<br>Resources requested: 0/12 CPUs, 0/0 GPUs, 0.0/12.03 GiB heap, 0.0/2.0 GiB objects
+    </div>
+    
+  </div>
+  <div class="hDivider"></div>
+  <div class="trialStatus">
+    <h3>Trial Status</h3>
+    <table>
+<thead>
+<tr><th>Trial name                   </th><th>status    </th><th>loc            </th><th style="text-align: right;">   x</th><th style="text-align: right;">   y</th><th style="text-align: right;">  iter</th><th style="text-align: right;">  total time (s)</th><th style="text-align: right;">   score</th></tr>
+</thead>
+<tbody>
+<tr><td>training_function_4a371_00000</td><td>TERMINATED</td><td>127.0.0.1:42585</td><td style="text-align: right;">-1  </td><td style="text-align: right;">-1  </td><td style="text-align: right;">     1</td><td style="text-align: right;">         10.0019</td><td style="text-align: right;">1       </td></tr>
+<tr><td>training_function_4a371_00001</td><td>TERMINATED</td><td>127.0.0.1:42588</td><td style="text-align: right;">-0.5</td><td style="text-align: right;">-1  </td><td style="text-align: right;">     1</td><td style="text-align: right;">         10.0041</td><td style="text-align: right;">0.790569</td></tr>
+<tr><td>training_function_4a371_00002</td><td>TERMINATED</td><td>127.0.0.1:42589</td><td style="text-align: right;"> 0  </td><td style="text-align: right;">-1  </td><td style="text-align: right;">     1</td><td style="text-align: right;">         10.0009</td><td style="text-align: right;">0.707107</td></tr>
+<tr><td>training_function_4a371_00003</td><td>TERMINATED</td><td>127.0.0.1:42594</td><td style="text-align: right;"> 0.5</td><td style="text-align: right;">-1  </td><td style="text-align: right;">     1</td><td style="text-align: right;">         10.0019</td><td style="text-align: right;">0.790569</td></tr>
+<tr><td>training_function_4a371_00004</td><td>TERMINATED</td><td>127.0.0.1:42595</td><td style="text-align: right;"> 1  </td><td style="text-align: right;">-1  </td><td style="text-align: right;">     1</td><td style="text-align: right;">         10.0038</td><td style="text-align: right;">1       </td></tr>
+<tr><td>training_function_4a371_00005</td><td>TERMINATED</td><td>127.0.0.1:42596</td><td style="text-align: right;">-1  </td><td style="text-align: right;">-0.5</td><td style="text-align: right;">     1</td><td style="text-align: right;">         10.0049</td><td style="text-align: right;">0.790569</td></tr>
+<tr><td>training_function_4a371_00006</td><td>TERMINATED</td><td>127.0.0.1:42597</td><td style="text-align: right;">-0.5</td><td style="text-align: right;">-0.5</td><td style="text-align: right;">     1</td><td style="text-align: right;">         10.0006</td><td style="text-align: right;">0.5     </td></tr>
+<tr><td>training_function_4a371_00007</td><td>TERMINATED</td><td>127.0.0.1:42598</td><td style="text-align: right;"> 0  </td><td style="text-align: right;">-0.5</td><td style="text-align: right;">     1</td><td style="text-align: right;">         10.0045</td><td style="text-align: right;">0.353553</td></tr>
+<tr><td>training_function_4a371_00008</td><td>TERMINATED</td><td>127.0.0.1:42599</td><td style="text-align: right;"> 0.5</td><td style="text-align: right;">-0.5</td><td style="text-align: right;">     1</td><td style="text-align: right;">         10.0016</td><td style="text-align: right;">0.5     </td></tr>
+<tr><td>training_function_4a371_00009</td><td>TERMINATED</td><td>127.0.0.1:42600</td><td style="text-align: right;"> 1  </td><td style="text-align: right;">-0.5</td><td style="text-align: right;">     1</td><td style="text-align: right;">         10.0055</td><td style="text-align: right;">0.790569</td></tr>
+<tr><td>training_function_4a371_00010</td><td>TERMINATED</td><td>127.0.0.1:42601</td><td style="text-align: right;">-1  </td><td style="text-align: right;"> 0  </td><td style="text-align: right;">     1</td><td style="text-align: right;">         10.0053</td><td style="text-align: right;">0.707107</td></tr>
+<tr><td>training_function_4a371_00011</td><td>TERMINATED</td><td>127.0.0.1:42602</td><td style="text-align: right;">-0.5</td><td style="text-align: right;"> 0  </td><td style="text-align: right;">     1</td><td style="text-align: right;">         10.001 </td><td style="text-align: right;">0.353553</td></tr>
+<tr><td>training_function_4a371_00012</td><td>TERMINATED</td><td>127.0.0.1:42585</td><td style="text-align: right;"> 0  </td><td style="text-align: right;"> 0  </td><td style="text-align: right;">     1</td><td style="text-align: right;">         10.0029</td><td style="text-align: right;">0       </td></tr>
+<tr><td>training_function_4a371_00013</td><td>TERMINATED</td><td>127.0.0.1:42595</td><td style="text-align: right;"> 0.5</td><td style="text-align: right;"> 0  </td><td style="text-align: right;">     1</td><td style="text-align: right;">         10.0044</td><td style="text-align: right;">0.353553</td></tr>
+<tr><td>training_function_4a371_00014</td><td>TERMINATED</td><td>127.0.0.1:42596</td><td style="text-align: right;"> 1  </td><td style="text-align: right;"> 0  </td><td style="text-align: right;">     1</td><td style="text-align: right;">         10.0054</td><td style="text-align: right;">0.707107</td></tr>
+<tr><td>training_function_4a371_00015</td><td>TERMINATED</td><td>127.0.0.1:42588</td><td style="text-align: right;">-1  </td><td style="text-align: right;"> 0.5</td><td style="text-align: right;">     1</td><td style="text-align: right;">         10.0045</td><td style="text-align: right;">0.790569</td></tr>
+<tr><td>training_function_4a371_00016</td><td>TERMINATED</td><td>127.0.0.1:42598</td><td style="text-align: right;">-0.5</td><td style="text-align: right;"> 0.5</td><td style="text-align: right;">     1</td><td style="text-align: right;">         10.0047</td><td style="text-align: right;">0.5     </td></tr>
+<tr><td>training_function_4a371_00017</td><td>TERMINATED</td><td>127.0.0.1:42597</td><td style="text-align: right;"> 0  </td><td style="text-align: right;"> 0.5</td><td style="text-align: right;">     1</td><td style="text-align: right;">         10.0044</td><td style="text-align: right;">0.353553</td></tr>
+<tr><td>training_function_4a371_00018</td><td>TERMINATED</td><td>127.0.0.1:42601</td><td style="text-align: right;"> 0.5</td><td style="text-align: right;"> 0.5</td><td style="text-align: right;">     1</td><td style="text-align: right;">         10.0051</td><td style="text-align: right;">0.5     </td></tr>
+<tr><td>training_function_4a371_00019</td><td>TERMINATED</td><td>127.0.0.1:42600</td><td style="text-align: right;"> 1  </td><td style="text-align: right;"> 0.5</td><td style="text-align: right;">     1</td><td style="text-align: right;">         10.0033</td><td style="text-align: right;">0.790569</td></tr>
+<tr><td>training_function_4a371_00020</td><td>TERMINATED</td><td>127.0.0.1:42602</td><td style="text-align: right;">-1  </td><td style="text-align: right;"> 1  </td><td style="text-align: right;">     1</td><td style="text-align: right;">         10.0022</td><td style="text-align: right;">1       </td></tr>
+<tr><td>training_function_4a371_00021</td><td>TERMINATED</td><td>127.0.0.1:42599</td><td style="text-align: right;">-0.5</td><td style="text-align: right;"> 1  </td><td style="text-align: right;">     1</td><td style="text-align: right;">         10.0043</td><td style="text-align: right;">0.790569</td></tr>
+<tr><td>training_function_4a371_00022</td><td>TERMINATED</td><td>127.0.0.1:42589</td><td style="text-align: right;"> 0  </td><td style="text-align: right;"> 1  </td><td style="text-align: right;">     1</td><td style="text-align: right;">         10.0034</td><td style="text-align: right;">0.707107</td></tr>
+<tr><td>training_function_4a371_00023</td><td>TERMINATED</td><td>127.0.0.1:42594</td><td style="text-align: right;"> 0.5</td><td style="text-align: right;"> 1  </td><td style="text-align: right;">     1</td><td style="text-align: right;">         10.005 </td><td style="text-align: right;">0.790569</td></tr>
+<tr><td>training_function_4a371_00024</td><td>TERMINATED</td><td>127.0.0.1:42585</td><td style="text-align: right;"> 1  </td><td style="text-align: right;"> 1  </td><td style="text-align: right;">     1</td><td style="text-align: right;">         10.0043</td><td style="text-align: right;">1       </td></tr>
+</tbody>
+</table>
+  </div>
+</div>
+<style>
+.tuneStatus {
+  color: var(--jp-ui-font-color1);
+}
+.tuneStatus .systemInfo {
+  display: flex;
+  flex-direction: column;
+}
+.tuneStatus td {
+  white-space: nowrap;
+}
+.tuneStatus .trialStatus {
+  display: flex;
+  flex-direction: column;
+}
+.tuneStatus h3 {
+  font-weight: bold;
+}
+.tuneStatus .hDivider {
+  border-bottom-width: var(--jp-border-width);
+  border-bottom-color: var(--jp-border-color0);
+  border-bottom-style: solid;
+}
+.tuneStatus .vDivider {
+  border-left-width: var(--jp-border-width);
+  border-left-color: var(--jp-border-color0);
+  border-left-style: solid;
+  margin: 0.5em 1em 0.5em 1em;
+}
+</style>
+
+</div>
+
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<div class="trialProgress">
+  <h3>Trial Progress</h3>
+  <table>
+<thead>
+<tr><th>Trial name                   </th><th>date               </th><th>done  </th><th>episodes_total  </th><th>experiment_id                   </th><th>experiment_tag       </th><th>hostname  </th><th style="text-align: right;">  iterations_since_restore</th><th>node_ip  </th><th style="text-align: right;">  pid</th><th style="text-align: right;">   score</th><th style="text-align: right;">  time_since_restore</th><th style="text-align: right;">  time_this_iter_s</th><th style="text-align: right;">  time_total_s</th><th style="text-align: right;">  timestamp</th><th style="text-align: right;">  timesteps_since_restore</th><th>timesteps_total  </th><th style="text-align: right;">  training_iteration</th><th>trial_id   </th><th style="text-align: right;">  warmup_time</th></tr>
+</thead>
+<tbody>
+<tr><td>training_function_4a371_00000</td><td>2022-12-20_10-11-43</td><td>True  </td><td>                </td><td>494ed1a59d494bc6ba4760cbe8657871</td><td>0_x=-1,y=-1          </td><td>mac       </td><td style="text-align: right;">                         1</td><td>127.0.0.1</td><td style="text-align: right;">42585</td><td style="text-align: right;">1       </td><td style="text-align: right;">             10.0019</td><td style="text-align: right;">           10.0019</td><td style="text-align: right;">       10.0019</td><td style="text-align: right;"> 1671527503</td><td style="text-align: right;">                        0</td><td>                 </td><td style="text-align: right;">                   1</td><td>4a371_00000</td><td style="text-align: right;">   0.00247288</td></tr>
+<tr><td>training_function_4a371_00001</td><td>2022-12-20_10-11-47</td><td>True  </td><td>                </td><td>b9bf7326ef8b476dbedd8df0c7f34f73</td><td>1_x=-0.5000,y=-1     </td><td>mac       </td><td style="text-align: right;">                         1</td><td>127.0.0.1</td><td style="text-align: right;">42588</td><td style="text-align: right;">0.790569</td><td style="text-align: right;">             10.0041</td><td style="text-align: right;">           10.0041</td><td style="text-align: right;">       10.0041</td><td style="text-align: right;"> 1671527507</td><td style="text-align: right;">                        0</td><td>                 </td><td style="text-align: right;">                   1</td><td>4a371_00001</td><td style="text-align: right;">   0.0415869 </td></tr>
+<tr><td>training_function_4a371_00002</td><td>2022-12-20_10-11-47</td><td>True  </td><td>                </td><td>a4efaf055d5c4bdf8b03404e0fd2bc34</td><td>2_x=0,y=-1           </td><td>mac       </td><td style="text-align: right;">                         1</td><td>127.0.0.1</td><td style="text-align: right;">42589</td><td style="text-align: right;">0.707107</td><td style="text-align: right;">             10.0009</td><td style="text-align: right;">           10.0009</td><td style="text-align: right;">       10.0009</td><td style="text-align: right;"> 1671527507</td><td style="text-align: right;">                        0</td><td>                 </td><td style="text-align: right;">                   1</td><td>4a371_00002</td><td style="text-align: right;">   0.030731  </td></tr>
+<tr><td>training_function_4a371_00003</td><td>2022-12-20_10-11-47</td><td>True  </td><td>                </td><td>2a144f96ed2a4e8ab45e404c3b978e7b</td><td>3_x=0.5000,y=-1      </td><td>mac       </td><td style="text-align: right;">                         1</td><td>127.0.0.1</td><td style="text-align: right;">42594</td><td style="text-align: right;">0.790569</td><td style="text-align: right;">             10.0019</td><td style="text-align: right;">           10.0019</td><td style="text-align: right;">       10.0019</td><td style="text-align: right;"> 1671527507</td><td style="text-align: right;">                        0</td><td>                 </td><td style="text-align: right;">                   1</td><td>4a371_00003</td><td style="text-align: right;">   0.0482671 </td></tr>
+<tr><td>training_function_4a371_00004</td><td>2022-12-20_10-11-47</td><td>True  </td><td>                </td><td>86caff41ea4349d9899ab098d96626c9</td><td>4_x=1,y=-1           </td><td>mac       </td><td style="text-align: right;">                         1</td><td>127.0.0.1</td><td style="text-align: right;">42595</td><td style="text-align: right;">1       </td><td style="text-align: right;">             10.0038</td><td style="text-align: right;">           10.0038</td><td style="text-align: right;">       10.0038</td><td style="text-align: right;"> 1671527507</td><td style="text-align: right;">                        0</td><td>                 </td><td style="text-align: right;">                   1</td><td>4a371_00004</td><td style="text-align: right;">   0.010777  </td></tr>
+<tr><td>training_function_4a371_00005</td><td>2022-12-20_10-11-47</td><td>True  </td><td>                </td><td>ef976c7e3f9845299c91f579117b872f</td><td>5_x=-1,y=-0.5000     </td><td>mac       </td><td style="text-align: right;">                         1</td><td>127.0.0.1</td><td style="text-align: right;">42596</td><td style="text-align: right;">0.790569</td><td style="text-align: right;">             10.0049</td><td style="text-align: right;">           10.0049</td><td style="text-align: right;">       10.0049</td><td style="text-align: right;"> 1671527507</td><td style="text-align: right;">                        0</td><td>                 </td><td style="text-align: right;">                   1</td><td>4a371_00005</td><td style="text-align: right;">   0.0338681 </td></tr>
+<tr><td>training_function_4a371_00006</td><td>2022-12-20_10-11-47</td><td>True  </td><td>                </td><td>2f2885ae2c744505a1ec68f43fbe9ede</td><td>6_x=-0.5000,y=-0.5000</td><td>mac       </td><td style="text-align: right;">                         1</td><td>127.0.0.1</td><td style="text-align: right;">42597</td><td style="text-align: right;">0.5     </td><td style="text-align: right;">             10.0006</td><td style="text-align: right;">           10.0006</td><td style="text-align: right;">       10.0006</td><td style="text-align: right;"> 1671527507</td><td style="text-align: right;">                        0</td><td>                 </td><td style="text-align: right;">                   1</td><td>4a371_00006</td><td style="text-align: right;">   0.0315561 </td></tr>
+<tr><td>training_function_4a371_00007</td><td>2022-12-20_10-11-47</td><td>True  </td><td>                </td><td>a5091dce37d342a2b6af5fa1fbecdbf4</td><td>7_x=0,y=-0.5000      </td><td>mac       </td><td style="text-align: right;">                         1</td><td>127.0.0.1</td><td style="text-align: right;">42598</td><td style="text-align: right;">0.353553</td><td style="text-align: right;">             10.0045</td><td style="text-align: right;">           10.0045</td><td style="text-align: right;">       10.0045</td><td style="text-align: right;"> 1671527507</td><td style="text-align: right;">                        0</td><td>                 </td><td style="text-align: right;">                   1</td><td>4a371_00007</td><td style="text-align: right;">   0.030849  </td></tr>
+<tr><td>training_function_4a371_00008</td><td>2022-12-20_10-11-47</td><td>True  </td><td>                </td><td>d8f205e32fbc4666a32aa1ec410c29d0</td><td>8_x=0.5000,y=-0.5000 </td><td>mac       </td><td style="text-align: right;">                         1</td><td>127.0.0.1</td><td style="text-align: right;">42599</td><td style="text-align: right;">0.5     </td><td style="text-align: right;">             10.0016</td><td style="text-align: right;">           10.0016</td><td style="text-align: right;">       10.0016</td><td style="text-align: right;"> 1671527507</td><td style="text-align: right;">                        0</td><td>                 </td><td style="text-align: right;">                   1</td><td>4a371_00008</td><td style="text-align: right;">   0.038857  </td></tr>
+<tr><td>training_function_4a371_00009</td><td>2022-12-20_10-11-47</td><td>True  </td><td>                </td><td>9efc9400e11341b08a1eb705830ae780</td><td>9_x=1,y=-0.5000      </td><td>mac       </td><td style="text-align: right;">                         1</td><td>127.0.0.1</td><td style="text-align: right;">42600</td><td style="text-align: right;">0.790569</td><td style="text-align: right;">             10.0055</td><td style="text-align: right;">           10.0055</td><td style="text-align: right;">       10.0055</td><td style="text-align: right;"> 1671527507</td><td style="text-align: right;">                        0</td><td>                 </td><td style="text-align: right;">                   1</td><td>4a371_00009</td><td style="text-align: right;">   0.00727797</td></tr>
+<tr><td>training_function_4a371_00010</td><td>2022-12-20_10-11-47</td><td>True  </td><td>                </td><td>eebcc54cdc334cbf981f4688b3808a3b</td><td>10_x=-1,y=0          </td><td>mac       </td><td style="text-align: right;">                         1</td><td>127.0.0.1</td><td style="text-align: right;">42601</td><td style="text-align: right;">0.707107</td><td style="text-align: right;">             10.0053</td><td style="text-align: right;">           10.0053</td><td style="text-align: right;">       10.0053</td><td style="text-align: right;"> 1671527507</td><td style="text-align: right;">                        0</td><td>                 </td><td style="text-align: right;">                   1</td><td>4a371_00010</td><td style="text-align: right;">   0.02653   </td></tr>
+<tr><td>training_function_4a371_00011</td><td>2022-12-20_10-11-47</td><td>True  </td><td>                </td><td>5bf52487723542b596e3e48a3bb3e08d</td><td>11_x=-0.5000,y=0     </td><td>mac       </td><td style="text-align: right;">                         1</td><td>127.0.0.1</td><td style="text-align: right;">42602</td><td style="text-align: right;">0.353553</td><td style="text-align: right;">             10.001 </td><td style="text-align: right;">           10.001 </td><td style="text-align: right;">       10.001 </td><td style="text-align: right;"> 1671527507</td><td style="text-align: right;">                        0</td><td>                 </td><td style="text-align: right;">                   1</td><td>4a371_00011</td><td style="text-align: right;">   0.0319781 </td></tr>
+<tr><td>training_function_4a371_00012</td><td>2022-12-20_10-11-53</td><td>True  </td><td>                </td><td>494ed1a59d494bc6ba4760cbe8657871</td><td>12_x=0,y=0           </td><td>mac       </td><td style="text-align: right;">                         1</td><td>127.0.0.1</td><td style="text-align: right;">42585</td><td style="text-align: right;">0       </td><td style="text-align: right;">             10.0029</td><td style="text-align: right;">           10.0029</td><td style="text-align: right;">       10.0029</td><td style="text-align: right;"> 1671527513</td><td style="text-align: right;">                        0</td><td>                 </td><td style="text-align: right;">                   1</td><td>4a371_00012</td><td style="text-align: right;">   0.00247288</td></tr>
+<tr><td>training_function_4a371_00013</td><td>2022-12-20_10-11-57</td><td>True  </td><td>                </td><td>86caff41ea4349d9899ab098d96626c9</td><td>13_x=0.5000,y=0      </td><td>mac       </td><td style="text-align: right;">                         1</td><td>127.0.0.1</td><td style="text-align: right;">42595</td><td style="text-align: right;">0.353553</td><td style="text-align: right;">             10.0044</td><td style="text-align: right;">           10.0044</td><td style="text-align: right;">       10.0044</td><td style="text-align: right;"> 1671527517</td><td style="text-align: right;">                        0</td><td>                 </td><td style="text-align: right;">                   1</td><td>4a371_00013</td><td style="text-align: right;">   0.010777  </td></tr>
+<tr><td>training_function_4a371_00014</td><td>2022-12-20_10-11-57</td><td>True  </td><td>                </td><td>ef976c7e3f9845299c91f579117b872f</td><td>14_x=1,y=0           </td><td>mac       </td><td style="text-align: right;">                         1</td><td>127.0.0.1</td><td style="text-align: right;">42596</td><td style="text-align: right;">0.707107</td><td style="text-align: right;">             10.0054</td><td style="text-align: right;">           10.0054</td><td style="text-align: right;">       10.0054</td><td style="text-align: right;"> 1671527517</td><td style="text-align: right;">                        0</td><td>                 </td><td style="text-align: right;">                   1</td><td>4a371_00014</td><td style="text-align: right;">   0.0338681 </td></tr>
+<tr><td>training_function_4a371_00015</td><td>2022-12-20_10-11-57</td><td>True  </td><td>                </td><td>b9bf7326ef8b476dbedd8df0c7f34f73</td><td>15_x=-1,y=0.5000     </td><td>mac       </td><td style="text-align: right;">                         1</td><td>127.0.0.1</td><td style="text-align: right;">42588</td><td style="text-align: right;">0.790569</td><td style="text-align: right;">             10.0045</td><td style="text-align: right;">           10.0045</td><td style="text-align: right;">       10.0045</td><td style="text-align: right;"> 1671527517</td><td style="text-align: right;">                        0</td><td>                 </td><td style="text-align: right;">                   1</td><td>4a371_00015</td><td style="text-align: right;">   0.0415869 </td></tr>
+<tr><td>training_function_4a371_00016</td><td>2022-12-20_10-11-57</td><td>True  </td><td>                </td><td>a5091dce37d342a2b6af5fa1fbecdbf4</td><td>16_x=-0.5000,y=0.5000</td><td>mac       </td><td style="text-align: right;">                         1</td><td>127.0.0.1</td><td style="text-align: right;">42598</td><td style="text-align: right;">0.5     </td><td style="text-align: right;">             10.0047</td><td style="text-align: right;">           10.0047</td><td style="text-align: right;">       10.0047</td><td style="text-align: right;"> 1671527517</td><td style="text-align: right;">                        0</td><td>                 </td><td style="text-align: right;">                   1</td><td>4a371_00016</td><td style="text-align: right;">   0.030849  </td></tr>
+<tr><td>training_function_4a371_00017</td><td>2022-12-20_10-11-57</td><td>True  </td><td>                </td><td>2f2885ae2c744505a1ec68f43fbe9ede</td><td>17_x=0,y=0.5000      </td><td>mac       </td><td style="text-align: right;">                         1</td><td>127.0.0.1</td><td style="text-align: right;">42597</td><td style="text-align: right;">0.353553</td><td style="text-align: right;">             10.0044</td><td style="text-align: right;">           10.0044</td><td style="text-align: right;">       10.0044</td><td style="text-align: right;"> 1671527517</td><td style="text-align: right;">                        0</td><td>                 </td><td style="text-align: right;">                   1</td><td>4a371_00017</td><td style="text-align: right;">   0.0315561 </td></tr>
+<tr><td>training_function_4a371_00018</td><td>2022-12-20_10-11-57</td><td>True  </td><td>                </td><td>eebcc54cdc334cbf981f4688b3808a3b</td><td>18_x=0.5000,y=0.5000 </td><td>mac       </td><td style="text-align: right;">                         1</td><td>127.0.0.1</td><td style="text-align: right;">42601</td><td style="text-align: right;">0.5     </td><td style="text-align: right;">             10.0051</td><td style="text-align: right;">           10.0051</td><td style="text-align: right;">       10.0051</td><td style="text-align: right;"> 1671527517</td><td style="text-align: right;">                        0</td><td>                 </td><td style="text-align: right;">                   1</td><td>4a371_00018</td><td style="text-align: right;">   0.02653   </td></tr>
+<tr><td>training_function_4a371_00019</td><td>2022-12-20_10-11-57</td><td>True  </td><td>                </td><td>9efc9400e11341b08a1eb705830ae780</td><td>19_x=1,y=0.5000      </td><td>mac       </td><td style="text-align: right;">                         1</td><td>127.0.0.1</td><td style="text-align: right;">42600</td><td style="text-align: right;">0.790569</td><td style="text-align: right;">             10.0033</td><td style="text-align: right;">           10.0033</td><td style="text-align: right;">       10.0033</td><td style="text-align: right;"> 1671527517</td><td style="text-align: right;">                        0</td><td>                 </td><td style="text-align: right;">                   1</td><td>4a371_00019</td><td style="text-align: right;">   0.00727797</td></tr>
+<tr><td>training_function_4a371_00020</td><td>2022-12-20_10-11-57</td><td>True  </td><td>                </td><td>5bf52487723542b596e3e48a3bb3e08d</td><td>20_x=-1,y=1          </td><td>mac       </td><td style="text-align: right;">                         1</td><td>127.0.0.1</td><td style="text-align: right;">42602</td><td style="text-align: right;">1       </td><td style="text-align: right;">             10.0022</td><td style="text-align: right;">           10.0022</td><td style="text-align: right;">       10.0022</td><td style="text-align: right;"> 1671527517</td><td style="text-align: right;">                        0</td><td>                 </td><td style="text-align: right;">                   1</td><td>4a371_00020</td><td style="text-align: right;">   0.0319781 </td></tr>
+<tr><td>training_function_4a371_00021</td><td>2022-12-20_10-11-57</td><td>True  </td><td>                </td><td>d8f205e32fbc4666a32aa1ec410c29d0</td><td>21_x=-0.5000,y=1     </td><td>mac       </td><td style="text-align: right;">                         1</td><td>127.0.0.1</td><td style="text-align: right;">42599</td><td style="text-align: right;">0.790569</td><td style="text-align: right;">             10.0043</td><td style="text-align: right;">           10.0043</td><td style="text-align: right;">       10.0043</td><td style="text-align: right;"> 1671527517</td><td style="text-align: right;">                        0</td><td>                 </td><td style="text-align: right;">                   1</td><td>4a371_00021</td><td style="text-align: right;">   0.038857  </td></tr>
+<tr><td>training_function_4a371_00022</td><td>2022-12-20_10-11-57</td><td>True  </td><td>                </td><td>a4efaf055d5c4bdf8b03404e0fd2bc34</td><td>22_x=0,y=1           </td><td>mac       </td><td style="text-align: right;">                         1</td><td>127.0.0.1</td><td style="text-align: right;">42589</td><td style="text-align: right;">0.707107</td><td style="text-align: right;">             10.0034</td><td style="text-align: right;">           10.0034</td><td style="text-align: right;">       10.0034</td><td style="text-align: right;"> 1671527517</td><td style="text-align: right;">                        0</td><td>                 </td><td style="text-align: right;">                   1</td><td>4a371_00022</td><td style="text-align: right;">   0.030731  </td></tr>
+<tr><td>training_function_4a371_00023</td><td>2022-12-20_10-11-57</td><td>True  </td><td>                </td><td>2a144f96ed2a4e8ab45e404c3b978e7b</td><td>23_x=0.5000,y=1      </td><td>mac       </td><td style="text-align: right;">                         1</td><td>127.0.0.1</td><td style="text-align: right;">42594</td><td style="text-align: right;">0.790569</td><td style="text-align: right;">             10.005 </td><td style="text-align: right;">           10.005 </td><td style="text-align: right;">       10.005 </td><td style="text-align: right;"> 1671527517</td><td style="text-align: right;">                        0</td><td>                 </td><td style="text-align: right;">                   1</td><td>4a371_00023</td><td style="text-align: right;">   0.0482671 </td></tr>
+<tr><td>training_function_4a371_00024</td><td>2022-12-20_10-12-03</td><td>True  </td><td>                </td><td>494ed1a59d494bc6ba4760cbe8657871</td><td>24_x=1,y=1           </td><td>mac       </td><td style="text-align: right;">                         1</td><td>127.0.0.1</td><td style="text-align: right;">42585</td><td style="text-align: right;">1       </td><td style="text-align: right;">             10.0043</td><td style="text-align: right;">           10.0043</td><td style="text-align: right;">       10.0043</td><td style="text-align: right;"> 1671527523</td><td style="text-align: right;">                        0</td><td>                 </td><td style="text-align: right;">                   1</td><td>4a371_00024</td><td style="text-align: right;">   0.00247288</td></tr>
+</tbody>
+</table>
+</div>
+<style>
+.trialProgress {
+  display: flex;
+  flex-direction: column;
+  color: var(--jp-ui-font-color1);
+}
+.trialProgress h3 {
+  font-weight: bold;
+}
+.trialProgress td {
+  white-space: nowrap;
+}
+</style>
+
+</div>
+
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>2022-12-20 10:12:03,528	INFO tune.py:762 -- Total run time: 33.58 seconds (32.61 seconds for the tuning loop).
+</pre>
 </div>
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>{&#39;x&#39;: 0, &#39;y&#39;: 0}
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Note how the output of this run is structurally similar to what you’ve
+seen in the RLlib example. That’s no coincidence, as RLlib (like many other Ray
+libraries) uses Ray Tune under the hood. If you look closely, you will see <code>PENDING</code>
+runs that wait for execution, as well as <code>RUNNING</code> and <code>TERMINATED</code> runs. Tune takes care
+of selecting, scheduling, and executing your training runs for you automatically.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>This Tune example aims to identify the optimal values for parameters x and y for a training_function with the goal of minimizing a particular objective. Although the objective function may seem complicated as it involves calculating the sum of the squares of x and y, all of the values will be non-negative. Therefore, the lowest value is achieved when x and y are both equal to 0, resulting in an evaluation of 0 for the objective function.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>We do a so-called grid search over all possible parameter combinations. As we explicitly
+pass in five possible values for both x and y that’s a total of 25 combinations
+that get fed into the training function. These combinations are evaluated through the training function, which includes a 10 second sleep time. Without Ray's ability to parallelize the process, testing all of these combinations would take more than four minutes. However, on my laptop, this experiment only takes around 35 seconds to complete. The duration may vary depending on the device used.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>If each training run took several hours, and there were 20 hyperparameters to consider instead of just two, it would not be practical to use grid search. This is especially true if you do not have a good idea of what range the parameters should be in. In these cases, you will need to use more advanced HPO methods like those offered by Ray Tune, which we will discuss in Chapter 5.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="model-serving-with-ray-serve">Model Serving with Ray Serve<a class="anchor-link" href="#Model-Serving-with-Ray-Serve">&#182;</a></h2><p>The last of Ray's high-level libraries we'll discuss specializes on model serving and is simply called <em>Ray Serve</em>.
 To see an example of it in action, you need a trained ML model to serve.
@@ -1930,9 +3421,13 @@ With that we can now import and start an instance of Ray's <code>serve</code> li
 model and ask it for the meaning of life, like so:</p>
 
 </div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
@@ -1996,63 +3491,110 @@ print(response.text)</div>
 
 </div>
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="https://raw.githubusercontent.com/maxpumperla/learning_ray/main/notebooks/images/chapter_01/AIR.png" alt="Ray AIR"></p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="https://raw.githubusercontent.com/maxpumperla/learning_ray/main/notebooks/images/chapter_01/cartpole.png" alt="Cartpole Env"></p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="https://raw.githubusercontent.com/maxpumperla/learning_ray/main/notebooks/images/chapter_01/ds_workflow.png" alt="Data Science Workflow"></p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="https://raw.githubusercontent.com/maxpumperla/learning_ray/main/notebooks/images/chapter_01/Ecosystem.png" alt="Ray Ecosystem"></p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="https://raw.githubusercontent.com/maxpumperla/learning_ray/main/notebooks/images/chapter_01/simple_cluster.png" alt="Ray Cluster Simple View"></p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-        
-        
-        <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-13">
-            <div>
-                <span class="notice" hidden>Copied!</span>
-                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
-                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
-                </svg>
-                </div>
-            </clipboard-copy>
-        </div>
-        <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span>
-</pre></div>
-<div id="cell-13" class="clipboard-copy-txt"></div>
-    
-        </div>
-    </div>
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>In Chapter 9, you will be taught how to correctly implement models in various situations. However, for now, I recommend that you experiment with this example and try different queries. If you repeatedly run the last two lines of code, you will get practically different answers every time. Here is a poetic statement that I queried on my computer, which has been slightly edited for younger readers:</p>
 
 </div>
 </div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 
+<pre><code>{text}
+[{
+"generated_text": "What's the meaning of life?\n\n
+Is there one way or another of living?\n\n
+How does it feel to be trapped in a relationship?\n\n
+How can it be changed before it's too late?
+What did we call it in our time?\n\n
+Where do we fit within this world and what are we going to live for?\n\n
+My life as a person has been shaped by the love I've received from others."
+}]</code></pre>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>This is the end of our overview of the data science libraries within the second layer of Ray. These libraries, which we have discussed in this chapter, are all based on the Ray Core API. It is fairly simple to create new extensions for Ray, and there are a few more that we are unable to cover in this book. For example, the Ray Workflows library (<a href="https://docs.ray.io/en/latest/workflows/concepts.html">https://docs.ray.io/en/latest/workflows/concepts.html</a>) allows users to define and run long-term applications using Ray. Before we conclude this chapter, let's briefly examine the third layer of Ray, which is the expanding ecosystem surrounding the platform.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="a-growing-ecosystem">A Growing Ecosystem<a class="anchor-link" href="#A-Growing-Ecosystem">&#182;</a></h2><p>Ray's libraries are powerful and should be discussed in more detail in the book. Although they are very useful for data science work, we don't want to give the impression that they are the only thing you need from now on. The most successful frameworks are those that work well with other solutions and ideas. It is better to concentrate on your strengths and use other tools to fill any gaps in your solution, which Ray does well.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Throughout the book, we will be discussing various libraries that have been built on top of Ray. Additionally, Ray has integrations with existing tools like Spark, Dask, and Pandas. For instance, you can use Ray Datasets, a data loading and compute library, with your existing project that utilizes data processing engines like Spark or Dask. Additionally, you can run the entire Dask ecosystem on a Ray cluster with the Dask-on-Ray scheduler or use the Spark on Ray project to integrate your Spark workloads with Ray. The Modin project also offers a distributed replacement for Pandas dataframes that utilizes Ray or Dask as the distributed execution engine.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Ray's approach is to integrate with various tools rather than trying to replace them, while still providing access to its own native library called Ray Datasets. This will be explored in more detail later in Chapter 11. It's noteworthy that many of the Ray libraries have the ability to seamlessly integrate with other tools as backends, often by creating common interfaces rather than establishing new standards. These interfaces enable you to perform tasks in a distributed manner, something that many of the backends may not offer or may not offer to the same degree.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>For example, Ray RLlib and Train both utilize the capabilities of TensorFlow and PyTorch. Additionally, Ray Tune allows for the use of a variety of HPO tools, such as Hyperopt, Optuna, Nevergrad, Ax, and SigOpt, among others. These tools are not automatically distributed, but Tune brings them together in a unified interface for distributed tasks.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><img src="https://raw.githubusercontent.com/maxpumperla/learning_ray/main/notebooks/images/chapter_01/ray_layers.png" alt="Ray Layers"></p>
+
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -2165,7 +3707,7 @@ print(response.text)</div>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate", "navigation.tracking", "navigation.instant", "navigation.expand", "navigation.sections", "navigation.top", "navigation.indexes"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate", "navigation.tracking", "navigation.instant", "navigation.expand", "navigation.sections", "navigation.top", "navigation.indexes"], "search": "../assets/javascripts/workers/search.fcfe8b6d.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": null}</script>
     
     
 

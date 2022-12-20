@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/maxpumperla/code/learning_ray_public/notebooks/mlruns/1/36041318013847ef991940c876055f03/artifacts
+end_time: 1671189135750
+entry_point_name: ''
+experiment_id: '1'
+lifecycle_stage: active
+run_id: 36041318013847ef991940c876055f03
+run_name: TorchTrainer_74a99_00000
+run_uuid: 36041318013847ef991940c876055f03
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1671189117918
+status: 3
+tags: []
+user_id: unknown
