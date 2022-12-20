@@ -340,6 +340,27 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#using-the-object-store-with-put-and-get" class="md-nav__link">
+    Using the object store with put and get
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-rays-wait-function-for-non-blocking-calls" class="md-nav__link">
+    Using Ray’s wait function for non-blocking calls
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handling-task-dependencies" class="md-nav__link">
+    Handling task dependencies
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -526,6 +547,27 @@
           <li class="md-nav__item">
   <a href="#functions-and-remote-ray-tasks" class="md-nav__link">
     Functions and Remote Ray Tasks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-object-store-with-put-and-get" class="md-nav__link">
+    Using the object store with put and get
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-rays-wait-function-for-non-blocking-calls" class="md-nav__link">
+    Using Ray’s wait function for non-blocking calls
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handling-task-dependencies" class="md-nav__link">
+    Handling task dependencies
   </a>
   
 </li>
@@ -1410,7 +1452,7 @@ words of the title of this book. To simulate the idea that accessing and process
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
@@ -1470,13 +1512,13 @@ and so on. In total, we can expect a runtime of around <code>(0+1+2+3+4+5+6+7)/1
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
@@ -1512,6 +1554,37 @@ print_runtime(data, start)</div>
     </div>
 
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Runtime: 2.82 seconds, data:
+(0, &#39;Learning&#39;)
+(1, &#39;Ray&#39;)
+(2, &#39;Flexible&#39;)
+(3, &#39;Distributed&#39;)
+(4, &#39;Python&#39;)
+(5, &#39;for&#39;)
+(6, &#39;Machine&#39;)
+(7, &#39;Learning&#39;)
+</pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -1560,7 +1633,7 @@ Ray. To do so, you start by using the @ray.remote decorator</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
@@ -1574,11 +1647,17 @@ Ray. To do so, you start by using the @ray.remote decorator</p>
             </clipboard-copy>
         </div>
         <div class="CodeMirror cm-s-jupyter">
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="nd">@ray</span><span class="o">.</span><span class="n">remote</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">ray</span> 
+
+
+<span class="nd">@ray</span><span class="o">.</span><span class="n">remote</span>
 <span class="k">def</span> <span class="nf">retrieve_task</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">retrieve</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 </pre></div>
-<div id="cell-4" class="clipboard-copy-txt">@ray.remote
+<div id="cell-4" class="clipboard-copy-txt">import ray 
+
+
+@ray.remote
 def retrieve_task(item):
     return retrieve(item)</div>
     
@@ -1603,13 +1682,37 @@ potentially on a different machine.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>It is very convenient to use Ray because you can continue to write your Python code as usual, without having to significantly change your approach or programming style. Using the @ray.remote decorator on your retrieve function is the intended use of decorators, but for the purpose of clarity, we did not modify the original code in this example.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>To retrieve database entries and measure performance, what changes do you need to make to the code? It's actually not a lot. Here's an overview of the process:</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
@@ -1643,6 +1746,101 @@ print_runtime(data, start)</div>
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>2022-12-20 13:52:34,632	INFO worker.py:1529 -- Started a local Ray instance. View the dashboard at <span class="ansi-green-intense-fg ansi-bold">127.0.0.1:8265 </span>
+</pre>
+</div>
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Runtime: 4.54 seconds, data:
+(0, &#39;Learning&#39;)
+(1, &#39;Ray&#39;)
+(2, &#39;Flexible&#39;)
+(3, &#39;Distributed&#39;)
+(4, &#39;Python&#39;)
+(5, &#39;for&#39;)
+(6, &#39;Machine&#39;)
+(7, &#39;Learning&#39;)
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Have you noticed the differences? To execute your Ray task remotely, you must use a <code>.remote()</code> call. When tasks are executed remotely, even on your local cluster, Ray does it asynchronously. The items in the object_references list in the previous code snippet do not directly contain the results. In fact, if you check the Python type of the first item using <code>type(object_references[0])</code>, you will see that it is actually an <code>ObjectRef</code>. These object references correspond to futures that you need to request the result of. This is what the call to <code>ray.get(...)</code> is for. Whenever you call remote on a Ray task, it will immediately return one or more object references. In reality, while we introduced <code>ray.put(...)</code> first, you should consider Ray tasks as the primary way of creating objects. In the following section, we will provide an example that links multiple tasks together and allows Ray to handle passing and resolving the objects between them.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>We still wish to continue working on this example, but let's take a moment to review what we have done so far. You began with a Python function and decorated it with <code>@ray.remote</code>, which made the function a Ray task. Instead of directly calling the original function in your code, you called <code>.remote(...)</code> on the Ray task. The final step was to retrieve the results back from your Ray cluster using <code>.get(...)</code>. I believe this process is so straightforward that I would bet you could create your own Ray task from another function without referring back to this example. Why don't you give it a try now?</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Coming back to our example, by using Ray tasks, what did we gain in terms of
+performance? On my machine the runtime clocks in at 0.71 seconds, which is just
+slightly more than the longest subtask, which comes in at 0.7 seconds. That’s great
+and much better than before, but we can further improve our program by leveraging
+more of Ray’s API.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="using-the-object-store-with-put-and-get">Using the object store with put and get<a class="anchor-link" href="#Using-the-object-store-with-put-and-get">&#182;</a></h4><p>One aspect that may have been noticed is that the retrieve definition involves directly accessing items from the database. While this works well on a local Ray cluster, it is important to consider how this would function on an actual cluster with multiple computers. In a Ray cluster, there is a head node with a driver process and multiple worker nodes with worker processes executing tasks. By default, Ray creates as many worker processes as there are CPU cores on the machine. However, in this scenario the database is defined on the driver only, but the worker processes need access to it to run the retrieve task. Fortunately, Ray has a simple solution for sharing objects between the driver and workers or between workers - using the put function to place the data into Ray's distributed object store. In the <code>retrieve_task</code> definition, we explicitly include a <code>db</code> argument, which will later be passed the <code>db_object_ref</code> object.</p>
+
+</div>
+</div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -1650,7 +1848,7 @@ print_runtime(data, start)</div>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
@@ -1687,13 +1885,37 @@ def retrieve_task(item, db):
 </div>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>By utilizing the object store in this manner, you can allow Ray to manage data access throughout the entire cluster. We will discuss the specifics of how values are transmitted between nodes and within workers when discussing Ray's infrastructure. Although interacting with the object store involves some overhead, it offers improved performance when dealing with larger, more realistic datasets. For now, the crucial aspect is that this step is crucial in a truly distributed environment. If desired, you can try rerunning the previous example with the new <code>retrieve_task</code> function to confirm that it still executes as expected.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="using-raye28099s-wait-function-for-non-blocking-calls">Using Ray&#8217;s wait function for non-blocking calls<a class="anchor-link" href="#Using-Ray%E2%80%99s-wait-function-for-non-blocking-calls">&#182;</a></h4><p>In a previous example, we used ray.get(object_references) to retrieve results. This call blocks the driver process until all results are available. While this may not be an issue if the program finishes in a short amount of time, it could cause problems if each database item takes several minutes to process. In this case, it would be more efficient to allow the driver process to perform other tasks while waiting for results, and to process results as they are completed rather than waiting for all items to be finished. Additionally, if one of the database items cannot be retrieved due to an issue like a deadlock in the database connection, the driver will hang indefinitely. To prevent this, it is a good idea to set reasonable timeouts using the wait function. For example, if we do not want to wait longer than ten times the longest data retrieval task, we can use the wait function to stop the task after that time has passed.</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
@@ -1745,14 +1967,81 @@ print_runtime(all_data, start)</div>
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Runtime: 0.11 seconds, data:
+(0, &#39;Learning&#39;)
+(1, &#39;Ray&#39;)
+Runtime: 0.31 seconds, data:
+(2, &#39;Flexible&#39;)
+(3, &#39;Distributed&#39;)
+Runtime: 0.51 seconds, data:
+(4, &#39;Python&#39;)
+(5, &#39;for&#39;)
+Runtime: 0.71 seconds, data:
+(6, &#39;Machine&#39;)
+(7, &#39;Learning&#39;)
+Runtime: 0.71 seconds, data:
+(0, &#39;Learning&#39;)
+(1, &#39;Ray&#39;)
+(2, &#39;Flexible&#39;)
+(3, &#39;Distributed&#39;)
+(4, &#39;Python&#39;)
+(5, &#39;for&#39;)
+(6, &#39;Machine&#39;)
+(7, &#39;Learning&#39;)
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Instead of simply printing the results, we could have utilized the values that have been retrieved within the <code>while</code> loop to initiate new tasks on other workers.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="handling-task-dependencies">Handling task dependencies<a class="anchor-link" href="#Handling-task-dependencies">&#182;</a></h4><p>So far, our example program has been straightforward conceptually. It involves one step, which is retrieving a group of items from a database. However, let's say we want to perform an additional processing task on the data after it has been retrieved. For example, we want to use the results from the first retrieval task to query other related data from the same database (for example, from a different table). The code below sets up this follow-up task and executes both the <code>retrieve_task</code> and <code>follow_up_task</code> in sequence.</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
@@ -1796,6 +2085,105 @@ result = [print(data) for data in ray.get(follow_up_refs)]</div>
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>((0, &#39;Learning&#39;), (1, &#39;Ray&#39;))
+((2, &#39;Flexible&#39;), (3, &#39;Distributed&#39;))
+((4, &#39;Python&#39;), (5, &#39;for&#39;))
+((6, &#39;Machine&#39;), (7, &#39;Learning&#39;))
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>If you're not experienced with asynchronous programming, this example may not seem particularly impressive. However, I hope to demonstrate that it is somewhat surprising that the code even runs. So, what's the significance of this? Essentially, the code appears to be a regular Python function with a few list comprehensions. The point is that the function body of <code>follow_up_task</code> expects a Python tuple for its input argument <code>retrieve_result</code>.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>However, when we use the <code>[follow_up_task.remote(ref) for ref in retrieve_refs]</code> command, we are not actually passing tuples to the follow-up task at all. Instead, we are using the <code>retrieve_refs</code> to pass in Ray object references.</p>
+<p>Behind the scenes, Ray recognizes that the <code>follow_up_task</code> needs actual values, so it will automatically use the <code>ray.get</code> function to resolve these futures. Additionally, Ray creates a dependency graph for all of the tasks and executes them in a way that respects their dependencies. This means that we don't have to explicitly tell Ray when to wait for a previous task to be completed - it is able to infer this information on its own. This feature of the Ray object store is particularly useful because it allows us to avoid copying large intermediate values back to the driver by simply passing the object references to the next task and letting Ray handle the rest.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>The next steps in the process will only be scheduled once the tasks specifically designed to retrieve information are completed. Personally, I believe this is a fantastic feature. In fact, if we had named the retrieve_refs task something like retrieve_result, you might not have even noticed this crucial detail. This was intentional, as Ray wants you to concentrate on your work rather than the technicalities of cluster computing. The dependency graph for the two tasks looks like this:</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1><img src="https://raw.githubusercontent.com/maxpumperla/learning_ray/main/notebooks/images/chapter_02/task_dependency.png" alt="Task dependency"></h1>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="from-classes-to-actors">From classes to actors<a class="anchor-link" href="#From-classes-to-actors">&#182;</a></h4><p>Before concluding this example, we should cover one more significant aspect of Ray Core. As you can see in our example, everything is essentially a function. We utilized the ray.remote decorator to make certain functions remote, but besides that, we only used standard Python.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>If we want to keep track of how often our database is being queried, we could just count the results of the retrieve tasks. However, is there a more efficient way to do this? Ideally, we want to track this in a distributed manner that can handle a large amount of data. Ray provides a solution with actors, which are used to run stateful computations on a cluster and can also communicate with each other. Similar to how Ray tasks are created using decorated functions, Ray actors are created using decorated Python classes. Therefore, we can create a simple counter using a Ray actor to track the number of database calls.</p>
+
+</div>
+</div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -1803,7 +2191,7 @@ result = [print(data) for data in ray.get(follow_up_refs)]</div>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
@@ -1846,13 +2234,25 @@ class DataTracker:
 </div>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>The DataTracker class is an actor because it has been given the ray.remote decorator. This actor is capable of tracking state, such as a counter, and its methods are Ray tasks that can be invoked in the same way as functions using .remote(). We can modify the retrieve_task to incorporate this actor.</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
@@ -1906,6 +2306,198 @@ print(ray.get(tracker.counts.remote()))</div>
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>[(0, &#39;Learning&#39;), (1, &#39;Ray&#39;), (2, &#39;Flexible&#39;), (3, &#39;Distributed&#39;), (4, &#39;Python&#39;), (5, &#39;for&#39;), (6, &#39;Machine&#39;), (7, &#39;Learning&#39;)]
+8
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>As expected, the outcome of this calculation is 8. Although we didn't need actors to perform this calculation, it's valuable to have a way to maintain state across the cluster, possibly involving multiple tasks. In fact, we could pass our actor into any related task or even into the constructor of a different actor. The Ray API is very flexible, allowing for limitless possibilities. It's also worth mentioning that it's not common for distributed Python tools to allow for stateful computations like this, making it especially useful for running complex distributed algorithms such as reinforcement learning. This concludes our detailed first example of the Ray API. Let's now try to briefly summarize the Ray API.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="an-overview-of-the-ray-core-api">An Overview of the Ray Core API<a class="anchor-link" href="#An-Overview-of-the-Ray-Core-API">&#182;</a></h3><p>Remembering what we did in the previous example, you will see that we only used six API methods. These included <code>ray.init()</code> to initiate the cluster, <code>@ray.remote</code> to transform functions and classes into tasks and actors, <code>ray.put()</code> to transfer values into Ray's object store, and <code>ray.get()</code> to retrieve objects from the cluster. Additionally, we used <code>.remote()</code> on actor methods or tasks to execute code on our cluster, and <code>ray.wait</code> to prevent blocking calls.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Although the Ray API only includes six methods, they are all that you will likely need to use. To make it easier to remember these methods, here's a summary:</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li>ray.init(): Initializes your Ray cluster. Pass in an address to connect to an existing cluster.</li>
+<li>@ray.remote: Turns functions into tasks and classes into actors.</li>
+<li>ray.put(): Puts values into Ray’s object store.</li>
+<li>ray.get(): Gets valuyes from the object store. Returns the values you’ve put there or that were computed by a task or actor.</li>
+<li>.remote(): Runs actor methods or tasks on your Ray cluster and is used to instantiate actors.</li>
+<li>ray.wait(): Returns two lists of object references, one with finished tasks we’re waiting for and one with unfinished tasks.</li>
+</ul>
+<p>Now that you’ve seen the Ray API in action, let’s spend some time on its system
+architecture.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="understanding-ray-system-components">Understanding Ray System Components<a class="anchor-link" href="#Understanding-Ray-System-Components">&#182;</a></h2><p>Now that you are familiar with using the Ray API and understand the design principles behind it, it is time to delve deeper into the inner workings of the Ray system. In other words, how does Ray operate and how does it accomplish its tasks?</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="scheduling-and-executing-work-on-a-node">Scheduling and Executing Work on a Node<a class="anchor-link" href="#Scheduling-and-Executing-Work-on-a-Node">&#182;</a></h3><p>In the Ray cluster system, nodes are made up of individual units called workers. Each worker is identified by a unique ID, IP address, and port. These workers are responsible for carrying out tasks as instructed, but they have no control over when they are given tasks or what resources they have available to complete them. They also have no understanding of the context in which their tasks are being executed, as they do not coordinate with other workers. Before examining the larger cluster as a whole, it is important to understand the role of these individual worker nodes.</p>
+<p>To address these issues, each worker node has a component called <em>Raylet</em>. Think of
+Raylets as the smart components of a node, which manage the worker processes. Raylets are shared between jobs and consist of two components, namely a task
+scheduler and an object store.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Let's first discuss object stores. In the example provided in this chapter, we have already used the concept of an object store without explicitly stating it. Each node in a Ray cluster is equipped with an object store within its Raylet and all objects stored in these stores form the distributed object store of the cluster. The object store manages the shared memory pool among workers on the same node and ensures that workers can access objects created on other nodes. The object store is implemented using Plasma, which is now part of the Apache Arrow project. Its main function is to manage memory and ensure that workers have access to the objects they need.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>The scheduler within a Raylet is responsible for managing resources, including assigning available worker processes to tasks that need access to certain resources such as CPUs. By default, the scheduler is aware of the number of CPUs, GPUs, and amount of memory available on its node. If the scheduler is unable to provide the necessary resources for a task, it must queue the task until resources become available. The scheduler also limits the number of tasks that can run concurrently to prevent overuse of physical resources.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>The scheduler is responsible for ensuring that workers have all the necessary resources and dependencies in order to perform their tasks. To do this, the scheduler first checks its own object store for the required values. If these values are not present, the scheduler must reach out to other nodes to retrieve the necessary dependencies. Only once the scheduler has obtained the necessary resources, resolved all dependencies, and identified a worker for the task can it proceed with scheduling the task for execution.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Task scheduling can be challenging, even when only considering a single node. It is easy to envision situations where an improperly or poorly planned task execution can prevent downstream tasks from proceeding due to a lack of available resources. This issue can become even more complex in a distributed setting.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="fault-tolerance-and-ownership">Fault Tolerance and Ownership<a class="anchor-link" href="#Fault-Tolerance-and-Ownership">&#182;</a></h4><p>Now that you have a understanding of Raylets, we will briefly revisit worker processes and conclude the discussion by briefly explaining how Ray is able to recover from failures and the necessary concepts for doing so.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>In summary, workers keep track of metadata for all tasks they initiate, as well as the object references returned by those tasks. This is known as ownership, which means that the process that generates an object reference is responsible for ensuring its proper execution and availability of results. Workers must maintain an ownership table to keep track of the tasks they are responsible for, in case any of them fail and need to be redone. This way, if a task fails, the worker already has all the necessary information to recompute it.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>To provide a clear illustration of an ownership relationship instead of the idea of dependency that was mentioned before, consider a program that initiates a basic task and then internally calls on another task.</p>
+
+</div>
+</div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -1913,7 +2505,7 @@ print(ray.get(tracker.counts.remote()))</div>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
@@ -1969,7 +2561,7 @@ res = task.remote(dependency=val)</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1><img src="https://raw.githubusercontent.com/maxpumperla/learning_ray/main/notebooks/images/chapter_02/task_dependency.png" alt="Task dependency"></h1>
+<p>To break down the ownership and dependencies in this example, we have two tasks - <code>task</code> and <code>task_owned</code> - and three variables - <code>val</code>, <code>res</code>, and <code>res_owned</code>. The main program owns <code>task</code>, <code>val</code>, and <code>res</code>, and also calls <code>task</code>. However, res depends on task, but there is no ownership relationship between the two. When <code>task</code> is called, it takes <code>val</code> as a dependency and then calls <code>task_owned</code>, which assigns <code>res_owned</code>, therefore owning both <code>task_owned</code> and <code>res_owned</code>. Lastly, <code>task_owned</code> does not own anything, but res_owned depends on it.</p>
 
 </div>
 </div>
@@ -1993,7 +2585,150 @@ res = task.remote(dependency=val)</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="the-head-node">The Head Node<a class="anchor-link" href="#The-Head-Node">&#182;</a></h2><p>As previously mentioned in Chapter 1, each Ray cluster has a designated head node which has a driver process. While drivers are able to submit tasks, they are unable to execute them. It is also worth noting that the head node can also possess worker processes, which allows for the creation of single node local clusters.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>The head node functions in the same way as other worker nodes, but it also runs processes that manage the cluster, such as the autoscaler and the Global Control Service (GCS). The GCS is a key-value store that contains important information about the cluster, including system-level metadata and the locations of Ray actors. It also receives and stores heart beat signals from Raylets to ensure they are still reachable, and sends its own heart beat signals to the Raylets to indicate that it is functioning properly. The ownership model ensures that object information is stored at the worker process responsible for it, preventing the GCS from becoming a bottleneck.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="distributed-scheduling-and-execution">Distributed Scheduling and Execution<a class="anchor-link" href="#Distributed-Scheduling-and-Execution">&#182;</a></h3><p>We will discuss the process of cluster orchestration and how nodes manage, plan, and execute tasks. When discussing worker nodes, we previously mentioned that there are several components involved in distributing workloads using Ray. The following is a summary of the steps and details involved in this process.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li><em>Distributed memory</em>: Each Raylet, which is a unit responsible for managing memory on a particular node, has its own object store. However, there are situations where objects need to be transferred between nodes, a process referred to as distributed object transfer. This occurs in order to address remote dependencies, ensuring that workers have access to the necessary objects to perform their tasks.</li>
+<li><em>Communication</em>: Most of the communication in a Ray cluster, such as object
+transfer, takes place via <a href="https://grpc.io/">gRPC</a>.</li>
+<li><em>Resource management and fulfillment</em>: The role of Raylets on a node is to assign resources and assign worker processes to task owners. The distributed scheduler, which consists of schedulers on all nodes, allows tasks to be scheduled on other nodes. Local schedulers are aware of the resources on other nodes through communication with the GCS.</li>
+<li><em>Task execution</em>: Before a task can be executed, all of its dependencies, including both local and remote data, must be resolved. For example, this might involve retrieving large data from the object store.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1><img src="https://raw.githubusercontent.com/maxpumperla/learning_ray/main/notebooks/images/chapter_02/architecture.png" alt="Ray architecture"></h1>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Now that you’ve learned the basics of the Ray Core API and know the fundamentals
+of Ray’s Cluster architecture, let’s compute one more complex example</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="a-simple-mapreduce-example-with-ray">A Simple MapReduce Example with Ray<a class="anchor-link" href="#A-Simple-MapReduce-Example-with-Ray">&#182;</a></h2><p>It would be remiss to conclude this conversation without mentioning MapReduce, a significant development in distributed computing in recent decades. Many popular big data technologies, such as Hadoop, are built upon this programming model, and it is worth discussing in relation to Ray. To illustrate its use, we will use a simple example of counting word occurrences across multiple documents. While this may seem like a straightforward task when working with a small number of documents, it becomes more complex when dealing with a large corpus, requiring the use of multiple compute nodes to process the data.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>A MapReduce word-count example is a commonly used example in distributed computing and is worth learning about. The approach involves three simple steps:</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ol>
+<li>Use a set of documents as the input and apply a specified function to transform or "map" each element within them (such as the words contained in the documents). This map phase will produce key-value pairs, where the key represents an element in the document and the value is a metric calculated for that element. In this particular case, the goal is to count the number of times each word appears in a document, so the map function will output the pair <code>(word, 1)</code> every time a word is encountered to show that it has been found once.</li>
+<li>All of the outputs from the map phase are collected and organized based on their key. This may involve transferring data between different nodes, as the same key could potentially be found on multiple compute nodes. This process is commonly referred to as the shuffle phase. As an example, if the map phase produces four occurrences of the pair <code>(word, 1)</code>, the shuffle phase will ensure that all occurrences of the same word are located on the same node.</li>
+<li>The reduce phase is so named because it aggregates or combines the elements from the shuffle step. Using the example provided, the final count of a word's occurrences is obtained by adding up all of the occurrences on each node. For example, four instances of <code>(word, 1)</code> would be combined to result in a final count of <code>word: 4</code>.</li>
+</ol>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>MapReduce is named after the first and last stages of the process, but the middle stage is just as crucial. These phases may appear straightforward, but their strength lies in the ability to run them concurrently on multiple machines. An example of using the three MapReduce phases on a set of documents divided into three parts is shown in this figure:</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><img src="https://raw.githubusercontent.com/maxpumperla/learning_ray/main/notebooks/images/chapter_02/map_reduce.png" alt="Simple Map Reduce"></p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>We will be using Python to implement the MapReduce algorithm for our word-count purpose and utilizing Ray to parallelize the computation. To better understand what we are working with, we will begin by loading some example data.</p>
 
 </div>
 </div>
@@ -2004,7 +2739,7 @@ res = task.remote(dependency=val)</div>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
@@ -2052,7 +2787,19 @@ partitions = [
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="https://raw.githubusercontent.com/maxpumperla/learning_ray/main/notebooks/images/chapter_02/map_reduce.png" alt="Simple Map Reduce"></p>
+<p>We will be using the Zen of Python, a collection of guidelines from the Python community, as our data for this exercise. The Zen of Python can be accessed by typing "import this" in a Python session and is traditionally hidden as an "Easter egg." While it is beneficial for Python programmers to read these guidelines, for the purposes of this exercise, we will only be counting the number of words contained within them. To do this, we will divide the Zen of Python into three separate "documents" by treating each line as a separate entity and then splitting it into these partitions.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="mapping-and-shuffling-document-data">Mapping and Shuffling Document Data<a class="anchor-link" href="#Mapping-and-Shuffling-Document-Data">&#182;</a></h3><p>To determine the map phase, we require a map function that we will utilize on each document. In this particular scenario, we want to output the pair <code>(word, 1)</code> for every word found in a document. For basic text documents that are loaded as Python strings, this process appears as follows.</p>
 
 </div>
 </div>
@@ -2063,7 +2810,7 @@ partitions = [
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
@@ -2092,13 +2839,25 @@ partitions = [
 </div>
 
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>We will use the apply_map function on a large collection of documents by marking it as a task in Ray using the <code>@ray.remote</code> decorator. When we call <code>apply_map</code>, it will be applied to three sets of document data (<code>num_partitions=3</code>). The <code>apply_map</code> function will return three lists, one for each partition. We do this so that Ray can rearrange the results of the map phase and distribute them to the appropriate nodes for us.</p>
+
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
@@ -2143,13 +2902,25 @@ def apply_map(corpus, num_partitions=3):
 </div>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>For text corpora that can be stored on a single machine, it is unnecessary to use the map phase. However, when the data needs to be divided across multiple nodes, the map phase becomes useful. In order to apply the map phase to our corpus in parallel, we use a remote call on apply_map, just like we have done in previous examples. The main difference now is that we also specify that we want three results returned (one for each partition) using the num_returns argument.</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
@@ -2191,6 +2962,63 @@ for i in range(num_partitions):
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Mapper 0, return value 0: [(b&#39;of&#39;, 1), (b&#39;is&#39;, 1)]
+Mapper 0, return value 1: [(b&#39;python,&#39;, 1), (b&#39;peters&#39;, 1)]
+Mapper 0, return value 2: [(b&#39;the&#39;, 1), (b&#39;zen&#39;, 1)]
+Mapper 1, return value 0: [(b&#39;unless&#39;, 1), (b&#39;in&#39;, 1)]
+Mapper 1, return value 1: [(b&#39;although&#39;, 1), (b&#39;practicality&#39;, 1)]
+Mapper 1, return value 2: [(b&#39;beats&#39;, 1), (b&#39;errors&#39;, 1)]
+Mapper 2, return value 0: [(b&#39;is&#39;, 1), (b&#39;is&#39;, 1)]
+Mapper 2, return value 1: [(b&#39;although&#39;, 1), (b&#39;a&#39;, 1)]
+Mapper 2, return value 2: [(b&#39;better&#39;, 1), (b&#39;than&#39;, 1)]
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>We can make it so that all pairs from the <code>j</code>-th return value end up on
+the same node for the reduce phase. Let’s discuss this phase next.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="reducing-word-counts">Reducing Word Counts<a class="anchor-link" href="#Reducing-Word-Counts">&#182;</a></h3><p>In the reduce phase we can create a dictionary that sums up all word
+occurrences on each partition:</p>
+
+</div>
+</div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -2198,7 +3026,7 @@ for i in range(num_partitions):
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
@@ -2241,13 +3069,25 @@ def apply_reduce(*results):
 </div>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>We can take the j-th return value from each mapper and send it to the j-th reducer using the following method. It's important to note that this code works for larger datasets that don't fit on one machine because we are passing references to the data using Ray objects rather than the actual data itself. Both the map and reduce phases can be run on any Ray cluster and the data shuffling is also handled by Ray.</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="zeroclipboard-container">
@@ -2284,6 +3124,182 @@ counts = {k: v for output in ray.get(outputs) for k, v in output.items()}
 sorted_counts = sorted(counts.items(), key=lambda item: item[1], reverse=True)
 for count in sorted_counts:
     print(f"{count[0].decode('utf-8')}: {count[1]}")</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>is: 10
+better: 8
+than: 8
+the: 6
+to: 5
+of: 3
+although: 3
+be: 3
+unless: 2
+one: 2
+if: 2
+implementation: 2
+idea.: 2
+special: 2
+should: 2
+do: 2
+may: 2
+a: 2
+never: 2
+way: 2
+explain,: 2
+ugly.: 1
+implicit.: 1
+complex.: 1
+complex: 1
+complicated.: 1
+flat: 1
+readability: 1
+counts.: 1
+cases: 1
+rules.: 1
+in: 1
+face: 1
+refuse: 1
+one--: 1
+only: 1
+--obvious: 1
+it.: 1
+obvious: 1
+first: 1
+often: 1
+*right*: 1
+it&#39;s: 1
+it: 1
+idea: 1
+--: 1
+let&#39;s: 1
+python,: 1
+peters: 1
+simple: 1
+sparse: 1
+dense.: 1
+aren&#39;t: 1
+practicality: 1
+purity.: 1
+pass: 1
+silently.: 1
+silenced.: 1
+ambiguity,: 1
+guess.: 1
+and: 1
+preferably: 1
+at: 1
+you&#39;re: 1
+dutch.: 1
+good: 1
+are: 1
+great: 1
+more: 1
+zen: 1
+by: 1
+tim: 1
+beautiful: 1
+explicit: 1
+nested.: 1
+enough: 1
+break: 1
+beats: 1
+errors: 1
+explicitly: 1
+temptation: 1
+there: 1
+that: 1
+not: 1
+now: 1
+never.: 1
+now.: 1
+hard: 1
+bad: 1
+easy: 1
+namespaces: 1
+honking: 1
+those!: 1
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>To gain a thorough understanding of how to scale MapReduce tasks across multiple nodes using Ray, including memory management, we suggest reading this <a href="https://medium.com/distributed-computing-with-ray/executing-adistributed-shuffle-without-a-mapreduce-system-d5856379426c">insightful blog post on the topic</a>.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>The important part about this MapReduce example is to realize how flexible Ray’s
+programming model really is. Surely, a production-grade MapReduce implementation
+takes a bit more effort. But being able to reproduce common algorithms like this
+one quickly goes a long way. Keep in mind that in the earlier phases of MapReduce,
+say around 2010, this paradigm was often the only thing you had to express your
+workloads. With Ray, a whole range of interesting distributed computing patterns
+become accessible to any intermediate Python programmer.</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-18">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="highlight-ipynb hl-python"><pre><span></span>
+</pre></div>
+<div id="cell-18" class="clipboard-copy-txt"></div>
     
         </div>
     </div>
