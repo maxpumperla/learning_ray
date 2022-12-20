@@ -1,14 +1,19 @@
 # Learning Ray - Flexible Distributed Python for Machine Learning
 
-Jupyter notebooks and other resources for the upcoming book "Learning Ray" (O'Reilly).
-All code and diagrams used in the book are available here for free.
-The notebooks can be read online, as we add more and more explanations in the online version.
-If you want to support this project and  buy the book itself, you can get it 
+-- _Max Pumperla, Edward Oakes, Richard Liaw_
+
+Online version of the upcoming book "Learning Ray" (O'Reilly).
+All code and diagrams used in the book are fully open-sourced, and you can find self-contained notebooks accompanying the book here for free.
+You won't get the exact same reading experience as with the printed book, but you should get a good idea if the book is for you.
+If you want to support this project and  buy the book, you can e.g. get it 
 [directly from O'Reilly](https://www.oreilly.com/library/view/learning-ray/9781098117214/),
 or [from Amazon](https://www.amazon.com/Learning-Ray-Flexible-Distributed-Machine/dp/1098117220/).
 The book will be published in May 2023, but online versions should be available before that.
 
 ![Learning Ray](https://raw.githubusercontent.com/maxpumperla/learning_ray/main/notebooks/images/learning_ray.png)
+
+
+
 
 The book is organized to guide you chapter by chapter from core concepts of Ray to more sophisticated topics along the way.
 The first three chapters of the book teach the basics of Ray as a distributed Python framework with practical examples.
@@ -56,3 +61,7 @@ Here's what you can expect from each chapter.
 * [_Chapter 11, Ray's Ecosystem and Beyond_](./ch_11_ecosystem)
   Gives you an overview of the many interesting extensions and
   integrations that Ray has attracted over the years. 
+
+```python
+
+```
