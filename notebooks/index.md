@@ -8,12 +8,13 @@ You won't get the exact same reading experience as with the printed book, but yo
 If you want to support this project and  buy the book, you can e.g. get it 
 [directly from O'Reilly](https://www.oreilly.com/library/view/learning-ray/9781098117214/),
 or [from Amazon](https://www.amazon.com/Learning-Ray-Flexible-Distributed-Machine/dp/1098117220/).
-The book will be published in May 2023, but online versions should be available before that.
+The book will be published in May 2023, but online formats should be available before that.
+
 
 ![Learning Ray](https://raw.githubusercontent.com/maxpumperla/learning_ray/main/notebooks/images/learning_ray.png)
 
 
-
+## Table of Contents
 
 The book is organized to guide you chapter by chapter from core concepts of Ray to more sophisticated topics along the way.
 The first three chapters of the book teach the basics of Ray as a distributed Python framework with practical examples.
