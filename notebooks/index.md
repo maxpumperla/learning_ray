@@ -2,7 +2,7 @@
 
 -- _Max Pumperla, Edward Oakes, Richard Liaw_
 
-Online version of the upcoming book "Learning Ray" (O'Reilly).
+Online version of "Learning Ray" (O'Reilly).
 All code and diagrams used in the book are fully open-sourced, and you can find self-contained notebooks accompanying the book here for free.
 You won't get the exact same reading experience as with the printed book, but you should get a good idea if the book is for you.
 If you want to support this project and  buy the book, you can e.g. get it 
