@@ -14,7 +14,7 @@ The book will be published in May 2023, but online formats should be available b
 ![Learning Ray](https://raw.githubusercontent.com/maxpumperla/learning_ray/main/notebooks/images/learning_ray.png)
 
 
-## Table of Contents
+## Overview
 
 The book is organized to guide you chapter by chapter from core concepts of Ray to more sophisticated topics along the way.
 The first three chapters of the book teach the basics of Ray as a distributed Python framework with practical examples.
